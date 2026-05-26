@@ -120,6 +120,69 @@ a {
   white-space: nowrap;
 }
 
+.method-banner {
+  border: 1px solid var(--charcoal);
+  background: var(--charcoal);
+  color: var(--chalk);
+  display: grid;
+  grid-template-columns: minmax(210px, 0.95fr) minmax(360px, 1.6fr) minmax(190px, 0.8fr);
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 12px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+}
+
+.method-lead,
+.method-steps,
+.method-note {
+  min-width: 0;
+}
+
+.method-lead {
+  display: grid;
+  gap: 5px;
+  align-content: center;
+}
+
+.method-lead .eyebrow {
+  color: var(--lime);
+  margin: 0;
+}
+
+.method-lead strong {
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.method-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.method-steps span {
+  border: 1px solid rgba(255, 253, 246, 0.22);
+  background: rgba(255, 253, 246, 0.08);
+  border-radius: 8px;
+  padding: 9px 10px;
+  line-height: 1.38;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.method-note {
+  border-left: 3px solid var(--lime);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-left: 12px;
+  color: #e8e0d0;
+  line-height: 1.45;
+  font-weight: 800;
+}
+
 .studio-grid {
   display: grid;
   grid-template-columns: minmax(230px, 290px) minmax(520px, 1fr) minmax(300px, 360px);
@@ -823,6 +886,10 @@ mark {
 }
 
 @media (max-width: 1180px) {
+  .method-banner {
+    grid-template-columns: 1fr;
+  }
+
   .studio-grid {
     grid-template-columns: 240px minmax(0, 1fr);
   }
@@ -887,5 +954,11 @@ mark {
 
   .time-chip {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .method-steps {
+    grid-template-columns: 1fr;
   }
 }

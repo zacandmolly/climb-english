@@ -174,6 +174,21 @@ export function App() {
         </div>
       </header>
 
+      <section className="method-banner" aria-label="Learning method">
+        <div className="method-lead">
+          <p className="eyebrow">方法论</p>
+          <strong>目标不是翻译，而是建立英文声音和英文文字的直接联系。</strong>
+        </div>
+        <div className="method-steps">
+          <span>1. 无字幕反复听；不懂再看英文逐字稿</span>
+          <span>2. 吸收逐字稿，并大声朗读内化</span>
+          <span>3. 回到原音，重新把声音和文字连起来</span>
+        </div>
+        <p className="method-note">
+          中文只辅助理解；不要跳过英文稿直接看中文。
+        </p>
+      </section>
+
       <main className="studio-grid">
         <SentenceRail
           lessons={lessons}
