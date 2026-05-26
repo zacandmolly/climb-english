@@ -61,7 +61,8 @@ app.use((req, res, next) => {
 app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
-    ai: Boolean(process.env.OPENAI_API_KEY),
+    ai: hasUsableOpenAiKey(),
+    aiStatus: getOpenAiKeyStatus(),
     limits: {
       daily: dailyRequestLimit,
       hourly: hourlyRequestLimit,
@@ -111,12 +112,13 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
       return;
     }
 
-    if (!process.env.OPENAI_API_KEY) {
+    const apiKey = getUsableOpenAiKey();
+    if (!apiKey) {
       res.json(makeDemoFeedback({ targetSentence, keywordText }));
       return;
     }
 
-    const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    const client = new OpenAI({ apiKey });
     const audioFile = new File(
       [req.file.buffer],
       req.file.originalname || 'recording.webm',
@@ -288,6 +290,26 @@ function clientIp(req) {
 function positiveInteger(value, fallback) {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : fallback;
+}
+
+function getUsableOpenAiKey() {
+  return hasUsableOpenAiKey() ? String(process.env.OPENAI_API_KEY).trim() : '';
+}
+
+function hasUsableOpenAiKey() {
+  return getOpenAiKeyStatus() === 'configured';
+}
+
+function getOpenAiKeyStatus() {
+  const value = String(process.env.OPENAI_API_KEY || '').trim();
+  if (!value) return 'missing';
+  if (value === 'SET' || value === 'placeholder' || value.startsWith('dummy')) {
+    return 'placeholder';
+  }
+  if (!value.startsWith('sk-') || value.length < 40 || /\s/.test(value)) {
+    return 'unknown_format';
+  }
+  return 'configured';
 }
 
 function makeDemoFeedback({ targetSentence, keywordText }) {

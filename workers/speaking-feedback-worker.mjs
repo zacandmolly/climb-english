@@ -24,7 +24,8 @@ export default {
         return jsonResponse(
           {
             ok: true,
-            ai: Boolean(env.OPENAI_API_KEY),
+            ai: hasUsableOpenAiKey(env),
+            aiStatus: getOpenAiKeyStatus(env),
             usageStore: Boolean(env.FEEDBACK_USAGE),
           },
           200,
@@ -54,8 +55,16 @@ async function handleSpeakingFeedback(request, env) {
     return jsonResponse({ error: 'Origin is not allowed.' }, 403, request, env);
   }
 
-  if (!env.OPENAI_API_KEY) {
-    return jsonResponse({ error: 'OPENAI_API_KEY is not configured.' }, 503, request, env);
+  if (!hasUsableOpenAiKey(env)) {
+    return jsonResponse(
+      {
+        error: 'OPENAI_API_KEY is not configured.',
+        aiStatus: getOpenAiKeyStatus(env),
+      },
+      503,
+      request,
+      env,
+    );
   }
 
   const limits = getLimits(env);
@@ -294,6 +303,22 @@ function getClientIp(request) {
 function getPositiveInteger(value, fallback) {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : fallback;
+}
+
+function hasUsableOpenAiKey(env) {
+  return getOpenAiKeyStatus(env) === 'configured';
+}
+
+function getOpenAiKeyStatus(env) {
+  const value = String(env.OPENAI_API_KEY || '').trim();
+  if (!value) return 'missing';
+  if (value === 'SET' || value === 'placeholder' || value.startsWith('dummy')) {
+    return 'placeholder';
+  }
+  if (!value.startsWith('sk-') || value.length < 40 || /\s/.test(value)) {
+    return 'unknown_format';
+  }
+  return 'configured';
 }
 
 function isAllowedOrigin(request, env) {
