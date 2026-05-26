@@ -760,62 +760,168 @@ function SpeakingCoach({
   const [isRecording, setIsRecording] = useState(false);
   const [recordedBlob, setRecordedBlob] = useState<Blob | null>(null);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [recordingSeconds, setRecordingSeconds] = useState(0);
+  const [recordedBytes, setRecordedBytes] = useState(0);
+  const [micLevel, setMicLevel] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isSending, setIsSending] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const mediaStreamRef = useRef<MediaStream | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const meterFrameRef = useRef<number | null>(null);
+  const recordingTimerRef = useRef<number | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const activeKeywords = mode === 'segment' ? uniqueKeywords(lesson.sentences) : sentence.keywords;
   const targetSentence = mode === 'segment' ? fullTranscript(lesson) : sentence.transcript;
   const prompt = mode === 'segment' ? 'Listen to the whole passage, then retell the action in your own words.' : sentence.speakingPrompt;
   const patterns = mode === 'segment' ? segmentPatterns(lesson) : sentence.sentencePatterns;
 
+  const cleanupRecordingResources = () => {
+    if (recordingTimerRef.current) {
+      window.clearInterval(recordingTimerRef.current);
+      recordingTimerRef.current = null;
+    }
+
+    if (meterFrameRef.current) {
+      window.cancelAnimationFrame(meterFrameRef.current);
+      meterFrameRef.current = null;
+    }
+
+    mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
+    mediaStreamRef.current = null;
+    mediaRecorderRef.current = null;
+
+    void audioContextRef.current?.close();
+    audioContextRef.current = null;
+    setMicLevel(0);
+  };
+
+  const startMicMeter = (stream: MediaStream) => {
+    const AudioContextConstructor =
+      window.AudioContext ??
+      (window as Window & typeof globalThis & { webkitAudioContext?: typeof AudioContext })
+        .webkitAudioContext;
+
+    if (!AudioContextConstructor) return;
+
+    const audioContext = new AudioContextConstructor();
+    const analyser = audioContext.createAnalyser();
+    const source = audioContext.createMediaStreamSource(stream);
+    analyser.fftSize = 512;
+    const samples = new Uint8Array(analyser.fftSize);
+    source.connect(analyser);
+    audioContextRef.current = audioContext;
+
+    const updateLevel = () => {
+      analyser.getByteTimeDomainData(samples);
+      let sum = 0;
+      for (const sample of samples) {
+        const centered = (sample - 128) / 128;
+        sum += centered * centered;
+      }
+      const rms = Math.sqrt(sum / samples.length);
+      setMicLevel(Math.min(1, rms * 8));
+      meterFrameRef.current = window.requestAnimationFrame(updateLevel);
+    };
+
+    updateLevel();
+  };
+
   useEffect(() => {
     setRecordedBlob(null);
     setFeedback(null);
     setError(null);
+    setRecordedBytes(0);
+    setRecordingSeconds(0);
+    setMicLevel(0);
     setAudioUrl((currentUrl) => {
       if (currentUrl) URL.revokeObjectURL(currentUrl);
       return null;
     });
+    cleanupRecordingResources();
+
+    return cleanupRecordingResources;
   }, [lesson.id, sentence.id, mode]);
 
   const startRecording = async () => {
     try {
       setError(null);
       setFeedback(null);
+      setRecordedBlob(null);
+      setRecordedBytes(0);
+      setRecordingSeconds(0);
+      setMicLevel(0);
+      setAudioUrl((currentUrl) => {
+        if (currentUrl) URL.revokeObjectURL(currentUrl);
+        return null;
+      });
+
+      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+        setError('当前浏览器不支持网页录音。请用最新版 Chrome 或 Edge 打开这个页面。');
+        return;
+      }
+
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaStreamRef.current = stream;
       chunksRef.current = [];
-      const recorder = new MediaRecorder(stream);
+      const mimeType = getSupportedRecordingMimeType();
+      const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
 
       recorder.ondataavailable = (event) => {
-        if (event.data.size > 0) chunksRef.current.push(event.data);
+        if (event.data.size <= 0) return;
+        chunksRef.current.push(event.data);
+        setRecordedBytes((bytes) => bytes + event.data.size);
+      };
+      recorder.onerror = () => {
+        setError('录音中断了。请确认浏览器允许 microphone 权限，然后再试一次。');
+        cleanupRecordingResources();
+        setIsRecording(false);
       };
       recorder.onstop = () => {
         const blob = new Blob(chunksRef.current, { type: recorder.mimeType || 'audio/webm' });
+        cleanupRecordingResources();
+        setIsRecording(false);
+
+        if (blob.size === 0) {
+          setRecordedBlob(null);
+          setRecordedBytes(0);
+          setError('这次没有录到声音。请确认麦克风权限已允许，并靠近麦克风再录一遍。');
+          return;
+        }
+
         setRecordedBlob(blob);
+        setRecordedBytes(blob.size);
+        setError(null);
         setAudioUrl((currentUrl) => {
           if (currentUrl) URL.revokeObjectURL(currentUrl);
           return URL.createObjectURL(blob);
         });
-        stream.getTracks().forEach((track) => track.stop());
-        mediaStreamRef.current = null;
       };
 
       mediaRecorderRef.current = recorder;
-      recorder.start();
+      startMicMeter(stream);
+      recordingTimerRef.current = window.setInterval(() => {
+        setRecordingSeconds((seconds) => seconds + 1);
+      }, 1000);
+      recorder.start(250);
       setIsRecording(true);
-    } catch {
-      setError('麦克风不可用。请在浏览器里允许 microphone 权限。');
+    } catch (recordingError) {
+      cleanupRecordingResources();
+      setIsRecording(false);
+      setError(getRecordingErrorMessage(recordingError));
     }
   };
 
   const stopRecording = () => {
-    mediaRecorderRef.current?.stop();
-    mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
-    setIsRecording(false);
+    const recorder = mediaRecorderRef.current;
+    if (!recorder || recorder.state === 'inactive') {
+      cleanupRecordingResources();
+      setIsRecording(false);
+      return;
+    }
+
+    recorder.stop();
   };
 
   const sendFeedback = async () => {
@@ -904,6 +1010,21 @@ function SpeakingCoach({
           {isSending ? '分析中' : '反馈'}
         </button>
       </div>
+
+      {isRecording || recordedBlob ? (
+        <div className="recording-status" aria-live="polite">
+          <div>
+            <strong>{isRecording ? '正在录音' : '已录音'}</strong>
+            <span>
+              {recordingSeconds}s
+              {recordedBytes > 0 ? ` / ${formatBytes(recordedBytes)}` : ''}
+            </span>
+          </div>
+          <div className="mic-meter" aria-hidden="true">
+            <span style={{ width: `${Math.max(8, Math.round(micLevel * 100))}%` }} />
+          </div>
+        </div>
+      ) : null}
 
       {audioUrl ? (
         <div className="playback-panel">
@@ -1100,6 +1221,33 @@ function resolveStaticAssetUrl(assetUrl: string) {
   return `${base.replace(/\/?$/, '/')}${assetUrl.replace(/^\//, '')}`;
 }
 
+function getSupportedRecordingMimeType() {
+  if (typeof MediaRecorder === 'undefined') return '';
+
+  return (
+    [
+      'audio/webm;codecs=opus',
+      'audio/webm',
+      'audio/mp4',
+      'audio/ogg;codecs=opus',
+    ].find((type) => MediaRecorder.isTypeSupported(type)) ?? ''
+  );
+}
+
+function getRecordingErrorMessage(error: unknown) {
+  if (error instanceof DOMException) {
+    if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
+      return '浏览器没有麦克风权限。请点地址栏旁边的权限图标，允许 microphone，然后刷新页面再录。';
+    }
+
+    if (error.name === 'NotFoundError') {
+      return '没有找到可用麦克风。请检查系统输入设备后再试。';
+    }
+  }
+
+  return '麦克风不可用。请确认浏览器允许 microphone 权限，并使用最新版 Chrome 或 Edge。';
+}
+
 function makeClientDemoFeedback({
   targetSentence,
   keywords,
@@ -1115,6 +1263,12 @@ function makeClientDemoFeedback({
     suggestions: ['把句子拆成两段说。', '保留 boulder、foot、top、zone 这类攀岩词。'],
     naturalVersion: targetSentence,
   };
+}
+
+function formatBytes(bytes: number) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 function formatTime(totalSeconds: number) {
