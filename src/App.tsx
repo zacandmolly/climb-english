@@ -19,7 +19,7 @@ import {
   Trophy,
   Volume2,
 } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { lessons } from './data/lessons';
 import type { Feedback, Keyword, Lesson, PracticeSentence } from './types';
 
@@ -29,6 +29,7 @@ const END_PAD_SECONDS = 0.2;
 const DAILY_SESSION_MINUTES = 5;
 const LISTENING_GOAL_MINUTES = 30;
 const PROGRESS_STORAGE_KEY = 'climb-english-learning-progress-v1';
+const LOW_INPUT_LEVEL = 0.01;
 
 type DailySession = {
   id: string;
@@ -763,6 +764,10 @@ function SpeakingCoach({
   const [recordingSeconds, setRecordingSeconds] = useState(0);
   const [recordedBytes, setRecordedBytes] = useState(0);
   const [micLevel, setMicLevel] = useState(0);
+  const [recordedPeakLevel, setRecordedPeakLevel] = useState(0);
+  const [audioInputs, setAudioInputs] = useState<MediaDeviceInfo[]>([]);
+  const [selectedAudioInputId, setSelectedAudioInputId] = useState('');
+  const [activeInputLabel, setActiveInputLabel] = useState('系统默认麦克风');
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isSending, setIsSending] = useState(false);
@@ -780,6 +785,26 @@ function SpeakingCoach({
   const targetSentence = mode === 'segment' ? fullTranscript(lesson) : sentence.transcript;
   const prompt = mode === 'segment' ? 'Listen to the whole passage, then retell the action in your own words.' : sentence.speakingPrompt;
   const patterns = mode === 'segment' ? segmentPatterns(lesson) : sentence.sentencePatterns;
+  const selectedAudioInput = audioInputs.find((device) => device.deviceId === selectedAudioInputId);
+  const displayedMicLevel = isRecording ? micLevel : recordedPeakLevel;
+  const displayedMicPercent = Math.round(displayedMicLevel * 100);
+
+  const refreshAudioInputs = useCallback(async () => {
+    if (!navigator.mediaDevices?.enumerateDevices) return;
+
+    try {
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      const inputs = devices.filter((device) => device.kind === 'audioinput');
+      setAudioInputs(inputs);
+      setSelectedAudioInputId((currentDeviceId) =>
+        currentDeviceId && !inputs.some((device) => device.deviceId === currentDeviceId)
+          ? ''
+          : currentDeviceId,
+      );
+    } catch {
+      setAudioInputs([]);
+    }
+  }, []);
 
   const cleanupRecordingResources = () => {
     if (recordingTimerRef.current) {
@@ -800,6 +825,19 @@ function SpeakingCoach({
     audioContextRef.current = null;
     setMicLevel(0);
   };
+
+  useEffect(() => {
+    void refreshAudioInputs();
+
+    const handleDeviceChange = () => {
+      void refreshAudioInputs();
+    };
+
+    navigator.mediaDevices?.addEventListener?.('devicechange', handleDeviceChange);
+    return () => {
+      navigator.mediaDevices?.removeEventListener?.('devicechange', handleDeviceChange);
+    };
+  }, [refreshAudioInputs]);
 
   const startPcmRecorder = async (stream: MediaStream) => {
     const AudioContextConstructor =
@@ -856,6 +894,7 @@ function SpeakingCoach({
     setRecordedBytes(0);
     setRecordingSeconds(0);
     setMicLevel(0);
+    setRecordedPeakLevel(0);
     setAudioUrl((currentUrl) => {
       if (currentUrl) URL.revokeObjectURL(currentUrl);
       return null;
@@ -873,6 +912,7 @@ function SpeakingCoach({
       setRecordedBytes(0);
       setRecordingSeconds(0);
       setMicLevel(0);
+      setRecordedPeakLevel(0);
       setAudioUrl((currentUrl) => {
         if (currentUrl) URL.revokeObjectURL(currentUrl);
         return null;
@@ -883,8 +923,30 @@ function SpeakingCoach({
         return;
       }
 
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const audioConstraints: MediaTrackConstraints = selectedAudioInputId
+        ? {
+            deviceId: { exact: selectedAudioInputId },
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          }
+        : {
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          };
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: audioConstraints });
+      const [audioTrack] = stream.getAudioTracks();
+
+      if (!audioTrack) {
+        stream.getTracks().forEach((track) => track.stop());
+        setError('浏览器没有返回可用的麦克风音轨。请换一个输入设备后再试。');
+        return;
+      }
+
       mediaStreamRef.current = stream;
+      setActiveInputLabel(audioTrack.label || selectedAudioInput?.label || '系统默认麦克风');
+      void refreshAudioInputs();
       await startPcmRecorder(stream);
       recordingTimerRef.current = window.setInterval(() => {
         setRecordingSeconds((seconds) => seconds + 1);
@@ -911,10 +973,12 @@ function SpeakingCoach({
     const peakLevel = peakMicLevelRef.current;
     cleanupRecordingResources();
     setIsRecording(false);
+    setRecordedPeakLevel(peakLevel);
 
     if (blob.size <= 44 || pcmSampleCountRef.current === 0) {
       setRecordedBlob(null);
       setRecordedBytes(0);
+      setRecordedPeakLevel(0);
       setError('这次没有录到声音。请确认麦克风权限已允许，并靠近麦克风再录一遍。');
       return;
     }
@@ -926,8 +990,8 @@ function SpeakingCoach({
       return URL.createObjectURL(blob);
     });
     setError(
-      peakLevel < 0.025
-        ? '录音文件已生成，但几乎没有检测到声音。请检查系统输入设备，或在浏览器权限里换成正确的麦克风。'
+      peakLevel < LOW_INPUT_LEVEL
+        ? `录音文件已生成，但当前输入「${activeInputLabel}」几乎没有检测到声音。请在上方换一个麦克风，或检查系统输入设备。`
         : null,
     );
   };
@@ -995,6 +1059,33 @@ function SpeakingCoach({
         </div>
       </section>
 
+      <section className="mic-device-panel" aria-label="Microphone input">
+        <label htmlFor="microphone-input">麦克风</label>
+        <select
+          id="microphone-input"
+          value={selectedAudioInputId}
+          disabled={isRecording}
+          onChange={(event) => {
+            setSelectedAudioInputId(event.target.value);
+            const nextDevice = audioInputs.find(
+              (device) => device.deviceId === event.target.value,
+            );
+            setActiveInputLabel(nextDevice?.label || '系统默认麦克风');
+          }}
+        >
+          <option value="">系统默认</option>
+          {audioInputs.map((device, index) => (
+            <option key={device.deviceId || `audio-input-${index}`} value={device.deviceId}>
+              {device.label || `麦克风 ${index + 1}`}
+            </option>
+          ))}
+        </select>
+        <p>
+          当前：{activeInputLabel}
+          <span>输入电平 {displayedMicPercent}%</span>
+        </p>
+      </section>
+
       <div className="recording-controls">
         {!isRecording ? (
           <button className="record-button" type="button" onClick={startRecording}>
@@ -1029,7 +1120,14 @@ function SpeakingCoach({
             </span>
           </div>
           <div className="mic-meter" aria-hidden="true">
-            <span style={{ width: `${Math.max(8, Math.round(micLevel * 100))}%` }} />
+            <span
+              style={{
+                width:
+                  displayedMicLevel > 0
+                    ? `${Math.max(4, Math.round(displayedMicLevel * 100))}%`
+                    : '0%',
+              }}
+            />
           </div>
         </div>
       ) : null}

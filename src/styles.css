@@ -39,7 +39,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -821,6 +822,49 @@ mark {
   padding: 6px 8px;
   border-radius: 8px;
   font-size: 13px;
+}
+
+.mic-device-panel {
+  border: 1px solid var(--line);
+  background: #fffdf6;
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+}
+
+.mic-device-panel label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mic-device-panel select {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0 10px;
+}
+
+.mic-device-panel p {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mic-device-panel p span {
+  color: var(--teal);
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .recording-controls {
