@@ -27,7 +27,50 @@ cp .env.example .env
 
 Then set `OPENAI_API_KEY` in `.env` and restart `npm run dev`.
 
-On a static GitHub Pages deployment, the recording UI still works but AI feedback falls back to offline demo suggestions because Pages does not run the Express API.
+On a static GitHub Pages deployment, the recording UI still works. If `VITE_FEEDBACK_API_BASE` is not configured, feedback falls back to offline demo suggestions because Pages does not run the Express API.
+
+## Public feedback API
+
+Do not put `OPENAI_API_KEY` in frontend code, GitHub Actions variables, or any `VITE_` environment variable. Browser-visible variables are public.
+
+For the public site, use the Cloudflare Worker in `workers/speaking-feedback-worker.mjs` as the API proxy:
+
+1. Copy `workers/wrangler.toml.example` to `workers/wrangler.toml`.
+2. Create a Cloudflare KV namespace and put its id in `workers/wrangler.toml`.
+3. Set Worker secrets:
+
+```bash
+npx wrangler secret put OPENAI_API_KEY --config workers/wrangler.toml
+npx wrangler secret put API_ADMIN_TOKEN --config workers/wrangler.toml
+```
+
+4. Deploy the Worker:
+
+```bash
+npm run worker:deploy
+```
+
+5. Set the GitHub repository variable `VITE_FEEDBACK_API_BASE` to the Worker origin, for example:
+
+```text
+https://climb-english-feedback.<your-subdomain>.workers.dev
+```
+
+6. Re-run the GitHub Pages workflow.
+
+The Worker defaults are sized for a small private beta:
+
+- `DAILY_REQUEST_LIMIT=300`
+- `HOURLY_REQUEST_LIMIT=90`
+- `PER_IP_HOURLY_LIMIT=35`
+- `MAX_AUDIO_BYTES=10485760`
+
+Usage can be checked with:
+
+```bash
+curl -H "Authorization: Bearer $API_ADMIN_TOKEN" \
+  https://climb-english-feedback.<your-subdomain>.workers.dev/api/usage
+```
 
 ## Learning progress
 

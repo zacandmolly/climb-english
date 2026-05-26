@@ -1,5 +1,6 @@
 node_modules/
 dist/
 .env
+workers/wrangler.toml
 qa-*.png
 tsconfig.tsbuildinfo

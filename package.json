@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node server/index.mjs",
     "build": "tsc -b && vite build",
-    "preview": "NODE_ENV=production node server/index.mjs"
+    "preview": "NODE_ENV=production node server/index.mjs",
+    "worker:deploy": "npx wrangler deploy --config workers/wrangler.toml",
+    "worker:dev": "npx wrangler dev --config workers/wrangler.toml"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.1",

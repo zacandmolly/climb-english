@@ -35,6 +35,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /climb-english/
+          VITE_FEEDBACK_API_BASE: ${{ vars.VITE_FEEDBACK_API_BASE }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

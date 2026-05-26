@@ -30,6 +30,7 @@ const DAILY_SESSION_MINUTES = 5;
 const LISTENING_GOAL_MINUTES = 30;
 const PROGRESS_STORAGE_KEY = 'climb-english-learning-progress-v1';
 const LOW_INPUT_LEVEL = 0.01;
+const FEEDBACK_API_BASE = normalizeApiBaseUrl(import.meta.env.VITE_FEEDBACK_API_BASE);
 
 type DailySession = {
   id: string;
@@ -788,6 +789,10 @@ function SpeakingCoach({
   const selectedAudioInput = audioInputs.find((device) => device.deviceId === selectedAudioInputId);
   const displayedMicLevel = isRecording ? micLevel : recordedPeakLevel;
   const displayedMicPercent = Math.round(displayedMicLevel * 100);
+  const isStaticFeedbackMode = useMemo(
+    () => isStaticFeedbackHost() && !FEEDBACK_API_BASE,
+    [],
+  );
 
   const refreshAudioInputs = useCallback(async () => {
     if (!navigator.mediaDevices?.enumerateDevices) return;
@@ -1002,8 +1007,12 @@ function SpeakingCoach({
       return;
     }
 
-    setIsSending(true);
     setError(null);
+    setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
+
+    if (isStaticFeedbackMode) return;
+
+    setIsSending(true);
 
     try {
       const formData = new FormData();
@@ -1012,24 +1021,26 @@ function SpeakingCoach({
       formData.append('targetSentence', targetSentence);
       formData.append('transcript', targetSentence);
       formData.append('keywords', activeKeywords.map((keyword) => keyword.term).join(', '));
+      formData.append('durationSeconds', String(recordingSeconds));
+      formData.append('recordedBytes', String(recordedBytes));
 
-      const response = await fetch('/api/speaking-feedback', {
+      const response = await fetch(`${FEEDBACK_API_BASE}/api/speaking-feedback`, {
         method: 'POST',
         body: formData,
       });
+
+      const contentType = response.headers.get('content-type') ?? '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Feedback API did not return JSON.');
+      }
 
       const payload = await response.json();
       if (!response.ok) {
         throw new Error(payload.error || 'Feedback request failed.');
       }
       setFeedback(payload);
-    } catch (requestError) {
+    } catch {
       setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
-      setError(
-        requestError instanceof Error
-          ? `AI 反馈暂时不可用，先显示离线练习建议。${requestError.message}`
-          : 'AI 反馈暂时不可用，先显示离线练习建议。',
-      );
     } finally {
       setIsSending(false);
     }
@@ -1106,7 +1117,7 @@ function SpeakingCoach({
           title="Send recording for feedback"
         >
           <Send size={16} aria-hidden="true" />
-          {isSending ? '分析中' : '反馈'}
+          {isSending ? '分析中' : isStaticFeedbackMode ? '离线反馈' : '反馈'}
         </button>
       </div>
 
@@ -1145,7 +1156,7 @@ function SpeakingCoach({
 
       {feedback ? (
         <section className="feedback-panel">
-          <div className="feedback-mode">{feedback.mode === 'demo' ? 'Demo feedback' : 'AI feedback'}</div>
+          <div className="feedback-mode">{feedback.mode === 'demo' ? '离线反馈' : 'AI 反馈'}</div>
           <p className="feedback-transcript">{feedback.transcript}</p>
           <p>{feedback.closeness}</p>
           <div className="hit-list">
@@ -1390,6 +1401,18 @@ function writeAscii(view: DataView, offset: number, value: string) {
   }
 }
 
+function isStaticFeedbackHost() {
+  if (typeof window === 'undefined') return false;
+  return window.location.hostname.endsWith('github.io');
+}
+
+function normalizeApiBaseUrl(value: unknown) {
+  if (typeof value !== 'string') return '';
+  const trimmed = value.trim();
+  if (!trimmed) return '';
+  return trimmed.replace(/\/+$/, '');
+}
+
 function makeClientDemoFeedback({
   targetSentence,
   keywords,
@@ -1399,10 +1422,10 @@ function makeClientDemoFeedback({
 }): Feedback {
   return {
     mode: 'demo',
-    transcript: '离线模式：录音已完成，但当前发布环境没有连接 AI 转写服务。',
+    transcript: '公开版已收到录音。当前 GitHub Pages 版本只提供录音回放和离线练习建议，AI 转写服务后续接入。',
     keywordHits: keywords.map((keyword) => keyword.term).slice(0, 4),
-    closeness: '先把关键词说清楚，再追求速度。可以马上再录一遍。',
-    suggestions: ['把句子拆成两段说。', '保留 boulder、foot、top、zone 这类攀岩词。'],
+    closeness: '先听自己的回放：如果关键词清楚，就马上再录一遍；如果卡住，回到原句慢速跟读。',
+    suggestions: ['把句子拆成两段说，再连起来。', '优先说清楚高亮的攀岩关键词。'],
     naturalVersion: targetSentence,
   };
 }
