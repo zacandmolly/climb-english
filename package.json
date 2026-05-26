@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "node server/index.mjs",
     "build": "tsc -b && vite build",
+    "m1:install-key": "node scripts/m1-feedback-api.mjs install-key",
+    "m1:status": "node scripts/m1-feedback-api.mjs status",
+    "m1:test": "node scripts/m1-feedback-api.mjs test",
+    "m1:usage": "node scripts/m1-feedback-api.mjs usage",
     "preview": "NODE_ENV=production node server/index.mjs",
     "worker:deploy": "npx wrangler deploy --config workers/wrangler.toml",
     "worker:dev": "npx wrangler dev --config workers/wrangler.toml"

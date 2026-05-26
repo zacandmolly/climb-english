@@ -33,6 +33,24 @@ On a static GitHub Pages deployment, the recording UI still works. If `VITE_FEED
 
 Do not put `OPENAI_API_KEY` in frontend code, GitHub Actions variables, or any `VITE_` environment variable. Browser-visible variables are public.
 
+The current lightweight deployment runs the API on the always-on M1 and exposes it through a tunnel. The key lives only on the M1 in `~/.climb-english-api.env`.
+
+Operational commands from this project on your work Mac:
+
+```bash
+npm run m1:status
+npm run m1:usage
+```
+
+To replace the M1 OpenAI key safely, copy the new OpenAI API key to your Mac clipboard, then run:
+
+```bash
+npm run m1:install-key
+npm run m1:test
+```
+
+The script reads the key from the clipboard, writes it to the private M1 env file over SSH, restarts `ai.climb-english-api`, and runs a real `/api/speaking-feedback` request. It does not print the key or commit it to the repository.
+
 For the public site, use the Cloudflare Worker in `workers/speaking-feedback-worker.mjs` as the API proxy:
 
 1. Copy `workers/wrangler.toml.example` to `workers/wrangler.toml`.
