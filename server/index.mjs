@@ -12,25 +12,89 @@ const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '..');
 const isProduction = process.env.NODE_ENV === 'production';
 const port = Number(process.env.PORT || 5173);
+const allowedOrigins = String(
+  process.env.API_ALLOWED_ORIGINS ||
+    'https://zacandmolly.github.io,http://127.0.0.1:5173,http://localhost:5173',
+)
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+const dailyRequestLimit = positiveInteger(process.env.DAILY_REQUEST_LIMIT, 300);
+const hourlyRequestLimit = positiveInteger(process.env.HOURLY_REQUEST_LIMIT, 90);
+const perIpHourlyRequestLimit = positiveInteger(process.env.PER_IP_HOURLY_LIMIT, 35);
+const maxAudioBytes = positiveInteger(process.env.MAX_AUDIO_BYTES, 10 * 1024 * 1024);
+const usageCounters = new Map();
 
 const app = express();
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 25 * 1024 * 1024,
+    fileSize: maxAudioBytes,
   },
 });
 
+app.set('trust proxy', true);
 app.use(express.json({ limit: '1mb' }));
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Authorization,Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.status(origin && !allowedOrigins.includes(origin) ? 403 : 204).end();
+    return;
+  }
+
+  if (origin && !allowedOrigins.includes(origin) && req.path.startsWith('/api/')) {
+    res.status(403).json({ error: 'Origin is not allowed.' });
+    return;
+  }
+
+  next();
+});
 
 app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     ai: Boolean(process.env.OPENAI_API_KEY),
+    limits: {
+      daily: dailyRequestLimit,
+      hourly: hourlyRequestLimit,
+      perIpHourly: perIpHourlyRequestLimit,
+      maxAudioBytes,
+    },
   });
 });
 
-app.post('/api/speaking-feedback', upload.single('audio'), async (req, res) => {
+app.get('/api/usage', (req, res) => {
+  const expectedToken = process.env.API_ADMIN_TOKEN;
+  if (!expectedToken || req.headers.authorization !== `Bearer ${expectedToken}`) {
+    res.status(401).json({ error: 'Unauthorized.' });
+    return;
+  }
+
+  const now = new Date();
+  res.json({
+    ok: true,
+    usage: {
+      daily: getCounter(dailyKey(now)),
+      hourly: getCounter(hourlyKey(now)),
+    },
+    limits: {
+      daily: dailyRequestLimit,
+      hourly: hourlyRequestLimit,
+      perIpHourly: perIpHourlyRequestLimit,
+      maxAudioBytes,
+    },
+  });
+});
+
+app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), async (req, res) => {
   try {
     const targetSentence = String(req.body.targetSentence || '').trim();
     const transcript = String(req.body.transcript || '').trim();
@@ -154,6 +218,77 @@ if (isProduction) {
 app.listen(port, '127.0.0.1', () => {
   console.log(`Climb English Studio running at http://127.0.0.1:${port}`);
 });
+
+function enforceUsageLimits(req, res, next) {
+  const now = new Date();
+  const checks = [
+    { scope: 'daily', key: dailyKey(now), limit: dailyRequestLimit },
+    { scope: 'hourly', key: hourlyKey(now), limit: hourlyRequestLimit },
+    {
+      scope: 'per-ip-hourly',
+      key: `${hourlyKey(now)}:ip:${clientIp(req)}`,
+      limit: perIpHourlyRequestLimit,
+    },
+  ];
+
+  for (const check of checks) {
+    const nextCount = incrementCounter(check.key);
+    if (nextCount > check.limit) {
+      res.status(429).json({
+        error: 'Daily practice feedback is temporarily paused because the usage limit was reached.',
+        scope: check.scope,
+        limit: check.limit,
+      });
+      return;
+    }
+  }
+
+  next();
+}
+
+function incrementCounter(key) {
+  const nextCount = getCounter(key) + 1;
+  usageCounters.set(key, nextCount);
+  pruneUsageCounters();
+  return nextCount;
+}
+
+function getCounter(key) {
+  return usageCounters.get(key) || 0;
+}
+
+function pruneUsageCounters() {
+  const now = new Date();
+  const currentDaily = dailyKey(now);
+  const currentHourly = hourlyKey(now);
+  for (const key of usageCounters.keys()) {
+    if (!key.includes(currentDaily) && !key.includes(currentHourly)) {
+      usageCounters.delete(key);
+    }
+  }
+}
+
+function dailyKey(now) {
+  return `usage:${now.toISOString().slice(0, 10)}`;
+}
+
+function hourlyKey(now) {
+  return `usage:${now.toISOString().slice(0, 13)}`;
+}
+
+function clientIp(req) {
+  return (
+    String(req.headers['cf-connecting-ip'] || '') ||
+    String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.ip ||
+    'unknown'
+  );
+}
+
+function positiveInteger(value, fallback) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : fallback;
+}
 
 function makeDemoFeedback({ targetSentence, keywordText }) {
   const keywords = keywordText
