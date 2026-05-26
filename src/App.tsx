@@ -766,12 +766,16 @@ function SpeakingCoach({
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isSending, setIsSending] = useState(false);
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const meterFrameRef = useRef<number | null>(null);
+  const mediaSourceRef = useRef<MediaStreamAudioSourceNode | null>(null);
+  const processorRef = useRef<ScriptProcessorNode | null>(null);
+  const silentGainRef = useRef<GainNode | null>(null);
   const recordingTimerRef = useRef<number | null>(null);
-  const chunksRef = useRef<Blob[]>([]);
+  const pcmChunksRef = useRef<Float32Array[]>([]);
+  const pcmSampleCountRef = useRef(0);
+  const recordingSampleRateRef = useRef(44100);
+  const peakMicLevelRef = useRef(0);
   const activeKeywords = mode === 'segment' ? uniqueKeywords(lesson.sentences) : sentence.keywords;
   const targetSentence = mode === 'segment' ? fullTranscript(lesson) : sentence.transcript;
   const prompt = mode === 'segment' ? 'Listen to the whole passage, then retell the action in your own words.' : sentence.speakingPrompt;
@@ -783,49 +787,66 @@ function SpeakingCoach({
       recordingTimerRef.current = null;
     }
 
-    if (meterFrameRef.current) {
-      window.cancelAnimationFrame(meterFrameRef.current);
-      meterFrameRef.current = null;
-    }
-
+    processorRef.current?.disconnect();
+    mediaSourceRef.current?.disconnect();
+    silentGainRef.current?.disconnect();
+    processorRef.current = null;
+    mediaSourceRef.current = null;
+    silentGainRef.current = null;
     mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
     mediaStreamRef.current = null;
-    mediaRecorderRef.current = null;
 
     void audioContextRef.current?.close();
     audioContextRef.current = null;
     setMicLevel(0);
   };
 
-  const startMicMeter = (stream: MediaStream) => {
+  const startPcmRecorder = async (stream: MediaStream) => {
     const AudioContextConstructor =
       window.AudioContext ??
       (window as Window & typeof globalThis & { webkitAudioContext?: typeof AudioContext })
         .webkitAudioContext;
 
-    if (!AudioContextConstructor) return;
+    if (!AudioContextConstructor) {
+      throw new Error('AudioContext is not supported.');
+    }
 
     const audioContext = new AudioContextConstructor();
-    const analyser = audioContext.createAnalyser();
     const source = audioContext.createMediaStreamSource(stream);
-    analyser.fftSize = 512;
-    const samples = new Uint8Array(analyser.fftSize);
-    source.connect(analyser);
-    audioContextRef.current = audioContext;
+    const processor = audioContext.createScriptProcessor(4096, 1, 1);
+    const silentGain = audioContext.createGain();
+    silentGain.gain.value = 0;
 
-    const updateLevel = () => {
-      analyser.getByteTimeDomainData(samples);
+    pcmChunksRef.current = [];
+    pcmSampleCountRef.current = 0;
+    peakMicLevelRef.current = 0;
+    recordingSampleRateRef.current = audioContext.sampleRate;
+
+    processor.onaudioprocess = (event) => {
+      const input = event.inputBuffer.getChannelData(0);
+      const chunk = new Float32Array(input.length);
+      chunk.set(input);
+      pcmChunksRef.current.push(chunk);
+      pcmSampleCountRef.current += chunk.length;
+
       let sum = 0;
-      for (const sample of samples) {
-        const centered = (sample - 128) / 128;
-        sum += centered * centered;
-      }
-      const rms = Math.sqrt(sum / samples.length);
-      setMicLevel(Math.min(1, rms * 8));
-      meterFrameRef.current = window.requestAnimationFrame(updateLevel);
+      for (const sample of chunk) sum += sample * sample;
+      const rms = Math.sqrt(sum / chunk.length);
+      const level = Math.min(1, rms * 8);
+      peakMicLevelRef.current = Math.max(peakMicLevelRef.current, level);
+      setMicLevel(level);
+      setRecordedBytes(44 + pcmSampleCountRef.current * 2);
     };
 
-    updateLevel();
+    source.connect(processor);
+    processor.connect(silentGain);
+    silentGain.connect(audioContext.destination);
+    await audioContext.resume();
+
+    audioContextRef.current = audioContext;
+    mediaSourceRef.current = source;
+    processorRef.current = processor;
+    silentGainRef.current = silentGain;
   };
 
   useEffect(() => {
@@ -857,54 +878,17 @@ function SpeakingCoach({
         return null;
       });
 
-      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+      if (!navigator.mediaDevices?.getUserMedia) {
         setError('当前浏览器不支持网页录音。请用最新版 Chrome 或 Edge 打开这个页面。');
         return;
       }
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaStreamRef.current = stream;
-      chunksRef.current = [];
-      const mimeType = getSupportedRecordingMimeType();
-      const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
-
-      recorder.ondataavailable = (event) => {
-        if (event.data.size <= 0) return;
-        chunksRef.current.push(event.data);
-        setRecordedBytes((bytes) => bytes + event.data.size);
-      };
-      recorder.onerror = () => {
-        setError('录音中断了。请确认浏览器允许 microphone 权限，然后再试一次。');
-        cleanupRecordingResources();
-        setIsRecording(false);
-      };
-      recorder.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: recorder.mimeType || 'audio/webm' });
-        cleanupRecordingResources();
-        setIsRecording(false);
-
-        if (blob.size === 0) {
-          setRecordedBlob(null);
-          setRecordedBytes(0);
-          setError('这次没有录到声音。请确认麦克风权限已允许，并靠近麦克风再录一遍。');
-          return;
-        }
-
-        setRecordedBlob(blob);
-        setRecordedBytes(blob.size);
-        setError(null);
-        setAudioUrl((currentUrl) => {
-          if (currentUrl) URL.revokeObjectURL(currentUrl);
-          return URL.createObjectURL(blob);
-        });
-      };
-
-      mediaRecorderRef.current = recorder;
-      startMicMeter(stream);
+      await startPcmRecorder(stream);
       recordingTimerRef.current = window.setInterval(() => {
         setRecordingSeconds((seconds) => seconds + 1);
       }, 1000);
-      recorder.start(250);
       setIsRecording(true);
     } catch (recordingError) {
       cleanupRecordingResources();
@@ -914,14 +898,38 @@ function SpeakingCoach({
   };
 
   const stopRecording = () => {
-    const recorder = mediaRecorderRef.current;
-    if (!recorder || recorder.state === 'inactive') {
+    if (!isRecording) {
       cleanupRecordingResources();
       setIsRecording(false);
       return;
     }
 
-    recorder.stop();
+    const blob = encodeWav(
+      mergeFloat32Arrays(pcmChunksRef.current, pcmSampleCountRef.current),
+      recordingSampleRateRef.current,
+    );
+    const peakLevel = peakMicLevelRef.current;
+    cleanupRecordingResources();
+    setIsRecording(false);
+
+    if (blob.size <= 44 || pcmSampleCountRef.current === 0) {
+      setRecordedBlob(null);
+      setRecordedBytes(0);
+      setError('这次没有录到声音。请确认麦克风权限已允许，并靠近麦克风再录一遍。');
+      return;
+    }
+
+    setRecordedBlob(blob);
+    setRecordedBytes(blob.size);
+    setAudioUrl((currentUrl) => {
+      if (currentUrl) URL.revokeObjectURL(currentUrl);
+      return URL.createObjectURL(blob);
+    });
+    setError(
+      peakLevel < 0.025
+        ? '录音文件已生成，但几乎没有检测到声音。请检查系统输入设备，或在浏览器权限里换成正确的麦克风。'
+        : null,
+    );
   };
 
   const sendFeedback = async () => {
@@ -935,7 +943,7 @@ function SpeakingCoach({
 
     try {
       const formData = new FormData();
-      formData.append('audio', recordedBlob, 'shadowing.webm');
+      formData.append('audio', recordedBlob, 'shadowing.wav');
       formData.append('clipId', `${lesson.id}:${mode}:${sentence.id}`);
       formData.append('targetSentence', targetSentence);
       formData.append('transcript', targetSentence);
@@ -1221,19 +1229,6 @@ function resolveStaticAssetUrl(assetUrl: string) {
   return `${base.replace(/\/?$/, '/')}${assetUrl.replace(/^\//, '')}`;
 }
 
-function getSupportedRecordingMimeType() {
-  if (typeof MediaRecorder === 'undefined') return '';
-
-  return (
-    [
-      'audio/webm;codecs=opus',
-      'audio/webm',
-      'audio/mp4',
-      'audio/ogg;codecs=opus',
-    ].find((type) => MediaRecorder.isTypeSupported(type)) ?? ''
-  );
-}
-
 function getRecordingErrorMessage(error: unknown) {
   if (error instanceof DOMException) {
     if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
@@ -1246,6 +1241,55 @@ function getRecordingErrorMessage(error: unknown) {
   }
 
   return '麦克风不可用。请确认浏览器允许 microphone 权限，并使用最新版 Chrome 或 Edge。';
+}
+
+function mergeFloat32Arrays(chunks: Float32Array[], sampleCount: number) {
+  const samples = new Float32Array(sampleCount);
+  let offset = 0;
+
+  for (const chunk of chunks) {
+    samples.set(chunk, offset);
+    offset += chunk.length;
+  }
+
+  return samples;
+}
+
+function encodeWav(samples: Float32Array, sampleRate: number) {
+  const bytesPerSample = 2;
+  const channelCount = 1;
+  const dataSize = samples.length * bytesPerSample;
+  const buffer = new ArrayBuffer(44 + dataSize);
+  const view = new DataView(buffer);
+
+  writeAscii(view, 0, 'RIFF');
+  view.setUint32(4, 36 + dataSize, true);
+  writeAscii(view, 8, 'WAVE');
+  writeAscii(view, 12, 'fmt ');
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, channelCount, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * channelCount * bytesPerSample, true);
+  view.setUint16(32, channelCount * bytesPerSample, true);
+  view.setUint16(34, 16, true);
+  writeAscii(view, 36, 'data');
+  view.setUint32(40, dataSize, true);
+
+  let offset = 44;
+  for (const sample of samples) {
+    const clamped = Math.max(-1, Math.min(1, sample));
+    view.setInt16(offset, clamped < 0 ? clamped * 0x8000 : clamped * 0x7fff, true);
+    offset += bytesPerSample;
+  }
+
+  return new Blob([view], { type: 'audio/wav' });
+}
+
+function writeAscii(view: DataView, offset: number, value: string) {
+  for (let index = 0; index < value.length; index += 1) {
+    view.setUint8(offset + index, value.charCodeAt(index));
+  }
 }
 
 function makeClientDemoFeedback({
