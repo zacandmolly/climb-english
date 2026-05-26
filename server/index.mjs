@@ -23,6 +23,7 @@ const dailyRequestLimit = positiveInteger(process.env.DAILY_REQUEST_LIMIT, 300);
 const hourlyRequestLimit = positiveInteger(process.env.HOURLY_REQUEST_LIMIT, 90);
 const perIpHourlyRequestLimit = positiveInteger(process.env.PER_IP_HOURLY_LIMIT, 35);
 const maxAudioBytes = positiveInteger(process.env.MAX_AUDIO_BYTES, 10 * 1024 * 1024);
+const aiProvider = normalizeAiProvider(process.env.AI_PROVIDER);
 const usageCounters = new Map();
 
 const app = express();
@@ -61,8 +62,9 @@ app.use((req, res, next) => {
 app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
-    ai: hasUsableOpenAiKey(),
-    aiStatus: getOpenAiKeyStatus(),
+    provider: aiProvider,
+    ai: hasUsableProviderKey(),
+    aiStatus: getProviderKeyStatus(),
     limits: {
       daily: dailyRequestLimit,
       hourly: hourlyRequestLimit,
@@ -101,6 +103,7 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
     const transcript = String(req.body.transcript || '').trim();
     const keywordText = String(req.body.keywords || '').trim();
     const clipId = String(req.body.clipId || '').trim();
+    const browserSpokenText = String(req.body.spokenText || '').trim();
 
     if (!targetSentence || !clipId) {
       res.status(400).json({ error: 'Missing clipId or targetSentence.' });
@@ -112,12 +115,48 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
       return;
     }
 
-    const apiKey = getUsableOpenAiKey();
-    if (!apiKey) {
+    if (!hasUsableProviderKey()) {
       res.json(makeDemoFeedback({ targetSentence, keywordText }));
       return;
     }
 
+    if (aiProvider === 'deepseek') {
+      if (!browserSpokenText) {
+        res.json(
+          makeDemoFeedback({
+            targetSentence,
+            keywordText,
+            transcript:
+              'Demo mode: DeepSeek can coach text, but this browser did not provide a speech transcript.',
+            closeness:
+              'DeepSeek is configured for feedback. Start recording in Chrome and allow speech recognition so the browser can send spoken text to the M1 API.',
+          }),
+        );
+        return;
+      }
+
+      const coaching = await generateDeepSeekCoaching({
+        clipId,
+        targetSentence,
+        transcript,
+        keywordText,
+        spokenText: browserSpokenText,
+      });
+      res.json({
+        mode: 'ai',
+        provider: 'deepseek',
+        transcript: browserSpokenText,
+        keywordHits: Array.isArray(coaching.keywordHits) ? coaching.keywordHits.slice(0, 8) : [],
+        closeness: coaching.closeness || '你已经说出了主要意思，下一遍放慢一点会更清楚。',
+        suggestions: Array.isArray(coaching.suggestions)
+          ? coaching.suggestions.slice(0, 2)
+          : ['先把关键词说清楚。', '下一遍把句子拆成两段说。'],
+        naturalVersion: coaching.naturalVersion || targetSentence,
+      });
+      return;
+    }
+
+    const apiKey = getUsableOpenAiKey();
     const client = new OpenAI({ apiKey });
     const audioFile = new File(
       [req.file.buffer],
@@ -166,6 +205,7 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
     const parsed = parseFeedbackJson(raw);
     res.json({
       mode: 'ai',
+      provider: 'openai',
       transcript: spokenText,
       keywordHits: Array.isArray(parsed.keywordHits) ? parsed.keywordHits : [],
       closeness: parsed.closeness || 'You got the main shape. Try one slower repeat.',
@@ -292,6 +332,18 @@ function positiveInteger(value, fallback) {
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : fallback;
 }
 
+function normalizeAiProvider(value) {
+  return String(value || 'openai').trim().toLowerCase() === 'deepseek' ? 'deepseek' : 'openai';
+}
+
+function hasUsableProviderKey() {
+  return getProviderKeyStatus() === 'configured';
+}
+
+function getProviderKeyStatus() {
+  return aiProvider === 'deepseek' ? getDeepSeekKeyStatus() : getOpenAiKeyStatus();
+}
+
 function getUsableOpenAiKey() {
   return hasUsableOpenAiKey() ? String(process.env.OPENAI_API_KEY).trim() : '';
 }
@@ -312,7 +364,83 @@ function getOpenAiKeyStatus() {
   return 'configured';
 }
 
-function makeDemoFeedback({ targetSentence, keywordText }) {
+function getUsableDeepSeekKey() {
+  return getDeepSeekKeyStatus() === 'configured' ? String(process.env.DEEPSEEK_API_KEY).trim() : '';
+}
+
+function getDeepSeekKeyStatus() {
+  const value = String(process.env.DEEPSEEK_API_KEY || '').trim();
+  if (!value) return 'missing';
+  if (value === 'SET' || value === 'placeholder' || value.startsWith('dummy')) {
+    return 'placeholder';
+  }
+  if (!value.startsWith('sk-') || value.length < 30 || /\s/.test(value)) {
+    return 'unknown_format';
+  }
+  return 'configured';
+}
+
+async function generateDeepSeekCoaching({
+  clipId,
+  targetSentence,
+  transcript,
+  keywordText,
+  spokenText,
+}) {
+  const response = await fetch(
+    `${String(process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/+$/, '')}/chat/completions`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${getUsableDeepSeekKey()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: process.env.DEEPSEEK_MODEL || 'deepseek-v4-flash',
+        temperature: 0.3,
+        thinking: { type: 'disabled' },
+        response_format: { type: 'json_object' },
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are a supportive climbing English speaking coach for a young learner. Return compact JSON only. Do not grade harshly. Use zh-CN for closeness and suggestions. Focus on confidence, climbing words, and one next repeat.',
+          },
+          {
+            role: 'user',
+            content: JSON.stringify({
+              clipId,
+              targetSentence,
+              sourceTranscript: transcript || targetSentence,
+              keywords: keywordText,
+              learnerSpeechTranscript: spokenText,
+              expectedShape: {
+                keywordHits: ['string'],
+                closeness: 'string',
+                suggestions: ['string', 'string'],
+                naturalVersion: 'string',
+              },
+            }),
+          },
+        ],
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(await compactApiError(response, 'DeepSeek API'));
+  }
+
+  const payload = await response.json();
+  return parseFeedbackJson(payload.choices?.[0]?.message?.content || '{}');
+}
+
+async function compactApiError(response, label) {
+  const text = await response.text();
+  return `${label} error ${response.status}: ${text.slice(0, 500)}`;
+}
+
+function makeDemoFeedback({ targetSentence, keywordText, transcript, closeness }) {
   const keywords = keywordText
     .split(',')
     .map((word) => word.trim())
@@ -321,9 +449,10 @@ function makeDemoFeedback({ targetSentence, keywordText }) {
 
   return {
     mode: 'demo',
-    transcript: 'Demo mode: set OPENAI_API_KEY to transcribe this recording.',
+    provider: 'server-demo',
+    transcript: transcript || 'Demo mode: configure an AI provider key to analyze this recording.',
     keywordHits: keywords,
-    closeness:
+    closeness: closeness ||
       'Prototype feedback is active. The recording flow works; real speech analysis starts after the API key is configured.',
     suggestions: [
       'Say the sentence in two chunks, then connect it on the second repeat.',

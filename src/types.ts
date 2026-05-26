@@ -37,6 +37,7 @@ export type Lesson = {
 
 export type Feedback = {
   mode: 'ai' | 'demo';
+  provider?: 'openai' | 'deepseek' | 'client-demo' | 'server-demo';
   transcript: string;
   keywordHits: string[];
   closeness: string;

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node server/index.mjs",
     "build": "tsc -b && vite build",
+    "m1:install-deepseek-key": "node scripts/m1-feedback-api.mjs install-deepseek-key",
     "m1:install-key": "node scripts/m1-feedback-api.mjs install-key",
     "m1:status": "node scripts/m1-feedback-api.mjs status",
     "m1:test": "node scripts/m1-feedback-api.mjs test",

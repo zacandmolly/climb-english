@@ -49,6 +49,31 @@ type LearningProgress = {
   updatedAt: string | null;
 };
 
+type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
+
+type SpeechRecognitionLike = {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+};
+
+type SpeechRecognitionEventLike = {
+  resultIndex: number;
+  results: ArrayLike<SpeechRecognitionResultLike>;
+};
+
+type SpeechRecognitionResultLike = {
+  isFinal: boolean;
+  0: {
+    transcript: string;
+  };
+};
+
 export function App() {
   const dailySessions = useMemo(() => buildDailySessions(lessons), []);
   const initialLearningStateRef = useRef<{
@@ -772,6 +797,10 @@ function SpeakingCoach({
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isSending, setIsSending] = useState(false);
+  const [speechTranscript, setSpeechTranscript] = useState('');
+  const speechRecognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const finalSpeechTranscriptRef = useRef('');
+  const interimSpeechTranscriptRef = useRef('');
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const mediaSourceRef = useRef<MediaStreamAudioSourceNode | null>(null);
@@ -825,6 +854,7 @@ function SpeakingCoach({
     silentGainRef.current = null;
     mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
     mediaStreamRef.current = null;
+    stopSpeechRecognition();
 
     void audioContextRef.current?.close();
     audioContextRef.current = null;
@@ -892,6 +922,64 @@ function SpeakingCoach({
     silentGainRef.current = silentGain;
   };
 
+  const startSpeechRecognition = () => {
+    const SpeechRecognition =
+      (window as Window & typeof globalThis & {
+        SpeechRecognition?: SpeechRecognitionConstructor;
+        webkitSpeechRecognition?: SpeechRecognitionConstructor;
+      }).SpeechRecognition ??
+      (window as Window & typeof globalThis & {
+        webkitSpeechRecognition?: SpeechRecognitionConstructor;
+      }).webkitSpeechRecognition;
+
+    if (!SpeechRecognition) return;
+
+    try {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.onresult = (event) => {
+        let interim = '';
+        for (let index = event.resultIndex; index < event.results.length; index += 1) {
+          const result = event.results[index];
+          const text = result[0]?.transcript || '';
+          if (result.isFinal) {
+            finalSpeechTranscriptRef.current = `${finalSpeechTranscriptRef.current} ${text}`.trim();
+          } else {
+            interim += ` ${text}`;
+          }
+        }
+        interimSpeechTranscriptRef.current = interim.trim();
+        setSpeechTranscript(
+          `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+        );
+      };
+      recognition.onerror = () => {
+        interimSpeechTranscriptRef.current = '';
+      };
+      recognition.onend = () => {
+        speechRecognitionRef.current = null;
+      };
+      recognition.start();
+      speechRecognitionRef.current = recognition;
+    } catch {
+      speechRecognitionRef.current = null;
+    }
+  };
+
+  const stopSpeechRecognition = () => {
+    const recognition = speechRecognitionRef.current;
+    if (!recognition) return;
+    speechRecognitionRef.current = null;
+    try {
+      recognition.onend = null;
+      recognition.stop();
+    } catch {
+      // Browser speech recognition can throw if it already stopped.
+    }
+  };
+
   useEffect(() => {
     setRecordedBlob(null);
     setFeedback(null);
@@ -918,6 +1006,9 @@ function SpeakingCoach({
       setRecordingSeconds(0);
       setMicLevel(0);
       setRecordedPeakLevel(0);
+      setSpeechTranscript('');
+      finalSpeechTranscriptRef.current = '';
+      interimSpeechTranscriptRef.current = '';
       setAudioUrl((currentUrl) => {
         if (currentUrl) URL.revokeObjectURL(currentUrl);
         return null;
@@ -953,6 +1044,7 @@ function SpeakingCoach({
       setActiveInputLabel(audioTrack.label || selectedAudioInput?.label || '系统默认麦克风');
       void refreshAudioInputs();
       await startPcmRecorder(stream);
+      startSpeechRecognition();
       recordingTimerRef.current = window.setInterval(() => {
         setRecordingSeconds((seconds) => seconds + 1);
       }, 1000);
@@ -979,6 +1071,9 @@ function SpeakingCoach({
     cleanupRecordingResources();
     setIsRecording(false);
     setRecordedPeakLevel(peakLevel);
+    setSpeechTranscript(
+      `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+    );
 
     if (blob.size <= 44 || pcmSampleCountRef.current === 0) {
       setRecordedBlob(null);
@@ -1023,6 +1118,7 @@ function SpeakingCoach({
       formData.append('keywords', activeKeywords.map((keyword) => keyword.term).join(', '));
       formData.append('durationSeconds', String(recordingSeconds));
       formData.append('recordedBytes', String(recordedBytes));
+      formData.append('spokenText', speechTranscript);
 
       const response = await fetch(`${FEEDBACK_API_BASE}/api/speaking-feedback`, {
         method: 'POST',
@@ -1141,6 +1237,10 @@ function SpeakingCoach({
             />
           </div>
         </div>
+      ) : null}
+
+      {speechTranscript ? (
+        <p className="speech-transcript">识别到：{speechTranscript}</p>
       ) : null}
 
       {audioUrl ? (
@@ -1422,6 +1522,7 @@ function makeClientDemoFeedback({
 }): Feedback {
   return {
     mode: 'demo',
+    provider: 'client-demo',
     transcript: '公开版已收到录音。当前 GitHub Pages 版本只提供录音回放和离线练习建议，AI 转写服务后续接入。',
     keywordHits: keywords.map((keyword) => keyword.term).slice(0, 4),
     closeness: '先听自己的回放：如果关键词清楚，就马上再录一遍；如果卡住，回到原句慢速跟读。',

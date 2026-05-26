@@ -915,6 +915,13 @@ mark {
   font-variant-numeric: tabular-nums;
 }
 
+.speech-transcript {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 .mic-meter {
   height: 8px;
   border-radius: 999px;

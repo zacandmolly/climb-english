@@ -51,6 +51,15 @@ npm run m1:test
 
 The script reads the key from the clipboard, writes it to the private M1 env file over SSH, restarts `ai.climb-english-api`, and runs a real `/api/speaking-feedback` request. It does not print the key or commit it to the repository.
 
+To use DeepSeek for text coaching instead, copy the DeepSeek API key to your Mac clipboard, then run:
+
+```bash
+npm run m1:install-deepseek-key
+npm run m1:test
+```
+
+DeepSeek is used only for the coaching response. It does not transcribe audio, so the browser sends a Web Speech transcript when available.
+
 For the public site, use the Cloudflare Worker in `workers/speaking-feedback-worker.mjs` as the API proxy:
 
 1. Copy `workers/wrangler.toml.example` to `workers/wrangler.toml`.
