@@ -41,6 +41,7 @@ export type Feedback = {
   transcript: string;
   keywordHits: string[];
   closeness: string;
+  audioNotes?: string[];
   suggestions: string[];
   naturalVersion: string;
 };

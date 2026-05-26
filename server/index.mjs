@@ -115,39 +115,34 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
       return;
     }
 
+    const baseAudioMetrics = analyzeAudioBuffer(req.file.buffer);
+
     if (!hasUsableProviderKey()) {
       res.json(makeDemoFeedback({ targetSentence, keywordText }));
       return;
     }
 
     if (aiProvider === 'deepseek') {
-      if (!browserSpokenText) {
-        res.json(
-          makeDemoFeedback({
-            targetSentence,
-            keywordText,
-            transcript:
-              'Demo mode: DeepSeek can coach text, but this browser did not provide a speech transcript.',
-            closeness:
-              'DeepSeek is configured for feedback. Start recording in Chrome and allow speech recognition so the browser can send spoken text to the M1 API.',
-          }),
-        );
-        return;
-      }
-
+      const audioMetrics = addSpeechRate(baseAudioMetrics, browserSpokenText);
       const coaching = await generateDeepSeekCoaching({
         clipId,
         targetSentence,
         transcript,
         keywordText,
         spokenText: browserSpokenText,
+        audioMetrics,
       });
       res.json({
         mode: 'ai',
         provider: 'deepseek',
-        transcript: browserSpokenText,
+        transcript:
+          browserSpokenText ||
+          '没有拿到浏览器语音识别文本；本次只根据录音音量、语速和停顿做反馈。',
         keywordHits: Array.isArray(coaching.keywordHits) ? coaching.keywordHits.slice(0, 8) : [],
-        closeness: coaching.closeness || '你已经说出了主要意思，下一遍放慢一点会更清楚。',
+        closeness: coaching.closeness || '这次先看录音节奏和清晰度，下一遍再把关键词说稳。',
+        audioNotes: Array.isArray(coaching.audioNotes)
+          ? coaching.audioNotes.slice(0, 4)
+          : makeAudioNotes(audioMetrics),
         suggestions: Array.isArray(coaching.suggestions)
           ? coaching.suggestions.slice(0, 2)
           : ['先把关键词说清楚。', '下一遍把句子拆成两段说。'],
@@ -172,6 +167,7 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
     });
 
     const spokenText = transcription.text || '';
+    const audioMetrics = addSpeechRate(baseAudioMetrics, spokenText);
     const feedback = await client.responses.create({
       model: process.env.OPENAI_FEEDBACK_MODEL || 'gpt-4.1-mini',
       input: [
@@ -188,11 +184,13 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
             sourceTranscript: transcript,
             keywords: keywordText,
             learnerSpeechTranscript: spokenText,
+            audioMetrics,
             expectedShape: {
               mode: 'ai',
               transcript: 'string',
               keywordHits: ['string'],
               closeness: 'string',
+              audioNotes: ['string'],
               suggestions: ['string', 'string'],
               naturalVersion: 'string',
             },
@@ -209,6 +207,9 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
       transcript: spokenText,
       keywordHits: Array.isArray(parsed.keywordHits) ? parsed.keywordHits : [],
       closeness: parsed.closeness || 'You got the main shape. Try one slower repeat.',
+      audioNotes: Array.isArray(parsed.audioNotes)
+        ? parsed.audioNotes.slice(0, 4)
+        : makeAudioNotes(audioMetrics),
       suggestions: Array.isArray(parsed.suggestions)
         ? parsed.suggestions.slice(0, 2)
         : ['Keep the climbing keywords clear.', 'Repeat once at a calmer speed.'],
@@ -386,6 +387,7 @@ async function generateDeepSeekCoaching({
   transcript,
   keywordText,
   spokenText,
+  audioMetrics,
 }) {
   const response = await fetch(
     `${String(process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/+$/, '')}/chat/completions`,
@@ -404,7 +406,7 @@ async function generateDeepSeekCoaching({
           {
             role: 'system',
             content:
-              'You are a supportive climbing English speaking coach for a young learner. Return compact JSON only. Do not grade harshly. Use zh-CN for closeness and suggestions. Focus on confidence, climbing words, and one next repeat.',
+              'You are a supportive climbing English speaking coach for a young learner. Return compact JSON only. Use zh-CN for closeness, audioNotes, and suggestions. Do not grade harshly. Use audioMetrics to comment on pace, pauses, volume, pitch movement, and rhythm. Infer pronunciation or spelling issues only from transcript mismatch; do not claim to hear exact phonemes, word stress, or intonation beyond the provided metrics.',
           },
           {
             role: 'user',
@@ -414,9 +416,12 @@ async function generateDeepSeekCoaching({
               sourceTranscript: transcript || targetSentence,
               keywords: keywordText,
               learnerSpeechTranscript: spokenText,
+              transcriptSource: spokenText ? 'browser speech recognition' : 'none',
+              audioMetrics,
               expectedShape: {
                 keywordHits: ['string'],
                 closeness: 'string',
+                audioNotes: ['string', 'string'],
                 suggestions: ['string', 'string'],
                 naturalVersion: 'string',
               },
@@ -454,12 +459,287 @@ function makeDemoFeedback({ targetSentence, keywordText, transcript, closeness }
     keywordHits: keywords,
     closeness: closeness ||
       'Prototype feedback is active. The recording flow works; real speech analysis starts after the API key is configured.',
+    audioNotes: ['Demo mode does not evaluate pronunciation, pace, pauses, stress, or intonation.'],
     suggestions: [
       'Say the sentence in two chunks, then connect it on the second repeat.',
       'Keep the climbing nouns clear first; speed can come later.',
     ],
     naturalVersion: targetSentence,
   };
+}
+
+function analyzeAudioBuffer(buffer) {
+  const fallback = {
+    durationSeconds: null,
+    activeSpeechSeconds: null,
+    rmsPercent: null,
+    peakPercent: null,
+    silenceRatio: null,
+    pauseCount: null,
+    longestPauseSeconds: null,
+    estimatedWpm: null,
+    loudnessVariationPercent: null,
+    pitchMeanHz: null,
+    pitchRangeHz: null,
+    pitchVariationHz: null,
+    pitchSampleCount: 0,
+  };
+
+  const parsed = parseWavPcm(buffer);
+  if (!parsed) return fallback;
+
+  const { samples, sampleRate } = parsed;
+  if (!samples.length || !sampleRate) return fallback;
+
+  let sumSquares = 0;
+  let peak = 0;
+  for (const sample of samples) {
+    const abs = Math.abs(sample);
+    peak = Math.max(peak, abs);
+    sumSquares += sample * sample;
+  }
+
+  const rms = Math.sqrt(sumSquares / samples.length);
+  const windowSize = Math.max(1, Math.floor(sampleRate * 0.05));
+  const windows = [];
+  for (let start = 0; start < samples.length; start += windowSize) {
+    let windowSquares = 0;
+    const end = Math.min(samples.length, start + windowSize);
+    for (let index = start; index < end; index += 1) {
+      windowSquares += samples[index] * samples[index];
+    }
+    windows.push({
+      rms: Math.sqrt(windowSquares / Math.max(1, end - start)),
+      start,
+      end,
+    });
+  }
+
+  const silenceThreshold = Math.max(0.012, rms * 0.35);
+  const windowRmsValues = windows.map((window) => window.rms);
+  const voiced = windowRmsValues.map((value) => value >= silenceThreshold);
+  const firstVoice = voiced.findIndex(Boolean);
+  const lastVoice = voiced.length - 1 - [...voiced].reverse().findIndex(Boolean);
+  const analysisStart = firstVoice >= 0 ? firstVoice : 0;
+  const analysisEnd = lastVoice >= analysisStart ? lastVoice : voiced.length - 1;
+  const scoped = voiced.slice(analysisStart, analysisEnd + 1);
+  const scopedRmsValues = windowRmsValues.slice(analysisStart, analysisEnd + 1);
+  const silentWindows = scoped.filter((value) => !value).length;
+
+  let pauseCount = 0;
+  let longestPauseWindows = 0;
+  let currentPauseWindows = 0;
+  for (const isVoiced of scoped) {
+    if (!isVoiced) {
+      currentPauseWindows += 1;
+      continue;
+    }
+    if (currentPauseWindows * 0.05 >= 0.25) pauseCount += 1;
+    longestPauseWindows = Math.max(longestPauseWindows, currentPauseWindows);
+    currentPauseWindows = 0;
+  }
+  if (currentPauseWindows * 0.05 >= 0.25) pauseCount += 1;
+  longestPauseWindows = Math.max(longestPauseWindows, currentPauseWindows);
+
+  const durationSeconds = samples.length / sampleRate;
+  const activeSpeechSeconds = Math.max(0, scoped.length * 0.05 - silentWindows * 0.05);
+  const voicedRmsValues = scopedRmsValues.filter((_value, index) => scoped[index]);
+  const pitchValues = [];
+  for (let scopedIndex = 0; scopedIndex < scoped.length; scopedIndex += 2) {
+    if (!scoped[scopedIndex]) continue;
+    const window = windows[analysisStart + scopedIndex];
+    const pitchHz = estimatePitchHz(samples, sampleRate, window.start, window.end);
+    if (pitchHz) pitchValues.push(pitchHz);
+  }
+  const pitchStats = calculatePitchStats(pitchValues);
+
+  return {
+    durationSeconds: roundMetric(durationSeconds),
+    activeSpeechSeconds: roundMetric(activeSpeechSeconds),
+    rmsPercent: Math.round(rms * 100),
+    peakPercent: Math.round(peak * 100),
+    silenceRatio: scoped.length > 0 ? roundMetric(silentWindows / scoped.length) : null,
+    pauseCount,
+    longestPauseSeconds: roundMetric(longestPauseWindows * 0.05),
+    estimatedWpm: null,
+    loudnessVariationPercent: calculateVariationPercent(voicedRmsValues),
+    pitchMeanHz: pitchStats.mean,
+    pitchRangeHz: pitchStats.range,
+    pitchVariationHz: pitchStats.variation,
+    pitchSampleCount: pitchStats.count,
+  };
+}
+
+function parseWavPcm(buffer) {
+  if (buffer.length < 44 || buffer.toString('ascii', 0, 4) !== 'RIFF') return null;
+
+  let offset = 12;
+  let fmt = null;
+  let dataOffset = -1;
+  let dataSize = 0;
+
+  while (offset + 8 <= buffer.length) {
+    const chunkId = buffer.toString('ascii', offset, offset + 4);
+    const chunkSize = buffer.readUInt32LE(offset + 4);
+    const chunkStart = offset + 8;
+
+    if (chunkId === 'fmt ') {
+      fmt = {
+        audioFormat: buffer.readUInt16LE(chunkStart),
+        channels: buffer.readUInt16LE(chunkStart + 2),
+        sampleRate: buffer.readUInt32LE(chunkStart + 4),
+        bitsPerSample: buffer.readUInt16LE(chunkStart + 14),
+      };
+    } else if (chunkId === 'data') {
+      dataOffset = chunkStart;
+      dataSize = chunkSize;
+      break;
+    }
+
+    offset = chunkStart + chunkSize + (chunkSize % 2);
+  }
+
+  if (!fmt || fmt.audioFormat !== 1 || fmt.bitsPerSample !== 16 || dataOffset < 0) {
+    return null;
+  }
+
+  const blockAlign = fmt.channels * 2;
+  const frameCount = Math.floor(dataSize / blockAlign);
+  const samples = new Float32Array(frameCount);
+  for (let frame = 0; frame < frameCount; frame += 1) {
+    let sampleSum = 0;
+    const frameOffset = dataOffset + frame * blockAlign;
+    for (let channel = 0; channel < fmt.channels; channel += 1) {
+      sampleSum += buffer.readInt16LE(frameOffset + channel * 2) / 32768;
+    }
+    samples[frame] = sampleSum / fmt.channels;
+  }
+
+  return { samples, sampleRate: fmt.sampleRate };
+}
+
+function addSpeechRate(audioMetrics, spokenText) {
+  const words = String(spokenText || '').trim().match(/[A-Za-z']+/g) || [];
+  const activeSeconds = audioMetrics.activeSpeechSeconds || audioMetrics.durationSeconds || 0;
+  return {
+    ...audioMetrics,
+    estimatedWpm:
+      words.length > 0 && activeSeconds > 0
+        ? Math.round((words.length / activeSeconds) * 60)
+        : null,
+  };
+}
+
+function makeAudioNotes(audioMetrics) {
+  const notes = [];
+  if (typeof audioMetrics.estimatedWpm === 'number') {
+    notes.push(`估算语速约 ${audioMetrics.estimatedWpm} WPM。`);
+  }
+  if (typeof audioMetrics.longestPauseSeconds === 'number') {
+    notes.push(`最长停顿约 ${audioMetrics.longestPauseSeconds}s。`);
+  }
+  if (typeof audioMetrics.pitchRangeHz === 'number' && audioMetrics.pitchSampleCount > 2) {
+    notes.push(`语调起伏约 ${audioMetrics.pitchRangeHz}Hz。`);
+  }
+  if (typeof audioMetrics.loudnessVariationPercent === 'number') {
+    notes.push(`响度变化约 ${audioMetrics.loudnessVariationPercent}%，可用来观察重音是否稳定。`);
+  }
+  if (typeof audioMetrics.peakPercent === 'number' && notes.length < 4) {
+    notes.push(`峰值音量约 ${audioMetrics.peakPercent}%。`);
+  }
+  return notes;
+}
+
+function estimatePitchHz(samples, sampleRate, start, end) {
+  const minHz = 75;
+  const maxHz = 500;
+  const minLag = Math.floor(sampleRate / maxHz);
+  const maxLag = Math.floor(sampleRate / minHz);
+  const analysisEnd = Math.min(end, start + 2048);
+  const length = analysisEnd - start;
+  if (length <= maxLag + 2) return null;
+
+  const stride = length > 1500 ? 2 : 1;
+  let mean = 0;
+  let count = 0;
+  for (let index = start; index < analysisEnd; index += stride) {
+    mean += samples[index];
+    count += 1;
+  }
+  mean /= Math.max(1, count);
+
+  let bestLag = 0;
+  let bestScore = 0;
+  for (let lag = minLag; lag <= maxLag; lag += 1) {
+    let correlation = 0;
+    let energyA = 0;
+    let energyB = 0;
+    for (let index = start; index < analysisEnd - lag; index += stride) {
+      const a = samples[index] - mean;
+      const b = samples[index + lag] - mean;
+      correlation += a * b;
+      energyA += a * a;
+      energyB += b * b;
+    }
+    const score = correlation / Math.sqrt(Math.max(Number.EPSILON, energyA * energyB));
+    if (score > bestScore) {
+      bestScore = score;
+      bestLag = lag;
+    }
+  }
+
+  return bestScore >= 0.35 && bestLag > 0 ? Math.round(sampleRate / bestLag) : null;
+}
+
+function calculatePitchStats(values) {
+  const cleanValues = values.filter((value) => Number.isFinite(value)).sort((a, b) => a - b);
+  if (!cleanValues.length) {
+    return {
+      mean: null,
+      range: null,
+      variation: null,
+      count: 0,
+    };
+  }
+
+  const mean = cleanValues.reduce((total, value) => total + value, 0) / cleanValues.length;
+  const variation = Math.sqrt(
+    cleanValues.reduce((total, value) => total + (value - mean) ** 2, 0) / cleanValues.length,
+  );
+  const range = percentile(cleanValues, 0.9) - percentile(cleanValues, 0.1);
+
+  return {
+    mean: Math.round(mean),
+    range: Math.round(range),
+    variation: Math.round(variation),
+    count: cleanValues.length,
+  };
+}
+
+function calculateVariationPercent(values) {
+  const cleanValues = values.filter((value) => Number.isFinite(value) && value > 0);
+  if (cleanValues.length < 2) return null;
+
+  const mean = cleanValues.reduce((total, value) => total + value, 0) / cleanValues.length;
+  if (mean <= 0) return null;
+
+  const variation = Math.sqrt(
+    cleanValues.reduce((total, value) => total + (value - mean) ** 2, 0) / cleanValues.length,
+  );
+  return Math.round((variation / mean) * 100);
+}
+
+function percentile(sortedValues, ratio) {
+  if (!sortedValues.length) return 0;
+  const index = (sortedValues.length - 1) * ratio;
+  const lower = Math.floor(index);
+  const upper = Math.ceil(index);
+  if (lower === upper) return sortedValues[lower];
+  return sortedValues[lower] + (sortedValues[upper] - sortedValues[lower]) * (index - lower);
+}
+
+function roundMetric(value) {
+  return Number.isFinite(value) ? Math.round(value * 100) / 100 : null;
 }
 
 function parseFeedbackJson(raw) {

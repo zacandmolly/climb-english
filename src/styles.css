@@ -971,6 +971,11 @@ mark {
   padding-left: 20px;
 }
 
+.feedback-panel .audio-note-list {
+  border-left: 4px solid var(--teal);
+  padding-left: 18px;
+}
+
 .natural-line {
   border-left: 4px solid var(--teal);
   padding-left: 10px;
