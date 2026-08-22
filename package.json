@@ -6,6 +6,12 @@
   "scripts": {
     "dev": "node server/index.mjs",
     "build": "tsc -b && vite build",
+    "build:lessons": "node scripts/build-official-lessons.mjs",
+    "import:youtube": "node scripts/import-youtube.mjs",
+    "discover:youtube": "node scripts/discover-youtube.mjs",
+    "translate:videos": "node scripts/translate-videos.mjs",
+    "check:alignment": "node scripts/check-cue-alignment.mjs",
+    "test": "node --test \"tests/*.test.mjs\"",
     "m1:install-deepseek-key": "node scripts/m1-feedback-api.mjs install-deepseek-key",
     "m1:install-key": "node scripts/m1-feedback-api.mjs install-key",
     "m1:status": "node scripts/m1-feedback-api.mjs status",

@@ -1,0 +1,85 @@
+{
+  "scannedAt": "2026-07-24T11:22:41.171Z",
+  "candidates": [
+    {
+      "id": "GDB0MDGARiE",
+      "title": "Men's Boulder final | Salt Lake City 2025",
+      "url": "https://www.youtube.com/watch?v=GDB0MDGARiE",
+      "duration": 8280,
+      "category": "world-cup",
+      "level": "intermediate"
+    },
+    {
+      "id": "Rnah3XgVCV4",
+      "title": "IFSC Men Final Brixen 2022 | WorldCup Climbing CUT EDITION",
+      "url": "https://www.youtube.com/watch?v=Rnah3XgVCV4",
+      "duration": 2406,
+      "category": "world-cup",
+      "level": "intermediate"
+    },
+    {
+      "id": "rej4PvBMzdE",
+      "title": "Men's Boulder final || Bern 2023",
+      "url": "https://www.youtube.com/watch?v=rej4PvBMzdE",
+      "duration": 8311,
+      "category": "world-cup",
+      "level": "intermediate"
+    },
+    {
+      "id": "aYHyBJ__0FI",
+      "title": "IFSC Climbing World Championships Paris 2012 - Replay Men's Lead and Speed Finals",
+      "url": "https://www.youtube.com/watch?v=aYHyBJ__0FI",
+      "duration": 10229,
+      "category": "world-cup",
+      "level": "intermediate"
+    },
+    {
+      "id": "Pu1R5yYTgSM",
+      "title": "IFSC Climbing World Cup Perm 2013 - Lead - Finals MEN & WOMEN - Replay",
+      "url": "https://www.youtube.com/watch?v=Pu1R5yYTgSM",
+      "duration": 10335,
+      "category": "world-cup",
+      "level": "intermediate"
+    },
+    {
+      "id": "a8DTOztiuLM",
+      "title": "Learn 100+ Climbing Techniques With Just 4 Movement Concepts",
+      "url": "https://www.youtube.com/watch?v=a8DTOztiuLM",
+      "duration": 1052,
+      "category": "technique",
+      "level": "beginner"
+    },
+    {
+      "id": "gtIGgs_y2nY",
+      "title": "A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE",
+      "url": "https://www.youtube.com/watch?v=gtIGgs_y2nY",
+      "duration": 744,
+      "category": "technique",
+      "level": "beginner"
+    },
+    {
+      "id": "BhygYTyL-eA",
+      "title": "HOW TO CLIMB V4 • Analyzing Essential V4 Techniques",
+      "url": "https://www.youtube.com/watch?v=BhygYTyL-eA",
+      "duration": 854,
+      "category": "technique",
+      "level": "beginner"
+    },
+    {
+      "id": "-vOcJtlTQAY",
+      "title": "Rock Climber Alex Honnold on Free Soloing El Capitan",
+      "url": "https://www.youtube.com/watch?v=-vOcJtlTQAY",
+      "duration": 436,
+      "category": "interview",
+      "level": "advanced"
+    },
+    {
+      "id": "1vle6fLJ91g",
+      "title": "Alex Honnold on Free-Climbing Taipei 101 Skyscraper Live on Netflix & the Last Time He Felt Scared",
+      "url": "https://www.youtube.com/watch?v=1vle6fLJ91g",
+      "duration": 550,
+      "category": "interview",
+      "level": "advanced"
+    }
+  ]
+}
