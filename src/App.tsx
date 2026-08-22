@@ -26,11 +26,13 @@ import {
   Volume2,
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { BilingualStudio } from './components/BilingualStudio';
 import { lessons } from './data/lessons';
+import { videoSummaries } from './data/videos';
 import type { Feedback, Keyword, Lesson, PracticeSentence } from './types';
 
 type PracticeMode = 'sentence' | 'segment';
-type MainView = 'today' | 'library' | 'vocab' | 'me';
+type MainView = 'today' | 'library' | 'videos' | 'vocab' | 'me';
 type VocabMastery = 0 | 1 | 2;
 
 const PRE_ROLL_SECONDS = 1;
@@ -443,6 +445,13 @@ export function App() {
           onClick={() => switchView('library')}
         />
         <ViewTabButton
+          active={activeView === 'videos'}
+          label="视频库"
+          icon={<Captions size={17} aria-hidden="true" />}
+          badge={videoSummaries.length || undefined}
+          onClick={() => switchView('videos')}
+        />
+        <ViewTabButton
           active={activeView === 'vocab'}
           label="生词本"
           icon={<BookOpen size={17} aria-hidden="true" />}
@@ -541,6 +550,10 @@ export function App() {
               window.scrollTo({ top: 0 });
             }}
           />
+        ) : null}
+
+        {activeView === 'videos' ? (
+          <BilingualStudio summaries={videoSummaries} />
         ) : null}
 
         {activeView === 'vocab' ? (

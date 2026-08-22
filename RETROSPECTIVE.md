@@ -76,27 +76,24 @@
 
 | # | 问题 | 位置 | 严重度 |
 |---|---|---|---|
-| 1 | 死代码三件套：BilingualStudio(464) + SpeakingCoach(662) + useCuePlayer(158) + videos 数据(含 99/652 句 cue) | `src/components/ hooks/ data/videos/` | 高：README 曾撒谎、双模型根源 |
+| 1 | ~~死代码三件套~~ ✅ 已接回（2026-08-22 视频库 tab）| `src/components/ hooks/ data/videos/` | 已解决：双模型仍在（P1-6 观察） |
 | 2 | App.tsx 单体 3036 行 | `src/App.tsx` | 高：所有后续改动的冲突面 |
 | 3 | lessons.ts 手写/生成混用，生成器重跑即毁数据 | `src/data/lessons.ts` + `scripts/build-official-lessons.mjs` | 高：数据丢失风险 |
-| 4 | styles.css 2884 行含 v2 死规则（.subtitle-panel/.hero 系） | `src/styles.css` | 低 |
-| 5 | `.workbuddy/` 未进 .gitignore | 根目录 | 低（顺手修） |
+| 4 | styles.css 2884 行含 v2 死规则（.subtitle-panel 现已被视频库 tab 复用，.hero 系仍死） | `src/styles.css` | 低 |
+| 5 | ~~`.workbuddy/` 未进 .gitignore~~ ✅ 已修 | 根目录 | 已解决 |
 | 6 | segment maxWords=26 硬切句中残留（~8 句长碎片结尾是虚词） | `scripts/lib/segment.mjs` | 低：已记录，方案=超长时向后找标点切 |
 
 ## 修复与重构优先级清单
 
 **P0（立即，半天内）**
-1. 决策死代码去留（唯一需要用户拍板的事）：
-   - 方案 A（推荐）：把 BilingualStudio 接回新 UI 作为第五个 tab"视频库"——数据管线产出即刻有消费者，99 句技巧视频 + 652 句 Bern 智能重切直接可用；
-   - 方案 B：整体删除 components/hooks/videos + 管线产物保留脚本（等需要时再生成）。
-   - 无论 A/B，完成后 README 模块表状态列同步更新。
-2. `.gitignore` 加 `.workbuddy/`。
-3. README 已重写（本次），此后每次 UI 变更同步模块表。
+1. ~~决策死代码去留~~ ✅ **已完成（2026-08-22，选方案 A）**：BilingualStudio 接回新 UI 作为第五个 tab"视频库"，数据管线产出恢复消费，README 模块表已同步。
+2. ~~`.gitignore` 加 `.workbuddy/`~~ ✅ 已完成（PR #6）。
+3. ~~README 重写~~ ✅ 已完成（PR #6），此后每次 UI 变更同步模块表。
 
 **P1（下一个迭代周期，每个都是独立 PR）**
-4. 拆分 App.tsx → `src/views/`（4 视图）+ `src/players/`（本地/YouTube/共享时间轴逻辑）+ `src/progress/`（存储与迁移）+ `src/courses.ts`（课程构建）。拆分纯移动不改逻辑，拆完 tsc+build+浏览器走查。
+4. 拆分 App.tsx → `src/views/`（5 视图）+ `src/players/`（本地/YouTube/共享时间轴逻辑）+ `src/progress/`（存储与迁移）+ `src/courses.ts`（课程构建）。拆分纯移动不改逻辑，拆完 tsc+build+浏览器走查。
 5. lessons.ts 手写/生成分离：Innsbruck 抽到 `lessons.innsbruck.ts`，生成器只写 `lessons.bern.ts`，`lessons.ts` 变成两行 re-export。
-6. 若选 P0 方案 A：统一时间轴语义文档（Lesson 的 mediaStartTime 偏移 vs VideoEntry 直读），消除两套模型里最容易再犯的坑。
+6. ~~统一时间轴语义文档~~ ⚠️ 部分完成：README 数据流一节已写明（Lesson 的 mediaStartTime 偏移 vs VideoEntry 直读），两套模型合并仍在 P1 观察名单。
 
 **P2（顺手做）**
 7. 公共工具去重：formatTime / HighlightedText / resolveStaticAssetUrl 收敛到 `src/lib/ui.tsx`。

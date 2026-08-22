@@ -50,13 +50,14 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root，仅此一处 render | ✅ |
-| **应用主体（单体）** | `src/App.tsx`（~3000 行） | 全部 4 个视图（今天/听力/生词本/我的）、2 个播放器、口语教练、课程构建、进度存储与迁移 | ⚠️ 过大，待拆分 |
+| **应用主体（单体）** | `src/App.tsx`（~3000 行） | 全部 5 个视图（今天/听力/视频库/生词本/我的）、2 个课程播放器、口语教练、课程构建、进度存储与迁移 | ⚠️ 过大，待拆分 |
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
 | 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频库）两套并行模型 | ⚠️ 双轨 |
 | 课程数据 | `src/data/lessons.ts` | Bern 2025（6 天）+ Innsbruck 2026（7 天）全部句子/翻译/关键词 | ⚠️ 手写与生成混用，见下 |
-| 死代码区 | `src/components/` `src/hooks/` `src/data/videos/` | BilingualStudio（v2 字幕视频库 UI）、SpeakingCoach、useCuePlayer、导入视频的 cue 数据 | ❌ 未接线 |
+| **视频库 tab** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 字幕视频库视图：连播卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读 | ✅ 已接回第五个 tab |
+| 视频库数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧视频 99 句 + Bern 智能重切 652 句）+ 懒加载注册表 + 发现队列 | ✅ 由视频库 tab 消费 |
 | 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 | ✅ |
-| 导入管线 | `scripts/import-youtube.mjs` | yt-dlp 拉字幕+视频 → 断句评分翻译 → 生成 `.video.ts` + 注册表 | ✅（产物未接线） |
+| 导入管线 | `scripts/import-youtube.mjs` | yt-dlp 拉字幕+视频 → 断句评分翻译 → 生成 `.video.ts` + 注册表 | ✅ 产物由视频库 tab 消费 |
 | 断句库 | `scripts/lib/segment.mjs` | 词级时间戳 → 句子边界（gap/minWords/maxWords 参数化） | ✅ 有测试 |
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐（严格索引匹配）+ 人工翻译回填（backfillFromReference） | ✅ 有测试 |
 | 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移启发式巡检（是绊网不是真相） | ✅ |
@@ -70,8 +71,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 
 ```
 main.tsx → App.tsx → data/lessons.ts → types.ts
-App.tsx 不 import components/ hooks/ data/videos/（v3 重构后断开，待决策）
-BilingualStudio.tsx → hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx（内部自洽，但无人引用）
+App.tsx → components/BilingualStudio.tsx（视频库 tab）→ hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
 scripts/* 之间：import-youtube → lib/{timed-words, segment, translate, climbing-terms}
 server/index.mjs → dist/（prod）或 vite（dev）；不依赖 src/ 源码
 ```
