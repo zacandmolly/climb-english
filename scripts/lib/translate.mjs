@@ -161,10 +161,16 @@ export function backfillFromReference(sentences, referenceSentences, options = {
       return { ...sentence, zh, note, needsTranslation: false, backfilled: true };
     }
 
-    // Case 2: the cue is a fragment of one reviewed block — reuse that block's
-    // zh as context translation.
+    // Case 2: the cue matches one reviewed block closely enough to reuse its
+    // zh. The check is BIDIRECTIONAL — cueCoverage alone is not enough. A
+    // fragment cue ("this was the top of the slab") has high cueCoverage but
+    // low refCoverage against the full reviewed block ("…of the slab it was
+    // blocked"); reusing the whole zh there made every fragment of one block
+    // show the same translation (Issue #2). Require both directions so only a
+    // cue that *covers most of* the reference borrows its zh; a genuine
+    // fragment stays needsTranslation and gets machine-translated on its own.
     const best = scored
-      .filter((entry) => entry.cueCoverage >= minCueCoverage)
+      .filter((entry) => entry.cueCoverage >= minCueCoverage && entry.refCoverage >= minRefCoverage)
       .sort((first, second) => second.cueCoverage - first.cueCoverage)[0];
 
     if (best) {
