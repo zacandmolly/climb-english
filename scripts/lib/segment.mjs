@@ -27,6 +27,8 @@ const DEFAULTS = {
   maxWords: 26, // force a split beyond this many words
   softSplitWords: 16, // prefer splitting at a comma once past this length
   maxSentenceSeconds: 18,
+  maxLookaheadWords: 10, // when maxWords forces a split, look this far ahead
+  // for the next punctuation so we don't hard-split mid-phrase
   minWords: 6, // shorter than this merges into a neighbour (raised from 3 so
   // 4–6 word trailing fragments rejoin the sentence they continue)
   mergeGapSeconds: 2.0, // only merge across gaps smaller than this (raised
@@ -66,12 +68,23 @@ export function segmentWords(words, options = {}) {
     } else if (next.time - word.time > opts.maxGapSeconds) {
       shouldClose = true;
     } else if (wordCount >= opts.maxWords || sentenceDuration > opts.maxSentenceSeconds) {
-      // Too long: split at the most recent comma if we have one, else hard split.
+      // Too long: split at the most recent comma if we have one.
       const commaIndex = findLastComma(current);
       if (commaIndex > 2) {
         const tail = current.splice(commaIndex + 1);
         closeSentence();
         current = tail;
+        continue;
+      }
+      // No comma behind — look ahead for the next punctuation so we don't
+      // hard-split mid-phrase (e.g. after "…grasp it with" → "your palm,").
+      const lookahead = findNextPunctuation(words, index, opts.maxLookaheadWords);
+      if (lookahead > index) {
+        for (let ahead = index + 1; ahead <= lookahead; ahead += 1) {
+          current.push(words[ahead]);
+        }
+        closeSentence();
+        index = lookahead;
         continue;
       }
       shouldClose = true;
@@ -95,6 +108,18 @@ export function segmentWords(words, options = {}) {
 function findLastComma(words) {
   for (let index = words.length - 2; index >= 2; index -= 1) {
     if (/[,,;]$/.test(words[index].raw)) return index;
+  }
+  return -1;
+}
+
+// Scan ahead (exclusive of fromIndex) for the first word ending in sentence
+// punctuation or a comma/semicolon/colon. Returns its index, or -1 when none
+// appears within maxLookahead words.
+function findNextPunctuation(words, fromIndex, maxLookahead) {
+  const limit = Math.min(words.length, fromIndex + 1 + maxLookahead);
+  for (let index = fromIndex + 1; index < limit; index += 1) {
+    const raw = words[index].raw;
+    if (endsSentence(raw) || /[,,;:]$/.test(raw)) return index;
   }
   return -1;
 }

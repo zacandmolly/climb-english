@@ -82,3 +82,28 @@ test('regression: "get the last few / inches" merges instead of fragmenting', ()
   assert.equal(sentences.length, 1, 'trailing "get the last few inches" must not fragment');
   assert.equal(sentences[0].wordCount, 13);
 });
+
+test('hard split looks ahead to the next punctuation instead of splitting mid-phrase', () => {
+  // 25 punctuation-free words hit maxWords=26 at "with" (a preposition).
+  // Old behaviour hard-split right after "with", leaving a sentence that ends
+  // in a function word. New behaviour looks ahead to "palm," and splits there.
+  const words = [];
+  let time = 0;
+  for (let i = 0; i < 25; i += 1) {
+    words.push(w(time, `word${i}`));
+    time += 0.2;
+  }
+  words.push(w(time, 'with')); time += 0.2; // word 26 (index 25) — preposition
+  words.push(w(time, 'your')); time += 0.2;
+  words.push(w(time, 'palm,')); time += 0.2; // comma right after
+  words.push(w(time, 'and')); time += 0.2;
+  words.push(w(time, 'thumb')); time += 0.2;
+  words.push(w(time, 'and')); time += 0.2;
+  words.push(w(time, 'index')); time += 0.2;
+  words.push(w(time, 'and')); time += 0.2;
+  words.push(w(time, 'middle')); time += 0.2;
+
+  const { sentences } = segmentWords(words);
+  assert.ok(sentences.length >= 2, `expected ≥2 sentences, got ${sentences.length}`);
+  assert.match(sentences[0].text, /palm,$/, 'first sentence must end at "palm," not mid-phrase');
+});
