@@ -134,8 +134,12 @@ function reportBatchCoverage(items, batch) {
 
 export function backfillFromReference(sentences, referenceSentences, options = {}) {
   const timeWindow = options.timeWindow ?? 90;
-  const minRefCoverage = options.minRefCoverage ?? 0.6; // ref fully inside the cue → safe to join
-  const minCueCoverage = options.minCueCoverage ?? 0.5; // cue fully inside one ref → reuse its zh
+  // Both directions must reach this before a cue borrows a reviewed zh.
+  // Tuned to 0.8: a cue that merely *overlaps* a reviewed block (e.g. shares
+  // 60% of its words but each side has its own extra words) must NOT copy the
+  // whole translation — that reproduced the "one sentence's zh on several
+  // cards" bug (Issue #2). Only a near-exact match reuses reviewed text.
+  const nearMatchCoverage = options.nearMatchCoverage ?? 0.8;
   const maxJoin = options.maxJoin ?? 3;
 
   return sentences.map((sentence) => {
@@ -148,29 +152,9 @@ export function backfillFromReference(sentences, referenceSentences, options = {
       return { reference, refCoverage, cueCoverage };
     });
 
-    // Case 1: the new cue spans several reviewed blocks — join the zh of the
-    // blocks that are (almost) fully contained in the cue, in time order.
-    const contained = scored
-      .filter((entry) => entry.refCoverage >= minRefCoverage)
-      .sort((first, second) => first.reference.startTime - second.reference.startTime)
-      .slice(0, maxJoin);
-
-    if (contained.length > 0) {
-      const zh = dedupeJoin(contained.map((entry) => entry.reference.zh));
-      const note = dedupeJoin(contained.map((entry) => entry.reference.note).filter(Boolean));
-      return { ...sentence, zh, note, needsTranslation: false, backfilled: true };
-    }
-
-    // Case 2: the cue matches one reviewed block closely enough to reuse its
-    // zh. The check is BIDIRECTIONAL — cueCoverage alone is not enough. A
-    // fragment cue ("this was the top of the slab") has high cueCoverage but
-    // low refCoverage against the full reviewed block ("…of the slab it was
-    // blocked"); reusing the whole zh there made every fragment of one block
-    // show the same translation (Issue #2). Require both directions so only a
-    // cue that *covers most of* the reference borrows its zh; a genuine
-    // fragment stays needsTranslation and gets machine-translated on its own.
+    // Case 1: near-exact match with a single reviewed block — reuse its zh.
     const best = scored
-      .filter((entry) => entry.cueCoverage >= minCueCoverage && entry.refCoverage >= minRefCoverage)
+      .filter((entry) => entry.refCoverage >= nearMatchCoverage && entry.cueCoverage >= nearMatchCoverage)
       .sort((first, second) => second.cueCoverage - first.cueCoverage)[0];
 
     if (best) {
@@ -183,7 +167,20 @@ export function backfillFromReference(sentences, referenceSentences, options = {
       };
     }
 
-    return { ...sentence, zh: '', note: '新断句超出已校对范围，待补翻译。', needsTranslation: true };
+    // Case 2: the cue spans several reviewed blocks — join the zh of the
+    // blocks that are (almost) fully contained in the cue, in time order.
+    const contained = scored
+      .filter((entry) => entry.refCoverage >= nearMatchCoverage)
+      .sort((first, second) => first.reference.startTime - second.reference.startTime)
+      .slice(0, maxJoin);
+
+    if (contained.length > 0) {
+      const zh = dedupeJoin(contained.map((entry) => entry.reference.zh));
+      const note = dedupeJoin(contained.map((entry) => entry.reference.note).filter(Boolean));
+      return { ...sentence, zh, note, needsTranslation: false, backfilled: true };
+    }
+
+    return { ...sentence, zh: '', note: '', needsTranslation: true };
   });
 }
 

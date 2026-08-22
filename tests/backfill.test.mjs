@@ -92,3 +92,29 @@ test('Case 1 still joins zh when the cue spans several reviewed blocks', () => {
   assert.equal(result[0].zh, '这是板壁线路的顶部。 那里被挡住了。');
   assert.equal(result[0].needsTranslation, false);
 });
+
+test('partial overlap (~60%) does NOT reuse the whole reference zh', () => {
+  // Mirrors Bern c003 vs lessons s01: 9/15 words shared, but each side has its
+  // own extra words. The old 0.6 threshold copied the whole translation; the
+  // near-match threshold (0.8) must leave it for machine translation.
+  const refs = [
+    {
+      startTime: 630,
+      endTime: 640,
+      en: 'the top of the slab it was blocked most athletes did what Zelia did there peeled off',
+      zh: '这是板壁线路的顶部。那里被挡住了。大多数运动员都像 Zelia 那样掉了下来。',
+      note: '',
+    },
+  ];
+  const sentences = [
+    {
+      startTime: 632,
+      endTime: 638,
+      text: 'and most athletes did what Zelia did there peeled off but Zillia was strong earlier on',
+    },
+  ];
+  const result = backfillFromReference(sentences, refs);
+  assert.equal(result[0].zh, '');
+  assert.equal(result[0].needsTranslation, true);
+  assert.equal(result[0].backfilled, undefined);
+});
