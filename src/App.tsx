@@ -29,10 +29,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BilingualStudio } from './components/BilingualStudio';
 import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
-import type { Feedback, Keyword, Lesson, PracticeSentence } from './types';
+import type { Feedback, Keyword, Lesson, PracticeSentence, VideoSummary } from './types';
 
 type PracticeMode = 'sentence' | 'segment';
-type MainView = 'today' | 'library' | 'videos' | 'vocab' | 'me';
+type MainView = 'today' | 'library' | 'vocab' | 'me';
 type VocabMastery = 0 | 1 | 2;
 
 const PRE_ROLL_SECONDS = 1;
@@ -145,6 +145,12 @@ export function App() {
   const [mode, setMode] = useState<PracticeMode>('sentence');
   const [playRequestId, setPlayRequestId] = useState(0);
   const [activeView, setActiveView] = useState<MainView>('today');
+  // 视频素材（卡拉OK工作台）：null = 课程素材模式。
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const activeVideo = useMemo(
+    () => (activeVideoId ? videoSummaries.find((video) => video.id === activeVideoId) ?? null : null),
+    [activeVideoId],
+  );
   const activeSession = dailySessions[activeSessionIndex] ?? dailySessions[0];
   const lesson =
     activeCourse?.lessons[activeSession?.lessonIndex ?? 0] ?? activeCourse?.lessons[0];
@@ -186,6 +192,7 @@ export function App() {
     const course = courses.find((item) => item.id === courseId);
     if (!course || course.id === activeCourse?.id) return;
 
+    setActiveVideoId(null);
     const restoredIndex = getUnlockedSessionIndex(course.sessions, completedSessionIds);
     const restoredSession = course.sessions[restoredIndex] ?? course.sessions[0];
     setActiveCourseId(course.id);
@@ -205,6 +212,18 @@ export function App() {
 
   const switchView = (view: MainView) => {
     setActiveView(view);
+    window.scrollTo({ top: 0 });
+  };
+
+  // 视频素材切换：素材栏是唯一的素材入口，选视频进入卡拉OK工作台，选课程回课程流程。
+  const switchVideo = (videoId: string) => {
+    if (videoId === activeVideoId) {
+      setActiveView('today');
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    setActiveVideoId(videoId);
+    setActiveView('today');
     window.scrollTo({ top: 0 });
   };
 
@@ -429,6 +448,9 @@ export function App() {
         activeCourseId={activeCourse?.id ?? ''}
         completedSessionIds={completedSessionIds}
         onSelectCourse={switchCourse}
+        videos={videoSummaries}
+        activeVideoId={activeVideoId}
+        onSelectVideo={switchVideo}
       />
 
       <nav className="view-nav" aria-label="主导航">
@@ -443,13 +465,6 @@ export function App() {
           label="听力"
           icon={<Headphones size={17} aria-hidden="true" />}
           onClick={() => switchView('library')}
-        />
-        <ViewTabButton
-          active={activeView === 'videos'}
-          label="视频库"
-          icon={<Captions size={17} aria-hidden="true" />}
-          badge={videoSummaries.length || undefined}
-          onClick={() => switchView('videos')}
         />
         <ViewTabButton
           active={activeView === 'vocab'}
@@ -481,7 +496,15 @@ export function App() {
           }}
         />
 
-        {activeView === 'today' && lesson && activeSentence ? (
+        {activeView === 'today' && activeVideo ? (
+          <BilingualStudio
+            key={activeVideo.id}
+            summaries={[activeVideo]}
+            hideLibraryStrip
+          />
+        ) : null}
+
+        {activeView === 'today' && !activeVideo && lesson && activeSentence ? (
           <section className="main-pane" aria-label="今日练习">
             <TodayFocusCard
               session={dailySessions[activeSessionIndex] ?? dailySessions[0]}
@@ -552,10 +575,6 @@ export function App() {
           />
         ) : null}
 
-        {activeView === 'videos' ? (
-          <BilingualStudio summaries={videoSummaries} />
-        ) : null}
-
         {activeView === 'vocab' ? (
           <VocabView
             vocab={progress.vocab}
@@ -591,11 +610,17 @@ function CourseBar({
   activeCourseId,
   completedSessionIds,
   onSelectCourse,
+  videos,
+  activeVideoId,
+  onSelectVideo,
 }: {
   courses: Course[];
   activeCourseId: string;
   completedSessionIds: Set<string>;
   onSelectCourse: (courseId: string) => void;
+  videos: VideoSummary[];
+  activeVideoId: string | null;
+  onSelectVideo: (videoId: string) => void;
 }) {
   return (
     <div className="course-bar" aria-label="素材选择">
@@ -608,7 +633,7 @@ function CourseBar({
           const done = course.sessions.filter((session) =>
             completedSessionIds.has(session.id),
           ).length;
-          const active = course.id === activeCourseId;
+          const active = course.id === activeCourseId && !activeVideoId;
           return (
             <button
               className={`course-option ${active ? 'active' : ''}`}
@@ -623,6 +648,20 @@ function CourseBar({
             </button>
           );
         })}
+        {videos.map((video) => (
+          <button
+            className={`course-option video-option ${video.id === activeVideoId ? 'active' : ''}`}
+            key={video.id}
+            type="button"
+            title={video.title}
+            onClick={() => onSelectVideo(video.id)}
+          >
+            <strong>{video.title}</strong>
+            <small>
+              卡拉OK · {video.studyCueCount} 学习句
+            </small>
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -1289,6 +1328,11 @@ function YouTubePlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
+  // 播放按钮的点击排队计数：YouTube 嵌入经代理网络加载常需 10 秒以上，
+  // 就绪前点击播放不能是静默死点击——排队，就绪后自动播（与 App 层
+  // playRequestId 同一个模式）。
+  const [playTick, setPlayTick] = useState(0);
+  const [isSlowLoad, setIsSlowLoad] = useState(false);
   const playStart = Math.max(0, rangeStart - PRE_ROLL_SECONDS);
   const playEnd = rangeEnd + END_PAD_SECONDS;
   // YouTube sentence times already live on the video timeline, so the
@@ -1409,11 +1453,26 @@ function YouTubePlayer({
     }
   };
 
+  // 加载缓慢提示：YouTube 嵌入长时间未就绪时告知用户，而不是无限空白。
+  useEffect(() => {
+    if (isReady) return;
+    setIsSlowLoad(false);
+    const id = window.setTimeout(() => setIsSlowLoad(true), 20000);
+    return () => window.clearTimeout(id);
+  }, [isReady, videoId]);
+
   useEffect(() => {
     if (playRequestId === 0) return;
     if (!isReady) return;
     playRange();
   }, [playRequestId, isReady]);
+
+  // 排队播放：就绪前点的播放，在就绪后自动执行。
+  useEffect(() => {
+    if (playTick === 0) return;
+    if (!isReady) return;
+    playRange();
+  }, [playTick, isReady]);
 
   const togglePlaybackRate = () => {
     const next = playbackRate === 1 ? 0.75 : 1;
@@ -1429,18 +1488,32 @@ function YouTubePlayer({
     <section className="video-panel" aria-label="比赛视频">
       <div className="video-frame">
         <div className="youtube-player-host" ref={hostRef} />
+        {!isReady ? (
+          <div className="yt-loading" aria-live="polite">
+            <p>
+              {isSlowLoad
+                ? 'YouTube 视频加载缓慢或失败，请检查网络（VPN/代理）后刷新重试…'
+                : 'YouTube 视频加载中…（经代理网络首次加载可能需要十几秒，就绪前点的播放会自动排队）'}
+            </p>
+          </div>
+        ) : null}
       </div>
       <div className="video-controls">
         <button
           className="control-button primary"
           type="button"
-          onClick={playRange}
-          title="播放当前练习块"
+          onClick={() => setPlayTick((tick) => tick + 1)}
+          title={isReady ? '播放当前练习块' : '视频加载中，点击后将自动播放'}
         >
           <Play size={16} aria-hidden="true" />
-          {isPlaying ? '重播本句' : '播放'}
+          {!isReady ? '播放（排队中）' : isPlaying ? '重播本句' : '播放'}
         </button>
-        <button className="control-button" type="button" onClick={playRange} title="重放">
+        <button
+          className="control-button"
+          type="button"
+          onClick={() => setPlayTick((tick) => tick + 1)}
+          title="重放"
+        >
           <RotateCcw size={16} aria-hidden="true" />
           重放
         </button>
