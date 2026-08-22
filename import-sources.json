@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "type": "search",
+      "query": "IFSC Boulder World Cup final full replay",
+      "category": "world-cup",
+      "level": "intermediate",
+      "scanCount": 8,
+      "maxPerSource": 3,
+      "minDurationSeconds": 900,
+      "maxDurationSeconds": 10800
+    },
+    {
+      "type": "search",
+      "query": "IFSC Lead World Cup final full replay",
+      "category": "world-cup",
+      "level": "intermediate",
+      "scanCount": 8,
+      "maxPerSource": 2,
+      "minDurationSeconds": 900,
+      "maxDurationSeconds": 10800
+    },
+    {
+      "type": "search",
+      "query": "climbing technique footwork english tutorial",
+      "category": "technique",
+      "level": "beginner",
+      "scanCount": 8,
+      "maxPerSource": 3,
+      "minDurationSeconds": 240,
+      "maxDurationSeconds": 2400
+    },
+    {
+      "type": "search",
+      "query": "pro climber interview english",
+      "category": "interview",
+      "level": "advanced",
+      "scanCount": 6,
+      "maxPerSource": 2,
+      "minDurationSeconds": 300,
+      "maxDurationSeconds": 3600
+    },
+    {
+      "type": "channel",
+      "channelUrl": "https://www.youtube.com/@IFSC",
+      "category": "world-cup",
+      "level": "intermediate",
+      "scanCount": 10,
+      "maxPerSource": 3,
+      "minDurationSeconds": 900,
+      "maxDurationSeconds": 10800
+    }
+  ]
+}

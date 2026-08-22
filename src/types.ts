@@ -35,6 +35,47 @@ export type Lesson = {
   sentences: PracticeSentence[];
 };
 
+export type SubtitleCue = {
+  id: string;
+  startTime: number;
+  endTime: number;
+  en: string;
+  zh: string;
+  note?: string;
+  score: number;
+  study: boolean;
+  highlight?: boolean;
+  needsTranslation?: boolean;
+  keywords: string[];
+};
+
+export type VideoCategory = 'world-cup' | 'technique' | 'interview' | 'training' | 'other';
+
+export type VideoLevel = 'beginner' | 'intermediate' | 'advanced';
+
+export type VideoEntry = {
+  id: string;
+  title: string;
+  sourceUrl: string;
+  sourceLabel: string;
+  youtubeId: string;
+  channel: string;
+  category: VideoCategory;
+  categoryLabel?: string;
+  level: VideoLevel;
+  mediaUrl: string;
+  mediaStartTime: number;
+  durationSeconds: number;
+  captionKind: 'auto' | 'manual';
+  importedAt: string;
+  cueCount: number;
+  studyCueCount: number;
+  needsTranslationCount?: number;
+  cues: SubtitleCue[];
+};
+
+export type VideoSummary = Omit<VideoEntry, 'cues'>;
+
 export type Feedback = {
   mode: 'ai' | 'demo';
   provider?: 'openai' | 'deepseek' | 'client-demo' | 'server-demo';
