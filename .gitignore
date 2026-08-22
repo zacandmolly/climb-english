@@ -5,3 +5,4 @@ workers/wrangler.toml
 qa-*.png
 tsconfig.tsbuildinfo
 .DS_Store
+.workbuddy/
