@@ -782,6 +782,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  /* Scrollable window: the spoken sentence is pinned near the top while the
+     rest of the transcript scrolls upward during segment playback. */
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .segment-transcript button {

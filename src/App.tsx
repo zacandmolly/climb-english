@@ -224,6 +224,13 @@ export function App() {
     setPlayRequestId((id) => id + 1);
   };
 
+  // Karaoke follow: playback-time driven highlight only. Never switches mode
+  // or fires a replay, so segment playback keeps running uninterrupted while
+  // the transcript (and coach target) track the sentence being spoken.
+  const followSentence = useCallback((index: number) => {
+    setActiveSentenceIndex(index);
+  }, []);
+
   const activateDailySession = (session: DailySession, index: number, shouldPlay: boolean) => {
     setActiveSessionIndex(index);
     if (session.mode === 'segment') {
@@ -493,6 +500,7 @@ export function App() {
               onSelectSegment={selectSegment}
               onSelectSentence={selectSentence}
               onNextSentence={goNextSentence}
+              onFollowSentence={followSentence}
             />
             <CoachPanel
               lesson={lesson}
@@ -894,6 +902,7 @@ function ListeningWorkspace({
   onSelectSegment,
   onSelectSentence,
   onNextSentence,
+  onFollowSentence,
 }: {
   lesson: Lesson;
   sentence: PracticeSentence;
@@ -904,8 +913,11 @@ function ListeningWorkspace({
   onSelectSegment: () => void;
   onSelectSentence: (index: number) => void;
   onNextSentence: () => void;
+  onFollowSentence: (index: number) => void;
 }) {
   const [showTranslation, setShowTranslation] = useState(true);
+  const [followMediaTime, setFollowMediaTime] = useState<number | null>(null);
+  const segmentListRef = useRef<HTMLDivElement | null>(null);
   const activeKeywords = mode === 'segment' ? uniqueKeywords(lesson.sentences) : sentence.keywords;
   const activeText = mode === 'segment' ? fullTranscript(lesson) : sentence.transcript;
   const activeTranslation =
@@ -913,9 +925,44 @@ function ListeningWorkspace({
   const activeTip = mode === 'segment' ? lesson.segmentGoal : sentence.zhExplanation;
   const rangeStart = mode === 'segment' ? lesson.startTime : sentence.startTime;
   const rangeEnd = mode === 'segment' ? lesson.endTime : sentence.endTime;
-  const rangeKey = `${lesson.id}-${mode}-${sentence.id}`;
+  // In segment mode the range covers the whole lesson, so the key must NOT
+  // include the active sentence id — the follow highlight advances the active
+  // sentence during playback, and a changing key would re-trigger the seek-
+  // to-preroll effect and pause/rewind the video mid-playback.
+  const rangeKey =
+    mode === 'segment' ? `${lesson.id}-segment` : `${lesson.id}-${mode}-${sentence.id}`;
   const terms = useMemo(() => activeKeywords.map((keyword) => keyword.term), [activeKeywords]);
   const hasNextSentence = sentenceIndex < lesson.sentences.length - 1;
+
+  const handleTimeReport = useCallback((mediaTime: number) => {
+    setFollowMediaTime(mediaTime);
+  }, []);
+
+  // Karaoke follow (segment mode only): map the reported playback time onto
+  // the sentence timeline and let the transcript highlight follow the audio,
+  // like the bilingual studio's cue player.
+  const followIndex = useMemo(() => {
+    if (mode !== 'segment' || followMediaTime == null) return null;
+    return sentenceIndexAtMediaTime(lesson, followMediaTime);
+  }, [mode, followMediaTime, lesson]);
+
+  useEffect(() => {
+    if (followIndex == null || followIndex === sentenceIndex) return;
+    onFollowSentence(followIndex);
+  }, [followIndex, sentenceIndex, onFollowSentence]);
+
+  // Keep the spoken sentence pinned near the top of the segment transcript
+  // list so it scrolls upward underneath the highlight during playback.
+  useEffect(() => {
+    if (mode !== 'segment') return;
+    const list = segmentListRef.current;
+    if (!list) return;
+    const row = list.querySelector<HTMLElement>(`[data-sentence-index="${sentenceIndex}"]`);
+    if (!row) return;
+    const rowTop =
+      row.getBoundingClientRect().top - list.getBoundingClientRect().top + list.scrollTop;
+    list.scrollTo({ top: Math.max(0, rowTop - 8), behavior: 'smooth' });
+  }, [sentenceIndex, mode]);
 
   return (
     <section className="listen-pane" aria-label="听力练习台">
@@ -957,6 +1004,7 @@ function ListeningWorkspace({
           playRequestId={playRequestId}
           hasNextSentence={hasNextSentence}
           onNextSentence={onNextSentence}
+          onTimeReport={handleTimeReport}
         />
       ) : (
         <LocalVideoPlayer
@@ -969,6 +1017,7 @@ function ListeningWorkspace({
           playRequestId={playRequestId}
           hasNextSentence={hasNextSentence}
           onNextSentence={onNextSentence}
+          onTimeReport={handleTimeReport}
         />
       )}
 
@@ -990,10 +1039,11 @@ function ListeningWorkspace({
         </div>
 
         {mode === 'segment' ? (
-          <div className="segment-transcript">
+          <div className="segment-transcript" ref={segmentListRef}>
             {lesson.sentences.map((item, index) => (
               <button
                 className={index === sentenceIndex ? 'active' : ''}
+                data-sentence-index={index}
                 key={item.id}
                 type="button"
                 onClick={() => onSelectSentence(index)}
@@ -1038,6 +1088,7 @@ function LocalVideoPlayer({
   playRequestId,
   hasNextSentence,
   onNextSentence,
+  onTimeReport,
 }: {
   mediaUrl: string;
   mediaStartTime: number;
@@ -1048,6 +1099,7 @@ function LocalVideoPlayer({
   playRequestId: number;
   hasNextSentence: boolean;
   onNextSentence: () => void;
+  onTimeReport: (mediaTime: number) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [playbackRate, setPlaybackRate] = useState(1);
@@ -1095,6 +1147,14 @@ function LocalVideoPlayer({
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Live-follow reporting: while the video is actually playing, convert the
+    // element time back onto the caption timeline (sentence startTime/endTime)
+    // so the transcript can highlight the sentence being spoken. Skipped when
+    // paused so the loop-rewind does not reset the highlight back to 0.
+    if (!video.paused && !video.ended) {
+      onTimeReport(video.currentTime + mediaStartTime);
+    }
 
     const boundedPlayEnd = Number.isFinite(video.duration)
       ? Math.min(playEnd, video.duration)
@@ -1199,6 +1259,7 @@ function YouTubePlayer({
   playRequestId,
   hasNextSentence,
   onNextSentence,
+  onTimeReport,
 }: {
   videoId: string;
   rangeStart: number;
@@ -1208,6 +1269,7 @@ function YouTubePlayer({
   playRequestId: number;
   hasNextSentence: boolean;
   onNextSentence: () => void;
+  onTimeReport: (mediaTime: number) => void;
 }) {
   const hostRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<YouTubePlayerRef | null>(null);
@@ -1216,6 +1278,11 @@ function YouTubePlayer({
   const [playbackRate, setPlaybackRate] = useState(1);
   const playStart = Math.max(0, rangeStart - PRE_ROLL_SECONDS);
   const playEnd = rangeEnd + END_PAD_SECONDS;
+  // YouTube sentence times already live on the video timeline, so the
+  // reported time needs no mediaStartTime offset. Keep the callback in a ref
+  // so the polling interval effect does not restart on every parent render.
+  const onTimeReportRef = useRef(onTimeReport);
+  onTimeReportRef.current = onTimeReport;
 
   useEffect(() => {
     if (!videoId) return;
@@ -1300,6 +1367,11 @@ function YouTubePlayer({
       if (!player) return;
       try {
         const currentTime = player.getCurrentTime();
+        // Live-follow reporting (only while playing, so the loop-rewind does
+        // not reset the transcript highlight back to the first sentence).
+        if (isPlaying && currentTime < playEnd) {
+          onTimeReportRef.current(currentTime);
+        }
         if (currentTime >= playEnd) {
           player.pauseVideo();
           player.seekTo(playStart, true);
@@ -1310,7 +1382,7 @@ function YouTubePlayer({
       }
     }, 250);
     return () => window.clearInterval(id);
-  }, [isReady, playEnd, playStart]);
+  }, [isReady, isPlaying, playEnd, playStart]);
 
   const playRange = () => {
     const player = playerRef.current;
@@ -2795,6 +2867,27 @@ function buildCourses(allLessons: Lesson[]): Course[] {
 
 function fullTranscript(lesson: Lesson) {
   return lesson.sentences.map((sentence) => sentence.transcript).join(' ');
+}
+
+// Map a playback timestamp (already on the sentence/caption timeline) onto
+// the sentence currently being spoken. Keeps the previous sentence
+// highlighted in the gap between two sentences, and clamps to the segment
+// bounds so the pre-roll never highlights a sentence before the segment.
+function sentenceIndexAtMediaTime(lesson: Lesson, mediaTime: number) {
+  const sentences = lesson.sentences;
+  if (sentences.length === 0) return 0;
+
+  if (mediaTime < sentences[0].startTime) return 0;
+
+  let index = 0;
+  for (let i = 0; i < sentences.length; i += 1) {
+    if (mediaTime >= sentences[i].startTime) {
+      index = i;
+    } else {
+      break;
+    }
+  }
+  return index;
 }
 
 function fullTranslation(lesson: Lesson) {
