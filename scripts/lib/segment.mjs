@@ -16,12 +16,21 @@ import { endsSentence, wordsToText } from './timed-words.mjs';
 import { FILLER_WORDS, GRAMMAR_SIGNALS, STOPWORDS, findClimbingTerms } from './climbing-terms.mjs';
 
 const DEFAULTS = {
-  maxGapSeconds: 0.7, // a pause longer than this closes the sentence
+  // A pause longer than this closes the sentence. Tuned up from 0.7s:
+  // YouTube auto-caption narration pauses mid-sentence to breathe/think, and
+  // 0.7s turned those pauses into sentence boundaries, producing 1–6 word
+  // fragments ("power and strength to a", "get the last few", "hold From
+  // Below") that the LLM then merged during translation (Issue #3). 1.5s
+  // still splits on real inter-sentence pauses but keeps one spoken sentence
+  // intact.
+  maxGapSeconds: 1.5,
   maxWords: 26, // force a split beyond this many words
   softSplitWords: 16, // prefer splitting at a comma once past this length
   maxSentenceSeconds: 18,
-  minWords: 3, // shorter than this gets merged into a neighbour
-  mergeGapSeconds: 1.2, // only merge across gaps smaller than this
+  minWords: 6, // shorter than this merges into a neighbour (raised from 3 so
+  // 4–6 word trailing fragments rejoin the sentence they continue)
+  mergeGapSeconds: 2.0, // only merge across gaps smaller than this (raised
+  // from 1.2 to match the larger maxGapSeconds)
   startPadSeconds: 0.15, // pad before the first word so its attack is never clipped
   endPadSeconds: 0.4, // room for the final word to finish
   minScore: 38, // keep threshold for learning value
@@ -93,11 +102,20 @@ function findLastComma(words) {
 function mergeFragments(sentences, opts) {
   const result = [];
 
+  // A short run of words is a *fragment* (merge it into the neighbour) only
+  // when it does NOT end in sentence punctuation. "power and strength to a"
+  // has no terminal punctuation → it continues the previous sentence; "It was
+  // blocked." does → it is a complete short sentence and must stay separate.
+  // Without this guard, raising minWords to 6 would swallow real short
+  // sentences like "Yeah." / "It was blocked.".
+  const isFragment = (sentence) =>
+    !endsSentence(sentence.words[sentence.words.length - 1].raw);
+
   for (const sentence of sentences) {
     const wordCount = sentence.words.length;
     const previous = result[result.length - 1];
 
-    if (wordCount < opts.minWords && previous) {
+    if (wordCount < opts.minWords && previous && isFragment(sentence)) {
       const gap = sentence.words[0].time - previous.words[previous.words.length - 1].time;
       if (gap < opts.mergeGapSeconds) {
         previous.words.push(...sentence.words);
@@ -113,12 +131,12 @@ function mergeFragments(sentences, opts) {
     result.push(sentence);
   }
 
-  // A trailing fragment ("Yeah.") merges backwards.
+  // A trailing fragment merges backwards, again only if it lacks punctuation.
   if (result.length >= 2) {
     const last = result[result.length - 1];
     const previous = result[result.length - 2];
     const gap = last.words[0].time - previous.words[previous.words.length - 1].time;
-    if (last.words.length < opts.minWords && gap < opts.mergeGapSeconds) {
+    if (last.words.length < opts.minWords && isFragment(last) && gap < opts.mergeGapSeconds) {
       previous.words.push(...last.words);
       result.pop();
     }
