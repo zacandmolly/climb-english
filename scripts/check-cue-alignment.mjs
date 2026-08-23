@@ -26,6 +26,7 @@
 // Run:
 //   node scripts/check-cue-alignment.mjs                # report only
 //   node scripts/check-cue-alignment.mjs --realign     # also clear bad rows
+//   node scripts/check-cue-alignment.mjs --strict      # report + exit 1 if flagged
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,6 +37,7 @@ const DATA_DIR = path.join(ROOT, 'src/data/videos');
 
 const args = process.argv.slice(2);
 const realign = args.includes('--realign');
+const strict = args.includes('--strict');
 const videoFlag = args.indexOf('--video');
 const onlyId = videoFlag >= 0 ? args[videoFlag + 1] : null;
 
@@ -86,6 +88,18 @@ async function main() {
   console.log(
     `\n${realign ? 'Cleared and re-flagged' : 'Suspected'}: ${totalFlags}/${totalCues} cues across ${files.length} video(s).`
   );
+
+  // Hard-gate mode: the CI alignment job runs with --strict. Any heuristic
+  // flag (however crude) means the alignment invariant may be broken, so the
+  // run must fail rather than silently pass. No --strict keeps the legacy
+  // "report only, exit 0" behaviour for local triage.
+  if (strict && totalFlags > 0) {
+    console.error(
+      `\n✗ alignment check failed: ${totalFlags} suspicious cue(s). ` +
+        'Fix the drift (--realign) or re-run translate:videos for the flagged rows, then re-check.'
+    );
+    process.exit(1);
+  }
 }
 
 function inspect(video) {
