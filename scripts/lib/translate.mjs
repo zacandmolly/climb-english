@@ -6,6 +6,9 @@
 //    existing lessons dataset by fuzzy text overlap (used to rebuild the
 //    Bern 2025 course with the new segmenter without re-translating).
 
+import fs from 'node:fs';
+import path from 'node:path';
+
 const DEFAULT_BATCH_SIZE = 24;
 
 export async function translateSentences(sentences, options = {}) {
@@ -192,12 +195,8 @@ export function backfillFromReference(sentences, referenceSentences, options = {
   });
 }
 
-export function loadLessonsAsReference(lessonsFileText) {
-  // src/data/lessons.ts is a generated file containing pure JSON after the
-  // import line; parse it without needing a TS loader.
-  const match = lessonsFileText.match(/=\s*(\[[\s\S]*\])\s*;?\s*$/);
-  if (!match) throw new Error('Could not parse lessons.ts as JSON');
-  const lessons = JSON.parse(match[1]);
+export function loadLessonsAsReference(lessonsFilePath) {
+  const lessons = readLessonsModule(lessonsFilePath);
 
   const reference = [];
   for (const lesson of lessons) {
@@ -212,6 +211,42 @@ export function loadLessonsAsReference(lessonsFileText) {
     }
   }
   return reference;
+}
+
+// Resolve a lessons data module into its top-level Lesson[] regardless of
+// shape:
+//   - a direct array literal (`export const x: Lesson[] = [ ... ]`) — the
+//     legacy combined lessons.ts and the split generated/manual files;
+//   - a re-export (`export const lessons = [...a, ...b]`) — src/data/lessons.ts
+//     after the R3 split. Each imported module is parsed recursively so the
+//     `--backfill-zh src/data/lessons.ts` call keeps working unchanged.
+function readLessonsModule(filePath) {
+  const text = fs.readFileSync(filePath, 'utf8');
+
+  const direct = text.match(/=\s*(\[[\s\S]*\])\s*;?\s*$/);
+  if (direct) {
+    try {
+      return JSON.parse(direct[1]);
+    } catch {
+      // Not a plain JSON array literal — it is a spread re-export
+      // (`[...a, ...b]`). Fall through to import resolution below.
+    }
+  }
+
+  const dir = path.dirname(filePath);
+  const valueImports = [...text.matchAll(/import\s*\{([^}]+)\}\s*from\s*['"]([^'"]+)['"]/g)];
+  const lessons = [];
+  for (const [, , specifier] of valueImports) {
+    if (!specifier.startsWith('.')) continue;
+    const modulePath = path.resolve(dir, specifier.endsWith('.ts') ? specifier : `${specifier}.ts`);
+    lessons.push(...readLessonsModule(modulePath));
+  }
+  if (lessons.length === 0) {
+    throw new Error(
+      `Could not parse lessons module (not an array literal or re-export): ${filePath}`
+    );
+  }
+  return lessons;
 }
 
 function coverage(textA, textB) {

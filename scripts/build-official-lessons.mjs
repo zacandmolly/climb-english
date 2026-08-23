@@ -14,7 +14,10 @@ const BLOCK_SECONDS = 25;
 const PREROLL_SECONDS = 1;
 
 const vttPath = process.argv[2] ?? '/tmp/climb-captions/CPhZ18zmrBs.en.vtt';
-const outputPath = path.join(process.cwd(), 'src/data/lessons.ts');
+// Generated Bern lessons only. Hand-written Innsbruck lives in
+// src/data/lessons.manual.ts and must never be touched by this script — the
+// data-protect CI job guards that file against accidental rewrites.
+const outputPath = path.join(process.cwd(), 'src/data/lessons.generated.ts');
 
 const manualSeed = [
   {
@@ -502,7 +505,7 @@ if (!fs.existsSync(vttPath)) {
 const timedWords = readTimedWords(fs.readFileSync(vttPath, 'utf8'));
 const lessons = Array.from({ length: SESSION_COUNT }, (_, index) => makeLesson(index, timedWords));
 
-const file = `import type { Lesson } from '../types';\n\nexport const lessons: Lesson[] = ${JSON.stringify(lessons, null, 2)};\n`;
+const file = `import type { Lesson } from '../types';\n\nexport const bernLessons: Lesson[] = ${JSON.stringify(lessons, null, 2)};\n`;
 
 fs.writeFileSync(outputPath, file);
 console.log(`Wrote ${lessons.length} lessons to ${outputPath}`);

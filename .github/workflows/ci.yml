@@ -133,3 +133,42 @@ jobs:
             echo "> data PR lands and the flag count is 0, remove \`continue-on-error\` to make this a hard gate."
           } >> "$GITHUB_STEP_SUMMARY"
 
+  data-protect:
+    name: Data protection (manual lessons)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert build script writes only the generated lessons file
+        run: |
+          set -euo pipefail
+          # RETROSPECTIVE's worst data-loss lesson: build:lessons used to rewrite
+          # the whole lessons.ts, silently wiping ~1800 lines of hand-written
+          # Innsbruck. After the R3 split it must write ONLY lessons.generated.ts.
+          # Inspect the `outputPath` assignment specifically, so the explanatory
+          # comment (which mentions the manual file) cannot trip the guard.
+          target_line=$(grep -E "outputPath[[:space:]]*=[[:space:]]*path\.join" scripts/build-official-lessons.mjs || true)
+          if [ -z "$target_line" ]; then
+            echo "::error::Could not locate the outputPath assignment in build-official-lessons.mjs."
+            exit 1
+          fi
+          if ! printf '%s\n' "$target_line" | grep -q "lessons\.generated\.ts"; then
+            echo "::error::build-official-lessons.mjs write target must be lessons.generated.ts, found:"
+            printf '%s\n' "$target_line"
+            exit 1
+          fi
+      - name: Assert manual lessons file is the hand-written source
+        run: |
+          grep -q 'export const innsbruckLessons' src/data/lessons.manual.ts
+          grep -q 'export const lessons: Lesson\[\] = \[\.\.\.bernLessons, \.\.\.innsbruckLessons\]' src/data/lessons.ts
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **data-protect** — guards the hand-written Innsbruck data (src/data/lessons.manual.ts)."
+            echo "> The full runtime guard (run \`node scripts/build-official-lessons.mjs\` then"
+            echo "> \`git diff --exit-code src/data/lessons.manual.ts\`) needs the source VTT fixture,"
+            echo "> which is not available in CI, so this job uses a static write-target guard instead:"
+            echo "> the build script must emit only lessons.generated.ts and never lessons.manual.ts."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+

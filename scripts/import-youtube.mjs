@@ -115,7 +115,7 @@ async function main() {
   let translated = sentences;
   if (args.backfillZh) {
     console.log(`→ backfilling Chinese from reviewed lessons: ${args.backfillZh}`);
-    const reference = loadLessonsAsReference(fs.readFileSync(args.backfillZh, 'utf8'));
+    const reference = loadLessonsAsReference(args.backfillZh);
     translated = backfillFromReference(sentences, reference);
     const missing = translated.filter((sentence) => sentence.needsTranslation).length;
     console.log(
