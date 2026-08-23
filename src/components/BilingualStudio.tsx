@@ -38,7 +38,15 @@ const LEVEL_NAMES: Record<VideoEntry['level'], string> = {
 // Bilingual subtitle studio: watch a climbing video with synced en/zh cues,
 // click any cue to loop it, shadow it with the AI coach. Full cue data is
 // lazy-loaded per video; the library listing runs on lightweight summaries.
-export function BilingualStudio({ summaries }: { summaries: VideoSummary[] }) {
+// hideLibraryStrip: when the video is selected upstream (素材栏), the studio's
+// own library picker is redundant and can be hidden.
+export function BilingualStudio({
+  summaries,
+  hideLibraryStrip = false,
+}: {
+  summaries: VideoSummary[];
+  hideLibraryStrip?: boolean;
+}) {
   const [videoId, setVideoId] = useState(() => {
     // Default to the first video in display order (world-cup first).
     for (const category of CATEGORY_ORDER) {
@@ -89,16 +97,18 @@ export function BilingualStudio({ summaries }: { summaries: VideoSummary[] }) {
 
   return (
     <main className="stage-flow">
-      <LibraryStrip
-        summaries={summaries}
-        activeVideoId={videoId}
-        query={query}
-        onQueryChange={setQuery}
-        onSelect={(id) => {
-          setVideoId(id);
-          player.pause();
-        }}
-      />
+      {hideLibraryStrip ? null : (
+        <LibraryStrip
+          summaries={summaries}
+          activeVideoId={videoId}
+          query={query}
+          onQueryChange={setQuery}
+          onSelect={(id) => {
+            setVideoId(id);
+            player.pause();
+          }}
+        />
+      )}
 
       {!video ? (
         <section className="stage-card" aria-label="Loading video">
