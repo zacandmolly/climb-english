@@ -8,6 +8,7 @@ import type { VideoSummary } from '../types';
 // 课程数据本身保留（听力/进度/翻译回填的参考来源），只是不再作为素材入口。
 export const COURSE_SUPERSEDED_BY_VIDEO: Record<string, string> = {
   'ifsc-world-cup-bern-2025': 'bern-2025-wb-rescut',
+  'ifsc-world-cup-innsbruck-2026': 'innsbruck-2026-mb-full',
 };
 
 // 素材栏——素材选择的唯一入口模块。
