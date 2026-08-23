@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BilingualStudio } from './components/BilingualStudio';
+import { COURSE_SUPERSEDED_BY_VIDEO, MaterialBar } from './components/MaterialBar';
 import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
 import type { Feedback, Keyword, Lesson, PracticeSentence, VideoSummary } from './types';
@@ -76,7 +77,7 @@ type LearningProgress = {
   practiceDates: string[];
 };
 
-type Course = {
+export type Course = {
   id: string;
   name: string;
   competition: string;
@@ -145,8 +146,11 @@ export function App() {
   const [mode, setMode] = useState<PracticeMode>('sentence');
   const [playRequestId, setPlayRequestId] = useState(0);
   const [activeView, setActiveView] = useState<MainView>('today');
-  // 视频素材（卡拉OK工作台）：null = 课程素材模式。
-  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  // 视频素材（卡拉OK工作台）：null = 课程素材模式。持久化的课程若已被
+  // 卡拉OK重切版取代，启动时直接进入取代它的视频素材。
+  const initialVideoId =
+    COURSE_SUPERSEDED_BY_VIDEO[initialLearningStateRef.current.courseId] ?? null;
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(initialVideoId);
   const activeVideo = useMemo(
     () => (activeVideoId ? videoSummaries.find((video) => video.id === activeVideoId) ?? null : null),
     [activeVideoId],
@@ -443,7 +447,7 @@ export function App() {
         </div>
       </header>
 
-      <CourseBar
+      <MaterialBar
         courses={courses}
         activeCourseId={activeCourse?.id ?? ''}
         completedSessionIds={completedSessionIds}
@@ -601,68 +605,6 @@ export function App() {
           />
         ) : null}
       </main>
-    </div>
-  );
-}
-
-function CourseBar({
-  courses,
-  activeCourseId,
-  completedSessionIds,
-  onSelectCourse,
-  videos,
-  activeVideoId,
-  onSelectVideo,
-}: {
-  courses: Course[];
-  activeCourseId: string;
-  completedSessionIds: Set<string>;
-  onSelectCourse: (courseId: string) => void;
-  videos: VideoSummary[];
-  activeVideoId: string | null;
-  onSelectVideo: (videoId: string) => void;
-}) {
-  return (
-    <div className="course-bar" aria-label="素材选择">
-      <span className="course-bar-label">
-        <ListMusic size={15} aria-hidden="true" />
-        素材
-      </span>
-      <div className="course-options">
-        {courses.map((course) => {
-          const done = course.sessions.filter((session) =>
-            completedSessionIds.has(session.id),
-          ).length;
-          const active = course.id === activeCourseId && !activeVideoId;
-          return (
-            <button
-              className={`course-option ${active ? 'active' : ''}`}
-              key={course.id}
-              type="button"
-              onClick={() => onSelectCourse(course.id)}
-            >
-              <strong>{course.name}</strong>
-              <small>
-                {done}/{course.sessions.length} 天
-              </small>
-            </button>
-          );
-        })}
-        {videos.map((video) => (
-          <button
-            className={`course-option video-option ${video.id === activeVideoId ? 'active' : ''}`}
-            key={video.id}
-            type="button"
-            title={video.title}
-            onClick={() => onSelectVideo(video.id)}
-          >
-            <strong>{video.title}</strong>
-            <small>
-              卡拉OK · {video.studyCueCount} 学习句
-            </small>
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
