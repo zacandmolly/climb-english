@@ -4,11 +4,13 @@ import type { VideoEntry, VideoSummary } from '../../types';
 const loaders: Record<string, () => Promise<{ video: VideoEntry }>> = {
   'a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny': () => import('./a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny.video'),
   'bern-2025-wb-rescut': () => import('./bern-2025-wb-rescut.video'),
+  'innsbruck-2026-mb-full': () => import('./innsbruck-2026-mb-full.video'),
 };
 
 export const videoSummaries: VideoSummary[] = [
   {"id":"a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny","title":"A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE","sourceUrl":"https://www.youtube.com/watch?v=gtIGgs_y2nY","sourceLabel":"A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE | Richardsons Climbing","youtubeId":"gtIGgs_y2nY","channel":"Richardsons Climbing","category":"technique","categoryLabel":"Technique / 攀岩技巧","level":"beginner","mediaUrl":"/media/a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny.mp4","mediaStartTime":0,"durationSeconds":743,"captionKind":"auto","importedAt":"2026-08-22","cueCount":99,"studyCueCount":88,"needsTranslationCount":0},
-  {"id":"bern-2025-wb-rescut","title":"Women's Boulder final | Bern 2025","sourceUrl":"https://www.youtube.com/watch?v=CPhZ18zmrBs","sourceLabel":"Women's Boulder final | Bern 2025 | World Climbing","youtubeId":"CPhZ18zmrBs","channel":"World Climbing","category":"world-cup","categoryLabel":"World Cup / 世界杯赛事","level":"intermediate","mediaUrl":"/media/bern-2025-wb-10m31-40m32-web.mp4","mediaStartTime":631,"durationSeconds":1801,"captionKind":"auto","importedAt":"2026-08-22","cueCount":646,"studyCueCount":432,"needsTranslationCount":0}
+  {"id":"bern-2025-wb-rescut","title":"Women's Boulder final | Bern 2025","sourceUrl":"https://www.youtube.com/watch?v=CPhZ18zmrBs","sourceLabel":"Women's Boulder final | Bern 2025 | World Climbing","youtubeId":"CPhZ18zmrBs","channel":"World Climbing","category":"world-cup","categoryLabel":"World Cup / 世界杯赛事","level":"intermediate","mediaUrl":"/media/bern-2025-wb-10m31-40m32-web.mp4","mediaStartTime":631,"durationSeconds":1801,"captionKind":"auto","importedAt":"2026-08-22","cueCount":646,"studyCueCount":432,"needsTranslationCount":0},
+  {"id":"innsbruck-2026-mb-full","title":"Men's Boulder Final | Innsbruck 2026 智能重切","sourceUrl":"https://www.youtube.com/watch?v=LJFxLkPn_Vc","sourceLabel":"Men's Boulder Final | Innsbruck 2026 智能重切 | World Climbing","youtubeId":"LJFxLkPn_Vc","channel":"World Climbing","category":"world-cup","categoryLabel":"World Cup / 世界杯赛事","level":"advanced","mediaUrl":"/media/innsbruck-2026-mb-full.mp4","mediaStartTime":0,"durationSeconds":8300,"captionKind":"auto","importedAt":"2026-08-23","cueCount":2242,"studyCueCount":1286,"needsTranslationCount":0}
 ];
 
 export async function loadVideo(id: string): Promise<VideoEntry | undefined> {

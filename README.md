@@ -67,6 +67,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
 | 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频）两套并行模型 | ⚠️ 双轨 |
 | 课程数据 | `src/data/lessons.ts` | Bern 2025（6 天）+ Innsbruck 2026（7 天）全部句子/翻译/关键词 | ⚠️ 手写与生成混用，见下 |
+| **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ |
 | **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；经素材栏"视频素材"入口进入（今天视图内渲染） | ✅ |
 | 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧视频 99 句 + Bern 智能重切 652 句）+ 懒加载注册表 + 发现队列 | ✅ |
 | 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 | ✅ |
@@ -110,7 +111,33 @@ server/index.mjs → dist/（prod）或 vite（dev）；不依赖 src/ 源码
 - `src/data/lessons.ts`：**手写与生成混用**。生成器 `build-official-lessons.mjs` 只会重建 Bern 2025 部分——**重跑 `npm run build:lessons` 会整体覆盖文件，抹掉手写的 Innsbruck 2026 课程（~1800 行）**。在拆分手写/生成数据之前，禁止运行该命令。
 - `src/data/videos/*.video.ts`、`videos/index.ts`：头部有 `GENERATED` 标记，禁止手改，一律通过管线重新生成。
 - `src/data/videos/discover-queue.json`：发现队列，人工挑选后消费。
+- `public/media/*.mp4`：大媒体文件**不再入库**（GitHub 100MB 单文件硬限制；历史已追踪的两个小文件保留）。新素材媒体仅存本地——新机器上跑 `npm run import:youtube -- --reuse-media` 前需先经管线重新下载（Innsbruck 完整版 758MB 需用 HLS 格式下载再 ffmpeg 转 H.264，见素材上线流程）。
 - 密钥：只允许存在于 M1 的 `~/.climb-english-api.env`、Worker secrets、本地 `.env`（已 gitignore）。**任何 `VITE_` 变量和前端代码对浏览器可见，禁止放密钥。**
+
+## 素材上线流程（所有素材必经，以 Bern 2025 重切为模板）
+
+任何新素材（或素材更新）都必须走完以下管线并通过全部验证门，才允许出现在素材栏。**禁止手工编辑 `.video.ts` 绕过管线。**
+
+```bash
+# 1. 导入：yt-dlp 词级字幕 → 智能断句评分 → 人工翻译回填 → DeepSeek 机器翻译补齐 → 下载转码媒体
+DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
+  --title "<标题> 智能重切" --category world-cup --level advanced \
+  --backfill-zh src/data/lessons.ts \
+  --slug <视频 id>
+# 可选：--start/--end 只导一个窗口；--reuse-media + --media-start 复用已有媒体；--max-height 480 降低体积
+```
+
+| # | 验证门 | 命令 / 标准 | 不过怎么办 |
+|---|---|---|---|
+| 1 | 翻译完整 | 导入日志 `translated: N/N`（needsTranslation=0） | `DEEPSEEK_API_KEY=… npm run translate:videos -- --video <slug>` 补齐 |
+| 2 | 对齐巡检 | `npm run check:alignment -- --video <slug>`，无系统性漂移告警 | 人工抽查 en/zh 列；发现漂移按复盘 #1 法则修管线，禁止手改数据 |
+| 3 | 构建 | `npm run build` 全绿 | 修代码 |
+| 4 | 卡拉OK实证 | 浏览器（确认端口归属）连播走查：当前句高亮随播放推进、字幕列表钉顶滚动、点句跳转正常，qa 截图存档 | 修 useCuePlayer/播放器，重走此门 |
+| 5 | 素材栏接线 | 素材栏自动出现新素材（注册表驱动）；若取代了同源课程，在 `MaterialBar.tsx` 的 `COURSE_SUPERSEDED_BY_VIDEO` 加映射 | — |
+
+上线后的维护事实：媒体文件落 `public/media/`（构建时复制进 dist）；cue 数据为 `GENERATED` 文件；素材栏是唯一素材入口（`src/components/MaterialBar.tsx`，含取代映射）。
+
+已完成上线的素材：技巧教学（99 句）、Bern 2025 智能重切（646 句）、Innsbruck 2026 完整重切（2242 句）。
 
 ## 迭代规范（按模块独立迭代）
 

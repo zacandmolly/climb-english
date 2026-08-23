@@ -1,0 +1,25804 @@
+import type { VideoEntry } from '../../types';
+
+export const video: VideoEntry = {
+  "id": "innsbruck-2026-mb-full",
+  "title": "Men's Boulder Final | Innsbruck 2026 智能重切",
+  "sourceUrl": "https://www.youtube.com/watch?v=LJFxLkPn_Vc",
+  "sourceLabel": "Men's Boulder Final | Innsbruck 2026 智能重切 | World Climbing",
+  "youtubeId": "LJFxLkPn_Vc",
+  "channel": "World Climbing",
+  "category": "world-cup",
+  "categoryLabel": "World Cup / 世界杯赛事",
+  "level": "advanced",
+  "mediaUrl": "/media/innsbruck-2026-mb-full.mp4",
+  "mediaStartTime": 0,
+  "durationSeconds": 8300,
+  "captionKind": "auto",
+  "importedAt": "2026-08-23",
+  "cueCount": 2242,
+  "studyCueCount": 1286,
+  "needsTranslationCount": 0,
+  "cues": [
+    {
+      "id": "c001",
+      "startTime": 67.53,
+      "endTime": 71.76,
+      "en": "here for the World Climbing Series and it's time for the men's final.",
+      "zh": "这里是世界攀岩系列赛，男子决赛的时间到了。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "注意“here for”表示“这里是……的现场”，常用于直播开场。"
+    },
+    {
+      "id": "c002",
+      "startTime": 71.69,
+      "endTime": 80.67,
+      "en": "The temperature has dropped a little bit uh but it's still over 28° and 37% humidity out there.",
+      "zh": "温度稍微降了一点，但仍然超过28度，湿度37%。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“dropped a little bit”是口语中“稍微下降”的常用表达。"
+    },
+    {
+      "id": "c003",
+      "startTime": 80.57,
+      "endTime": 84.32,
+      "en": "So, it's a sticky one, but conditions will be improving as we go.",
+      "zh": "所以，天气有点黏糊糊的，但条件会随着比赛进行而改善。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“sticky”在这里指湿热，注意“conditions”指比赛条件。"
+    },
+    {
+      "id": "c004",
+      "startTime": 84.33,
+      "endTime": 88.64,
+      "en": "Now, my name is Matt Groom and it is a pleasure to be joined once again by Sophia Yokiyama.",
+      "zh": "我是马特·格鲁姆，很高兴再次和索菲亚·横山一起解说。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“it is a pleasure to be joined by”是正式介绍嘉宾的常用句式。"
+    },
+    {
+      "id": "c005",
+      "startTime": 88.97,
+      "endTime": 89.87,
+      "en": "How you doing, Sophia?",
+      "zh": "你好吗，索菲亚？",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“How you doing?”是“How are you doing?”的口语缩写。"
+    },
+    {
+      "id": "c006",
+      "startTime": 89.77,
+      "endTime": 90.64,
+      "en": "How was your day?",
+      "zh": "你今天过得怎么样？",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“How was your day?”是日常问候，注意过去时。"
+    },
+    {
+      "id": "c007",
+      "startTime": 90.73,
+      "endTime": 91.84,
+      "en": ">> It was wonderful.",
+      "zh": ">> 非常棒。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“wonderful”是“极好的”，比“good”更强烈。"
+    },
+    {
+      "id": "c008",
+      "startTime": 92.09,
+      "endTime": 98.99,
+      "en": "I had a great day watching semi this morning and then had some fun doing Judy Fuja's hair in the afternoon.",
+      "zh": "我今天早上看半决赛看得很开心，下午给朱迪·富贾做头发也很有趣。",
+      "score": 52,
+      "study": true,
+      "keywords": [],
+      "note": "“had a great day doing”表示“做某事很开心”，注意“doing”的用法。"
+    },
+    {
+      "id": "c009",
+      "startTime": 98.89,
+      "endTime": 101.52,
+      "en": "So you guys will see tomorrow during her quali round.",
+      "zh": "所以你们明天会在她的资格赛轮看到她。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“quali round”是“qualification round”的缩写，攀岩术语。"
+    },
+    {
+      "id": "c010",
+      "startTime": 101.53,
+      "endTime": 103.55,
+      "en": ">> That's exciting cuz she's retiring, isn't she?",
+      "zh": ">> 那很令人兴奋，因为她要退役了，不是吗？",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“isn't she?”是反意疑问句，注意“retiring”表示“退役”。"
+    },
+    {
+      "id": "c011",
+      "startTime": 103.49,
+      "endTime": 104.64,
+      "en": "She put on her Instagram.",
+      "zh": "她发在Instagram上了。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“put on”在这里指“发布”，注意“Instagram”的发音。"
+    },
+    {
+      "id": "c012",
+      "startTime": 106.57,
+      "endTime": 107.79,
+      "en": ">> It's going to be very, very sad.",
+      "zh": ">> 那会非常非常难过。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“very, very sad”强调“非常难过”，注意重复表示强调。"
+    },
+    {
+      "id": "c013",
+      "startTime": 107.69,
+      "endTime": 109.15,
+      "en": "But she has spectacular hair now.",
+      "zh": "但她现在的发型非常惊艳。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“spectacular”是“壮观的、惊艳的”，常用于形容视觉冲击。"
+    },
+    {
+      "id": "c014",
+      "startTime": 109.05,
+      "endTime": 110.19,
+      "en": "So that's >> Yep.",
+      "zh": "所以那是 >> 是的。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“So that's”是口语中的过渡，注意“Yep”是“Yes”的口语。"
+    },
+    {
+      "id": "c015",
+      "startTime": 110.09,
+      "endTime": 111.04,
+      "en": "Done by me.",
+      "zh": "我做的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Done by me”是“由我完成”的强调，注意省略了“It was”。"
+    },
+    {
+      "id": "c016",
+      "startTime": 111.29,
+      "endTime": 111.89,
+      "en": ">> Wonderful.",
+      "zh": ">> 太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Wonderful”再次出现，注意语调。"
+    },
+    {
+      "id": "c017",
+      "startTime": 111.69,
+      "endTime": 112.8,
+      "en": "We'll see that tomorrow.",
+      "zh": "我们明天会看到的。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“We'll see”是“我们会看到”的将来时。"
+    },
+    {
+      "id": "c018",
+      "startTime": 112.97,
+      "endTime": 113.57,
+      "en": "All right.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“All right”是“好吧”的常用口语，用于转换话题。"
+    },
+    {
+      "id": "c019",
+      "startTime": 113.29,
+      "endTime": 116.16,
+      "en": "Well, eight athletes have made it through from the semi-final.",
+      "zh": "嗯，有八名运动员从半决赛中晋级。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "semi-final",
+        "final"
+      ],
+      "note": "“made it through”是“成功通过”的常用短语。"
+    },
+    {
+      "id": "c020",
+      "startTime": 116.33,
+      "endTime": 119.28,
+      "en": "And we are looking at uh the calendar for the year.",
+      "zh": "我们来看一下今年的赛程。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "“looking at”是“看”的进行时，注意“calendar”指赛程。"
+    },
+    {
+      "id": "c021",
+      "startTime": 119.29,
+      "endTime": 120.75,
+      "en": "We're in June, as you can see.",
+      "zh": "现在是六月，如你所见。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“as you can see”是“如你所见”的固定表达。"
+    },
+    {
+      "id": "c022",
+      "startTime": 120.69,
+      "endTime": 124.43,
+      "en": "In July, we go to Krakco in about a week's time for speed.",
+      "zh": "七月，大约一周后我们去克拉科夫参加速度赛。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "speed"
+      ],
+      "note": "“in about a week's time”是“大约一周后”的正式表达。"
+    },
+    {
+      "id": "c023",
+      "startTime": 124.33,
+      "endTime": 128.08,
+      "en": "Uh, multiple relay races there, that new format being tested.",
+      "zh": "嗯，那里有多场接力赛，正在测试新赛制。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“relay races”是“接力赛”，注意“being tested”是现在分词被动。"
+    },
+    {
+      "id": "c024",
+      "startTime": 128.65,
+      "endTime": 132.35,
+      "en": "And then beyond into August where it's a little bit more chilled out.",
+      "zh": "然后到八月，那时候会轻松一些。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“chilled out”是“放松的”口语表达，注意“beyond”表示“之后”。"
+    },
+    {
+      "id": "c025",
+      "startTime": 132.25,
+      "endTime": 134.19,
+      "en": "September, we return to China.",
+      "zh": "九月，我们回到中国。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“return to”表示“回到”，常用于旅行或行程安排。"
+    },
+    {
+      "id": "c026",
+      "startTime": 134.09,
+      "endTime": 139.36,
+      "en": "And then October, we finish things off with Salt Lake City, Santiago, and Gungan in Korea.",
+      "zh": "然后十月，我们在盐湖城、圣地亚哥和韩国的Gungan结束比赛。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“finish things off”意为“结束”，口语中常用。"
+    },
+    {
+      "id": "c027",
+      "startTime": 139.61,
+      "endTime": 144.59,
+      "en": "And Sevilla, um, I know we talked about this yesterday, but you're not competing at the moment cuz you're injured,",
+      "zh": "还有塞维利亚，嗯，我知道我们昨天谈过这个，但你现在因为受伤没有参赛，",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“cuz”是“because”的口语缩写，听力中常见。"
+    },
+    {
+      "id": "c028",
+      "startTime": 144.49,
+      "endTime": 145.09,
+      "en": "right?",
+      "zh": "对吧？",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“right?”用于确认信息，相当于“对吧？”。"
+    },
+    {
+      "id": "c029",
+      "startTime": 144.69,
+      "endTime": 146.19,
+      "en": "That's why you get to join me.",
+      "zh": "这就是为什么你能和我一起解说。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“That's why”表示“这就是为什么”，用于解释原因。"
+    },
+    {
+      "id": "c030",
+      "startTime": 146.09,
+      "endTime": 146.69,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yes”简单回应，注意语气。"
+    },
+    {
+      "id": "c031",
+      "startTime": 146.65,
+      "endTime": 159.28,
+      "en": "I unfortunately injured myself sometime after burn and I have decided to quit comp climbing and commentate for >> The amount of comments you have I think people will be very happy with that decision.",
+      "zh": "不幸的是，我在burn之后受伤了，我决定退出竞技攀岩，来解说 >> 你收到的评论数量，我想人们会对这个决定非常满意。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“quit”意为“退出”，“commentate”意为“解说”。"
+    },
+    {
+      "id": "c032",
+      "startTime": 159.69,
+      "endTime": 164.27,
+      "en": "Tiny, you know, I'm actually going to >> No, I'm not actually quitting, but it's been fun.",
+      "zh": "Tiny，你知道，我其实要 >> 不，我不是真的退役，但很有趣。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“actually”表示“实际上”，常用于纠正或强调。"
+    },
+    {
+      "id": "c033",
+      "startTime": 164.17,
+      "endTime": 166.11,
+      "en": "So maybe >> maybe I'd love to have you.",
+      "zh": "所以也许 >> 也许我希望你来。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“maybe”表示“也许”，注意省略号表示话语中断。"
+    },
+    {
+      "id": "c034",
+      "startTime": 166.01,
+      "endTime": 170.19,
+      "en": "Right, we're watching the highlights and Jean Won Chan was in a fun mood here today.",
+      "zh": "对，我们正在看精彩片段，今天Jean Won Chan心情很好。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“highlights”指“精彩片段”，“in a fun mood”意为“心情好”。"
+    },
+    {
+      "id": "c035",
+      "startTime": 170.09,
+      "endTime": 173.12,
+      "en": "He was uh soaking up the atmosphere from the crowd.",
+      "zh": "他在享受观众的氛围。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“soaking up the atmosphere”意为“沉浸于氛围中”。"
+    },
+    {
+      "id": "c036",
+      "startTime": 173.05,
+      "endTime": 180.59,
+      "en": "Showboating a little >> So impressive on these physical >> Yeah, that top so full on with that match on the pitch.",
+      "zh": "有点炫耀 >> 在这些体力动作上太惊人了 >> 是啊，那个top太全力以赴了，在pitch上双手并点。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "top",
+        "match"
+      ],
+      "note": "“showboating”意为“炫耀”，“match”在攀岩中指“双手并点”。"
+    },
+    {
+      "id": "c037",
+      "startTime": 180.49,
+      "endTime": 181.6,
+      "en": ">> Made it look so easy.",
+      "zh": ">> 看起来太轻松了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“made it look so easy”意为“让这看起来很容易”。"
+    },
+    {
+      "id": "c038",
+      "startTime": 181.69,
+      "endTime": 184.11,
+      "en": ">> But Serato also made it look very easy.",
+      "zh": ">> 但Serato也让它看起来很容易。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“also”表示“也”，注意比较。"
+    },
+    {
+      "id": "c039",
+      "startTime": 184.01,
+      "endTime": 185.23,
+      "en": "Four out of four for him.",
+      "zh": "他四把完攀。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“four out of four”意为“四把中四把成功”，即“四把完攀”。"
+    },
+    {
+      "id": "c040",
+      "startTime": 185.13,
+      "endTime": 186.59,
+      "en": "A step above everyone else.",
+      "zh": "比其他人都高出一筹。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“a step above”意为“高出一筹”。"
+    },
+    {
+      "id": "c041",
+      "startTime": 186.49,
+      "endTime": 187.63,
+      "en": "And he is the man to beat.",
+      "zh": "他是最需要击败的人。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“the man to beat”意为“最需要击败的人”。"
+    },
+    {
+      "id": "c042",
+      "startTime": 187.53,
+      "endTime": 189.87,
+      "en": "Going for a historic five out of five.",
+      "zh": "他正追求历史性的五把完攀。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“going for”意为“追求”，“historic”意为“历史性的”。"
+    },
+    {
+      "id": "c043",
+      "startTime": 189.77,
+      "endTime": 190.67,
+      "en": "Safia crazy.",
+      "zh": "Safia太疯狂了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“crazy”在此表示“太棒了”，口语中常用。"
+    },
+    {
+      "id": "c044",
+      "startTime": 190.57,
+      "endTime": 191.95,
+      "en": ">> That would be amazing to see.",
+      "zh": ">> 那将是非常精彩的。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“That would be amazing to see”意为“那将是非常精彩的”。"
+    },
+    {
+      "id": "c045",
+      "startTime": 191.85,
+      "endTime": 194.96,
+      "en": "Once again, I hope I want him to win the whole season.",
+      "zh": "再说一次，我希望他赢得整个赛季。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“once again”意为“再次”，“whole season”意为“整个赛季”。"
+    },
+    {
+      "id": "c046",
+      "startTime": 195.05,
+      "endTime": 195.87,
+      "en": ">> I kind of do too.",
+      "zh": ">> 我也有点希望。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“kind of”意为“有点”，口语常用。"
+    },
+    {
+      "id": "c047",
+      "startTime": 195.81,
+      "endTime": 200.35,
+      "en": "If he gets six, he'll equal Ya's amazing uh clean streak from a couple of years ago.",
+      "zh": "如果他拿到六把，他将追平Ya几年前惊人的连胜纪录。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“equal”意为“追平”，“clean streak”意为“连胜纪录”。"
+    },
+    {
+      "id": "c048",
+      "startTime": 200.25,
+      "endTime": 204.19,
+      "en": "Hannis van Dyson is back in having missed out just in the last couple of comps,",
+      "zh": "Hannis van Dyson回来了，他错过了最近几场比赛。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“missed out”意为“错过”，“comp”是“competition”的缩写。"
+    },
+    {
+      "id": "c049",
+      "startTime": 204.09,
+      "endTime": 205.6,
+      "en": "so it'll be cool to see him.",
+      "zh": "所以能看到他会很酷。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意“cool”在这里是口语化的“很棒”，不是“冷”的意思。"
+    },
+    {
+      "id": "c050",
+      "startTime": 206.25,
+      "endTime": 210.75,
+      "en": "And this uh lovely sort of lache into a cordo move at the top was a fun bowler to watch.",
+      "zh": "还有这个漂亮的动态抓握接顶部的一个协调动作，看起来很有趣。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "top",
+        "move"
+      ],
+      "note": "“lache”是攀岩术语，指动态抓握；“cordo move”可能指协调动作，注意听“lache”和“cordo”。"
+    },
+    {
+      "id": "c051",
+      "startTime": 210.65,
+      "endTime": 212,
+      "en": ">> That was a really cool coordination.",
+      "zh": "那真是个很酷的协调动作。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "“coordination”在这里指协调性动作，注意发音。"
+    },
+    {
+      "id": "c052",
+      "startTime": 212.17,
+      "endTime": 219.52,
+      "en": "Like semis this time worked really well for the men um compared to women's finals last night, but I'm excited to see how finals goes.",
+      "zh": "这次半决赛男子组表现很好，相比昨晚的女子决赛，但我很期待决赛。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“semis”是“semi-finals”的缩写，注意“compared to”的用法。"
+    },
+    {
+      "id": "c053",
+      "startTime": 219.53,
+      "endTime": 220.13,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c054",
+      "startTime": 219.77,
+      "endTime": 222.8,
+      "en": "So, we'll chat about that in a sec cuz it's worth saying something about.",
+      "zh": "所以，我们一会儿会聊聊那个，因为值得说一说。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“in a sec”是“in a second”的口语缩写，表示“一会儿”。"
+    },
+    {
+      "id": "c055",
+      "startTime": 222.89,
+      "endTime": 227.52,
+      "en": "But here is uh Leokan who's also back in.",
+      "zh": "但这是Leokan，他也回来了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名“Leokan”的发音。"
+    },
+    {
+      "id": "c056",
+      "startTime": 227.45,
+      "endTime": 230.11,
+      "en": "Did nicely on that left hand, right hand movement at the top.",
+      "zh": "在顶部那个左手、右手移动做得很好。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“left hand, right hand movement”指左右手交替移动，注意听“left”和“right”。"
+    },
+    {
+      "id": "c057",
+      "startTime": 230.05,
+      "endTime": 232.75,
+      "en": "There are a few different methods up there and we saw all of them.",
+      "zh": "上面有几种不同的方法，我们都看到了。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "“methods”在这里指不同的攀爬方式，注意“different”的发音。"
+    },
+    {
+      "id": "c058",
+      "startTime": 232.65,
+      "endTime": 235.04,
+      "en": "And S, I'm so excited to see him.",
+      "zh": "还有S，我很期待看到他。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“S”可能是一个运动员的名字缩写，注意上下文。"
+    },
+    {
+      "id": "c059",
+      "startTime": 235.13,
+      "endTime": 236.91,
+      "en": ">> Yes, it's so good to see him back.",
+      "zh": "是的，很高兴看到他回来。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“so good to see him back”是常见表达，注意“back”的用法。"
+    },
+    {
+      "id": "c060",
+      "startTime": 236.81,
+      "endTime": 240.8,
+      "en": "Especially he won his first World Cup in Ensrook 2 years ago.",
+      "zh": "尤其是他在两年前赢得了他的第一个世界杯冠军。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“World Cup”是世界杯，注意“won”的过去式发音。"
+    },
+    {
+      "id": "c061",
+      "startTime": 240.73,
+      "endTime": 241.55,
+      "en": ">> Yeah, it was Sunday.",
+      "zh": "是的，那是周日。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“Sunday”可能指比赛日期，注意“Sunday”的发音。"
+    },
+    {
+      "id": "c062",
+      "startTime": 241.45,
+      "endTime": 244.08,
+      "en": "It was uh hang on, I've got it here for you somewhere.",
+      "zh": "那是，等等，我这里有记录。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“hang on”是口语，表示“等等”，注意“hang”的发音。"
+    },
+    {
+      "id": "c063",
+      "startTime": 244.01,
+      "endTime": 246.4,
+      "en": "It was 2024, so two years ago.",
+      "zh": "那是2024年，所以是两年前。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意年份“2024”的读法。"
+    },
+    {
+      "id": "c064",
+      "startTime": 247.21,
+      "endTime": 247.81,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c065",
+      "startTime": 247.53,
+      "endTime": 253.15,
+      "en": "So he uh went through the cord moves nicely and definitely headbutted the wall.",
+      "zh": "所以他很好地完成了那些协调动作，而且确实撞到了墙。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“headbutted the wall”是幽默说法，指头撞墙，注意“headbutt”的发音。"
+    },
+    {
+      "id": "c066",
+      "startTime": 253.05,
+      "endTime": 254.24,
+      "en": "We have it on a replay.",
+      "zh": "我们有回放。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“replay”是回放，注意“replay”的发音。"
+    },
+    {
+      "id": "c067",
+      "startTime": 254.17,
+      "endTime": 257.31,
+      "en": ">> Okay, we're very happy about >> Yeah, super happy.",
+      "zh": "好的，我们非常高兴。是的，超级高兴。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“super happy”是口语强调，注意“super”的用法。"
+    },
+    {
+      "id": "c068",
+      "startTime": 257.21,
+      "endTime": 258.32,
+      "en": "He went through the wall.",
+      "zh": "他穿过了墙。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“went through the wall”可能指动作夸张，注意“through”的发音。"
+    },
+    {
+      "id": "c069",
+      "startTime": 258.25,
+      "endTime": 261.84,
+      "en": "And then Max Mill, lovely to see him in a final, his second this year.",
+      "zh": "然后Max Mill，很高兴看到他进入决赛，这是他今年第二次。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "注意人名“Max Mill”的发音，以及“second”的用法。"
+    },
+    {
+      "id": "c070",
+      "startTime": 261.85,
+      "endTime": 264.8,
+      "en": "And he equals a British record by getting in here.",
+      "zh": "他进入决赛，追平了英国纪录。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“equals a British record”是追平纪录，注意“equals”的发音。"
+    },
+    {
+      "id": "c071",
+      "startTime": 264.97,
+      "endTime": 267.23,
+      "en": "So it's uh great stuff from him.",
+      "zh": "所以对他来说很棒。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“great stuff”是口语，表示“很棒”，注意“stuff”的用法。"
+    },
+    {
+      "id": "c072",
+      "startTime": 267.13,
+      "endTime": 271.12,
+      "en": "Yeah, he's uh seventh World Cup Boulder final, which is a male record.",
+      "zh": "是的，他是第七次进入世界杯攀石决赛，这是男子纪录。",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "boulder",
+        "final"
+      ],
+      "note": "“Boulder final”是攀石决赛，注意“Boulder”的发音。"
+    },
+    {
+      "id": "c073",
+      "startTime": 271.13,
+      "endTime": 274.16,
+      "en": "Yeah, he had such an impressive semi-final round with three tops",
+      "zh": "是的，他在半决赛中表现非常出色，完成了三条线路。",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "semi-final",
+        "final"
+      ],
+      "note": "注意“tops”在这里是动词，表示“完攀”，在攀岩语境中常用作名词或动词。"
+    },
+    {
+      "id": "c074",
+      "startTime": 275.13,
+      "endTime": 277.2,
+      "en": "making it easily into finals.",
+      "zh": "轻松进入决赛。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“making it easily into finals”是常见表达，表示“轻松晋级”。"
+    },
+    {
+      "id": "c075",
+      "startTime": 277.45,
+      "endTime": 278.05,
+      "en": ">> He did.",
+      "zh": ">> 确实如此。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“He did.”是简短回应，表示同意，注意语调。"
+    },
+    {
+      "id": "c076",
+      "startTime": 277.81,
+      "endTime": 284.19,
+      "en": "And then this man also was on cruise control, Ray Kawamata, who is I think he came in and out of the Japanese team,",
+      "zh": "然后这位选手也是轻松自如，雷·川俣，我想他曾经进出日本队，",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“on cruise control”比喻轻松掌控，注意“came in and out of”表示进出。"
+    },
+    {
+      "id": "c077",
+      "startTime": 284.09,
+      "endTime": 285.55,
+      "en": "but he is back in a big way.",
+      "zh": "但他强势回归了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“back in a big way”表示“强势回归”，注意“big way”的用法。"
+    },
+    {
+      "id": "c078",
+      "startTime": 285.45,
+      "endTime": 292.08,
+      "en": "And it's lovely to see him once again onto the stage and he was looking smooth throughout as he usually does to be honest.",
+      "zh": "很高兴再次看到他登上舞台，他看起来一如既往地流畅。",
+      "score": 31,
+      "study": false,
+      "keywords": [],
+      "note": "“looking smooth”形容动作流畅，注意“as he usually does”的省略。"
+    },
+    {
+      "id": "c079",
+      "startTime": 292.01,
+      "endTime": 301.07,
+      "en": "I mean also he came out I would say earlyish like mid semis round and then just tops three bowlers and you're just like whoa >>",
+      "zh": "我的意思是，他出场比较早，大概在半决赛中段，然后完攀了三条线路，你会觉得“哇”。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“earlyish”是口语化表达，表示“稍早”，注意“tops”的动词用法。"
+    },
+    {
+      "id": "c080",
+      "startTime": 301.17,
+      "endTime": 307.79,
+      "en": "and his first finals of the year made semis throughout but not the step into finals 11th was his best in burn >> okay so the",
+      "zh": "这是他今年第一次进入决赛，之前一直止步半决赛，最好成绩是第11名。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“made semis throughout”表示“一直进入半决赛”，注意“not the step into finals”的对比。"
+    },
+    {
+      "id": "c081",
+      "startTime": 307.73,
+      "endTime": 314.32,
+      "en": "crowd have gathered um and it's a pretty fun crowd here it's got to be said these are the boulders out on the wall and Sophia",
+      "zh": "好吧，人群已经聚集了，这里的气氛很有趣，墙上的这些抱石线路，索菲亚，",
+      "score": 31,
+      "study": false,
+      "keywords": [],
+      "note": "“it's got to be said”是插入语，表示“不得不说”，注意“boulders”指抱石线路。"
+    },
+    {
+      "id": "c082",
+      "startTime": 314.25,
+      "endTime": 325.23,
+      "en": "there are some really long boulders out there >> yeah I guess there's a big difference between quali boulders to semis But then I think also quite a maybe not as big of a difference,",
+      "zh": "那里有一些非常长的抱石线路 >> 是的，我想资格赛和半决赛的线路有很大区别，但可能区别没那么大，",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“big difference”和“not as big of a difference”对比，注意“quali”是“qualification”的缩写。"
+    },
+    {
+      "id": "c083",
+      "startTime": 325.13,
+      "endTime": 328.96,
+      "en": "but the setters like to take up more space with their boulders in finals.",
+      "zh": "但定线员喜欢在决赛中让线路占据更多空间。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“take up more space”表示“占据更多空间”，注意“setters”指定线员。"
+    },
+    {
+      "id": "c084",
+      "startTime": 329.45,
+      "endTime": 336.16,
+      "en": "Make it just a bit more bigger, more impressive, things like >> Yeah, the boulder number two especially.",
+      "zh": "让它更大、更令人印象深刻，比如 >> 是的，尤其是二号线路。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“Make it just a bit more bigger”是口语化表达，注意“more bigger”的重复。"
+    },
+    {
+      "id": "c085",
+      "startTime": 336.09,
+      "endTime": 339.31,
+      "en": "I haven't measured exactly how long it >> I mean, it takes over the whole slot.",
+      "zh": "我没有精确测量它有多长 >> 我的意思是，它占据了整个区域。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“takes over the whole slot”表示“占据整个区域”，注意“slot”指线路区域。"
+    },
+    {
+      "id": "c086",
+      "startTime": 339.21,
+      "endTime": 340.11,
+      "en": ">> Yeah, it really does.",
+      "zh": ">> 是的，确实如此。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“It really does.”强调同意，注意“does”代替“takes over”。"
+    },
+    {
+      "id": "c087",
+      "startTime": 340.01,
+      "endTime": 341.76,
+      "en": "All the way from left to right there.",
+      "zh": "从左到右。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“All the way from left to right”表示“从左到右”，注意“all the way”的强调。"
+    },
+    {
+      "id": "c088",
+      "startTime": 342.01,
+      "endTime": 342.61,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay.”是过渡词，表示“好的”。"
+    },
+    {
+      "id": "c089",
+      "startTime": 342.33,
+      "endTime": 344.59,
+      "en": "Well, the crowd are gathering now.",
+      "zh": "好吧，人群现在正在聚集。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“are gathering”表示“正在聚集”，注意现在进行时。"
+    },
+    {
+      "id": "c090",
+      "startTime": 344.49,
+      "endTime": 347.63,
+      "en": "And the lead wall, if you spot it in shots, it's got roots on it.",
+      "zh": "还有难度墙，如果你在镜头中看到它，上面有路线。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“roots”在这里可能指“路线”或“支点”，注意“lead wall”指难度墙。"
+    },
+    {
+      "id": "c091",
+      "startTime": 347.57,
+      "endTime": 350.4,
+      "en": "That's cuz it's the lead qualies tomorrow morning.",
+      "zh": "那是因为明天早上是难度资格赛。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“cuz”是“because”的口语缩写，注意“lead qualies”指难度资格赛。"
+    },
+    {
+      "id": "c092",
+      "startTime": 350.33,
+      "endTime": 352.51,
+      "en": "The athletes are allowed to see the roots at this stage.",
+      "zh": "运动员在这个阶段可以查看路线。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“are allowed to see”表示“被允许查看”，注意“at this stage”指现阶段。"
+    },
+    {
+      "id": "c093",
+      "startTime": 352.45,
+      "endTime": 353.79,
+      "en": "They get sent videos of them.",
+      "zh": "他们会收到路线的视频。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“get sent”是被动语态，表示“被发送”，注意“videos of them”指路线视频。"
+    },
+    {
+      "id": "c094",
+      "startTime": 353.69,
+      "endTime": 357.87,
+      "en": "And actually, I saw a lot of lead climbers this afternoon spending time >> just already looking.",
+      "zh": "实际上，我今天下午看到很多难度攀岩者花时间 >> 已经在看了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“spending time”表示“花时间”，注意“just already looking”的强调。"
+    },
+    {
+      "id": "c095",
+      "startTime": 357.77,
+      "endTime": 364.27,
+      "en": "They have their like binoculars and they're looking up at the holds and to see which specific hold everything is.",
+      "zh": "他们拿着双筒望远镜，抬头看支点，看每个具体支点是什么。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“binoculars”是“双筒望远镜”，注意“which specific hold”指具体支点。"
+    },
+    {
+      "id": "c096",
+      "startTime": 364.17,
+      "endTime": 370.24,
+      "en": "And I mean, yeah, it's important to know which holds you're going into, like to know if it's a good one, a bad one.",
+      "zh": "我的意思是，是的，知道你要抓哪些支点很重要，比如知道它是好的还是坏的。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“it's important to know”是重要句型，注意“which holds you're going into”指要抓的支点。"
+    },
+    {
+      "id": "c097",
+      "startTime": 370.41,
+      "endTime": 377.63,
+      "en": "Um, you don't want to be surprised in lead because you'll just if you're surprised, you will probably fall and then your comp's over.",
+      "zh": "嗯，在先锋攀中你不想感到意外，因为如果你感到意外，你可能会脱落，然后你的比赛就结束了。",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "lead",
+        "fall"
+      ],
+      "note": "注意'lead'在这里指'先锋攀'，'surprised'指'意外'，'fall'是'脱落'。"
+    },
+    {
+      "id": "c098",
+      "startTime": 377.53,
+      "endTime": 378.32,
+      "en": ">> Then you're done.",
+      "zh": ">> 那你就完了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "口语中'you're done'表示'你完了'，常用于比赛结束。"
+    },
+    {
+      "id": "c099",
+      "startTime": 378.49,
+      "endTime": 381.68,
+      "en": "And it is allowed as well if it's in an open venue like this.",
+      "zh": "而且如果是在像这样的开放场地，这也是允许的。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'open venue'指'开放场地'，注意'allowed'的发音。"
+    },
+    {
+      "id": "c100",
+      "startTime": 381.61,
+      "endTime": 384.03,
+      "en": "Right, the athletes come onto the stage.",
+      "zh": "对，运动员们走上舞台。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'come onto the stage'是'走上舞台'，注意'onto'的连读。"
+    },
+    {
+      "id": "c101",
+      "startTime": 383.93,
+      "endTime": 385.6,
+      "en": "We saw them briefly observing.",
+      "zh": "我们看到他们短暂地观察了一下。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'briefly'意为'短暂地'，'observing'是'观察'。"
+    },
+    {
+      "id": "c102",
+      "startTime": 385.61,
+      "endTime": 387.28,
+      "en": "We'll check that out in a minute.",
+      "zh": "我们稍后会看一下。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'check that out'是'看一下'，口语常用。"
+    },
+    {
+      "id": "c103",
+      "startTime": 388.33,
+      "endTime": 391.76,
+      "en": "The two Japanese athletes qualifying at the top Serato and Ray.",
+      "zh": "两位日本选手Serato和Ray以最高资格成绩晋级。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'qualifying at the top'指'以最高资格晋级'，注意'qualifying'的发音。"
+    },
+    {
+      "id": "c104",
+      "startTime": 391.77,
+      "endTime": 395.68,
+      "en": "And it's time for them to be presented to our audience here in Insbrook.",
+      "zh": "现在是时候把他们介绍给我们因斯布鲁克的观众了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'be presented to'是'被介绍给'，注意'Insbrook'的发音。"
+    },
+    {
+      "id": "c105",
+      "startTime": 395.93,
+      "endTime": 397.92,
+      "en": "Sam with a little cheeky look backwards.",
+      "zh": "Sam带着一点调皮的表情回头看。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'cheeky'意为'调皮的'，'look backwards'是'回头看'。"
+    },
+    {
+      "id": "c106",
+      "startTime": 398.81,
+      "endTime": 400.75,
+      "en": "And I'm really enjoying Dhan Lee.",
+      "zh": "我真的很喜欢Dhan Lee。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "'enjoy'在这里是'喜欢'，注意人名发音。"
+    },
+    {
+      "id": "c107",
+      "startTime": 400.65,
+      "endTime": 402.8,
+      "en": "I mean he's sorry not Dan Lee Chong.",
+      "zh": "我的意思是，抱歉，不是Dan Lee Chong。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意纠正口误，'sorry'用于道歉。"
+    },
+    {
+      "id": "c108",
+      "startTime": 403.05,
+      "endTime": 405.84,
+      "en": "Yeah, it's so good that he's back in finals",
+      "zh": "是的，他回到决赛真是太好了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'it's so good that'是'真是太好了'，注意'finals'的发音。"
+    },
+    {
+      "id": "c109",
+      "startTime": 407.13,
+      "endTime": 416.27,
+      "en": ">> cuz he's he's been struggling a bit with the style I would say and he's made it very open and it's cool that it worked",
+      "zh": ">> 因为他一直在这种风格上有点挣扎，而且他表现得非常开放，很高兴这对他在因斯布鲁克奏效了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'struggling with'是'在...上挣扎'，'made it very open'指'表现得很开放'。"
+    },
+    {
+      "id": "c110",
+      "startTime": 416.21,
+      "endTime": 419.55,
+      "en": "out for him in Insbrook and >> he's just having fun this year.",
+      "zh": "而且他今年玩得很开心。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'having fun'是'玩得开心'，注意'this year'的连读。"
+    },
+    {
+      "id": "c111",
+      "startTime": 419.49,
+      "endTime": 423.31,
+      "en": "You get the feeling like he's acting a little bit like a rock star which I love.",
+      "zh": "你会觉得他表现得有点像摇滚明星，我喜欢这样。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'acting like a rock star'是'表现得像摇滚明星'，注意'rock star'的发音。"
+    },
+    {
+      "id": "c112",
+      "startTime": 423.21,
+      "endTime": 426.48,
+      "en": "Like not in an arrogant way but he's blowing kisses to the crowd.",
+      "zh": "不是傲慢的那种，而是他向人群飞吻。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'blowing kisses'是'飞吻'，注意'not in an arrogant way'的否定。"
+    },
+    {
+      "id": "c113",
+      "startTime": 426.65,
+      "endTime": 427.52,
+      "en": "He's showboating.",
+      "zh": "他在炫耀。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'showboating'是'炫耀'，注意发音。"
+    },
+    {
+      "id": "c114",
+      "startTime": 427.85,
+      "endTime": 431.04,
+      "en": ">> I mean he's been on the circuit for so long too.",
+      "zh": ">> 我的意思是，他也在巡回赛上待了很长时间了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'on the circuit'指'在巡回赛上'，注意'for so long'的连读。"
+    },
+    {
+      "id": "c115",
+      "startTime": 431.13,
+      "endTime": 434.24,
+      "en": "So that's the wrong person on the screen.",
+      "zh": "所以屏幕上显示的是错误的人。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'wrong person'是'错误的人'，注意'screen'的发音。"
+    },
+    {
+      "id": "c116",
+      "startTime": 434.17,
+      "endTime": 434.88,
+      "en": ">> That's right.",
+      "zh": ">> 没错。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "'That's right'是'没错'，常用口语。"
+    },
+    {
+      "id": "c117",
+      "startTime": 434.81,
+      "endTime": 436.99,
+      "en": "That's we're looking at John one now.",
+      "zh": "我们现在看的是John one。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'we're looking at'是'我们正在看'，注意'John one'的发音。"
+    },
+    {
+      "id": "c118",
+      "startTime": 436.89,
+      "endTime": 439.87,
+      "en": "And then Hannis Van Dyson up next from Belgium.",
+      "zh": "接下来是来自比利时的Hannis Van Dyson。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'up next'是'接下来'，注意人名发音。"
+    },
+    {
+      "id": "c119",
+      "startTime": 439.77,
+      "endTime": 440.51,
+      "en": "The bright yellow.",
+      "zh": "亮黄色的。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'bright yellow'是'亮黄色'，注意'yellow'的发音。"
+    },
+    {
+      "id": "c120",
+      "startTime": 440.41,
+      "endTime": 442.16,
+      "en": "It's quite nice amongst all the blue.",
+      "zh": "在所有的蓝色中显得相当好看。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'amongst'是'在...之中'，注意'quite nice'的发音。"
+    },
+    {
+      "id": "c121",
+      "startTime": 442.09,
+      "endTime": 442.88,
+      "en": ">> Very visible.",
+      "zh": "非常明显。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "注意“visible”的发音，意为“可见的，明显的”。"
+    },
+    {
+      "id": "c122",
+      "startTime": 442.89,
+      "endTime": 443.68,
+      "en": "Very visible.",
+      "zh": "非常明显。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，注意语气。"
+    },
+    {
+      "id": "c123",
+      "startTime": 443.61,
+      "endTime": 445.39,
+      "en": "Camouflages with the volume behind him.",
+      "zh": "他身后的体块（造型）和他融为一体（伪装）。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“camouflage”意为“伪装”，这里指颜色相近。体块在攀岩中常指“volume”。"
+    },
+    {
+      "id": "c124",
+      "startTime": 445.29,
+      "endTime": 446.08,
+      "en": ">> Yes, exactly.",
+      "zh": "是的，没错。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“exactly”常用于表示完全同意。"
+    },
+    {
+      "id": "c125",
+      "startTime": 446.17,
+      "endTime": 448.96,
+      "en": "And back where he belongs in a final as well. But he missed out",
+      "zh": "而且他也回到了他该在的决赛中。但他错过了……",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“back where he belongs”意为“回到他该在的位置”。"
+    },
+    {
+      "id": "c126",
+      "startTime": 454.97,
+      "endTime": 460.32,
+      "en": ">> It's crazy how young some athletes are when they've been on the circuit and doing so well for so long.",
+      "zh": "有些运动员在巡回赛上表现出色且持续很久，但他们如此年轻，真是令人难以置信。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“circuit”指巡回赛，“doing so well”意为“表现出色”。"
+    },
+    {
+      "id": "c127",
+      "startTime": 461.05,
+      "endTime": 465.52,
+      "en": "And then Lee Doyan, South Korean athlete number two in tonight's finals.",
+      "zh": "然后是李道贤，韩国选手，今晚决赛的第二位。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意“athlete”的发音，意为“运动员”。"
+    },
+    {
+      "id": "c128",
+      "startTime": 466.01,
+      "endTime": 468.88,
+      "en": "He got a medal in Prague. He'd love another one",
+      "zh": "他在布拉格获得了一枚奖牌。他想要再拿一枚。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“He'd love another one”是“He would love another one”的缩写，表示“他想要另一个”。"
+    },
+    {
+      "id": "c129",
+      "startTime": 476.09,
+      "endTime": 476.69,
+      "en": "Amagasa.",
+      "zh": "天笠（选手名）。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意人名的发音。"
+    },
+    {
+      "id": "c130",
+      "startTime": 477.29,
+      "endTime": 479.12,
+      "en": "He's a very dynamic climber.",
+      "zh": "他是一位非常有爆发力的攀岩者。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“dynamic”在攀岩中常指“动态的，爆发力的”。"
+    },
+    {
+      "id": "c131",
+      "startTime": 479.61,
+      "endTime": 486.24,
+      "en": "He's the one who kind of headbutted the wall in celebration, which I absolutely >> His fringe is hiding the bruise that he got from it.",
+      "zh": "他是那个庆祝时用头撞墙的人，我绝对……他的刘海遮住了他因此留下的瘀伤。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“headbutted”意为“用头撞”，“bruise”意为“瘀伤”。"
+    },
+    {
+      "id": "c132",
+      "startTime": 490.33,
+      "endTime": 491.07,
+      "en": ">> Yeah, so good.",
+      "zh": "是的，太棒了。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“so good”表示“非常好”，口语常用。"
+    },
+    {
+      "id": "c133",
+      "startTime": 490.97,
+      "endTime": 492.8,
+      "en": "It's so nice to see him back in finals.",
+      "zh": "很高兴看到他重返决赛。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“back in finals”意为“回到决赛”。"
+    },
+    {
+      "id": "c134",
+      "startTime": 493.29,
+      "endTime": 496,
+      "en": ">> As it's nice to see this man, Max Mill.",
+      "zh": "就像看到这位，马克斯·米尔一样高兴。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“as it's nice to see”意为“就像看到……一样高兴”。"
+    },
+    {
+      "id": "c135",
+      "startTime": 496.65,
+      "endTime": 502.11,
+      "en": ">> Yeah, it's so good that he's in finals cuz this his first finals this >> this year.",
+      "zh": "是的，他进入决赛真是太好了，因为这是他今年的第一次决赛。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“cuz”是“because”的口语缩写。"
+    },
+    {
+      "id": "c136",
+      "startTime": 502.05,
+      "endTime": 503.23,
+      "en": "No, he's made two this year.",
+      "zh": "不，他今年已经进了两次了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“made two”指“进入两次决赛”。"
+    },
+    {
+      "id": "c137",
+      "startTime": 503.13,
+      "endTime": 504.16,
+      "en": ">> He's made two already.",
+      "zh": "他已经进了两次了。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“already”意为“已经”，注意语气。"
+    },
+    {
+      "id": "c138",
+      "startTime": 504.17,
+      "endTime": 504.77,
+      "en": "My bad.",
+      "zh": "我的错。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“My bad”是口语，意为“我的错”。"
+    },
+    {
+      "id": "c139",
+      "startTime": 504.65,
+      "endTime": 505.39,
+      "en": ">> No, no, don't worry.",
+      "zh": "不，不，别担心。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“don't worry”意为“别担心”。"
+    },
+    {
+      "id": "c140",
+      "startTime": 505.33,
+      "endTime": 506.83,
+      "en": "I've got to pull up exactly when.",
+      "zh": "我得查一下具体时间。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“pull up”在这里意为“查阅”。"
+    },
+    {
+      "id": "c141",
+      "startTime": 506.73,
+      "endTime": 508.19,
+      "en": "There's so many comps at the moment.",
+      "zh": "现在比赛太多了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“comps”是“competitions”的缩写。"
+    },
+    {
+      "id": "c142",
+      "startTime": 508.09,
+      "endTime": 510,
+      "en": "It's uh I'm forgetting myself.",
+      "zh": "呃，我都忘了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“forgetting myself”意为“忘记自己（要说什么）”。"
+    },
+    {
+      "id": "c143",
+      "startTime": 510.57,
+      "endTime": 514,
+      "en": ">> But yeah, no, it's really He did an amazing round in semis and it's really",
+      "zh": "但是，是的，不，他半决赛表现很棒，而且真的……",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“amazing round”意为“精彩的一轮”。"
+    },
+    {
+      "id": "c144",
+      "startTime": 515.85,
+      "endTime": 516.75,
+      "en": ">> Finals and last one.",
+      "zh": "决赛，最后一位。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“last one”指最后一位选手。"
+    },
+    {
+      "id": "c145",
+      "startTime": 516.69,
+      "endTime": 522.56,
+      "en": "So it's two in a row I think >> and he's also very emotional like shows his emotions whilst climbing so it's always fun to watch.",
+      "zh": "所以我认为这是连续两次完攀，而且他在攀爬时也非常情绪化，总是流露情感，所以观看他比赛总是很有趣。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意“two in a row”表示“连续两次”，常用于体育解说。"
+    },
+    {
+      "id": "c146",
+      "startTime": 522.49,
+      "endTime": 523.09,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的回应词，注意语调。"
+    },
+    {
+      "id": "c147",
+      "startTime": 522.97,
+      "endTime": 528,
+      "en": "And there is Ray Kawamata >> still sporting that bruise in his cheek from a past comp.",
+      "zh": "还有Ray Kawamata，他脸颊上还带着上次比赛留下的淤青。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“sporting”在这里意为“带着、展示”，常用于描述外观特征。"
+    },
+    {
+      "id": "c148",
+      "startTime": 529.53,
+      "endTime": 533.04,
+      "en": ">> Probably a slab as dangerous as they are >> indeed.",
+      "zh": "可能是一个像它们一样危险的板壁，确实如此。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“slab”指板壁，注意“as dangerous as they are”表示“像它们一样危险”。"
+    },
+    {
+      "id": "c149",
+      "startTime": 533.93,
+      "endTime": 535.04,
+      "en": "Smile from him.",
+      "zh": "他露出了微笑。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Smile from him”是解说中常见的简洁表达。"
+    },
+    {
+      "id": "c150",
+      "startTime": 535.61,
+      "endTime": 538.56,
+      "en": "Lovely to see him here as well. His first one this",
+      "zh": "很高兴在这里见到他。这是他本赛季的第一次。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“Lovely to see”是礼貌用语，注意“his first one”指第一次参赛。"
+    },
+    {
+      "id": "c151",
+      "startTime": 545.05,
+      "endTime": 546.96,
+      "en": "Salt Lake City. He was in finals,",
+      "zh": "在盐湖城，他进入了决赛。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意“Salt Lake City”是地名，决赛为“finals”。"
+    },
+    {
+      "id": "c152",
+      "startTime": 548.01,
+      "endTime": 549.55,
+      "en": "but it's been a while for him.",
+      "zh": "但对他来说已经有一段时间了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“it's been a while”表示“已经有一段时间了”，常用口语。"
+    },
+    {
+      "id": "c153",
+      "startTime": 549.45,
+      "endTime": 554.64,
+      "en": "And then Sarato and Raka going for five and looking in total control during semifinals,",
+      "zh": "然后Sarato和Raka正在争夺第五名，他们在半决赛中看起来完全掌控局面。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“going for five”指争夺第五名，“in total control”表示完全掌控。"
+    },
+    {
+      "id": "c154",
+      "startTime": 554.97,
+      "endTime": 558.75,
+      "en": "making boulders look easy a little bit like uh Annie did last night.",
+      "zh": "让抱石看起来很容易，有点像昨晚Annie那样。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“making boulders look easy”是解说常用语，表示轻松完成。"
+    },
+    {
+      "id": "c155",
+      "startTime": 558.65,
+      "endTime": 561.28,
+      "en": "Or not easy, but different from the >> Crazy.",
+      "zh": "或者说不容易，但与众不同。疯狂。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“Or not easy”是自我修正，注意“different from”的用法。"
+    },
+    {
+      "id": "c156",
+      "startTime": 561.21,
+      "endTime": 566.32,
+      "en": "How does he not have like 100% rate to finals or semis at least?",
+      "zh": "他怎么没有100%进入决赛或至少半决赛的比率？",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“How does he not have”是口语化疑问，注意“rate”指比率。"
+    },
+    {
+      "id": "c157",
+      "startTime": 566.57,
+      "endTime": 567.79,
+      "en": "Has he missed out?",
+      "zh": "他错过过吗？",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“missed out”表示错过机会，常用短语。"
+    },
+    {
+      "id": "c158",
+      "startTime": 567.69,
+      "endTime": 570,
+      "en": "Maybe maybe at the beginning of his career.",
+      "zh": "也许在他职业生涯的初期。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“at the beginning of”表示在……初期。"
+    },
+    {
+      "id": "c159",
+      "startTime": 570.17,
+      "endTime": 574.72,
+      "en": ">> There was a phase where he kind of exploded and then it went up and down a bit as he tried to get some consistency.",
+      "zh": "有一段时间他爆发了，然后成绩有些起伏，因为他试图保持稳定。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“exploded”比喻成绩突飞猛进，“up and down”表示起伏。"
+    },
+    {
+      "id": "c160",
+      "startTime": 575.85,
+      "endTime": 576.91,
+      "en": "Right, subtle waves.",
+      "zh": "对，微妙的波动。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "“subtle waves”指微妙的波动，注意“subtle”的发音。"
+    },
+    {
+      "id": "c161",
+      "startTime": 576.81,
+      "endTime": 577.41,
+      "en": "Goodbye.",
+      "zh": "再见。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "简单的告别语。"
+    },
+    {
+      "id": "c162",
+      "startTime": 577.37,
+      "endTime": 578.75,
+      "en": "Now, you mentioned last night.",
+      "zh": "现在，你提到了昨晚。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“you mentioned”是引用对方的话，注意“last night”的连读。"
+    },
+    {
+      "id": "c163",
+      "startTime": 578.65,
+      "endTime": 581.15,
+      "en": "Last night was a tricky night for all.",
+      "zh": "昨晚对所有人来说都是一个棘手的夜晚。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“tricky”表示棘手的，注意“for all”的用法。"
+    },
+    {
+      "id": "c164",
+      "startTime": 581.05,
+      "endTime": 584.75,
+      "en": "Very low scoring, frustrating, and it's interesting.",
+      "zh": "得分很低，令人沮丧，而且很有趣。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“low scoring”指低得分，“frustrating”表示令人沮丧。"
+    },
+    {
+      "id": "c165",
+      "startTime": 584.65,
+      "endTime": 588.48,
+      "en": "We've been chatting about this, the difference between hard boulders and low percentage boulders.",
+      "zh": "我们一直在讨论这个，关于难点抱石和低成功率抱石的区别。",
+      "score": 60,
+      "study": true,
+      "keywords": [
+        "low percentage"
+      ],
+      "note": "“hard boulders”指难点抱石，“low percentage”指低成功率。"
+    },
+    {
+      "id": "c166",
+      "startTime": 588.89,
+      "endTime": 592,
+      "en": ">> And I think that's kind of what caught a lot of people last night.",
+      "zh": "我认为这就是昨晚很多人被难住的原因。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“caught a lot of people”表示难住了很多人，注意“caught”的过去式。"
+    },
+    {
+      "id": "c167",
+      "startTime": 591.93,
+      "endTime": 598.03,
+      "en": ">> Yeah, I think I mean athletes always prefer hard boulders for any kind of round.",
+      "zh": "是的，我认为运动员在任何一轮中总是更喜欢难点抱石。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“athletes always prefer”表示运动员总是更喜欢，注意“for any kind of round”的用法。"
+    },
+    {
+      "id": "c168",
+      "startTime": 597.93,
+      "endTime": 600.08,
+      "en": "They always would love to have a fight and",
+      "zh": "他们总是喜欢有挑战性的。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“would love to have a fight”比喻喜欢挑战，注意“fight”的引申义。"
+    },
+    {
+      "id": "c169",
+      "startTime": 601.21,
+      "endTime": 601.81,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意语气词“Yeah”在口语中常表示肯定或回应。"
+    },
+    {
+      "id": "c170",
+      "startTime": 601.77,
+      "endTime": 605.12,
+      "en": "But this time it was just it was too hard.",
+      "zh": "但这次就是太难了。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "“too hard”表示“太难”，注意“too”表示“太”的程度。"
+    },
+    {
+      "id": "c171",
+      "startTime": 605.13,
+      "endTime": 612.83,
+      "en": "Like there's nothing more frustrating than just falling off or not even falling off the first move trying to get the start position >> and you",
+      "zh": "就像，没有什么比脱落更令人沮丧的了，甚至不是脱落，而是第一个动作就上不去，连起始姿势都摆不好，然后你",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“falling off”是攀岩术语，指脱落；“start position”指起始姿势。"
+    },
+    {
+      "id": "c172",
+      "startTime": 612.73,
+      "endTime": 619.76,
+      "en": "can't even try the rest of the border and that is just yeah as frustrating for the crowd as it is for the athlete.",
+      "zh": "连这条线路的其余部分都试不了，这对观众和运动员来说都一样令人沮丧。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“as frustrating for the crowd as it is for the athlete”表示对双方同样沮丧，注意比较结构。"
+    },
+    {
+      "id": "c173",
+      "startTime": 620.09,
+      "endTime": 621.68,
+      "en": "Um so it was a bit",
+      "zh": "嗯，所以这有点",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“a bit”表示“有点”，常用于口语。"
+    },
+    {
+      "id": "c174",
+      "startTime": 622.89,
+      "endTime": 624.27,
+      "en": "that not all Yeah.",
+      "zh": "不是所有人都能……是的。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "注意“not all”表示“不是所有”，此处省略了后续内容。"
+    },
+    {
+      "id": "c175",
+      "startTime": 624.17,
+      "endTime": 625.12,
+      "en": "Not many voters.",
+      "zh": "没有多少观众。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“voters”可能是“viewers”的误听，这里指观众。"
+    },
+    {
+      "id": "c176",
+      "startTime": 625.69,
+      "endTime": 628.8,
+      "en": ">> Yes, it was one of those rounds but it's all reset today.",
+      "zh": ">> 是的，那是其中一轮，但今天一切都重新设置了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“reset”指重新设置线路，注意“all reset”表示全部重置。"
+    },
+    {
+      "id": "c177",
+      "startTime": 628.73,
+      "endTime": 633.47,
+      "en": "It was a good semi-finals earlier on and the men have also had a little bit more rest than the women.",
+      "zh": "早些时候的半决赛很不错，而且男子选手比女子选手休息得更多一些。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“have had a little bit more rest”表示休息更多，注意比较级。"
+    },
+    {
+      "id": "c178",
+      "startTime": 633.37,
+      "endTime": 634.72,
+      "en": "They had yesterday off.",
+      "zh": "他们昨天休息了。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“had yesterday off”表示昨天休息，注意“off”表示休假。"
+    },
+    {
+      "id": "c179",
+      "startTime": 634.81,
+      "endTime": 636.43,
+      "en": ">> So that might make a difference as well.",
+      "zh": ">> 所以那也可能产生影响。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“make a difference”表示产生影响，常用短语。"
+    },
+    {
+      "id": "c180",
+      "startTime": 636.37,
+      "endTime": 637.39,
+      "en": "We'll wait and see though.",
+      "zh": "不过我们拭目以待。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“wait and see”是固定表达，表示观望。"
+    },
+    {
+      "id": "c181",
+      "startTime": 637.29,
+      "endTime": 639.76,
+      "en": "So observation time for the athletes.",
+      "zh": "现在是运动员的观察时间。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“observation time”指观察时间，注意“observation”的发音。"
+    },
+    {
+      "id": "c182",
+      "startTime": 639.85,
+      "endTime": 642.51,
+      "en": "This was filmed just before we went on air.",
+      "zh": "这是在我们直播前拍摄的。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“on air”表示直播中，注意“filmed”是“film”的过去式。"
+    },
+    {
+      "id": "c183",
+      "startTime": 642.41,
+      "endTime": 646.4,
+      "en": "And this is an opportunity for the athletes to try to work out how to climb the boulders.",
+      "zh": "这是运动员们尝试找出如何攀爬这些抱石线路的机会。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“work out”表示想出、解决，注意“boulders”指抱石线路。"
+    },
+    {
+      "id": "c184",
+      "startTime": 646.49,
+      "endTime": 650.43,
+      "en": "Sophia, what kind of things are you looking for when you look at bers like this?",
+      "zh": "索菲亚，你看这样的线路时，会关注哪些方面？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“what kind of things”是询问类型的常用句型。"
+    },
+    {
+      "id": "c185",
+      "startTime": 650.33,
+      "endTime": 655.79,
+      "en": "Um, I think when you're reading a border, it's first of all important to understand your methods,",
+      "zh": "嗯，我觉得当你解读一条线路时，首先重要的是理解你的方法，",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“reading a boulder”指解读线路，注意“methods”指动作方法。"
+    },
+    {
+      "id": "c186",
+      "startTime": 655.69,
+      "endTime": 662.48,
+      "en": "like which method you're going to choose, which direction obviously you're going to climb in, but then like typically for this border,",
+      "zh": "比如你会选择哪种方法，显然你会朝哪个方向攀爬，但通常对于这条线路，",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“which direction”指方向，注意“typically”表示通常。"
+    },
+    {
+      "id": "c187",
+      "startTime": 662.41,
+      "endTime": 667.44,
+      "en": "you're going to want to know where the hold is cuz it's a bit hidden behind the volume.",
+      "zh": "你会想知道手点在哪里，因为它有点藏在岩点后面。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "hold",
+        "volume"
+      ],
+      "note": "“hidden behind the volume”指藏在岩点后面，注意“volume”指大体积岩点。"
+    },
+    {
+      "id": "c188",
+      "startTime": 667.61,
+      "endTime": 671.52,
+      "en": "So, also know where the holds are and maybe",
+      "zh": "所以，也要知道手点的位置，也许",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“know where the holds are”表示知道手点位置，注意“holds”指手点。"
+    },
+    {
+      "id": "c189",
+      "startTime": 672.81,
+      "endTime": 676.27,
+      "en": "give percentage of like how hard each move is.",
+      "zh": "给每个动作的难度打个百分比。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“give percentage”表示给出百分比，注意“how hard each move is”表示每个动作有多难。"
+    },
+    {
+      "id": "c190",
+      "startTime": 676.17,
+      "endTime": 678.75,
+      "en": "Then you know, okay, here I'm going to have to maybe give a bit more.",
+      "zh": "然后你就知道，好吧，这里我可能需要多花点力气。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“give a bit more”表示多付出一些，注意“maybe”表示可能。"
+    },
+    {
+      "id": "c191",
+      "startTime": 678.65,
+      "endTime": 679.25,
+      "en": "here.",
+      "zh": "这里。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“here”指位置，注意上下文。"
+    },
+    {
+      "id": "c192",
+      "startTime": 678.89,
+      "endTime": 680.4,
+      "en": "I can like take it a bit slower.",
+      "zh": "我可以稍微慢一点。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“take it a bit slower”表示放慢速度，注意“a bit”表示稍微。"
+    },
+    {
+      "id": "c193",
+      "startTime": 680.97,
+      "endTime": 684.32,
+      "en": "Um, especially for finals, like it's very jumpy,",
+      "zh": "嗯，尤其是决赛，动作非常跳跃，",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "jumpy 在这里指动作跳跃、不连贯，注意听这个形容词。"
+    },
+    {
+      "id": "c194",
+      "startTime": 685.29,
+      "endTime": 685.89,
+      "en": "sabby.",
+      "zh": "沙比（选手名）。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "Sabby 是选手昵称，注意人名发音。"
+    },
+    {
+      "id": "c195",
+      "startTime": 686.41,
+      "endTime": 692.48,
+      "en": "Um, understanding how much power you want to give, how slow you need to do each move.",
+      "zh": "嗯，要理解你想用多少力量，每个动作需要多慢。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "how much power 和 how slow 是并列的疑问词引导的宾语从句，注意听这两个 how。"
+    },
+    {
+      "id": "c196",
+      "startTime": 692.81,
+      "endTime": 694.99,
+      "en": "Um, I mean, yeah, look how long this lap is.",
+      "zh": "嗯，我是说，你看这条线路多长。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "look how long this lap is 是感叹句，注意 how 的用法。"
+    },
+    {
+      "id": "c197",
+      "startTime": 694.89,
+      "endTime": 699.28,
+      "en": "They're going to need to understand quite quickly how to get it done because they've only got 4 minutes.",
+      "zh": "他们需要很快理解如何完成，因为他们只有4分钟。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "get it done 表示完成，注意 only 强调时间短。"
+    },
+    {
+      "id": "c198",
+      "startTime": 699.93,
+      "endTime": 703.92,
+      "en": "And so, if you're just spending so much time on the wall fig wondering what you have to do,",
+      "zh": "所以，如果你在岩壁上花太多时间思考该怎么做，",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "spend time doing 是固定搭配，注意 fig 可能是 figuring 的缩写。"
+    },
+    {
+      "id": "c199",
+      "startTime": 704.01,
+      "endTime": 705.36,
+      "en": "your four minutes go by.",
+      "zh": "你的四分钟就过去了。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "go by 表示时间流逝，注意这个短语。"
+    },
+    {
+      "id": "c200",
+      "startTime": 705.37,
+      "endTime": 706.91,
+      "en": ">> It does gone, isn't it?",
+      "zh": ">> 确实过去了，不是吗？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "does gone 是口语化表达，实际是 has gone，注意听。"
+    },
+    {
+      "id": "c201",
+      "startTime": 706.85,
+      "endTime": 711.95,
+      "en": "By the way, I need to make a correction because Max Mill's manager's just texted me saying it's three finals,",
+      "zh": "顺便说一句，我需要更正一下，因为Max Mill的经理刚发短信给我说是三场决赛，",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "make a correction 是更正，注意 manager's 所有格。"
+    },
+    {
+      "id": "c202",
+      "startTime": 711.85,
+      "endTime": 712.45,
+      "en": "Matt.",
+      "zh": "Matt。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "Matt 是人名，注意称呼。"
+    },
+    {
+      "id": "c203",
+      "startTime": 712.09,
+      "endTime": 713.31,
+      "en": "This year it is three finals.",
+      "zh": "今年是三场决赛。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "three finals 注意复数，表示三场。"
+    },
+    {
+      "id": "c204",
+      "startTime": 713.21,
+      "endTime": 713.81,
+      "en": "You're right.",
+      "zh": "你说得对。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "You're right 是常用表达，注意连读。"
+    },
+    {
+      "id": "c205",
+      "startTime": 713.61,
+      "endTime": 714.83,
+      "en": "It was uh Yeah.",
+      "zh": "那是嗯，是的。",
+      "score": 2,
+      "study": false,
+      "keywords": [],
+      "note": "It was uh Yeah 是口语填充，注意 uh 的停顿。"
+    },
+    {
+      "id": "c206",
+      "startTime": 714.73,
+      "endTime": 718.27,
+      "en": "So, we've got Prague, Burn, and then So, apologies, Max.",
+      "zh": "所以，我们有布拉格、伯恩，然后，所以，抱歉，Max。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "Prague 和 Burn 是地名，注意发音。"
+    },
+    {
+      "id": "c207",
+      "startTime": 718.17,
+      "endTime": 719.79,
+      "en": "You're just too good for my own brain.",
+      "zh": "你太好了，我的脑子记不住。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "too good for my brain 是幽默说法，注意 too...for... 结构。"
+    },
+    {
+      "id": "c208",
+      "startTime": 719.69,
+      "endTime": 720.48,
+      "en": "Very good.",
+      "zh": "非常好。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "Very good 是简单评价，注意语调。"
+    },
+    {
+      "id": "c209",
+      "startTime": 722.49,
+      "endTime": 723.09,
+      "en": ">> All right.",
+      "zh": ">> 好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "All right 表示同意或转换话题，注意口语用法。"
+    },
+    {
+      "id": "c210",
+      "startTime": 722.89,
+      "endTime": 725.55,
+      "en": "So, this is the last moment where the athletes figure it out.",
+      "zh": "所以，这是运动员们最后摸索动作的时刻。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "figure it out 是弄清楚，注意这个短语。"
+    },
+    {
+      "id": "c211",
+      "startTime": 725.45,
+      "endTime": 728.67,
+      "en": "Ray back in a final and will be enjoying this moment.",
+      "zh": "Ray 再次进入决赛，会享受这一刻。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "back in a final 表示再次进入决赛，注意 back 的用法。"
+    },
+    {
+      "id": "c212",
+      "startTime": 728.57,
+      "endTime": 730.99,
+      "en": "Sam Abs, it's good to see him fight his way back.",
+      "zh": "Sam Abs，很高兴看到他奋力回归。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "fight his way back 表示奋力回归，注意这个表达。"
+    },
+    {
+      "id": "c213",
+      "startTime": 730.89,
+      "endTime": 733.55,
+      "en": ">> Also, he has a lot of ups and downs.",
+      "zh": ">> 而且，他有很多起伏。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "ups and downs 是高低起伏，注意这个习语。"
+    },
+    {
+      "id": "c214",
+      "startTime": 733.45,
+      "endTime": 738.56,
+      "en": "I feel like throughout the season he can be super strong in one comp and then another comp it just doesn't work out as well.",
+      "zh": "我觉得整个赛季，他可能在一场比赛中超强，然后另一场比赛就不太顺利。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "super strong 和 doesn't work out 对比，注意 work out 表示成功。"
+    },
+    {
+      "id": "c215",
+      "startTime": 738.65,
+      "endTime": 741.52,
+      "en": "I mean I think that's just bouldering in general. It's so",
+      "zh": "我觉得这就是攀石运动的普遍情况。它是如此",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "bouldering 是攀石，注意这个词。"
+    },
+    {
+      "id": "c216",
+      "startTime": 742.57,
+      "endTime": 744.75,
+      "en": "v what's the word?",
+      "zh": "什么词来着？",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "what's the word 是思考时的口语，注意听。"
+    },
+    {
+      "id": "c217",
+      "startTime": 744.65,
+      "endTime": 745.25,
+      "en": "Variable.",
+      "zh": "变量。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“variable”在此指不稳定的因素。"
+    },
+    {
+      "id": "c218",
+      "startTime": 745.45,
+      "endTime": 746.05,
+      "en": "Variable.",
+      "zh": "变量。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，注意发音。"
+    },
+    {
+      "id": "c219",
+      "startTime": 746.01,
+      "endTime": 746.61,
+      "en": ">> Variable.",
+      "zh": ">> 变量。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“>>”表示说话人切换，注意听。"
+    },
+    {
+      "id": "c220",
+      "startTime": 746.81,
+      "endTime": 748,
+      "en": "Is that a word?",
+      "zh": "那是个词吗？",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“Is that a word?”用于质疑某个表达。"
+    },
+    {
+      "id": "c221",
+      "startTime": 750.57,
+      "endTime": 754.64,
+      "en": "so yeah consistency I would say is quite hard in especially in bouldering.",
+      "zh": "所以，是的，一致性我认为在攀石中尤其难。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“consistency”意为“一致性”，注意“especially”的发音。"
+    },
+    {
+      "id": "c222",
+      "startTime": 755.69,
+      "endTime": 756.51,
+      "en": ">> Yeah exactly.",
+      "zh": ">> 是的，完全正确。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“exactly”表示完全同意。"
+    },
+    {
+      "id": "c223",
+      "startTime": 756.41,
+      "endTime": 759.15,
+      "en": "And with these low percentage moves especially like we saw last night.",
+      "zh": "而且对于这些低成功率的动作，尤其是像我们昨晚看到的。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "low percentage"
+      ],
+      "note": "“low percentage moves”指成功率低的动作，注意“especially”的用法。"
+    },
+    {
+      "id": "c224",
+      "startTime": 759.05,
+      "endTime": 759.65,
+      "en": "It's hard.",
+      "zh": "这很难。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "简单句，注意“hard”的发音。"
+    },
+    {
+      "id": "c225",
+      "startTime": 759.45,
+      "endTime": 760.05,
+      "en": "Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Right”在此表示同意。"
+    },
+    {
+      "id": "c226",
+      "startTime": 759.69,
+      "endTime": 761.39,
+      "en": "Let's have a look at boulder number one.",
+      "zh": "让我们看看一号攀石。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“boulder number one”指一号攀石，注意“boulder”的发音。"
+    },
+    {
+      "id": "c227",
+      "startTime": 761.33,
+      "endTime": 762.72,
+      "en": "It's right in the middle of the wall.",
+      "zh": "它就在墙的正中间。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“right in the middle”表示正中间，注意“right”的强调用法。"
+    },
+    {
+      "id": "c228",
+      "startTime": 762.65,
+      "endTime": 763.92,
+      "en": "Sophia, what have they got?",
+      "zh": "索菲亚，他们有什么？",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“Sophia”是人名，注意“what have they got”的用法。"
+    },
+    {
+      "id": "c229",
+      "startTime": 764.17,
+      "endTime": 766.48,
+      "en": ">> So, the first border is coordination.",
+      "zh": ">> 所以，第一个攀石是协调性的。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "“coordination”意为“协调性”，注意“first”的发音。"
+    },
+    {
+      "id": "c230",
+      "startTime": 766.65,
+      "endTime": 768.32,
+      "en": "I would say coordination power.",
+      "zh": "我会说是协调力量。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "“coordination power”指协调力量，注意“power”的发音。"
+    },
+    {
+      "id": "c231",
+      "startTime": 768.33,
+      "endTime": 771.71,
+      "en": "It's just an obvious first powerful jump.",
+      "zh": "这只是一个明显的第一次强力跳跃。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "powerful"
+      ],
+      "note": "“obvious”意为“明显的”，注意“first”和“powerful”的连读。"
+    },
+    {
+      "id": "c232",
+      "startTime": 771.61,
+      "endTime": 774.59,
+      "en": "You jump kind of straight up to a hidden Okay.",
+      "zh": "你几乎是直直地跳到一个隐藏的……好的。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“kind of”表示“有点”，注意“hidden”的发音。"
+    },
+    {
+      "id": "c233",
+      "startTime": 774.49,
+      "endTime": 776.08,
+      "en": "Well, here's a start position.",
+      "zh": "嗯，这里有一个起始位置。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“start position”指起始位置，注意“here's”的缩写。"
+    },
+    {
+      "id": "c234",
+      "startTime": 776.33,
+      "endTime": 781.12,
+      "en": "You jump up to kind of a hidden volume and then you want to go directly into the jug.",
+      "zh": "你跳到一个隐藏的体量上，然后你想直接进入那个大把手。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "jug",
+        "volume"
+      ],
+      "note": "“volume”指岩壁上的体量，注意“jug”指大把手。"
+    },
+    {
+      "id": "c235",
+      "startTime": 781.21,
+      "endTime": 783.44,
+      "en": "You come underneath, grab the zone.",
+      "zh": "你来到下方，抓住Zone得分点。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“grab”意为“抓”，注意“zone”的发音。"
+    },
+    {
+      "id": "c236",
+      "startTime": 783.53,
+      "endTime": 785.87,
+      "en": "Um, this zone hold is not that great.",
+      "zh": "嗯，这个Zone点不是很好。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone",
+        "hold"
+      ],
+      "note": "“not that great”表示“不是很好”，注意“that”的弱读。"
+    },
+    {
+      "id": "c237",
+      "startTime": 785.77,
+      "endTime": 788,
+      "en": "And then you come out to also a not so great hold.",
+      "zh": "然后你出来到一个也不怎么好的点。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“also”表示“也”，注意“not so great”的用法。"
+    },
+    {
+      "id": "c238",
+      "startTime": 788.17,
+      "endTime": 792.16,
+      "en": "And then I think maybe go fast to the next crimp and then to the top.",
+      "zh": "然后我想也许快速到下一个指力点，然后到顶。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "top",
+        "crimp"
+      ],
+      "note": "“crimp”指指力点，注意“maybe”的发音。"
+    },
+    {
+      "id": "c239",
+      "startTime": 792.41,
+      "endTime": 793.84,
+      "en": "But we will see.",
+      "zh": "但我们会看到。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“we will see”表示“我们会看到”，注意“will”的弱读。"
+    },
+    {
+      "id": "c240",
+      "startTime": 794.33,
+      "endTime": 796.51,
+      "en": ">> And we stood underneath that starting hold.",
+      "zh": ">> 我们站在那个起始点的下方。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“stood”是“stand”的过去式，注意“underneath”的发音。"
+    },
+    {
+      "id": "c241",
+      "startTime": 796.41,
+      "endTime": 798.11,
+      "en": "You cannot see that purple volume.",
+      "zh": "你看不到那个紫色的体积。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "注意“volume”在攀岩中常指岩壁上的立体造型，这里指紫色岩点。"
+    },
+    {
+      "id": "c242",
+      "startTime": 798.01,
+      "endTime": 799.31,
+      "en": "It's back behind your head.",
+      "zh": "它就在你脑后。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“back behind your head”表示位置在脑后，注意“back”在这里是副词，表示“向后”。"
+    },
+    {
+      "id": "c243",
+      "startTime": 799.21,
+      "endTime": 801.44,
+      "en": "It's going to be one of those full commitment launches.",
+      "zh": "这将是一次全力的跳跃。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“full commitment”表示全力投入，这里指需要完全信任的跳跃动作。"
+    },
+    {
+      "id": "c244",
+      "startTime": 801.53,
+      "endTime": 804.59,
+      "en": "And hopefully the hold is where you think it's going to be >> actually.",
+      "zh": "希望那个点在你认为的位置。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“hopefully”表示希望，注意“where you think it's going to be”是宾语从句。"
+    },
+    {
+      "id": "c245",
+      "startTime": 804.49,
+      "endTime": 805.09,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c246",
+      "startTime": 804.69,
+      "endTime": 807.39,
+      "en": "It's also on the steep part of the wall.",
+      "zh": "而且它位于墙壁的陡峭部分。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“steep part”指陡峭部分，注意“steep”是形容词。"
+    },
+    {
+      "id": "c247",
+      "startTime": 807.29,
+      "endTime": 812.27,
+      "en": "So it we do say it's just a straight jump upwards, but it goes quite far out.",
+      "zh": "所以我们说这只是向上直跳，但它跳得相当远。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“straight jump upwards”表示向上直跳，“quite far out”表示相当远。"
+    },
+    {
+      "id": "c248",
+      "startTime": 812.17,
+      "endTime": 816.27,
+      "en": "So for coordination, if you can't see the hold and then you have to jump kind of backwards,",
+      "zh": "所以对于协调性来说，如果你看不到那个点，然后你必须向后跳，",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "hold",
+        "coordination"
+      ],
+      "note": "“coordination”指协调性，“kind of”表示有点，口语常用。"
+    },
+    {
+      "id": "c249",
+      "startTime": 816.17,
+      "endTime": 820.56,
+      "en": "you're going to have such a big swing to then come into the jug that they have.",
+      "zh": "你会有很大的摆动，然后才能抓到他们那个大把手点。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "jug",
+        "swing"
+      ],
+      "note": "“swing”指摆动，“jug”是大的把手点，注意“come into”表示进入。"
+    },
+    {
+      "id": "c250",
+      "startTime": 821.05,
+      "endTime": 823.87,
+      "en": "But let's see how Sam does it.",
+      "zh": "但让我们看看Sam是怎么做的。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“let's see”表示让我们看看，注意“how”引导的从句。"
+    },
+    {
+      "id": "c251",
+      "startTime": 823.77,
+      "endTime": 826.56,
+      "en": ">> It's one of those things on TV from this straight on perspective.",
+      "zh": "从电视这个正面的角度看，这是那种事情。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“straight on perspective”表示正面视角，注意“perspective”是视角。"
+    },
+    {
+      "id": "c252",
+      "startTime": 826.49,
+      "endTime": 827.39,
+      "en": "It doesn't look too bad.",
+      "zh": "看起来不太难。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“doesn't look too bad”表示看起来不太糟，注意“too”的用法。"
+    },
+    {
+      "id": "c253",
+      "startTime": 827.29,
+      "endTime": 830.08,
+      "en": "But honestly, >> it doesn't look too bad, but it's quite steep and",
+      "zh": "但说实话，它看起来不太难，但相当陡峭，而且",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“honestly”表示说实话，“quite steep”表示相当陡峭。"
+    },
+    {
+      "id": "c254",
+      "startTime": 831.29,
+      "endTime": 832.16,
+      "en": "quite hidden.",
+      "zh": "相当隐蔽。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“hidden”表示隐蔽，注意“quite”修饰形容词。"
+    },
+    {
+      "id": "c255",
+      "startTime": 832.09,
+      "endTime": 834.32,
+      "en": ">> Yeah, he of coursees it.",
+      "zh": "是的，他当然完成了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“of course”表示当然，注意“he of coursees it”是口语化表达，实际应为“he of course does it”。"
+    },
+    {
+      "id": "c256",
+      "startTime": 835.37,
+      "endTime": 836.24,
+      "en": ">> Easy stuff.",
+      "zh": "简单的事情。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“easy stuff”表示简单的事情，口语常用。"
+    },
+    {
+      "id": "c257",
+      "startTime": 837.45,
+      "endTime": 838.05,
+      "en": ">> All right.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“all right”表示好的，口语常用。"
+    },
+    {
+      "id": "c258",
+      "startTime": 837.77,
+      "endTime": 840.24,
+      "en": "So, there is the zone above his head.",
+      "zh": "所以，他头顶上方就是Zone得分点。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“zone”在攀岩中特指Zone得分点，注意“above his head”表示头顶上方。"
+    },
+    {
+      "id": "c259",
+      "startTime": 840.73,
+      "endTime": 842.11,
+      "en": "Cross through with the right.",
+      "zh": "用右手交叉通过。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“cross through”表示交叉通过，注意“with the right”指用右手。"
+    },
+    {
+      "id": "c260",
+      "startTime": 842.01,
+      "endTime": 845.2,
+      "en": "And then this is where things >> So, this is where",
+      "zh": "然后这就是事情的关键。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“this is where things”表示这就是关键，注意“where”引导表语从句。"
+    },
+    {
+      "id": "c261",
+      "startTime": 846.97,
+      "endTime": 850.16,
+      "en": ">> So, this left hand sloper is not that great.",
+      "zh": "所以，这个左手坡点不是很好。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "sloper"
+      ],
+      "note": "“sloper”是坡点，注意“not that great”表示不是很好。"
+    },
+    {
+      "id": "c262",
+      "startTime": 850.89,
+      "endTime": 858.08,
+      "en": "But he's managed to kind of block his heel in which is actually a very smart thing to do because if you come out your foot left.",
+      "zh": "但他设法把脚跟钩住了，这实际上是非常聪明的做法，因为如果你把脚移开，",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "heel",
+        "foot"
+      ],
+      "note": "“block his heel”表示固定脚跟，“smart”表示聪明，注意“if you come out your foot left”可能意为“如果你把脚移开”。"
+    },
+    {
+      "id": "c263",
+      "startTime": 859.13,
+      "endTime": 860.64,
+      "en": "Okay, he's flashed that.",
+      "zh": "好的，他一把完攀了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“flashed”在攀岩中表示一把完攀，注意“flash”是动词。"
+    },
+    {
+      "id": "c264",
+      "startTime": 861.13,
+      "endTime": 866.51,
+      "en": "All right, there's a flash for Sam Abazoo and it looked pretty chill for him there.",
+      "zh": "好的，Sam Abazoo一把完攀，而且看起来对他来说很轻松。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "flash"
+      ],
+      "note": "“chill”表示轻松，注意“looked pretty chill”表示看起来相当轻松。"
+    },
+    {
+      "id": "c265",
+      "startTime": 866.41,
+      "endTime": 867.87,
+      "en": "He was chalking up mid route.",
+      "zh": "他在攀爬中途正在抹镁粉。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意“chalking up”表示抹镁粉，是攀岩常用动作。"
+    },
+    {
+      "id": "c266",
+      "startTime": 867.77,
+      "endTime": 874.96,
+      "en": "That heel toe cam was a a smart thing to do and that is an easy flash to get him started into tonight's finals.",
+      "zh": "那个脚跟-脚趾卡点动作非常聪明，而且这是一次轻松的flash，让他顺利进入今晚的决赛。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "flash",
+        "heel",
+        "toe"
+      ],
+      "note": "“heel toe cam”是脚跟-脚趾卡点，一种高级脚法。"
+    },
+    {
+      "id": "c267",
+      "startTime": 874.89,
+      "endTime": 876.03,
+      "en": "Very different from the last one.",
+      "zh": "和上一个完全不同。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意“very different”的强调语气。"
+    },
+    {
+      "id": "c268",
+      "startTime": 875.97,
+      "endTime": 879.12,
+      "en": ">> Yeah, I was going to say this finals is just going to be four tops.",
+      "zh": ">> 是的，我正想说这次决赛可能就只是四个top。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“four tops”指四个完攀，注意“tops”的用法。"
+    },
+    {
+      "id": "c269",
+      "startTime": 881.05,
+      "endTime": 883.79,
+      "en": "No, >> but you never know, do you?",
+      "zh": "不，>> 但你永远不知道，对吧？",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“you never know”是常用口语，表示世事难料。"
+    },
+    {
+      "id": "c270",
+      "startTime": 883.81,
+      "endTime": 885.95,
+      "en": "I mean, these athletes are super high level.",
+      "zh": "我的意思是，这些运动员水平非常高。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“super high level”强调水平极高。"
+    },
+    {
+      "id": "c271",
+      "startTime": 885.85,
+      "endTime": 886.72,
+      "en": ">> I mean, yeah.",
+      "zh": ">> 我的意思是，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“I mean”是口语中常用的插入语。"
+    },
+    {
+      "id": "c272",
+      "startTime": 887.77,
+      "endTime": 891.84,
+      "en": ">> And you never know how each athlete is going to perform in each round.",
+      "zh": ">> 而且你永远不知道每位运动员在每轮比赛中会表现如何。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意“how each athlete is going to perform”的将来时用法。"
+    },
+    {
+      "id": "c273",
+      "startTime": 893.53,
+      "endTime": 895.79,
+      "en": ">> But he just went full power onto this.",
+      "zh": ">> 但他刚才全力投入了这个动作。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“went full power”表示全力，注意“full power”的用法。"
+    },
+    {
+      "id": "c274",
+      "startTime": 895.69,
+      "endTime": 899.6,
+      "en": "Kind of slowed down his swing and then directed his swing to the left into the",
+      "zh": "他稍微减缓了摆动，然后将摆动导向左侧进入……",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "swing"
+      ],
+      "note": "“slowed down”和“directed”是动作描述，注意“swing”指摆动。"
+    },
+    {
+      "id": "c275",
+      "startTime": 903.85,
+      "endTime": 907.07,
+      "en": ">> this was very very smart from him, his side.",
+      "zh": ">> 这对他来说非常非常聪明。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“very very smart”强调极其聪明。"
+    },
+    {
+      "id": "c276",
+      "startTime": 906.97,
+      "endTime": 909.15,
+      "en": "Like I don't think I don't think that's easy.",
+      "zh": "我觉得那不容易。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“I don't think that's easy”是委婉表达困难。"
+    },
+    {
+      "id": "c277",
+      "startTime": 909.05,
+      "endTime": 911.28,
+      "en": "No. >> And that's a really bad crimp.",
+      "zh": "不。>> 而且那是一个很糟糕的crimp。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "“crimp”指小扣点，注意“bad crimp”表示难抓的点。"
+    },
+    {
+      "id": "c278",
+      "startTime": 911.21,
+      "endTime": 913.36,
+      "en": "So, we'll definitely see how others",
+      "zh": "所以，我们肯定会看到其他人……",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“we'll definitely see”表示肯定看到。"
+    },
+    {
+      "id": "c279",
+      "startTime": 914.41,
+      "endTime": 915.6,
+      "en": ">> handle this move.",
+      "zh": ">> 如何处理这个动作。",
+      "score": 30,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“handle this move”指处理这个动作。"
+    },
+    {
+      "id": "c280",
+      "startTime": 916.09,
+      "endTime": 917.79,
+      "en": ">> Yeah, Sam Abazy in and out.",
+      "zh": ">> 是的，Sam Abazy进进出出。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“in and out”可能指快速完成或进出场。"
+    },
+    {
+      "id": "c281",
+      "startTime": 917.69,
+      "endTime": 923.68,
+      "en": "The other athletes waiting in the background will know that this boulder has been flashed or at least done quickly.",
+      "zh": "其他在后台等待的运动员会知道这个boulder已经被flash了，或者至少很快完成了。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“flashed”是攀岩术语，指一次尝试完攀。"
+    },
+    {
+      "id": "c282",
+      "startTime": 924.41,
+      "endTime": 927.07,
+      "en": "John John Wong is waiting in the wings.",
+      "zh": "John John Wong正在场边等待。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“waiting in the wings”指在旁等待。"
+    },
+    {
+      "id": "c283",
+      "startTime": 926.97,
+      "endTime": 929.63,
+      "en": "I can see him right now as we see this final replay.",
+      "zh": "我们现在看这个决赛回放时，我能看到他。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“as we see”表示当……时。"
+    },
+    {
+      "id": "c284",
+      "startTime": 929.53,
+      "endTime": 931.2,
+      "en": "Sam grabbing a wall and celebrating.",
+      "zh": "Sam抓住墙壁庆祝。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“grabbing a wall”指抓住墙壁，庆祝动作。"
+    },
+    {
+      "id": "c285",
+      "startTime": 931.77,
+      "endTime": 933.12,
+      "en": "Quick start from him.",
+      "zh": "他起步很快。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“quick start”指快速起步。"
+    },
+    {
+      "id": "c286",
+      "startTime": 933.13,
+      "endTime": 933.87,
+      "en": "Very interesting.",
+      "zh": "非常有趣。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“very interesting”表示非常有趣。"
+    },
+    {
+      "id": "c287",
+      "startTime": 933.77,
+      "endTime": 934.88,
+      "en": ">> Yeah, that was a flash.",
+      "zh": ">> 是的，那是一次flash。",
+      "score": 28,
+      "study": true,
+      "keywords": [
+        "flash"
+      ],
+      "note": "“flash”指一次尝试完攀，注意发音。"
+    },
+    {
+      "id": "c288",
+      "startTime": 934.81,
+      "endTime": 937.76,
+      "en": "That's that's very important points wise.",
+      "zh": "那在得分上非常重要。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“points wise”指在得分方面。"
+    },
+    {
+      "id": "c289",
+      "startTime": 938.49,
+      "endTime": 939.15,
+      "en": "Yeah, you're right.",
+      "zh": "是的，你说得对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意“Yeah, you're right.”是口语中常见的赞同表达。"
+    },
+    {
+      "id": "c290",
+      "startTime": 939.09,
+      "endTime": 941.23,
+      "en": "It's full 25 points to explain to everyone.",
+      "zh": "满分是25分，我来给大家解释一下。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“full 25 points”指满分25分，注意“full”在此表示“完整的、满的”。"
+    },
+    {
+      "id": "c291",
+      "startTime": 941.13,
+      "endTime": 947.04,
+      "en": "So, you get 25 for a top, 10 for a zone, and minus 0.1 for every failed attempt to that scoring area.",
+      "zh": "所以，完攀得25分，Zone得分点得10分，每次尝试未到达得分区域扣0.1分。",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "zone",
+        "attempt"
+      ],
+      "note": "“top”和“zone”是攀岩计分术语，分别指完攀和Zone得分点。"
+    },
+    {
+      "id": "c292",
+      "startTime": 947.21,
+      "endTime": 949.92,
+      "en": "John John runs out the rockstar of",
+      "zh": "约翰·约翰跑出来，他是攀岩明星。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“rockstar”这里比喻攀岩高手，注意“runs out”可能指跑出出场。"
+    },
+    {
+      "id": "c293",
+      "startTime": 952.57,
+      "endTime": 954.91,
+      "en": ">> Just Yeah, he's just enjoying it.",
+      "zh": ">> 是的，他只是在享受比赛。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“enjoying it”表示享受其中，注意“just”强调“只是”。"
+    },
+    {
+      "id": "c294",
+      "startTime": 954.81,
+      "endTime": 957.92,
+      "en": "He's so happy to be in finals and he's showing it and",
+      "zh": "他非常高兴能进入决赛，并且他表现出来了。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“showing it”指表现出情绪，注意“so happy”的强调。"
+    },
+    {
+      "id": "c295",
+      "startTime": 958.97,
+      "endTime": 960.32,
+      "en": "that's the vibe we want.",
+      "zh": "这就是我们想要的氛围。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“vibe”是口语，指氛围、感觉。"
+    },
+    {
+      "id": "c296",
+      "startTime": 960.97,
+      "endTime": 961.57,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的赞同，注意语调。"
+    },
+    {
+      "id": "c297",
+      "startTime": 961.21,
+      "endTime": 962.83,
+      "en": "He didn't make the team last year.",
+      "zh": "他去年没有入选国家队。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“make the team”指入选队伍，注意过去时。"
+    },
+    {
+      "id": "c298",
+      "startTime": 962.73,
+      "endTime": 966.08,
+      "en": "wasn't selected after the crazy came",
+      "zh": "在疯狂的表现之后没有被选中。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“wasn't selected”是被动语态，注意“crazy”可能指疯狂的表现。"
+    },
+    {
+      "id": "c299",
+      "startTime": 967.85,
+      "endTime": 970.08,
+      "en": ">> Especially he's the athlete who kind of",
+      "zh": ">> 特别是他是那种……",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“especially”表示特别，注意“kind of”是口语中的“有点”。"
+    },
+    {
+      "id": "c300",
+      "startTime": 971.05,
+      "endTime": 976.96,
+      "en": ">> was just dominant on the circuit when like kind of brought career out of the easy.",
+      "zh": ">> 在巡回赛中占主导地位的运动员，就像让职业生涯变得轻松一样。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“dominant”指主导的，“brought career out of the easy”可能指让职业生涯变得轻松。"
+    },
+    {
+      "id": "c301",
+      "startTime": 978.25,
+      "endTime": 980.16,
+      "en": ">> Yeah, this is strong stuff from him.",
+      "zh": ">> 是的，这对他来说是很强的表现。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“strong stuff”指很棒的表现，注意“stuff”的用法。"
+    },
+    {
+      "id": "c302",
+      "startTime": 980.89,
+      "endTime": 983.6,
+      "en": "Finds the flow, hits that right foot.",
+      "zh": "找到节奏，踩上右脚。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“flow”指流畅的节奏，“hits”指踩点。"
+    },
+    {
+      "id": "c303",
+      "startTime": 985.69,
+      "endTime": 987.92,
+      "en": ">> Let's see if he's going to think of this",
+      "zh": ">> 让我们看看他是否会考虑这个。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“think of”指考虑，注意“Let's see”的用法。"
+    },
+    {
+      "id": "c304",
+      "startTime": 989.85,
+      "endTime": 991.95,
+      "en": "So, this is where Okay.",
+      "zh": "所以，这就是关键点。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“this is where”指这就是关键之处，注意“Okay”的停顿。"
+    },
+    {
+      "id": "c305",
+      "startTime": 991.85,
+      "endTime": 997.84,
+      "en": "Well, he's a very powerful climber, so he managed to kind of like stop his barn door by slapping the right side of the volume.",
+      "zh": "嗯，他是一个非常有力量的攀岩者，所以他通过拍击右侧的斜面来阻止自己的门板效应。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "volume",
+        "powerful"
+      ],
+      "note": "“barn door”是攀岩术语，指身体像门一样打开，“slapping”指拍击。"
+    },
+    {
+      "id": "c306",
+      "startTime": 998.17,
+      "endTime": 1000.48,
+      "en": "But once again, the holds are not good.",
+      "zh": "但再次强调，手点并不好。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“holds”指手点，“not good”表示不好。"
+    },
+    {
+      "id": "c307",
+      "startTime": 1000.73,
+      "endTime": 1002.72,
+      "en": "So, he fell off here.",
+      "zh": "所以，他在这里掉落了。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“fell off”是攀岩术语，指脱落。"
+    },
+    {
+      "id": "c308",
+      "startTime": 1002.97,
+      "endTime": 1006.56,
+      "en": ">> He heard the slap as he brought that palm in to press against the volume.",
+      "zh": ">> 他听到拍击声，因为他把手掌压向斜面。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“brought that palm in”指把手掌压上去，注意“press against”的用法。"
+    },
+    {
+      "id": "c309",
+      "startTime": 1006.89,
+      "endTime": 1010.03,
+      "en": "It's pretty physical cuz the left sloper is bad for the left hand.",
+      "zh": "这相当费力，因为左手抓的坡面点很不好。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "sloper"
+      ],
+      "note": "“sloper”是攀岩术语，指坡面点，“bad”指不好抓。"
+    },
+    {
+      "id": "c310",
+      "startTime": 1009.93,
+      "endTime": 1010.53,
+      "en": ">> Mhm.",
+      "zh": ">> 嗯。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "表示认同的感叹词。"
+    },
+    {
+      "id": "c311",
+      "startTime": 1010.25,
+      "endTime": 1012.83,
+      "en": "And then the volume is also It's just nothing.",
+      "zh": "然后那个斜面也是，什么都没有。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“It's just nothing”指斜面没有好的手点。"
+    },
+    {
+      "id": "c312",
+      "startTime": 1012.73,
+      "endTime": 1015.36,
+      "en": "It's just friction that's kind of keeping him on the wall.",
+      "zh": "只是摩擦力让他贴在墙上。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“friction”指摩擦力，“keeping him on the wall”指让他贴在墙上。"
+    },
+    {
+      "id": "c313",
+      "startTime": 1016.01,
+      "endTime": 1016.8,
+      "en": ">> And compression.",
+      "zh": "还有挤压。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "compression 在攀岩中指用身体挤压岩壁来保持平衡，注意发音 /kəmˈpreʃən/。"
+    },
+    {
+      "id": "c314",
+      "startTime": 1017.29,
+      "endTime": 1019.63,
+      "en": ">> I love how his face changed mid swing there.",
+      "zh": "我喜欢他摆动时脸上的表情变化。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "swing"
+      ],
+      "note": "mid swing 指摆动过程中，注意 'mid' 是 'middle' 的缩写，常用于口语。"
+    },
+    {
+      "id": "c315",
+      "startTime": 1019.53,
+      "endTime": 1023.07,
+      "en": "He went for a full effort into completing >> just it's a joke.",
+      "zh": "他全力尝试完攀，但只是开玩笑。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "full effort 表示全力，'just it's a joke' 是口语，意思是“只是开玩笑”，注意连读。"
+    },
+    {
+      "id": "c316",
+      "startTime": 1022.97,
+      "endTime": 1023.92,
+      "en": "I can relax.",
+      "zh": "我可以放松了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "relax 在这里指放松心态，注意 'can' 在口语中常弱读为 /kən/。"
+    },
+    {
+      "id": "c317",
+      "startTime": 1028.49,
+      "endTime": 1032.99,
+      "en": "points on the board for him up against Sam Abs is 25 of course from flashing the boulder.",
+      "zh": "他得分了，对阵 Sam Abs 是25分，当然是因为一把完攀了这块抱石。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "flash 在攀岩中特指第一次尝试就完攀，注意 'points on the board' 是得分的意思。"
+    },
+    {
+      "id": "c318",
+      "startTime": 1032.89,
+      "endTime": 1034.96,
+      "en": "If he does it this go he'd get 24.9.",
+      "zh": "如果这次他完成，他会得到24.9分。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "this go 意思是“这一次”，'go' 在这里是名词，表示尝试。"
+    },
+    {
+      "id": "c319",
+      "startTime": 1036.09,
+      "endTime": 1039.15,
+      "en": ">> So you see this is interesting cuz the athletes read together right.",
+      "zh": "所以你看这很有趣，因为运动员们一起读线。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "read together 指一起观察和解读路线，注意 'cuz' 是 'because' 的口语缩写。"
+    },
+    {
+      "id": "c320",
+      "startTime": 1039.05,
+      "endTime": 1046.08,
+      "en": "So did Sam kind of just keep that to himself you know or maybe he only thought of it once he was in position.",
+      "zh": "所以 Sam 是不是有点保守秘密，或者也许他只是在到达那个位置时才想到的。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "keep to himself 意思是保守秘密，'in position' 指到达正确的位置。"
+    },
+    {
+      "id": "c321",
+      "startTime": 1046.25,
+      "endTime": 1053.36,
+      "en": "I think that's kind of also a tactic that athletes maybe do is that they think of an extra idea that could work and keep it to themselves.",
+      "zh": "我认为这也是一种运动员可能采用的战术，他们想出一个额外的可行想法，然后保密。",
+      "score": 30,
+      "study": false,
+      "keywords": [],
+      "note": "tactic 是战术，'keep it to themselves' 意思是保密，注意 'that could work' 是定语从句。"
+    },
+    {
+      "id": "c322",
+      "startTime": 1053.61,
+      "endTime": 1056.99,
+      "en": ">> I've heard that told to me before, which is, you share as much as you can,",
+      "zh": "我以前听说过这个，就是尽可能多地分享，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "share as much as you can 是固定搭配，注意 'as...as' 结构。"
+    },
+    {
+      "id": "c323",
+      "startTime": 1056.89,
+      "endTime": 1062.96,
+      "en": "but just maybe >> just a little just a little information that you just don't share",
+      "zh": "但也许只是一点点，一点点你不分享的信息。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "just a little 重复使用强调“一点点”，注意 'information' 是不可数名词。"
+    },
+    {
+      "id": "c324",
+      "startTime": 1064.65,
+      "endTime": 1066.11,
+      "en": ">> or maybe share with different people.",
+      "zh": "或者也许和不同的人分享。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "different people 指不同的人，注意 'maybe' 的发音 /ˈmeɪbi/。"
+    },
+    {
+      "id": "c325",
+      "startTime": 1066.01,
+      "endTime": 1067.79,
+      "en": "I mean, like >> or share with your teammates.",
+      "zh": "我的意思是，比如，或者和你的队友分享。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "I mean 是口语中常用的插入语，'teammates' 指队友。"
+    },
+    {
+      "id": "c326",
+      "startTime": 1067.69,
+      "endTime": 1068.43,
+      "en": "Yeah, exactly.",
+      "zh": "是的，完全正确。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "exactly 表示完全同意，注意重音在第一个音节。"
+    },
+    {
+      "id": "c327",
+      "startTime": 1068.33,
+      "endTime": 1072.32,
+      "en": "I was I was looking if it was another French in finals, but it's just him.",
+      "zh": "我在看决赛中是否还有另一个法国人，但只有他。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "another French 指另一个法国人，注意 'French' 在这里是名词，指法国人。"
+    },
+    {
+      "id": "c328",
+      "startTime": 1080.81,
+      "endTime": 1081.63,
+      "en": "crosses through.",
+      "zh": "交叉通过。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "crosses through 指交叉移动，注意 'through' 的发音 /θruː/。"
+    },
+    {
+      "id": "c329",
+      "startTime": 1081.53,
+      "endTime": 1083.12,
+      "en": "And now this is where it came.",
+      "zh": "现在这就是关键所在。",
+      "score": 30,
+      "study": false,
+      "keywords": [],
+      "note": "this is where it came 意思是“这就是关键”，注意 'came' 是 'come' 的过去式。"
+    },
+    {
+      "id": "c330",
+      "startTime": 1083.13,
+      "endTime": 1084.08,
+      "en": ">> Now let's see.",
+      "zh": "现在让我们看看。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "let's see 是常用口语，注意 'let's' 是 'let us' 的缩写。"
+    },
+    {
+      "id": "c331",
+      "startTime": 1084.09,
+      "endTime": 1086.24,
+      "en": "He's seen the drop knee move.",
+      "zh": "他看到了 drop knee 动作。",
+      "score": 65,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "move",
+        "drop knee"
+      ],
+      "note": "drop knee 是攀岩术语，指膝盖下压的动作，注意 'knee' 的发音 /niː/。"
+    },
+    {
+      "id": "c332",
+      "startTime": 1088.97,
+      "endTime": 1092.32,
+      "en": ">> And now if he's going to jump straight for it.",
+      "zh": "现在如果他直接跳过去。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "jump straight for it 指直接跳向目标，注意 'straight' 的发音 /streɪt/。"
+    },
+    {
+      "id": "c333",
+      "startTime": 1094.17,
+      "endTime": 1096.96,
+      "en": ">> He didn't even use that left foot at >> He didn't need it.",
+      "zh": "他甚至没有用左脚，他不需要。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "didn't even 强调“甚至没有”，注意 'even' 的发音 /ˈiːvən/。"
+    },
+    {
+      "id": "c334",
+      "startTime": 1099.21,
+      "endTime": 1102,
+      "en": "It's great that he saw the foothold.",
+      "zh": "他看到了那个脚点，这很好。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "foothold"
+      ],
+      "note": "foothold 是脚点，注意 'hold' 在攀岩中常指手点或脚点。"
+    },
+    {
+      "id": "c335",
+      "startTime": 1101.93,
+      "endTime": 1105.6,
+      "en": "It's good to sometimes look around and see what options you've got when you're climbing",
+      "zh": "有时候在攀爬时环顾四周看看你有什么选择是好的，",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "look around 意思是环顾四周，'options' 指选择，注意 'sometimes' 的发音。"
+    },
+    {
+      "id": "c336",
+      "startTime": 1106.97,
+      "endTime": 1110.67,
+      "en": "and not always just stick to the same method that you originally thought of.",
+      "zh": "而不是总是坚持你最初想到的同样方法。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "stick to 意思是坚持，'method' 指方法，注意 'originally' 的发音 /əˈrɪdʒənəli/。"
+    },
+    {
+      "id": "c337",
+      "startTime": 1110.57,
+      "endTime": 1112.56,
+      "en": "I think it's important to try new things.",
+      "zh": "我认为尝试新事物很重要。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'try new things' 的发音连读。"
+    },
+    {
+      "id": "c338",
+      "startTime": 1114.01,
+      "endTime": 1114.88,
+      "en": ">> Yeah, absolutely.",
+      "zh": ">> 是的，绝对。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "口语中常用 'absolutely' 表示强烈同意。"
+    },
+    {
+      "id": "c339",
+      "startTime": 1114.89,
+      "endTime": 1116.4,
+      "en": "Well, well done, John.",
+      "zh": "嗯，干得好，约翰。",
+      "score": 8,
+      "study": false,
+      "keywords": [],
+      "note": "'well done' 是表扬的常用语。"
+    },
+    {
+      "id": "c340",
+      "startTime": 1116.33,
+      "endTime": 1117.15,
+      "en": "Gets it done.",
+      "zh": "搞定了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'get it done' 表示完成某事。"
+    },
+    {
+      "id": "c341",
+      "startTime": 1117.05,
+      "endTime": 1122.32,
+      "en": "He leaves the stage with a little yet bringing the vibe.",
+      "zh": "他离开舞台时带着一点（疲惫），但带来了气氛。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'bring the vibe' 意为营造氛围。"
+    },
+    {
+      "id": "c342",
+      "startTime": 1123.45,
+      "endTime": 1124.48,
+      "en": ">> That was great.",
+      "zh": ">> 那太棒了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'That was great' 是常见赞美。"
+    },
+    {
+      "id": "c343",
+      "startTime": 1124.73,
+      "endTime": 1125.95,
+      "en": "Let's have a replay then.",
+      "zh": "那我们回放一下。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'have a replay' 指回放录像。"
+    },
+    {
+      "id": "c344",
+      "startTime": 1125.85,
+      "endTime": 1126.83,
+      "en": "That's when the foot was there.",
+      "zh": "那就是脚放在那里的时候。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'that's when' 的用法。"
+    },
+    {
+      "id": "c345",
+      "startTime": 1126.77,
+      "endTime": 1129.87,
+      "en": "Obviously the barn door, he kind of ignored it by jumping all the way >> Yeah.",
+      "zh": "显然，他通过直接跳过去忽略了开门（动作）。>> 是的。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'barn door' 是攀岩术语，指身体像门一样打开。"
+    },
+    {
+      "id": "c346",
+      "startTime": 1129.77,
+      "endTime": 1133.55,
+      "en": "And also actually No, it's it's not too bad of a top hold.",
+      "zh": "而且实际上，不，顶部的抓握点并不算太差。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "top",
+        "hold"
+      ],
+      "note": "'top hold' 指顶部的抓握点。"
+    },
+    {
+      "id": "c347",
+      "startTime": 1133.45,
+      "endTime": 1135.44,
+      "en": "Like it looks very slloy here, but",
+      "zh": "看起来这里很滑，但是",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'slloy' 可能是 'sloppy' 的误听，意为湿滑。"
+    },
+    {
+      "id": "c348",
+      "startTime": 1136.41,
+      "endTime": 1139.12,
+      "en": "it is like a bit flat at the wall at the top there.",
+      "zh": "顶部那里靠墙的地方有点平。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'flat at the wall' 指与墙面平齐。"
+    },
+    {
+      "id": "c349",
+      "startTime": 1139.61,
+      "endTime": 1140.91,
+      "en": ">> Yeah, you see it in this shot.",
+      "zh": ">> 是的，你在这个镜头里能看到。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'you see it' 常用于强调可见性。"
+    },
+    {
+      "id": "c350",
+      "startTime": 1140.81,
+      "endTime": 1142.4,
+      "en": "Bit of a limp. You can see",
+      "zh": "有点跛行。你可以看到",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'a bit of a limp' 指轻微跛行。"
+    },
+    {
+      "id": "c351",
+      "startTime": 1144.73,
+      "endTime": 1147.6,
+      "en": ">> And I mean, he knew that Sam flashed it.",
+      "zh": ">> 我的意思是，他知道山姆一把完攀了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'flash' 在攀岩中表示首次尝试即完攀。"
+    },
+    {
+      "id": "c352",
+      "startTime": 1148.97,
+      "endTime": 1153.76,
+      "en": "every athlete now is going out with a bit more pressure because they're knowing that the athletes are sending it.",
+      "zh": "现在每位运动员出场时都带着更多压力，因为他们知道其他运动员都在完攀。",
+      "score": 53,
+      "study": true,
+      "keywords": [],
+      "note": "'sending it' 是攀岩俚语，意为成功完攀。"
+    },
+    {
+      "id": "c353",
+      "startTime": 1154.65,
+      "endTime": 1160.4,
+      "en": "And now it's going to be a question of whether they can kind of handle that pressure and do the same.",
+      "zh": "现在问题在于他们能否应对这种压力并同样做到。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "'handle pressure' 意为应对压力。"
+    },
+    {
+      "id": "c354",
+      "startTime": 1160.81,
+      "endTime": 1161.87,
+      "en": ">> Yeah, it's pretty intense.",
+      "zh": ">> 是的，相当紧张。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'pretty intense' 表示非常紧张。"
+    },
+    {
+      "id": "c355",
+      "startTime": 1161.77,
+      "endTime": 1164.59,
+      "en": "In the same way as when no one is climbing it, you know you're in for a battle.",
+      "zh": "同样，当没有人爬上去时，你知道这将是一场苦战。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'in for a battle' 意为将面临艰难挑战。"
+    },
+    {
+      "id": "c356",
+      "startTime": 1164.49,
+      "endTime": 1166.56,
+      "en": "When everyone's sending it, it's a different",
+      "zh": "当每个人都在完攀时，情况就不同了",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'everyone's sending it' 的缩写。"
+    },
+    {
+      "id": "c357",
+      "startTime": 1167.85,
+      "endTime": 1169.23,
+      "en": ">> So, two done.",
+      "zh": ">> 所以，两人完攀了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'two done' 表示两人完成。"
+    },
+    {
+      "id": "c358",
+      "startTime": 1169.13,
+      "endTime": 1171.15,
+      "en": "Hannis van Dyson will come next.",
+      "zh": "汉尼斯·范·戴森接下来出场。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名的发音。"
+    },
+    {
+      "id": "c359",
+      "startTime": 1171.05,
+      "endTime": 1174.32,
+      "en": "He's waiting as we watch John hammering on his heart.",
+      "zh": "他正在等待，而我们看到约翰心跳加速。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'hammering on his heart' 形容心跳剧烈。"
+    },
+    {
+      "id": "c360",
+      "startTime": 1176.57,
+      "endTime": 1177.44,
+      "en": ">> Great stuff.",
+      "zh": ">> 太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Great stuff' 是常见赞美。"
+    },
+    {
+      "id": "c361",
+      "startTime": 1179.21,
+      "endTime": 1181.28,
+      "en": "athletes, the three youth.",
+      "zh": "运动员们，三位青年。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "注意“athletes”的发音，重音在第一个音节。"
+    },
+    {
+      "id": "c362",
+      "startTime": 1192.89,
+      "endTime": 1194.24,
+      "en": ">> Lays down the mat.",
+      "zh": ">> 放下垫子。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“lays down the mat”是攀岩比赛中的常见动作，指放置保护垫。"
+    },
+    {
+      "id": "c363",
+      "startTime": 1194.25,
+      "endTime": 1198.8,
+      "en": "Yeah, he just missed out a few times in the last couple of comps.",
+      "zh": "是的，他在过去几场比赛中几次错失机会。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“missed out”意为错过，常用于体育评论。"
+    },
+    {
+      "id": "c364",
+      "startTime": 1199.13,
+      "endTime": 1202.48,
+      "en": "So, it's good to have him back on this the biggest of stages",
+      "zh": "所以，很高兴他能回到这个最大的舞台上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“the biggest of stages”是强调“最大的舞台”的修辞手法。"
+    },
+    {
+      "id": "c365",
+      "startTime": 1210.49,
+      "endTime": 1212.56,
+      "en": ">> Yeah. So, this move is",
+      "zh": ">> 是的，这个动作",
+      "score": 28,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“this move”在攀岩中指一个具体动作。"
+    },
+    {
+      "id": "c366",
+      "startTime": 1214.25,
+      "endTime": 1215.52,
+      "en": ">> really not that hard.",
+      "zh": ">> 其实并不难。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“not that hard”是口语中常见的表达，意为“没那么难”。"
+    },
+    {
+      "id": "c367",
+      "startTime": 1218.73,
+      "endTime": 1221.68,
+      "en": ">> Oh, and he's also seen the drop piece straight away.",
+      "zh": ">> 哦，他也立刻看到了那个难点。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“drop piece”可能指难点部分，注意“straight away”意为“立刻”。"
+    },
+    {
+      "id": "c368",
+      "startTime": 1221.61,
+      "endTime": 1226.8,
+      "en": "So, and the same like cross as what Sam did. So, I definitely",
+      "zh": "所以，和Sam做的是同样的交叉手。所以，我肯定",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“cross”在攀岩中指交叉手动作。"
+    },
+    {
+      "id": "c369",
+      "startTime": 1228.25,
+      "endTime": 1229.79,
+      "en": "they potentially read together.",
+      "zh": "他们可能一起解读了路线。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“read together”指共同分析路线。"
+    },
+    {
+      "id": "c370",
+      "startTime": 1229.69,
+      "endTime": 1232.56,
+      "en": "They both speak French, so that does make sense.",
+      "zh": "他们都说法语，所以这说得通。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“that does make sense”是常用口语，表示“有道理”。"
+    },
+    {
+      "id": "c371",
+      "startTime": 1232.97,
+      "endTime": 1235.44,
+      "en": "Um, and a flash.",
+      "zh": "嗯，一把完攀。",
+      "score": 29,
+      "study": true,
+      "keywords": [
+        "flash"
+      ],
+      "note": "“flash”在攀岩中特指首次尝试即完攀。"
+    },
+    {
+      "id": "c372",
+      "startTime": 1236.49,
+      "endTime": 1238.4,
+      "en": ">> So, 225 to the 24.9.",
+      "zh": ">> 所以，从225到24.9。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "数字可能指得分或时间，注意“to”的用法。"
+    },
+    {
+      "id": "c373",
+      "startTime": 1238.97,
+      "endTime": 1239.57,
+      "en": "Hey, look.",
+      "zh": "嘿，看。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“Hey, look”是吸引注意力的常用语。"
+    },
+    {
+      "id": "c374",
+      "startTime": 1239.41,
+      "endTime": 1241.36,
+      "en": "We wanted some tops. We're seeing some tops",
+      "zh": "我们想要一些完攀。我们正在看到一些完攀。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“top”在攀岩中作动词表示完攀。"
+    },
+    {
+      "id": "c375",
+      "startTime": 1242.65,
+      "endTime": 1245.76,
+      "en": ">> Hopefully, this is the only very easier",
+      "zh": ">> 希望这是唯一更容易的",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“only very easier”可能指唯一更简单的部分，注意“hopefully”的用法。"
+    },
+    {
+      "id": "c376",
+      "startTime": 1247.93,
+      "endTime": 1250.08,
+      "en": ">> So, Hannis is back and done.",
+      "zh": ">> 所以，Hannis回来了并且完成了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“back and done”可能指回归并完攀。"
+    },
+    {
+      "id": "c377",
+      "startTime": 1250.17,
+      "endTime": 1252.24,
+      "en": "The crowd is certainly enjoying it anyway.",
+      "zh": "观众们当然很享受。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“enjoying it anyway”中“anyway”加强语气。"
+    },
+    {
+      "id": "c378",
+      "startTime": 1252.89,
+      "endTime": 1258.59,
+      "en": "I mean, yeah, brute setting is very delicate because we were talking about how yesterday there won't have enough tops,",
+      "zh": "我的意思是，是的，定线非常微妙，因为我们昨天谈到过不会有足够的完攀，",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "setting",
+        "delicate"
+      ],
+      "note": "“brute setting”可能指定线，注意“delicate”意为微妙。"
+    },
+    {
+      "id": "c379",
+      "startTime": 1258.49,
+      "endTime": 1266,
+      "en": "but also having too many tops is also not the best of rounds cuz it doesn't separate the athletes either.",
+      "zh": "但完攀太多也不是最好的轮次，因为那样也无法区分运动员。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“separate the athletes”指区分运动员水平。"
+    },
+    {
+      "id": "c380",
+      "startTime": 1267.69,
+      "endTime": 1271.2,
+      "en": ">> well, look, we're three athletes in one bowl. So, let's",
+      "zh": ">> 好吧，看，我们三位运动员在一个碗里。所以，让我们",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“in one bowl”可能指同一组，注意“let's”的缩写。"
+    },
+    {
+      "id": "c381",
+      "startTime": 1272.33,
+      "endTime": 1278.08,
+      "en": "like if all of them top one border, then it's still kind of just down to three other borders.",
+      "zh": "就像如果他们都完攀了一条线路，那么仍然只是取决于其他三条线路。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“top one border”可能指完攀一条线路，注意“down to”意为取决于。"
+    },
+    {
+      "id": "c382",
+      "startTime": 1278.25,
+      "endTime": 1278.85,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c383",
+      "startTime": 1278.49,
+      "endTime": 1280.88,
+      "en": "And you look at the red list sort of max.",
+      "zh": "而且你看红色列表，差不多是最大值。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“red list”可能指红色线路列表，“max”指最大值。"
+    },
+    {
+      "id": "c384",
+      "startTime": 1281.37,
+      "endTime": 1285.79,
+      "en": ">> So they're probably also going I mean I don't want to jinx it.",
+      "zh": ">> 所以他们可能也会说，我的意思是我可不想乌鸦嘴。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“jinx it”意为带来厄运，常用于口语。"
+    },
+    {
+      "id": "c385",
+      "startTime": 1285.69,
+      "endTime": 1286.91,
+      "en": "So we'll just watch it.",
+      "zh": "那我们就看着吧。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意“watch”在这里是“观看”的意思，常用于比赛解说。"
+    },
+    {
+      "id": "c386",
+      "startTime": 1286.81,
+      "endTime": 1287.41,
+      "en": "We'll see.",
+      "zh": "我们等着瞧。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“We'll see”是常用口语，表示“等等看”。"
+    },
+    {
+      "id": "c387",
+      "startTime": 1287.21,
+      "endTime": 1288.64,
+      "en": "We'll let it come at us.",
+      "zh": "我们让它自然发生。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“let it come at us”意为“让它向我们袭来”，这里指顺其自然。"
+    },
+    {
+      "id": "c388",
+      "startTime": 1293.21,
+      "endTime": 1294.56,
+      "en": "in the wings now.",
+      "zh": "现在在幕后。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“in the wings”指“在幕后/准备中”，常用于比喻。"
+    },
+    {
+      "id": "c389",
+      "startTime": 1300.25,
+      "endTime": 1301.92,
+      "en": "his kind of boulder as well.",
+      "zh": "他那种类型的抱石。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“kind of”在这里指“类型”，注意口语中“kind of”也常表示“有点”。"
+    },
+    {
+      "id": "c390",
+      "startTime": 1301.93,
+      "endTime": 1303.31,
+      "en": "He'll know everyone's climbed it.",
+      "zh": "他会知道每个人都爬过了。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“climbed it”指“爬过这条线路”，注意“it”指代线路。"
+    },
+    {
+      "id": "c391",
+      "startTime": 1303.25,
+      "endTime": 1304.67,
+      "en": "He'll get some confidence from that.",
+      "zh": "他会从中获得一些信心。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“get confidence from”意为“从……获得信心”。"
+    },
+    {
+      "id": "c392",
+      "startTime": 1304.57,
+      "endTime": 1306.32,
+      "en": "Hopefully not pressure from that.",
+      "zh": "希望不会从中感到压力。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“hopefully”表示“希望”，注意“pressure”是“压力”。"
+    },
+    {
+      "id": "c393",
+      "startTime": 1311.29,
+      "endTime": 1312.32,
+      "en": "bronze medals.",
+      "zh": "铜牌。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“bronze medals”是“铜牌”，注意复数。"
+    },
+    {
+      "id": "c394",
+      "startTime": 1314.33,
+      "endTime": 1318.99,
+      "en": ">> I think I mean there's definitely pressure in knowing that everyone has sent before,",
+      "zh": ">> 我认为，知道每个人都完攀了，肯定有压力，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“sent”是“完攀”的俚语，注意“there's definitely pressure”表示“肯定有压力”。"
+    },
+    {
+      "id": "c395",
+      "startTime": 1318.89,
+      "endTime": 1324.72,
+      "en": "but I think these athletes have just come in all so confident when it comes to these kinds of borders. Like,",
+      "zh": "但我认为这些运动员在面对这类抱石时都非常自信。比如，",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“come in”在这里指“进入比赛”，注意“so confident”强调“非常自信”。"
+    },
+    {
+      "id": "c396",
+      "startTime": 1325.85,
+      "endTime": 1327.04,
+      "en": ">> that was a cool flick.",
+      "zh": ">> 那是个很酷的甩腿动作。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“flick”指“快速甩动”，这里指攀岩中的甩腿动作。"
+    },
+    {
+      "id": "c397",
+      "startTime": 1327.37,
+      "endTime": 1335.15,
+      "en": ">> They have so much experience and I think also confidence like if they know other athletes have done it, it's like, okay, yeah,",
+      "zh": ">> 他们经验丰富，而且我认为他们也有信心，比如如果他们知道其他运动员完成了，就会觉得，好吧，是的，",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“have done it”指“完成了”，注意“it”指代线路。"
+    },
+    {
+      "id": "c398",
+      "startTime": 1335.09,
+      "endTime": 1336.64,
+      "en": "I can for sure do this, too.",
+      "zh": "我肯定也能做到。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“for sure”表示“肯定”，注意“can do this”指“能做到”。"
+    },
+    {
+      "id": "c399",
+      "startTime": 1337.45,
+      "endTime": 1341.2,
+      "en": "Let's see if he he seems to be he's looking around.",
+      "zh": "让我们看看他，他似乎在看周围。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“looking around”指“环顾四周”，注意“seems to be”表示“似乎”。"
+    },
+    {
+      "id": "c400",
+      "startTime": 1341.93,
+      "endTime": 1342.99,
+      "en": ">> He's seen it, hasn't he?",
+      "zh": ">> 他看到了，不是吗？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“hasn't he”是反意疑问句，注意“seen it”指“看到了线路”。"
+    },
+    {
+      "id": "c401",
+      "startTime": 1342.93,
+      "endTime": 1344.96,
+      "en": "But he's >> who splits.",
+      "zh": "但他 >> 谁劈叉。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“splits”指“劈叉”，这里指做出劈叉动作。"
+    },
+    {
+      "id": "c402",
+      "startTime": 1345.05,
+      "endTime": 1346.96,
+      "en": "He doesn't think of coming back down.",
+      "zh": "他不考虑下来。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“coming back down”指“下来”，注意“doesn't think of”表示“不考虑”。"
+    },
+    {
+      "id": "c403",
+      "startTime": 1347.61,
+      "endTime": 1349.36,
+      "en": ">> So, he's read it like his teammate.",
+      "zh": ">> 所以，他像他的队友一样读线。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“read it”指“读线”，即分析线路，注意“like his teammate”表示“像他的队友”。"
+    },
+    {
+      "id": "c404",
+      "startTime": 1349.37,
+      "endTime": 1349.97,
+      "en": ">> Yep.",
+      "zh": ">> 是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Yep”是“yes”的口语形式。"
+    },
+    {
+      "id": "c405",
+      "startTime": 1349.69,
+      "endTime": 1350.29,
+      "en": "Yep.",
+      "zh": "是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Yep”再次出现，注意口语中常用。"
+    },
+    {
+      "id": "c406",
+      "startTime": 1350.65,
+      "endTime": 1354.08,
+      "en": "Um but he did try to get his right foot up, which",
+      "zh": "嗯，但他确实试图把右脚抬起来，这",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“try to get”表示“试图把……弄到”，注意“right foot”是“右脚”。"
+    },
+    {
+      "id": "c407",
+      "startTime": 1355.37,
+      "endTime": 1360.64,
+      "en": "would work, but if his left foot was lower on the volume here, he was like almost in complete split position,",
+      "zh": "会有效，但如果他的左脚在体积上更低，他几乎处于完全的劈叉姿势，",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "“volume”指“大体积支点”，注意“split position”是“劈叉姿势”。"
+    },
+    {
+      "id": "c408",
+      "startTime": 1361.85,
+      "endTime": 1362.59,
+      "en": "I don't think.",
+      "zh": "我不这么认为。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“I don't think”是“我不认为”的省略，注意口语中常省略“so”。"
+    },
+    {
+      "id": "c409",
+      "startTime": 1362.49,
+      "endTime": 1367.68,
+      "en": "And also the left foot is not that great to put like enough pressure compared to if it's just on that big volume.",
+      "zh": "而且左脚放在那个大体积上，相比放在这里，能施加的压力没那么好。",
+      "score": 65,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "注意 'not that great' 表示 '没那么好'，常用于比较。"
+    },
+    {
+      "id": "c410",
+      "startTime": 1368.65,
+      "endTime": 1369.25,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c411",
+      "startTime": 1368.89,
+      "endTime": 1372.64,
+      "en": "So a little bit of a rethink a little like Chon Jong Wong did.",
+      "zh": "所以需要稍微重新思考一下，就像全钟元做的那样。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'a little bit of a rethink' 意为 '稍微重新思考'。"
+    },
+    {
+      "id": "c412",
+      "startTime": 1372.81,
+      "endTime": 1374.59,
+      "en": "He tried the physical press way.",
+      "zh": "他尝试了物理按压的方式。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'physical press' 指用身体力量按压。"
+    },
+    {
+      "id": "c413",
+      "startTime": 1374.49,
+      "endTime": 1375.52,
+      "en": "It's hard to do.",
+      "zh": "那很难做到。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'It's hard to do' 是常见表达。"
+    },
+    {
+      "id": "c414",
+      "startTime": 1375.69,
+      "endTime": 1380.35,
+      "en": ">> And I think by getting his left foot out on the jib, it was difficult to then bring the right foot up.",
+      "zh": ">> 而且我觉得他把左脚放到那个斜板上，之后很难再把右脚抬上来。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'jib' 这里指斜板，注意 'bring up' 表示抬起。"
+    },
+    {
+      "id": "c415",
+      "startTime": 1380.25,
+      "endTime": 1380.85,
+      "en": ">> Mhm.",
+      "zh": ">> 嗯。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "表示认同的回应。"
+    },
+    {
+      "id": "c416",
+      "startTime": 1380.73,
+      "endTime": 1387.07,
+      "en": "But then again, I feel like then he could have just automatically then brought his left foot back down.",
+      "zh": "但话说回来，我觉得他其实可以自动再把左脚放下来。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'But then again' 表示 '但话说回来'。"
+    },
+    {
+      "id": "c417",
+      "startTime": 1386.97,
+      "endTime": 1393.95,
+      "en": "So he might not think of this drop knee um method which could lead him to not stopping the border.",
+      "zh": "所以他可能没想到这种drop knee的方法，这可能导致他无法停住边界。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "lead",
+        "drop knee"
+      ],
+      "note": "'drop knee' 是攀岩术语，指膝盖下压的动作。"
+    },
+    {
+      "id": "c418",
+      "startTime": 1393.85,
+      "endTime": 1394.51,
+      "en": ">> It's a good point.",
+      "zh": ">> 说得好。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'It's a good point' 表示赞同。"
+    },
+    {
+      "id": "c419",
+      "startTime": 1394.41,
+      "endTime": 1395.01,
+      "en": "Yep.",
+      "zh": "是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "简单肯定。"
+    },
+    {
+      "id": "c420",
+      "startTime": 1394.65,
+      "endTime": 1399.87,
+      "en": "He's going to have to figure this out on the fly and he's having a long look at that section >> Yeah.",
+      "zh": "他必须在现场即兴解决这个问题，而且他正在仔细查看那个区域 >> 是的。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'on the fly' 意为 '即兴地'，'having a long look' 表示仔细查看。"
+    },
+    {
+      "id": "c421",
+      "startTime": 1399.81,
+      "endTime": 1401.95,
+      "en": "And also 4 minutes is not a lot.",
+      "zh": "而且4分钟并不算多。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'not a lot' 表示 '不多'。"
+    },
+    {
+      "id": "c422",
+      "startTime": 1401.85,
+      "endTime": 1407.44,
+      "en": "Even though they have had time to read the border, time goes by much faster compared to the five minutes that they have in semis.",
+      "zh": "尽管他们有时间阅读线路，但时间过得比半决赛的5分钟快得多。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "'read the border' 这里指阅读线路，注意 'compared to' 表示比较。"
+    },
+    {
+      "id": "c423",
+      "startTime": 1413.05,
+      "endTime": 1413.87,
+      "en": "soon here.",
+      "zh": "很快了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'soon here' 可能表示时间快到了。"
+    },
+    {
+      "id": "c424",
+      "startTime": 1413.77,
+      "endTime": 1414.83,
+      "en": "He can run down the clock.",
+      "zh": "他可以消耗时间。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "'run down the clock' 是体育术语，指拖延时间。"
+    },
+    {
+      "id": "c425",
+      "startTime": 1414.73,
+      "endTime": 1415.95,
+      "en": "It doesn't matter about the time.",
+      "zh": "时间不重要。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'It doesn't matter' 表示 '没关系'。"
+    },
+    {
+      "id": "c426",
+      "startTime": 1415.85,
+      "endTime": 1419.52,
+      "en": "It's the attempts that's going to be important in terms of keeping in touch with everyone.",
+      "zh": "重要的是尝试次数，这样才能与其他人保持联系。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'keeping in touch with' 这里指保持竞争。"
+    },
+    {
+      "id": "c427",
+      "startTime": 1420.81,
+      "endTime": 1423.15,
+      "en": ">> I mean, especially I mean, it's the first border.",
+      "zh": ">> 我的意思是，尤其是，这是第一条线路。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'I mean' 是口语常用。"
+    },
+    {
+      "id": "c428",
+      "startTime": 1423.05,
+      "endTime": 1427.39,
+      "en": "I was going to say, especially if it's an easier round, but we don't know where the other boulders will happen.",
+      "zh": "我正想说，尤其是如果这是较简单的一轮，但我们不知道其他线路会怎样。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "'I was going to say' 表示 '我正想说'。"
+    },
+    {
+      "id": "c429",
+      "startTime": 1427.29,
+      "endTime": 1428.35,
+      "en": "We don't know what will happen.",
+      "zh": "我们不知道会发生什么。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "简单句，注意 'what will happen'。"
+    },
+    {
+      "id": "c430",
+      "startTime": 1428.25,
+      "endTime": 1431.84,
+      "en": "But >> I think boulder two especially is looks to me to be pretty interesting.",
+      "zh": "但 >> 我觉得第二条线路尤其看起来相当有趣。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'especially' 表示 '尤其'。"
+    },
+    {
+      "id": "c431",
+      "startTime": 1432.49,
+      "endTime": 1435.52,
+      "en": "Anyway, he launches up easy to the zone",
+      "zh": "不管怎样，他轻松地跳到了Zone。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'launches up' 表示 '跳起'，'easy' 表示轻松。"
+    },
+    {
+      "id": "c432",
+      "startTime": 1440.81,
+      "endTime": 1441.95,
+      "en": ">> So, let's see.",
+      "zh": ">> 那么，让我们看看。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'let's see' 是常见表达。"
+    },
+    {
+      "id": "c433",
+      "startTime": 1441.85,
+      "endTime": 1445.2,
+      "en": "Yeah, he goes straight back to putting his left foot up",
+      "zh": "是的，他直接回去把左脚抬起来",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'goes straight back to' 表示立即回到某个动作，常用于描述攀爬中的调整。"
+    },
+    {
+      "id": "c434",
+      "startTime": 1446.65,
+      "endTime": 1448.91,
+      "en": "and yeah, going straight to this tiny crimp.",
+      "zh": "然后直接去抓这个小crimp（小扣点）。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "'crimp' 是攀岩术语，指小扣点，这里直接音译加解释。"
+    },
+    {
+      "id": "c435",
+      "startTime": 1448.81,
+      "endTime": 1457.55,
+      "en": "It's not That's what I mean by like I thought they would go fast without the drop knee because it's not that great >> and you'd want to holding this position is probably really hard.",
+      "zh": "这不是——我的意思是，我以为他们会不用drop knee（折膝）就快速通过，因为那个动作并不太好，而且保持这个姿势可能非常困难。",
+      "score": 35,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "'drop knee' 是攀岩术语，指折膝动作，这里保留英文并加中文注释。"
+    },
+    {
+      "id": "c436",
+      "startTime": 1457.49,
+      "endTime": 1461.76,
+      "en": "So, if you can pull straight off into the top hold, it would be I would say better.",
+      "zh": "所以，如果你能直接拉上去抓到顶部的点，我觉得会更好。",
+      "score": 68,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "hold"
+      ],
+      "note": "'pull straight off' 表示直接发力拉起，注意 'would be better' 是虚拟语气，表示建议。"
+    },
+    {
+      "id": "c437",
+      "startTime": 1462.41,
+      "endTime": 1466.03,
+      "en": ">> And the left hand is pulling on to try to bring the right hand into the crimp.",
+      "zh": "左手在拉，试图把右手带到那个crimp上。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "'pulling on' 表示持续用力，'bring into' 表示带到某个位置。"
+    },
+    {
+      "id": "c438",
+      "startTime": 1465.93,
+      "endTime": 1466.96,
+      "en": "It's It's bad.",
+      "zh": "这很糟糕。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'It's bad' 是简单直接的评论，注意语气。"
+    },
+    {
+      "id": "c439",
+      "startTime": 1466.89,
+      "endTime": 1467.49,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的同意，注意对话中的回应。"
+    },
+    {
+      "id": "c440",
+      "startTime": 1467.09,
+      "endTime": 1471.07,
+      "en": "And they're both position like the crimp is also positioned a bit sideways and it's terrible.",
+      "zh": "而且两个点都是——那个crimp也是侧向的，非常糟糕。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "'positioned a bit sideways' 表示侧向放置，注意 'terrible' 的强调。"
+    },
+    {
+      "id": "c441",
+      "startTime": 1470.97,
+      "endTime": 1472.64,
+      "en": "So you kind of just slip off.",
+      "zh": "所以你就滑掉了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'slip off' 表示滑落，注意动词短语。"
+    },
+    {
+      "id": "c442",
+      "startTime": 1472.81,
+      "endTime": 1473.63,
+      "en": "You're coming from the right.",
+      "zh": "你从右边过来。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'coming from the right' 表示从右侧移动，注意方向描述。"
+    },
+    {
+      "id": "c443",
+      "startTime": 1473.53,
+      "endTime": 1474.13,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单同意。"
+    },
+    {
+      "id": "c444",
+      "startTime": 1473.77,
+      "endTime": 1474.51,
+      "en": "Ding off there.",
+      "zh": "在那里掉下来了。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'ding off' 是口语，表示掉落，注意非正式表达。"
+    },
+    {
+      "id": "c445",
+      "startTime": 1474.41,
+      "endTime": 1475.31,
+      "en": ">> You're coming from the right.",
+      "zh": "你从右边过来。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，注意听者确认。"
+    },
+    {
+      "id": "c446",
+      "startTime": 1475.21,
+      "endTime": 1476.64,
+      "en": "You just kind of like slide.",
+      "zh": "你就那样滑了一下。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'kind of like' 表示有点，'slide' 是滑动。"
+    },
+    {
+      "id": "c447",
+      "startTime": 1477.53,
+      "endTime": 1481.52,
+      "en": ">> So he needs that secret key that the first three found.",
+      "zh": "所以他需要前三位选手找到的那个秘密关键点。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'secret key' 比喻关键动作，注意 'the first three' 指前三位选手。"
+    },
+    {
+      "id": "c448",
+      "startTime": 1482.49,
+      "endTime": 1485.68,
+      "en": ">> I don't know if the roots thought of this droppy.",
+      "zh": "我不知道路线制定者是否想到了这个折膝动作。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'the roots' 可能是 'the route setters' 的误听，注意上下文。"
+    },
+    {
+      "id": "c449",
+      "startTime": 1486.65,
+      "endTime": 1489.68,
+      "en": ">> So you think the method he's doing was the method they envisaged?",
+      "zh": "所以你认为他用的方法就是他们预想的方法吗？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'envisaged' 是正式词汇，表示预想，注意疑问句。"
+    },
+    {
+      "id": "c450",
+      "startTime": 1492.65,
+      "endTime": 1493.55,
+      "en": ">> I think so.",
+      "zh": "我觉得是。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "简短回答，注意 'I think so' 的用法。"
+    },
+    {
+      "id": "c451",
+      "startTime": 1493.45,
+      "endTime": 1500.56,
+      "en": "Like >> I think they thought the last move would be harder than what it is and that's why maybe the coordination isn't that tricky.",
+      "zh": "我觉得他们认为最后一步会比实际更难，所以协调动作可能没那么棘手。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "move",
+        "coordination"
+      ],
+      "note": "'coordination' 指协调动作，注意比较级 'harder than what it is'。"
+    },
+    {
+      "id": "c452",
+      "startTime": 1500.49,
+      "endTime": 1501.09,
+      "en": "Mhm.",
+      "zh": "嗯。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "表示同意或思考的感叹词。"
+    },
+    {
+      "id": "c453",
+      "startTime": 1503.13,
+      "endTime": 1504.24,
+      "en": "but who knows?",
+      "zh": "但谁知道呢？",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'who knows' 是习语，表示不确定。"
+    },
+    {
+      "id": "c454",
+      "startTime": 1506.01,
+      "endTime": 1508.35,
+      "en": ">> Oh, so now the pressure starts to tick away.",
+      "zh": "哦，现在压力开始滴答作响。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'tick away' 比喻时间流逝，压力增加。"
+    },
+    {
+      "id": "c455",
+      "startTime": 1508.25,
+      "endTime": 1509.6,
+      "en": "And this is where he knows.",
+      "zh": "这就是他知道的地方。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'this is where' 引导表语从句，注意强调。"
+    },
+    {
+      "id": "c456",
+      "startTime": 1509.85,
+      "endTime": 1510.99,
+      "en": ">> See, I jinxed it.",
+      "zh": "看，我说中了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'jinxed it' 表示说中了不好的事，注意口语。"
+    },
+    {
+      "id": "c457",
+      "startTime": 1510.89,
+      "endTime": 1512.08,
+      "en": "I jinxed it.",
+      "zh": "我乌鸦嘴了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "jinx 意为‘带来厄运’，口语中常用 'I jinxed it' 表示‘我说错话导致坏事发生’。"
+    },
+    {
+      "id": "c458",
+      "startTime": 1513.93,
+      "endTime": 1515.23,
+      "en": ">> He's got a chance here, though.",
+      "zh": "不过，他这里还有机会。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'though' 在句末表示转折，口语中常见。"
+    },
+    {
+      "id": "c459",
+      "startTime": 1515.17,
+      "endTime": 1516.32,
+      "en": "Maybe his last chance.",
+      "zh": "也许是他最后的机会了。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'last chance' 意为‘最后的机会’，注意 'maybe' 的发音。"
+    },
+    {
+      "id": "c460",
+      "startTime": 1516.97,
+      "endTime": 1517.95,
+      "en": ">> Onto the 10.",
+      "zh": "上到第10个点。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "攀岩中 'onto' 表示‘上到’，数字指岩点编号。"
+    },
+    {
+      "id": "c461",
+      "startTime": 1517.85,
+      "endTime": 1519.79,
+      "en": ">> Let's see if he thinks he just needs to look.",
+      "zh": "看看他是不是觉得只需要看一眼。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'Let's see if' 是常见口语，意为‘看看是否’。"
+    },
+    {
+      "id": "c462",
+      "startTime": 1519.69,
+      "endTime": 1520.51,
+      "en": "Oh, he didn't.",
+      "zh": "哦，他没有。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "这里 'didn't' 指没有看，注意省略。"
+    },
+    {
+      "id": "c463",
+      "startTime": 1520.45,
+      "endTime": 1522.27,
+      "en": "Look, he's going to try the method again.",
+      "zh": "看，他要再试一次那个动作。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'try the method again' 意为‘再试一次那个方法’，method 在攀岩中常指‘动作解法’。"
+    },
+    {
+      "id": "c464",
+      "startTime": 1522.17,
+      "endTime": 1525.12,
+      "en": "Just get Yes. Oh, he thought of it",
+      "zh": "只要抓住Yes点。哦，他想到了。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "这里 'Yes' 可能指某个岩点或动作，注意 'thought of it' 意为‘想到了’。"
+    },
+    {
+      "id": "c465",
+      "startTime": 1526.33,
+      "endTime": 1527.55,
+      "en": ">> and listen to the crowd.",
+      "zh": "听听观众的欢呼。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'listen to the crowd' 意为‘听观众的’，注意 'crowd' 的发音。"
+    },
+    {
+      "id": "c466",
+      "startTime": 1527.45,
+      "endTime": 1529.44,
+      "en": "They also goes into Yeah.",
+      "zh": "他们也跟着喊‘Yeah’。",
+      "score": 7,
+      "study": false,
+      "keywords": [],
+      "note": "'go into' 在这里意为‘开始喊’，注意 'Yeah' 的发音。"
+    },
+    {
+      "id": "c467",
+      "startTime": 1529.53,
+      "endTime": 1530.13,
+      "en": "Amazing.",
+      "zh": "太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Amazing' 是常用感叹词，表示‘太棒了’。"
+    },
+    {
+      "id": "c468",
+      "startTime": 1535.05,
+      "endTime": 1538.11,
+      "en": "seconds left on the clock and he tops >> But yeah,",
+      "zh": "时钟还剩几秒，他完攀了。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "'seconds left' 意为‘剩余秒数’，'tops' 是攀岩术语，意为‘完攀’。"
+    },
+    {
+      "id": "c469",
+      "startTime": 1538.01,
+      "endTime": 1545.44,
+      "en": "actually the crowd did help him big time and that is kind of a method I would say that happens with between coaches,",
+      "zh": "实际上，观众确实帮了他大忙，这可以说是一种教练和运动员之间常见的方法。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'big time' 意为‘大大地’，'between coaches and athletes' 指‘教练和运动员之间’。"
+    },
+    {
+      "id": "c470",
+      "startTime": 1545.37,
+      "endTime": 1545.97,
+      "en": "athletes.",
+      "zh": "运动员。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'athletes' 的发音，重音在第二音节。"
+    },
+    {
+      "id": "c471",
+      "startTime": 1546.57,
+      "endTime": 1548.48,
+      "en": ">> Um if you're kind of struggling on a",
+      "zh": "嗯，如果你在某个地方遇到困难……",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'struggling on' 意为‘在……上挣扎’，注意 'struggling' 的发音。"
+    },
+    {
+      "id": "c472",
+      "startTime": 1549.45,
+      "endTime": 1551.12,
+      "en": ">> they have they have secret words.",
+      "zh": "他们有秘密暗号。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'secret words' 意为‘秘密词语’，注意 'secret' 的发音。"
+    },
+    {
+      "id": "c473",
+      "startTime": 1551.13,
+      "endTime": 1557.79,
+      "en": ">> It's absolutely a code and they think it's very subtle and it's not >> and then like you kind of move your foot in the right direction.",
+      "zh": "这绝对是暗号，他们以为很隐蔽，其实不然，然后你就像这样把脚移向正确的方向。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "move",
+        "foot"
+      ],
+      "note": "'subtle' 意为‘微妙的’，'move your foot' 意为‘移动你的脚’。"
+    },
+    {
+      "id": "c474",
+      "startTime": 1557.69,
+      "endTime": 1558.8,
+      "en": "It's like yes yes.",
+      "zh": "就像‘对对对’。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'yes yes' 重复表示强调，口语中常见。"
+    },
+    {
+      "id": "c475",
+      "startTime": 1559.13,
+      "endTime": 1561.12,
+      "en": "makes me laugh so much cuz you can hear it.",
+      "zh": "这让我笑死了，因为你能听到。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'makes me laugh so much' 意为‘让我笑死了’，注意 'laugh' 的发音。"
+    },
+    {
+      "id": "c476",
+      "startTime": 1561.61,
+      "endTime": 1563.71,
+      "en": ">> They're not implying they're cheating it cuz they're not.",
+      "zh": "他们不是在暗示作弊，因为他们没有作弊。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'implying' 意为‘暗示’，'cheating' 意为‘作弊’。"
+    },
+    {
+      "id": "c477",
+      "startTime": 1563.61,
+      "endTime": 1564.21,
+      "en": ">> It's not.",
+      "zh": "不是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'It's not' 的连读。"
+    },
+    {
+      "id": "c478",
+      "startTime": 1564.05,
+      "endTime": 1564.8,
+      "en": "It's allowed.",
+      "zh": "这是允许的。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'allowed' 意为‘被允许的’，注意发音。"
+    },
+    {
+      "id": "c479",
+      "startTime": 1564.73,
+      "endTime": 1565.33,
+      "en": ">> Exactly.",
+      "zh": "没错。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Exactly' 是常用口语，表示‘完全正确’。"
+    },
+    {
+      "id": "c480",
+      "startTime": 1565.05,
+      "endTime": 1569.95,
+      "en": "In the same way as the crowd roar when you get a move and coaches are going to scream when you're doing the right thing.",
+      "zh": "就像当你做出一个动作时观众的欢呼，教练在你做对时也会尖叫。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "'crowd roar' 意为‘人群的吼叫’，'scream' 意为‘尖叫’。"
+    },
+    {
+      "id": "c481",
+      "startTime": 1569.85,
+      "endTime": 1570.64,
+      "en": "Same thing.",
+      "zh": "一样的事情。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "注意“same thing”在口语中常用来表示“同样的情况”。"
+    },
+    {
+      "id": "c482",
+      "startTime": 1570.73,
+      "endTime": 1573.36,
+      "en": ">> And then if you're kind of in the wrong method, it's just",
+      "zh": "然后如果你用了错误的动作解法，那就会……",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“wrong method”在这里指“错误的动作解法”，注意“method”在攀岩中常指“beta”。"
+    },
+    {
+      "id": "c483",
+      "startTime": 1577.77,
+      "endTime": 1581.44,
+      "en": ">> It's not It's not the Swiss coach would be messaging you be like, \"What are you",
+      "zh": "不是，不是瑞士教练会给你发消息说：“你在干什么？”",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "注意“messaging you”是“给你发消息”的意思，口语中常用。"
+    },
+    {
+      "id": "c484",
+      "startTime": 1582.49,
+      "endTime": 1584.88,
+      "en": ">> It's universal climbing language.",
+      "zh": "这是通用的攀岩语言。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“universal climbing language”指“通用的攀岩语言”，注意“universal”意为“通用的”。"
+    },
+    {
+      "id": "c485",
+      "startTime": 1585.13,
+      "endTime": 1589.2,
+      "en": "So I think everyone who competes knows",
+      "zh": "所以我觉得每个参赛者都知道。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“everyone who competes”指“每个参赛者”，注意“competes”是“比赛”的动词。"
+    },
+    {
+      "id": "c486",
+      "startTime": 1590.17,
+      "endTime": 1599.52,
+      "en": "whatever language you speak you have either let's go or you have easy >> yes people terrible when there's silence you're like but it feels okay",
+      "zh": "不管你说什么语言，你都有“加油”或者“简单”……是的，当沉默时人们很糟糕，你会想“但感觉还行”。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意“let's go”在攀岩中常用来鼓励，这里翻译为“加油”；“easy”指“简单”。"
+    },
+    {
+      "id": "c487",
+      "startTime": 1599.45,
+      "endTime": 1602.16,
+      "en": ">> I mean yeah if there's silence then you're you're way off",
+      "zh": "我的意思是，如果沉默，那你就差远了。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“way off”表示“差得远”，注意“way”在这里是副词，加强语气。"
+    },
+    {
+      "id": "c488",
+      "startTime": 1603.13,
+      "endTime": 1609.6,
+      "en": ">> right we just saw the leaderboard Hannah from Dyson leading the way due to countback followed by Sam Azu Chong John won with a 24.9",
+      "zh": "对，我们刚刚看到排行榜，来自Dyson的Hannah因回数规则领先，紧随其后的是Sam Azu Chong John，以24.9获胜。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“countback”是攀岩比赛中的“回数规则”，注意“leading the way”意为“领先”。"
+    },
+    {
+      "id": "c489",
+      "startTime": 1609.77,
+      "endTime": 1615.23,
+      "en": "and then Lee Dhan 24.7 boulder number two and this is a long boulder this Yeah.",
+      "zh": "然后是Lee Dhan 24.7，第二号抱石，这是一个长的抱石，是的。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“boulder number two”指“第二号抱石”，注意“long boulder”指“长的抱石”。"
+    },
+    {
+      "id": "c490",
+      "startTime": 1615.13,
+      "endTime": 1617.44,
+      "en": "So, this is the slab that we were talking about.",
+      "zh": "所以，这就是我们之前提到的板壁。",
+      "score": 44,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“slab”在攀岩中特指“板壁”，注意“we were talking about”是“我们之前提到的”。"
+    },
+    {
+      "id": "c491",
+      "startTime": 1617.77,
+      "endTime": 1619.31,
+      "en": "Long slab, as it's called.",
+      "zh": "长板壁，正如它被称为的那样。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“as it's called”意为“正如它被称为的那样”，注意“long slab”指“长板壁”。"
+    },
+    {
+      "id": "c492",
+      "startTime": 1619.21,
+      "endTime": 1622.24,
+      "en": "You're going to have the I mean, I would say good start position.",
+      "zh": "你会有一个，我是说，我会说好的起始位置。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“start position”指“起始位置”，注意“I would say”是“我会说”的口语表达。"
+    },
+    {
+      "id": "c493",
+      "startTime": 1622.81,
+      "endTime": 1626.51,
+      "en": "Um, a little dynamic first move into this pocket.",
+      "zh": "嗯，一个有点动态的第一个动作，进入这个点。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "pocket",
+        "move"
+      ],
+      "note": "“dynamic first move”指“动态的第一个动作”，注意“pocket”在攀岩中指“小洞点”。"
+    },
+    {
+      "id": "c494",
+      "startTime": 1626.41,
+      "endTime": 1629.6,
+      "en": "Also, I've never seen these Rock City pockets before.",
+      "zh": "另外，我以前从未见过这些Rock City的点。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“Rock City”是品牌名，注意“pockets”指“点”，这里指“小洞点”。"
+    },
+    {
+      "id": "c495",
+      "startTime": 1629.93,
+      "endTime": 1633.44,
+      "en": "So, I don't think the athletes necessarily know how they are.",
+      "zh": "所以，我不认为运动员们一定知道它们是什么样的。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“not necessarily”意为“不一定”，注意“how they are”指“它们是什么样的”。"
+    },
+    {
+      "id": "c496",
+      "startTime": 1633.53,
+      "endTime": 1637.63,
+      "en": "I think you need to like jump off that small foot and aim onto this black one.",
+      "zh": "我认为你需要从那个小脚点跳起来，瞄准这个黑色的点。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“jump off”意为“跳离”，注意“aim onto”指“瞄准”。"
+    },
+    {
+      "id": "c497",
+      "startTime": 1637.53,
+      "endTime": 1638.59,
+      "en": "And then you have the tent.",
+      "zh": "然后你有帐篷。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“tent”在这里可能指“帐篷形状的岩点”，注意“have the tent”可能指“有帐篷点”。"
+    },
+    {
+      "id": "c498",
+      "startTime": 1638.49,
+      "endTime": 1641.92,
+      "en": "And then once again, kind of a dynamic last move.",
+      "zh": "然后再次，有点动态的最后动作。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“dynamic last move”指“动态的最后动作”，注意“once again”意为“再次”。"
+    },
+    {
+      "id": "c499",
+      "startTime": 1642.09,
+      "endTime": 1644.48,
+      "en": "But once again, not really sure how these hold",
+      "zh": "但再次，不太确定这些点感觉如何。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“not really sure”意为“不太确定”，注意“how these hold feel”指“这些点感觉如何”。"
+    },
+    {
+      "id": "c500",
+      "startTime": 1645.45,
+      "endTime": 1647.71,
+      "en": "feel or how good they are.",
+      "zh": "或者它们有多好。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“how good they are”指“它们有多好”，注意“or”连接两个疑问。"
+    },
+    {
+      "id": "c501",
+      "startTime": 1647.61,
+      "endTime": 1650.03,
+      "en": ">> And I think the setters are playing with tempo here.",
+      "zh": "而且我认为定线员在这里玩弄节奏。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“setters”指“定线员”，注意“playing with tempo”意为“玩弄节奏”。"
+    },
+    {
+      "id": "c502",
+      "startTime": 1649.93,
+      "endTime": 1653.84,
+      "en": "I think sections in this are fast, sections are slow pacing it.",
+      "zh": "我认为这个部分很快，部分很慢，控制节奏。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“pacing it”指“控制节奏”，注意“sections”指“部分”。"
+    },
+    {
+      "id": "c503",
+      "startTime": 1654.73,
+      "endTime": 1655.33,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c504",
+      "startTime": 1654.93,
+      "endTime": 1660.24,
+      "en": "And so this is where it gets really interesting in knowing your body a bit better.",
+      "zh": "所以这就是真正有趣的地方，更了解你的身体。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“knowing your body”指“了解你的身体”，注意“this is where it gets really interesting”意为“这就是真正有趣的地方”。"
+    },
+    {
+      "id": "c505",
+      "startTime": 1660.17,
+      "endTime": 1666.32,
+      "en": "Like okay, I know that I need for this move to give this much power and then slow things down for this next move.",
+      "zh": "好吧，我知道这个动作我需要用这么大的力，然后下一个动作要放慢节奏。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "注意“give this much power”中的“give”表示施加力量，口语中常用。"
+    },
+    {
+      "id": "c506",
+      "startTime": 1666.89,
+      "endTime": 1669.15,
+      "en": "And I mean, yeah, French are known to be good at slabs.",
+      "zh": "我的意思是，是的，法国人确实以擅长板壁而闻名。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“be known for”是“以……闻名”的固定搭配。"
+    },
+    {
+      "id": "c507",
+      "startTime": 1669.05,
+      "endTime": 1670.96,
+      "en": "So let's see how Sam does.",
+      "zh": "所以我们看看Sam表现如何。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“let's see how”是常见口语，表示“看看……怎么样”。"
+    },
+    {
+      "id": "c508",
+      "startTime": 1671.13,
+      "endTime": 1676.27,
+      "en": "So S I'm expecting to get this done to be honest and Sam is in his happy place in the slab.",
+      "zh": "所以，说实话，我预计他能完成，而且Sam在板壁上如鱼得水。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“happy place”这里指“最擅长的领域”，是形象说法。"
+    },
+    {
+      "id": "c509",
+      "startTime": 1676.17,
+      "endTime": 1677.76,
+      "en": "So this could be another quick round.",
+      "zh": "所以这可能是又一轮快速完攀。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“quick round”指“快速的一轮”，注意“round”在比赛中的用法。"
+    },
+    {
+      "id": "c510",
+      "startTime": 1678.97,
+      "endTime": 1682.4,
+      "en": "So S hammer gas down and then Sam up to the first.",
+      "zh": "所以S猛踩油门，然后Sam上到第一个点。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“hammer down”是口语，表示“全速前进”，这里比喻发力。"
+    },
+    {
+      "id": "c511",
+      "startTime": 1682.33,
+      "endTime": 1684.03,
+      "en": ">> So this is the first coordination move.",
+      "zh": ">> 这是第一个协调性动作。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "move",
+        "coordination"
+      ],
+      "note": "“coordination move”指需要身体协调的动作，注意“coordination”的发音。"
+    },
+    {
+      "id": "c512",
+      "startTime": 1683.97,
+      "endTime": 1688.16,
+      "en": "And so this is S found the drop knee straight away.",
+      "zh": "所以S立刻找到了折膝动作。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“drop knee”是攀岩术语，指“折膝”技巧，注意“straight away”表示“立刻”。"
+    },
+    {
+      "id": "c513",
+      "startTime": 1688.33,
+      "endTime": 1692.27,
+      "en": "So I think that will be a top for him.",
+      "zh": "所以我觉得对他来说这会是完攀。",
+      "score": 44,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“top”在攀岩中表示“完攀”，注意“will be a top”的用法。"
+    },
+    {
+      "id": "c514",
+      "startTime": 1692.17,
+      "endTime": 1696.24,
+      "en": "But yeah, this move I've got to stop talking before.",
+      "zh": "但是，这个动作，我之前得停止说话。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“I've got to”是“I have got to”的缩写，表示“我必须”。"
+    },
+    {
+      "id": "c515",
+      "startTime": 1697.29,
+      "endTime": 1698.99,
+      "en": ">> Maybe a bit rushed in the top there.",
+      "zh": ">> 也许在顶部那里有点匆忙。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“rushed”表示“匆忙的”，注意“top”这里指“顶部区域”。"
+    },
+    {
+      "id": "c516",
+      "startTime": 1698.89,
+      "endTime": 1700.83,
+      "en": "Sam is able to put his foot down.",
+      "zh": "Sam能够放下他的脚。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“put his foot down”字面是“放下脚”，这里指踩点。"
+    },
+    {
+      "id": "c517",
+      "startTime": 1700.77,
+      "endTime": 1705.07,
+      "en": "And this is where you launch straight off onto that black, I think.",
+      "zh": "而这就是你直接跳到那个黑色点的地方，我想。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“launch off”表示“跃起”，注意“off”后接起点。"
+    },
+    {
+      "id": "c518",
+      "startTime": 1704.97,
+      "endTime": 1711.92,
+      "en": "Yeah, it's kind of hard to just stop on the pink and balance on the pink cuz the slab is actually a vertical wall.",
+      "zh": "是的，很难停在粉色点上并保持平衡，因为板壁实际上是垂直的墙壁。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "slab",
+        "balance"
+      ],
+      "note": "“vertical wall”指“垂直的墙壁”，注意“cuz”是“because”的口语缩写。"
+    },
+    {
+      "id": "c519",
+      "startTime": 1712.17,
+      "endTime": 1716.96,
+      "en": "So that's how this is where you need to understand how much power you need to give off your left foot to",
+      "zh": "所以这就是你需要理解你需要从左脚发出多少力量的地方，以便",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“give off”这里指“发出（力量）”，注意“how much”引导的宾语从句。"
+    },
+    {
+      "id": "c520",
+      "startTime": 1717.93,
+      "endTime": 1720.56,
+      "en": "be able to jump off the pink foot onto the black.",
+      "zh": "能够从粉色脚点跳到黑色点。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“jump off”表示“从……跳下”，注意“off”的用法。"
+    },
+    {
+      "id": "c521",
+      "startTime": 1720.81,
+      "endTime": 1724.48,
+      "en": ">> That skip move we've seen quite a lot in slabs this year.",
+      "zh": ">> 这种跳跃动作今年在板壁上我们见过很多次。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“skip move”指“跳跃动作”，注意“quite a lot”表示“很多”。"
+    },
+    {
+      "id": "c522",
+      "startTime": 1724.65,
+      "endTime": 1727.12,
+      "en": ">> And I actually find them quite interesting. They're",
+      "zh": ">> 我实际上觉得它们很有趣。它们是",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“actually”表示“实际上”，注意“find them interesting”的用法。"
+    },
+    {
+      "id": "c523",
+      "startTime": 1728.97,
+      "endTime": 1735.68,
+      "en": "easy once you get it done, >> but to understand them, it does take a bit of time.",
+      "zh": "一旦你完成了，就很容易，>> 但要理解它们，确实需要一些时间。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“once”表示“一旦”，注意“it does take”中的“does”用于强调。"
+    },
+    {
+      "id": "c524",
+      "startTime": 1736.25,
+      "endTime": 1738.32,
+      "en": ">> He Oh, he's he's going to go straight.",
+      "zh": ">> 哦，他，他要直接去了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“going to”表示“将要”，注意“straight”表示“直接”。"
+    },
+    {
+      "id": "c525",
+      "startTime": 1738.41,
+      "endTime": 1742.83,
+      "en": ">> This is what I saw is this big jump like that and landing on the pink with the left,",
+      "zh": ">> 这就是我看到的，像那样的大跳跃，然后左脚落在粉色点上，",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“landing on”表示“落在……上”，注意“with the left”指“用左脚”。"
+    },
+    {
+      "id": "c526",
+      "startTime": 1742.73,
+      "endTime": 1749.55,
+      "en": "but different kind of percent low percentage that isn't >> I think if you give like a big swing to land on the pink like what",
+      "zh": "但是不同的，成功率低，那不是 >> 我想如果你像那样大摆动落在粉色点上，",
+      "score": 60,
+      "study": true,
+      "keywords": [
+        "low percentage",
+        "swing"
+      ],
+      "note": "“low percentage”是攀岩术语，表示“成功率低”，注意“give a big swing”表示“大摆动”。"
+    },
+    {
+      "id": "c527",
+      "startTime": 1749.49,
+      "endTime": 1755.95,
+      "en": "sound did I don't think the or >> I don't know how good the pink is to aim on it like he did.",
+      "zh": "我不知道粉色点是否像他那样适合瞄准。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“aim on”表示“瞄准”，注意“how good”表示“多好”。"
+    },
+    {
+      "id": "c528",
+      "startTime": 1755.85,
+      "endTime": 1758.64,
+      "en": "He's landing on the He's landing on the black, isn't he?",
+      "zh": "他落在……他落在黑色点上，不是吗？",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“isn't he”是反意疑问句，注意“landing on”的用法。"
+    },
+    {
+      "id": "c529",
+      "startTime": 1758.57,
+      "endTime": 1759.17,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意“Yeah”在口语中常表示肯定或回应。"
+    },
+    {
+      "id": "c530",
+      "startTime": 1758.77,
+      "endTime": 1759.55,
+      "en": "So, here he tried.",
+      "zh": "所以，他在这里尝试了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“tried”是“try”的过去式，表示尝试。"
+    },
+    {
+      "id": "c531",
+      "startTime": 1759.45,
+      "endTime": 1760.11,
+      "en": "Yeah, true.",
+      "zh": "是的，没错。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“true”在这里表示“正确”，常用于口语。"
+    },
+    {
+      "id": "c532",
+      "startTime": 1760.01,
+      "endTime": 1761.76,
+      "en": "He tried jumping straight to the black.",
+      "zh": "他尝试直接跳到黑色点。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“jump straight to”表示“直接跳到”，注意“straight”的用法。"
+    },
+    {
+      "id": "c533",
+      "startTime": 1762.49,
+      "endTime": 1765.52,
+      "en": ">> Have a look at Sagasa here cuz he dropped the top before.",
+      "zh": ">> 看看这里的Sagasa，因为他之前掉落了顶部。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“dropped the top”指“掉落顶部”，注意“drop”的过去式。"
+    },
+    {
+      "id": "c534",
+      "startTime": 1766.73,
+      "endTime": 1767.79,
+      "en": ">> Got to be careful with this.",
+      "zh": ">> 这个要小心。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“be careful with”表示“对……小心”。"
+    },
+    {
+      "id": "c535",
+      "startTime": 1767.69,
+      "endTime": 1770.96,
+      "en": ">> But he knows now what last hold he's expecting. Oh, his foot's slipping",
+      "zh": ">> 但他现在知道他要抓的最后一个点是什么。哦，他的脚在滑。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "hold",
+        "foot"
+      ],
+      "note": "“is expecting”表示“预期”，注意“foot's slipping”是“脚在滑”的缩写。"
+    },
+    {
+      "id": "c536",
+      "startTime": 1772.49,
+      "endTime": 1774.48,
+      "en": ">> Oh, it's slipped as he jumps.",
+      "zh": ">> 哦，他跳的时候滑了。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "slipped"
+      ],
+      "note": "“as he jumps”表示“当他跳的时候”，注意“as”的用法。"
+    },
+    {
+      "id": "c537",
+      "startTime": 1774.41,
+      "endTime": 1776.72,
+      "en": ">> Yeah, his feet and hands are kind of",
+      "zh": ">> 是的，他的脚和手有点……",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“kind of”表示“有点”，口语常用。"
+    },
+    {
+      "id": "c538",
+      "startTime": 1782.09,
+      "endTime": 1785.52,
+      "en": "But yeah, so Sam is one of the shorter climbers for the men.",
+      "zh": "但是是的，Sam是男子选手中较矮的之一。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“one of the shorter”表示“较矮的之一”，注意比较级。"
+    },
+    {
+      "id": "c539",
+      "startTime": 1785.69,
+      "endTime": 1791.36,
+      "en": "So, we can see he struggles a bit more placing his foot over to the right, but",
+      "zh": "所以，我们可以看到他在把脚放到右边时有点挣扎，但是……",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“struggles a bit more”表示“更挣扎一点”，注意“a bit more”的用法。"
+    },
+    {
+      "id": "c540",
+      "startTime": 1793.45,
+      "endTime": 1794.51,
+      "en": ">> it's a big str.",
+      "zh": ">> 这是一个很大的跨度。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“big str”可能是“big stretch”的缩写，表示“大跨度”。"
+    },
+    {
+      "id": "c541",
+      "startTime": 1794.41,
+      "endTime": 1797.12,
+      "en": "He's 170 in the database either.",
+      "zh": "他在数据库里也不是170。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“either”用于否定句，表示“也”。"
+    },
+    {
+      "id": "c542",
+      "startTime": 1798.01,
+      "endTime": 1801.23,
+      "en": ">> And I think yeah, if your foot is on the higher part of the volume,",
+      "zh": ">> 而且我认为，如果你的脚在体积的较高部分，",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "“higher part”表示“较高部分”，注意“if”条件句。"
+    },
+    {
+      "id": "c543",
+      "startTime": 1801.13,
+      "endTime": 1803.04,
+      "en": "like he really just has it on the corner.",
+      "zh": "就像他真的只是把它放在角落里。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“have it on the corner”表示“放在角落”，注意“have”的用法。"
+    },
+    {
+      "id": "c544",
+      "startTime": 1803.53,
+      "endTime": 1808.16,
+      "en": "He has less to push off than if your foot's a bit lower.",
+      "zh": "他推蹬的力比脚稍微低一点时要少。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“push off”表示“推蹬”，注意比较结构。"
+    },
+    {
+      "id": "c545",
+      "startTime": 1808.65,
+      "endTime": 1813.28,
+      "en": ">> Um, but then you do also have a bit of the edge of the volume, but still it's like practically nothing.",
+      "zh": ">> 嗯，但你也确实有一点体积的边缘，但仍然几乎什么都没有。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“practically nothing”表示“几乎什么都没有”，注意“practically”的用法。"
+    },
+    {
+      "id": "c546",
+      "startTime": 1814.97,
+      "endTime": 1817.39,
+      "en": "So Saut has come very close twice.",
+      "zh": "所以Saut已经非常接近两次了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“come very close”表示“非常接近”，注意“close”的用法。"
+    },
+    {
+      "id": "c547",
+      "startTime": 1817.29,
+      "endTime": 1820.83,
+      "en": "He's got a minute and a half and I think he's probably going to rest for a while here.",
+      "zh": "他有一分半钟，我想他可能会在这里休息一会儿。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“a minute and a half”表示“一分半钟”，注意“rest for a while”表示“休息一会儿”。"
+    },
+    {
+      "id": "c548",
+      "startTime": 1820.73,
+      "endTime": 1822.56,
+      "en": "Sam in the background is about to full",
+      "zh": "背景中的Sam即将完全……",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“about to”表示“即将”，注意“full”可能指“完全完成”。"
+    },
+    {
+      "id": "c549",
+      "startTime": 1824.09,
+      "endTime": 1824.69,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复“Yeah”表示肯定。"
+    },
+    {
+      "id": "c550",
+      "startTime": 1824.29,
+      "endTime": 1827.2,
+      "en": "And so for these kind of like Oh,",
+      "zh": "所以对于这种像，哦，",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“kind of like”表示“有点像”，口语常用。"
+    },
+    {
+      "id": "c551",
+      "startTime": 1829.45,
+      "endTime": 1830.83,
+      "en": "that worked really well.",
+      "zh": "那真的效果很好。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“worked really well”表示“效果很好”，注意“work”的用法。"
+    },
+    {
+      "id": "c552",
+      "startTime": 1830.73,
+      "endTime": 1835.31,
+      "en": "He aimed perfectly onto the pink and then with his momentum continued onto the black.",
+      "zh": "他完美地瞄准了粉色点，然后利用动量继续到黑色点。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“aimed perfectly”表示“完美瞄准”，注意“with his momentum”表示“利用他的动量”。"
+    },
+    {
+      "id": "c553",
+      "startTime": 1835.21,
+      "endTime": 1837.68,
+      "en": "He just needs to rock over his pink foot.",
+      "zh": "他只需要把重心移到他的粉色脚上。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'rock over' 是攀岩术语，指转移重心到支撑脚上。"
+    },
+    {
+      "id": "c554",
+      "startTime": 1837.61,
+      "endTime": 1838.96,
+      "en": "The pink foot a bit more.",
+      "zh": "粉色脚再用力一点。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'a bit more' 是常用表达，表示“再多一点”。"
+    },
+    {
+      "id": "c555",
+      "startTime": 1845.37,
+      "endTime": 1848,
+      "en": "you don't need to rest as much as I would say physical borders.",
+      "zh": "你不需要像我认为的体力极限那样休息那么多。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'physical borders' 这里指体力极限，注意 'borders' 的用法。"
+    },
+    {
+      "id": "c556",
+      "startTime": 1847.93,
+      "endTime": 1853.52,
+      "en": "I mean as obviously physical borders or coordination borders like S. Um",
+      "zh": "我的意思是，显然有体力极限或协调性极限，比如S。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "'coordination borders' 指协调性极限，注意口语中的 'like S' 举例。"
+    },
+    {
+      "id": "c557",
+      "startTime": 1858.01,
+      "endTime": 1860.24,
+      "en": "that anytime soon unless something crazy happens.",
+      "zh": "除非发生什么疯狂的事，否则短期内不会。",
+      "score": 56,
+      "study": true,
+      "keywords": [],
+      "note": "'anytime soon' 是固定搭配，表示“短期内”。"
+    },
+    {
+      "id": "c558",
+      "startTime": 1860.41,
+      "endTime": 1862.64,
+      "en": "S meanwhile needs to get this one.",
+      "zh": "与此同时，S需要完成这个。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'get this one' 在攀岩中常指完成这条线路。"
+    },
+    {
+      "id": "c559",
+      "startTime": 1863.29,
+      "endTime": 1864.56,
+      "en": ">> No, it goes again.",
+      "zh": "不，它又掉下来了。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "'it goes again' 口语中表示“又失败了”。"
+    },
+    {
+      "id": "c560",
+      "startTime": 1864.73,
+      "endTime": 1870.11,
+      "en": ">> His foot keeps the thing >> but he has he has one one good go.",
+      "zh": "他的脚一直踩着那个点，但他有一次很好的尝试。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'one good go' 指一次好的尝试，注意 'go' 作名词。"
+    },
+    {
+      "id": "c561",
+      "startTime": 1870.01,
+      "endTime": 1873.84,
+      "en": "Yeah, >> I think he's almost doing too much with that foot.",
+      "zh": "是的，我觉得他那只脚的动作太多了。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'doing too much' 表示“做得太多”，注意比较级。"
+    },
+    {
+      "id": "c562",
+      "startTime": 1874.09,
+      "endTime": 1876.8,
+      "en": ">> Maybe he's kind of just I think he's going to spring and go.",
+      "zh": "也许他有点想弹跳然后出发。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'spring and go' 指弹跳出发，注意 'spring' 的动词用法。"
+    },
+    {
+      "id": "c563",
+      "startTime": 1878.33,
+      "endTime": 1883.47,
+      "en": ">> Oh, Sam did really well, but his body, upper body was a bit further out from the wall.",
+      "zh": "哦，Sam做得很好，但他的上半身离墙有点远。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'further out' 表示“更远”，注意比较级。"
+    },
+    {
+      "id": "c564",
+      "startTime": 1883.37,
+      "endTime": 1886.8,
+      "en": "And you definitely want to be closer in. Even maybe",
+      "zh": "你肯定想更贴近墙壁，甚至可能……",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'closer in' 表示“更贴近”，注意 'in' 的用法。"
+    },
+    {
+      "id": "c565",
+      "startTime": 1888.09,
+      "endTime": 1891.28,
+      "en": "straight leg is rushing through the beginning of the border.",
+      "zh": "直腿正在快速通过线路的开头部分。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'straight leg' 指直腿，'rushing through' 表示“快速通过”。"
+    },
+    {
+      "id": "c566",
+      "startTime": 1891.21,
+      "endTime": 1892.35,
+      "en": ">> He's got time though.",
+      "zh": "但他还有时间。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'got time' 是口语，表示“有时间”。"
+    },
+    {
+      "id": "c567",
+      "startTime": 1892.25,
+      "endTime": 1894.27,
+      "en": "He's got 15 seconds here.",
+      "zh": "他还有15秒。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意数字和时间表达。"
+    },
+    {
+      "id": "c568",
+      "startTime": 1894.17,
+      "endTime": 1894.88,
+      "en": "It's enough.",
+      "zh": "足够了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'It's enough' 是简单表达，表示“够了”。"
+    },
+    {
+      "id": "c569",
+      "startTime": 1894.97,
+      "endTime": 1899.68,
+      "en": "Sam just wants the zone cuz like we said every point is important.",
+      "zh": "Sam只想要Zone，因为正如我们所说，每一分都很重要。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'zone' 是攀岩术语，指得分点，注意 'cuz' 是 'because' 的口语缩写。"
+    },
+    {
+      "id": "c570",
+      "startTime": 1900.41,
+      "endTime": 1901.76,
+      "en": "Unfortunate no top.",
+      "zh": "不幸的是没有完攀。",
+      "score": 30,
+      "study": false,
+      "keywords": [
+        "top"
+      ],
+      "note": "'no top' 表示“没有完攀”，'top' 是攀岩术语。"
+    },
+    {
+      "id": "c571",
+      "startTime": 1902.49,
+      "endTime": 1907.28,
+      "en": ">> So that's problematic because as we know it's definitely climbable.",
+      "zh": "所以这很麻烦，因为正如我们所知，这条线路肯定是可以爬的。",
+      "score": 55,
+      "study": true,
+      "keywords": [],
+      "note": "'problematic' 表示“有问题的”，'climbable' 表示“可攀爬的”。"
+    },
+    {
+      "id": "c572",
+      "startTime": 1907.37,
+      "endTime": 1908.32,
+      "en": "Sam is in.",
+      "zh": "Sam进去了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'is in' 可能指进入Zone或完成动作，注意上下文。"
+    },
+    {
+      "id": "c573",
+      "startTime": 1910.25,
+      "endTime": 1911.12,
+      "en": ">> That was crazy.",
+      "zh": "那太疯狂了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'That was crazy' 是常用感叹句。"
+    },
+    {
+      "id": "c574",
+      "startTime": 1911.37,
+      "endTime": 1913.44,
+      "en": "But that was out of time unfortunately.",
+      "zh": "但不幸的是超时了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'out of time' 表示“超时”，注意介词 'of'。"
+    },
+    {
+      "id": "c575",
+      "startTime": 1914.33,
+      "endTime": 1917.2,
+      "en": "Um >> we'll wait and see on the zone for this one.",
+      "zh": "嗯，我们等着看这个的Zone吧。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'wait and see' 是固定搭配，表示“等着瞧”。"
+    },
+    {
+      "id": "c576",
+      "startTime": 1919.37,
+      "endTime": 1921.2,
+      "en": ">> I'm pretty sure that's not a zone.",
+      "zh": "我很确定那不是Zone。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'I'm pretty sure' 表示“我很确定”，注意 'pretty' 的用法。"
+    },
+    {
+      "id": "c577",
+      "startTime": 1921.29,
+      "endTime": 1922.59,
+      "en": ">> No, I don't know if it is.",
+      "zh": "不，我不知道是不是。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "注意口语缩略 \"don't\" 和 \"is\" 的弱读。"
+    },
+    {
+      "id": "c578",
+      "startTime": 1922.49,
+      "endTime": 1924.11,
+      "en": "He certainly hasn't been awarded it.",
+      "zh": "他肯定没有被授予这个成绩。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "\"certainly\" 表示肯定，注意 \"hasn't been awarded\" 的现在完成时被动语态。"
+    },
+    {
+      "id": "c579",
+      "startTime": 1924.01,
+      "endTime": 1924.61,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，注意语调。"
+    },
+    {
+      "id": "c580",
+      "startTime": 1925.21,
+      "endTime": 1925.87,
+      "en": ">> So, let's see.",
+      "zh": "那么，让我们看看。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "\"let's see\" 是常见口语，表示观望。"
+    },
+    {
+      "id": "c581",
+      "startTime": 1925.77,
+      "endTime": 1930.72,
+      "en": ">> Like he the it was out of time and then he was not stable enough whatsoever.",
+      "zh": "就像他超时了，而且他一点都不稳定。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "\"out of time\" 表示超时，\"whatsoever\" 加强否定。"
+    },
+    {
+      "id": "c582",
+      "startTime": 1931.45,
+      "endTime": 1940.32,
+      "en": ">> But he did that beautifully arriving a bit like bent but body upper body close to the wall >> and then just continued and rushed into the last minute.",
+      "zh": "但他做得漂亮，到达时有点弯曲，但上半身贴近墙壁，然后继续，在最后一分钟冲了过去。",
+      "score": 31,
+      "study": false,
+      "keywords": [],
+      "note": "\"arriving a bit bent\" 描述身体姿态，\"rushed into\" 表示冲刺。"
+    },
+    {
+      "id": "c583",
+      "startTime": 1941.05,
+      "endTime": 1946.24,
+      "en": ">> By the way, I got got a message from a coach just now who said we call, you know, the cheering we were talking about. They call it situational",
+      "zh": "顺便说一句，我刚才收到一位教练的消息，他说我们说的那种欢呼，他们称之为情境性的。",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "\"by the way\" 引出题外话，\"situational\" 是关键术语。"
+    },
+    {
+      "id": "c584",
+      "startTime": 1947.21,
+      "endTime": 1948.8,
+      "en": ">> Situational cheering.",
+      "zh": "情境性欢呼。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复术语，注意发音。"
+    },
+    {
+      "id": "c585",
+      "startTime": 1949.61,
+      "endTime": 1951.87,
+      "en": ">> I mean, I think it's super important for the athlete.",
+      "zh": "我觉得这对运动员来说非常重要。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "\"super important\" 是口语强调，注意 \"for the athlete\" 的介词搭配。"
+    },
+    {
+      "id": "c586",
+      "startTime": 1951.77,
+      "endTime": 1957.12,
+      "en": "like it it just gives you that bit more confidence in your method.",
+      "zh": "就像它给你的方法增添了一点信心。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "\"gives you that bit more confidence\" 表示多一点点信心。"
+    },
+    {
+      "id": "c587",
+      "startTime": 1957.29,
+      "endTime": 1967.39,
+      "en": "Like if you're kind of hesitant between two methods and you're just not really sure and then they're just like you're like okay this is it and you can just go all out.",
+      "zh": "比如你在两种方法之间犹豫，不太确定，然后他们就像这样，你说好吧，就这样，你可以全力以赴。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "\"hesitant between\" 表示犹豫，\"go all out\" 是全力以赴。"
+    },
+    {
+      "id": "c588",
+      "startTime": 1967.29,
+      "endTime": 1967.89,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单同意。"
+    },
+    {
+      "id": "c589",
+      "startTime": 1967.69,
+      "endTime": 1969.2,
+      "en": "Exactly what the crowd did.",
+      "zh": "这正是观众所做的。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "\"exactly what\" 强调正是如此。"
+    },
+    {
+      "id": "c590",
+      "startTime": 1969.61,
+      "endTime": 1974.96,
+      "en": ">> So John John one onto this mega slab and a Max Mill and you back Max to get this one.",
+      "zh": "所以，约翰·约翰上了这个大板壁，还有马克斯·米尔，你支持马克斯拿下这个。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "\"mega slab\" 指大板壁，\"back\" 在这里是支持的意思。"
+    },
+    {
+      "id": "c591",
+      "startTime": 1975.05,
+      "endTime": 1978.48,
+      "en": "I know he was looking at this boulder with Sam at the beginning.",
+      "zh": "我知道他一开始和山姆在看这个抱石。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "\"looking at\" 表示观察，注意 \"with Sam\" 的伴随。"
+    },
+    {
+      "id": "c592",
+      "startTime": 1978.41,
+      "endTime": 1981.6,
+      "en": "a similar kind of height, similar kind of trickiness.",
+      "zh": "类似的高度，类似的棘手程度。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "height"
+      ],
+      "note": "\"trickiness\" 是棘手，注意 \"similar kind of\" 的重复结构。"
+    },
+    {
+      "id": "c593",
+      "startTime": 1982.25,
+      "endTime": 1983.44,
+      "en": "See what he can do.",
+      "zh": "看看他能做什么。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "\"see what he can do\" 是常见表达。"
+    },
+    {
+      "id": "c594",
+      "startTime": 1985.13,
+      "endTime": 1986.96,
+      "en": ">> So, that's interesting.",
+      "zh": "那么，这很有趣。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "\"that's interesting\" 表示关注。"
+    },
+    {
+      "id": "c595",
+      "startTime": 1986.97,
+      "endTime": 1992.4,
+      "en": "Max is shorter than T or as it says on the statistics here, it said 166.",
+      "zh": "马克斯比T矮，或者正如这里的统计数据显示，是166。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "\"as it says\" 表示正如所说，注意数字的读法。"
+    },
+    {
+      "id": "c596",
+      "startTime": 1992.33,
+      "endTime": 1995.15,
+      "en": "So, we'll see how the slab turns out.",
+      "zh": "所以，我们看看板壁会怎样。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "\"we'll see\" 表示观望，\"turn out\" 表示结果。"
+    },
+    {
+      "id": "c597",
+      "startTime": 1995.05,
+      "endTime": 1997.07,
+      "en": ">> Yeah, I'm not sure how the the 170 I had.",
+      "zh": "是的，我不确定我有的那个170。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "\"not sure\" 表示不确定，注意 \"the 170\" 指数据。"
+    },
+    {
+      "id": "c598",
+      "startTime": 1997.01,
+      "endTime": 2001.31,
+      "en": "I'm not sure how accurate that is to be honest, but it's the the data I have.",
+      "zh": "说实话，我不确定那有多准确，但这是我有的数据。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "\"to be honest\" 是插入语，\"accurate\" 表示准确。"
+    },
+    {
+      "id": "c599",
+      "startTime": 2001.21,
+      "endTime": 2006.88,
+      "en": "So, uh John is being >> It looked like he was called down there. >> It was 90, but",
+      "zh": "所以，约翰正在……看起来他被叫下来了。那是90，但……",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "\"called down\" 表示被叫下来，注意 \"It was 90\" 指分数。"
+    },
+    {
+      "id": "c600",
+      "startTime": 2008.73,
+      "endTime": 2009.33,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c601",
+      "startTime": 2009.05,
+      "endTime": 2013.6,
+      "en": "So, he's trying to jump straight onto the He's laughing straight away, you know.",
+      "zh": "所以，他正试图直接跳上去。他立刻笑了，你知道的。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意“straight away”意为“立刻”，常用于口语。"
+    },
+    {
+      "id": "c602",
+      "startTime": 2014.81,
+      "endTime": 2022.32,
+      "en": ">> He knows this is maybe not his track >> But he seemed Yeah, he's changing shoes to which pair",
+      "zh": ">> 他知道这可能不是他的路线 >> 但他似乎……是的，他在换鞋，换哪双呢？",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“track”在这里指“路线”，注意“changing shoes”的进行时。"
+    },
+    {
+      "id": "c603",
+      "startTime": 2024.41,
+      "endTime": 2028.48,
+      "en": "of so bad. >> oh, he's changing",
+      "zh": "太糟糕了。哦，他在换鞋。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“so bad”口语中表示“太糟糕了”，注意语气。"
+    },
+    {
+      "id": "c604",
+      "startTime": 2030.09,
+      "endTime": 2032.99,
+      "en": ">> that right one is the new and I can't remember the name of it.",
+      "zh": ">> 右边那双是新的，我记不住它的名字。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“can't remember”是常见表达，注意“the name of it”的语序。"
+    },
+    {
+      "id": "c605",
+      "startTime": 2032.89,
+      "endTime": 2034.56,
+      "en": "I'm sure someone will tell me soon.",
+      "zh": "我相信很快就会有人告诉我。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“I'm sure”表示确信，注意“soon”的位置。"
+    },
+    {
+      "id": "c606",
+      "startTime": 2034.89,
+      "endTime": 2036.56,
+      "en": ">> But he only changed his left.",
+      "zh": ">> 但他只换了左脚。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“only”强调“只”，以及“left”指左脚。"
+    },
+    {
+      "id": "c607",
+      "startTime": 2036.49,
+      "endTime": 2041.6,
+      "en": "Yeah, >> which is surprising cuz I would have thought he might have changed his right shoe cuz it's like small jibs,",
+      "zh": "是的，>> 这很令人惊讶，因为我本以为他会换右脚，因为那是小脚点，",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“would have thought”是虚拟语气，表示“本以为”，注意“jibs”指小脚点。"
+    },
+    {
+      "id": "c608",
+      "startTime": 2041.61,
+      "endTime": 2043.52,
+      "en": ">> but the right shoe is stiff already.",
+      "zh": ">> 但右脚已经够硬了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“stiff”指鞋底硬，注意“already”表示“已经”。"
+    },
+    {
+      "id": "c609",
+      "startTime": 2043.69,
+      "endTime": 2044.29,
+      "en": ">> Okay.",
+      "zh": ">> 好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay”是常见回应，注意语调。"
+    },
+    {
+      "id": "c610",
+      "startTime": 2044.17,
+      "endTime": 2044.77,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复“Okay”表示同意或继续。"
+    },
+    {
+      "id": "c611",
+      "startTime": 2045.53,
+      "endTime": 2047.28,
+      "en": ">> Oh, Max is in now.",
+      "zh": ">> 哦，Max现在上场了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“is in”表示“上场”，注意“now”的位置。"
+    },
+    {
+      "id": "c612",
+      "startTime": 2047.37,
+      "endTime": 2053.12,
+      "en": ">> Max took a couple of attempts for this first move, but once again, makes it look easy once you understand the movement.",
+      "zh": ">> Max在第一个动作上尝试了几次，但一旦理解了动作，又让它看起来很容易。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“took a couple of attempts”表示“尝试了几次”，注意“makes it look easy”的用法。"
+    },
+    {
+      "id": "c613",
+      "startTime": 2053.93,
+      "endTime": 2055.55,
+      "en": ">> I think this is something you can do again.",
+      "zh": ">> 我觉得这个动作你可以再做一次。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“can do again”表示“能再做”，注意“this is something”的强调。"
+    },
+    {
+      "id": "c614",
+      "startTime": 2055.45,
+      "endTime": 2057.68,
+      "en": "He also put straight the drop knee in.",
+      "zh": "他也直接用了折膝。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“drop knee”是攀岩术语，指折膝动作，注意“straight”表示“直接”。"
+    },
+    {
+      "id": "c615",
+      "startTime": 2059.85,
+      "endTime": 2063.6,
+      "en": ">> And now there's that left foot which we saw S struggle with.",
+      "zh": ">> 现在有那个左脚，我们之前看到S在挣扎。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“struggle with”表示“在……上挣扎”，注意“which we saw”的定语从句。"
+    },
+    {
+      "id": "c616",
+      "startTime": 2064.01,
+      "endTime": 2064.61,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yes”表示同意，注意语调。"
+    },
+    {
+      "id": "c617",
+      "startTime": 2065.13,
+      "endTime": 2070.08,
+      "en": "holding um just let go of his >> He just like engaged.",
+      "zh": "抓住，嗯，只是松开了他的手 >> 他只是像发力了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“let go of”表示“松开”，注意“engaged”指发力。"
+    },
+    {
+      "id": "c618",
+      "startTime": 2070.49,
+      "endTime": 2071.09,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”是“Yes”的口语形式。"
+    },
+    {
+      "id": "c619",
+      "startTime": 2070.69,
+      "endTime": 2072.56,
+      "en": "He's like, \"I've got my full crib.",
+      "zh": "他就像说：“我已经完全准备好了。我能做到。”",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“full crib”可能是“full grip”的误听，但这里理解为“完全准备好”，注意引语。"
+    },
+    {
+      "id": "c620",
+      "startTime": 2072.57,
+      "endTime": 2073.47,
+      "en": "I can do this.\"",
+      "zh": "我能做到。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“I can do this”是鼓励自己的常用语。"
+    },
+    {
+      "id": "c621",
+      "startTime": 2073.37,
+      "endTime": 2073.97,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”表示同意。"
+    },
+    {
+      "id": "c622",
+      "startTime": 2073.57,
+      "endTime": 2074.17,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复“Yeah”表示强调。"
+    },
+    {
+      "id": "c623",
+      "startTime": 2073.73,
+      "endTime": 2074.33,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "再次重复“Yeah”。"
+    },
+    {
+      "id": "c624",
+      "startTime": 2075.45,
+      "endTime": 2076.48,
+      "en": ">> Thank you, Max.",
+      "zh": ">> 谢谢，Max。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“Thank you”是礼貌用语，注意称呼。"
+    },
+    {
+      "id": "c625",
+      "startTime": 2076.41,
+      "endTime": 2077.23,
+      "en": "Nice work for you.",
+      "zh": "干得漂亮。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意“Nice work”是常见的鼓励表达，相当于“干得好”。"
+    },
+    {
+      "id": "c626",
+      "startTime": 2077.17,
+      "endTime": 2082.08,
+      "en": "And by the way, Sam was awarded the zone on the uh on the slab on the scores.",
+      "zh": "顺便说一下，Sam在板壁上拿到了Zone得分点，计分板上已经记录了。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "zone",
+        "slab"
+      ],
+      "note": "“by the way”表示“顺便说”，口语中常用。"
+    },
+    {
+      "id": "c627",
+      "startTime": 2082.01,
+      "endTime": 2085.84,
+      "en": "So, 34.3 for him. So, Chon Jong",
+      "zh": "所以他得了34.3分。那么，Chon Jong",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意数字的读法，34.3读作“thirty-four point three”。"
+    },
+    {
+      "id": "c628",
+      "startTime": 2086.89,
+      "endTime": 2089.12,
+      "en": "starts the process that Sam did.",
+      "zh": "开始重复Sam刚才的动作。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“starts the process”意为“开始这个过程”，这里指开始攀爬。"
+    },
+    {
+      "id": "c629",
+      "startTime": 2089.29,
+      "endTime": 2089.89,
+      "en": ">> Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay”是常见回应，表示同意或理解。"
+    },
+    {
+      "id": "c630",
+      "startTime": 2089.61,
+      "endTime": 2093.55,
+      "en": "So, he he's honestly looking not too bad on this move.",
+      "zh": "说实话，他做这个动作看起来还不错。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“honestly”表示“说实话”，用于强调真实感受。"
+    },
+    {
+      "id": "c631",
+      "startTime": 2093.45,
+      "endTime": 2096.16,
+      "en": "He just wants to continue the movement onto the black",
+      "zh": "他只是想继续移动到黑色",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“continue the movement”意为“继续移动”，注意“movement”在攀岩中常指动作。"
+    },
+    {
+      "id": "c632",
+      "startTime": 2103.53,
+      "endTime": 2104.8,
+      "en": ">> given zone. >> The zone",
+      "zh": "给定的Zone得分点。Zone得分点",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“given”在这里表示“给定的”，注意“zone”是攀岩术语。"
+    },
+    {
+      "id": "c633",
+      "startTime": 2106.01,
+      "endTime": 2107.84,
+      "en": "that may be appealed.",
+      "zh": "那个可能会被申诉。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“appealed”意为“申诉”，注意被动语态。"
+    },
+    {
+      "id": "c634",
+      "startTime": 2109.61,
+      "endTime": 2110.59,
+      "en": "He's being appealed.",
+      "zh": "他正在被申诉。",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "“He's being appealed”是现在进行时的被动语态，表示“正在被申诉”。"
+    },
+    {
+      "id": "c635",
+      "startTime": 2110.49,
+      "endTime": 2112.56,
+      "en": "Oh, no. He's being appealed on his first border.",
+      "zh": "哦，不。他的第一个边界点被申诉了。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“first border”可能指第一个边界点，注意“border”在攀岩中可能指边界。"
+    },
+    {
+      "id": "c636",
+      "startTime": 2112.49,
+      "endTime": 2113.09,
+      "en": "What?",
+      "zh": "什么？",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“What?”表示惊讶，注意语调。"
+    },
+    {
+      "id": "c637",
+      "startTime": 2113.13,
+      "endTime": 2115.12,
+      "en": ">> Uh, no. It's it's it will be that.",
+      "zh": "呃，不。会是那个。",
+      "score": 30,
+      "study": false,
+      "keywords": [],
+      "note": "“It'll be that one”表示“会是那个”，注意将来时。"
+    },
+    {
+      "id": "c638",
+      "startTime": 2115.05,
+      "endTime": 2115.79,
+      "en": ">> Oh, it'll be that one.",
+      "zh": "哦，会是那个。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“It'll be that one”重复，强调。"
+    },
+    {
+      "id": "c639",
+      "startTime": 2115.73,
+      "endTime": 2117.15,
+      "en": "Yeah, that's >> for sure.",
+      "zh": "是的，那肯定是。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“for sure”表示“肯定”，口语常用。"
+    },
+    {
+      "id": "c640",
+      "startTime": 2117.05,
+      "endTime": 2117.84,
+      "en": "For sure.",
+      "zh": "肯定。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“For sure”再次强调。"
+    },
+    {
+      "id": "c641",
+      "startTime": 2119.45,
+      "endTime": 2121.39,
+      "en": ">> So, we'll wait and see with that one.",
+      "zh": "所以，我们等着看那个结果。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“wait and see”是固定搭配，意为“等着瞧”。"
+    },
+    {
+      "id": "c642",
+      "startTime": 2121.29,
+      "endTime": 2123.87,
+      "en": "And then like that little fist bump on the way through from Max.",
+      "zh": "然后Max在路过时做了个小拳头碰拳。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“fist bump”是“碰拳”的意思，注意“on the way through”表示“路过时”。"
+    },
+    {
+      "id": "c643",
+      "startTime": 2123.77,
+      "endTime": 2126.96,
+      "en": "They were doing that in the waiting area just before they came on as well.",
+      "zh": "他们刚才在候场区也这么做了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“waiting area”是“候场区”，注意过去进行时“were doing”。"
+    },
+    {
+      "id": "c644",
+      "startTime": 2127.77,
+      "endTime": 2131.76,
+      "en": "So John Jong will have the stage to himself for a minute and a half here.",
+      "zh": "所以John Jong将独自在这个舞台上待一分半钟。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“have the stage to himself”意为“独自拥有舞台”，注意“for a minute and a half”表示时间。"
+    },
+    {
+      "id": "c645",
+      "startTime": 2136.65,
+      "endTime": 2137.76,
+      "en": "close yet.",
+      "zh": "还差一点。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“close yet”可能表示“还差一点”，注意“yet”常用于否定句。"
+    },
+    {
+      "id": "c646",
+      "startTime": 2138.09,
+      "endTime": 2138.96,
+      "en": "Jump over.",
+      "zh": "跳过去。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“Jump over”是“跳过去”的意思，注意动词短语。"
+    },
+    {
+      "id": "c647",
+      "startTime": 2140.33,
+      "endTime": 2150.96,
+      "en": "The difference between Sam and Jamong right now is that I feel like Sam had already given five or six attempts on this move by this time and",
+      "zh": "现在Sam和Jamong的区别在于，我觉得Sam到这个时候已经在这个动作上尝试了五六次了，",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“the difference between A and B”是“A和B的区别”，注意“had given”是过去完成时。"
+    },
+    {
+      "id": "c648",
+      "startTime": 2152.73,
+      "endTime": 2163.07,
+      "en": "I'm pretty sure John is on his third attempt or fourth which ah okay so he's try to go with a bit more static method and",
+      "zh": "而且我很确定John现在是在第三次或第四次尝试，所以，好吧，他试图用更静态的方法。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "“I'm pretty sure”表示“我很确定”，注意“static method”在攀岩中指静态动作。"
+    },
+    {
+      "id": "c649",
+      "startTime": 2162.97,
+      "endTime": 2169.12,
+      "en": "then jump straight onto the black but I think it's just really hard to generate momentum from that position.",
+      "zh": "然后直接跳上黑色点，但我认为从那个位置很难产生动力。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'generate momentum' 意为‘产生动力’，常用于攀岩中描述发力。"
+    },
+    {
+      "id": "c650",
+      "startTime": 2170.17,
+      "endTime": 2170.77,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c651",
+      "startTime": 2170.41,
+      "endTime": 2171.95,
+      "en": "And he's obviously been landing on that toe.",
+      "zh": "而且他显然一直用那个脚趾落地。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "toe"
+      ],
+      "note": "'landing on that toe' 指‘用脚趾落地’，注意 'toe' 是脚趾。"
+    },
+    {
+      "id": "c652",
+      "startTime": 2171.85,
+      "endTime": 2173.15,
+      "en": "He was limping a little bit.",
+      "zh": "他有点跛行。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'limping' 意为‘跛行’，描述受伤后走路不便。"
+    },
+    {
+      "id": "c653",
+      "startTime": 2173.05,
+      "endTime": 2175.68,
+      "en": "It's not It's quite painful to land on a jib that small.",
+      "zh": "落在那么小的岩点上确实很疼。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'jib' 指小岩点，'painful' 是‘疼痛的’。"
+    },
+    {
+      "id": "c654",
+      "startTime": 2177.77,
+      "endTime": 2181.44,
+      "en": ">> And I mean, yeah, just climbing on small jibs is painful in general.",
+      "zh": "而且，在小岩点上攀爬通常都很疼。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'in general' 意为‘通常’，用于总结一般情况。"
+    },
+    {
+      "id": "c655",
+      "startTime": 2181.85,
+      "endTime": 2185.15,
+      "en": ">> But yeah, I think for these kinds of moves, getting as many attempts as you can,",
+      "zh": "但我觉得对于这类动作，尽可能多尝试很重要，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'getting as many attempts as you can' 意为‘尽可能多尝试’，强调尝试次数。"
+    },
+    {
+      "id": "c656",
+      "startTime": 2185.05,
+      "endTime": 2187.92,
+      "en": "especially if you don't completely understand the movement is important.",
+      "zh": "特别是如果你不完全理解动作。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "'especially' 意为‘特别是’，用于强调。"
+    },
+    {
+      "id": "c657",
+      "startTime": 2188.49,
+      "endTime": 2194.48,
+      "en": "And with slabs, you can allow yourself a bit more attempts than the usual uh physical borders.",
+      "zh": "在板壁上，你可以比通常的物理抱石多尝试几次。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'slabs' 指板壁，'allow yourself' 意为‘允许自己’，这里指可以多尝试。"
+    },
+    {
+      "id": "c658",
+      "startTime": 2195.61,
+      "endTime": 2199.36,
+      "en": "It's just very hard to get the the momentum over to right.",
+      "zh": "很难把动力转移到右边。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'get the momentum over to right' 意为‘把动力转移到右边’，注意 'over to' 表示方向。"
+    },
+    {
+      "id": "c659",
+      "startTime": 2199.29,
+      "endTime": 2199.89,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c660",
+      "startTime": 2199.49,
+      "endTime": 2200.75,
+      "en": "And to stay in the wall.",
+      "zh": "而且要保持在岩壁上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'stay in the wall' 意为‘保持在岩壁上’，注意 'stay' 是‘保持’。"
+    },
+    {
+      "id": "c661",
+      "startTime": 2200.65,
+      "endTime": 2205.68,
+      "en": "He once he shifts over his foot, he's his upper body is already way off.",
+      "zh": "一旦他移动脚，他的上半身就已经偏离了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'shifts over his foot' 意为‘移动脚’，'way off' 意为‘偏离很多’。"
+    },
+    {
+      "id": "c662",
+      "startTime": 2206.81,
+      "endTime": 2208.56,
+      "en": ">> But he's still trying again with this",
+      "zh": "但他还在继续尝试这个动作。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'still trying again' 意为‘还在继续尝试’，注意 'still' 表示‘仍然’。"
+    },
+    {
+      "id": "c663",
+      "startTime": 2209.85,
+      "endTime": 2212.08,
+      "en": ">> That is that right foot.",
+      "zh": "那是右脚。",
+      "score": 28,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "简单指出右脚。"
+    },
+    {
+      "id": "c664",
+      "startTime": 2216.57,
+      "endTime": 2219.04,
+      "en": "I don't think he was expecting either one,",
+      "zh": "我觉得他两个都没预料到，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'either one' 指‘两者之一’，这里指两个动作都没预料到。"
+    },
+    {
+      "id": "c665",
+      "startTime": 2220.89,
+      "endTime": 2223.04,
+      "en": "but he shows passion.",
+      "zh": "但他展现了热情。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'shows passion' 意为‘展现热情’，注意 'passion' 是‘热情’。"
+    },
+    {
+      "id": "c666",
+      "startTime": 2223.77,
+      "endTime": 2226.32,
+      "en": "That's what we >> He does indeed show passion.",
+      "zh": "他确实展现了热情。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'does indeed' 用于强调，意为‘确实’。"
+    },
+    {
+      "id": "c667",
+      "startTime": 2226.41,
+      "endTime": 2229.55,
+      "en": "Right, Ray Kawata will be next on to Boulder One.",
+      "zh": "接下来，Ray Kawata 将尝试一号抱石。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'will be next on' 意为‘接下来将尝试’，注意 'next' 是‘下一个’。"
+    },
+    {
+      "id": "c668",
+      "startTime": 2229.45,
+      "endTime": 2233.12,
+      "en": "Let's see some replays then of what we've just seen. Mainly Chon",
+      "zh": "让我们看看刚才的回放，主要是 Chon",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'replays' 意为‘回放’，'mainly' 意为‘主要’。"
+    },
+    {
+      "id": "c669",
+      "startTime": 2234.73,
+      "endTime": 2236.03,
+      "en": ">> jumping across a few ways.",
+      "zh": "跳过去几次。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'jumping across' 意为‘跳过去’，注意 'across' 表示‘横跨’。"
+    },
+    {
+      "id": "c670",
+      "startTime": 2235.93,
+      "endTime": 2238.48,
+      "en": "We're still waiting for that update on Sam,",
+      "zh": "我们还在等 Sam 的最新消息，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'waiting for that update' 意为‘等待最新消息’，注意 'update' 是‘更新’。"
+    },
+    {
+      "id": "c671",
+      "startTime": 2240.89,
+      "endTime": 2243.15,
+      "en": ">> but Chon struggling as we can see a little bit.",
+      "zh": "但我们可以看到 Chon 有点挣扎。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'struggling' 意为‘挣扎’，'a little bit' 意为‘有点’。"
+    },
+    {
+      "id": "c672",
+      "startTime": 2243.09,
+      "endTime": 2246.64,
+      "en": "Maybe his anti-star had problems grimacing as he goes over.",
+      "zh": "也许他的防滑粉有问题，他过去时做了个鬼脸。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'anti-star' 可能指防滑粉（chalk），'grimacing' 意为‘做鬼脸’，表示痛苦。"
+    },
+    {
+      "id": "c673",
+      "startTime": 2247.77,
+      "endTime": 2248.37,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中常用“Yeah”表示肯定，简单直接。"
+    },
+    {
+      "id": "c674",
+      "startTime": 2248.01,
+      "endTime": 2250.48,
+      "en": "So that makes also Sam zone",
+      "zh": "所以这也让 Sam 拿到了 Zone。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "注意“make”在这里表示“使成为”，常用于比赛解说。"
+    },
+    {
+      "id": "c675",
+      "startTime": 2251.93,
+      "endTime": 2255.04,
+      "en": "if it's counted very very important.",
+      "zh": "如果算上的话，这非常非常重要。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“counted”意为“被计入”，注意被动语态。"
+    },
+    {
+      "id": "c676",
+      "startTime": 2260.09,
+      "endTime": 2260.69,
+      "en": "Van Dyson.",
+      "zh": "Van Dyson。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "人名，注意发音。"
+    },
+    {
+      "id": "c677",
+      "startTime": 2260.57,
+      "endTime": 2262.43,
+      "en": "Now we know how good Hannis is at slabs.",
+      "zh": "现在我们知道 Hannis 在板壁上有多厉害了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“slab”指板壁，攀岩术语。"
+    },
+    {
+      "id": "c678",
+      "startTime": 2262.33,
+      "endTime": 2264.67,
+      "en": "Although he struggled in the semi-finals with the slabs.",
+      "zh": "尽管他在半决赛中在板壁上挣扎过。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“struggled”表示挣扎，注意过去时。"
+    },
+    {
+      "id": "c679",
+      "startTime": 2264.57,
+      "endTime": 2266.35,
+      "en": "So this is sort of his return.",
+      "zh": "所以这算是他的回归。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“sort of”意为“有点”，口语常用。"
+    },
+    {
+      "id": "c680",
+      "startTime": 2266.25,
+      "endTime": 2269.36,
+      "en": "He just took one last moment in front of the fan there to cool the hands.",
+      "zh": "他刚刚在风扇前停留了片刻来冷却双手。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“cool the hands”是攀岩常见动作，注意“cool”作动词。"
+    },
+    {
+      "id": "c681",
+      "startTime": 2269.61,
+      "endTime": 2271.87,
+      "en": ">> I mean yeah it was so hot this afternoon.",
+      "zh": ">> 我是说，今天下午太热了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“I mean”是口语填充词，表示补充说明。"
+    },
+    {
+      "id": "c682",
+      "startTime": 2271.77,
+      "endTime": 2278.8,
+      "en": "I mean also yesterday, but some of the athletes were saying in the tent behind it was just boiling like it was so hot.",
+      "zh": "昨天也是，但一些运动员说后面的帐篷里简直像煮沸了一样，太热了。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“boiling”比喻极热，注意“some of the athletes”的复数。"
+    },
+    {
+      "id": "c683",
+      "startTime": 2279.61,
+      "endTime": 2282.35,
+      "en": ">> Yeah, there are fans back there but it is a it's a tent.",
+      "zh": ">> 是的，后面有风扇，但那是帐篷。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“there are”表示存在，注意复数。"
+    },
+    {
+      "id": "c684",
+      "startTime": 2282.25,
+      "endTime": 2287.12,
+      "en": ">> Yeah, but I mean if it's Yeah, if there's fans and it's 40° inside it it doesn't change much.",
+      "zh": ">> 是的，但我是说，如果有风扇而且里面40度，那也改变不了多少。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“it doesn't change much”意为“改变不大”，注意否定。"
+    },
+    {
+      "id": "c685",
+      "startTime": 2288.01,
+      "endTime": 2290.03,
+      "en": ">> So Hannis into the starting position.",
+      "zh": ">> 所以 Hannis 进入起始位置。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“starting position”是攀岩术语，指起步姿势。"
+    },
+    {
+      "id": "c686",
+      "startTime": 2289.93,
+      "endTime": 2290.83,
+      "en": "That move is easy.",
+      "zh": "那个动作很简单。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“move”在攀岩中指一个动作。"
+    },
+    {
+      "id": "c687",
+      "startTime": 2290.73,
+      "endTime": 2293.44,
+      "en": "It's the second one that's coming up and then Ray leaps.",
+      "zh": "接下来是第二个动作，然后 Ray 跳跃。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“coming up”意为“即将到来”，注意“leaps”的第三人称单数。"
+    },
+    {
+      "id": "c688",
+      "startTime": 2294.57,
+      "endTime": 2295.84,
+      "en": ">> Good work from him.",
+      "zh": ">> 他做得很好。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Good work”是表扬，注意“from him”的介词。"
+    },
+    {
+      "id": "c689",
+      "startTime": 2296.57,
+      "endTime": 2299.44,
+      "en": ">> So let's see how Hannis is going to do this.",
+      "zh": ">> 让我们看看 Hannis 会怎么做。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "“let's see”是常见表达，注意“how”引导的从句。"
+    },
+    {
+      "id": "c690",
+      "startTime": 2299.37,
+      "endTime": 2304.96,
+      "en": "who seems to be going for more of a direct coordination and is very close on his first go.",
+      "zh": "他似乎想要更直接的协调动作，而且第一次尝试就非常接近。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "“coordination”指协调动作，注意“be close”表示接近。"
+    },
+    {
+      "id": "c691",
+      "startTime": 2306.41,
+      "endTime": 2308,
+      "en": ">> Drop knee on the right for Ray.",
+      "zh": ">> Ray 的右腿做膝盖内扣。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“drop knee”是攀岩术语，指膝盖内扣动作。"
+    },
+    {
+      "id": "c692",
+      "startTime": 2308.01,
+      "endTime": 2309.92,
+      "en": ">> Ray is in to his drop knee.",
+      "zh": ">> Ray 进入了膝盖内扣姿势。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“in to”表示进入状态，注意“drop knee”的用法。"
+    },
+    {
+      "id": "c693",
+      "startTime": 2309.85,
+      "endTime": 2311.36,
+      "en": ">> Little twist for the left.",
+      "zh": ">> 左手稍微扭转。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“twist”意为扭转，注意“for the left”指左手。"
+    },
+    {
+      "id": "c694",
+      "startTime": 2311.45,
+      "endTime": 2314.24,
+      "en": "Holds it and then he's got to jump off this bad foot.",
+      "zh": "他保持住，然后必须从这只不好的脚上跳出去。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“bad foot”指不稳定的脚点，注意“jump off”的用法。"
+    },
+    {
+      "id": "c695",
+      "startTime": 2314.73,
+      "endTime": 2315.68,
+      "en": ">> And he does it.",
+      "zh": ">> 他做到了。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“does it”强调完成，注意“it”指代动作。"
+    },
+    {
+      "id": "c696",
+      "startTime": 2315.85,
+      "endTime": 2316.8,
+      "en": ">> Another flash.",
+      "zh": ">> 又一次一把完攀。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "flash"
+      ],
+      "note": "“flash”指一把完攀，攀岩术语。"
+    },
+    {
+      "id": "c697",
+      "startTime": 2322.57,
+      "endTime": 2324.24,
+      "en": ">> That was his style as well.",
+      "zh": "那也是他的风格。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“as well”表示“也”，常用于句末。"
+    },
+    {
+      "id": "c698",
+      "startTime": 2324.97,
+      "endTime": 2328.75,
+      "en": "So Hannis kind of missed the pink foot this moment.",
+      "zh": "所以Hannis此刻有点错过了粉色的脚点。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“miss”在这里是“错过、没踩到”的意思。"
+    },
+    {
+      "id": "c699",
+      "startTime": 2328.65,
+      "endTime": 2333.2,
+      "en": "At this time he landed with his like middle part of the shoe on the",
+      "zh": "这时他落点用的是鞋的中部。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“land”在攀岩中常指“落脚”。"
+    },
+    {
+      "id": "c700",
+      "startTime": 2334.33,
+      "endTime": 2339.2,
+      "en": "which then I think kind of makes you a bit too unstable to continue the next",
+      "zh": "这我觉得会让你有点太不稳定，无法继续下一步。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“too...to...”结构表示“太……而不能……”。"
+    },
+    {
+      "id": "c701",
+      "startTime": 2340.65,
+      "endTime": 2342.27,
+      "en": ">> That was the unwind from him.",
+      "zh": "那是他的一个释放动作。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“unwind”在这里指“放松、释放”。"
+    },
+    {
+      "id": "c702",
+      "startTime": 2342.17,
+      "endTime": 2346.4,
+      "en": "That crimp really locking off. Thumb wrapped over the fingers",
+      "zh": "那个小扣点真的锁得很紧，拇指扣在手指上。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "“crimp”是“小扣点”，“locking off”是“锁定”。"
+    },
+    {
+      "id": "c703",
+      "startTime": 2347.93,
+      "endTime": 2349.23,
+      "en": "and nice and smooth that.",
+      "zh": "而且做得漂亮流畅。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“nice and smooth”是口语中“很好很流畅”的意思。"
+    },
+    {
+      "id": "c704",
+      "startTime": 2349.13,
+      "endTime": 2350.8,
+      "en": ">> Yeah, it's a very it's a very slloy",
+      "zh": "是的，这是一个非常滑的点。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“slopy”是“sloper”的形容词形式，指“大圆点”。"
+    },
+    {
+      "id": "c705",
+      "startTime": 2352.89,
+      "endTime": 2354.56,
+      "en": "You're really engaging that thumb.",
+      "zh": "你真的要用上拇指。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“engage”在这里是“用上、参与”的意思。"
+    },
+    {
+      "id": "c706",
+      "startTime": 2356.33,
+      "endTime": 2357.15,
+      "en": ">> Simple match.",
+      "zh": "简单的双手并点。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "match"
+      ],
+      "note": "“match”在攀岩中特指“双手抓同一个点”。"
+    },
+    {
+      "id": "c707",
+      "startTime": 2357.05,
+      "endTime": 2358.03,
+      "en": "Looks pretty chill.",
+      "zh": "看起来挺轻松的。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“chill”是口语，表示“轻松、放松”。"
+    },
+    {
+      "id": "c708",
+      "startTime": 2357.93,
+      "endTime": 2359.07,
+      "en": "Job done for him.",
+      "zh": "他搞定了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“job done”是“任务完成”的常用表达。"
+    },
+    {
+      "id": "c709",
+      "startTime": 2358.97,
+      "endTime": 2362.96,
+      "en": "So, Sarata to go on bowler number one before we will say goodbye to it.",
+      "zh": "所以，Sarata将作为一号选手上场，之后我们就要告别这条线路了。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“go on”在这里是“上场”的意思。"
+    },
+    {
+      "id": "c710",
+      "startTime": 2363.85,
+      "endTime": 2366.88,
+      "en": "But Hannis, first of all, is two and a half minutes on this one.",
+      "zh": "但Hannis首先在这条线路上用了两分半钟。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“two and a half minutes”是“两分半”。"
+    },
+    {
+      "id": "c711",
+      "startTime": 2368.17,
+      "endTime": 2370.72,
+      "en": ">> And I think he's looking close to unlocking this.",
+      "zh": "我觉得他快解开这个难题了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“unlock”在这里是“破解、找到解法”的意思。"
+    },
+    {
+      "id": "c712",
+      "startTime": 2372.65,
+      "endTime": 2373.25,
+      "en": ">> Yes.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c713",
+      "startTime": 2374.89,
+      "endTime": 2378.88,
+      "en": ">> Now, that was done beautifully. And now, >> yes,",
+      "zh": "现在，那个动作做得漂亮。现在，是的，",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“that was done beautifully”是“那个动作做得很漂亮”。"
+    },
+    {
+      "id": "c714",
+      "startTime": 2379.85,
+      "endTime": 2381.52,
+      "en": ">> he jumped straight. Ooh,",
+      "zh": "他直接跳了过去。哦，",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“jumped straight”是“直接跳”的意思。"
+    },
+    {
+      "id": "c715",
+      "startTime": 2382.57,
+      "endTime": 2384.43,
+      "en": "jumps straight into the last hold.",
+      "zh": "直接跳到了最后一个手点。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“last hold”是“最后一个手点”。"
+    },
+    {
+      "id": "c716",
+      "startTime": 2384.33,
+      "endTime": 2388.27,
+      "en": "He definitely knows he can do this and he's still got 2 minutes left on the clock.",
+      "zh": "他肯定知道自己能完成，而且时钟上还剩2分钟。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "“on the clock”指“在计时中”。"
+    },
+    {
+      "id": "c717",
+      "startTime": 2388.17,
+      "endTime": 2391.47,
+      "en": "So half of his time he's figured out what he needs to do.",
+      "zh": "所以他用了一半的时间就弄清楚了需要做什么。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“figure out”是“弄清楚、明白”的意思。"
+    },
+    {
+      "id": "c718",
+      "startTime": 2391.37,
+      "endTime": 2393.44,
+      "en": "So he for sure has enough time.",
+      "zh": "所以他肯定有足够的时间。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“for sure”是“肯定”的口语表达。"
+    },
+    {
+      "id": "c719",
+      "startTime": 2393.61,
+      "endTime": 2397.12,
+      "en": ">> And that zone from Sam Azu as we thought it might has been taken away.",
+      "zh": "而Sam Azu的那个Zone点，正如我们预料的那样，被取消了。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“taken away”是“被取消、被拿走”的意思。"
+    },
+    {
+      "id": "c720",
+      "startTime": 2397.05,
+      "endTime": 2400.27,
+      "en": "He goes down to 25 points after that.",
+      "zh": "在那之后，他的分数降到了25分。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“goes down to”是“下降到”的意思。"
+    },
+    {
+      "id": "c721",
+      "startTime": 2400.17,
+      "endTime": 2401.36,
+      "en": ">> I mean, yeah, that was",
+      "zh": "我的意思是，是的，那真是",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意口语中的“I mean”用来引出解释或强调。"
+    },
+    {
+      "id": "c722",
+      "startTime": 2406.57,
+      "endTime": 2407.17,
+      "en": "there.",
+      "zh": "到了那里。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“there”在此指代某个位置，注意语境。"
+    },
+    {
+      "id": "c723",
+      "startTime": 2407.61,
+      "endTime": 2409.12,
+      "en": "And a little bit of frustration.",
+      "zh": "还有一点沮丧。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“frustration”是常用词，表示挫败感。"
+    },
+    {
+      "id": "c724",
+      "startTime": 2409.21,
+      "endTime": 2410.88,
+      "en": "It's getting close for him.",
+      "zh": "对他来说越来越接近了。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“getting close”表示接近目标，常用表达。"
+    },
+    {
+      "id": "c725",
+      "startTime": 2410.89,
+      "endTime": 2411.49,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c726",
+      "startTime": 2413.61,
+      "endTime": 2414.72,
+      "en": ">> Okay. So,",
+      "zh": "好的。那么，",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay, so”是口语中常见的过渡语。"
+    },
+    {
+      "id": "c727",
+      "startTime": 2416.17,
+      "endTime": 2417.87,
+      "en": "Hannis has been given that zone.",
+      "zh": "Hannis已经拿到了那个Zone。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“zone”在攀岩中指得分点，注意大写。"
+    },
+    {
+      "id": "c728",
+      "startTime": 2417.77,
+      "endTime": 2419.92,
+      "en": "I think more likely to stay that one.",
+      "zh": "我认为更有可能保持那个。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“more likely”表示更可能，注意比较级用法。"
+    },
+    {
+      "id": "c729",
+      "startTime": 2421.69,
+      "endTime": 2422.29,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c730",
+      "startTime": 2421.89,
+      "endTime": 2424.51,
+      "en": "It'll be great to see now.",
+      "zh": "现在看到会很好。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“It'll be great to see”是常见表达。"
+    },
+    {
+      "id": "c731",
+      "startTime": 2424.41,
+      "endTime": 2427.23,
+      "en": "He also kind of knows what the last hold feels like.",
+      "zh": "他也大概知道最后一个把手点的感觉。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“kind of”表示有点，口语常用。"
+    },
+    {
+      "id": "c732",
+      "startTime": 2427.13,
+      "endTime": 2433.79,
+      "en": "So, he can definitely adjust how much he needs to like squeeze or get high or whatever or what to expect.",
+      "zh": "所以，他肯定可以调整他需要多少挤压或抬高或任何东西，或者期待什么。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“adjust”是调整，注意“how much”引导的从句。"
+    },
+    {
+      "id": "c733",
+      "startTime": 2433.69,
+      "endTime": 2434.88,
+      "en": "And that definitely helps.",
+      "zh": "那肯定有帮助。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“definitely”表示肯定，加强语气。"
+    },
+    {
+      "id": "c734",
+      "startTime": 2435.29,
+      "endTime": 2437.04,
+      "en": "Ah, he went a bit too fast.",
+      "zh": "啊，他太快了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“went a bit too fast”表示有点太快。"
+    },
+    {
+      "id": "c735",
+      "startTime": 2436.97,
+      "endTime": 2442.88,
+      "en": "He tried to bring the toe in underneath to stop that movement then kind of I think instinctively more than anything else.",
+      "zh": "他试图把脚趾收进来以阻止那个动作，然后更多是本能反应。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "toe"
+      ],
+      "note": "“instinctively”是副词，表示本能地。"
+    },
+    {
+      "id": "c736",
+      "startTime": 2443.53,
+      "endTime": 2447.04,
+      "en": ">> Just trying to like hook on to anything to keep him into the wall.",
+      "zh": "只是试图钩住任何东西让他贴住墙壁。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“hook on”是钩住，注意“keep him into the wall”的用法。"
+    },
+    {
+      "id": "c737",
+      "startTime": 2446.97,
+      "endTime": 2449.79,
+      "en": ">> When that works though, you feel so >> Yeah.",
+      "zh": "当那起作用时，你感觉太棒了。是的。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“feel so”后省略了形容词，口语中常见。"
+    },
+    {
+      "id": "c738",
+      "startTime": 2449.73,
+      "endTime": 2451.68,
+      "en": "And it does work a lot of the time",
+      "zh": "而且很多时候确实有效。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“a lot of the time”表示很多时候。"
+    },
+    {
+      "id": "c739",
+      "startTime": 2452.97,
+      "endTime": 2455.6,
+      "en": ">> there. Like beautiful tactic underneath",
+      "zh": "在那里。像漂亮的战术在下面。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“tactic”是战术，注意“underneath”表示在下方。"
+    },
+    {
+      "id": "c740",
+      "startTime": 2456.73,
+      "endTime": 2459.68,
+      "en": ">> cross through and then he's just going to go straight.",
+      "zh": "交叉穿过，然后他就直接上去。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“cross through”是交叉穿过，注意“go straight”表示直上。"
+    },
+    {
+      "id": "c741",
+      "startTime": 2464.49,
+      "endTime": 2465.09,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c742",
+      "startTime": 2464.73,
+      "endTime": 2466.03,
+      "en": "But what he's doing is really good.",
+      "zh": "但他做得真的很好。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“what he's doing”是名词性从句，注意“really good”的用法。"
+    },
+    {
+      "id": "c743",
+      "startTime": 2465.97,
+      "endTime": 2474.67,
+      "en": "like he goes quite fast up into the first hole and then slows down his movement and then continues it >> but a bit slower into the last one.",
+      "zh": "比如他很快地进入第一个洞，然后放慢动作，然后继续，但更慢地进入最后一个。",
+      "score": 31,
+      "study": false,
+      "keywords": [],
+      "note": "注意“quite fast”和“a bit slower”的对比。"
+    },
+    {
+      "id": "c744",
+      "startTime": 2474.61,
+      "endTime": 2479.55,
+      "en": "Like if he can just slow down his move a bit >> I think then but also like Yeah,",
+      "zh": "比如如果他稍微放慢动作，我想然后但也是，是的。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“if he can just”是建议，注意“slow down”的用法。"
+    },
+    {
+      "id": "c745",
+      "startTime": 2479.45,
+      "endTime": 2483.76,
+      "en": "his last hold I think is just really good practically is like a side.",
+      "zh": "他的最后一个点我觉得实际上非常好抓，有点像侧拉点。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "注意“practically”在这里是“实际上”的意思，常用于口语。"
+    },
+    {
+      "id": "c746",
+      "startTime": 2484.57,
+      "endTime": 2492.51,
+      "en": ">> Yeah, it's the direction your the opposite direction where your body is going a little bit easier to I love that >> It's a kind of move I would never do in a million years.",
+      "zh": ">> 是的，方向和你身体移动的方向相反，稍微容易一点。我喜欢那个 >> 这种动作我一百万年内都不会做。",
+      "score": 32,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“a million years”是夸张说法，表示“永远”。"
+    },
+    {
+      "id": "c747",
+      "startTime": 2492.41,
+      "endTime": 2493.84,
+      "en": "It's why I respect it.",
+      "zh": "这就是我尊重它的原因。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“It's why...”是常用句型，表示“这就是...的原因”。"
+    },
+    {
+      "id": "c748",
+      "startTime": 2495.61,
+      "endTime": 2499.04,
+      "en": "But yeah, he's got the pressure of time >> True.",
+      "zh": "但是，是的，他有时间压力 >> 确实。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“pressure of time”是“时间压力”的固定搭配。"
+    },
+    {
+      "id": "c749",
+      "startTime": 2499.05,
+      "endTime": 2500.72,
+      "en": "21 seconds left for Hannis.",
+      "zh": "汉尼斯还剩21秒。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“left”在这里表示“剩余”，常用于倒计时。"
+    },
+    {
+      "id": "c750",
+      "startTime": 2502.17,
+      "endTime": 2505.28,
+      "en": ">> I mean, oh no. Why did he switch feet",
+      "zh": ">> 我的意思是，哦不。他为什么换脚了？",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“switch feet”是攀岩术语，指换脚动作。"
+    },
+    {
+      "id": "c751",
+      "startTime": 2506.89,
+      "endTime": 2507.95,
+      "en": ">> He's got enough time.",
+      "zh": ">> 他有足够的时间。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“enough time”是“足够的时间”，注意enough放在名词前。"
+    },
+    {
+      "id": "c752",
+      "startTime": 2507.85,
+      "endTime": 2509.52,
+      "en": "He's got enough time to try this.",
+      "zh": "他有足够的时间尝试这个。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“try this”指尝试这个动作，注意this的指代。"
+    },
+    {
+      "id": "c753",
+      "startTime": 2511.69,
+      "endTime": 2512.64,
+      "en": ">> So close.",
+      "zh": ">> 太接近了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“so close”是常用表达，表示“差一点”。"
+    },
+    {
+      "id": "c754",
+      "startTime": 2513.53,
+      "endTime": 2514.13,
+      "en": "Yes.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c755",
+      "startTime": 2514.73,
+      "endTime": 2515.71,
+      "en": ">> I know this.",
+      "zh": ">> 我知道这个。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“I know this”表示“我知道这个情况”。"
+    },
+    {
+      "id": "c756",
+      "startTime": 2515.61,
+      "endTime": 2516.48,
+      "en": "I know.",
+      "zh": "我知道。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，表示理解。"
+    },
+    {
+      "id": "c757",
+      "startTime": 2518.57,
+      "endTime": 2521.52,
+      "en": ">> This is the most frustrating thing.",
+      "zh": ">> 这是最令人沮丧的事情。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“frustrating”是“令人沮丧的”，注意拼写。"
+    },
+    {
+      "id": "c758",
+      "startTime": 2521.61,
+      "endTime": 2528.16,
+      "en": "He's had three, four goes, three goes on the bus move and was so close.",
+      "zh": "他试了三次、四次，三次尝试那个关键动作，都差一点。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“goes”在这里是名词，表示“尝试”，常用于口语。"
+    },
+    {
+      "id": "c759",
+      "startTime": 2530.09,
+      "endTime": 2531.76,
+      "en": ">> But look, it's never over until",
+      "zh": ">> 但是看，不到最后一刻，",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“it's never over until it's over”是习语，表示“不到最后不算完”。"
+    },
+    {
+      "id": "c760",
+      "startTime": 2533.05,
+      "endTime": 2533.79,
+      "en": ">> it's over.",
+      "zh": ">> 就不算结束。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "承接上一句，强调未完待续。"
+    },
+    {
+      "id": "c761",
+      "startTime": 2533.69,
+      "endTime": 2534.43,
+      "en": ">> But it's over now.",
+      "zh": ">> 但现在结束了。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“over”表示“结束”，注意对比。"
+    },
+    {
+      "id": "c762",
+      "startTime": 2534.37,
+      "endTime": 2536.96,
+      "en": "He >> Well, I mean, like the final,",
+      "zh": "他 >> 嗯，我的意思是，就像最后，",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“I mean”是口语中常用的插入语。"
+    },
+    {
+      "id": "c763",
+      "startTime": 2538.97,
+      "endTime": 2541.23,
+      "en": ">> not the time has run out, so it's done.",
+      "zh": ">> 不是时间已经用完了，所以结束了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“run out”是“用完”的常用短语。"
+    },
+    {
+      "id": "c764",
+      "startTime": 2541.13,
+      "endTime": 2542.91,
+      "en": ">> Well, for him, yeah, on this border, it's over.",
+      "zh": ">> 好吧，对他来说，是的，在这个线路上，结束了。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“for him”表示“对他来说”，注意介词。"
+    },
+    {
+      "id": "c765",
+      "startTime": 2542.85,
+      "endTime": 2545.28,
+      "en": ">> It's over, >> but his round still continues.",
+      "zh": ">> 结束了，>> 但他的轮次还在继续。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“round”在这里指“轮次”，注意区分“border”和“round”。"
+    },
+    {
+      "id": "c766",
+      "startTime": 2545.21,
+      "endTime": 2551.04,
+      "en": "He's got to stay like it's important for him now to kind of forget that border and move on to the next ones.",
+      "zh": "他必须保持，现在对他来说重要的是忘记那条线路，继续下一条。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“forget that border”中的“border”可能是“boulder”的误听，注意听力。"
+    },
+    {
+      "id": "c767",
+      "startTime": 2551.69,
+      "endTime": 2552.83,
+      "en": ">> That's how close he came.",
+      "zh": ">> 他就是差那么一点。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“how close”表示“多接近”，感叹句。"
+    },
+    {
+      "id": "c768",
+      "startTime": 2552.73,
+      "endTime": 2554.88,
+      "en": "I mean, it's slloy, isn't it?",
+      "zh": "我的意思是，这很可惜，不是吗？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“slloy”可能是“silly”或“sad”的误听，注意听力。"
+    },
+    {
+      "id": "c769",
+      "startTime": 2554.81,
+      "endTime": 2558.83,
+      "en": "But if you I think if you catch it, the further right you catch it, >> the further right.",
+      "zh": "但如果你抓住它，你抓得越靠右，就越靠右。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意“the further right you catch it”中的比较结构“the + 比较级, the + 比较级”，表示“越……越……”。"
+    },
+    {
+      "id": "c770",
+      "startTime": 2558.73,
+      "endTime": 2561.12,
+      "en": "Yeah, I think he needs to be even more a bit sideways",
+      "zh": "是的，我觉得他需要更侧身一点。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“sideways”意为“侧向地”，在攀岩中常指侧身动作。"
+    },
+    {
+      "id": "c771",
+      "startTime": 2562.33,
+      "endTime": 2562.93,
+      "en": ">> really.",
+      "zh": "真的。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“really”在此表示强调，口语中常用。"
+    },
+    {
+      "id": "c772",
+      "startTime": 2562.81,
+      "endTime": 2563.6,
+      "en": "Yeah, side.",
+      "zh": "是的，侧身。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“side”在此指侧身动作，注意与“sideways”同义。"
+    },
+    {
+      "id": "c773",
+      "startTime": 2565.37,
+      "endTime": 2567.6,
+      "en": ">> Oh, he knows how unfortunate that is.",
+      "zh": "哦，他知道那有多不幸。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“how unfortunate that is”是感叹句，注意“how”引导的感叹句结构。"
+    },
+    {
+      "id": "c774",
+      "startTime": 2572.89,
+      "endTime": 2576.27,
+      "en": "about pressure and he has got a lot on his shoulders.",
+      "zh": "关于压力，他肩上担子很重。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“has a lot on his shoulders”是习语，意为“肩负重担”。"
+    },
+    {
+      "id": "c775",
+      "startTime": 2576.17,
+      "endTime": 2580.32,
+      "en": "He knows perfectly well that if he gets this he will be written into the history books forever.",
+      "zh": "他非常清楚，如果他完成这个，他将永远被载入史册。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“be written into the history books”意为“载入史册”，注意被动语态。"
+    },
+    {
+      "id": "c776",
+      "startTime": 2582.09,
+      "endTime": 2584.99,
+      "en": ">> And he's on a boulder that most people have climbed pretty quick.",
+      "zh": "而且他正在爬一块大多数人都很快爬完的巨石。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“boulder”指巨石，攀岩中特指抱石路线。"
+    },
+    {
+      "id": "c777",
+      "startTime": 2584.89,
+      "endTime": 2593.71,
+      "en": "So there's a lot on his shoulders right >> I mean the thing is is that I just think he's like okay everyone else did it.",
+      "zh": "所以他肩上压力很大，我的意思是，我觉得他就像在说‘好吧，其他人都做到了’。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“I mean”是口语中常用的插入语，表示“我的意思是”。"
+    },
+    {
+      "id": "c778",
+      "startTime": 2593.61,
+      "endTime": 2595.76,
+      "en": "I'm for sure going to do it.",
+      "zh": "我肯定能做到。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“for sure”意为“肯定”，口语中常用。"
+    },
+    {
+      "id": "c779",
+      "startTime": 2595.69,
+      "endTime": 2596.8,
+      "en": ">> He's got that confidence.",
+      "zh": "他有那种自信。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“confidence”意为“自信”，注意发音。"
+    },
+    {
+      "id": "c780",
+      "startTime": 2596.73,
+      "endTime": 2600.88,
+      "en": ">> He he can like he it's he's shown enough",
+      "zh": "他，他能够，他，他已经展示得足够多了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意口语中的重复和停顿，这是自然表达。"
+    },
+    {
+      "id": "c781",
+      "startTime": 2602.57,
+      "endTime": 2604.16,
+      "en": "I mean, he does that move so",
+      "zh": "我的意思是，他做那个动作如此……",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“so”在此表示程度，后面省略了形容词，口语中常见。"
+    },
+    {
+      "id": "c782",
+      "startTime": 2605.13,
+      "endTime": 2610.67,
+      "en": ">> Do was also very close on his first go for that slab move, >> but let's see.",
+      "zh": "他第一次尝试那个板壁动作时也非常接近，但让我们看看。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "slab",
+        "move"
+      ],
+      "note": "“slab move”指板壁上的动作，注意“slab”的发音。"
+    },
+    {
+      "id": "c783",
+      "startTime": 2610.57,
+      "endTime": 2612.43,
+      "en": "Okay, he thinks of the drop knee.",
+      "zh": "好的，他考虑用折膝。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“drop knee”是攀岩术语，指折膝动作，注意“drop”的发音。"
+    },
+    {
+      "id": "c784",
+      "startTime": 2612.33,
+      "endTime": 2614.56,
+      "en": "I mean, all Japanese went straight with the drop knee.",
+      "zh": "我的意思是，所有日本选手都直接用折膝。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "drop knee"
+      ],
+      "note": "“all Japanese”指所有日本选手，注意“Japanese”的用法。"
+    },
+    {
+      "id": "c785",
+      "startTime": 2614.65,
+      "endTime": 2616.59,
+      "en": ">> So, we read that together.",
+      "zh": "所以，我们一起读出了那个动作。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“read”在此意为“解读”，攀岩中常指读懂路线。"
+    },
+    {
+      "id": "c786",
+      "startTime": 2616.49,
+      "endTime": 2618.67,
+      "en": "This is the one he's got to work a little harder on.",
+      "zh": "这是他在这个点上需要更努力的地方。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“work harder on”意为“在……上更努力”。"
+    },
+    {
+      "id": "c787",
+      "startTime": 2618.57,
+      "endTime": 2620.88,
+      "en": "And then careful with that left foot.",
+      "zh": "然后小心左脚。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“careful with”意为“小心”，注意介词搭配。"
+    },
+    {
+      "id": "c788",
+      "startTime": 2621.45,
+      "endTime": 2622.05,
+      "en": "Easy.",
+      "zh": "简单。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“easy”在此表示“容易”，口语中常用。"
+    },
+    {
+      "id": "c789",
+      "startTime": 2623.21,
+      "endTime": 2624.24,
+      "en": ">> Good job, Sarat.",
+      "zh": "干得好，Sarat。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“good job”是表扬用语，注意“Sarat”是人名。"
+    },
+    {
+      "id": "c790",
+      "startTime": 2624.33,
+      "endTime": 2624.93,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“okay”是常用口语，表示同意或确认。"
+    },
+    {
+      "id": "c791",
+      "startTime": 2624.57,
+      "endTime": 2625.17,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“yeah”是“yes”的口语形式。"
+    },
+    {
+      "id": "c792",
+      "startTime": 2625.61,
+      "endTime": 2627.52,
+      "en": "I love how sometimes I try to play devil's.",
+      "zh": "我喜欢有时候我试着唱反调。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“play devil's advocate”意为“唱反调”，注意习语。"
+    },
+    {
+      "id": "c793",
+      "startTime": 2628.17,
+      "endTime": 2629.44,
+      "en": "So, >> Wow.",
+      "zh": "所以，>> 哇。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意“So”在这里是语气词，表示“所以”或“那么”，口语中常用。"
+    },
+    {
+      "id": "c794",
+      "startTime": 2629.69,
+      "endTime": 2636.99,
+      "en": "Dian almost kind of stopped, but if he had continued jumping right, right, I think he could have also done the move,",
+      "zh": "Dian 几乎有点停下来了，但如果他继续向右跳，向右，我想他也能完成那个动作，",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“almost kind of”表示“几乎有点”，口语中常用“kind of”来缓和语气。"
+    },
+    {
+      "id": "c795",
+      "startTime": 2636.93,
+      "endTime": 2638.4,
+      "en": "but he tried crossing through.",
+      "zh": "但他尝试了交叉通过。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“cross through”在攀岩中指交叉手或交叉脚的动作，这里指交叉移动。"
+    },
+    {
+      "id": "c796",
+      "startTime": 2640.73,
+      "endTime": 2644.27,
+      "en": ">> Giving a little sneak peek of what >> remembering the boulders.",
+      "zh": ">> 稍微透露一下 >> 回忆那些抱石。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“sneak peek”意为“偷看，先睹为快”，这里指提前透露一点信息。"
+    },
+    {
+      "id": "c797",
+      "startTime": 2644.17,
+      "endTime": 2645.52,
+      "en": "He's like, I don't remember that.",
+      "zh": "他好像在说，我不记得那个了。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“He's like”是口语中常用的引述方式，相当于“他说”或“他好像说”。"
+    },
+    {
+      "id": "c798",
+      "startTime": 2647.29,
+      "endTime": 2647.89,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”表示同意，口语中常用。"
+    },
+    {
+      "id": "c799",
+      "startTime": 2647.77,
+      "endTime": 2649.04,
+      "en": "Work done for Sarat.",
+      "zh": "Sarat 的工作完成了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“work done”指完成了任务，这里指Sarat完成了攀爬。"
+    },
+    {
+      "id": "c800",
+      "startTime": 2649.05,
+      "endTime": 2652.08,
+      "en": "No energy really lost on that skin saved.",
+      "zh": "没有真正浪费能量，皮肤也保住了。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“skin saved”指保护了手上的皮肤，攀岩中皮肤很重要。"
+    },
+    {
+      "id": "c801",
+      "startTime": 2652.25,
+      "endTime": 2653.68,
+      "en": "Three ahead for him.",
+      "zh": "他领先三个。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“three ahead”指领先三个（可能指得分或尝试次数）。"
+    },
+    {
+      "id": "c802",
+      "startTime": 2659.05,
+      "endTime": 2659.71,
+      "en": "that crib.",
+      "zh": "那个岩点。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“crib”在这里可能指岩点，但不太常见，注意听上下文。"
+    },
+    {
+      "id": "c803",
+      "startTime": 2659.61,
+      "endTime": 2663.95,
+      "en": "I just want to >> I'm trying to work out if it's got a lip on it or something on it cuz some shots it looks",
+      "zh": "我只是想 >> 我想弄清楚它上面是不是有一个唇边或什么东西，因为有些镜头看起来",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“work out”意为“弄清楚，搞明白”，口语中常用。"
+    },
+    {
+      "id": "c804",
+      "startTime": 2663.89,
+      "endTime": 2668.88,
+      "en": "like it does and some it >> I think there's a bit >> I think a tiny bit but it's still like",
+      "zh": "像有，有些 >> 我觉得有一点 >> 我觉得有一点点，但它仍然像",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“a tiny bit”表示“一点点”，注意“bit”的用法。"
+    },
+    {
+      "id": "c805",
+      "startTime": 2669.85,
+      "endTime": 2675.04,
+      "en": ">> cuz we're seeing the full crim come in and they're crimping on something with >> I mean you can full crim.",
+      "zh": ">> 因为我们看到全扣握法出现，他们正在用某种东西扣握 >> 我的意思是你可以全扣。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“full crimp”是攀岩术语，指全扣握法，即手指全部弯曲扣住岩点。"
+    },
+    {
+      "id": "c806",
+      "startTime": 2684.65,
+      "endTime": 2685.25,
+      "en": "again.",
+      "zh": "再次。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“again”表示“再次”，这里可能指重复某个动作。"
+    },
+    {
+      "id": "c807",
+      "startTime": 2685.05,
+      "endTime": 2687.04,
+      "en": "Let's have a look at the footwork through here.",
+      "zh": "让我们看看这里的脚法。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "footwork"
+      ],
+      "note": "“footwork”指脚部动作，攀岩中很重要。"
+    },
+    {
+      "id": "c808",
+      "startTime": 2687.21,
+      "endTime": 2688.83,
+      "en": "Let's see if he tries to go right.",
+      "zh": "让我们看看他是否尝试向右。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“try to go right”指尝试向右移动。"
+    },
+    {
+      "id": "c809",
+      "startTime": 2688.73,
+      "endTime": 2689.33,
+      "en": "Right.",
+      "zh": "向右。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Right”在这里指方向“右”。"
+    },
+    {
+      "id": "c810",
+      "startTime": 2689.21,
+      "endTime": 2691.23,
+      "en": "Oh, he Oh, he crossed through.",
+      "zh": "哦，他，哦，他交叉通过了。",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "“cross through”再次出现，指交叉移动。"
+    },
+    {
+      "id": "c811",
+      "startTime": 2691.13,
+      "endTime": 2695.44,
+      "en": "That was beautifully >> Use Alex to cushion him into that black hole.",
+      "zh": "那真是漂亮 >> 用Alex来缓冲他进入那个黑洞。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“cushion”意为“缓冲”，这里指用Alex的身体来缓冲。"
+    },
+    {
+      "id": "c812",
+      "startTime": 2695.37,
+      "endTime": 2696.4,
+      "en": "Beautiful feet.",
+      "zh": "漂亮的脚法。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Beautiful feet”是赞美脚部动作漂亮。"
+    },
+    {
+      "id": "c813",
+      "startTime": 2697.05,
+      "endTime": 2700.4,
+      "en": ">> And now, oh, here's a hand slip.",
+      "zh": ">> 现在，哦，这里手滑了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“hand slip”指手滑，攀岩中常见。"
+    },
+    {
+      "id": "c814",
+      "startTime": 2701.13,
+      "endTime": 2701.73,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”表示同意或确认。"
+    },
+    {
+      "id": "c815",
+      "startTime": 2701.45,
+      "endTime": 2706.16,
+      "en": "So, in this temperature, in this warm weather, it's",
+      "zh": "所以，在这种温度下，在这种温暖的天气里，",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“in this temperature”和“in this warm weather”都是指天气热。"
+    },
+    {
+      "id": "c816",
+      "startTime": 2707.13,
+      "endTime": 2708.56,
+      "en": "skin-wise, it's intense.",
+      "zh": "从皮肤的角度来说，这很激烈。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“skin-wise”指从皮肤方面来说，“intense”意为“激烈的，紧张的”。"
+    },
+    {
+      "id": "c817",
+      "startTime": 2708.81,
+      "endTime": 2711.28,
+      "en": "Like your your skin is just so sweaty.",
+      "zh": "就像你的皮肤非常出汗。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意“sweaty”表示出汗，常用于描述天气或身体状态。"
+    },
+    {
+      "id": "c818",
+      "startTime": 2711.29,
+      "endTime": 2716.67,
+      "en": "And then when you have to hold these volumes when you want good friction, it's it's not nice.",
+      "zh": "然后当你需要抓这些大点并想要好的摩擦力时，那就不妙了。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“volumes”在攀岩中指大体积的支点，这里译为“大点”。"
+    },
+    {
+      "id": "c819",
+      "startTime": 2716.57,
+      "endTime": 2719.28,
+      "en": "Like it it gets really slippery on the wall.",
+      "zh": "就像在墙上变得非常滑。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“slippery”意为滑的，注意“on the wall”在攀岩语境中指岩壁。"
+    },
+    {
+      "id": "c820",
+      "startTime": 2719.21,
+      "endTime": 2726.48,
+      "en": "I mean, unless you have perfect skin um and just perfect dry skin when it's hot and humid like this, then you have an advantage.",
+      "zh": "我的意思是，除非你有完美的皮肤，并且在这样炎热潮湿的天气里皮肤非常干燥，那你就有优势。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“unless”表示除非，注意“perfect dry skin”指完全干燥的皮肤。"
+    },
+    {
+      "id": "c821",
+      "startTime": 2726.81,
+      "endTime": 2730.67,
+      "en": "But I definitely think this weather this weather Yeah.",
+      "zh": "但我绝对认为这种天气，这种天气，是的。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“definitely”表示肯定，注意重复“this weather”强调天气影响。"
+    },
+    {
+      "id": "c822",
+      "startTime": 2730.57,
+      "endTime": 2731.92,
+      "en": "skin has an influence.",
+      "zh": "皮肤有影响。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“has an influence”表示有影响，注意“influence”的用法。"
+    },
+    {
+      "id": "c823",
+      "startTime": 2732.73,
+      "endTime": 2733.33,
+      "en": ">> Absolutely.",
+      "zh": ">> 绝对。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Absolutely”表示完全同意，常用于口语。"
+    },
+    {
+      "id": "c824",
+      "startTime": 2733.37,
+      "endTime": 2736,
+      "en": "That and it's a tough on his own for him. 34.4",
+      "zh": "而且对他来说这本身就很艰难。34.4",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“tough”意为艰难，注意“on his own”表示独自。"
+    },
+    {
+      "id": "c825",
+      "startTime": 2737.21,
+      "endTime": 2738.08,
+      "en": "so far.",
+      "zh": "到目前为止。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“so far”表示到目前为止，常用于谈论进展。"
+    },
+    {
+      "id": "c826",
+      "startTime": 2743.85,
+      "endTime": 2745.6,
+      "en": ">> and it's leading the way with 34.7",
+      "zh": ">> 而且他以34.7领先。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“leading the way”表示领先，注意“with”后接分数。"
+    },
+    {
+      "id": "c827",
+      "startTime": 2755.85,
+      "endTime": 2761.07,
+      "en": ">> that's so interesting cross through instead of like going again right foot.",
+      "zh": ">> 那很有趣，交叉通过而不是再用右脚。",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "cross",
+        "foot"
+      ],
+      "note": "“cross through”指交叉步，注意“instead of”表示而不是。"
+    },
+    {
+      "id": "c828",
+      "startTime": 2760.97,
+      "endTime": 2768.56,
+      "en": "I mean it worked really well and that he did it so smoothly when he did it but >> he's rejecting the new school. He's going no.",
+      "zh": "我的意思是，那效果很好，而且他做的时候非常流畅，但是 >> 他在拒绝新派做法。他说不。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "“reject”表示拒绝，“new school”指新式技巧。"
+    },
+    {
+      "id": "c829",
+      "startTime": 2770.17,
+      "endTime": 2773.36,
+      "en": ">> I mean, if you're in finals, I don't think you can reject new school.",
+      "zh": ">> 我的意思是，如果你在决赛中，我认为你不能拒绝新派做法。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“in finals”指在决赛中，注意“can't”表示不能。"
+    },
+    {
+      "id": "c830",
+      "startTime": 2773.69,
+      "endTime": 2774.96,
+      "en": ">> All right, here's the flick.",
+      "zh": ">> 好的，这是甩腿动作。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“flick”在攀岩中指甩腿或甩动动作，注意“here's”是“here is”的缩写。"
+    },
+    {
+      "id": "c831",
+      "startTime": 2775.77,
+      "endTime": 2781.95,
+      "en": "But >> cuz when you cross through with your leg crossing through, it pushes you a bit out of the wall.",
+      "zh": "但是 >> 因为当你交叉腿时，你的腿交叉穿过，它会把你稍微推离墙壁。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“pushes you out”表示推离，注意“a bit”表示稍微。"
+    },
+    {
+      "id": "c832",
+      "startTime": 2781.85,
+      "endTime": 2785.36,
+      "en": "So if you're once you land, your body is still quite",
+      "zh": "所以一旦你落地，你的身体仍然相当",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“once”表示一旦，注意“still”表示仍然。"
+    },
+    {
+      "id": "c833",
+      "startTime": 2786.81,
+      "endTime": 2788.64,
+      "en": ">> I guess it worked that one time",
+      "zh": ">> 我猜那次成功了",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“I guess”表示我猜，注意“worked”表示奏效。"
+    },
+    {
+      "id": "c834",
+      "startTime": 2789.93,
+      "endTime": 2792.51,
+      "en": ">> he doesn't want to relearn the move, but it's not working now.",
+      "zh": ">> 他不想重新学习这个动作，但现在不奏效了。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“relearn”表示重新学习，注意“not working”表示不奏效。"
+    },
+    {
+      "id": "c835",
+      "startTime": 2792.41,
+      "endTime": 2795.44,
+      "en": "He does need to change this up or hope from",
+      "zh": "他确实需要改变这个，或者希望从",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“change up”表示改变，注意“hope from”可能指希望从某处。"
+    },
+    {
+      "id": "c836",
+      "startTime": 2797.77,
+      "endTime": 2802.43,
+      "en": "I mean, I think it for sure can go, but it's just I would say a lot harder cuz you need Oh,",
+      "zh": "我的意思是，我认为它肯定能过，但只是我会说难得多，因为你需要哦，",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“for sure”表示肯定，注意“a lot harder”表示难得多。"
+    },
+    {
+      "id": "c837",
+      "startTime": 2802.33,
+      "endTime": 2812.72,
+      "en": "cuz you need to be just a lot more precise >> and he really needs to slow down his >> to almost a complete stop and then cross >> One last chance here.",
+      "zh": "因为你需要更加精确 >> 而且他真的需要放慢他的 >> 几乎完全停止然后交叉 >> 这里最后一次机会。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“precise”表示精确，注意“slow down”表示放慢。"
+    },
+    {
+      "id": "c838",
+      "startTime": 2813.93,
+      "endTime": 2815.6,
+      "en": ">> Okay, now he's got to go quickly.",
+      "zh": ">> 好的，现在他必须快速行动。",
+      "score": 25,
+      "study": false,
+      "keywords": [],
+      "note": "“got to”是“have to”的口语形式，表示必须。"
+    },
+    {
+      "id": "c839",
+      "startTime": 2816.01,
+      "endTime": 2816.61,
+      "en": ">> No stress.",
+      "zh": ">> 别紧张。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“No stress”表示别紧张，常用于鼓励。"
+    },
+    {
+      "id": "c840",
+      "startTime": 2816.49,
+      "endTime": 2817.39,
+      "en": "He's got 10 seconds.",
+      "zh": "他有10秒。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“He's got”是“He has got”的缩写，表示他有。"
+    },
+    {
+      "id": "c841",
+      "startTime": 2817.29,
+      "endTime": 2819.44,
+      "en": "He's got time. Let's hope he doesn't",
+      "zh": "他还有时间。希望他不会……",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意“He's got time”中的“got”是“有”的意思，口语中常用“have got”表示“有”。"
+    },
+    {
+      "id": "c842",
+      "startTime": 2824.41,
+      "endTime": 2829.84,
+      "en": "is quite hard because once again, I've never seen these holds before.",
+      "zh": "这相当难，因为再说一次，我以前从未见过这些支点。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“holds”在攀岩中指“支点”，注意“once again”表示“再次”。"
+    },
+    {
+      "id": "c843",
+      "startTime": 2829.85,
+      "endTime": 2835.23,
+      "en": "So, I don't know if these athletes have either, so they also don't know what to expect hold wise.",
+      "zh": "所以，我不知道这些运动员是否见过，所以他们也不知道支点方面会有什么。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“hold wise”意思是“在支点方面”，注意“wise”后缀表示“在……方面”。"
+    },
+    {
+      "id": "c844",
+      "startTime": 2835.13,
+      "endTime": 2835.79,
+      "en": "Is it good?",
+      "zh": "它好吗？",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Is it good?”是简单疑问句，注意语调上升。"
+    },
+    {
+      "id": "c845",
+      "startTime": 2835.69,
+      "endTime": 2836.56,
+      "en": "Is it bad?",
+      "zh": "它坏吗？",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Is it bad?”与上一句对应，注意对比。"
+    },
+    {
+      "id": "c846",
+      "startTime": 2836.81,
+      "endTime": 2837.41,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”是“yes”的口语形式，表示肯定。"
+    },
+    {
+      "id": "c847",
+      "startTime": 2837.01,
+      "endTime": 2840.96,
+      "en": "And the first ones as well have sort of jibs screwed into them as well.",
+      "zh": "而且第一批的支点上也拧了一些小木条。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“jibs”这里指“小木条”，注意“screwed into”表示“拧入”。"
+    },
+    {
+      "id": "c848",
+      "startTime": 2841.13,
+      "endTime": 2843.23,
+      "en": ">> So, they've been changed a little bit.",
+      "zh": ">> 所以，它们被稍微改变了一些。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“they've been changed”是被动语态，注意“a little bit”表示“一点”。"
+    },
+    {
+      "id": "c849",
+      "startTime": 2843.13,
+      "endTime": 2846.11,
+      "en": "And also, I think they're the removable where you can change those different.",
+      "zh": "而且，我认为它们是可拆卸的，你可以更换那些不同的。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“removable”意思是“可拆卸的”，注意“where you can change”引导定语从句。"
+    },
+    {
+      "id": "c850",
+      "startTime": 2846.01,
+      "endTime": 2847.28,
+      "en": ">> Yeah, you can change those.",
+      "zh": ">> 是的，你可以更换那些。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“you can change those”中“those”指代“那些支点”。"
+    },
+    {
+      "id": "c851",
+      "startTime": 2847.45,
+      "endTime": 2850.56,
+      "en": "Yeah, 360 holds brought a version of that to other",
+      "zh": "是的，360度支点把那种版本带到了其他……",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“360 holds”可能指“360度支点”，注意“brought a version of that”表示“带来了那种版本”。"
+    },
+    {
+      "id": "c852",
+      "startTime": 2852.33,
+      "endTime": 2853.95,
+      "en": ">> That was that cushioning he does.",
+      "zh": ">> 那就是他做的缓冲动作。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“cushioning”意思是“缓冲”，注意“that”指代前文提到的动作。"
+    },
+    {
+      "id": "c853",
+      "startTime": 2853.85,
+      "endTime": 2856.24,
+      "en": "That right leg just scrubbing a bit of pace",
+      "zh": "那条右腿只是在减缓一点速度。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“scrubbing a bit of pace”意思是“减缓速度”，注意“scrub”在这里是“摩擦”引申为“减缓”。"
+    },
+    {
+      "id": "c854",
+      "startTime": 2858.09,
+      "endTime": 2859.28,
+      "en": ">> And then the foot swap",
+      "zh": ">> 然后是换脚。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot swap”是攀岩术语，指“换脚”，注意“swap”表示“交换”。"
+    },
+    {
+      "id": "c855",
+      "startTime": 2860.57,
+      "endTime": 2861.17,
+      "en": "coaches.",
+      "zh": "教练们。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“coaches”是“教练”的复数，注意发音。"
+    },
+    {
+      "id": "c856",
+      "startTime": 2861.45,
+      "endTime": 2862.96,
+      "en": "Look at Yuker in the background.",
+      "zh": "看看背景中的Yuker。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“Look at”表示“看”，注意“in the background”表示“在背景中”。"
+    },
+    {
+      "id": "c857",
+      "startTime": 2869.45,
+      "endTime": 2871.36,
+      "en": "very smooth like he",
+      "zh": "非常流畅，就像他……",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“very smooth”形容动作流畅，注意“like he”后面省略了内容。"
+    },
+    {
+      "id": "c858",
+      "startTime": 2872.89,
+      "endTime": 2876.24,
+      "en": ">> I mean, yeah, Dion only had one attempt on this last move.",
+      "zh": ">> 我的意思是，是的，Dion在最后一步只有一次尝试。",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "attempt",
+        "move"
+      ],
+      "note": "“only had one attempt”表示“只有一次尝试”，注意“on this last move”指“在最后一步”。"
+    },
+    {
+      "id": "c859",
+      "startTime": 2877.69,
+      "endTime": 2879.79,
+      "en": "So Boulder number three will be in action soon.",
+      "zh": "所以，三号抱石很快就要开始了。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“Boulder number three”指“三号抱石”，注意“will be in action”表示“将开始”。"
+    },
+    {
+      "id": "c860",
+      "startTime": 2879.69,
+      "endTime": 2881.71,
+      "en": "I think we will get a bit of a pause here.",
+      "zh": "我想我们这里会有一点暂停。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“get a bit of a pause”表示“有一点暂停”，注意“a bit of”修饰不可数名词。"
+    },
+    {
+      "id": "c861",
+      "startTime": 2881.61,
+      "endTime": 2882.59,
+      "en": "So we will check the scores.",
+      "zh": "所以我们将查看分数。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“check the scores”表示“查看分数”，注意“scores”是复数。"
+    },
+    {
+      "id": "c862",
+      "startTime": 2882.49,
+      "endTime": 2884.27,
+      "en": "Hannis van Dyson leads the way at the moment.",
+      "zh": "Hannis van Dyson目前领先。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“leads the way”表示“领先”，注意“at the moment”表示“目前”。"
+    },
+    {
+      "id": "c863",
+      "startTime": 2884.17,
+      "endTime": 2887.52,
+      "en": "34.7 over Leoan and Satu and Raku.",
+      "zh": "34.7分，超过Leoan、Satu和Raku。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“over”在这里表示“超过”，注意分数读法。"
+    },
+    {
+      "id": "c864",
+      "startTime": 2887.61,
+      "endTime": 2890.67,
+      "en": "Of course there are different stages in the competition to just be aware of that.",
+      "zh": "当然，比赛中有不同的阶段，需要注意这一点。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“different stages”表示“不同阶段”，注意“to be aware of”表示“注意”。"
+    },
+    {
+      "id": "c865",
+      "startTime": 2890.57,
+      "endTime": 2898.56,
+      "en": "Ray Kawamata, Sam Aazu, Chan John, Max Millagassa, but as we said S and Max only do one climb.",
+      "zh": "Ray Kawamata、Sam Aazu、Chan John、Max Millagassa，但正如我们所说，S和Max只爬一条线路。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名发音，以及'only do one climb'表示'只爬一条线路'。"
+    },
+    {
+      "id": "c866",
+      "startTime": 2898.97,
+      "endTime": 2906.16,
+      "en": ">> So now this is where S could come back and catch up cuz he unfortunately didn't do the first border. So if",
+      "zh": "所以现在这是S可能回来追赶的机会，因为他不幸没有完成第一条抱石。所以如果...",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'come back'在这里指'追赶上来'，'catch up'也是追赶的意思。"
+    },
+    {
+      "id": "c867",
+      "startTime": 2907.77,
+      "endTime": 2909.92,
+      "en": "already with um",
+      "zh": "已经...嗯...",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中的停顿词，如'um'，在听力中常见。"
+    },
+    {
+      "id": "c868",
+      "startTime": 2911.69,
+      "endTime": 2915.44,
+      "en": "Dun Lee and Hannis, they've got zone but they haven't managed top.",
+      "zh": "Dun Lee和Hannis，他们拿到了Zone，但没有完攀。",
+      "score": 65,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "zone"
+      ],
+      "note": "'zone'指得分点，'top'指完攀，注意这两个术语。"
+    },
+    {
+      "id": "c869",
+      "startTime": 2915.61,
+      "endTime": 2919.76,
+      "en": "If Sot can top then he can come back.",
+      "zh": "如果Sot能完攀，他就能追回来。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'top'作为动词表示'完攀'，'come back'再次出现。"
+    },
+    {
+      "id": "c870",
+      "startTime": 2920.57,
+      "endTime": 2922,
+      "en": ">> Incognito crimps.",
+      "zh": "隐蔽的指力点。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'incognito'意为'隐蔽的'，'crimp'指小指力点。"
+    },
+    {
+      "id": "c871",
+      "startTime": 2922.17,
+      "endTime": 2922.77,
+      "en": "Interesting.",
+      "zh": "有意思。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "简单表达，表示感兴趣。"
+    },
+    {
+      "id": "c872",
+      "startTime": 2922.81,
+      "endTime": 2923.55,
+      "en": ">> Third border.",
+      "zh": "第三条线路。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'border'在这里可能指'线路'，但通常用'boulder'，注意听。"
+    },
+    {
+      "id": "c873",
+      "startTime": 2923.45,
+      "endTime": 2924.05,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c874",
+      "startTime": 2923.69,
+      "endTime": 2926.35,
+      "en": "So the crimps are camouflaged with the volumes.",
+      "zh": "这些指力点被伪装在体积块上。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'camouflaged'意为'伪装'，'volumes'指攀岩墙上的大体积造型。"
+    },
+    {
+      "id": "c875",
+      "startTime": 2926.25,
+      "endTime": 2927.39,
+      "en": "This is the start position.",
+      "zh": "这是起始位置。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'start position'是攀岩术语，指起步姿势。"
+    },
+    {
+      "id": "c876",
+      "startTime": 2927.29,
+      "endTime": 2928.64,
+      "en": "You can see it's the same design.",
+      "zh": "你可以看到这是同样的设计。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'same design'指相同的设计。"
+    },
+    {
+      "id": "c877",
+      "startTime": 2928.89,
+      "endTime": 2937.04,
+      "en": "And there are a few crimps of these um screwed onto the volume that like that's a zone.",
+      "zh": "有一些指力点拧在体积块上，那是一个Zone。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "zone",
+        "volume"
+      ],
+      "note": "'screwed onto'表示'拧在...上'，'zone'再次出现。"
+    },
+    {
+      "id": "c878",
+      "startTime": 2936.97,
+      "endTime": 2940.56,
+      "en": "You can't really see it just because there's a big 10 on it.",
+      "zh": "你不太能看到它，因为上面有个大的10。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "指数字10可能遮挡了视线。"
+    },
+    {
+      "id": "c879",
+      "startTime": 2940.65,
+      "endTime": 2942.4,
+      "en": ">> Um but it's yeah crimpy.",
+      "zh": "嗯，但是是的，很多指力点。",
+      "score": 7,
+      "study": false,
+      "keywords": [],
+      "note": "'crimpy'形容词，表示多指力点的。"
+    },
+    {
+      "id": "c880",
+      "startTime": 2942.41,
+      "endTime": 2944.88,
+      "en": "I don't think I don't know if the crimps are that good.",
+      "zh": "我不认为...我不知道这些指力点是否那么好。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "口语中的犹豫表达，'I don't know if'表示不确定。"
+    },
+    {
+      "id": "c881",
+      "startTime": 2945.05,
+      "endTime": 2951.2,
+      "en": "You can't really tell from the floor, but then you have big volumes at the top and then I would say quite a physical last move.",
+      "zh": "你从地面不太能看出来，但顶部有大体积块，然后我想最后一步相当费力。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "top",
+        "move"
+      ],
+      "note": "'physical'在这里指'需要体力的'，'last move'指最后一步动作。"
+    },
+    {
+      "id": "c882",
+      "startTime": 2951.29,
+      "endTime": 2952.35,
+      "en": ">> Yeah, for sure.",
+      "zh": "是的，当然。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'for sure'表示肯定。"
+    },
+    {
+      "id": "c883",
+      "startTime": 2952.25,
+      "endTime": 2953.23,
+      "en": "So that is up next.",
+      "zh": "所以接下来就是那个。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'up next'表示'接下来'。"
+    },
+    {
+      "id": "c884",
+      "startTime": 2953.13,
+      "endTime": 2961.63,
+      "en": "Sa Amagasa though needs to make some ground back on this slab having missed the top on boulder number one and then Sam Albazu will take",
+      "zh": "Sa Amagasa需要在这块板壁上追回一些分数，因为他错过了第一块抱石的完攀，然后Sam Albazu将慢慢走过这个为比赛特别建造的33米长的抱石墙。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "boulder",
+        "top",
+        "slab"
+      ],
+      "note": "'make ground back'意为'追回分数'，'slab'指板壁，'boulder wall'指抱石墙。"
+    },
+    {
+      "id": "c885",
+      "startTime": 2961.57,
+      "endTime": 2966.72,
+      "en": "his time walking across this 33 m long boulder wall specially built for this comp.",
+      "zh": "他不紧张。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'stressful'是形容词，这里说'He is not stressful'，但更常说'He is not stressed'。"
+    },
+    {
+      "id": "c886",
+      "startTime": 2967.21,
+      "endTime": 2968.43,
+      "en": ">> He is not stressful.",
+      "zh": "你不需要跑。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'don't need to'表示'不需要'。"
+    },
+    {
+      "id": "c887",
+      "startTime": 2968.33,
+      "endTime": 2969.52,
+      "en": ">> You don't need to run.",
+      "zh": "他不应该跑，否则他会开始出汗，变得太热。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'otherwise'意为'否则'，'sweating'是'出汗'，'get too hot'是'变得太热'。"
+    },
+    {
+      "id": "c888",
+      "startTime": 2970.01,
+      "endTime": 2973.52,
+      "en": ">> He shouldn't otherwise he's going to start sweating, get too hot.",
+      "zh": "他本不该这样，否则他会开始出汗，变得太热。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意‘otherwise’表示‘否则’，常用于警告或假设。"
+    },
+    {
+      "id": "c889",
+      "startTime": 2973.45,
+      "endTime": 2974.99,
+      "en": ">> It was always my pet peeve.",
+      "zh": "这一直是我最讨厌的事。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "pet peeve 意为‘让人恼火的事’，常用口语表达。"
+    },
+    {
+      "id": "c890",
+      "startTime": 2974.89,
+      "endTime": 2975.95,
+      "en": "I've talked about this a lot.",
+      "zh": "我已经谈过很多次了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "I've talked about this a lot. 注意现在完成时表示过去到现在的重复动作。"
+    },
+    {
+      "id": "c891",
+      "startTime": 2975.89,
+      "endTime": 2980.56,
+      "en": "The fact I never understand why athletes run in the >> I mean yeah in the finals.",
+      "zh": "我一直不明白为什么运动员在决赛中跑……我是说，是的，在决赛中。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意口语中的自我纠正（I mean），理解大意即可。"
+    },
+    {
+      "id": "c892",
+      "startTime": 2980.49,
+      "endTime": 2981.47,
+      "en": "Yeah, for sure.",
+      "zh": "是的，当然。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "Yeah, for sure. 是表示同意的常用短语。"
+    },
+    {
+      "id": "c893",
+      "startTime": 2981.37,
+      "endTime": 2982.96,
+      "en": "semis I get it but finals",
+      "zh": "半决赛我理解，但决赛……",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "semis 是 semifinals 的缩写，注意口语缩略。"
+    },
+    {
+      "id": "c894",
+      "startTime": 2984.73,
+      "endTime": 2986.96,
+      "en": ">> are directly onto the wall",
+      "zh": "直接上墙。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "directly onto the wall 表示‘直接上墙’，注意介词 onto。"
+    },
+    {
+      "id": "c895",
+      "startTime": 2990.57,
+      "endTime": 2999.23,
+      "en": "he's going directly oh no okay he's trying the static method >> bit taller as well so might oh no left foot goes before he can",
+      "zh": "他直接上……哦不，他试图用静态方法，而且他更高一些，所以可能……哦不，左脚在他能尝试之前先动了。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "static method 指静态动作，与动态相对。注意口语中的犹豫和修正。"
+    },
+    {
+      "id": "c896",
+      "startTime": 2999.25,
+      "endTime": 3006.24,
+      "en": "try >> oh Sam slips >> I think the grip survived >> yeah if you could I mean it was also like kind of a surprising",
+      "zh": "尝试……哦，Sam滑了一下……我想抓点还是稳住了……是的，如果你能……我的意思是，这也是一种令人惊讶的滑落，但如果你不能单手抓住，我觉得那就不太好了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "slip 意为‘滑落’，grip 指抓握。注意口语中的停顿和重复。"
+    },
+    {
+      "id": "c897",
+      "startTime": 3006.17,
+      "endTime": 3013.12,
+      "en": "slip but yeah if you couldn't hold it one arm I I think they're not that great. Saut now tries",
+      "zh": "Saut现在尝试，他的尝试有点犹豫。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "hesitant 意为‘犹豫的’，注意发音。"
+    },
+    {
+      "id": "c898",
+      "startTime": 3014.09,
+      "endTime": 3017.04,
+      "en": "kind of a bit hesitant on his attempt",
+      "zh": "用和之前一样的方法，但他的左脚滑了一下。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "same method as before 表示‘和之前一样的方法’，注意比较结构。"
+    },
+    {
+      "id": "c899",
+      "startTime": 3018.49,
+      "endTime": 3022.59,
+      "en": "Going with the same method as he did before, but his left foot slipped a bit.",
+      "zh": "这有点像在难点上。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "foot",
+        "slipped"
+      ],
+      "note": "noex 可能是 no exit 或 no-exit 的缩写，这里指难点。"
+    },
+    {
+      "id": "c900",
+      "startTime": 3022.53,
+      "endTime": 3024.16,
+      "en": "It was kind of on the noex.",
+      "zh": "是的。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "Yeah 是口语中常见的回应。"
+    },
+    {
+      "id": "c901",
+      "startTime": 3025.05,
+      "endTime": 3025.65,
+      "en": ">> Yeah.",
+      "zh": "而且在那种伸展的姿势下，你必须用力蹬出去。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "push off 意为‘蹬离’，stretched out 表示‘伸展的’。"
+    },
+    {
+      "id": "c902",
+      "startTime": 3025.25,
+      "endTime": 3028.8,
+      "en": "And you have to push off quite a lot from that in that stretched out position.",
+      "zh": "是的。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "Yeah 再次出现，注意语气。"
+    },
+    {
+      "id": "c903",
+      "startTime": 3028.97,
+      "endTime": 3029.57,
+      "en": ">> Yeah.",
+      "zh": "你想要能够稍微向外，然后贴向墙壁。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "go out and into the wall 表示‘向外再向内’，注意方向词。"
+    },
+    {
+      "id": "c904",
+      "startTime": 3029.53,
+      "endTime": 3033.07,
+      "en": "And you want to be able to go a bit out and into the wall.",
+      "zh": "然后它把你带进来，你的上半身就贴墙了，然后你可以保持在墙上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "brings you in 意为‘把你带进来’，注意动词短语。"
+    },
+    {
+      "id": "c905",
+      "startTime": 3032.97,
+      "endTime": 3039.04,
+      "en": "So then it brings you in and then your upper body is in and then >> you can kind of stay onto the wall.",
+      "zh": "但他伸展得很开，所以向外和向内的过程没有他可能希望的那么大。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "stretched out 再次出现，注意比较级 not as big as。"
+    },
+    {
+      "id": "c906",
+      "startTime": 3039.21,
+      "endTime": 3043.6,
+      "en": "But he's quite stretched out so the out and in process is not as big as",
+      "zh": "他错过了那个点，但尝试了这种动态方式。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "misses the ... 这里可能指错过抓点，注意上下文。"
+    },
+    {
+      "id": "c907",
+      "startTime": 3044.89,
+      "endTime": 3046.96,
+      "en": "he probably would like. He misses the",
+      "zh": "我认为那是预期的动作，而且效果很好。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "intended beta 指‘预期的动作方案’，beta 是攀岩术语。"
+    },
+    {
+      "id": "c908",
+      "startTime": 3048.25,
+      "endTime": 3049.87,
+      "en": "but tries this dynamic way.",
+      "zh": "是的，我认为如果它可以拉伸，那将对高个子运动员有利。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "play into 意为‘对……有利’，注意虚拟语气。"
+    },
+    {
+      "id": "c909",
+      "startTime": 3049.77,
+      "endTime": 3055.07,
+      "en": "I think that's the intended beta and it worked out really well.",
+      "zh": "我想他们理想情况下会想避免那样。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "beta"
+      ],
+      "note": "would want to avoid 表示‘想要避免’，注意情态动词。"
+    },
+    {
+      "id": "c910",
+      "startTime": 3054.97,
+      "endTime": 3058.4,
+      "en": ">> Yeah, I think if if it was stretchable it would play into tall athletes.",
+      "zh": "我的意思是，那会考验伸展能力。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "test the stretch 意为‘考验伸展能力’，注意名词化。"
+    },
+    {
+      "id": "c911",
+      "startTime": 3058.81,
+      "endTime": 3060.59,
+      "en": "I think they'd want to avoid that ideally.",
+      "zh": "我想他们理想情况下会想避免这种情况。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "‘ideally’意为‘理想地’，常用于表达期望或最佳情况。"
+    },
+    {
+      "id": "c912",
+      "startTime": 3060.49,
+      "endTime": 3062.4,
+      "en": "I mean it would have tested the stretch.",
+      "zh": "我的意思是，那本会考验伸展度。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "‘would have tested’是虚拟语气，表示对过去情况的假设。"
+    },
+    {
+      "id": "c913",
+      "startTime": 3063.37,
+      "endTime": 3070.11,
+      "en": "So Sam goes again a basic power boulder which is interesting and a lot of people at home you guys watching you love a power boulder.",
+      "zh": "Sam 再次上墙——这是块基本的力量 boulder，挺有意思的，家里看直播的各位观众都爱看力量 boulder。这块就是给你们准备的。",
+      "note": "power boulder 力量 boulder（需要爆发力）；'a lot of people at home' 居家观众。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ]
+    },
+    {
+      "id": "c914",
+      "startTime": 3070.01,
+      "endTime": 3071.36,
+      "en": "So this is one for you",
+      "zh": "所以这是为你准备的一条线路。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“one for you”中的“one”指代一条攀岩线路，口语中常用“one”代替具体名词。"
+    },
+    {
+      "id": "c915",
+      "startTime": 3072.65,
+      "endTime": 3074.8,
+      "en": ">> onto the slope >> onto this very slowly.",
+      "zh": ">> 上到那个斜面 >> 非常缓慢地上去。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“slope”指斜面，攀岩中常指倾斜的岩壁或造型。"
+    },
+    {
+      "id": "c916",
+      "startTime": 3076.25,
+      "endTime": 3077.23,
+      "en": ">> Oh I like that.",
+      "zh": ">> 哦，我喜欢这个。",
+      "score": 8,
+      "study": false,
+      "keywords": [],
+      "note": "“I like that”在解说中常表示对动作的赞赏。"
+    },
+    {
+      "id": "c917",
+      "startTime": 3077.13,
+      "endTime": 3080.48,
+      "en": ">> Now this is a very big move out to the left.",
+      "zh": ">> 现在这是一个非常大的动作，向左伸出。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“big move”指大幅度动作，常指动态或远距离抓点。"
+    },
+    {
+      "id": "c918",
+      "startTime": 3080.89,
+      "endTime": 3085.23,
+      "en": "Um and these and he's going to want to get into the noex.",
+      "zh": "嗯，这些，他想要进入那个“noex”区域。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“noex”可能是特定岩馆的造型名称，注意听专有名词。"
+    },
+    {
+      "id": "c919",
+      "startTime": 3085.13,
+      "endTime": 3086.96,
+      "en": "So the inside of this volume is noex.",
+      "zh": "所以这个造型的内部是“noex”。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“volume”指岩壁上的大型造型，内部中空。"
+    },
+    {
+      "id": "c920",
+      "startTime": 3089.13,
+      "endTime": 3091.12,
+      "en": ">> So the heel will help that movement.",
+      "zh": ">> 所以脚跟钩会帮助那个动作。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "heel"
+      ],
+      "note": "“heel hook”是脚跟钩，用脚跟勾住支点或造型。"
+    },
+    {
+      "id": "c921",
+      "startTime": 3091.13,
+      "endTime": 3092.96,
+      "en": "It will take weight off his hands.",
+      "zh": "它会减轻他手上的重量。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“take weight off”表示减轻负担，常用表达。"
+    },
+    {
+      "id": "c922",
+      "startTime": 3094.17,
+      "endTime": 3096.88,
+      "en": ">> And now he's going to want to hold this swing.",
+      "zh": ">> 现在他要控制住这个摆动。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "hold",
+        "swing"
+      ],
+      "note": "“hold this swing”指控制身体的摆动，保持稳定。"
+    },
+    {
+      "id": "c923",
+      "startTime": 3096.89,
+      "endTime": 3099.44,
+      "en": "So he's putting his whole arm onto the volume.",
+      "zh": "所以他把整条手臂都放在那个造型上。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“put his whole arm onto”表示用整个手臂抱住造型。"
+    },
+    {
+      "id": "c924",
+      "startTime": 3101.53,
+      "endTime": 3103.47,
+      "en": ">> Screams his way towards the top.",
+      "zh": ">> 他尖叫着向顶部冲去。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“screams his way”是夸张说法，表示奋力向上。"
+    },
+    {
+      "id": "c925",
+      "startTime": 3103.37,
+      "endTime": 3104.8,
+      "en": "It's going to be a match for Samazoo.",
+      "zh": "对于Samazoo来说，这将是一个双手并点。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "match"
+      ],
+      "note": "“match”在攀岩中特指双手抓住同一个点。"
+    },
+    {
+      "id": "c926",
+      "startTime": 3106.65,
+      "endTime": 3110,
+      "en": ">> So 34.9 will quickly change here.",
+      "zh": ">> 所以34.9秒这里会很快变化。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“34.9”可能指时间或分数，注意数字表达。"
+    },
+    {
+      "id": "c927",
+      "startTime": 3110.97,
+      "endTime": 3112.24,
+      "en": "Good work from him.",
+      "zh": "他干得漂亮。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Good work”是常见表扬语。"
+    },
+    {
+      "id": "c928",
+      "startTime": 3113.13,
+      "endTime": 3114.03,
+      "en": ">> That was great work.",
+      "zh": ">> 那真是太棒了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“great work”比“good work”程度更强。"
+    },
+    {
+      "id": "c929",
+      "startTime": 3113.97,
+      "endTime": 3116.64,
+      "en": "His high heel hook was a very",
+      "zh": "他的高脚跟钩是一个非常",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "heel hook",
+        "heel"
+      ],
+      "note": "“high heel hook”指高位置的脚跟钩，注意“high”的用法。"
+    },
+    {
+      "id": "c930",
+      "startTime": 3118.17,
+      "endTime": 3130.48,
+      "en": "smart thing to do because it definitely took weight off his left hand and then matching above also made it but is that a bit of blood on the >> he had something on his knuckle.",
+      "zh": "明智的做法，因为它确实减轻了左手的重量，然后在上方并点也做到了，但是那是他指关节上的一点血吗？",
+      "score": 28,
+      "study": false,
+      "keywords": [],
+      "note": "“smart thing to do”表示明智之举；“matching above”指在上方并点。"
+    },
+    {
+      "id": "c931",
+      "startTime": 3130.41,
+      "endTime": 3131.01,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c932",
+      "startTime": 3130.89,
+      "endTime": 3133.12,
+      "en": "Or like sorry his the top of his hand.",
+      "zh": "或者，抱歉，是他手背上的。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“the top of his hand”指手背，注意“top”的用法。"
+    },
+    {
+      "id": "c933",
+      "startTime": 3134.09,
+      "endTime": 3136.16,
+      "en": ">> It was like a little patch of blood I saw.",
+      "zh": ">> 我看到有一小块血迹。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“a little patch of blood”表示一小块血迹。"
+    },
+    {
+      "id": "c934",
+      "startTime": 3136.33,
+      "endTime": 3141.15,
+      "en": "Anyway, that was the tower who tried first of all, which I understand why he'd think that,",
+      "zh": "总之，那是第一个尝试这条线路的选手，我理解他为什么会那样想，",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“tried first of all”表示第一个尝试，注意“first of all”的用法。"
+    },
+    {
+      "id": "c935",
+      "startTime": 3141.09,
+      "endTime": 3144,
+      "en": "but that's that's the little bit of blood that's smeared onto the wall.",
+      "zh": "但那是蹭在墙上的那点血。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“smeared onto”表示涂抹、蹭上。"
+    },
+    {
+      "id": "c936",
+      "startTime": 3143.93,
+      "endTime": 3147.95,
+      "en": "So, he'll plaster that back up and then out into the left eventually.",
+      "zh": "所以，他会把那里重新抹上镁粉，然后最终向左出去。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“plaster that back up”可能指用镁粉覆盖血迹，注意“plaster”的用法。"
+    },
+    {
+      "id": "c937",
+      "startTime": 3147.85,
+      "endTime": 3150.16,
+      "en": "And the heel hook he got was so important.",
+      "zh": "而且他做的那个脚跟钩太重要了。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "heel hook",
+        "heel"
+      ],
+      "note": "“so important”强调重要性，注意“so”的强调用法。"
+    },
+    {
+      "id": "c938",
+      "startTime": 3156.81,
+      "endTime": 3157.47,
+      "en": "it up.",
+      "zh": "上！",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "口语中常用 'up' 表示向上攀爬或鼓励。"
+    },
+    {
+      "id": "c939",
+      "startTime": 3157.37,
+      "endTime": 3158.64,
+      "en": ">> That was very powerful.",
+      "zh": ">> 那真是非常有力。",
+      "score": 29,
+      "study": true,
+      "keywords": [
+        "powerful"
+      ],
+      "note": "注意 'powerful' 在攀岩中常形容动作有力。"
+    },
+    {
+      "id": "c940",
+      "startTime": 3159.45,
+      "endTime": 3165.12,
+      "en": "Got to keep in mind this right hold is like not much to hold on to and then being able to jump.",
+      "zh": "要记住这个右手点其实没什么可抓的，然后还要能跳出去。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "'not much to hold on to' 表示点很小，不好抓。"
+    },
+    {
+      "id": "c941",
+      "startTime": 3165.21,
+      "endTime": 3176,
+      "en": "He was yeah almost I mean I would say iron cross but you have to be really powerful in your shoulders to just keep that move like that kind of move just engaged in height 100%.",
+      "zh": "他刚才，我几乎要说十字支撑，但你的肩膀必须非常有力才能保持那种动作，那种动作完全需要高度投入。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move",
+        "cross",
+        "height",
+        "powerful"
+      ],
+      "note": "'iron cross' 是十字支撑，'engaged' 指全身发力。"
+    },
+    {
+      "id": "c942",
+      "startTime": 3176.97,
+      "endTime": 3179.04,
+      "en": "Coach is liking that one. Good",
+      "zh": "教练喜欢那个动作。好。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'liking that one' 表示赞赏某个动作。"
+    },
+    {
+      "id": "c943",
+      "startTime": 3183.93,
+      "endTime": 3186.24,
+      "en": "sister's gold medal from earlier on in the year.",
+      "zh": "姐姐今年早些时候获得的金牌。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'sister's' 所有格，指姐姐的金牌。"
+    },
+    {
+      "id": "c944",
+      "startTime": 3187.29,
+      "endTime": 3189.84,
+      "en": ">> So Sautagasa springs over.",
+      "zh": ">> 所以索塔加萨跳了过去。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'springs over' 表示跳跃动作，'spring' 有弹跳之意。"
+    },
+    {
+      "id": "c945",
+      "startTime": 3189.77,
+      "endTime": 3192.96,
+      "en": ">> Oh, that was so close but he's only got 30 seconds left.",
+      "zh": ">> 哦，太接近了，但他只剩30秒了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'so close' 表示差一点，'only got' 表示只剩。"
+    },
+    {
+      "id": "c946",
+      "startTime": 3197.85,
+      "endTime": 3200.43,
+      "en": "slip a little bit further behind if he can't get this.",
+      "zh": "如果他不能完成这个，就会落后更多。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'slip further behind' 表示落后更多。"
+    },
+    {
+      "id": "c947",
+      "startTime": 3200.33,
+      "endTime": 3202.16,
+      "en": "And it doesn't look like he's going to.",
+      "zh": "看起来他不太可能完成了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'doesn't look like' 表示看起来不像是。"
+    },
+    {
+      "id": "c948",
+      "startTime": 3203.37,
+      "endTime": 3204.99,
+      "en": ">> He's still going to give one more go.",
+      "zh": ">> 他还要再试一次。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'give one more go' 表示再尝试一次。"
+    },
+    {
+      "id": "c949",
+      "startTime": 3204.93,
+      "endTime": 3206.72,
+      "en": "I mean, it's a slap. He definitely has",
+      "zh": "我的意思是，这是一个拍点动作。他肯定有",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'slap' 在攀岩中指动态拍点。"
+    },
+    {
+      "id": "c950",
+      "startTime": 3209.45,
+      "endTime": 3212.64,
+      "en": "And a zone hold will definitely Oh, important.",
+      "zh": "而一个Zone得分点肯定会，哦，很重要。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "zone",
+        "hold"
+      ],
+      "note": "'zone hold' 是得分点，'definitely' 表示肯定。"
+    },
+    {
+      "id": "c951",
+      "startTime": 3212.89,
+      "endTime": 3215.04,
+      "en": "And now he even has time for the last move.",
+      "zh": "现在他甚至还有时间做最后一个动作。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "'has time for' 表示有时间做某事。"
+    },
+    {
+      "id": "c952",
+      "startTime": 3215.45,
+      "endTime": 3216.24,
+      "en": ">> No way.",
+      "zh": ">> 不会吧。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'No way' 表示难以置信。"
+    },
+    {
+      "id": "c953",
+      "startTime": 3221.13,
+      "endTime": 3221.73,
+      "en": ">> Wow.",
+      "zh": ">> 哇。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "感叹词，表示惊叹。"
+    },
+    {
+      "id": "c954",
+      "startTime": 3221.61,
+      "endTime": 3224.03,
+      "en": "That would have been so amazing if he had got that.",
+      "zh": "如果他完成了那个动作，那真是太神奇了。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'would have been' 是虚拟语气，表示本可能发生。"
+    },
+    {
+      "id": "c955",
+      "startTime": 3223.93,
+      "endTime": 3231.52,
+      "en": "He went double into the last hold, but once again, just a bit not enough, right?",
+      "zh": "他双手并点抓最后一个点，但又一次，差一点点，对吧？",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "'went double' 指双手并点，'not enough' 表示不够。"
+    },
+    {
+      "id": "c956",
+      "startTime": 3232.57,
+      "endTime": 3233.17,
+      "en": ">> Wow.",
+      "zh": ">> 哇。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复感叹，强调惊讶。"
+    },
+    {
+      "id": "c957",
+      "startTime": 3232.89,
+      "endTime": 3234.19,
+      "en": "I thought he was going to get the top.",
+      "zh": "我以为他要完攀了。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'get the top' 表示完攀。"
+    },
+    {
+      "id": "c958",
+      "startTime": 3234.09,
+      "endTime": 3237.68,
+      "en": "He went from absolutely nothing to nearly glory there on that one.",
+      "zh": "他从一无所有到几乎荣耀，就在那一次尝试中。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'from nothing to nearly glory' 形容从失败到接近成功。"
+    },
+    {
+      "id": "c959",
+      "startTime": 3238.65,
+      "endTime": 3239.47,
+      "en": ">> Look how close.",
+      "zh": ">> 看，多接近。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'look how close' 表示看有多接近。"
+    },
+    {
+      "id": "c960",
+      "startTime": 3239.37,
+      "endTime": 3241.23,
+      "en": "He was the closest to sticking it by far.",
+      "zh": "他是目前为止最接近抓住那个点的人。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'by far' 表示显然，'sticking it' 指抓住点。"
+    },
+    {
+      "id": "c961",
+      "startTime": 3241.13,
+      "endTime": 3242.88,
+      "en": "Right hand fully in left hand matched.",
+      "zh": "右手完全抓住，左手并点。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'matched' 指双手并点，'fully' 表示完全。"
+    },
+    {
+      "id": "c962",
+      "startTime": 3242.89,
+      "endTime": 3243.92,
+      "en": "Slid down.",
+      "zh": "滑下来了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“slid”是“slide”的过去式，表示滑落。"
+    },
+    {
+      "id": "c963",
+      "startTime": 3244.97,
+      "endTime": 3247.52,
+      "en": "Oh, Sussy giving me a heart attack, mate.",
+      "zh": "哦，Sussy 让我心脏病都要犯了，兄弟。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“giving me a heart attack”是夸张说法，表示让人非常紧张。"
+    },
+    {
+      "id": "c964",
+      "startTime": 3247.77,
+      "endTime": 3248.75,
+      "en": "Let's see this again.",
+      "zh": "我们再看一遍。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“Let's see this again”常用于回放视频。"
+    },
+    {
+      "id": "c965",
+      "startTime": 3248.65,
+      "endTime": 3249.76,
+      "en": "That was the right.",
+      "zh": "那是右边。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“That was the right”指刚才的动作是向右。"
+    },
+    {
+      "id": "c966",
+      "startTime": 3249.77,
+      "endTime": 3252.88,
+      "en": "Lovely spring off that to land on the black top underneath.",
+      "zh": "漂亮地弹跳，落在下面的黑色岩点上。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“spring off”表示弹跳，“land on”表示落在。"
+    },
+    {
+      "id": "c967",
+      "startTime": 3252.89,
+      "endTime": 3258.8,
+      "en": ">> And he had 13 seconds left on the clock like for these kinds of Oh, you can see the coaches.",
+      "zh": ">> 而且他当时还剩13秒，像这种……哦，你能看到教练们。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "“on the clock”指比赛剩余时间。"
+    },
+    {
+      "id": "c968",
+      "startTime": 3259.45,
+      "endTime": 3260.16,
+      "en": ">> So unfortunate.",
+      "zh": ">> 太可惜了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“So unfortunate”是常见感叹，表示遗憾。"
+    },
+    {
+      "id": "c969",
+      "startTime": 3260.17,
+      "endTime": 3262.48,
+      "en": "And he just goes >> Look at that face.",
+      "zh": "他就这样……>> 看那张脸。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“Look at that face”用于强调表情。"
+    },
+    {
+      "id": "c970",
+      "startTime": 3262.81,
+      "endTime": 3267.84,
+      "en": ">> But like Yeah, it's such a battle. >> but that would have",
+      "zh": ">> 但是，是的，这真是一场鏖战。>> 但那本可以……",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“such a battle”形容竞争激烈。"
+    },
+    {
+      "id": "c971",
+      "startTime": 3269.05,
+      "endTime": 3272.91,
+      "en": ">> I think if he'd had another another go, you know, he would have known to go maybe to the right of that,",
+      "zh": ">> 我觉得如果他再有一次机会，你知道，他可能会知道要往右边去，",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“if he'd had another go”是虚拟语气，表示如果再有尝试。"
+    },
+    {
+      "id": "c972",
+      "startTime": 3272.85,
+      "endTime": 3278,
+      "en": "but he was trying to match >> into the middle on the sloper. Max then is back",
+      "zh": "但他试图在坡面上双手并点。Max 然后回来了，",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "sloper",
+        "match"
+      ],
+      "note": "“match”在攀岩中表示双手并点。"
+    },
+    {
+      "id": "c973",
+      "startTime": 3279.13,
+      "endTime": 3283.52,
+      "en": "and then John Jong goes down to the power boulder.",
+      "zh": "然后 Jong 去了力量型抱石。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“power boulder”指力量型抱石路线。"
+    },
+    {
+      "id": "c974",
+      "startTime": 3285.61,
+      "endTime": 3287.52,
+      "en": "More his style I think.",
+      "zh": "我觉得那更适合他的风格。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“More his style”表示更符合他的风格。"
+    },
+    {
+      "id": "c975",
+      "startTime": 3287.45,
+      "endTime": 3288.99,
+      "en": ">> I Yeah, I think so.",
+      "zh": ">> 是的，我也这么认为。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“I think so”是常见回应。"
+    },
+    {
+      "id": "c976",
+      "startTime": 3288.89,
+      "endTime": 3299.52,
+      "en": "So, it's going to be interesting to see how Cassam I mean he is a very powerful climber but he also did technically the physical boulder quite quickly. Um",
+      "zh": "所以，看看 Cassam 会怎样会很有趣，我的意思是他是一个非常强壮的攀岩者，但他也很快完成了这条技术性物理路线。嗯",
+      "score": 44,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "powerful"
+      ],
+      "note": "“powerful climber”指力量型攀岩者。"
+    },
+    {
+      "id": "c977",
+      "startTime": 3300.73,
+      "endTime": 3304.4,
+      "en": "so it'll be interesting to see how everyone else does.",
+      "zh": "所以看看其他人表现如何会很有趣。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“it'll be interesting to see”是常用表达。"
+    },
+    {
+      "id": "c978",
+      "startTime": 3305.29,
+      "endTime": 3306.64,
+      "en": "Max winds up.",
+      "zh": "Max 准备发力。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“winds up”表示准备动作。"
+    },
+    {
+      "id": "c979",
+      "startTime": 3307.61,
+      "endTime": 3308.59,
+      "en": ">> Not that time.",
+      "zh": ">> 这次不行。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Not that time”表示这次没成功。"
+    },
+    {
+      "id": "c980",
+      "startTime": 3308.49,
+      "endTime": 3311.92,
+      "en": "Chomp pulls on, >> but also a good first go.",
+      "zh": "Chomp 上场，>> 但第一次尝试也不错。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“pulls on”表示开始攀爬。"
+    },
+    {
+      "id": "c981",
+      "startTime": 3312.41,
+      "endTime": 3313.01,
+      "en": "Uh-huh.",
+      "zh": "嗯哼。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“Uh-huh”表示同意或理解。"
+    },
+    {
+      "id": "c982",
+      "startTime": 3313.61,
+      "endTime": 3314.64,
+      "en": ">> Chan a bit surprised.",
+      "zh": ">> Chan 有点惊讶。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“a bit surprised”表示有点惊讶。"
+    },
+    {
+      "id": "c983",
+      "startTime": 3314.73,
+      "endTime": 3316.11,
+      "en": ">> Yeah, the same thing, right?",
+      "zh": ">> 是的，同样的事情，对吧？",
+      "score": 7,
+      "study": false,
+      "keywords": [],
+      "note": "“the same thing”指同样的情况。"
+    },
+    {
+      "id": "c984",
+      "startTime": 3316.01,
+      "endTime": 3318.72,
+      "en": "It's actually I think it's worse than >> it worse.",
+      "zh": "实际上，我觉得比看起来更糟。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“worse than it looks”表示比看起来更糟。"
+    },
+    {
+      "id": "c985",
+      "startTime": 3318.65,
+      "endTime": 3320.48,
+      "en": "Yeah, probably worse than it looks.",
+      "zh": "是的，可能比看起来更糟。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“probably”表示可能。"
+    },
+    {
+      "id": "c986",
+      "startTime": 3320.49,
+      "endTime": 3321.87,
+      "en": "It's probably not in cut.",
+      "zh": "这可能不会脱脚。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'in cut' 是攀岩术语，指双脚离地（脱脚）。"
+    },
+    {
+      "id": "c987",
+      "startTime": 3321.77,
+      "endTime": 3323.6,
+      "en": "I mean, very most likely not in cut.",
+      "zh": "我的意思是，极大概率不会脱脚。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'most likely' 表示“极有可能”，常用于表达推测。"
+    },
+    {
+      "id": "c988",
+      "startTime": 3323.77,
+      "endTime": 3325.76,
+      "en": "And so, you want definitely the height,",
+      "zh": "所以，你肯定需要高度，",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "height"
+      ],
+      "note": "'definitely' 强调肯定，注意听清这个副词。"
+    },
+    {
+      "id": "c989",
+      "startTime": 3327.29,
+      "endTime": 3329.47,
+      "en": ">> arms bent to be able to hold this hole better.",
+      "zh": "手臂弯曲才能更好地抓住这个点。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "'arms bent' 指手臂弯曲，注意 'bent' 是 bend 的过去分词。"
+    },
+    {
+      "id": "c990",
+      "startTime": 3329.37,
+      "endTime": 3332,
+      "en": "Even maybe land foot straight onto the volume.",
+      "zh": "甚至可能直接脚踩到那个大体积上。",
+      "score": 70,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "'land foot' 指落脚，'volume' 是攀岩中的大体积岩点。"
+    },
+    {
+      "id": "c991",
+      "startTime": 3337.13,
+      "endTime": 3338.8,
+      "en": "Max was very close. Then",
+      "zh": "Max 非常接近了。然后",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'very close' 表示非常接近，注意 'close' 的发音。"
+    },
+    {
+      "id": "c992",
+      "startTime": 3340.49,
+      "endTime": 3346.56,
+      "en": "he lowered completely into kind of like a squat, which I think also works very well for these kinds of moves.",
+      "zh": "他完全降低成一种类似深蹲的姿势，我认为这种动作也非常有效。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'lower into' 表示降低成，'squat' 是深蹲。"
+    },
+    {
+      "id": "c993",
+      "startTime": 3347.37,
+      "endTime": 3349.68,
+      "en": ">> It just cushions you down into it.",
+      "zh": "它只是让你缓冲下来。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'cushion' 作动词表示缓冲，注意这个动词用法。"
+    },
+    {
+      "id": "c994",
+      "startTime": 3356.49,
+      "endTime": 3358.88,
+      "en": "momentum by pressing his foot against the wall.",
+      "zh": "通过用脚蹬墙来产生动力。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'momentum' 是动力，'pressing' 是按压，注意 'by' 引导方式。"
+    },
+    {
+      "id": "c995",
+      "startTime": 3364.41,
+      "endTime": 3367.71,
+      "en": ">> So, he just jumped for it compared to Sam who put a heel hook and he's Yeah,",
+      "zh": "所以，他就是直接跳过去，而 Sam 则用了脚跟钩，他……是的，",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "heel hook",
+        "heel"
+      ],
+      "note": "'compared to' 表示与……相比，注意对比结构。"
+    },
+    {
+      "id": "c996",
+      "startTime": 3367.61,
+      "endTime": 3373.36,
+      "en": "he's just full powering through and he even goes to the top of the volume instead of onto the noex",
+      "zh": "他就是全力通过，甚至直接上到体积顶部，而不是抓那个小点，",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "top",
+        "volume"
+      ],
+      "note": "'full powering' 表示全力，'noex' 可能指小点，注意听清。"
+    },
+    {
+      "id": "c997",
+      "startTime": 3374.33,
+      "endTime": 3375.52,
+      "en": "taking his time.",
+      "zh": "慢慢来。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'taking his time' 是固定短语，表示不着急。"
+    },
+    {
+      "id": "c998",
+      "startTime": 3375.93,
+      "endTime": 3377.87,
+      "en": ">> Little pass >> taking the sweat off.",
+      "zh": "小休息，擦擦汗。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "'pass' 可能指休息，'taking the sweat off' 是擦汗。"
+    },
+    {
+      "id": "c999",
+      "startTime": 3377.77,
+      "endTime": 3379.52,
+      "en": "Yeah. Oh, >> and then he",
+      "zh": "是的。哦，然后他……",
+      "score": 2,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'oh' 和 'then' 的连读。"
+    },
+    {
+      "id": "c1000",
+      "startTime": 3380.81,
+      "endTime": 3381.92,
+      "en": "a so cool.",
+      "zh": "太酷了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'so cool' 是口语常用表达，注意 'so' 的强调。"
+    },
+    {
+      "id": "c1001",
+      "startTime": 3382.89,
+      "endTime": 3384.03,
+      "en": ">> Yeah, that's good work.",
+      "zh": "是的，干得好。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'good work' 是表扬，注意 'work' 的发音。"
+    },
+    {
+      "id": "c1002",
+      "startTime": 3383.93,
+      "endTime": 3386.11,
+      "en": "It blew your head for goodness sake.",
+      "zh": "天哪，这太让人震惊了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'blew your head' 是俚语，表示震惊，注意 'for goodness sake' 是感叹。"
+    },
+    {
+      "id": "c1003",
+      "startTime": 3386.01,
+      "endTime": 3387.52,
+      "en": "We've seen that twice already.",
+      "zh": "我们已经看到两次了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'twice already' 表示已经两次，注意 'already' 的位置。"
+    },
+    {
+      "id": "c1004",
+      "startTime": 3387.85,
+      "endTime": 3389.04,
+      "en": ">> I think he's happy.",
+      "zh": "我觉得他很开心。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'I think' 是插入语，注意 'he's happy' 的缩写。"
+    },
+    {
+      "id": "c1005",
+      "startTime": 3389.37,
+      "endTime": 3390.11,
+      "en": "You like it?",
+      "zh": "你喜欢吗？",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'You like it?' 是口语疑问句，注意语调。"
+    },
+    {
+      "id": "c1006",
+      "startTime": 3390.01,
+      "endTime": 3391.28,
+      "en": "I didn't pick that up.",
+      "zh": "我没注意到那个。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'pick up' 表示注意到，注意短语动词。"
+    },
+    {
+      "id": "c1007",
+      "startTime": 3392.09,
+      "endTime": 3392.96,
+      "en": ">> Full release.",
+      "zh": "完全释放。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'full release' 可能指完全放开，注意 'release' 的发音。"
+    },
+    {
+      "id": "c1008",
+      "startTime": 3394.41,
+      "endTime": 3395.36,
+      "en": ">> I love this.",
+      "zh": "我喜欢这个。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'I love this' 是表达喜爱，注意 'love' 的强调。"
+    },
+    {
+      "id": "c1009",
+      "startTime": 3396.65,
+      "endTime": 3397.92,
+      "en": "That was so amazing.",
+      "zh": "太棒了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'so amazing' 表示非常棒，注意 'amazing' 的发音。"
+    },
+    {
+      "id": "c1010",
+      "startTime": 3397.85,
+      "endTime": 3400.4,
+      "en": "He's so happy. That was a great",
+      "zh": "他太开心了。那真是精彩。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意'great'在此表示'精彩'，常用于称赞表现。"
+    },
+    {
+      "id": "c1011",
+      "startTime": 3404.57,
+      "endTime": 3407.28,
+      "en": ">> I want to buy that amount of beer at the afterparty tomorrow night.",
+      "zh": "我想在明晚的赛后派对上买那么多啤酒。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'afterparty'是赛后聚会，'that amount of'指'那么多'。"
+    },
+    {
+      "id": "c1012",
+      "startTime": 3407.85,
+      "endTime": 3409.87,
+      "en": ">> Oh, here we have a bit of a closeup of the hold.",
+      "zh": "哦，这里我们有一个握点的特写。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "'closeup'意为特写镜头，'hold'是攀岩中的握点。"
+    },
+    {
+      "id": "c1013",
+      "startTime": 3409.77,
+      "endTime": 3411.44,
+      "en": "Like it's okay. It's very",
+      "zh": "就像这样，没问题。非常……",
+      "score": 7,
+      "study": false,
+      "keywords": [],
+      "note": "'Like it's okay'是口语，表示'没问题'。"
+    },
+    {
+      "id": "c1014",
+      "startTime": 3419.13,
+      "endTime": 3422.99,
+      "en": ">> shout out the camera team here who are showing us some wonderful shots along the way.",
+      "zh": "感谢摄像团队，他们一路给我们展示了精彩的镜头。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'shout out'是公开感谢，'wonderful shots'指精彩镜头。"
+    },
+    {
+      "id": "c1015",
+      "startTime": 3422.89,
+      "endTime": 3424.4,
+      "en": "All the details. Thank you",
+      "zh": "所有细节。谢谢。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'All the details'强调细节，'Thank you'是感谢。"
+    },
+    {
+      "id": "c1016",
+      "startTime": 3425.77,
+      "endTime": 3433.36,
+      "en": ">> And he just powered it out compared to Sam who kind of went a bit more technical with heel hooks and especially on like the move to the zone.",
+      "zh": "而且他纯粹靠力量完成，相比之下Sam更技术流，用了脚跟钩，尤其是在接近Zone的那个动作上。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "zone",
+        "move",
+        "heel"
+      ],
+      "note": "'powered it out'指靠力量完成，'technical'指技术性，'heel hooks'是脚跟钩。"
+    },
+    {
+      "id": "c1017",
+      "startTime": 3435.37,
+      "endTime": 3436.56,
+      "en": ">> Oh, it's so fun.",
+      "zh": "哦，太有趣了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'It's so fun'是常用表达，表示'太好玩了'。"
+    },
+    {
+      "id": "c1018",
+      "startTime": 3436.81,
+      "endTime": 3437.41,
+      "en": ">> Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Right'在此表示同意，相当于'对'。"
+    },
+    {
+      "id": "c1019",
+      "startTime": 3437.13,
+      "endTime": 3440.16,
+      "en": "Meanwhile, down on the left, Max Mill is still working, but",
+      "zh": "与此同时，在左边，Max Mill还在努力，但是……",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'Meanwhile'表示与此同时，'working'指攀爬中。"
+    },
+    {
+      "id": "c1020",
+      "startTime": 3441.61,
+      "endTime": 3446.8,
+      "en": "just you didn't see it on camera, but he just gave Max a little word of advice as he got past.",
+      "zh": "你刚才没在镜头里看到，但他经过时给了Max一点建议。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'a little word of advice'是'一点建议'，'as he got past'指经过时。"
+    },
+    {
+      "id": "c1021",
+      "startTime": 3447.85,
+      "endTime": 3449.15,
+      "en": ">> He wasn't giving him a tip.",
+      "zh": "他不是在给他提示。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'tip'在此指攀岩中的动作提示。"
+    },
+    {
+      "id": "c1022",
+      "startTime": 3449.05,
+      "endTime": 3449.65,
+      "en": "Don't worry.",
+      "zh": "别担心。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Don't worry'是安慰语，'别担心'。"
+    },
+    {
+      "id": "c1023",
+      "startTime": 3449.45,
+      "endTime": 3451.84,
+      "en": "It was a joke between friends moment.",
+      "zh": "那是朋友间的玩笑时刻。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'a joke between friends'指朋友间的玩笑。"
+    },
+    {
+      "id": "c1024",
+      "startTime": 3452.25,
+      "endTime": 3452.85,
+      "en": "Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Right'再次表示同意。"
+    },
+    {
+      "id": "c1025",
+      "startTime": 3452.73,
+      "endTime": 3454.91,
+      "en": "Well, that's Chance's celebration up there.",
+      "zh": "那是Chance在上面庆祝。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'celebration'是庆祝，'up there'指在岩壁上。"
+    },
+    {
+      "id": "c1026",
+      "startTime": 3454.81,
+      "endTime": 3456.67,
+      "en": "And then let's go back to Max Mill.",
+      "zh": "然后我们回到Max Mill。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'let's go back to'是'让我们回到'。"
+    },
+    {
+      "id": "c1027",
+      "startTime": 3456.57,
+      "endTime": 3458.96,
+      "en": "This was the go before how the Bose he got.",
+      "zh": "这是他上次尝试，之后他得到了那个Bose（指某品牌？）。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "此处'Bose'可能指品牌，但更可能是误听，实际可能指'boost'或'beta'，需结合上下文。"
+    },
+    {
+      "id": "c1028",
+      "startTime": 3459.69,
+      "endTime": 3461.55,
+      "en": ">> Oh, so he made it to the last move.",
+      "zh": "哦，所以他做到了最后一步。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "'made it to'表示'到达'，'last move'是最后一步。"
+    },
+    {
+      "id": "c1029",
+      "startTime": 3461.45,
+      "endTime": 3465.28,
+      "en": "Okay, that's unfortunately that we didn't see his go before.",
+      "zh": "好吧，可惜我们没看到他之前的尝试。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'unfortunately'是'可惜'，'go'在此指一次尝试。"
+    },
+    {
+      "id": "c1030",
+      "startTime": 3466.17,
+      "endTime": 3467.92,
+      "en": ">> Back on the wall then leaping across.",
+      "zh": "回到岩壁上，然后跳跃横移。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'leaping across'指跳跃横移，'back on the wall'是回到岩壁。"
+    },
+    {
+      "id": "c1031",
+      "startTime": 3467.85,
+      "endTime": 3468.75,
+      "en": "Not that time.",
+      "zh": "这次不行。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'Not that time'是'这次不行'。"
+    },
+    {
+      "id": "c1032",
+      "startTime": 3468.65,
+      "endTime": 3470.24,
+      "en": "And just a minute to go",
+      "zh": "还有一分钟。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'a minute to go'表示'还剩一分钟'。"
+    },
+    {
+      "id": "c1033",
+      "startTime": 3475.21,
+      "endTime": 3477.68,
+      "en": "himself a little time to breathe.",
+      "zh": "给自己一点时间喘口气。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'a little time to breathe'是'一点喘息时间'。"
+    },
+    {
+      "id": "c1034",
+      "startTime": 3479.13,
+      "endTime": 3481.68,
+      "en": ">> He's got that zone which is important though.",
+      "zh": "他拿到了那个Zone，这一点很重要。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "注意'zone'在攀岩中特指得分点，这里直接音译加解释。"
+    },
+    {
+      "id": "c1035",
+      "startTime": 3488.33,
+      "endTime": 3490.11,
+      "en": "allows you to also shift over a bit more.",
+      "zh": "这让他也能再往旁边移动一点。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'shift over'表示横向移动，注意'over'的用法。"
+    },
+    {
+      "id": "c1036",
+      "startTime": 3490.05,
+      "endTime": 3490.65,
+      "en": "Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的回应词，注意语气。"
+    },
+    {
+      "id": "c1037",
+      "startTime": 3492.09,
+      "endTime": 3496.32,
+      "en": "And now let's see what he he tried jumping straight to the top right.",
+      "zh": "现在让我们看看他是不是试图直接跳到顶部右侧。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'jump straight to'表示直接跳向，注意'straight'的强调。"
+    },
+    {
+      "id": "c1038",
+      "startTime": 3497.05,
+      "endTime": 3498.19,
+      "en": "I mean let's just see.",
+      "zh": "我的意思是，我们看看。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'I mean'是口语中常见的插入语，表示'我是说'。"
+    },
+    {
+      "id": "c1039",
+      "startTime": 3498.09,
+      "endTime": 3498.69,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的肯定回应。"
+    },
+    {
+      "id": "c1040",
+      "startTime": 3498.33,
+      "endTime": 3499.6,
+      "en": "Let's see what he does here.",
+      "zh": "我们看看他在这里怎么做。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'what he does'表示他的动作，注意'here'指当前位置。"
+    },
+    {
+      "id": "c1041",
+      "startTime": 3504.33,
+      "endTime": 3506.59,
+      "en": "that pocket especially >> no time to chalk.",
+      "zh": "那个点尤其重要，没有时间擦镁粉了。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "pocket"
+      ],
+      "note": "'pocket'指小点，'chalk'是镁粉，注意'no time to'的用法。"
+    },
+    {
+      "id": "c1042",
+      "startTime": 3506.49,
+      "endTime": 3508.32,
+      "en": "Just jump straight onto the wall.",
+      "zh": "直接跳上墙。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'jump onto'表示跳上，注意'straight'省略了，但意思完整。"
+    },
+    {
+      "id": "c1043",
+      "startTime": 3509.45,
+      "endTime": 3510.4,
+      "en": ">> 16 seconds.",
+      "zh": "16秒。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "数字表达，注意秒数。"
+    },
+    {
+      "id": "c1044",
+      "startTime": 3510.81,
+      "endTime": 3512.64,
+      "en": "This has got to be perfect. It's land",
+      "zh": "这必须完美。落地……",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "'has got to be'表示必须，'land'指落地。"
+    },
+    {
+      "id": "c1045",
+      "startTime": 3514.17,
+      "endTime": 3516,
+      "en": ">> and Oh, it's so close.",
+      "zh": "哦，太接近了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'so close'表示非常接近，注意感叹语气。"
+    },
+    {
+      "id": "c1046",
+      "startTime": 3515.93,
+      "endTime": 3517.07,
+      "en": ">> Max, you don't have time.",
+      "zh": "Max，你没有时间了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意人名，'don't have time'表示没时间。"
+    },
+    {
+      "id": "c1047",
+      "startTime": 3516.97,
+      "endTime": 3517.57,
+      "en": "Sure.",
+      "zh": "当然。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "简单的肯定，但这里可能表示'确实'。"
+    },
+    {
+      "id": "c1048",
+      "startTime": 3517.45,
+      "endTime": 3518.8,
+      "en": "Actually, maybe he does.",
+      "zh": "实际上，也许他有时间。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'actually'表示转折，'maybe'表示可能。"
+    },
+    {
+      "id": "c1049",
+      "startTime": 3518.81,
+      "endTime": 3522.16,
+      "en": ">> No, I don't think so. He's doing",
+      "zh": "不，我觉得没有。他在做……",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'I don't think so'表示否定，注意'he's doing'的进行时。"
+    },
+    {
+      "id": "c1050",
+      "startTime": 3527.69,
+      "endTime": 3532.4,
+      "en": "times where he's been so close but just timed out at the top of the border.",
+      "zh": "他好几次都这么接近，但在顶部超时了。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'timed out'表示超时，'at the top of the border'指顶部区域。"
+    },
+    {
+      "id": "c1051",
+      "startTime": 3537.77,
+      "endTime": 3539.52,
+      "en": "good this is fun this final.",
+      "zh": "很好，这决赛真有趣。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "'this is fun'表示有趣，注意'final'指决赛。"
+    },
+    {
+      "id": "c1052",
+      "startTime": 3539.53,
+      "endTime": 3541.84,
+      "en": ">> Yeah, it's they're fun moves borders.",
+      "zh": "是的，这些动作很有趣。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'fun moves'表示有趣的动作，'borders'可能指岩壁。"
+    },
+    {
+      "id": "c1053",
+      "startTime": 3548.01,
+      "endTime": 3550.32,
+      "en": ">> I mean, no, I'm not jumping to",
+      "zh": "我的意思是，不，我不打算跳……",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'I'm not jumping to'表示不打算跳，注意省略。"
+    },
+    {
+      "id": "c1054",
+      "startTime": 3553.05,
+      "endTime": 3556.32,
+      "en": ">> we still have two more athletes on the slab.",
+      "zh": "我们还有两位运动员在板壁上。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "'slab'指板壁，注意'still have'表示还有。"
+    },
+    {
+      "id": "c1055",
+      "startTime": 3556.81,
+      "endTime": 3563.36,
+      "en": "But if all athletes kind of have the same tops and zones, then it is also just based off attempts.",
+      "zh": "但如果所有运动员都有相同的完攀和Zone，那就只取决于尝试次数。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'tops'和'zones'是攀岩术语，'based off'表示基于。"
+    },
+    {
+      "id": "c1056",
+      "startTime": 3564.41,
+      "endTime": 3565.01,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c1057",
+      "startTime": 3564.65,
+      "endTime": 3568.16,
+      "en": "Well, currently Sam Avazu and Jung W are in the 49s.",
+      "zh": "目前，Sam Avazu和Jung W的成绩在49秒左右。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名，'in the 49s'表示在49秒区间。"
+    },
+    {
+      "id": "c1058",
+      "startTime": 3568.57,
+      "endTime": 3571.31,
+      "en": "Just points.1 separating them.",
+      "zh": "仅一分之差。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意“points”在此指得分点，常用于比赛分数比较。"
+    },
+    {
+      "id": "c1059",
+      "startTime": 3571.21,
+      "endTime": 3572.11,
+      "en": "So, we'll see.",
+      "zh": "所以，我们拭目以待。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“we'll see”是常用口语，表示观望后续发展。"
+    },
+    {
+      "id": "c1060",
+      "startTime": 3572.01,
+      "endTime": 3573.39,
+      "en": "Ray brings on two shoes.",
+      "zh": "Ray带了两双鞋。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“brings on”在此指带上场，注意“on”的用法。"
+    },
+    {
+      "id": "c1061",
+      "startTime": 3573.29,
+      "endTime": 3574.59,
+      "en": "Smart on a slab.",
+      "zh": "在板壁上很明智。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“slab”指板壁，一种攀岩地形。"
+    },
+    {
+      "id": "c1062",
+      "startTime": 3574.49,
+      "endTime": 3578.32,
+      "en": "You He'll have one soft pair, one more GB pair to land on the edge.",
+      "zh": "他会有一双软的，一双更硬的，以便踩在边缘上。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“GB”可能指“grip”或品牌，但此处理解为“更硬”的鞋。"
+    },
+    {
+      "id": "c1063",
+      "startTime": 3578.41,
+      "endTime": 3581.36,
+      "en": "And Hannis Dyson is a powerful climber.",
+      "zh": "Hannis Dyson是一位力量型攀岩者。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "powerful"
+      ],
+      "note": "“powerful”形容力量强，注意人名发音。"
+    },
+    {
+      "id": "c1064",
+      "startTime": 3581.37,
+      "endTime": 3583.6,
+      "en": "This should be one he can unlock here.",
+      "zh": "这应该是他能解锁的一条线路。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“unlock”在此指解决难点，学会这个动词。"
+    },
+    {
+      "id": "c1065",
+      "startTime": 3585.45,
+      "endTime": 3590.48,
+      "en": ">> Especially having been so close on the slab, he knows that this is important.",
+      "zh": "尤其是在板壁上如此接近，他知道这很重要。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“having been so close”是完成时，表示曾经接近。"
+    },
+    {
+      "id": "c1066",
+      "startTime": 3590.49,
+      "endTime": 3592.88,
+      "en": "I feel like he's going to go into this border quite",
+      "zh": "我觉得他会带着相当",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“go into”指进入状态，注意“quite”的用法。"
+    },
+    {
+      "id": "c1067",
+      "startTime": 3594.49,
+      "endTime": 3595.09,
+      "en": "hungry.",
+      "zh": "渴望。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“hungry”在此比喻渴望成功，形象用法。"
+    },
+    {
+      "id": "c1068",
+      "startTime": 3597.21,
+      "endTime": 3599.39,
+      "en": ">> So, Ray is climbing with two different shoes.",
+      "zh": "所以，Ray穿着两种不同的鞋在攀爬。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“climbing with”表示穿着，注意介词。"
+    },
+    {
+      "id": "c1069",
+      "startTime": 3599.29,
+      "endTime": 3603.68,
+      "en": "He's got draggers on the left and instinct on the right for the smaller",
+      "zh": "他左脚穿Draggers，右脚穿Instinct，为了应对更小的",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“draggers”和“instinct”是鞋款名，注意品牌。"
+    },
+    {
+      "id": "c1070",
+      "startTime": 3609.85,
+      "endTime": 3611.76,
+      "en": ">> will start figuring out the sequences",
+      "zh": "将开始摸索动作序列。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“figure out”是常用短语，表示弄清楚。"
+    },
+    {
+      "id": "c1071",
+      "startTime": 3621.05,
+      "endTime": 3621.92,
+      "en": ">> So Ray",
+      "zh": "所以Ray",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“So”用于承接，注意口语中的停顿。"
+    },
+    {
+      "id": "c1072",
+      "startTime": 3624.09,
+      "endTime": 3626.27,
+      "en": "oh kind of misses the foot.",
+      "zh": "哦，有点踩空了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“misses the foot”指脚滑，注意“miss”的用法。"
+    },
+    {
+      "id": "c1073",
+      "startTime": 3626.17,
+      "endTime": 3637.84,
+      "en": "But yeah, it's important to brush holds also in between goes cuz you just get that extra pile of like torque which takes away some friction and all friction is important at this point.",
+      "zh": "每次尝试之间刷一下把手也很重要——因为手汗和胶皮会越积越多，把摩擦力磨掉一些。现在这种温度下，每一分摩擦都关键。",
+      "note": "brush holds 用刷子刷把手（清理镁粉/汗渍）；'pile of torque' 一层油脂/汗垢；'takes away friction' 削弱摩擦。",
+      "score": 19,
+      "study": false,
+      "keywords": []
+    },
+    {
+      "id": "c1074",
+      "startTime": 3638.49,
+      "endTime": 3645.12,
+      "en": "Easily holds on to that or easily no he tried really hard but still manages to do it.",
+      "zh": "轻松抓住，或者不轻松，他真的很努力，但还是做到了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“easily”和“tried really hard”对比，注意转折。"
+    },
+    {
+      "id": "c1075",
+      "startTime": 3645.53,
+      "endTime": 3648,
+      "en": "That is the 10 >> up towards",
+      "zh": "那是第10个点，向上",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“the 10”指第10个点，注意数字的用法。"
+    },
+    {
+      "id": "c1076",
+      "startTime": 3649.29,
+      "endTime": 3659.04,
+      "en": ">> but then is pushed outwards >> asking for more brushes like once again in this heat volumes are going to be very hard to hold",
+      "zh": "但随后被向外推，再次要求更多的刷子，在这种高温下，大体积点很难抓住。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“volumes”指大体积点，注意“brushes”指刷子。"
+    },
+    {
+      "id": "c1077",
+      "startTime": 3658.97,
+      "endTime": 3665.04,
+      "en": "and at the same time it's also very hard to brush like the volume goes very round backwards so the part where you want it brushed",
+      "zh": "同时，刷子也很难刷到，因为体积点向后弯曲，所以你想刷的部分",
+      "score": 41,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“brush”作动词，注意“round backwards”的描述。"
+    },
+    {
+      "id": "c1078",
+      "startTime": 3665.61,
+      "endTime": 3675.31,
+      "en": ">> it's kind of impossible so the more climbers get to the top >> yeah the choice >> yeah it's going to just pile up >> yeah matas into the 10 yet.",
+      "zh": "有点不可能，所以越多的攀岩者到达顶部，是的，选择，是的，它只会堆积起来，是的，Matas还没到第10点。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“pile up”指堆积，注意口语中的重复。"
+    },
+    {
+      "id": "c1079",
+      "startTime": 3675.21,
+      "endTime": 3677.71,
+      "en": "So, let's see if he can figure out this final jump.",
+      "zh": "所以，让我们看看他能否解决这最后的跳跃。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“figure out”再次出现，注意“final jump”指最后动态。"
+    },
+    {
+      "id": "c1080",
+      "startTime": 3677.61,
+      "endTime": 3680.08,
+      "en": "No one's got it so far and he can't get it either.",
+      "zh": "目前没人成功，他也未能成功。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“no one's got it”指没人完成，注意“got it”的用法。"
+    },
+    {
+      "id": "c1081",
+      "startTime": 3680.09,
+      "endTime": 3681.52,
+      "en": ">> But his hand slipped.",
+      "zh": "但是他的手滑了。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "slipped"
+      ],
+      "note": "“hand slipped”指手滑，注意“slipped”的过去式。"
+    },
+    {
+      "id": "c1082",
+      "startTime": 3687.77,
+      "endTime": 3688.37,
+      "en": "zone.",
+      "zh": "Zone。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“zone”指得分点，注意大写。"
+    },
+    {
+      "id": "c1083",
+      "startTime": 3688.17,
+      "endTime": 3688.91,
+      "en": "That's important.",
+      "zh": "这很重要。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意'That's important'的连读，'That's'发/ðæts/。"
+    },
+    {
+      "id": "c1084",
+      "startTime": 3688.81,
+      "endTime": 3690.35,
+      "en": "He sits in fourth for the moment.",
+      "zh": "他目前排在第四。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'for the moment'意为'暂时'，常用表达。"
+    },
+    {
+      "id": "c1085",
+      "startTime": 3690.25,
+      "endTime": 3690.85,
+      "en": "34.7.",
+      "zh": "34.7秒。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "数字直接读，注意小数点读法'point'。"
+    },
+    {
+      "id": "c1086",
+      "startTime": 3691.53,
+      "endTime": 3695.04,
+      "en": "So, in touch with everyone else, of course, he's a boulder behind.",
+      "zh": "所以，和其他人保持同步，当然，他落后一个抱石。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'in touch with'意为'与…同步'，'a boulder behind'指落后一个抱石。"
+    },
+    {
+      "id": "c1087",
+      "startTime": 3696.49,
+      "endTime": 3700.4,
+      "en": ">> And Hannis Van Dyson also got the zone, but he'll know there's tops on this",
+      "zh": ">> 汉尼斯·范·戴森也拿到了Zone，但他知道这上面有完攀。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'got the zone'是攀岩术语，指到达Zone得分点。"
+    },
+    {
+      "id": "c1088",
+      "startTime": 3702.09,
+      "endTime": 3703.6,
+      "en": ">> He knows that this is",
+      "zh": ">> 他知道这是",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意'this is'的弱读，'is'发/ɪz/。"
+    },
+    {
+      "id": "c1089",
+      "startTime": 3708.49,
+      "endTime": 3709.92,
+      "en": ">> but he was very close.",
+      "zh": ">> 但他非常接近了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'very close'表示'非常接近'，常用于描述接近完攀。"
+    },
+    {
+      "id": "c1090",
+      "startTime": 3711.05,
+      "endTime": 3712.64,
+      "en": ">> Oh, his foot slipped.",
+      "zh": ">> 哦，他的脚滑了。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "foot",
+        "slipped"
+      ],
+      "note": "'foot slipped'是常见失误描述，'slip'意为'滑'。"
+    },
+    {
+      "id": "c1091",
+      "startTime": 3713.05,
+      "endTime": 3715.55,
+      "en": "So, yeah, as time went down, this is a bit more.",
+      "zh": "所以，是的，随着时间流逝，这有点更多了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'as time went down'指时间减少，'a bit more'意为'更多一点'。"
+    },
+    {
+      "id": "c1092",
+      "startTime": 3715.45,
+      "endTime": 3719.68,
+      "en": "This is the physical border, so you're not going to be able to give as many attempts.",
+      "zh": "这是体力极限，所以你不能尝试太多次。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'physical border'指体力边界，'give attempts'意为'进行尝试'。"
+    },
+    {
+      "id": "c1093",
+      "startTime": 3720.25,
+      "endTime": 3722.64,
+      "en": "Um, you're going to have to rest properly.",
+      "zh": "嗯，你必须充分休息。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'rest properly'意为'充分休息'，'properly'是副词。"
+    },
+    {
+      "id": "c1094",
+      "startTime": 3724.81,
+      "endTime": 3729.84,
+      "en": "He's giving specific directions on where he wants the holds brushed. I think this is",
+      "zh": "他在给出具体指示，告诉别人刷点刷哪里。我觉得这是",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'holds brushed'指刷点，'specific directions'意为'具体指示'。"
+    },
+    {
+      "id": "c1095",
+      "startTime": 3731.21,
+      "endTime": 3734.91,
+      "en": ">> Yeah, this is the first hole which a few people have dropped on the wooden one.",
+      "zh": ">> 是的，这是第一个点，有几个人在木制点上掉了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'dropped on'意为'在…上掉落'，'wooden one'指木制点。"
+    },
+    {
+      "id": "c1096",
+      "startTime": 3734.81,
+      "endTime": 3737.04,
+      "en": ">> Yeah, lovely closein shot.",
+      "zh": ">> 是的，漂亮的近距离镜头。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'close-in shot'是摄影术语，指特写镜头。"
+    },
+    {
+      "id": "c1097",
+      "startTime": 3738.81,
+      "endTime": 3740.16,
+      "en": ">> You have to match it.",
+      "zh": ">> 你必须双手并点。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "match"
+      ],
+      "note": "'match'在攀岩中意为'双手并点'，是常用术语。"
+    },
+    {
+      "id": "c1098",
+      "startTime": 3740.49,
+      "endTime": 3742.08,
+      "en": ">> You just adding the thumb.",
+      "zh": ">> 你只是加上拇指。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'adding the thumb'指用拇指辅助，'thumb'是拇指。"
+    },
+    {
+      "id": "c1099",
+      "startTime": 3742.01,
+      "endTime": 3745.44,
+      "en": "Adding the thumb adds that extra like uh",
+      "zh": "加上拇指增加了额外的，嗯，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'adds that extra'意为'增加额外的'，'extra'是形容词。"
+    },
+    {
+      "id": "c1100",
+      "startTime": 3746.57,
+      "endTime": 3747.17,
+      "en": "strength.",
+      "zh": "力量。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'strength'意为'力量'，注意发音/streŋθ/。"
+    },
+    {
+      "id": "c1101",
+      "startTime": 3747.05,
+      "endTime": 3747.65,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，注意语调。"
+    },
+    {
+      "id": "c1102",
+      "startTime": 3747.37,
+      "endTime": 3750.08,
+      "en": "Bite into holding these tiny holds.",
+      "zh": "咬住这些小点。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'bite into'意为'咬住'，这里指用力抓住小点。"
+    },
+    {
+      "id": "c1103",
+      "startTime": 3752.09,
+      "endTime": 3754.27,
+      "en": ">> I tell you what, camera crew, it's like you're filming ballet.",
+      "zh": ">> 我跟你说，摄像组，你们就像在拍芭蕾舞。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'I tell you what'是口语表达，意为'我跟你说'。"
+    },
+    {
+      "id": "c1104",
+      "startTime": 3754.17,
+      "endTime": 3754.96,
+      "en": "This is amazing.",
+      "zh": "这太棒了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'amazing'意为'令人惊叹'，常用感叹词。"
+    },
+    {
+      "id": "c1105",
+      "startTime": 3754.89,
+      "endTime": 3757.68,
+      "en": ">> Yeah. I mean, honestly, climbing is",
+      "zh": ">> 是的。我的意思是，说实话，攀岩是",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'honestly'意为'说实话'，用于强调。"
+    },
+    {
+      "id": "c1106",
+      "startTime": 3758.73,
+      "endTime": 3760.43,
+      "en": ">> It's why I'm such a good ballet, guys.",
+      "zh": ">> 这就是为什么我是这么好的芭蕾舞者，伙计们。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'that's why'意为'这就是为什么'，'guys'是口语称呼。"
+    },
+    {
+      "id": "c1107",
+      "startTime": 3760.33,
+      "endTime": 3764.16,
+      "en": ">> Ah, Ray Sticks the coordination again.",
+      "zh": "啊，Ray再次完成了那个动态动作。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "coordination"
+      ],
+      "note": "注意“sticks”在这里是“完成”的意思，常用于攀岩解说。"
+    },
+    {
+      "id": "c1108",
+      "startTime": 3764.89,
+      "endTime": 3767.36,
+      "en": ">> And he's got a minute, so he's got time here.",
+      "zh": "他还有一分钟，所以时间很充裕。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“got a minute”表示“有一分钟时间”，注意口语化表达。"
+    },
+    {
+      "id": "c1109",
+      "startTime": 3768.01,
+      "endTime": 3768.83,
+      "en": "Has a long look.",
+      "zh": "他仔细观察了很久。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“has a long look”意为“长时间观察”，注意“look”作名词。"
+    },
+    {
+      "id": "c1110",
+      "startTime": 3768.77,
+      "endTime": 3770.35,
+      "en": "He was far from it the first time.",
+      "zh": "第一次他差得远。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“far from it”表示“差得远”，常用于否定。"
+    },
+    {
+      "id": "c1111",
+      "startTime": 3770.25,
+      "endTime": 3771.44,
+      "en": "Better the second.",
+      "zh": "第二次好多了。",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "“Better”是“更好”的比较级，注意省略了“was”。"
+    },
+    {
+      "id": "c1112",
+      "startTime": 3773.13,
+      "endTime": 3777.6,
+      "en": ">> Okay, so Hannis has already jumped onto the wall, which is interesting because",
+      "zh": "好的，Hannis已经跳上墙了，这很有趣，因为",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“jumped onto the wall”指“跳上墙”，注意“onto”的用法。"
+    },
+    {
+      "id": "c1113",
+      "startTime": 3778.81,
+      "endTime": 3783.31,
+      "en": "definitely has enough time, but now he has 40 seconds left on the clock.",
+      "zh": "他肯定有足够的时间，但现在时钟上只剩下40秒了。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "“left on the clock”表示“剩余时间”，注意“left”的用法。"
+    },
+    {
+      "id": "c1114",
+      "startTime": 3783.21,
+      "endTime": 3787.04,
+      "en": "So once again, I think in physical boulders",
+      "zh": "所以再次强调，我认为在体能型抱石中，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“physical boulders”指“体能型抱石”，注意“physical”的语境。"
+    },
+    {
+      "id": "c1115",
+      "startTime": 3788.09,
+      "endTime": 3790.72,
+      "en": "it's unfortunate to be like, \"Okay, this is my last attempt.\"",
+      "zh": "不幸的是，你会想：“好吧，这是我最后一次尝试了。”",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "“it's unfortunate to be like”是口语化表达，表示“不幸的是”。"
+    },
+    {
+      "id": "c1116",
+      "startTime": 3791.21,
+      "endTime": 3796.03,
+      "en": "But to be able to rest 45 seconds more helps you so much.",
+      "zh": "但能多休息45秒对你有很大帮助。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“rest 45 seconds more”意为“多休息45秒”，注意“more”的位置。"
+    },
+    {
+      "id": "c1117",
+      "startTime": 3795.93,
+      "endTime": 3799.39,
+      "en": ">> Yeah, he's I think he was powering out from quite early on in that boulder.",
+      "zh": "是的，我觉得他在那个抱石中很早就开始力竭了。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“powering out”是攀岩术语，意为“力竭”，注意“from quite early on”。"
+    },
+    {
+      "id": "c1118",
+      "startTime": 3799.29,
+      "endTime": 3807.07,
+      "en": "And >> oh my goodness, the first one >> he you see his right hand is just in that like slot of >> it.",
+      "zh": "哦，天哪，第一个动作，你看他的右手正好卡在那个槽里。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“slot”指“槽”，注意“just in that like slot of it”的口语化。"
+    },
+    {
+      "id": "c1119",
+      "startTime": 3806.97,
+      "endTime": 3807.57,
+      "en": "Yes.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1120",
+      "startTime": 3807.77,
+      "endTime": 3811.23,
+      "en": ">> On the right of him and he manages to do it.",
+      "zh": "在他的右边，他设法完成了。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“manages to do it”意为“设法完成”，注意“manage to”的用法。"
+    },
+    {
+      "id": "c1121",
+      "startTime": 3811.13,
+      "endTime": 3812.27,
+      "en": "That's so great.",
+      "zh": "太棒了。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“That's so great”是常见感叹句。"
+    },
+    {
+      "id": "c1122",
+      "startTime": 3812.17,
+      "endTime": 3815.12,
+      "en": "That is potentially massive for his score here.",
+      "zh": "这可能对他的分数产生巨大影响。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“potentially massive”意为“可能巨大”，注意“potentially”的副词用法。"
+    },
+    {
+      "id": "c1123",
+      "startTime": 3815.21,
+      "endTime": 3816.56,
+      "en": ">> That is so important.",
+      "zh": "这太重要了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“so important”强调重要性。"
+    },
+    {
+      "id": "c1124",
+      "startTime": 3817.45,
+      "endTime": 3818.96,
+      "en": ">> He is going to put himself",
+      "zh": "他将使自己",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“put himself”表示“使自己处于”，注意“put”的用法。"
+    },
+    {
+      "id": "c1125",
+      "startTime": 3820.89,
+      "endTime": 3824.72,
+      "en": ">> comfortably in the lead with two first >> It was 2022",
+      "zh": "轻松领先，两次第一，那是2022年",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“comfortably in the lead”意为“轻松领先”，注意“comfortably”的副词。"
+    },
+    {
+      "id": "c1126",
+      "startTime": 3825.77,
+      "endTime": 3827.04,
+      "en": "where he got a bronze.",
+      "zh": "他获得了铜牌。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“got a bronze”意为“获得铜牌”，注意“bronze”的用法。"
+    },
+    {
+      "id": "c1127",
+      "startTime": 3828.49,
+      "endTime": 3830.83,
+      "en": ">> So that would be pretty cool if he can pull this back.",
+      "zh": "所以如果他能扭转局面，那将非常酷。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“pull this back”意为“扭转局面”，注意“pull back”的短语。"
+    },
+    {
+      "id": "c1128",
+      "startTime": 3830.73,
+      "endTime": 3831.52,
+      "en": "Look at that.",
+      "zh": "看那个。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Look at that”是常见口语，表示“看那个”。"
+    },
+    {
+      "id": "c1129",
+      "startTime": 3831.69,
+      "endTime": 3832.56,
+      "en": ">> Look at him.",
+      "zh": "看他。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Look at him”表示“看他”，注意“at”的用法。"
+    },
+    {
+      "id": "c1130",
+      "startTime": 3832.65,
+      "endTime": 3834,
+      "en": "And then he dumps it.",
+      "zh": "然后他掉下来了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“dumps it”是攀岩术语，意为“掉下来”，注意“dump”的俚语用法。"
+    },
+    {
+      "id": "c1131",
+      "startTime": 3836.01,
+      "endTime": 3837.55,
+      "en": ">> Oh, that's so cool to see.",
+      "zh": "哦，那看起来太酷了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意口语化的表达“so cool”，在英语中常用“so”加强语气。"
+    },
+    {
+      "id": "c1132",
+      "startTime": 3837.45,
+      "endTime": 3842.48,
+      "en": "So yeah, he just uses the first hold as a little intermediate, then continues his jump and doubles into the top.",
+      "zh": "是的，他只是把第一个把手当作一个小的过渡点，然后继续跳跃，双手并点到达顶部。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "top",
+        "hold"
+      ],
+      "note": "“intermediate”在这里指过渡点，“doubles into the top”意为双手并点完攀。"
+    },
+    {
+      "id": "c1133",
+      "startTime": 3842.41,
+      "endTime": 3843.71,
+      "en": ">> Yeah, I love that.",
+      "zh": "是的，我喜欢那样。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“I love that”是表达喜欢的常用口语。"
+    },
+    {
+      "id": "c1134",
+      "startTime": 3843.61,
+      "endTime": 3846,
+      "en": "I wonder who he was looking at when he did that smile.",
+      "zh": "我想知道他在微笑时在看谁。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“I wonder”表示好奇，后面接疑问句。"
+    },
+    {
+      "id": "c1135",
+      "startTime": 3845.93,
+      "endTime": 3850.19,
+      "en": "And yeah, that right hand one you were talking about just slightly turned downwards and to the right.",
+      "zh": "是的，你提到的那个右手把手稍微向下并向右转。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“slightly”意为稍微，注意“turned downwards and to the right”描述方向。"
+    },
+    {
+      "id": "c1136",
+      "startTime": 3850.09,
+      "endTime": 3852.48,
+      "en": ">> Yeah, he like landed perfectly in it.",
+      "zh": "是的，他完美地落在了上面。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“landed perfectly”表示完美落地，常用于描述动作。"
+    },
+    {
+      "id": "c1137",
+      "startTime": 3853.93,
+      "endTime": 3855.2,
+      "en": ">> That is very cool.",
+      "zh": "那非常酷。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“very cool”是常见表达，注意“very”的强调。"
+    },
+    {
+      "id": "c1138",
+      "startTime": 3857.05,
+      "endTime": 3861.2,
+      "en": ">> Yeah, that's one of those like the smile before sending it is pretty cool.",
+      "zh": "是的，那是那种在完攀前微笑的，非常酷。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“the smile before sending”指完攀前的微笑，“sending”是攀岩术语。"
+    },
+    {
+      "id": "c1139",
+      "startTime": 3862.01,
+      "endTime": 3864.19,
+      "en": "when you like hype the crowd and then you send.",
+      "zh": "当你调动观众情绪，然后完攀。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“hype the crowd”意为调动观众情绪，“send”在攀岩中表示完攀。"
+    },
+    {
+      "id": "c1140",
+      "startTime": 3864.09,
+      "endTime": 3868.32,
+      "en": "That's like the most perfect send you can have in a comp.",
+      "zh": "那是比赛中完美的完攀。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“the most perfect send”强调完美完攀，注意“send”的用法。"
+    },
+    {
+      "id": "c1141",
+      "startTime": 3870.25,
+      "endTime": 3871.28,
+      "en": ">> Awesome stuff.",
+      "zh": "太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Awesome stuff”是口语中表示赞美的常用语。"
+    },
+    {
+      "id": "c1142",
+      "startTime": 3872.01,
+      "endTime": 3875.04,
+      "en": ">> So, just Sarata to come on the slab.",
+      "zh": "所以，接下来是Sarata上板壁。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“come on the slab”意为上板壁，注意“slab”是攀岩术语。"
+    },
+    {
+      "id": "c1143",
+      "startTime": 3875.37,
+      "endTime": 3876.8,
+      "en": "Needs to keep in touch again.",
+      "zh": "需要再次保持联系。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“keep in touch”在这里可能指保持节奏或联系，注意语境。"
+    },
+    {
+      "id": "c1144",
+      "startTime": 3877.05,
+      "endTime": 3878.88,
+      "en": "Pressure, pressure for this man.",
+      "zh": "压力，压力对于这个人来说。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“pressure”重复强调压力，注意“for this man”的用法。"
+    },
+    {
+      "id": "c1145",
+      "startTime": 3879.21,
+      "endTime": 3880.11,
+      "en": "Got to keep it together.",
+      "zh": "必须保持镇定。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“keep it together”意为保持镇定，是常用短语。"
+    },
+    {
+      "id": "c1146",
+      "startTime": 3880.01,
+      "endTime": 3883.12,
+      "en": ">> I mean, yeah, cuz for sure his goal is to win gold.",
+      "zh": "我的意思是，是的，因为他的目标肯定是赢得金牌。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“for sure”表示肯定，“win gold”意为赢得金牌。"
+    },
+    {
+      "id": "c1147",
+      "startTime": 3884.73,
+      "endTime": 3885.33,
+      "en": ">> Oh, yeah.",
+      "zh": "哦，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Oh, yeah”是表示赞同的简单回应。"
+    },
+    {
+      "id": "c1148",
+      "startTime": 3885.17,
+      "endTime": 3887.6,
+      "en": "He would be gutted if he >> all bordering. So,",
+      "zh": "他会非常失望，如果……所有都接近。所以，",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "gutted"
+      ],
+      "note": "“gutted”是英式口语，意为非常失望，“bordering”可能指接近。"
+    },
+    {
+      "id": "c1149",
+      "startTime": 3895.29,
+      "endTime": 3901.28,
+      "en": "Dory is definitely known to be the physical climber on the cirit.",
+      "zh": "Dory绝对是巡回赛上公认的体能型攀岩者。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“physical climber”指体能型攀岩者，“on the circuit”指在巡回赛中。"
+    },
+    {
+      "id": "c1150",
+      "startTime": 3902.01,
+      "endTime": 3904,
+      "en": "So this would definitely be his border.",
+      "zh": "所以这绝对是他的边界。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“border”在这里可能指边界或极限，注意语境。"
+    },
+    {
+      "id": "c1151",
+      "startTime": 3904.09,
+      "endTime": 3907.68,
+      "en": ">> Whereas for Serato, slabs are not his greatest strength.",
+      "zh": "而对于Serato来说，板壁不是他的强项。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“not his greatest strength”意为不是他的强项，注意比较结构。"
+    },
+    {
+      "id": "c1152",
+      "startTime": 3907.69,
+      "endTime": 3909.44,
+      "en": "So it's going to be interesting here.",
+      "zh": "所以这里将会很有趣。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“going to be interesting”表示将会很有趣，注意将来时。"
+    },
+    {
+      "id": "c1153",
+      "startTime": 3909.69,
+      "endTime": 3912.32,
+      "en": ">> Oh, again that first move.",
+      "zh": "哦，又是那个第一个动作。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“again”表示再次，“first move”指第一个动作。"
+    },
+    {
+      "id": "c1154",
+      "startTime": 3913.45,
+      "endTime": 3919.84,
+      "en": "Yeah, I think I it's hard to see how these holds actually are.",
+      "zh": "是的，我觉得很难看清这些把手实际上是什么样的。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“hard to see”意为难以看清，“actually”强调实际。"
+    },
+    {
+      "id": "c1155",
+      "startTime": 3920.33,
+      "endTime": 3929.12,
+      "en": ">> So maybe they're expecting it to be better and then are quite surprised when they land into the hold and then that also puts you off a bit.",
+      "zh": "所以也许他们期望它更好，然后当他们落到那个点上时却相当惊讶，那也会让你有点分心。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "注意“puts you off”意为“让你分心/打乱你的节奏”。"
+    },
+    {
+      "id": "c1156",
+      "startTime": 3930.57,
+      "endTime": 3932.99,
+      "en": ">> So this is Serato again on this move.",
+      "zh": "所以这是Serato再次尝试这个动作。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“this move”指“这个动作”，常用于攀岩解说。"
+    },
+    {
+      "id": "c1157",
+      "startTime": 3932.89,
+      "endTime": 3936.88,
+      "en": "He's committing to the static way of doing it. >> I think he'll try",
+      "zh": "他正在采用静态的方式来做。 >> 我想他会尝试",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“committing to”意为“致力于/采用”，这里指“选择静态方式”。"
+    },
+    {
+      "id": "c1158",
+      "startTime": 3937.85,
+      "endTime": 3938.8,
+      "en": "something new.",
+      "zh": "一些新的东西。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“something new”指“新方法”，注意“new”的发音。"
+    },
+    {
+      "id": "c1159",
+      "startTime": 3938.73,
+      "endTime": 3941.68,
+      "en": "He'll feel that it doesn't feel like it can work.",
+      "zh": "他会觉得那感觉行不通。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“feel that it doesn't feel like it can work”意为“感觉它行不通”，注意“feel”的重复使用。"
+    },
+    {
+      "id": "c1160",
+      "startTime": 3941.85,
+      "endTime": 3944.24,
+      "en": "So he'll try to think of something else.",
+      "zh": "所以他会尝试想别的办法。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“think of something else”意为“想别的办法”，注意“else”的用法。"
+    },
+    {
+      "id": "c1161",
+      "startTime": 3944.49,
+      "endTime": 3947.87,
+      "en": ">> Yeah, there he does >> as he does here.",
+      "zh": "是的，他在这里做了 >> 就像他在这里做的那样。",
+      "score": 30,
+      "study": false,
+      "keywords": [],
+      "note": "“as he does here”意为“就像他在这里做的那样”，注意“as”的用法。"
+    },
+    {
+      "id": "c1162",
+      "startTime": 3947.77,
+      "endTime": 3951.36,
+      "en": "Yeah, but it was impressive his laptop in Madrid.",
+      "zh": "是的，但他在马德里的笔记本电脑令人印象深刻。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“impressive”意为“令人印象深刻”，注意“laptop”可能指“笔记本电脑”或“抱石”的误听，这里可能指“抱石”或“表现”。"
+    },
+    {
+      "id": "c1163",
+      "startTime": 3951.69,
+      "endTime": 3952.99,
+      "en": ">> that got him into finals.",
+      "zh": "那让他进入了决赛。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“got him into finals”意为“让他进入决赛”，注意“finals”的复数。"
+    },
+    {
+      "id": "c1164",
+      "startTime": 3952.89,
+      "endTime": 3955.12,
+      "en": "He didn't top this border. >> Just just",
+      "zh": "他没有完攀这个抱石。 >> 只是，只是",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“top”在攀岩中意为“完攀”，这里“didn't top”意为“没有完攀”。"
+    },
+    {
+      "id": "c1165",
+      "startTime": 3956.73,
+      "endTime": 3960,
+      "en": ">> I thought he was gone and then found something special there.",
+      "zh": "我以为他不行了，然后他在那里找到了特别的东西。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“I thought he was gone”意为“我以为他不行了”，注意“gone”的用法。"
+    },
+    {
+      "id": "c1166",
+      "startTime": 3960.41,
+      "endTime": 3963.47,
+      "en": ">> So he's he did right right also on that border.",
+      "zh": "所以他在那个抱石上也做对了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“did right”意为“做对了”，注意“right”的用法。"
+    },
+    {
+      "id": "c1167",
+      "startTime": 3963.37,
+      "endTime": 3966.64,
+      "en": "So he kind of knows what he's what he has to do right now.",
+      "zh": "所以他有点知道他现在必须做什么。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“kind of”意为“有点”，注意“what he has to do”的用法。"
+    },
+    {
+      "id": "c1168",
+      "startTime": 3967.61,
+      "endTime": 3973.12,
+      "en": "Lee is able to hold on to this move by once again also tapping his foot against the wall.",
+      "zh": "Lee能够保持住这个动作，再次用脚轻触墙壁。",
+      "score": 67,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "hold",
+        "move",
+        "foot"
+      ],
+      "note": "“tapping his foot against the wall”意为“用脚轻触墙壁”，注意“tapping”的发音。"
+    },
+    {
+      "id": "c1169",
+      "startTime": 3977.93,
+      "endTime": 3979.55,
+      "en": ">> Oh, and it crosses right over.",
+      "zh": "哦，它直接交叉过去了。",
+      "score": 22,
+      "study": false,
+      "keywords": [],
+      "note": "“crosses right over”意为“直接交叉过去”，注意“right”强调“直接”。"
+    },
+    {
+      "id": "c1170",
+      "startTime": 3979.45,
+      "endTime": 3989.6,
+      "en": "Okay, so we've seen three different intents three different methods on this last move and then also campuses >> easy top and S again. Yeah, nice one",
+      "zh": "好的，所以我们看到了三种不同的意图，三种不同的方法在这个最后的动作上，然后还有动态完攀 >> 轻松完攀，S再次。是的，漂亮。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "top",
+        "move"
+      ],
+      "note": "“campuses”指“动态完攀”，注意“easy top”意为“轻松完攀”。"
+    },
+    {
+      "id": "c1171",
+      "startTime": 3991.05,
+      "endTime": 3993.04,
+      "en": ">> I think he's disappointed he didn't do that quicker.",
+      "zh": "我想他对自己没有更快完成感到失望。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“disappointed”意为“失望”，注意“didn't do that quicker”的用法。"
+    },
+    {
+      "id": "c1172",
+      "startTime": 3993.45,
+      "endTime": 3994.91,
+      "en": ">> I mean, it was his second go.",
+      "zh": "我的意思是，那是他的第二次尝试。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“second go”意为“第二次尝试”，注意“go”的用法。"
+    },
+    {
+      "id": "c1173",
+      "startTime": 3994.81,
+      "endTime": 4001.04,
+      "en": "Yeah, but he kind of gave a little frustrated sort of movement >> or he's frustrated that it feels so",
+      "zh": "是的，但他有点表现出沮丧的动作 >> 或者他感到沮丧，因为感觉如此",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“frustrated”意为“沮丧”，注意“sort of”意为“有点”。"
+    },
+    {
+      "id": "c1174",
+      "startTime": 4003.05,
+      "endTime": 4003.87,
+      "en": ">> but maybe.",
+      "zh": "但也许。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“maybe”意为“也许”，注意发音。"
+    },
+    {
+      "id": "c1175",
+      "startTime": 4003.77,
+      "endTime": 4008.32,
+      "en": "Yes, >> cuz I think he knows smiling at the camera.",
+      "zh": "是的， >> 因为我想他知道，对着镜头微笑。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“smiling at the camera”意为“对着镜头微笑”，注意“camera”的发音。"
+    },
+    {
+      "id": "c1176",
+      "startTime": 4008.49,
+      "endTime": 4015.68,
+      "en": "I think he I mean, yeah, two other people have already topped it, so he knows that this might not be the separating border.",
+      "zh": "我想他，我的意思是，是的，另外两个人已经完攀了，所以他知道这可能不是决定性的抱石。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "topped"
+      ],
+      "note": "“separating border”可能指“决定性的抱石”，注意“separating”意为“区分”。"
+    },
+    {
+      "id": "c1177",
+      "startTime": 4015.69,
+      "endTime": 4017.95,
+      "en": "Yeah, >> which usually for him is the case.",
+      "zh": "是的， >> 这通常对他来说是这样的。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“which usually for him is the case”意为“这通常对他来说是这样的”，注意“the case”的用法。"
+    },
+    {
+      "id": "c1178",
+      "startTime": 4017.85,
+      "endTime": 4023.44,
+      "en": "Like the physical borders is what puts him >> Yeah, that was a campus move at the top.",
+      "zh": "比如物理性的抱石就是让他 >> 是的，那是一个顶部的动态动作。",
+      "score": 65,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "move",
+        "campus"
+      ],
+      "note": "“campus move”指“动态动作”，注意“at the top”意为“在顶部”。"
+    },
+    {
+      "id": "c1179",
+      "startTime": 4025.05,
+      "endTime": 4028.4,
+      "en": "So there there is an appeal going against Ray Kawamata.",
+      "zh": "所以现在有一项针对Ray Kawamata的申诉。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "appeal"
+      ],
+      "note": "注意“appeal”在这里指“申诉”，常用于比赛规则争议。"
+    },
+    {
+      "id": "c1180",
+      "startTime": 4034.57,
+      "endTime": 4036.91,
+      "en": "trying to get confirmation exactly what the appeal is.",
+      "zh": "正在试图确认申诉的具体内容。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "appeal"
+      ],
+      "note": "“confirmation”意为“确认”，常用于需要核实信息时。"
+    },
+    {
+      "id": "c1181",
+      "startTime": 4036.81,
+      "endTime": 4037.41,
+      "en": ">> Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay”是常见回应词，表示同意或理解。"
+    },
+    {
+      "id": "c1182",
+      "startTime": 4037.13,
+      "endTime": 4042.4,
+      "en": "So we unfortunately didn't see but Sarata did give one go on the last move here.",
+      "zh": "很遗憾我们没看到，但Sarata确实在最后一个动作上尝试了一次。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“unfortunately”表示“遗憾地”，常用于表达负面情况。"
+    },
+    {
+      "id": "c1183",
+      "startTime": 4049.13,
+      "endTime": 4054,
+      "en": ">> Oh, it took him quite a few attempts to understand this move. So,",
+      "zh": "哦，他花了好几次尝试才理解这个动作。所以，",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“quite a few”意为“不少”，强调数量多。"
+    },
+    {
+      "id": "c1184",
+      "startTime": 4055.05,
+      "endTime": 4057.84,
+      "en": "it's definitely important for him to get it done quickly.",
+      "zh": "对他来说尽快完成这个动作肯定很重要。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“definitely”加强语气，意为“肯定地”。"
+    },
+    {
+      "id": "c1185",
+      "startTime": 4060.01,
+      "endTime": 4065.71,
+      "en": ">> I presume his appeal is against the top, but that would be strange for me because it seemed like he did get that top.",
+      "zh": "我猜他的申诉是针对完攀的，但对我来说这很奇怪，因为看起来他确实完成了。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "top",
+        "appeal"
+      ],
+      "note": "“presume”意为“推测”，常用于不确定时。"
+    },
+    {
+      "id": "c1186",
+      "startTime": 4065.61,
+      "endTime": 4066.43,
+      "en": "So, I don't know.",
+      "zh": "所以，我不知道。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“I don't know”是常用表达，表示不确定。"
+    },
+    {
+      "id": "c1187",
+      "startTime": 4066.33,
+      "endTime": 4069.07,
+      "en": ">> Ah, he sticks the I don't know what the appeal would be.",
+      "zh": "啊，他坚持住了，我不知道申诉会是什么。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "appeal"
+      ],
+      "note": "“sticks”在这里指“坚持”，但注意“stick”也有“粘住”的意思。"
+    },
+    {
+      "id": "c1188",
+      "startTime": 4068.97,
+      "endTime": 4071.36,
+      "en": ">> I'm trying to get confirmation. >> Maybe the start position",
+      "zh": "我正试图确认。 >> 也许是起始位置。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“start position”指“起始位置”，在攀岩中很重要。"
+    },
+    {
+      "id": "c1189",
+      "startTime": 4072.57,
+      "endTime": 4074.08,
+      "en": ">> So, here is Serato.",
+      "zh": "所以，这是Serato。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "注意人名“Serato”可能是“Sarata”的误听，但保持原样。"
+    },
+    {
+      "id": "c1190",
+      "startTime": 4074.25,
+      "endTime": 4076.32,
+      "en": ">> Here he is on hit on the last",
+      "zh": "他在这里，在最后一个动作上。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“on hit”可能指“在击打点”，但这里可能指“在最后一个动作”。"
+    },
+    {
+      "id": "c1191",
+      "startTime": 4079.61,
+      "endTime": 4082.03,
+      "en": "he was he kind of held on to it.",
+      "zh": "他有点抓住了它。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“kind of”意为“有点”，口语常用。"
+    },
+    {
+      "id": "c1192",
+      "startTime": 4081.93,
+      "endTime": 4086.64,
+      "en": "You could see by his body swing that kind of like stopped the movement but then wasn't able to hold it.",
+      "zh": "你可以从他的身体摆动看出，他停止了移动，但没能保持住。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "hold",
+        "swing"
+      ],
+      "note": "“body swing”指“身体摆动”，描述动态动作。"
+    },
+    {
+      "id": "c1193",
+      "startTime": 4089.05,
+      "endTime": 4095.2,
+      "en": "He probably feels the the stress right now that he has to but",
+      "zh": "他现在可能感到压力，因为他必须……",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“stress”指“压力”，常用于比赛情境。"
+    },
+    {
+      "id": "c1194",
+      "startTime": 4096.17,
+      "endTime": 4097.84,
+      "en": "I mean he's so used to pressure.",
+      "zh": "我的意思是，他习惯了压力。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“be used to”意为“习惯于”，注意后接名词或动名词。"
+    },
+    {
+      "id": "c1195",
+      "startTime": 4097.77,
+      "endTime": 4099.6,
+      "en": "He did that move beautifully then.",
+      "zh": "他那个动作做得漂亮。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“beautifully”副词修饰动词，意为“漂亮地”。"
+    },
+    {
+      "id": "c1196",
+      "startTime": 4100.09,
+      "endTime": 4101.68,
+      "en": ">> 30 seconds for Sarat.",
+      "zh": "Sarata还有30秒。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“30 seconds”是时间表达，注意“for”表示“对于”。"
+    },
+    {
+      "id": "c1197",
+      "startTime": 4102.73,
+      "endTime": 4108.8,
+      "en": "He's got the zone which is very important and he's going to GET THE TOP. OH, SIR, you're",
+      "zh": "他拿到了Zone，这很重要，而且他要完攀了！哦，天哪，你太疯狂了！",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "top",
+        "zone"
+      ],
+      "note": "“GET THE TOP”是完攀的强调说法，注意大写表示激动。"
+    },
+    {
+      "id": "c1198",
+      "startTime": 4109.93,
+      "endTime": 4111.52,
+      "en": ">> so crazy.",
+      "zh": "太疯狂了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“crazy”口语中表示“难以置信”。"
+    },
+    {
+      "id": "c1199",
+      "startTime": 4111.69,
+      "endTime": 4112.8,
+      "en": "That is amazing.",
+      "zh": "太惊人了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“amazing”意为“令人惊叹的”。"
+    },
+    {
+      "id": "c1200",
+      "startTime": 4114.33,
+      "endTime": 4122.32,
+      "en": ">> Like you could you could kind of tell by the way he was looking at the border that he was starting to get maybe a bit >> maybe not panicky,",
+      "zh": "就像你可以从他看边界的方式看出，他开始有点……也许不是恐慌，",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "“panicky”是“panic”的形容词形式，意为“恐慌的”。"
+    },
+    {
+      "id": "c1201",
+      "startTime": 4122.25,
+      "endTime": 4124.19,
+      "en": "but like okay, like I've got to do it now.",
+      "zh": "但像是，好吧，我现在必须做了。",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "“I've got to”是“I have got to”的缩写，意为“我必须”。"
+    },
+    {
+      "id": "c1202",
+      "startTime": 4124.09,
+      "endTime": 4124.69,
+      "en": ">> Well, exactly.",
+      "zh": "嗯，确实。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“exactly”表示“确切地”，用于同意对方。"
+    },
+    {
+      "id": "c1203",
+      "startTime": 4124.57,
+      "endTime": 4126.75,
+      "en": "It's probably going out last when you what's happened.",
+      "zh": "这可能是最后一次出场了，当你看到发生了什么之后。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'probably going out last' 中的 'going out' 指选手出场，'last' 指最后。"
+    },
+    {
+      "id": "c1204",
+      "startTime": 4126.65,
+      "endTime": 4131.6,
+      "en": "The appeal against Ray is for the start, which is going to be interesting to that starting position,",
+      "zh": "对Ray的申诉是关于起步姿势的，这将会很有趣，因为那个起始姿势，",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "appeal"
+      ],
+      "note": "'appeal' 是申诉，'start' 指起步，'interesting' 表示有趣。"
+    },
+    {
+      "id": "c1205",
+      "startTime": 4132.41,
+      "endTime": 4134.03,
+      "en": ">> which is an interesting one.",
+      "zh": "这确实是个有趣的姿势。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'which is an interesting one' 中 'one' 指代前面的 'starting position'。"
+    },
+    {
+      "id": "c1206",
+      "startTime": 4133.93,
+      "endTime": 4135.04,
+      "en": "That one, >> guys.",
+      "zh": "那个，各位。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'guys' 是口语中对观众的称呼，类似“各位”。"
+    },
+    {
+      "id": "c1207",
+      "startTime": 4135.29,
+      "endTime": 4136.48,
+      "en": "And you see another.",
+      "zh": "你又看到另一个。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'another' 指另一个动作或情况。"
+    },
+    {
+      "id": "c1208",
+      "startTime": 4136.97,
+      "endTime": 4138.4,
+      "en": ">> So we'll wait and see for",
+      "zh": "所以我们等着看",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'wait and see' 是固定搭配，表示“等着瞧”。"
+    },
+    {
+      "id": "c1209",
+      "startTime": 4142.73,
+      "endTime": 4144.16,
+      "en": "that in the background as well.",
+      "zh": "那个背景情况。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'in the background' 指在幕后，这里指申诉的进展。"
+    },
+    {
+      "id": "c1210",
+      "startTime": 4144.33,
+      "endTime": 4146.08,
+      "en": "Ser eyeing up the top.",
+      "zh": "Ser 正盯着顶部。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "'eye up' 是动词短语，表示“注视、打量”，'top' 指攀岩线路的顶部。"
+    },
+    {
+      "id": "c1211",
+      "startTime": 4146.01,
+      "endTime": 4146.61,
+      "en": ">> Oh yeah.",
+      "zh": "哦，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Oh yeah' 表示赞同或感叹。"
+    },
+    {
+      "id": "c1212",
+      "startTime": 4146.37,
+      "endTime": 4149.68,
+      "en": "Unfortunately I didn't see >> what he did.",
+      "zh": "不幸的是，我没有看到他做了什么。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'Unfortunately' 是“不幸地”，'didn't see' 是“没看到”。"
+    },
+    {
+      "id": "c1213",
+      "startTime": 4151.85,
+      "endTime": 4153.28,
+      "en": ">> Would he be able to reclimb",
+      "zh": "他能不能重新攀爬？",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'reclimb' 是“重新攀爬”，'would he be able to' 是“他能否”。"
+    },
+    {
+      "id": "c1214",
+      "startTime": 4156.33,
+      "endTime": 4156.93,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示肯定。"
+    },
+    {
+      "id": "c1215",
+      "startTime": 4156.53,
+      "endTime": 4157.55,
+      "en": "They slot him in.",
+      "zh": "他们把他安排进去了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'slot in' 是“插入、安排”，这里指将选手重新安排到比赛中。"
+    },
+    {
+      "id": "c1216",
+      "startTime": 4157.45,
+      "endTime": 4158.05,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "再次肯定。"
+    },
+    {
+      "id": "c1217",
+      "startTime": 4158.33,
+      "endTime": 4160.08,
+      "en": "Because it's a judging issue.",
+      "zh": "因为这是裁判的问题。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'judging issue' 指裁判判罚问题。"
+    },
+    {
+      "id": "c1218",
+      "startTime": 4160.01,
+      "endTime": 4160.99,
+      "en": "They should stop it.",
+      "zh": "他们应该停止比赛。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'should stop it' 中 'it' 指比赛。"
+    },
+    {
+      "id": "c1219",
+      "startTime": 4160.93,
+      "endTime": 4161.95,
+      "en": "I mean uh hang on.",
+      "zh": "我的意思是，呃，等等。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'hang on' 是口语，表示“等一下”。"
+    },
+    {
+      "id": "c1220",
+      "startTime": 4161.85,
+      "endTime": 4162.51,
+      "en": "Has it come?",
+      "zh": "有消息了吗？",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Has it come?' 中 'it' 指消息或更新。"
+    },
+    {
+      "id": "c1221",
+      "startTime": 4162.41,
+      "endTime": 4163.68,
+      "en": "Getting an update here.",
+      "zh": "这里正在获取更新。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'getting an update' 是“收到更新”。"
+    },
+    {
+      "id": "c1222",
+      "startTime": 4165.77,
+      "endTime": 4166.83,
+      "en": "No, not an update yet.",
+      "zh": "不，还没有更新。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'not an update yet' 表示“还没有更新”。"
+    },
+    {
+      "id": "c1223",
+      "startTime": 4166.77,
+      "endTime": 4168.35,
+      "en": "Oh, I'm getting an update as we speak.",
+      "zh": "哦，我正收到更新，就在我们说话的时候。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'as we speak' 是“就在我们说话的时候”，表示正在发生。"
+    },
+    {
+      "id": "c1224",
+      "startTime": 4168.25,
+      "endTime": 4171.84,
+      "en": "I'm getting dots, >> Once again, we're just waiting for the dots to appear.",
+      "zh": "我看到点了，再次强调，我们只是在等待点出现。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'dots' 可能指屏幕上的提示点，'once again' 是“再次”。"
+    },
+    {
+      "id": "c1225",
+      "startTime": 4172.89,
+      "endTime": 4173.95,
+      "en": ">> The message to appear.",
+      "zh": "消息出现。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'message' 指信息，'appear' 是“出现”。"
+    },
+    {
+      "id": "c1226",
+      "startTime": 4173.85,
+      "endTime": 4174.45,
+      "en": ">> Still waiting.",
+      "zh": "还在等待。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'still waiting' 是“仍在等待”。"
+    },
+    {
+      "id": "c1227",
+      "startTime": 4174.33,
+      "endTime": 4176.03,
+      "en": "Oh, >> and it's just a thumbs up.",
+      "zh": "哦，>> 而且只是竖了个大拇指。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意“thumbs up”是“竖大拇指”的意思，常用于表示赞许。"
+    },
+    {
+      "id": "c1228",
+      "startTime": 4175.93,
+      "endTime": 4177.2,
+      "en": ">> Yeah, that was me.",
+      "zh": ">> 是的，那是我。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“that was me”表示“那是我做的”，口语常用。"
+    },
+    {
+      "id": "c1229",
+      "startTime": 4178.81,
+      "endTime": 4180.8,
+      "en": ">> It's like the dots appear, then they disappear.",
+      "zh": ">> 就像那些点出现了，然后又消失了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“dots”在这里指攀岩墙上的点，注意“appear”和“disappear”的对比。"
+    },
+    {
+      "id": "c1230",
+      "startTime": 4180.73,
+      "endTime": 4181.92,
+      "en": "They appear, they disappear.",
+      "zh": "它们出现，又消失。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "重复句式强调动作，注意“appear”和“disappear”的发音。"
+    },
+    {
+      "id": "c1231",
+      "startTime": 4182.01,
+      "endTime": 4184.56,
+      "en": ">> Yes, we have a system.",
+      "zh": ">> 是的，我们有一个系统。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“system”在这里指一套方法或流程。"
+    },
+    {
+      "id": "c1232",
+      "startTime": 4185.13,
+      "endTime": 4186.19,
+      "en": ">> So, the crowd wait.",
+      "zh": ">> 所以，人群在等待。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“crowd”指人群，注意“wait”的发音。"
+    },
+    {
+      "id": "c1233",
+      "startTime": 4186.09,
+      "endTime": 4189.12,
+      "en": "We wait to find out what's going to happen to Ray Cow and Mata.",
+      "zh": "我们等着看Ray Cow和Mata会发生什么。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“find out”表示“查明”，注意人名发音。"
+    },
+    {
+      "id": "c1234",
+      "startTime": 4190.01,
+      "endTime": 4191.47,
+      "en": "The dots have disappeared again.",
+      "zh": "那些点又消失了。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“again”表示“再次”，注意“disappeared”的过去式。"
+    },
+    {
+      "id": "c1235",
+      "startTime": 4191.37,
+      "endTime": 4199.07,
+      "en": "I don't know what's going on but lead no is leading the way at the moment with 59.3 then Sam Abazoo then Chong Jong Juan Ray",
+      "zh": "我不知道发生了什么，但目前领先的是lead no，成绩是59.3，然后是Sam Abazoo，再是Chong Jong Juan Ray。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“leading the way”表示“领先”，注意数字和名字的听辨。"
+    },
+    {
+      "id": "c1236",
+      "startTime": 4198.97,
+      "endTime": 4203.04,
+      "en": "Kawamata after that but remember the first three are a bolder ahead",
+      "zh": "之后是Kawamata，但记住前三名领先一个抱石。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“a boulder ahead”表示“领先一个抱石”，注意“ahead”的用法。"
+    },
+    {
+      "id": "c1237",
+      "startTime": 4204.57,
+      "endTime": 4212.27,
+      "en": "but I mean this is what I mean by like slabs if we look at the attempts got the zone in 12 attempts so he gave",
+      "zh": "但我的意思是，这就是我所说的板壁，如果我们看尝试次数，他用了12次才到达Zone，所以他给了这个抱石很多尝试。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“slab”指板壁，注意“attempts”和“zone”的用法。"
+    },
+    {
+      "id": "c1238",
+      "startTime": 4212.17,
+      "endTime": 4214.56,
+      "en": "a lot of attempts on this boulder which",
+      "zh": "这是你可以做的，因为这是板壁。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“something you can do”表示“你可以做的事情”，注意口语化表达。"
+    },
+    {
+      "id": "c1239",
+      "startTime": 4216.49,
+      "endTime": 4219.95,
+      "en": "something you can do cuz it's a slab >> topped in 11.",
+      "zh": ">> 11次完攀。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "topped",
+        "slab"
+      ],
+      "note": "“topped”表示“完攀”，注意“in 11”表示“用了11次”。"
+    },
+    {
+      "id": "c1240",
+      "startTime": 4219.85,
+      "endTime": 4220.59,
+      "en": "Yeah, sorry.",
+      "zh": "是的，抱歉。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“sorry”用于道歉，注意语气。"
+    },
+    {
+      "id": "c1241",
+      "startTime": 4220.49,
+      "endTime": 4221.15,
+      "en": "No, no, it's fine.",
+      "zh": "不，不，没关系。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“it's fine”表示“没关系”，常用于回应道歉。"
+    },
+    {
+      "id": "c1242",
+      "startTime": 4221.05,
+      "endTime": 4224.64,
+      "en": "We're just going to have a little break here, let you watch these uh proceedings.",
+      "zh": "我们只是要休息一下，让你观看这些过程。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“have a little break”表示“休息一下”，注意“proceedings”指“过程”。"
+    },
+    {
+      "id": "c1243",
+      "startTime": 4224.57,
+      "endTime": 4228.4,
+      "en": "We'll be back in a couple of minutes for the second half of this Boulder final.",
+      "zh": "几分钟后我们会回来，继续观看抱石决赛的下半场。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "final"
+      ],
+      "note": "“be back”表示“回来”，注意“second half”指“下半场”。"
+    },
+    {
+      "id": "c1244",
+      "startTime": 4255.93,
+      "endTime": 4259.52,
+      "en": "If you got a black ball, there is a number of it.",
+      "zh": "如果你有一个黑球，上面有一个数字。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“black ball”可能指抽签用的黑球，注意“number”的发音。"
+    },
+    {
+      "id": "c1245",
+      "startTime": 4259.69,
+      "endTime": 4261.12,
+      "en": "What is the number of it?",
+      "zh": "数字是多少？",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“What is the number?”是询问数字的常用句型。"
+    },
+    {
+      "id": "c1246",
+      "startTime": 4261.37,
+      "endTime": 4263.2,
+      "en": "You can change it.",
+      "zh": "你可以改变它。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“change”表示“改变”，注意“it”指代数字。"
+    },
+    {
+      "id": "c1247",
+      "startTime": 4263.37,
+      "endTime": 4266.16,
+      "en": "And then you get some shady LP2.",
+      "zh": "然后你会得到一些有问题的LP2。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“shady”在这里可能指“可疑的”，注意“LP2”可能是特定术语。"
+    },
+    {
+      "id": "c1248",
+      "startTime": 4267.93,
+      "endTime": 4270.24,
+      "en": "You can get the black with the number of",
+      "zh": "你可以得到带有数字的黑球。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“with the number of”表示“带有...的数字”，注意“of”的用法。"
+    },
+    {
+      "id": "c1249",
+      "startTime": 4294.81,
+      "endTime": 4295.41,
+      "en": "boulder is it?",
+      "zh": "是哪个抱石？",
+      "score": 21,
+      "study": false,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“which boulder”询问具体哪个抱石，注意“which”的用法。"
+    },
+    {
+      "id": "c1250",
+      "startTime": 4295.33,
+      "endTime": 4296.48,
+      "en": "Full of four.",
+      "zh": "四个中的全部。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“full of four”可能表示“四个全部”，注意“full”的用法。"
+    },
+    {
+      "id": "c1251",
+      "startTime": 4296.41,
+      "endTime": 4297.01,
+      "en": "Four.",
+      "zh": "四。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意数字的发音，/fɔːr/。"
+    },
+    {
+      "id": "c1252",
+      "startTime": 4298.09,
+      "endTime": 4298.69,
+      "en": ">> Gladiator.",
+      "zh": ">> 角斗士。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "Gladiator 是线路名称，直译为角斗士。"
+    },
+    {
+      "id": "c1253",
+      "startTime": 4298.81,
+      "endTime": 4299.41,
+      "en": "I like that.",
+      "zh": "我喜欢这个。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "I like that. 常用口语表达。"
+    },
+    {
+      "id": "c1254",
+      "startTime": 4299.29,
+      "endTime": 4300.56,
+      "en": "Pressing in every direction.",
+      "zh": "向各个方向按压。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "pressing 在这里指用手脚发力按压岩点。"
+    },
+    {
+      "id": "c1255",
+      "startTime": 4300.65,
+      "endTime": 4303.12,
+      "en": "Um, this is complex, isn't it, Sophia?",
+      "zh": "嗯，这很复杂，是吧，索菲亚？",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "isn't it 是反意疑问句，期待对方同意。"
+    },
+    {
+      "id": "c1256",
+      "startTime": 4303.37,
+      "endTime": 4303.97,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "Yes 简单回应，注意语调。"
+    },
+    {
+      "id": "c1257",
+      "startTime": 4303.77,
+      "endTime": 4305.63,
+      "en": "So, this is interesting.",
+      "zh": "所以，这很有趣。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "interesting 在这里表示值得关注。"
+    },
+    {
+      "id": "c1258",
+      "startTime": 4305.53,
+      "endTime": 4308.88,
+      "en": "I'm not completely sure, but the start position, you kind of have to climb into it.",
+      "zh": "我不完全确定，但起始位置，你得爬进去。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "climb into it 表示进入起始姿势。"
+    },
+    {
+      "id": "c1259",
+      "startTime": 4308.81,
+      "endTime": 4317.44,
+      "en": "You start quite high up and then you're going to have to kind of balance trust feet on these volumes and then cross through and push",
+      "zh": "你从相当高的地方开始，然后你得在岩点上平衡信任双脚，然后交叉通过并推",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "cross",
+        "balance"
+      ],
+      "note": "balance trust feet 指信任脚点并保持平衡。"
+    },
+    {
+      "id": "c1260",
+      "startTime": 4317.45,
+      "endTime": 4324.56,
+      "en": "against the zone hold and then push once again to like the last move. So, it's very shouldery,",
+      "zh": "对抗Zone点，然后再次推到最后一步。所以，这非常考验肩部，",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "zone",
+        "hold",
+        "move"
+      ],
+      "note": "shouldery 指对肩部力量要求高。"
+    },
+    {
+      "id": "c1261",
+      "startTime": 4327.45,
+      "endTime": 4328.43,
+      "en": "we've seen before.",
+      "zh": "我们以前见过。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "we've seen before 表示之前见过类似情况。"
+    },
+    {
+      "id": "c1262",
+      "startTime": 4328.33,
+      "endTime": 4329.52,
+      "en": "There's a lot of shoulder injuries.",
+      "zh": "有很多肩部损伤。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "shoulder"
+      ],
+      "note": "shoulder injuries 肩部受伤。"
+    },
+    {
+      "id": "c1263",
+      "startTime": 4330.41,
+      "endTime": 4335.68,
+      "en": ">> Well, this is a very iconic thing here in the clapping. Everyone's phones come",
+      "zh": ">> 嗯，这是这里非常标志性的一幕。每个人的手机都拿出来",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "iconic 标志性的，phones come out 拿出手机。"
+    },
+    {
+      "id": "c1264",
+      "startTime": 4337.93,
+      "endTime": 4339.36,
+      "en": ">> Brings so much hype.",
+      "zh": ">> 带来很多炒作。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "hype 指炒作、兴奋。"
+    },
+    {
+      "id": "c1265",
+      "startTime": 4339.61,
+      "endTime": 4340.96,
+      "en": ">> It does, doesn't it?",
+      "zh": ">> 确实，不是吗？",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "doesn't it 反意疑问，强调同意。"
+    },
+    {
+      "id": "c1266",
+      "startTime": 4340.89,
+      "endTime": 4343.6,
+      "en": "It's very, very Insert this moment.",
+      "zh": "非常非常插入这个时刻。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "Insert 可能指插入广告或暂停，这里指插入这个时刻。"
+    },
+    {
+      "id": "c1267",
+      "startTime": 4344.97,
+      "endTime": 4346.56,
+      "en": "The crowd clap.",
+      "zh": "人群鼓掌。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "crowd clap 人群鼓掌。"
+    },
+    {
+      "id": "c1268",
+      "startTime": 4346.81,
+      "endTime": 4348.59,
+      "en": "What an Insert moment that is.",
+      "zh": "多么插入的时刻啊。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "What a ... 感叹句，表示多么……。"
+    },
+    {
+      "id": "c1269",
+      "startTime": 4348.49,
+      "endTime": 4349.68,
+      "en": "Right, here we go.",
+      "zh": "好，我们开始吧。",
+      "score": 2,
+      "study": false,
+      "keywords": [],
+      "note": "here we go 表示开始。"
+    },
+    {
+      "id": "c1270",
+      "startTime": 4350.97,
+      "endTime": 4354.51,
+      "en": "And we should talk about uh appeals here.",
+      "zh": "我们应该在这里讨论一下申诉。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "appeals 申诉，指对判罚的抗议。"
+    },
+    {
+      "id": "c1271",
+      "startTime": 4354.45,
+      "endTime": 4356.27,
+      "en": "And I'll say it now and then I'll say it later.",
+      "zh": "我现在说一次，稍后再说。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "I'll say it now and then I'll say it later 强调重要。"
+    },
+    {
+      "id": "c1272",
+      "startTime": 4356.17,
+      "endTime": 4361.44,
+      "en": "The Ray Carata's appeal has been rejected. So the boulder will stand",
+      "zh": "Ray Carata的申诉被驳回了。所以这个抱石成绩将保持",
+      "score": 66,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "boulder",
+        "appeal"
+      ],
+      "note": "appeal rejected 申诉被驳回，boulder 指抱石线路。"
+    },
+    {
+      "id": "c1273",
+      "startTime": 4366.81,
+      "endTime": 4369.07,
+      "en": "missed that breakout matter, we were talking about the appeal.",
+      "zh": "错过了那个突破点，我们刚才在讨论申诉。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "appeal"
+      ],
+      "note": "breakout matter 可能指突破性事件，这里指申诉。"
+    },
+    {
+      "id": "c1274",
+      "startTime": 4368.97,
+      "endTime": 4370.72,
+      "en": "It's been rejected for starting position.",
+      "zh": "因起始位置被驳回。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "starting position 起始位置，被驳回的原因。"
+    },
+    {
+      "id": "c1275",
+      "startTime": 4370.65,
+      "endTime": 4373.92,
+      "en": "So that very important top two is still there.",
+      "zh": "所以那个非常重要的顶部两个点还在。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "注意“top two”在攀岩中常指顶部两个手点，这里指关键得分点。"
+    },
+    {
+      "id": "c1276",
+      "startTime": 4373.85,
+      "endTime": 4375.76,
+      "en": "So he's in a good position for the rest of this.",
+      "zh": "所以他处于有利位置，可以完成接下来的部分。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“in a good position”是常用表达，表示处于有利位置。"
+    },
+    {
+      "id": "c1277",
+      "startTime": 4375.69,
+      "endTime": 4379.68,
+      "en": ">> That is I mean great news for he would have been able to reclim.",
+      "zh": "那对他来说是个好消息，因为他本来可以重新攀爬的。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“would have been able to”是虚拟语气，表示本可以做到但未发生。"
+    },
+    {
+      "id": "c1278",
+      "startTime": 4380.41,
+      "endTime": 4381.76,
+      "en": ">> cuz it wasn't his fault.",
+      "zh": "因为那不是他的错。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“cuz”是“because”的口语缩写，常用于非正式对话。"
+    },
+    {
+      "id": "c1279",
+      "startTime": 4381.69,
+      "endTime": 4383.15,
+      "en": ">> But it's never ideal, is it?",
+      "zh": "但这从来都不是理想的，对吧？",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“never ideal”表示绝不理想，注意“is it?”是反意疑问句。"
+    },
+    {
+      "id": "c1280",
+      "startTime": 4383.05,
+      "endTime": 4383.65,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1281",
+      "startTime": 4383.37,
+      "endTime": 4389.36,
+      "en": "You just have the you have less time first of all and then you just have the pressure because you knew you know you could do it.",
+      "zh": "首先，你时间更少，然后你还有压力，因为你知道你能做到。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“first of all”表示首先，“you knew you could do it”强调自信带来的压力。"
+    },
+    {
+      "id": "c1282",
+      "startTime": 4389.45,
+      "endTime": 4392.16,
+      "en": ">> Now Sagasa is down low at the moment.",
+      "zh": "现在Sagasa在低处。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“down low”指在岩壁低处，注意“at the moment”表示此刻。"
+    },
+    {
+      "id": "c1283",
+      "startTime": 4392.33,
+      "endTime": 4395.44,
+      "en": ">> Oh, so Sam is staying is going low.",
+      "zh": "哦，所以Sam选择走低处。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“staying is going low”可能指他选择低路线，注意“staying”可能为“staying”误写，但意思为保持低。"
+    },
+    {
+      "id": "c1284",
+      "startTime": 4395.37,
+      "endTime": 4397.04,
+      "en": "He isn't even going up.",
+      "zh": "他甚至没有往上走。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“isn't even going up”强调他完全没有向上移动。"
+    },
+    {
+      "id": "c1285",
+      "startTime": 4397.93,
+      "endTime": 4400.64,
+      "en": ">> Oh yes, >> he just >> he just broken the boulder.",
+      "zh": "哦，是的，他刚刚打破了那块石头。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“broken the boulder”可能指打破了岩点或巨石，注意“boulder”在攀岩中常指大石头。"
+    },
+    {
+      "id": "c1286",
+      "startTime": 4401.21,
+      "endTime": 4403.52,
+      "en": ">> I mean maybe that's the way.",
+      "zh": "也许那就是方法。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“maybe that's the way”表示也许那是正确的路线或方法。"
+    },
+    {
+      "id": "c1287",
+      "startTime": 4403.45,
+      "endTime": 4408.56,
+      "en": "But also they have added some sort of something into the screw holds.",
+      "zh": "但他们也在螺丝点上加了某种东西。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“screw holds”指螺丝点，注意“some sort of something”表示某种东西。"
+    },
+    {
+      "id": "c1288",
+      "startTime": 4408.81,
+      "endTime": 4414.48,
+      "en": "So, I mean, he's using the sides of the volumes right now, but the screw holds usually >> they help a lot.",
+      "zh": "所以，他现在正在利用岩壁的侧面，但螺丝点通常帮助很大。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“volumes”指岩壁的立体结构，注意“usually”表示通常。"
+    },
+    {
+      "id": "c1289",
+      "startTime": 4414.97,
+      "endTime": 4417.04,
+      "en": ">> Um, but they block them.",
+      "zh": "嗯，但他们堵住了它们。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“block them”指堵住螺丝点，注意“them”指代螺丝点。"
+    },
+    {
+      "id": "c1290",
+      "startTime": 4417.45,
+      "endTime": 4420.4,
+      "en": ">> I wonder if that is the I mean, we' looked at it standing up.",
+      "zh": "我想知道那是不是我们站着看时的那个。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“I wonder if”表示想知道，“standing up”可能指从站立角度观察。"
+    },
+    {
+      "id": "c1291",
+      "startTime": 4422.17,
+      "endTime": 4428.11,
+      "en": ">> I mean, I am known for I'm not the one climbing, so that's Isn't that my >> Okay.",
+      "zh": "我是说，我以不攀爬而闻名，所以那不是我的……好吧。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“I'm not the one climbing”表示我不是攀爬者，注意“Isn't that my”可能为“isn't that my job”的省略。"
+    },
+    {
+      "id": "c1292",
+      "startTime": 4428.01,
+      "endTime": 4433.39,
+      "en": "But this press, I think, is very hard because it's quite far out >> and I mean, yeah,",
+      "zh": "但这个按压动作，我觉得很难，因为它相当远，而且，是的，",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“press”指按压动作，“quite far out”表示距离远。"
+    },
+    {
+      "id": "c1293",
+      "startTime": 4433.29,
+      "endTime": 4436.72,
+      "en": "it's >> any kind of press up.",
+      "zh": "任何形式的向上按压。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“any kind of press up”指任何类型的向上按压动作。"
+    },
+    {
+      "id": "c1294",
+      "startTime": 4436.73,
+      "endTime": 4438.72,
+      "en": "Oh, he's thinking, yeah, maybe turning around.",
+      "zh": "哦，他在思考，也许转身。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“turning around”指转身，注意“maybe”表示不确定。"
+    },
+    {
+      "id": "c1295",
+      "startTime": 4440.01,
+      "endTime": 4445.31,
+      "en": ">> But since he's the first climber on this border, also the crowd doesn't really know.",
+      "zh": "但由于他是第一个攀爬这条线路的选手，观众也不太清楚。",
+      "score": 52,
+      "study": true,
+      "keywords": [],
+      "note": "“first climber”指第一个攀爬者，“the crowd”指观众。"
+    },
+    {
+      "id": "c1296",
+      "startTime": 4445.21,
+      "endTime": 4448.83,
+      "en": "Maybe the coaches aren't completely sure how to get it done.",
+      "zh": "也许教练们也不完全确定如何完成。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“aren't completely sure”表示不完全确定，“get it done”表示完成。"
+    },
+    {
+      "id": "c1297",
+      "startTime": 4448.73,
+      "endTime": 4451.2,
+      "en": "So, he's just going to have to figure this out himself.",
+      "zh": "所以，他只能自己想办法。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“figure this out”表示弄清楚，“himself”强调独自。"
+    },
+    {
+      "id": "c1298",
+      "startTime": 4451.37,
+      "endTime": 4452.19,
+      "en": ">> Sam's by himself.",
+      "zh": "Sam独自一人。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“by himself”表示独自一人，注意“by”的用法。"
+    },
+    {
+      "id": "c1299",
+      "startTime": 4452.09,
+      "endTime": 4454.03,
+      "en": "And S is in a lonely place as well.",
+      "zh": "而S也处于一个孤立的位置。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意“in a lonely place”在攀岩语境中指位置孤立，难以借力。"
+    },
+    {
+      "id": "c1300",
+      "startTime": 4453.93,
+      "endTime": 4454.99,
+      "en": "He's down on the scores.",
+      "zh": "他的得分落后了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“down on the scores”表示比分落后，注意介词“on”的用法。"
+    },
+    {
+      "id": "c1301",
+      "startTime": 4454.89,
+      "endTime": 4456.72,
+      "en": "He doesn't like that right hand either.",
+      "zh": "他也不喜欢那个右手点。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“doesn't like”在口语中常表示“不喜欢”，这里指手点不好抓。"
+    },
+    {
+      "id": "c1302",
+      "startTime": 4456.65,
+      "endTime": 4458.51,
+      "en": ">> Yeah, he just he can see his right hand.",
+      "zh": ">> 是的，他只是能看到他的右手。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“he just he can see”是口语中的重复，强调他能看到手。"
+    },
+    {
+      "id": "c1303",
+      "startTime": 4458.41,
+      "endTime": 4459.84,
+      "en": "It just keeps popping off.",
+      "zh": "它一直脱手。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“keeps popping off”表示反复脱手，注意“keep doing”表示持续。"
+    },
+    {
+      "id": "c1304",
+      "startTime": 4464.65,
+      "endTime": 4468.03,
+      "en": "Safir, the more I'm thinking that might be the yellow volume.",
+      "zh": "Safir，我越想越觉得那可能是黄色的大点。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“the more I'm thinking”是口语化的表达，相当于“我越想”。"
+    },
+    {
+      "id": "c1305",
+      "startTime": 4467.93,
+      "endTime": 4468.53,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1306",
+      "startTime": 4468.13,
+      "endTime": 4470.03,
+      "en": "No, no, no. You for sure have to go up.",
+      "zh": "不，不，不。你肯定得往上走。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“for sure”表示肯定，注意否定和肯定的对比。"
+    },
+    {
+      "id": "c1307",
+      "startTime": 4469.93,
+      "endTime": 4473.79,
+      "en": "We see people are going to see talk now on this lower yellow volume.",
+      "zh": "我们看到人们现在会谈论这个较低的黄色大点。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“are going to see talk”是口语，实际是“will see people talk”，注意省略。"
+    },
+    {
+      "id": "c1308",
+      "startTime": 4473.69,
+      "endTime": 4475.12,
+      "en": "So, they might think of it.",
+      "zh": "所以，他们可能会想到它。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“might think of it”表示可能想到，注意“think of”的用法。"
+    },
+    {
+      "id": "c1309",
+      "startTime": 4477.37,
+      "endTime": 4480.51,
+      "en": ">> And I wonder if it's one of those situations where because he's going low,",
+      "zh": ">> 我想知道这是不是那种因为他走低的情况，",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "“I wonder if”表示想知道，注意“one of those situations”的用法。"
+    },
+    {
+      "id": "c1310",
+      "startTime": 4480.41,
+      "endTime": 4482.88,
+      "en": "he's then got to do the stand up in a different place.",
+      "zh": "他之后就得在不同的地方站起来。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“stand up”在攀岩中指站起动作，注意“in a different place”的位置。"
+    },
+    {
+      "id": "c1311",
+      "startTime": 4484.49,
+      "endTime": 4486.32,
+      "en": ">> I mean, you got to you got to push off a",
+      "zh": ">> 我的意思是，你得推起来，",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“push off”表示推离，注意口语中的“you got to”是“you have to”的缩写。"
+    },
+    {
+      "id": "c1312",
+      "startTime": 4487.45,
+      "endTime": 4490,
+      "en": ">> Whereas, if you're walking across the top, you'd be higher.",
+      "zh": ">> 而如果你从顶部横移过去，你会更高。",
+      "score": 67,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“walking across the top”指在顶部横移，注意比较级“higher”的使用。"
+    },
+    {
+      "id": "c1313",
+      "startTime": 4490.01,
+      "endTime": 4490.88,
+      "en": "I don't know.",
+      "zh": "我不知道。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "简单表达不确定。"
+    },
+    {
+      "id": "c1314",
+      "startTime": 4490.81,
+      "endTime": 4491.41,
+      "en": "Don't know.",
+      "zh": "不知道。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复表示不确定，口语中常见。"
+    },
+    {
+      "id": "c1315",
+      "startTime": 4491.21,
+      "endTime": 4496.64,
+      "en": "But then again, you have to then come back down, >> trust this foot,",
+      "zh": "但话说回来，你得再下来，>> 相信这个脚点，",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“trust this foot”表示相信脚点，注意“but then again”的转折。"
+    },
+    {
+      "id": "c1316",
+      "startTime": 4496.57,
+      "endTime": 4501.76,
+      "en": "and then like lean into the no tech volume and then aim for the small foot.",
+      "zh": "然后靠向那个无技术的大点，再瞄准那个小脚点。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "“lean into”表示靠向，“aim for”表示瞄准，注意“no tech”可能指无技术含量的点。"
+    },
+    {
+      "id": "c1317",
+      "startTime": 4502.01,
+      "endTime": 4504.88,
+      "en": ">> S manages to do the second move and gets the zone.",
+      "zh": ">> S成功完成了第二个动作，拿到了Zone。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "zone",
+        "move"
+      ],
+      "note": "“manages to do”表示设法完成，“gets the zone”是攀岩术语，指到达Zone得分点。"
+    },
+    {
+      "id": "c1318",
+      "startTime": 4504.81,
+      "endTime": 4506.11,
+      "en": ">> I want him to do this.",
+      "zh": ">> 我希望他能完成。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“I want him to do this”表示希望他完成，注意“want sb to do”结构。"
+    },
+    {
+      "id": "c1319",
+      "startTime": 4506.01,
+      "endTime": 4506.72,
+      "en": "Come on.",
+      "zh": "加油。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Come on”是常用鼓励语。"
+    },
+    {
+      "id": "c1320",
+      "startTime": 4506.81,
+      "endTime": 4508.56,
+      "en": ">> He's just going to power it out and campus.",
+      "zh": ">> 他就要用力量硬拉上去，动态抓点。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "campus"
+      ],
+      "note": "“power it out”表示用力量完成，“campus”指动态抓点，注意“just going to”表示即将。"
+    },
+    {
+      "id": "c1321",
+      "startTime": 4508.49,
+      "endTime": 4509.71,
+      "en": "He gets enough height.",
+      "zh": "他获得了足够的高度。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "height"
+      ],
+      "note": "“gets enough height”表示获得足够高度，注意“enough”的位置。"
+    },
+    {
+      "id": "c1322",
+      "startTime": 4509.61,
+      "endTime": 4511.6,
+      "en": "I think it's really important height on this",
+      "zh": "我觉得高度在这条线路上非常重要。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "height"
+      ],
+      "note": "“it's really important”强调重要性，注意“on this”指在这条线路上。"
+    },
+    {
+      "id": "c1323",
+      "startTime": 4512.97,
+      "endTime": 4516.48,
+      "en": "But yeah, you don't really have any feet. Oh",
+      "zh": "但是，是的，你实际上没有任何脚点。哦",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意“you don't really have any feet”中的“really”表示强调，意思是“实际上没有”。"
+    },
+    {
+      "id": "c1324",
+      "startTime": 4517.53,
+      "endTime": 4522.4,
+      "en": "yeah, he wasn't really sure what to do. And so, okay, Sam",
+      "zh": "是的，他不太确定该怎么做。所以，好吧，Sam",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“wasn't really sure”中的“really”加强否定，意为“不太确定”。"
+    },
+    {
+      "id": "c1325",
+      "startTime": 4528.65,
+      "endTime": 4529.76,
+      "en": "manage to do it.",
+      "zh": "设法做到了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“manage to do it”意为“设法完成”，常用于描述成功完成某事。"
+    },
+    {
+      "id": "c1326",
+      "startTime": 4529.69,
+      "endTime": 4538.35,
+      "en": "This is where it starts to get a bit tricky because his method did work the first time he tried it.",
+      "zh": "这里开始变得有点棘手，因为他的方法第一次尝试时奏效了。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“starts to get a bit tricky”表示“开始变得有点棘手”，注意“a bit”表示程度。"
+    },
+    {
+      "id": "c1327",
+      "startTime": 4538.25,
+      "endTime": 4541.47,
+      "en": "And so, he's continuing trying it, but he's only got a minute left.",
+      "zh": "所以，他继续尝试，但他只剩一分钟了。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“only got a minute left”意为“只剩一分钟”，注意“left”表示剩余。"
+    },
+    {
+      "id": "c1328",
+      "startTime": 4541.37,
+      "endTime": 4544.56,
+      "en": "So, to try something new, he doesn't really have much time to figure it out.",
+      "zh": "所以，要尝试新方法，他没有太多时间去弄清楚。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“figure it out”意为“弄清楚”，是常用短语。"
+    },
+    {
+      "id": "c1329",
+      "startTime": 4544.49,
+      "endTime": 4548.4,
+      "en": "Like you can see here also, the screw holes are covered.",
+      "zh": "就像你在这里看到的，螺丝孔也被覆盖了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“screw holes”指“螺丝孔”，注意“covered”表示被覆盖。"
+    },
+    {
+      "id": "c1330",
+      "startTime": 4548.65,
+      "endTime": 4553.76,
+      "en": "Yes, that's a trait of the women's comp often where they just got the Annie Sanders just tiny.",
+      "zh": "是的，这通常是女子比赛的一个特点，他们只是把Annie Sanders弄得很小。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“a trait of”意为“...的特点”，注意“often”表示经常。"
+    },
+    {
+      "id": "c1331",
+      "startTime": 4554.33,
+      "endTime": 4556.32,
+      "en": ">> Oh, and that was the foot pop there.",
+      "zh": "哦，那是脚点弹出。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot pop”指“脚点弹出”，注意“pop”表示突然的动作。"
+    },
+    {
+      "id": "c1332",
+      "startTime": 4561.77,
+      "endTime": 4564.8,
+      "en": "resting, but S got some progress into that zone.",
+      "zh": "休息，但S在那个区域取得了一些进展。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“got some progress into that zone”意为“在那个区域取得进展”，注意“zone”指得分点。"
+    },
+    {
+      "id": "c1333",
+      "startTime": 4565.77,
+      "endTime": 4568.43,
+      "en": ">> Yeah, S knows that this is going to just be his last attempt.",
+      "zh": "是的，S知道这将是他的最后一次尝试。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "“last attempt”意为“最后一次尝试”，注意“attempt”是名词。"
+    },
+    {
+      "id": "c1334",
+      "startTime": 4568.33,
+      "endTime": 4571.44,
+      "en": "So he's giving as much rest as he can.",
+      "zh": "所以他尽可能多地休息。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“giving as much rest as he can”意为“尽可能多地休息”，注意“as...as he can”结构。"
+    },
+    {
+      "id": "c1335",
+      "startTime": 4571.69,
+      "endTime": 4577.44,
+      "en": "Sam sticking to his >> See, this is the press I meant, which is like you have to then get on that foot.",
+      "zh": "Sam坚持他的 >> 看，这就是我说的按压，你必须踩上那个脚点。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“the press”指“按压动作”，注意“get on that foot”意为“踩上那个脚点”。"
+    },
+    {
+      "id": "c1336",
+      "startTime": 4577.61,
+      "endTime": 4578.21,
+      "en": ">> Oh.",
+      "zh": "哦。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单感叹词，表示惊讶或理解。"
+    },
+    {
+      "id": "c1337",
+      "startTime": 4578.17,
+      "endTime": 4579.36,
+      "en": "That is so tiring.",
+      "zh": "那太累了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“so tiring”意为“太累了”，注意“so”加强语气。"
+    },
+    {
+      "id": "c1338",
+      "startTime": 4579.37,
+      "endTime": 4580.11,
+      "en": ">> That's what I mean.",
+      "zh": "那就是我的意思。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“That's what I mean”是常用表达，意为“那就是我的意思”。"
+    },
+    {
+      "id": "c1339",
+      "startTime": 4580.01,
+      "endTime": 4583.12,
+      "en": "Whereas if he walked across the top, maybe be a bit different maybe.",
+      "zh": "而如果他横跨顶部，也许会有所不同。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“walked across the top”意为“横跨顶部”，注意“maybe”表示可能。"
+    },
+    {
+      "id": "c1340",
+      "startTime": 4583.05,
+      "endTime": 4585.87,
+      "en": "But I'm trying to find out about intended beta, so we'll see.",
+      "zh": "但我试图找出预期的动作解法，所以我们拭目以待。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "beta"
+      ],
+      "note": "“intended beta”指“预期的动作解法”，注意“we'll see”意为“我们拭目以待”。"
+    },
+    {
+      "id": "c1341",
+      "startTime": 4585.77,
+      "endTime": 4591.2,
+      "en": ">> Okay, SA manages to get to the zone >> Full spread hands.",
+      "zh": "好的，SA设法到达了Zone >> 双手完全展开。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“full spread hands”指“双手完全展开”，注意“spread”表示展开。"
+    },
+    {
+      "id": "c1342",
+      "startTime": 4591.29,
+      "endTime": 4592.24,
+      "en": "Come on, S.",
+      "zh": "加油，S。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Come on”是鼓励用语，意为“加油”。"
+    },
+    {
+      "id": "c1343",
+      "startTime": 4592.57,
+      "endTime": 4593.17,
+      "en": ">> Yes.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单肯定，表示赞同或兴奋。"
+    },
+    {
+      "id": "c1344",
+      "startTime": 4592.81,
+      "endTime": 4594.56,
+      "en": "Okay, he goes straight out.",
+      "zh": "好的，他直接出去了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“goes straight out”意为“直接出去”，注意“straight”表示直接。"
+    },
+    {
+      "id": "c1345",
+      "startTime": 4595.13,
+      "endTime": 4596.88,
+      "en": "Sam is going up now.",
+      "zh": "Sam现在正在向上。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“going up”意为“向上”，注意现在进行时表示正在发生。"
+    },
+    {
+      "id": "c1346",
+      "startTime": 4597.61,
+      "endTime": 4599.95,
+      "en": ">> Yeah, which has got to be intended that.",
+      "zh": "是的，那一定是预期的。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“has got to be”意为“一定是”，表示强烈推测。"
+    },
+    {
+      "id": "c1347",
+      "startTime": 4599.85,
+      "endTime": 4602,
+      "en": ">> But look, it just also looks so uncomfortable.",
+      "zh": "但看，这姿势看起来也太不舒服了。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "注意“looks so uncomfortable”中的“so”表示强调，口语中常用。"
+    },
+    {
+      "id": "c1348",
+      "startTime": 4602.57,
+      "endTime": 4604,
+      "en": "And SA tops.",
+      "zh": "SA完攀了。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“tops”是攀岩术语，意为“完攀”，即成功登顶。"
+    },
+    {
+      "id": "c1349",
+      "startTime": 4604.09,
+      "endTime": 4604.69,
+      "en": "Yes.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1350",
+      "startTime": 4604.65,
+      "endTime": 4606.03,
+      "en": "Oh, well, I won't take it.",
+      "zh": "哦，好吧，我不会采用那个动作。",
+      "score": 22,
+      "study": false,
+      "keywords": [],
+      "note": "“take”在这里指“采用（某个动作）”，注意语境。"
+    },
+    {
+      "id": "c1351",
+      "startTime": 4605.93,
+      "endTime": 4607.23,
+      "en": "But he tops.",
+      "zh": "但他完攀了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“tops”再次出现，注意动词形式。"
+    },
+    {
+      "id": "c1352",
+      "startTime": 4607.13,
+      "endTime": 4607.87,
+      "en": "Yes, he does.",
+      "zh": "是的，他确实完攀了。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yes, he does.”是强调肯定，注意“does”代替“tops”。"
+    },
+    {
+      "id": "c1353",
+      "startTime": 4607.81,
+      "endTime": 4608.41,
+      "en": "Top.",
+      "zh": "完攀。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“Top”作为名词或动词，这里指完攀。"
+    },
+    {
+      "id": "c1354",
+      "startTime": 4608.09,
+      "endTime": 4608.96,
+      "en": "Good work.",
+      "zh": "干得好。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Good work”是常见表扬语。"
+    },
+    {
+      "id": "c1355",
+      "startTime": 4611.69,
+      "endTime": 4615.28,
+      "en": ">> Sam is just kind of stuck on this position and he knows he has no time.",
+      "zh": "Sam只是卡在这个姿势上，他知道自己没时间了。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "stuck"
+      ],
+      "note": "“stuck on”表示卡住，注意“has no time”的用法。"
+    },
+    {
+      "id": "c1356",
+      "startTime": 4615.53,
+      "endTime": 4620.32,
+      "en": ">> I wonder if he's going to kick himself a bit for that because >> Yeah, because he got there quite",
+      "zh": "我想知道他会不会为此自责，因为 >> 是的，因为他到达那里相当",
+      "score": 56,
+      "study": true,
+      "keywords": [],
+      "note": "“kick himself”意为自责，注意“for that”的用法。"
+    },
+    {
+      "id": "c1357",
+      "startTime": 4621.93,
+      "endTime": 4623.28,
+      "en": ">> fairly easily.",
+      "zh": "相当容易。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“fairly easily”表示相当容易，注意“fairly”的用法。"
+    },
+    {
+      "id": "c1358",
+      "startTime": 4623.61,
+      "endTime": 4624.21,
+      "en": ">> Yeah, exactly.",
+      "zh": "是的，确实如此。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“exactly”表示完全同意。"
+    },
+    {
+      "id": "c1359",
+      "startTime": 4624.09,
+      "endTime": 4628.56,
+      "en": "And he spent a long time and which he must have known that was the wrong way to do wrong.",
+      "zh": "他花了很长时间，而且他肯定知道那是错误的做法。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“must have known”表示对过去的推测，注意“wrong way”的用法。"
+    },
+    {
+      "id": "c1360",
+      "startTime": 4628.49,
+      "endTime": 4630.75,
+      "en": "But by the way, when we talk about this, I should explain this.",
+      "zh": "顺便说一句，当我们谈论这个时，我应该解释一下。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“by the way”是插入语，用于转换话题。"
+    },
+    {
+      "id": "c1361",
+      "startTime": 4630.65,
+      "endTime": 4635.47,
+      "en": "When we talk about uh breaking a beater or cheating a boulder, it's up to the athletes what they do.",
+      "zh": "当我们谈论“作弊”或“偷线路”时，这取决于运动员怎么做。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“breaking a beater”或“cheating a boulder”是攀岩术语，指不按预定方法攀爬。"
+    },
+    {
+      "id": "c1362",
+      "startTime": 4635.41,
+      "endTime": 4638.4,
+      "en": "And it's kind of part of the joy of the sport that you can do that.",
+      "zh": "这也是这项运动的乐趣之一。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“part of the joy”表示乐趣的一部分。"
+    },
+    {
+      "id": "c1363",
+      "startTime": 4638.73,
+      "endTime": 4643.87,
+      "en": ">> We love it and it's nothing wrong or bad or anything unless the root center messes up to the extent that they just skip half",
+      "zh": "我们喜欢这样，这没什么不对或不好，除非定线员搞砸了，以至于他们直接跳过一半",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“messes up”表示搞砸，注意“to the extent that”的用法。"
+    },
+    {
+      "id": "c1364",
+      "startTime": 4643.77,
+      "endTime": 4650,
+      "en": "a boulder and it wasn't >> Like sometimes we've seen like start straight from start to top and that's very unfortunate.",
+      "zh": "一条线路，而且不是 >> 有时我们见过直接从起点到顶点的，那很不幸。",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "boulder",
+        "top"
+      ],
+      "note": "“start straight from start to top”指直接完攀，注意“unfortunate”的用法。"
+    },
+    {
+      "id": "c1365",
+      "startTime": 4650.09,
+      "endTime": 4656.88,
+      "en": "But I think yeah for boulders there's not like one correct way but the root setters do have in mind a certain method to be used",
+      "zh": "但我认为对于抱石来说，没有唯一正确的方法，但定线员确实有预设的某种方法。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“not like one correct way”表示没有唯一正确方法，注意“do have in mind”的强调。"
+    },
+    {
+      "id": "c1366",
+      "startTime": 4657.13,
+      "endTime": 4661.44,
+      "en": ">> but athletes can use climb however they like the border.",
+      "zh": "但运动员可以按他们喜欢的方式攀爬。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“however they like”表示无论他们喜欢怎样。"
+    },
+    {
+      "id": "c1367",
+      "startTime": 4661.37,
+      "endTime": 4665.47,
+      "en": "So when we say, yeah, he's cheating the border, he's just probably not using the method,",
+      "zh": "所以当我们说“他在作弊”时，他可能只是没有使用",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“cheating the border”可能指不按预定方法，注意“probably”的用法。"
+    },
+    {
+      "id": "c1368",
+      "startTime": 4665.37,
+      "endTime": 4666.48,
+      "en": "the intended method.",
+      "zh": "预期的方法。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“intended method”指预期的方法。"
+    },
+    {
+      "id": "c1369",
+      "startTime": 4666.65,
+      "endTime": 4669.84,
+      "en": ">> And we I I personally love a bit of that, but in that circumstance,",
+      "zh": "我个人喜欢一点这样的行为，但在那种情况下，",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“a bit of that”表示一点那样的行为，注意“personally”的用法。"
+    },
+    {
+      "id": "c1370",
+      "startTime": 4669.93,
+      "endTime": 4673.15,
+      "en": "I think maybe he should have tried the other way a bit sooner.",
+      "zh": "我想他也许应该早点尝试另一种方法。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“should have tried”表示本应该尝试，注意“a bit sooner”的用法。"
+    },
+    {
+      "id": "c1371",
+      "startTime": 4673.05,
+      "endTime": 4673.65,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意语气词 'Yeah' 在口语中常表示肯定或回应。"
+    },
+    {
+      "id": "c1372",
+      "startTime": 4673.53,
+      "endTime": 4674.56,
+      "en": ">> Yeah, for sure.",
+      "zh": ">> 是的，当然。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'for sure' 是常用口语，表示“当然，肯定”。"
+    },
+    {
+      "id": "c1373",
+      "startTime": 4674.65,
+      "endTime": 4677.84,
+      "en": ">> And this was S's heel on, figured it out.",
+      "zh": ">> 这是S的脚跟钩，他搞定了。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "heel"
+      ],
+      "note": "'heel hook' 是攀岩术语，指脚跟钩。'figure out' 意为“弄明白，解决”。"
+    },
+    {
+      "id": "c1374",
+      "startTime": 4678.09,
+      "endTime": 4679.52,
+      "en": "Good work onto the crimp.",
+      "zh": "干得好，抓到了那个小扣点。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "'crimp' 指小扣点，是攀岩术语。'good work' 表示表扬。"
+    },
+    {
+      "id": "c1375",
+      "startTime": 4681.93,
+      "endTime": 4682.72,
+      "en": ">> Job done.",
+      "zh": ">> 完成了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'job done' 是口语，表示“搞定了，完成了”。"
+    },
+    {
+      "id": "c1376",
+      "startTime": 4683.77,
+      "endTime": 4688.32,
+      "en": "So that's kept S in touch. He's still",
+      "zh": "所以这让S保持了竞争力。他仍然",
+      "score": 54,
+      "study": true,
+      "keywords": [],
+      "note": "'keep in touch' 在这里指保持联系，但此处引申为“保持竞争力”。"
+    },
+    {
+      "id": "c1377",
+      "startTime": 4689.69,
+      "endTime": 4692.4,
+      "en": "43.5 is his score with one to go.",
+      "zh": "他的分数是43.5，还剩一个（攀爬）要完成。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'with one to go' 表示“还剩一个”，常用于比赛或任务中。"
+    },
+    {
+      "id": "c1378",
+      "startTime": 4693.13,
+      "endTime": 4696,
+      "en": ">> Yeah, it took him quite a few attempts to get the zone on the slab.",
+      "zh": ">> 是的，他花了好几次尝试才在板壁上拿到Zone。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "zone",
+        "slab"
+      ],
+      "note": "'slab' 是板壁，'zone' 是得分点，'take attempts' 表示“花了几次尝试”。"
+    },
+    {
+      "id": "c1379",
+      "startTime": 4700.09,
+      "endTime": 4707.28,
+      "en": ">> By the way, when I sent a message, uh the reply I got was 100% no. >> So, first the low way.",
+      "zh": ">> 顺便说一句，当我发消息时，我得到的回复是100%不行。 >> 所以，首先是低处路线。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'by the way' 是“顺便说”，'100% no' 强调完全否定。"
+    },
+    {
+      "id": "c1380",
+      "startTime": 4707.69,
+      "endTime": 4709.63,
+      "en": "No way was that >> No way.",
+      "zh": "那不可能 >> 不可能。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'no way' 是口语，表示“不可能，没门”。"
+    },
+    {
+      "id": "c1381",
+      "startTime": 4709.57,
+      "endTime": 4711.2,
+      "en": "Is that the intended beta?",
+      "zh": "那是预期的动作解法吗？",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "beta"
+      ],
+      "note": "'intended beta' 指预期的动作解法，'beta' 是攀岩术语。"
+    },
+    {
+      "id": "c1382",
+      "startTime": 4711.69,
+      "endTime": 4713.23,
+      "en": ">> I mean, yeah, it's so obvious.",
+      "zh": ">> 我的意思是，是的，这太明显了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'I mean' 是口语，用于补充或解释。"
+    },
+    {
+      "id": "c1383",
+      "startTime": 4713.13,
+      "endTime": 4715.44,
+      "en": "There's a volume above the start.",
+      "zh": "起点上方有一个大体积。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'volume' 在攀岩中指大体积的支点。"
+    },
+    {
+      "id": "c1384",
+      "startTime": 4715.37,
+      "endTime": 4716.19,
+      "en": ">> Is it the way he did?",
+      "zh": ">> 他是那样做的吗？",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'Is it the way he did?' 询问是否是他做的方式。"
+    },
+    {
+      "id": "c1385",
+      "startTime": 4716.13,
+      "endTime": 4717.12,
+      "en": "He was so committed.",
+      "zh": "他非常投入。",
+      "score": 29,
+      "study": true,
+      "keywords": [
+        "committed"
+      ],
+      "note": "'committed' 在这里指“投入的，专注的”。"
+    },
+    {
+      "id": "c1386",
+      "startTime": 4717.05,
+      "endTime": 4719.76,
+      "en": "I was like, did we miss something here when we looked at this?",
+      "zh": "我当时想，我们看这个的时候是不是漏掉了什么？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'did we miss something' 是“我们是不是漏掉了什么”，'look at' 指“看”。"
+    },
+    {
+      "id": "c1387",
+      "startTime": 4719.85,
+      "endTime": 4723.92,
+      "en": ">> So, John John W will enjoy this last moment on the stage in the spotlight.",
+      "zh": ">> 所以，John John W会享受在聚光灯下的最后时刻。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'in the spotlight' 指“在聚光灯下，受关注”。"
+    },
+    {
+      "id": "c1388",
+      "startTime": 4725.85,
+      "endTime": 4728.35,
+      "en": ">> And then S Max Mil who needs points as well.",
+      "zh": ">> 然后S Max Mil也需要分数。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'needs points' 指“需要分数”，常用于比赛。"
+    },
+    {
+      "id": "c1389",
+      "startTime": 4728.29,
+      "endTime": 4729.04,
+      "en": "There's Max.",
+      "zh": "Max在那里。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'There's Max' 是“Max在那里”，用于指出位置。"
+    },
+    {
+      "id": "c1390",
+      "startTime": 4741.29,
+      "endTime": 4743.92,
+      "en": "seems to be going straight up somehow.",
+      "zh": "似乎不知怎么地直上去了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'straight up' 指“直上”，'somehow' 是“不知怎么地”。"
+    },
+    {
+      "id": "c1391",
+      "startTime": 4743.85,
+      "endTime": 4748.4,
+      "en": "But once again, this is a bit of like a slab. You know, you want to",
+      "zh": "但再次强调，这有点像板壁。你知道，你想要",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "'a bit of like' 是口语，表示“有点像”，'slab' 是板壁。"
+    },
+    {
+      "id": "c1392",
+      "startTime": 4750.57,
+      "endTime": 4751.6,
+      "en": ">> Yeah, you're right.",
+      "zh": ">> 是的，你说得对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'you're right' 是“你说得对”，常用回应。"
+    },
+    {
+      "id": "c1393",
+      "startTime": 4751.69,
+      "endTime": 4754,
+      "en": ">> I think this is I think this is the",
+      "zh": ">> 我认为这是我认为这是",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "'I think this is' 是“我认为这是”，重复表示思考。"
+    },
+    {
+      "id": "c1394",
+      "startTime": 4757.37,
+      "endTime": 4757.97,
+      "en": "way.",
+      "zh": "方式。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'way' 在这里指“方式，路线”。"
+    },
+    {
+      "id": "c1395",
+      "startTime": 4758.09,
+      "endTime": 4763.28,
+      "en": "Like >> he's shifted over, but now he kind of needs to get his left foot up.",
+      "zh": "就像他那样，他移过去了，但现在他需要把左脚抬起来。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'shifted over' 表示横向移动，'get his left foot up' 是抬左脚。"
+    },
+    {
+      "id": "c1396",
+      "startTime": 4764.97,
+      "endTime": 4767.44,
+      "en": "And this is where also flexibility comes in.",
+      "zh": "这也是考验柔韧性的地方。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "flexibility"
+      ],
+      "note": "'flexibility' 是柔韧性，攀岩中常提到。"
+    },
+    {
+      "id": "c1397",
+      "startTime": 4767.93,
+      "endTime": 4768.72,
+      "en": "He sticks.",
+      "zh": "他稳住了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'sticks' 在这里指粘在岩壁上，即稳住。"
+    },
+    {
+      "id": "c1398",
+      "startTime": 4770.01,
+      "endTime": 4772.96,
+      "en": ">> Love that toe down for a second of the >> Yeah, but",
+      "zh": ">> 喜欢那个脚尖下压的动作，持续了一秒。 >> 是的，但是",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "toe"
+      ],
+      "note": "'toe down' 是脚尖下压，'for a second' 表示短暂。"
+    },
+    {
+      "id": "c1399",
+      "startTime": 4775.29,
+      "endTime": 4780.64,
+      "en": ">> so now he's just using his palms are kind of what's keeping him on the wall until he got his foot up onto the f hold.",
+      "zh": ">> 所以现在他主要靠手掌把自己贴在墙上，直到他把脚踩到那个F点。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "hold",
+        "foot"
+      ],
+      "note": "'palms' 是手掌，'keeping him on the wall' 是保持贴墙。"
+    },
+    {
+      "id": "c1400",
+      "startTime": 4780.73,
+      "endTime": 4783.44,
+      "en": "And now this is >> all the way full.",
+      "zh": "现在这完全是……全程都是。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "'all the way full' 可能指完全伸展或全程。"
+    },
+    {
+      "id": "c1401",
+      "startTime": 4783.37,
+      "endTime": 4785.52,
+      "en": ">> Oh, he's saved us.",
+      "zh": ">> 哦，他救回来了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'saved us' 在口语中表示他避免了掉落。"
+    },
+    {
+      "id": "c1402",
+      "startTime": 4785.77,
+      "endTime": 4786.8,
+      "en": "What a save.",
+      "zh": "多漂亮的救场。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'What a save' 是感叹救得好。"
+    },
+    {
+      "id": "c1403",
+      "startTime": 4787.53,
+      "endTime": 4789.6,
+      "en": ">> And Max with any slips.",
+      "zh": ">> 马克斯，没有任何失误。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'with any slips' 表示没有滑脚。"
+    },
+    {
+      "id": "c1404",
+      "startTime": 4791.29,
+      "endTime": 4797.39,
+      "en": ">> So this is this is a slab this part of the boulder which is unfortunate for >> Oh yeah, true.",
+      "zh": ">> 所以这是这块抱石的一部分，是板壁，这对……来说很不幸。 >> 哦，是的，确实。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "slab"
+      ],
+      "note": "'slab' 是板壁，指角度较缓的岩面。"
+    },
+    {
+      "id": "c1405",
+      "startTime": 4797.29,
+      "endTime": 4798.27,
+      "en": "anti style, isn't it?",
+      "zh": "反风格，不是吗？",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'anti style' 指不适合某人的风格。"
+    },
+    {
+      "id": "c1406",
+      "startTime": 4798.21,
+      "endTime": 4800.08,
+      "en": "Again, maybe he needs to go low.",
+      "zh": "也许他需要走低。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'go low' 指采用低姿势或低手点。"
+    },
+    {
+      "id": "c1407",
+      "startTime": 4800.25,
+      "endTime": 4802.16,
+      "en": "Maybe >> if you can think of that.",
+      "zh": "也许 >> 如果你能想到那个。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'think of that' 指考虑那种解法。"
+    },
+    {
+      "id": "c1408",
+      "startTime": 4802.25,
+      "endTime": 4805.63,
+      "en": ">> Yeah, it's amazing that Sam just did that straight away.",
+      "zh": ">> 是的，山姆马上就完成了，真是令人惊叹。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'straight away' 是立刻，'did that' 指完成动作。"
+    },
+    {
+      "id": "c1409",
+      "startTime": 4805.53,
+      "endTime": 4807.31,
+      "en": "I Oh, look at that shot.",
+      "zh": "哦，看那个镜头。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'look at that shot' 指观看某个动作或镜头。"
+    },
+    {
+      "id": "c1410",
+      "startTime": 4807.21,
+      "endTime": 4807.81,
+      "en": "Wonderful.",
+      "zh": "太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Wonderful' 是感叹词，表示精彩。"
+    },
+    {
+      "id": "c1411",
+      "startTime": 4807.69,
+      "endTime": 4808.29,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1412",
+      "startTime": 4807.93,
+      "endTime": 4809.07,
+      "en": "And he saves it though.",
+      "zh": "但他还是救回来了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'saves it' 指挽救动作。"
+    },
+    {
+      "id": "c1413",
+      "startTime": 4808.97,
+      "endTime": 4810.59,
+      "en": "And then he just slips right after.",
+      "zh": "然后紧接着他就滑了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'slips right after' 表示紧接着滑脚。"
+    },
+    {
+      "id": "c1414",
+      "startTime": 4810.49,
+      "endTime": 4813.12,
+      "en": "We also have to keep in mind it's really hot.",
+      "zh": "我们还要记住，天气真的很热。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'keep in mind' 是记住，'really hot' 表示很热。"
+    },
+    {
+      "id": "c1415",
+      "startTime": 4813.13,
+      "endTime": 4817.84,
+      "en": "Rubber gets hot so they're not as sticky on volumes.",
+      "zh": "橡胶变热了，所以在斜面上不那么粘。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'rubber' 指鞋底橡胶，'volumes' 是斜面或大体积点。"
+    },
+    {
+      "id": "c1416",
+      "startTime": 4817.93,
+      "endTime": 4818.75,
+      "en": "It's just like your hands.",
+      "zh": "就像你的手一样。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'just like' 表示类比。"
+    },
+    {
+      "id": "c1417",
+      "startTime": 4818.69,
+      "endTime": 4821.68,
+      "en": "If your hands get hot, they're not as you don't have as much.",
+      "zh": "如果你的手热了，你就没有那么多……",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'don't have as much' 指摩擦力或粘性减少。"
+    },
+    {
+      "id": "c1418",
+      "startTime": 4821.77,
+      "endTime": 4824.03,
+      "en": ">> I get this because you know on a Formula 1 car, right?",
+      "zh": ">> 我明白这个，因为你知道，就像一级方程式赛车一样，对吧？",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'Formula 1 car' 是F1赛车，用于类比热衰减。"
+    },
+    {
+      "id": "c1419",
+      "startTime": 4823.97,
+      "endTime": 4826.16,
+      "en": "You need to warm up the tires and therefore they're grippier.",
+      "zh": "你需要把轮胎预热，这样它们抓地力更强。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意“warm up”在这里是“预热”的意思，常用于运动前热身。"
+    },
+    {
+      "id": "c1420",
+      "startTime": 4826.89,
+      "endTime": 4829.36,
+      "en": "I don't I want someone to explain the physics of this one.",
+      "zh": "我不想让人解释这个的物理原理。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“physics”是物理，这里指物理原理。"
+    },
+    {
+      "id": "c1421",
+      "startTime": 4829.45,
+      "endTime": 4830.35,
+      "en": "I don't understand.",
+      "zh": "我不明白。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“I don't understand”是表达不理解的常用句。"
+    },
+    {
+      "id": "c1422",
+      "startTime": 4830.25,
+      "endTime": 4832.64,
+      "en": "Why do warm climbing shoes not provide more grip?",
+      "zh": "为什么热的攀岩鞋不能提供更多抓地力？",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“grip”是抓地力，攀岩中常用。"
+    },
+    {
+      "id": "c1423",
+      "startTime": 4834.01,
+      "endTime": 4835.84,
+      "en": ">> That's a very good question.",
+      "zh": ">> 这是个很好的问题。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“That's a very good question”是回应提问的礼貌说法。"
+    },
+    {
+      "id": "c1424",
+      "startTime": 4836.49,
+      "endTime": 4838.64,
+      "en": ">> I mean, we'll leave that in the air.",
+      "zh": ">> 我的意思是，我们先不讨论这个。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“leave that in the air”意为悬而未决，先不讨论。"
+    },
+    {
+      "id": "c1425",
+      "startTime": 4840.49,
+      "endTime": 4841.92,
+      "en": "phys whatever.",
+      "zh": "物理什么的。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“phys whatever”是“physics whatever”的缩写，表示“物理什么的”，口语化。"
+    },
+    {
+      "id": "c1426",
+      "startTime": 4841.85,
+      "endTime": 4844.24,
+      "en": ">> We're definitely not science.",
+      "zh": ">> 我们绝对不是科学。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“definitely”是“肯定”，加强语气。"
+    },
+    {
+      "id": "c1427",
+      "startTime": 4845.69,
+      "endTime": 4847.07,
+      "en": ">> But I mean, I don't know.",
+      "zh": ">> 但我的意思是，我不知道。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“I don't know”是“我不知道”，口语常用。"
+    },
+    {
+      "id": "c1428",
+      "startTime": 4846.97,
+      "endTime": 4849.07,
+      "en": "Maybe also just like this.",
+      "zh": "也许也只是像这样。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“maybe”是“也许”，表示不确定。"
+    },
+    {
+      "id": "c1429",
+      "startTime": 4848.97,
+      "endTime": 4850.19,
+      "en": "It's not the same texture.",
+      "zh": "这不是相同的质地。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“texture”是质地、纹理。"
+    },
+    {
+      "id": "c1430",
+      "startTime": 4850.09,
+      "endTime": 4850.91,
+      "en": "Like it's not rose.",
+      "zh": "比如它不是玫瑰。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "这里“rose”可能指玫瑰，但上下文不明，可能指某种材质。"
+    },
+    {
+      "id": "c1431",
+      "startTime": 4850.81,
+      "endTime": 4851.76,
+      "en": ">> It's not a tongue.",
+      "zh": ">> 它不是舌头。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“tongue”是舌头，这里可能比喻。"
+    },
+    {
+      "id": "c1432",
+      "startTime": 4851.77,
+      "endTime": 4852.37,
+      "en": "That must be.",
+      "zh": "那一定是。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“That must be”表示推测。"
+    },
+    {
+      "id": "c1433",
+      "startTime": 4852.29,
+      "endTime": 4853.2,
+      "en": "And it's not t.",
+      "zh": "而且它不是t。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“t”可能指某种东西，但上下文不明。"
+    },
+    {
+      "id": "c1434",
+      "startTime": 4853.69,
+      "endTime": 4854.88,
+      "en": "Yeah, that's for sure.",
+      "zh": "是的，那是肯定的。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“that's for sure”是“那是肯定的”。"
+    },
+    {
+      "id": "c1435",
+      "startTime": 4856.41,
+      "endTime": 4858.75,
+      "en": "Right, Max up into the starting position again.",
+      "zh": "好，Max再次进入起始位置。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“starting position”是起始位置，攀岩术语。"
+    },
+    {
+      "id": "c1436",
+      "startTime": 4858.65,
+      "endTime": 4861.36,
+      "en": "This crimp is a bit savage. Like,",
+      "zh": "这个指力点有点狠。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "crimp"
+      ],
+      "note": "“crimp”是攀岩中的小指力点，“savage”是狠、厉害。"
+    },
+    {
+      "id": "c1437",
+      "startTime": 4863.05,
+      "endTime": 4864.4,
+      "en": ">> doesn't like it, does he?",
+      "zh": ">> 他不喜欢它，是吧？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“doesn't like it”是不喜欢，反意疑问句。"
+    },
+    {
+      "id": "c1438",
+      "startTime": 4866.49,
+      "endTime": 4867.09,
+      "en": ">> Ch.",
+      "zh": ">> 啧。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Ch”是语气词，表示不满或感叹。"
+    },
+    {
+      "id": "c1439",
+      "startTime": 4867.61,
+      "endTime": 4869.52,
+      "en": "Careful with that bottom jib.",
+      "zh": "小心那个底部的小点。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“jib”可能指小点或突出物，这里指攀岩点。"
+    },
+    {
+      "id": "c1440",
+      "startTime": 4869.77,
+      "endTime": 4871.68,
+      "en": "It's blind as well for him.",
+      "zh": "对他来说也是盲点。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“blind”是盲的，这里指看不见的点。"
+    },
+    {
+      "id": "c1441",
+      "startTime": 4873.05,
+      "endTime": 4873.65,
+      "en": ">> Oh, yeah.",
+      "zh": ">> 哦，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Oh, yeah”是“哦，是的”，表示同意。"
+    },
+    {
+      "id": "c1442",
+      "startTime": 4873.57,
+      "endTime": 4878.64,
+      "en": "This is such an uncomfortable position because your left foot is really not good and you just have to kind of trust it.",
+      "zh": "这个姿势特别别扭，因为左脚完全踩不到好点，你只能选择相信它。",
+      "note": "uncomfortable position 难受的姿势；'trust it' 信任它（脚点）。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "foot"
+      ]
+    },
+    {
+      "id": "c1443",
+      "startTime": 4880.57,
+      "endTime": 4882.08,
+      "en": ">> Nailing the side of the law.",
+      "zh": ">> 正好打在岩壁的侧面。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“nailing”是击中，“side of the law”可能指岩壁侧面，但“law”可能是“wall”的误听。"
+    },
+    {
+      "id": "c1444",
+      "startTime": 4883.21,
+      "endTime": 4885.12,
+      "en": "And then here you want to push up.",
+      "zh": "然后在这里你要向上推。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'push up' 在攀岩中常指向上发力，可译为“向上推”。"
+    },
+    {
+      "id": "c1445",
+      "startTime": 4885.45,
+      "endTime": 4891.12,
+      "en": "And yeah, once again, the longer you are in the volume, the less friction you feel like you have.",
+      "zh": "是的，再说一次，你在体积块上待得越久，感觉摩擦力就越小。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "注意 'the longer...the less...' 结构，表示“越……越……”。"
+    },
+    {
+      "id": "c1446",
+      "startTime": 4892.25,
+      "endTime": 4898.48,
+      "en": ">> And he I would say he's also mostly on the wall because he's like holding on to the screw holds.",
+      "zh": "而且我觉得他主要也是靠墙，因为他正抓着螺丝点。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'screw holds' 指“螺丝点”，是攀岩中的一种支点。"
+    },
+    {
+      "id": "c1447",
+      "startTime": 4898.49,
+      "endTime": 4899.84,
+      "en": "They take up a bit of",
+      "zh": "它们占了一些……",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'take up' 表示“占据”，这里指占用空间。"
+    },
+    {
+      "id": "c1448",
+      "startTime": 4900.97,
+      "endTime": 4906.35,
+      "en": ">> This is good from >> But he's doing he's making good >> But this is a second attempt.",
+      "zh": "这很好，但他做得很好，但这是第二次尝试。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "注意 'second attempt' 指“第二次尝试”，常用于比赛解说。"
+    },
+    {
+      "id": "c1449",
+      "startTime": 4906.25,
+      "endTime": 4907.15,
+      "en": "He's got a minute left.",
+      "zh": "他还有一分钟。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'a minute left' 表示“还剩一分钟”，left 表示剩余。"
+    },
+    {
+      "id": "c1450",
+      "startTime": 4907.05,
+      "endTime": 4908.72,
+      "en": ">> He's got he's got a foot swap here.",
+      "zh": "他在这里换脚了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'foot swap' 是“换脚”的常用表达。"
+    },
+    {
+      "id": "c1451",
+      "startTime": 4908.65,
+      "endTime": 4910.88,
+      "en": "Got to be something to bring that left foot down, haven't he?",
+      "zh": "他得做点什么把左脚放下来，不是吗？",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'bring down' 表示“放下”，这里指把脚放下来。"
+    },
+    {
+      "id": "c1452",
+      "startTime": 4910.97,
+      "endTime": 4913.52,
+      "en": "Ah, Max is struggling with the first move.",
+      "zh": "啊，Max 在第一个动作上遇到困难了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "注意 'struggle with' 表示“在……上挣扎”，即遇到困难。"
+    },
+    {
+      "id": "c1453",
+      "startTime": 4913.69,
+      "endTime": 4914.72,
+      "en": ">> Yeah, no zone.",
+      "zh": "是的，没有 Zone。",
+      "score": 9,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "注意 'zone' 在攀岩比赛中指“Zone得分点”，这里说“没有 Zone”表示没够到。"
+    },
+    {
+      "id": "c1454",
+      "startTime": 4914.65,
+      "endTime": 4916.24,
+      "en": "That's a surprise to me.",
+      "zh": "这让我很惊讶。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'a surprise to me' 表示“对我来说是个惊喜/意外”。"
+    },
+    {
+      "id": "c1455",
+      "startTime": 4916.33,
+      "endTime": 4923.2,
+      "en": ">> Okay, so this is just no text on these volumes where John is holding and then he needs to go down to the zone hold.",
+      "zh": "好的，所以这些体积块上没有文字，John 正抓着那里，然后他需要下去够 Zone 点。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "zone",
+        "hold"
+      ],
+      "note": "注意 'go down to' 表示“下去到”，这里指向下移动去够点。"
+    },
+    {
+      "id": "c1456",
+      "startTime": 4923.53,
+      "endTime": 4924.99,
+      "en": "But once again, he's wrong foot.",
+      "zh": "但再说一次，他踩错脚了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'wrong foot' 指“错误的脚”，即踩点用错了脚。"
+    },
+    {
+      "id": "c1457",
+      "startTime": 4924.89,
+      "endTime": 4925.55,
+      "en": ">> Yeah, that's what I mean.",
+      "zh": "是的，我就是这个意思。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'that's what I mean' 是常用口语，表示“我就是这个意思”。"
+    },
+    {
+      "id": "c1458",
+      "startTime": 4925.57,
+      "endTime": 4926.99,
+      "en": "He's got to swap somehow.",
+      "zh": "他必须以某种方式换脚。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'swap' 在这里指“换脚”，与 'foot swap' 同义。"
+    },
+    {
+      "id": "c1459",
+      "startTime": 4926.89,
+      "endTime": 4929.04,
+      "en": "And I don't know how on earth he'd swap it.",
+      "zh": "我不知道他到底怎么换。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'how on earth' 表示“到底怎么”，加强语气。"
+    },
+    {
+      "id": "c1460",
+      "startTime": 4930.17,
+      "endTime": 4931.92,
+      "en": ">> He's trying to use a screw hold.",
+      "zh": "他正试图用一个螺丝点。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "注意 'screw hold' 再次出现，指“螺丝点”。"
+    },
+    {
+      "id": "c1461",
+      "startTime": 4934.09,
+      "endTime": 4937.44,
+      "en": ">> I mean, he'd have to launch down and land on that jib in this position.",
+      "zh": "我的意思是，他必须向下跳，然后以这个姿势落在那个岩脊上。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'launch down' 表示“向下跳”，'jib' 可能指“岩脊”或“小凸起”。"
+    },
+    {
+      "id": "c1462",
+      "startTime": 4938.81,
+      "endTime": 4941.04,
+      "en": ">> I mean, if he can get his palm onto the",
+      "zh": "我的意思是，如果他能把手掌放在……",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'palm' 指“手掌”，这里指用手掌按住某处。"
+    },
+    {
+      "id": "c1463",
+      "startTime": 4947.45,
+      "endTime": 4952.8,
+      "en": ">> What is >> Oh, Max is trying to He's struggling to hold this left hand it seems like.",
+      "zh": "什么？哦，Max 在尝试，他似乎在努力抓住这个左手点。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "注意 'struggle to hold' 表示“努力抓住”，'it seems like' 表示“似乎”。"
+    },
+    {
+      "id": "c1464",
+      "startTime": 4953.93,
+      "endTime": 4954.53,
+      "en": ">> yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'yeah' 是口语中常见的“是的”，表示同意。"
+    },
+    {
+      "id": "c1465",
+      "startTime": 4954.13,
+      "endTime": 4957.95,
+      "en": "He almost tried to like jam his finger in the back cuz there is a jib in there.",
+      "zh": "他几乎试图把手指塞进后面，因为那里有一个岩脊。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'jam' 表示“塞入”，'jib' 再次出现，指“岩脊”。"
+    },
+    {
+      "id": "c1466",
+      "startTime": 4957.85,
+      "endTime": 4958.67,
+      "en": "John stands up.",
+      "zh": "John 站起来了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'stand up' 表示“站起来”，这里指完成动作。"
+    },
+    {
+      "id": "c1467",
+      "startTime": 4958.57,
+      "endTime": 4959.63,
+      "en": "Thank goodness he's alive.",
+      "zh": "谢天谢地，他还活着。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'thank goodness' 是感叹语，表示“谢天谢地”，'alive' 表示“活着”。"
+    },
+    {
+      "id": "c1468",
+      "startTime": 4959.53,
+      "endTime": 4960.91,
+      "en": "Says, \"Thank you very much.",
+      "zh": "他说：“非常感谢。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“Says”在此处是转述，口语中常用“says”引出别人的话。"
+    },
+    {
+      "id": "c1469",
+      "startTime": 4960.81,
+      "endTime": 4962.24,
+      "en": "He is done for today.\"",
+      "zh": "他今天到此为止了。”",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“be done for today”意思是“今天结束了”，常用口语表达。"
+    },
+    {
+      "id": "c1470",
+      "startTime": 4962.17,
+      "endTime": 4962.77,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”是“yes”的口语形式，表示同意。"
+    },
+    {
+      "id": "c1471",
+      "startTime": 4962.89,
+      "endTime": 4963.68,
+      "en": "So, 49.8.",
+      "zh": "所以，49.8分。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意数字的读法，49.8读作“forty-nine point eight”。"
+    },
+    {
+      "id": "c1472",
+      "startTime": 4964.25,
+      "endTime": 4967.68,
+      "en": "You need to start doing some math soon cuz for where is the score?",
+      "zh": "你很快需要开始算分了，因为分数在哪里？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“cuz”是“because”的口语缩写，常用于快速对话。"
+    },
+    {
+      "id": "c1473",
+      "startTime": 4967.61,
+      "endTime": 4968.51,
+      "en": ">> I'm great at math.",
+      "zh": ">> 我很擅长数学。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“I'm great at math”表示“我数学很好”，注意“be great at”的用法。"
+    },
+    {
+      "id": "c1474",
+      "startTime": 4968.41,
+      "endTime": 4969.36,
+      "en": "Let's do this.",
+      "zh": "我们开始吧。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Let's do this”是鼓励或开始行动的口语表达。"
+    },
+    {
+      "id": "c1475",
+      "startTime": 4970.57,
+      "endTime": 4971.17,
+      "en": ">> Physics.",
+      "zh": ">> 物理。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Physics”是“物理”，注意发音。"
+    },
+    {
+      "id": "c1476",
+      "startTime": 4971.29,
+      "endTime": 4972.27,
+      "en": "No math.",
+      "zh": "不是数学。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“No math”是省略句，完整为“No, not math.”"
+    },
+    {
+      "id": "c1477",
+      "startTime": 4972.17,
+      "endTime": 4972.77,
+      "en": ">> Physics.",
+      "zh": ">> 物理。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调“物理”，注意语气。"
+    },
+    {
+      "id": "c1478",
+      "startTime": 4972.57,
+      "endTime": 4975.52,
+      "en": "No. >> But he finishes on a score of 49.8.",
+      "zh": "不。 >> 但他以49.8分的成绩完赛。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“finishes on a score of”表示“以……分数结束”。"
+    },
+    {
+      "id": "c1479",
+      "startTime": 4976.09,
+      "endTime": 4977.28,
+      "en": "Does John want.",
+      "zh": "约翰想要吗？",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“Does John want”是疑问句，注意助动词“does”的使用。"
+    },
+    {
+      "id": "c1480",
+      "startTime": 4978.41,
+      "endTime": 4980.08,
+      "en": ">> So he joins Sam Aazoo.",
+      "zh": ">> 所以他加入了萨姆·阿祖。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“joins”表示“加入”，注意“Sam Aazoo”是选手名。"
+    },
+    {
+      "id": "c1481",
+      "startTime": 4980.73,
+      "endTime": 4981.33,
+      "en": "Yep.",
+      "zh": "是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Yep”是“yes”的另一种口语形式。"
+    },
+    {
+      "id": "c1482",
+      "startTime": 4981.13,
+      "endTime": 4983.28,
+      "en": "On the Where is Sam Azoo?",
+      "zh": "在“萨姆·阿祖在哪里？”上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“Where is Sam Azoo?”可能是节目或环节名称，注意引号。"
+    },
+    {
+      "id": "c1483",
+      "startTime": 4983.37,
+      "endTime": 4988,
+      "en": ">> I mean no there's Ray and Sarata with two tops unfortunately.",
+      "zh": ">> 我的意思是，不，雷和萨拉塔不幸有两次完攀。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“with two tops”指“有两次完攀”，注意“tops”在攀岩中表示“完攀”。"
+    },
+    {
+      "id": "c1484",
+      "startTime": 4988.33,
+      "endTime": 4989.36,
+      "en": ">> Oh there is Samu.",
+      "zh": ">> 哦，有萨穆。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“Samu”是选手名，注意“Oh”表示惊讶。"
+    },
+    {
+      "id": "c1485",
+      "startTime": 4989.53,
+      "endTime": 4990.13,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Okay”表示接受或同意。"
+    },
+    {
+      "id": "c1486",
+      "startTime": 4990.17,
+      "endTime": 4996.72,
+      "en": "But yeah, Max no zone on the third boulder, >> which unfortunately",
+      "zh": "但是，是的，马克斯在第三个抱石上没拿到Zone，>> 这不幸地",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "zone"
+      ],
+      "note": "“no zone”指“没拿到Zone得分点”，注意“zone”在攀岩中的特定含义。"
+    },
+    {
+      "id": "c1487",
+      "startTime": 4998.41,
+      "endTime": 5000.56,
+      "en": "does affect his score.",
+      "zh": "确实影响了他的分数。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“affect”是动词“影响”，注意与“effect”的区别。"
+    },
+    {
+      "id": "c1488",
+      "startTime": 5001.61,
+      "endTime": 5002.21,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”再次表示同意。"
+    },
+    {
+      "id": "c1489",
+      "startTime": 5001.85,
+      "endTime": 5003.47,
+      "en": "He will be struggling after that.",
+      "zh": "在那之后他会很挣扎。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“be struggling”表示“挣扎、艰难”，注意进行时态。"
+    },
+    {
+      "id": "c1490",
+      "startTime": 5003.37,
+      "endTime": 5007.15,
+      "en": "I love how Chance still using the blocked thumbs screws.",
+      "zh": "我喜欢钱斯还在用防滑拇指螺丝。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“blocked thumbs screws”可能指某种攀岩装备，注意“I love how”的用法。"
+    },
+    {
+      "id": "c1491",
+      "startTime": 5007.05,
+      "endTime": 5010.35,
+      "en": ">> I mean, you got you got to use what you >> But yeah,",
+      "zh": ">> 我的意思是，你必须使用你有的 >> 但是，是的，",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“you got to”是“you have to”的口语形式，注意省略。"
+    },
+    {
+      "id": "c1492",
+      "startTime": 5010.25,
+      "endTime": 5013.95,
+      "en": "I think he wants that's why you want to stand up kind of on this yellow volume,",
+      "zh": "我觉得他想，这就是为什么你想站到这个黄色大点上，",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "注意 'stand up' 在攀岩中常指站起来，这里指在点上站直身体。"
+    },
+    {
+      "id": "c1493",
+      "startTime": 5013.85,
+      "endTime": 5018.59,
+      "en": "trust your feet, and then just cross down into the blue hole.",
+      "zh": "相信你的脚，然后直接交叉手向下抓到蓝色洞里。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "'trust your feet' 是攀岩常用语，提醒相信脚点。"
+    },
+    {
+      "id": "c1494",
+      "startTime": 5018.49,
+      "endTime": 5019.6,
+      "en": "He's trying hard.",
+      "zh": "他真的很努力。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'trying hard' 表示尽力尝试，口语常用。"
+    },
+    {
+      "id": "c1495",
+      "startTime": 5020.41,
+      "endTime": 5022.8,
+      "en": ">> Yeah, his face, by the way, is on the screen.",
+      "zh": ">> 是啊，顺便说一下，他的脸在屏幕上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'by the way' 是插入语，表示顺便提一下。"
+    },
+    {
+      "id": "c1496",
+      "startTime": 5022.81,
+      "endTime": 5027.44,
+      "en": "So, he's sitting behind his own face doing that currently, which is rather nice.",
+      "zh": "所以，他现在正坐在自己脸的后面做这个动作，这挺有意思的。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'rather nice' 是英式英语，表示相当不错。"
+    },
+    {
+      "id": "c1497",
+      "startTime": 5028.57,
+      "endTime": 5030.16,
+      "en": ">> So, in front of his own face.",
+      "zh": ">> 所以，就在他自己的脸前面。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'in front of' 表示在……前面，注意与 'behind' 对比。"
+    },
+    {
+      "id": "c1498",
+      "startTime": 5030.73,
+      "endTime": 5032.27,
+      "en": ">> Look at those eyes locked in.",
+      "zh": ">> 看那双专注的眼睛。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'locked in' 表示全神贯注，常用于形容专注状态。"
+    },
+    {
+      "id": "c1499",
+      "startTime": 5032.17,
+      "endTime": 5036.19,
+      "en": "And the problem is the more sideways he went, the less and less grip he got on the >> Yeah.",
+      "zh": "问题是，他越往侧面去，抓握力就越小，>> 是啊。",
+      "score": 53,
+      "study": true,
+      "keywords": [],
+      "note": "'the more... the less...' 表示越……越……，注意比较级结构。"
+    },
+    {
+      "id": "c1500",
+      "startTime": 5036.13,
+      "endTime": 5037.87,
+      "en": "I mean, also the more he stretched out.",
+      "zh": "我的意思是，他也伸展得越来越开。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'stretch out' 表示伸展，这里指身体展开。"
+    },
+    {
+      "id": "c1501",
+      "startTime": 5037.81,
+      "endTime": 5041.04,
+      "en": "And that is really such a far move outwards that",
+      "zh": "那真是一个向外很远的大动作，以至于",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "'such a far move' 强调动作距离远，注意 'such' 的用法。"
+    },
+    {
+      "id": "c1502",
+      "startTime": 5042.65,
+      "endTime": 5047.44,
+      "en": ">> and the way they placed the volumes and everything, they managed to like create some kind of",
+      "zh": ">> 而且他们放置这些大点和一切的方式，他们设法创造了一种",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'the way they placed' 表示他们放置的方式，注意定语从句。"
+    },
+    {
+      "id": "c1503",
+      "startTime": 5049.21,
+      "endTime": 5050.64,
+      "en": "Uh overhangish.",
+      "zh": "呃，有点仰角的感觉。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "'overhangish' 是口语化说法，表示有点仰角，后缀 '-ish' 表示有点。"
+    },
+    {
+      "id": "c1504",
+      "startTime": 5059.29,
+      "endTime": 5060.72,
+      "en": ">> Rises from the dead.",
+      "zh": ">> 死而复生。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'rise from the dead' 是习语，比喻重新振作。"
+    },
+    {
+      "id": "c1505",
+      "startTime": 5061.77,
+      "endTime": 5062.37,
+      "en": ">> Awesome.",
+      "zh": ">> 太棒了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'awesome' 是常用感叹词，表示很棒。"
+    },
+    {
+      "id": "c1506",
+      "startTime": 5062.17,
+      "endTime": 5063.28,
+      "en": "Venture on there.",
+      "zh": "继续前进。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'venture on' 表示冒险继续，这里鼓励继续攀爬。"
+    },
+    {
+      "id": "c1507",
+      "startTime": 5063.61,
+      "endTime": 5064.21,
+      "en": "Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Right' 在这里表示同意或确认。"
+    },
+    {
+      "id": "c1508",
+      "startTime": 5064.01,
+      "endTime": 5066.08,
+      "en": "So, two have finished their competition",
+      "zh": "所以，有两个人已经完成了他们的比赛",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'finished their competition' 表示完成比赛，注意时态。"
+    },
+    {
+      "id": "c1509",
+      "startTime": 5067.05,
+      "endTime": 5069.63,
+      "en": ">> and then Ray and Hannis come out.",
+      "zh": ">> 然后 Ray 和 Hannis 出场了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'come out' 表示出场，常用于比赛。"
+    },
+    {
+      "id": "c1510",
+      "startTime": 5069.53,
+      "endTime": 5071.87,
+      "en": "So, we're nearing the last couple of boulders here.",
+      "zh": "所以，我们接近最后几个抱石了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'near the last couple of' 表示接近最后几个，注意 'couple of' 表示几个。"
+    },
+    {
+      "id": "c1511",
+      "startTime": 5071.77,
+      "endTime": 5081.04,
+      "en": "Ray will finish on the power boulder and then Hannis van Dyson takes on this what is actually a slab bizarrely to finish things off.",
+      "zh": "Ray 将在力量型抱石上结束，然后 Hannis van Dyson 将接受这个实际上是一块板壁的挑战，奇怪地结束比赛。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "slab"
+      ],
+      "note": "'slab' 是攀岩术语，指板壁，注意 'bizarrely' 表示奇怪地。"
+    },
+    {
+      "id": "c1512",
+      "startTime": 5081.77,
+      "endTime": 5083.52,
+      "en": "It's only a slab for the first section",
+      "zh": "只有第一部分是板壁",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "'only... for the first section' 表示只有第一部分，注意 'section' 表示部分。"
+    },
+    {
+      "id": "c1513",
+      "startTime": 5085.05,
+      "endTime": 5089.84,
+      "en": "And Ray is on form right now which is cool to see.",
+      "zh": "而且 Ray 现在状态很好，看到这个很酷。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "'on form' 表示状态好，是英式表达。"
+    },
+    {
+      "id": "c1514",
+      "startTime": 5089.93,
+      "endTime": 5091.28,
+      "en": "Flash of the first boulder.",
+      "zh": "第一个抱石一把完攀。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "flash"
+      ],
+      "note": "'flash' 是攀岩术语，表示第一次尝试就完攀。"
+    },
+    {
+      "id": "c1515",
+      "startTime": 5091.21,
+      "endTime": 5095.44,
+      "en": "Eight attempts on boulder two that only one other person did.",
+      "zh": "第二个抱石尝试了八次，只有另外一个人完成过。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'attempts' 表示尝试次数，注意 'only one other person did' 表示只有另一个人完成。"
+    },
+    {
+      "id": "c1516",
+      "startTime": 5095.37,
+      "endTime": 5100.99,
+      "en": "That was >> and he flashed his first move and he's already into the zone hold.",
+      "zh": "那真是……他一把完攀了第一个动作，已经进入Zone得分点了。",
+      "score": 67,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "zone",
+        "hold",
+        "move"
+      ],
+      "note": "flash 在这里指“一把完攀”，注意 flash 和 top 的区别。"
+    },
+    {
+      "id": "c1517",
+      "startTime": 5100.89,
+      "endTime": 5102.64,
+      "en": "Oh, but his fingers slipped.",
+      "zh": "哦，但他的手指滑了。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "slipped"
+      ],
+      "note": "slipped 是“滑脱”的意思，常用于描述抓点失败。"
+    },
+    {
+      "id": "c1518",
+      "startTime": 5102.73,
+      "endTime": 5104.43,
+      "en": ">> Look how comfortable Hannis looks here.",
+      "zh": "看看Hannis在这里多轻松自如。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "comfortable"
+      ],
+      "note": "comfortable 在这里指“轻松自如”，注意其口语用法。"
+    },
+    {
+      "id": "c1519",
+      "startTime": 5104.33,
+      "endTime": 5108.43,
+      "en": ">> Hannis, I mean, yep, he's in his comfort zone, but he goes down left foot.",
+      "zh": "Hannis，我是说，是的，他在舒适区，但他左脚向下踩。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "zone",
+        "foot"
+      ],
+      "note": "comfort zone 是“舒适区”，这里引申为“得心应手的状态”。"
+    },
+    {
+      "id": "c1520",
+      "startTime": 5108.33,
+      "endTime": 5110.27,
+      "en": "I think it's quite hard to cross it.",
+      "zh": "我觉得要交叉过去相当难。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "cross 在这里指“交叉换手或换脚”，注意攀岩语境。"
+    },
+    {
+      "id": "c1521",
+      "startTime": 5110.17,
+      "endTime": 5112.24,
+      "en": "Maybe he can swap feet like this. But look,",
+      "zh": "也许他可以像这样换脚。但你看，",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "swap feet 是“换脚”，注意 swap 的用法。"
+    },
+    {
+      "id": "c1522",
+      "startTime": 5114.73,
+      "endTime": 5118.72,
+      "en": ">> no text hold just sort of fell towards it and didn't quite work.",
+      "zh": "没有文字提示，只是朝它扑过去，但没成功。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "fell towards 是“扑向”，这里描述动态动作。"
+    },
+    {
+      "id": "c1523",
+      "startTime": 5118.73,
+      "endTime": 5121.44,
+      "en": "Yeah, Ray is in a really good position for podium",
+      "zh": "是的，Ray处于很好的领奖台位置。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "podium 是“领奖台”，注意其体育用法。"
+    },
+    {
+      "id": "c1524",
+      "startTime": 5122.57,
+      "endTime": 5123.92,
+      "en": ">> So, this is going to be fascinating.",
+      "zh": "所以，这将非常精彩。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "fascinating 是“引人入胜的”，注意其发音。"
+    },
+    {
+      "id": "c1525",
+      "startTime": 5123.93,
+      "endTime": 5125.15,
+      "en": "Has already got the zone on this.",
+      "zh": "他已经在这个线路上拿到了Zone。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "zone 是“Zone得分点”，注意大写。"
+    },
+    {
+      "id": "c1526",
+      "startTime": 5125.05,
+      "endTime": 5127.2,
+      "en": ">> I mean, yeah, he looked really good on",
+      "zh": "我的意思是，是的，他看起来真的很好，",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "looked really good 是“看起来状态很好”，注意过去时。"
+    },
+    {
+      "id": "c1527",
+      "startTime": 5128.97,
+      "endTime": 5130.48,
+      "en": "this border on his first attempt.",
+      "zh": "在第一次尝试时，他在这条线路上表现很好。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "attempt"
+      ],
+      "note": "border 可能是口误，实际应为 route，注意听。"
+    },
+    {
+      "id": "c1528",
+      "startTime": 5130.41,
+      "endTime": 5134.08,
+      "en": "So he has time to just rest and give another good go.",
+      "zh": "所以他有时间休息一下，再好好试一次。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "give another good go 是“再好好试一次”，注意 go 的用法。"
+    },
+    {
+      "id": "c1529",
+      "startTime": 5134.01,
+      "endTime": 5135.2,
+      "en": ">> This is Hannah slightest.",
+      "zh": "这是Hannah最轻微的。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "slightest 是“最轻微的”，但这里可能听错，注意上下文。"
+    },
+    {
+      "id": "c1530",
+      "startTime": 5135.61,
+      "endTime": 5138,
+      "en": ">> He's just trying to slow down his movement, but he cannot.",
+      "zh": "他只是想放慢动作，但他做不到。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "slow down 是“放慢”，注意 cannot 的强调。"
+    },
+    {
+      "id": "c1531",
+      "startTime": 5139.45,
+      "endTime": 5140.91,
+      "en": ">> I'm having fun in this fight.",
+      "zh": "我在这次对抗中玩得很开心。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "having fun 是“玩得开心”，注意进行时。"
+    },
+    {
+      "id": "c1532",
+      "startTime": 5140.81,
+      "endTime": 5141.84,
+      "en": "This is a good one.",
+      "zh": "这是一个好线路。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "good one 指“好线路”，注意 one 的指代。"
+    },
+    {
+      "id": "c1533",
+      "startTime": 5142.01,
+      "endTime": 5146.43,
+      "en": ">> Right, Hannis got to do this foot swap, which is that's just brilliant, mate.",
+      "zh": "对，Hannis必须做这个换脚，这真是太棒了，伙计。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "foot swap 是“换脚”，brilliant 是“棒极了”。"
+    },
+    {
+      "id": "c1534",
+      "startTime": 5146.33,
+      "endTime": 5148.27,
+      "en": "Sean is watching him right now from the sides.",
+      "zh": "Sean现在正在旁边看着他。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "watching from the sides 是“在旁边观看”，注意 sides 的用法。"
+    },
+    {
+      "id": "c1535",
+      "startTime": 5148.17,
+      "endTime": 5149.84,
+      "en": "Like what is going on, Hannis?",
+      "zh": "就像在说，Hannis在搞什么？",
+      "score": 26,
+      "study": false,
+      "keywords": [],
+      "note": "What is going on 是“发生什么事”，注意口语。"
+    },
+    {
+      "id": "c1536",
+      "startTime": 5154.41,
+      "endTime": 5159.36,
+      "en": "He's turning his body to the left, which allows him to swap feet much better, much easier.",
+      "zh": "他正把身体转向左侧，这让他换脚更好、更容易。",
+      "score": 55,
+      "study": true,
+      "keywords": [],
+      "note": "turning his body 是“转动身体”，注意 allow 的用法。"
+    },
+    {
+      "id": "c1537",
+      "startTime": 5160.81,
+      "endTime": 5162.72,
+      "en": "And he's managed to get his butt down.",
+      "zh": "而且他成功地把屁股放低了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "managed to 是“设法做到”，注意 butt 的口语。"
+    },
+    {
+      "id": "c1538",
+      "startTime": 5163.29,
+      "endTime": 5166.96,
+      "en": ">> Oh, Ray misses the zone again.",
+      "zh": "哦，Ray又没抓到Zone。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "misses the zone 是“错过Zone”，注意 miss 的用法。"
+    },
+    {
+      "id": "c1539",
+      "startTime": 5167.53,
+      "endTime": 5169.47,
+      "en": ">> Well, he's got misses the zone.",
+      "zh": "嗯，他错过了Zone。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "missed 是 miss 的过去式，注意时态。"
+    },
+    {
+      "id": "c1540",
+      "startTime": 5169.37,
+      "endTime": 5169.97,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "常用口语回应，表示同意。"
+    },
+    {
+      "id": "c1541",
+      "startTime": 5170.17,
+      "endTime": 5171.71,
+      "en": ">> So, hand Oh, look at that.",
+      "zh": ">> 所以，手，哦，看那个。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“look at that”是口语中常见的感叹表达。"
+    },
+    {
+      "id": "c1542",
+      "startTime": 5171.61,
+      "endTime": 5172.96,
+      "en": "Crouching all the way down.",
+      "zh": "一直蹲得很低。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“crouch down”意为蹲下，注意“all the way”表示完全、一直。"
+    },
+    {
+      "id": "c1543",
+      "startTime": 5178.57,
+      "endTime": 5180.24,
+      "en": "volumes kind of push you outwards.",
+      "zh": "这种大体积支点会把你往外推。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“volume”在攀岩中指大块支点，注意“push outwards”表示向外推。"
+    },
+    {
+      "id": "c1544",
+      "startTime": 5180.17,
+      "endTime": 5188.48,
+      "en": "Crouching down allows him to stay closer to the wall and then kind of last minute goes out and palms the zone hold.",
+      "zh": "蹲下能让他更贴近墙壁，然后在最后一刻向外伸手掌按住Zone得分点。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "zone",
+        "hold"
+      ],
+      "note": "“last minute”表示最后一刻，“palm”作动词表示用手掌按。"
+    },
+    {
+      "id": "c1545",
+      "startTime": 5188.81,
+      "endTime": 5191.04,
+      "en": "But once again, he's halfway through his time.",
+      "zh": "但又一次，他的时间已经过半了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“halfway through”表示进行到一半，注意“once again”表示再次。"
+    },
+    {
+      "id": "c1546",
+      "startTime": 5191.05,
+      "endTime": 5193.39,
+      "en": "He has time to understand what's happening.",
+      "zh": "他有时间去理解正在发生什么。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“have time to”表示有时间做某事，注意“what's happening”是常见口语。"
+    },
+    {
+      "id": "c1547",
+      "startTime": 5193.29,
+      "endTime": 5196.43,
+      "en": "Ray is not giving much rest in between attempts right now.",
+      "zh": "雷在两次尝试之间没有给太多休息时间。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“give rest”表示给予休息，注意“in between”表示在两者之间。"
+    },
+    {
+      "id": "c1548",
+      "startTime": 5196.33,
+      "endTime": 5200.03,
+      "en": ">> Maybe that he knows he's in a really good position and that's when the mind games can start, right?",
+      "zh": ">> 也许他知道自己处于非常好的位置，那时心理战就可以开始了，对吧？",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“mind games”指心理战术，注意“that's when”表示“那就是...的时候”。"
+    },
+    {
+      "id": "c1549",
+      "startTime": 5199.93,
+      "endTime": 5201.52,
+      "en": "When you know you're almost there.",
+      "zh": "当你知道你几乎要成功了。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“almost there”是常用表达，表示快到了。"
+    },
+    {
+      "id": "c1550",
+      "startTime": 5201.45,
+      "endTime": 5202.05,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1551",
+      "startTime": 5202.41,
+      "endTime": 5207.92,
+      "en": "And the difference between I guess the slab and this border is that he doesn't have 12 attempts on this",
+      "zh": "我想板壁和这个抱石的区别在于，他没有12次尝试的机会。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“the difference between A and B”表示A和B的区别，注意“slab”指板壁。"
+    },
+    {
+      "id": "c1552",
+      "startTime": 5209.85,
+      "endTime": 5212.16,
+      "en": "like he he just gave 15 second.",
+      "zh": "就像他刚才只给了15秒。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“just gave”表示只给了，注意“15 second”口语中省略复数。"
+    },
+    {
+      "id": "c1553",
+      "startTime": 5212.09,
+      "endTime": 5214.24,
+      "en": "No winter time 30 seconds.",
+      "zh": "没有冬季时间30秒。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“winter time”可能指冬季时间，但此处可能为口误或特定术语，注意“no”表示没有。"
+    },
+    {
+      "id": "c1554",
+      "startTime": 5215.37,
+      "endTime": 5215.97,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "常用口语，表示接受或理解。"
+    },
+    {
+      "id": "c1555",
+      "startTime": 5215.69,
+      "endTime": 5217.76,
+      "en": "But he's managed to hold that move.",
+      "zh": "但他成功保持了那个动作。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "hold",
+        "move"
+      ],
+      "note": "“managed to”表示设法做到，注意“hold”在攀岩中表示保持姿势。"
+    },
+    {
+      "id": "c1556",
+      "startTime": 5217.85,
+      "endTime": 5219.68,
+      "en": "He's back up onto the zone.",
+      "zh": "他重新回到了Zone得分点。",
+      "score": 60,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“back up onto”表示重新回到，注意“zone”指得分点。"
+    },
+    {
+      "id": "c1557",
+      "startTime": 5220.89,
+      "endTime": 5224.08,
+      "en": ">> Oh, but he's just too low on the volume.",
+      "zh": ">> 哦，但他在大体积支点上太低了。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“too low”表示太低，注意“on the volume”指在支点上。"
+    },
+    {
+      "id": "c1558",
+      "startTime": 5224.65,
+      "endTime": 5227.6,
+      "en": ">> If I was him, 36 seconds rest now, please.",
+      "zh": ">> 如果我是他，现在休息36秒，拜托。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“If I were him”是虚拟语气，表示如果我是他，注意“please”表示请求。"
+    },
+    {
+      "id": "c1559",
+      "startTime": 5227.61,
+      "endTime": 5229.15,
+      "en": ">> I mean, a minute rest.",
+      "zh": ">> 我的意思是，休息一分钟。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“I mean”用于纠正或解释，注意“a minute rest”表示一分钟休息。"
+    },
+    {
+      "id": "c1560",
+      "startTime": 5229.05,
+      "endTime": 5231.28,
+      "en": "He has he has enough time in 30 seconds.",
+      "zh": "他有足够的时间，30秒。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“have enough time”表示有足够时间，注意“in 30 seconds”表示在30秒内。"
+    },
+    {
+      "id": "c1561",
+      "startTime": 5231.85,
+      "endTime": 5234.35,
+      "en": ">> Hannis starts to creep towards the zone.",
+      "zh": ">> 汉尼斯开始慢慢接近Zone得分点。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“creep towards”表示缓慢移动，注意“start to”表示开始。"
+    },
+    {
+      "id": "c1562",
+      "startTime": 5234.29,
+      "endTime": 5236.51,
+      "en": "Again, I'm fascinated to see how you hold this zone hole.",
+      "zh": "再次，我很好奇你会如何抓住这个Zone得分点。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "zone",
+        "hold"
+      ],
+      "note": "“fascinated to see”表示好奇想看，注意“hold”表示抓握。"
+    },
+    {
+      "id": "c1563",
+      "startTime": 5236.41,
+      "endTime": 5240,
+      "en": "Whether you kind of wide pinch it, whether you I don't know.",
+      "zh": "你是用宽捏的方式，还是...我不知道。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "pinch"
+      ],
+      "note": "“wide pinch”指宽捏，注意“whether...or...”表示是否...还是..."
+    },
+    {
+      "id": "c1564",
+      "startTime": 5240.25,
+      "endTime": 5248.64,
+      "en": ">> He's trying to thumb swap on >> thumb swap on a block screw hole. Yeah, that looks very",
+      "zh": ">> 他试图在块状螺丝孔上做拇指换手 >> 拇指换手。是的，那看起来非常",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "thumb swap 是攀岩术语，指拇指换手，注意听 'thumb swap' 的发音。"
+    },
+    {
+      "id": "c1565",
+      "startTime": 5251.29,
+      "endTime": 5252.96,
+      "en": ">> I'm not completely sure.",
+      "zh": ">> 我不完全确定。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "I'm not completely sure. 是常用表达，注意 'completely' 的发音。"
+    },
+    {
+      "id": "c1566",
+      "startTime": 5254.17,
+      "endTime": 5260.64,
+      "en": ">> I mean, that's for sure the way, but that's also very like it's it feels far away to just hold with your arm straight.",
+      "zh": ">> 我的意思是，那肯定是方法，但那样做也像是，手臂伸直去抓感觉很远。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "arm straight 指手臂伸直，注意 'far away' 的连读。"
+    },
+    {
+      "id": "c1567",
+      "startTime": 5260.89,
+      "endTime": 5263.76,
+      "en": "Kind of like >> backbreaking move.",
+      "zh": "有点像 >> 费力的动作。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "backbreaking 意为极其费力的，注意这个词的比喻用法。"
+    },
+    {
+      "id": "c1568",
+      "startTime": 5263.69,
+      "endTime": 5264.29,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，注意语调。"
+    },
+    {
+      "id": "c1569",
+      "startTime": 5264.81,
+      "endTime": 5266.75,
+      "en": "I mean, look, wasn't it wasn't the screw.",
+      "zh": "我的意思是，看，那不是螺丝。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'wasn't it' 的否定疑问句，实际是确认。"
+    },
+    {
+      "id": "c1570",
+      "startTime": 5266.65,
+      "endTime": 5267.47,
+      "en": "It was the edge of the volume.",
+      "zh": "那是体积的边缘。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "volume 在攀岩中指大块岩点，注意 'edge' 的发音。"
+    },
+    {
+      "id": "c1571",
+      "startTime": 5267.37,
+      "endTime": 5268.43,
+      "en": ">> It's the edge of the volume.",
+      "zh": ">> 那是体积的边缘。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "重复强调，注意语调。"
+    },
+    {
+      "id": "c1572",
+      "startTime": 5268.33,
+      "endTime": 5268.93,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c1573",
+      "startTime": 5268.89,
+      "endTime": 5269.79,
+      "en": ">> Right in the corner.",
+      "zh": ">> 就在角落里。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "right in the corner 表示正好在角落，注意 'right' 的强调。"
+    },
+    {
+      "id": "c1574",
+      "startTime": 5269.69,
+      "endTime": 5270.29,
+      "en": "Look at that.",
+      "zh": "看那个。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "Look at that. 是常用感叹，注意连读。"
+    },
+    {
+      "id": "c1575",
+      "startTime": 5270.17,
+      "endTime": 5270.83,
+      "en": "And then Yeah.",
+      "zh": "然后是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中的过渡，注意 'and then' 的连读。"
+    },
+    {
+      "id": "c1576",
+      "startTime": 5270.77,
+      "endTime": 5271.37,
+      "en": "What do you do?",
+      "zh": "你做什么？",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "What do you do? 是询问方法，注意 'do you' 的弱读。"
+    },
+    {
+      "id": "c1577",
+      "startTime": 5271.33,
+      "endTime": 5272.91,
+      "en": "I mean, he exploded onto it.",
+      "zh": "我的意思是，他爆发性地抓到了它。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "exploded onto 形容动作爆发力强，注意 'exploded' 的发音。"
+    },
+    {
+      "id": "c1578",
+      "startTime": 5272.81,
+      "endTime": 5274.19,
+      "en": "Ray is climbing right now.",
+      "zh": "Ray 现在正在攀爬。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'is climbing' 的进行时，表示正在发生。"
+    },
+    {
+      "id": "c1579",
+      "startTime": 5274.09,
+      "endTime": 5275.87,
+      "en": "So, he is up towards the top.",
+      "zh": "所以，他快到顶部了。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "up towards the top 表示接近顶部，注意 'towards' 的发音。"
+    },
+    {
+      "id": "c1580",
+      "startTime": 5275.77,
+      "endTime": 5276.96,
+      "en": "falls on the sloper.",
+      "zh": "在 sloper 上脱落。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "sloper"
+      ],
+      "note": "sloper 是攀岩术语，指斜面点，注意 'falls' 的发音。"
+    },
+    {
+      "id": "c1581",
+      "startTime": 5277.05,
+      "endTime": 5279.04,
+      "en": ">> On the sloper again. Oh no.",
+      "zh": ">> 又在 sloper 上。哦不。",
+      "score": 43,
+      "study": true,
+      "keywords": [
+        "sloper"
+      ],
+      "note": "again 表示再次，注意 'Oh no' 的感叹语气。"
+    },
+    {
+      "id": "c1582",
+      "startTime": 5280.09,
+      "endTime": 5280.96,
+      "en": ">> First time.",
+      "zh": ">> 第一次。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "First time 表示第一次，注意 'time' 的发音。"
+    },
+    {
+      "id": "c1583",
+      "startTime": 5280.97,
+      "endTime": 5290.16,
+      "en": ">> I mean, he's got the zone, which is very important for him, but I think this is also then if he doesn't top,",
+      "zh": ">> 我的意思是，他拿到了 Zone，这对他来说非常重要，但我认为这也是，如果他没有完攀，",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "top",
+        "zone"
+      ],
+      "note": "zone 是攀岩术语，指得分点，注意 'if he doesn't top' 的条件句。"
+    },
+    {
+      "id": "c1584",
+      "startTime": 5290.97,
+      "endTime": 5294.4,
+      "en": "it's also good for Sarat cuz he's just going to come out and be like, \"Okay,",
+      "zh": "这对 Sarat 也有好处，因为他会出来说：\"好吧，",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'cuz' 是 because 的口语缩写，'come out' 表示出来。"
+    },
+    {
+      "id": "c1585",
+      "startTime": 5294.81,
+      "endTime": 5296.64,
+      "en": "I have the chance to get in front again",
+      "zh": "我有机会再次领先了。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "get in front 表示领先，注意 'again' 的发音。"
+    },
+    {
+      "id": "c1586",
+      "startTime": 5298.41,
+      "endTime": 5300.99,
+      "en": "Okay, Ray is running down his time big time.",
+      "zh": "好吧，Ray 的时间正在大幅减少。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "running down 表示减少，注意 'big time' 是口语强调。"
+    },
+    {
+      "id": "c1587",
+      "startTime": 5300.93,
+      "endTime": 5303.68,
+      "en": "He's got 20 seconds left, so he's going to have to climb quite",
+      "zh": "他只剩下20秒了，所以他必须爬得相当快。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "注意 '20 seconds left' 的用法，'have to' 表示必须。"
+    },
+    {
+      "id": "c1588",
+      "startTime": 5305.29,
+      "endTime": 5306.35,
+      "en": "And this is a move away.",
+      "zh": "这离完攀还差一步。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "注意 'a move away' 表示距离目标很近，常用于比赛解说。"
+    },
+    {
+      "id": "c1589",
+      "startTime": 5306.25,
+      "endTime": 5307.07,
+      "en": "He falls again.",
+      "zh": "他又掉下来了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'falls' 是 'fall' 的第三人称单数，表示掉落。"
+    },
+    {
+      "id": "c1590",
+      "startTime": 5306.97,
+      "endTime": 5308.43,
+      "en": "I don't think that's going to happen for him.",
+      "zh": "我觉得他不可能完攀了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'I don't think that's going to happen' 是委婉表达否定。"
+    },
+    {
+      "id": "c1591",
+      "startTime": 5308.33,
+      "endTime": 5309.76,
+      "en": "No for Ray either.",
+      "zh": "雷也没能完攀。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'No for Ray either' 是口语化表达，表示同样不行。"
+    },
+    {
+      "id": "c1592",
+      "startTime": 5310.65,
+      "endTime": 5313.84,
+      "en": ">> Yeah, I think Ry here didn't handle his",
+      "zh": "是的，我觉得雷在这里没有处理好。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'handle' 在这里指处理动作，是常用动词。"
+    },
+    {
+      "id": "c1593",
+      "startTime": 5315.77,
+      "endTime": 5316.51,
+      "en": ">> that well.",
+      "zh": "他处理得不太好。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'that well' 是副词短语，修饰动词。"
+    },
+    {
+      "id": "c1594",
+      "startTime": 5316.41,
+      "endTime": 5318.32,
+      "en": "He could have maybe rested a bit more.",
+      "zh": "他也许可以多休息一下。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'could have' 表示过去可能做但没做。"
+    },
+    {
+      "id": "c1595",
+      "startTime": 5318.57,
+      "endTime": 5320.75,
+      "en": ">> Hannis is doing something crazy.",
+      "zh": "汉尼斯正在做一些疯狂的事。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'doing something crazy' 是进行时，表示正在发生。"
+    },
+    {
+      "id": "c1596",
+      "startTime": 5320.65,
+      "endTime": 5321.6,
+      "en": ">> He's still going.",
+      "zh": "他还在继续。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'still going' 表示仍在进行中。"
+    },
+    {
+      "id": "c1597",
+      "startTime": 5322.17,
+      "endTime": 5324.32,
+      "en": "Nearly takes out Ray on the way there.",
+      "zh": "他差点撞到雷。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'nearly takes out' 中 'take out' 是口语，表示撞倒。"
+    },
+    {
+      "id": "c1598",
+      "startTime": 5324.73,
+      "endTime": 5326,
+      "en": "He was walking past.",
+      "zh": "他刚才正走过去。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'was walking past' 是过去进行时，描述背景动作。"
+    },
+    {
+      "id": "c1599",
+      "startTime": 5326.09,
+      "endTime": 5329.23,
+      "en": "So Hannis is done down in sixth at the moment.",
+      "zh": "所以汉尼斯目前排名第六。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'done down' 表示最终排名，'at the moment' 表示当前。"
+    },
+    {
+      "id": "c1600",
+      "startTime": 5329.13,
+      "endTime": 5329.73,
+      "en": "44.6.",
+      "zh": "44.6秒。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意数字读法，这里指用时。"
+    },
+    {
+      "id": "c1601",
+      "startTime": 5330.25,
+      "endTime": 5331.68,
+      "en": "So no podium for him.",
+      "zh": "所以他没进前三。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'podium' 指领奖台，这里指前三名。"
+    },
+    {
+      "id": "c1602",
+      "startTime": 5332.89,
+      "endTime": 5341.12,
+      "en": "No, which is unfortunate especially because he was just so close on >> That's what happens kids when you stick your nails behind volumes.",
+      "zh": "是的，这很不幸，尤其是他离成功那么近。孩子们，这就是把指甲卡在岩点后面的后果。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'stick your nails behind volumes' 是形象说法，指手指卡住。"
+    },
+    {
+      "id": "c1603",
+      "startTime": 5342.65,
+      "endTime": 5346.64,
+      "en": ">> See, it always makes me go cold and got a real phobia of that.",
+      "zh": "看，这总是让我起鸡皮疙瘩，我对这个有恐惧症。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'go cold' 指感到发冷，'phobia' 是恐惧症。"
+    },
+    {
+      "id": "c1604",
+      "startTime": 5347.45,
+      "endTime": 5349.44,
+      "en": ">> I could just imagine the pain.",
+      "zh": "我能想象那种疼痛。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'imagine' 是想象，常用于表达同理心。"
+    },
+    {
+      "id": "c1605",
+      "startTime": 5351.69,
+      "endTime": 5355.04,
+      "en": ">> I mean, especially he like slipped out from his nails.",
+      "zh": "我的意思是，尤其是他的指甲好像滑脱了。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "slipped"
+      ],
+      "note": "注意 'slipped out' 表示滑出，这里指指甲脱落。"
+    },
+    {
+      "id": "c1606",
+      "startTime": 5362.81,
+      "endTime": 5364.64,
+      "en": ">> He's showing the camera his war wounds.",
+      "zh": "他正在向镜头展示他的战斗伤痕。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'war wounds' 是比喻，指受伤。"
+    },
+    {
+      "id": "c1607",
+      "startTime": 5366.17,
+      "endTime": 5368.59,
+      "en": "Okay, so Serato comes on.",
+      "zh": "好的，塞拉托上场了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'comes on' 表示上场，常用于比赛。"
+    },
+    {
+      "id": "c1608",
+      "startTime": 5368.49,
+      "endTime": 5374.08,
+      "en": "Now, the fact Ry didn't do that, Serato won't necessarily know that, of course, that Ray didn't do it.",
+      "zh": "现在，雷没有完成，塞拉托当然不一定知道雷没有完成。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'the fact' 引导从句，'necessarily' 表示不一定。"
+    },
+    {
+      "id": "c1609",
+      "startTime": 5374.81,
+      "endTime": 5376.4,
+      "en": ">> he might have asked for the score.",
+      "zh": "他可能问了分数。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'might have' 表示可能做过某事。"
+    },
+    {
+      "id": "c1610",
+      "startTime": 5376.49,
+      "endTime": 5379.36,
+      "en": ">> No, he he Ray didn't come back any other",
+      "zh": "不，雷没有回来，也没有其他信息。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'didn't come back' 表示没有回来，这里指没有传递信息。"
+    },
+    {
+      "id": "c1611",
+      "startTime": 5380.65,
+      "endTime": 5383.15,
+      "en": "SA definitely knows he didn't top.",
+      "zh": "塞拉托肯定知道他没完攀。",
+      "score": 60,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "注意 'definitely knows' 表示肯定知道，'top' 是完攀。"
+    },
+    {
+      "id": "c1612",
+      "startTime": 5383.05,
+      "endTime": 5386.72,
+      "en": "There wasn't a crazy cheer either at any point.",
+      "zh": "任何时候都没有疯狂的欢呼声。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'crazy cheer' 的发音，'cheer' 意为欢呼。"
+    },
+    {
+      "id": "c1613",
+      "startTime": 5386.97,
+      "endTime": 5390.32,
+      "en": "So Sarat might have got a little bit of confidence in that case then.",
+      "zh": "所以萨拉特在那次情况下可能获得了一点信心。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'might have got' 表示推测，注意 'got' 在英式英语中常用。"
+    },
+    {
+      "id": "c1614",
+      "startTime": 5394.81,
+      "endTime": 5396.56,
+      "en": "sticky hands of his on those",
+      "zh": "他那粘性的手在这些点上。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'sticky hands' 形容手粘性强，抓点稳。"
+    },
+    {
+      "id": "c1615",
+      "startTime": 5397.93,
+      "endTime": 5399.84,
+      "en": ">> He is called sticky Sorato.",
+      "zh": ">> 他被称为粘性索拉托。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'sticky Sorato' 的昵称，'sticky' 意为粘性的。"
+    },
+    {
+      "id": "c1616",
+      "startTime": 5400.49,
+      "endTime": 5401.09,
+      "en": ">> He is.",
+      "zh": ">> 是的。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "简短回应，表示同意。"
+    },
+    {
+      "id": "c1617",
+      "startTime": 5400.93,
+      "endTime": 5404.67,
+      "en": "And I got that into a lot of people telling me I shouldn't say that.",
+      "zh": "我听说很多人告诉我我不应该说那个。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'got that into' 意为听说，注意 'shouldn't' 的发音。"
+    },
+    {
+      "id": "c1618",
+      "startTime": 5404.57,
+      "endTime": 5405.63,
+      "en": "I was trying to say it was his name.",
+      "zh": "我试图说那是他的名字。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'trying to say' 表示试图说，注意 'trying' 的发音。"
+    },
+    {
+      "id": "c1619",
+      "startTime": 5405.57,
+      "endTime": 5406.24,
+      "en": ">> Oh yeah.",
+      "zh": ">> 哦，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "表示恍然大悟。"
+    },
+    {
+      "id": "c1620",
+      "startTime": 5406.81,
+      "endTime": 5410.8,
+      "en": ">> I mean he's he just it's he's just so strong.",
+      "zh": ">> 我的意思是他就是太强了。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'I mean' 是口语常用，表示解释。"
+    },
+    {
+      "id": "c1621",
+      "startTime": 5410.81,
+      "endTime": 5412.24,
+      "en": "He just holds on to anything.",
+      "zh": "他什么都能抓住。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'holds on to anything' 意为抓住任何东西。"
+    },
+    {
+      "id": "c1622",
+      "startTime": 5412.17,
+      "endTime": 5412.77,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "表示同意。"
+    },
+    {
+      "id": "c1623",
+      "startTime": 5412.41,
+      "endTime": 5414.8,
+      "en": "And it is his nickname within the community.",
+      "zh": "而且这是他在社区里的昵称。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'nickname' 意为昵称，注意 'within' 的发音。"
+    },
+    {
+      "id": "c1624",
+      "startTime": 5414.81,
+      "endTime": 5417.2,
+      "en": "Yes, before you shout at me for saying it.",
+      "zh": "是的，在我这么说之前你们别骂我。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'shout at me' 意为骂我，注意 'before' 的用法。"
+    },
+    {
+      "id": "c1625",
+      "startTime": 5417.37,
+      "endTime": 5421.31,
+      "en": "It's legit >> like the most sloppiest of volumes and he's just on them.",
+      "zh": "这是合法的 >> 就像最糟糕的抓握，他都能抓住。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'sloppiest' 意为最糟糕的，'volumes' 可能指抓握点。"
+    },
+    {
+      "id": "c1626",
+      "startTime": 5421.21,
+      "endTime": 5424.72,
+      "en": "Okay, >> Dune is doing ah his foot.",
+      "zh": "好的，>> 杜恩正在做他的脚。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'Dune' 的发音，可能指选手。"
+    },
+    {
+      "id": "c1627",
+      "startTime": 5424.65,
+      "endTime": 5426.27,
+      "en": "He was able to do the cross through.",
+      "zh": "他能够交叉通过。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "'cross through' 意为交叉通过，注意 'through' 的发音。"
+    },
+    {
+      "id": "c1628",
+      "startTime": 5426.17,
+      "endTime": 5426.77,
+      "en": ">> Wow.",
+      "zh": ">> 哇。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "表示惊叹。"
+    },
+    {
+      "id": "c1629",
+      "startTime": 5426.57,
+      "endTime": 5428.83,
+      "en": "Sato should really get this, shouldn't he?",
+      "zh": "萨托应该真的能完成这个，不是吗？",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'should really get this' 意为应该能完成，注意 'shouldn't he' 的反问。"
+    },
+    {
+      "id": "c1630",
+      "startTime": 5428.73,
+      "endTime": 5429.39,
+      "en": "Look at this.",
+      "zh": "看看这个。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "'Look at this' 是常用口语。"
+    },
+    {
+      "id": "c1631",
+      "startTime": 5429.29,
+      "endTime": 5438.32,
+      "en": ">> But look, he is he going to think of the He's managed to heel hook underneath >> the crib compared to heel hooking his >> He's low.",
+      "zh": ">> 但是看，他是不是要想到他设法在下面做了脚跟钩 >> 与脚跟钩相比 >> 他很低。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "heel hook",
+        "heel"
+      ],
+      "note": "'heel hook' 是脚跟钩，注意 'managed to' 的用法。"
+    },
+    {
+      "id": "c1632",
+      "startTime": 5438.25,
+      "endTime": 5441.04,
+      "en": ">> His hand is low. Oh, he almost",
+      "zh": ">> 他的手很低。哦，他差点",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'almost' 的发音，表示差点。"
+    },
+    {
+      "id": "c1633",
+      "startTime": 5442.01,
+      "endTime": 5443.31,
+      "en": ">> he had to work hard,",
+      "zh": ">> 他必须努力，",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'had to work hard' 意为必须努力。"
+    },
+    {
+      "id": "c1634",
+      "startTime": 5443.21,
+      "endTime": 5450.16,
+      "en": "but I feel like it was always within control >> and he's very happy with that >> because that puts him",
+      "zh": "但我觉得一切都在掌控之中 >> 而且他对那非常满意 >> 因为那让他",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'within control' 意为在掌控中，注意 'feel like' 的用法。"
+    },
+    {
+      "id": "c1635",
+      "startTime": 5456.41,
+      "endTime": 5457.39,
+      "en": ">> In first place.",
+      "zh": ">> 进入第一名。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'puts him in first place' 意为让他进入第一名。"
+    },
+    {
+      "id": "c1636",
+      "startTime": 5457.29,
+      "endTime": 5458.51,
+      "en": ">> Yes, he should really.",
+      "zh": ">> 是的，他确实应该。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "注意“should really”的强调语气，表示“确实应该”。"
+    },
+    {
+      "id": "c1637",
+      "startTime": 5458.41,
+      "endTime": 5463.44,
+      "en": "He's on 74 and Ray is on 59. >> I mean,",
+      "zh": "他得了74分，雷得了59分。>> 我的意思是，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“I mean”是口语中常见的插入语，用于补充说明。"
+    },
+    {
+      "id": "c1638",
+      "startTime": 5464.57,
+      "endTime": 5466.96,
+      "en": ">> so Ray could catch him if Sarat makes a match.",
+      "zh": ">> 所以如果萨拉特出现失误，雷就有可能追上他。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "match"
+      ],
+      "note": "“make a match”在这里指“失误”，注意语境。"
+    },
+    {
+      "id": "c1639",
+      "startTime": 5466.89,
+      "endTime": 5470.64,
+      "en": "If Ray tops the last one and Serato doesn't even get zone.",
+      "zh": "如果雷完攀了最后一条线路，而塞拉托甚至没拿到Zone。",
+      "score": 61,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“top”在攀岩中意为“完攀”，“zone”指得分点。"
+    },
+    {
+      "id": "c1640",
+      "startTime": 5472.09,
+      "endTime": 5472.91,
+      "en": ">> things can change.",
+      "zh": ">> 情况可能会改变。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“things can change”是常用表达，表示事情可能发生变化。"
+    },
+    {
+      "id": "c1641",
+      "startTime": 5472.81,
+      "endTime": 5476.48,
+      "en": ">> Sat is about as close as you can get for a fifth gold medal here.",
+      "zh": ">> 萨特距离在这里获得第五枚金牌已经非常接近了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“as close as you can get”表示“极其接近”。"
+    },
+    {
+      "id": "c1642",
+      "startTime": 5477.29,
+      "endTime": 5480.08,
+      "en": ">> Which means if he gets it, we can start talking about number six.",
+      "zh": ">> 这意味着如果他拿到了，我们就可以开始谈论第六枚了。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“start talking about”表示“开始谈论”。"
+    },
+    {
+      "id": "c1643",
+      "startTime": 5480.97,
+      "endTime": 5481.87,
+      "en": ">> Which isn't a while.",
+      "zh": ">> 那可不是一会儿的事。",
+      "score": 32,
+      "study": false,
+      "keywords": [],
+      "note": "“which isn't a while”是口语化表达，意为“不是短时间”。"
+    },
+    {
+      "id": "c1644",
+      "startTime": 5481.77,
+      "endTime": 5483.68,
+      "en": ">> Yeah, three months to talk about number six.",
+      "zh": ">> 是的，还有三个月可以谈论第六枚。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意“three months”和“talk about”的搭配。"
+    },
+    {
+      "id": "c1645",
+      "startTime": 5483.61,
+      "endTime": 5485.6,
+      "en": "Think of the media I can create.",
+      "zh": "想想我能创作多少媒体内容。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“think of”表示“想象一下”，常用于提出建议。"
+    },
+    {
+      "id": "c1646",
+      "startTime": 5486.33,
+      "endTime": 5487.31,
+      "en": ">> it's a long time.",
+      "zh": ">> 那是一段很长的时间。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“a long time”是常用短语，表示“很长时间”。"
+    },
+    {
+      "id": "c1647",
+      "startTime": 5487.21,
+      "endTime": 5487.95,
+      "en": ">> Almost four.",
+      "zh": ">> 差不多四个月。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“almost”表示“几乎，差不多”。"
+    },
+    {
+      "id": "c1648",
+      "startTime": 5487.85,
+      "endTime": 5488.75,
+      "en": ">> Almost four months.",
+      "zh": ">> 差不多四个月。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调时间长度。"
+    },
+    {
+      "id": "c1649",
+      "startTime": 5488.65,
+      "endTime": 5489.52,
+      "en": "Look at this.",
+      "zh": "看看这个。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“look at this”是吸引注意力的常用语。"
+    },
+    {
+      "id": "c1650",
+      "startTime": 5490.17,
+      "endTime": 5491.63,
+      "en": ">> Yeah, a lot of climbing before that.",
+      "zh": ">> 是的，在那之前还有很多攀岩比赛。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“a lot of climbing”指“很多攀岩活动”。"
+    },
+    {
+      "id": "c1651",
+      "startTime": 5491.53,
+      "endTime": 5494.8,
+      "en": "Of course, the lead season really kicks off in earnest.",
+      "zh": "当然，领先赛季真正全面展开。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“kicks off”表示“开始”，“in earnest”意为“认真地”。"
+    },
+    {
+      "id": "c1652",
+      "startTime": 5495.21,
+      "endTime": 5499.76,
+      "en": "So Leoan gets that left foot onto Jib.",
+      "zh": "所以莱昂把左脚放到Jib点上。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“gets that left foot onto”表示“把左脚放到”。"
+    },
+    {
+      "id": "c1653",
+      "startTime": 5500.09,
+      "endTime": 5501.12,
+      "en": "Presses away.",
+      "zh": "向外推。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“presses away”指“推离”，注意动词短语。"
+    },
+    {
+      "id": "c1654",
+      "startTime": 5501.29,
+      "endTime": 5503.76,
+      "en": ">> Ah, he went in a bit rush there.",
+      "zh": ">> 啊，他有点匆忙了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“in a bit rush”是口语，意为“有点匆忙”。"
+    },
+    {
+      "id": "c1655",
+      "startTime": 5509.29,
+      "endTime": 5513.12,
+      "en": "got about Formula 1 tire Physics, by the >> Okay, let's hear it.",
+      "zh": "谈到一级方程式轮胎物理学，>> 好的，让我们听听。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“Formula 1”指“一级方程式赛车”。"
+    },
+    {
+      "id": "c1656",
+      "startTime": 5513.29,
+      "endTime": 5516,
+      "en": "What What is the theory behind it for you?",
+      "zh": "你对此背后的理论是什么？",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“What is the theory behind it”是询问理论依据的常用句型。"
+    },
+    {
+      "id": "c1657",
+      "startTime": 5515.93,
+      "endTime": 5517.39,
+      "en": ">> Well, there are a lot of theories.",
+      "zh": ">> 嗯，有很多理论。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“a lot of theories”表示“很多理论”。"
+    },
+    {
+      "id": "c1658",
+      "startTime": 5517.29,
+      "endTime": 5519.95,
+      "en": "I don't think we've got any actual engineers in the house sending me messages,",
+      "zh": "我觉得我们这里没有真正的工程师给我发消息，",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“I don't think”是否定前置，注意翻译。"
+    },
+    {
+      "id": "c1659",
+      "startTime": 5519.85,
+      "endTime": 5523.92,
+      "en": "but it's something to do >> u the mold of the tire to the track.",
+      "zh": "但这与轮胎对赛道的适应性有关。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“something to do with”表示“与……有关”。"
+    },
+    {
+      "id": "c1660",
+      "startTime": 5523.85,
+      "endTime": 5525.36,
+      "en": "That's what some people are saying.",
+      "zh": "这就是一些人所说的。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 \"That's what some people are saying\" 中的 \"some people\" 表示部分人，常用于转述观点。"
+    },
+    {
+      "id": "c1661",
+      "startTime": 5526.89,
+      "endTime": 5527.68,
+      "en": ">> I don't.",
+      "zh": "我不这么认为。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "简短回应 \"I don't\" 在口语中常用来表示不同意，完整形式是 \"I don't think so\"。"
+    },
+    {
+      "id": "c1662",
+      "startTime": 5527.61,
+      "endTime": 5532.11,
+      "en": ">> Although this person says, \"I assume with climbers a soft rubber makes him slip, makes him more unpredictable when they try to grip.\"",
+      "zh": "虽然这个人说：\"我猜想对于攀岩者来说，软橡胶会让他打滑，让他们在尝试抓握时更不可预测。\"",
+      "score": 53,
+      "study": true,
+      "keywords": [],
+      "note": "注意 \"assume\" 表示假设，\"unpredictable\" 意为不可预测，常用于描述动作的不稳定性。"
+    },
+    {
+      "id": "c1663",
+      "startTime": 5532.01,
+      "endTime": 5533.87,
+      "en": "And he says, \"It's your engineering student answer.",
+      "zh": "他说：\"这是你作为工科学生的答案。\"",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "\"engineering student\" 指工科学生，这里带有调侃意味，暗示答案过于理论化。"
+    },
+    {
+      "id": "c1664",
+      "startTime": 5533.77,
+      "endTime": 5535.28,
+      "en": "So, you need to study again.\"",
+      "zh": "所以，你需要再学习一下。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "\"study again\" 直译为再学习，但这里实际意思是\"重新考虑\"，带有讽刺语气。"
+    },
+    {
+      "id": "c1665",
+      "startTime": 5535.45,
+      "endTime": 5536.27,
+      "en": "Oh, sorry, madam.",
+      "zh": "哦，抱歉，女士。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "\"madam\" 是对女性的尊称，这里用于回应对方的批评，显得礼貌但略带讽刺。"
+    },
+    {
+      "id": "c1666",
+      "startTime": 5536.17,
+      "endTime": 5537.36,
+      "en": "You need to study again.",
+      "zh": "你需要再学习一下。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "重复上一句，强调观点，注意语气中的坚持。"
+    },
+    {
+      "id": "c1667",
+      "startTime": 5537.53,
+      "endTime": 5539.28,
+      "en": "We need better answers. Everyone,",
+      "zh": "我们需要更好的答案。各位，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "\"better answers\" 意为更好的答案，\"everyone\" 用于引起注意。"
+    },
+    {
+      "id": "c1668",
+      "startTime": 5540.49,
+      "endTime": 5546,
+      "en": ">> I need an engineer hop on here and explain to me the science behind all of",
+      "zh": "我需要一位工程师来给我解释一下这背后的科学原理。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "\"hop on here\" 是口语，意为\"过来\"，\"the science behind\" 指背后的科学原理。"
+    },
+    {
+      "id": "c1669",
+      "startTime": 5546.97,
+      "endTime": 5548.75,
+      "en": ">> So, lead back in.",
+      "zh": "所以，重新回到领先攀。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "\"lead back in\" 在攀岩中可能指重新开始领先攀，注意 \"lead\" 是领先攀的意思。"
+    },
+    {
+      "id": "c1670",
+      "startTime": 5548.65,
+      "endTime": 5553.04,
+      "en": "9.3 needed for bronze, but that will be dependent on what other people do.",
+      "zh": "铜牌需要9.3分，但这将取决于其他人的表现。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "\"be dependent on\" 意为取决于，\"bronze\" 指铜牌。"
+    },
+    {
+      "id": "c1671",
+      "startTime": 5553.21,
+      "endTime": 5553.81,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的确认词，常用于对话中表示理解或同意。"
+    },
+    {
+      "id": "c1672",
+      "startTime": 5553.53,
+      "endTime": 5555.23,
+      "en": "So, ah, he's struggling with this move.",
+      "zh": "所以，他正在这个动作上挣扎。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "\"struggle with\" 意为在...上挣扎，常用于描述困难。"
+    },
+    {
+      "id": "c1673",
+      "startTime": 5555.13,
+      "endTime": 5558.83,
+      "en": "I feel like he's maybe going just a bit too rushed into it.",
+      "zh": "我觉得他可能有点太着急了。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "\"too rushed\" 意为太匆忙，\"go into\" 这里指进入动作。"
+    },
+    {
+      "id": "c1674",
+      "startTime": 5558.73,
+      "endTime": 5562.19,
+      "en": "He can definitely go a bit slower with this move.",
+      "zh": "他绝对可以在这个动作上放慢一点。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "\"definitely\" 意为肯定地，\"go slower\" 放慢速度。"
+    },
+    {
+      "id": "c1675",
+      "startTime": 5562.09,
+      "endTime": 5566.16,
+      "en": "We saw I mean, we saw John do it that way.",
+      "zh": "我们看到了，我是说，我们看到约翰那样做了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "\"I mean\" 是口语中常用的插入语，用于修正或澄清。"
+    },
+    {
+      "id": "c1676",
+      "startTime": 5567.13,
+      "endTime": 5568.96,
+      "en": ">> Sam also went a bit slower.",
+      "zh": "山姆也放慢了一点。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "\"went a bit slower\" 是 \"go slower\" 的过去式，注意时态变化。"
+    },
+    {
+      "id": "c1677",
+      "startTime": 5570.09,
+      "endTime": 5575.95,
+      "en": "If he could just slow it down because yeah, he got a first go to the blue and now he hasn't managed to get back there.",
+      "zh": "如果他可以放慢一点，因为是的，他第一次尝试就到达了蓝色点，但现在他没能回到那里。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "\"first go\" 指第一次尝试，\"managed to\" 意为设法做到。"
+    },
+    {
+      "id": "c1678",
+      "startTime": 5575.85,
+      "endTime": 5577.44,
+      "en": "So, that is very frustrating.",
+      "zh": "所以，这非常令人沮丧。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "\"frustrating\" 意为令人沮丧的，常用于表达失望。"
+    },
+    {
+      "id": "c1679",
+      "startTime": 5582.01,
+      "endTime": 5583.44,
+      "en": ">> So, back into position.",
+      "zh": "所以，回到位置。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "\"back into position\" 指回到正确的位置，常用于指导动作。"
+    },
+    {
+      "id": "c1680",
+      "startTime": 5583.45,
+      "endTime": 5587.2,
+      "en": "50 seconds on the clock for him to repeat what he did",
+      "zh": "时钟上还有50秒，让他重复他之前所做的。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "\"on the clock\" 指计时中，\"repeat\" 意为重复。"
+    },
+    {
+      "id": "c1681",
+      "startTime": 5588.97,
+      "endTime": 5591.31,
+      "en": ">> Shoulder pushing pushing left foot on the jib.",
+      "zh": "肩膀推，推，左脚在岩点上。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "foot",
+        "shoulder"
+      ],
+      "note": "\"shoulder pushing\" 指肩膀发力，\"jib\" 可能指岩点，注意 \"left foot\" 左脚。"
+    },
+    {
+      "id": "c1682",
+      "startTime": 5591.21,
+      "endTime": 5591.81,
+      "en": "90.",
+      "zh": "90。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "数字，可能指分数或时间，注意上下文。"
+    },
+    {
+      "id": "c1683",
+      "startTime": 5592.09,
+      "endTime": 5596.4,
+      "en": "He's going quite quickly into the palm, right palm.",
+      "zh": "他很快地进入手掌，右手掌。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "\"palm\" 指手掌，\"right palm\" 右手掌，注意 \"quite quickly\" 很快地。"
+    },
+    {
+      "id": "c1684",
+      "startTime": 5597.05,
+      "endTime": 5604.4,
+      "en": "And then he is I don't know, his speed kind of pushes him out cuz his palm is also slipping off the volume.",
+      "zh": "然后他，我不知道，他的速度有点把他推出去，因为他的手掌也从那个大点上滑掉了。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "speed",
+        "volume"
+      ],
+      "note": "注意 'push out' 表示被推出去，'slip off' 表示滑落。"
+    },
+    {
+      "id": "c1685",
+      "startTime": 5604.33,
+      "endTime": 5604.93,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1686",
+      "startTime": 5604.97,
+      "endTime": 5609.44,
+      "en": "And this is guaranteed by the way that 9.3 is guaranteed for bronze if he can get this.",
+      "zh": "而且顺便说一下，这是有保证的，如果他拿到这个，9.3 就保证能拿到铜牌。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'guaranteed' 表示有保证的，'bronze' 是铜牌。"
+    },
+    {
+      "id": "c1687",
+      "startTime": 5609.37,
+      "endTime": 5610.72,
+      "en": "if he can get that zone.",
+      "zh": "如果他能够拿到那个 Zone。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'zone' 在攀岩中特指得分点，这里指 Zone 得分点。"
+    },
+    {
+      "id": "c1688",
+      "startTime": 5610.81,
+      "endTime": 5614.59,
+      "en": ">> Okay, so now he's trying something different, which I think is very good,",
+      "zh": ">> 好的，现在他在尝试不同的动作，我觉得这很好，",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'something different' 表示不同的尝试，'very good' 表示很好。"
+    },
+    {
+      "id": "c1689",
+      "startTime": 5614.53,
+      "endTime": 5619.92,
+      "en": "but it's a bit late now that he's only got 15 seconds left on the clock. Oh no.",
+      "zh": "但现在有点晚了，因为时间只剩下 15 秒了。哦不。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "'a bit late' 表示有点晚，'on the clock' 表示在计时中。"
+    },
+    {
+      "id": "c1690",
+      "startTime": 5621.53,
+      "endTime": 5623.07,
+      "en": ">> So, he's crossing through.",
+      "zh": ">> 所以，他在交叉移动。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'crossing through' 表示交叉通过，指手脚交叉的动作。"
+    },
+    {
+      "id": "c1691",
+      "startTime": 5622.97,
+      "endTime": 5624.4,
+      "en": "I mean, he still has 10 seconds.",
+      "zh": "我的意思是，他还有 10 秒。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'I mean' 是口语中常用的插入语，表示“我的意思是”。"
+    },
+    {
+      "id": "c1692",
+      "startTime": 5624.81,
+      "endTime": 5626.24,
+      "en": ">> Oh, and he slips again.",
+      "zh": ">> 哦，他又滑了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'slips again' 表示再次滑落，注意 'slip' 的用法。"
+    },
+    {
+      "id": "c1693",
+      "startTime": 5627.61,
+      "endTime": 5630.27,
+      "en": ">> So, he's now going to have to wait to see if he has the points.",
+      "zh": ">> 所以，他现在只能等待，看看他是否有足够的分数。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'have to wait' 表示不得不等待，'see if' 表示看看是否。"
+    },
+    {
+      "id": "c1694",
+      "startTime": 5630.17,
+      "endTime": 5631.92,
+      "en": "If he got the zone, he would have been guaranteed.",
+      "zh": "如果他拿到了 Zone，他本来是有保证的。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'would have been' 是虚拟语气，表示本应该发生但未发生。"
+    },
+    {
+      "id": "c1695",
+      "startTime": 5632.17,
+      "endTime": 5634.56,
+      "en": "He's going to have a little bit of a nervous wait right now.",
+      "zh": "他现在将有一段紧张的等待。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'nervous wait' 表示紧张的等待，'a little bit of' 表示一点。"
+    },
+    {
+      "id": "c1696",
+      "startTime": 5647.45,
+      "endTime": 5651.71,
+      "en": "So, now we pay all our focus to the final climbers on boulder four.",
+      "zh": "所以，现在我们把所有注意力都集中在最后几位攀爬者身上，他们正在攀爬第四块抱石。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "boulder",
+        "final"
+      ],
+      "note": "'pay attention to' 表示注意，'final climbers' 表示最后的攀爬者。"
+    },
+    {
+      "id": "c1697",
+      "startTime": 5651.61,
+      "endTime": 5654.72,
+      "en": "We've got Saut, Max, Ray, and Serato to come.",
+      "zh": "接下来是 Saut、Max、Ray 和 Serato。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名的发音，'to come' 表示即将出场。"
+    },
+    {
+      "id": "c1698",
+      "startTime": 5654.73,
+      "endTime": 5656.43,
+      "en": "This is the move, I think, where he almost Yeah.",
+      "zh": "我觉得，这个动作，他差点……是的。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "'this is the move' 表示这个动作，'almost' 表示差点。"
+    },
+    {
+      "id": "c1699",
+      "startTime": 5656.33,
+      "endTime": 5657.6,
+      "en": "kicked his own foot off.",
+      "zh": "把自己的脚踢掉了。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'kicked his own foot off' 表示踢掉自己的脚，注意 'kick off' 的用法。"
+    },
+    {
+      "id": "c1700",
+      "startTime": 5662.89,
+      "endTime": 5663.84,
+      "en": ">> Yeah, they are.",
+      "zh": ">> 是的，他们确实如此。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简短回应，表示同意。"
+    },
+    {
+      "id": "c1701",
+      "startTime": 5664.89,
+      "endTime": 5667.71,
+      "en": "You see the legs of the climbers the next day after they've climbed.",
+      "zh": "你看到攀爬者第二天攀爬后的腿。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'the next day' 表示第二天，'after they've climbed' 表示攀爬之后。"
+    },
+    {
+      "id": "c1702",
+      "startTime": 5667.61,
+      "endTime": 5669.04,
+      "en": "It's like bruised, battered.",
+      "zh": "就像瘀伤、伤痕累累。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'bruised' 和 'battered' 都表示受伤，注意形容词的用法。"
+    },
+    {
+      "id": "c1703",
+      "startTime": 5669.21,
+      "endTime": 5671.68,
+      "en": "Like it's just abuse you put yourselves through.",
+      "zh": "就像你们让自己遭受的虐待一样。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'abuse' 表示虐待，'put yourselves through' 表示让自己经历。"
+    },
+    {
+      "id": "c1704",
+      "startTime": 5671.69,
+      "endTime": 5673.84,
+      "en": ">> Not only is it physically hard, but also",
+      "zh": ">> 这不仅对身体来说很难，而且",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'not only... but also' 表示不仅……而且……，注意结构。"
+    },
+    {
+      "id": "c1705",
+      "startTime": 5674.81,
+      "endTime": 5679.23,
+      "en": ">> to just go again and again onto something that kills you.",
+      "zh": ">> 还要一次又一次地去做那些让你精疲力尽的事情。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'go again and again' 表示一次又一次，'kills you' 是夸张说法，表示累死。"
+    },
+    {
+      "id": "c1706",
+      "startTime": 5679.13,
+      "endTime": 5680,
+      "en": ">> Don't like it.",
+      "zh": ">> 不喜欢。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "简单表达不喜欢，'don't like it' 的缩写。"
+    },
+    {
+      "id": "c1707",
+      "startTime": 5680.25,
+      "endTime": 5680.99,
+      "en": ">> I'm not a fan.",
+      "zh": ">> 我不喜欢。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'not a fan' 表示不喜欢，是口语常用表达。"
+    },
+    {
+      "id": "c1708",
+      "startTime": 5680.89,
+      "endTime": 5683.28,
+      "en": ">> No. Sataku leads the way over Ray Kawata.",
+      "zh": "不，Sataku领先于Ray Kawata。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意“leads the way”表示领先。"
+    },
+    {
+      "id": "c1709",
+      "startTime": 5683.37,
+      "endTime": 5686.72,
+      "en": "Now there is a chance for things to swap, but Sarat is in a very good place.",
+      "zh": "现在有机会交换位置，但Sarat处于非常有利的位置。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“in a good place”在攀岩中常指位置有利。"
+    },
+    {
+      "id": "c1710",
+      "startTime": 5686.81,
+      "endTime": 5688.75,
+      "en": "Leo Han will have to wait.",
+      "zh": "Leo Han将不得不等待。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“will have to wait”表示不得不等待。"
+    },
+    {
+      "id": "c1711",
+      "startTime": 5688.65,
+      "endTime": 5690.4,
+      "en": "Who can catch Lee then?",
+      "zh": "那么谁能追上Lee呢？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“catch”在这里指追上、赶超。"
+    },
+    {
+      "id": "c1712",
+      "startTime": 5690.49,
+      "endTime": 5691.09,
+      "en": ">> S.",
+      "zh": "S。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "这里指选手S。"
+    },
+    {
+      "id": "c1713",
+      "startTime": 5691.53,
+      "endTime": 5692.13,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c1714",
+      "startTime": 5693.21,
+      "endTime": 5696.99,
+      "en": "And I guess also Max if he tops quickly >> quickly.",
+      "zh": "我想如果Max快速完攀的话，他也可能。",
+      "score": 50,
+      "study": true,
+      "keywords": [],
+      "note": "“tops”指完攀，注意“quickly”的连读。"
+    },
+    {
+      "id": "c1715",
+      "startTime": 5696.89,
+      "endTime": 5697.49,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c1716",
+      "startTime": 5698.41,
+      "endTime": 5700.16,
+      "en": ">> He has he has to flash actually.",
+      "zh": "他实际上必须一把完攀。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "flash"
+      ],
+      "note": "“flash”指一把完攀，是攀岩术语。"
+    },
+    {
+      "id": "c1717",
+      "startTime": 5700.17,
+      "endTime": 5700.77,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应。"
+    },
+    {
+      "id": "c1718",
+      "startTime": 5700.81,
+      "endTime": 5702.48,
+      "en": "But S might.",
+      "zh": "但S可能可以。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“might”表示可能。"
+    },
+    {
+      "id": "c1719",
+      "startTime": 5703.13,
+      "endTime": 5705.55,
+      "en": ">> And for Saut to jump up would be pretty cool to see.",
+      "zh": "如果Saut能跳上来，那将非常酷。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“jump up”指排名上升。"
+    },
+    {
+      "id": "c1720",
+      "startTime": 5705.45,
+      "endTime": 5706.35,
+      "en": "So we'll have to wait.",
+      "zh": "所以我们得等等看。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“wait”等待。"
+    },
+    {
+      "id": "c1721",
+      "startTime": 5706.25,
+      "endTime": 5707.36,
+      "en": ">> That would be really cool.",
+      "zh": "那将非常酷。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“really cool”表示非常酷。"
+    },
+    {
+      "id": "c1722",
+      "startTime": 5707.77,
+      "endTime": 5709.92,
+      "en": ">> What a comeback story that would be in the finals.",
+      "zh": "在决赛中那将是多么精彩的复出故事啊。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“comeback story”指复出故事。"
+    },
+    {
+      "id": "c1723",
+      "startTime": 5710.25,
+      "endTime": 5713.36,
+      "en": "Well, max capacity here in the gym.",
+      "zh": "好吧，这里体育馆已经满员了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“max capacity”指最大容量。"
+    },
+    {
+      "id": "c1724",
+      "startTime": 5713.77,
+      "endTime": 5714.67,
+      "en": "S's waiting.",
+      "zh": "S在等待。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“waiting”等待。"
+    },
+    {
+      "id": "c1725",
+      "startTime": 5714.57,
+      "endTime": 5715.84,
+      "en": ">> And he just needs zone.",
+      "zh": "他只需要Zone。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“zone”指得分点。"
+    },
+    {
+      "id": "c1726",
+      "startTime": 5716.09,
+      "endTime": 5717.31,
+      "en": "He doesn't even need to top.",
+      "zh": "他甚至不需要完攀。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“top”指完攀。"
+    },
+    {
+      "id": "c1727",
+      "startTime": 5717.21,
+      "endTime": 5718.32,
+      "en": "He just needs a zone.",
+      "zh": "他只需要一个Zone。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“zone”得分点。"
+    },
+    {
+      "id": "c1728",
+      "startTime": 5718.25,
+      "endTime": 5720.08,
+      "en": ">> So just the zone needed to go up.",
+      "zh": "所以只需要Zone就能上升。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“go up”指排名上升。"
+    },
+    {
+      "id": "c1729",
+      "startTime": 5724.65,
+      "endTime": 5725.84,
+      "en": ">> So here he goes.",
+      "zh": "所以他开始了。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“here he goes”表示他开始行动。"
+    },
+    {
+      "id": "c1730",
+      "startTime": 5733.13,
+      "endTime": 5733.73,
+      "en": "hold.",
+      "zh": "抓点。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“hold”指攀岩中的抓点。"
+    },
+    {
+      "id": "c1731",
+      "startTime": 5733.45,
+      "endTime": 5736.64,
+      "en": "No one has tried the crazy Sam Abazoo method.",
+      "zh": "还没有人尝试过疯狂的Sam Abazoo方法。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "“crazy”表示疯狂的，注意专有名词。"
+    },
+    {
+      "id": "c1732",
+      "startTime": 5748.17,
+      "endTime": 5750.56,
+      "en": "I don't know if he's trying to look for the big blue one.",
+      "zh": "我不知道他是不是在找那个大的蓝色点。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'looking for' 表示寻找，常用于口语。"
+    },
+    {
+      "id": "c1733",
+      "startTime": 5753.93,
+      "endTime": 5755.12,
+      "en": ">> Oh, look at that flexibility.",
+      "zh": "哦，看那柔韧性。",
+      "score": 28,
+      "study": true,
+      "keywords": [
+        "flexibility"
+      ],
+      "note": "'flexibility' 是柔韧性，攀岩中常用。"
+    },
+    {
+      "id": "c1734",
+      "startTime": 5757.37,
+      "endTime": 5759.04,
+      "en": ">> Flexibility is important, guys.",
+      "zh": "柔韧性很重要，伙计们。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "flexibility"
+      ],
+      "note": "'guys' 是口语中对一群人的称呼。"
+    },
+    {
+      "id": "c1735",
+      "startTime": 5759.21,
+      "endTime": 5760.8,
+      "en": "You need to work on your stretching.",
+      "zh": "你需要练习拉伸。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'work on' 表示致力于，'stretching' 是拉伸。"
+    },
+    {
+      "id": "c1736",
+      "startTime": 5766.09,
+      "endTime": 5766.88,
+      "en": "straight away.",
+      "zh": "立刻。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'straight away' 是立即的意思，常用于口语。"
+    },
+    {
+      "id": "c1737",
+      "startTime": 5768.65,
+      "endTime": 5773.47,
+      "en": ">> I think Hannis did really good job with like changing his body position to be able to switch feet.",
+      "zh": "我觉得Hannis做得很好，他改变了身体姿势以便换脚。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'switch feet' 是换脚，注意 'did really good job' 的口语表达。"
+    },
+    {
+      "id": "c1738",
+      "startTime": 5773.37,
+      "endTime": 5779.6,
+      "en": "That made it much more safer compared to what the everyone or what S um is trying.",
+      "zh": "这比其他人或S正在尝试的要安全得多。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "'compared to' 表示比较，'safer' 是更安全。"
+    },
+    {
+      "id": "c1739",
+      "startTime": 5779.61,
+      "endTime": 5781.63,
+      "en": "It's the trust on that yellow volume, isn't it?",
+      "zh": "这是对那个黄色大体积的信任，不是吗？",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'trust' 是信任，'volume' 在攀岩中指大体积的支点。"
+    },
+    {
+      "id": "c1740",
+      "startTime": 5781.53,
+      "endTime": 5782.64,
+      "en": "That what they're brushing.",
+      "zh": "那就是他们正在刷的。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'brush' 是刷，这里指刷点。"
+    },
+    {
+      "id": "c1741",
+      "startTime": 5782.57,
+      "endTime": 5783.17,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单的肯定回答。"
+    },
+    {
+      "id": "c1742",
+      "startTime": 5782.77,
+      "endTime": 5788.72,
+      "en": "And then like you you kind of just end up on the tippy toe of your shoe.",
+      "zh": "然后你最终只能用鞋尖站立。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "toe"
+      ],
+      "note": "'tippy toe' 是脚尖，注意 'end up' 表示最终处于。"
+    },
+    {
+      "id": "c1743",
+      "startTime": 5788.97,
+      "endTime": 5791.84,
+      "en": "And that's why also Leon was also slipping a lot.",
+      "zh": "这也是Leon经常滑倒的原因。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'slipping' 是滑倒，'that's why' 表示那就是原因。"
+    },
+    {
+      "id": "c1744",
+      "startTime": 5793.69,
+      "endTime": 5795.36,
+      "en": ">> So here goes Sutter again.",
+      "zh": "所以Sutter又来了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'here goes' 是口语，表示某人开始行动。"
+    },
+    {
+      "id": "c1745",
+      "startTime": 5797.21,
+      "endTime": 5798.32,
+      "en": ">> He's in seventh.",
+      "zh": "他排在第七。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'in seventh' 表示第七名。"
+    },
+    {
+      "id": "c1746",
+      "startTime": 5798.25,
+      "endTime": 5800.16,
+      "en": "The zone would be massive for him.",
+      "zh": "Zone得分点对他来说意义重大。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'zone' 是Zone得分点，'massive' 表示巨大的。"
+    },
+    {
+      "id": "c1747",
+      "startTime": 5805.61,
+      "endTime": 5808.19,
+      "en": "Okay, he went left foot.",
+      "zh": "好的，他用了左脚。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'went left foot' 是用了左脚。"
+    },
+    {
+      "id": "c1748",
+      "startTime": 5808.09,
+      "endTime": 5810.56,
+      "en": "Now he's not trying cross through which is great.",
+      "zh": "现在他没有尝试交叉通过，这很好。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "'cross through' 是交叉通过，注意 'which is great' 的用法。"
+    },
+    {
+      "id": "c1749",
+      "startTime": 5810.49,
+      "endTime": 5811.87,
+      "en": ">> He's got to swap now, right?",
+      "zh": "他现在必须换脚，对吧？",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'swap' 是换脚，'right?' 是确认。"
+    },
+    {
+      "id": "c1750",
+      "startTime": 5811.77,
+      "endTime": 5812.59,
+      "en": ">> No, he's not.",
+      "zh": "不，他没有。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "简短否定。"
+    },
+    {
+      "id": "c1751",
+      "startTime": 5812.49,
+      "endTime": 5814.19,
+      "en": "He doesn't seem like he's trying to swap.",
+      "zh": "他似乎没有在尝试换脚。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "'seem like' 表示似乎，'trying to' 是尝试。"
+    },
+    {
+      "id": "c1752",
+      "startTime": 5814.09,
+      "endTime": 5817.2,
+      "en": "He wants to go >> He's going downwards.",
+      "zh": "他想去...他正在向下移动。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'going downwards' 是向下，注意省略号表示犹豫。"
+    },
+    {
+      "id": "c1753",
+      "startTime": 5817.21,
+      "endTime": 5826.96,
+      "en": "He's just sliding >> I think he's thinking more of I want to get the zone than his best body positioning to get there.",
+      "zh": "他只是在滑...我觉得他更想拿到Zone，而不是考虑最佳身体姿势。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'sliding' 是滑，'I think' 是口语表达。"
+    },
+    {
+      "id": "c1754",
+      "startTime": 5833.53,
+      "endTime": 5834.59,
+      "en": ">> Yeah, I love this slide.",
+      "zh": "是的，我喜欢这个滑动。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'love' 在这里表示喜欢，'slide' 是滑动。"
+    },
+    {
+      "id": "c1755",
+      "startTime": 5834.49,
+      "endTime": 5835.09,
+      "en": "Look at it.",
+      "zh": "看它。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "'look at it' 是看它，注意语气。"
+    },
+    {
+      "id": "c1756",
+      "startTime": 5834.89,
+      "endTime": 5836.16,
+      "en": "Slide, slide, slide.",
+      "zh": "滑，滑，滑。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意重复的动词“slide”表示连续动作，常用于描述脚滑或身体滑动。"
+    },
+    {
+      "id": "c1757",
+      "startTime": 5836.17,
+      "endTime": 5840.99,
+      "en": "I think he was hoping to slide into it and somehow find the zone hole, which is there, but it's not.",
+      "zh": "我觉得他原本希望滑进去，然后不知怎么找到Zone点，那个点就在那里，但实际上没有。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“hoping to”表示希望做某事，“somehow”表示不知怎么地，注意“zone hole”指Zone点。"
+    },
+    {
+      "id": "c1758",
+      "startTime": 5840.89,
+      "endTime": 5842.16,
+      "en": ">> But it's just so bad.",
+      "zh": "但这实在太糟糕了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“so bad”在这里表示情况很糟，口语中常用。"
+    },
+    {
+      "id": "c1759",
+      "startTime": 5842.09,
+      "endTime": 5843.39,
+      "en": ">> Yeah, he touched it.",
+      "zh": "是啊，他碰到了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“touched it”指碰到了点，但没抓住。"
+    },
+    {
+      "id": "c1760",
+      "startTime": 5843.29,
+      "endTime": 5846.43,
+      "en": ">> Like he's trying to kind of hold it, but there's nothing.",
+      "zh": "就像他试图抓住它，但什么都没有。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“try to hold it”表示试图抓住，注意“there's nothing”表示没有可抓的。"
+    },
+    {
+      "id": "c1761",
+      "startTime": 5846.33,
+      "endTime": 5848.91,
+      "en": ">> His eyes widened the second he touched it.",
+      "zh": "他一碰到它，眼睛就睁大了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“the second”在这里表示“一...就...”，注意“widened”表示睁大。"
+    },
+    {
+      "id": "c1762",
+      "startTime": 5848.81,
+      "endTime": 5850.03,
+      "en": "It was like out of reach.",
+      "zh": "就像够不着一样。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "reach"
+      ],
+      "note": "“out of reach”表示够不着，常用表达。"
+    },
+    {
+      "id": "c1763",
+      "startTime": 5849.93,
+      "endTime": 5851.44,
+      "en": "Love that shot, guys.",
+      "zh": "喜欢那个镜头，伙计们。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“Love that shot”表示喜欢那个镜头，口语中常用。"
+    },
+    {
+      "id": "c1764",
+      "startTime": 5852.25,
+      "endTime": 5853.76,
+      "en": ">> Look at that cameraman raise.",
+      "zh": "看那个摄像师举起来。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“cameraman raise”指摄像师举起摄像机，注意“raise”是动词。"
+    },
+    {
+      "id": "c1765",
+      "startTime": 5854.49,
+      "endTime": 5855.09,
+      "en": ">> Right.",
+      "zh": "对。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Right”在这里表示同意，口语中常用。"
+    },
+    {
+      "id": "c1766",
+      "startTime": 5854.89,
+      "endTime": 5856.32,
+      "en": "Looking for the bottom jib.",
+      "zh": "寻找底部的横移点。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“jib”在这里可能指横移点，注意“bottom”表示底部。"
+    },
+    {
+      "id": "c1767",
+      "startTime": 5861.13,
+      "endTime": 5863.04,
+      "en": ">> Okay, he's back with the cross through.",
+      "zh": "好的，他回来了，交叉通过。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "cross"
+      ],
+      "note": "“cross through”指交叉通过，注意“back”表示回来。"
+    },
+    {
+      "id": "c1768",
+      "startTime": 5864.01,
+      "endTime": 5865.44,
+      "en": ">> N he's going left.",
+      "zh": "他要去左边。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“going left”表示向左移动，注意“he's”是“he is”的缩写。"
+    },
+    {
+      "id": "c1769",
+      "startTime": 5865.69,
+      "endTime": 5871.44,
+      "en": "I think if he can just shift his body like he's he wants to go leaning directly left.",
+      "zh": "我想如果他只是移动身体，就像他想直接向左倾斜一样。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“shift his body”表示移动身体，“leaning directly left”表示直接向左倾斜。"
+    },
+    {
+      "id": "c1770",
+      "startTime": 5871.61,
+      "endTime": 5878.8,
+      "en": "What Hannes did, he stayed straight, went downwards, right, and then was able to change feet.",
+      "zh": "Hannes做的是，他保持笔直，向下，向右，然后能够换脚。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“stayed straight”表示保持笔直，“change feet”表示换脚，注意“what Hannes did”是主语。"
+    },
+    {
+      "id": "c1771",
+      "startTime": 5880.17,
+      "endTime": 5883.76,
+      "en": "But yeah, he's probably just thinking mostly of I want to get the zone.",
+      "zh": "但是的，他可能主要想的是我要拿到Zone点。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“probably just thinking”表示可能只是在想，“get the zone”表示拿到Zone点。"
+    },
+    {
+      "id": "c1772",
+      "startTime": 5884.25,
+      "endTime": 5889.68,
+      "en": "But the thing is is that if he gets to the zone, it's more like moving from that position,",
+      "zh": "但问题是，如果他到了Zone点，更像是从那个位置移动，",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“the thing is”表示问题是，“moving from that position”表示从那个位置移动。"
+    },
+    {
+      "id": "c1773",
+      "startTime": 5889.93,
+      "endTime": 5891.36,
+      "en": "which is going to be so hard.",
+      "zh": "那将会非常困难。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“so hard”表示非常困难，注意“going to be”表示将来。"
+    },
+    {
+      "id": "c1774",
+      "startTime": 5892.41,
+      "endTime": 5893.01,
+      "en": ">> Yeah.",
+      "zh": "是啊。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”表示同意，口语中常用。"
+    },
+    {
+      "id": "c1775",
+      "startTime": 5892.65,
+      "endTime": 5895.55,
+      "en": "The thing is I think you need friction for that move to work.",
+      "zh": "问题是，我认为那个动作需要摩擦力才能成功。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "“need friction”表示需要摩擦力，“for that move to work”表示那个动作才能成功。"
+    },
+    {
+      "id": "c1776",
+      "startTime": 5895.45,
+      "endTime": 5898.67,
+      "en": "You know, if you if it was grippy, you could >> Yeah, you could for sure do that.",
+      "zh": "你知道，如果抓握力好的话，你就能做到。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“grippy”表示抓握力好，“for sure”表示肯定。"
+    },
+    {
+      "id": "c1777",
+      "startTime": 5898.57,
+      "endTime": 5901.68,
+      "en": "But >> here you have no way of",
+      "zh": "但是在这里你没有办法",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“no way of”表示没有办法，注意“but”表示转折。"
+    },
+    {
+      "id": "c1778",
+      "startTime": 5902.73,
+      "endTime": 5904.59,
+      "en": ">> unless you see this.",
+      "zh": "除非你看到这个。",
+      "score": 25,
+      "study": false,
+      "keywords": [],
+      "note": "“unless”表示除非，注意“see this”指看到某个东西。"
+    },
+    {
+      "id": "c1779",
+      "startTime": 5904.49,
+      "endTime": 5906.59,
+      "en": "Look, the slide starts and then that's the problem.",
+      "zh": "看，滑动开始了，然后这就是问题所在。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“the slide starts”表示滑动开始，“that's the problem”表示这就是问题。"
+    },
+    {
+      "id": "c1780",
+      "startTime": 5906.49,
+      "endTime": 5908.32,
+      "en": "You're always fighting against it.",
+      "zh": "你总是在跟它对抗。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“fighting against”表示对抗，常用于描述攀爬时与岩壁或动作的对抗。"
+    },
+    {
+      "id": "c1781",
+      "startTime": 5908.25,
+      "endTime": 5909.87,
+      "en": ">> So, let's see if he tries this again.",
+      "zh": ">> 那么，让我们看看他是否再试一次。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“let's see if”是常见口语，表示“看看是否”。"
+    },
+    {
+      "id": "c1782",
+      "startTime": 5909.77,
+      "endTime": 5911.15,
+      "en": "I think he's going two goes.",
+      "zh": "我想他会尝试两次。",
+      "score": 31,
+      "study": false,
+      "keywords": [],
+      "note": "“two goes”指两次尝试，go在这里是名词，表示尝试。"
+    },
+    {
+      "id": "c1783",
+      "startTime": 5911.05,
+      "endTime": 5913.95,
+      "en": "So, he kind of knows now that >> Oh, he's going low.",
+      "zh": "所以，他现在有点知道 >> 哦，他要走低处。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“going low”指选择低处的路线或动作。"
+    },
+    {
+      "id": "c1784",
+      "startTime": 5913.85,
+      "endTime": 5914.45,
+      "en": "I'm sorry.",
+      "zh": "抱歉。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“I'm sorry”常用于口语，表示歉意或遗憾。"
+    },
+    {
+      "id": "c1785",
+      "startTime": 5914.33,
+      "endTime": 5915.76,
+      "en": "He's just gone low.",
+      "zh": "他刚刚走了低处。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“just gone low”表示刚刚选择了低处路线。"
+    },
+    {
+      "id": "c1786",
+      "startTime": 5916.01,
+      "endTime": 5916.61,
+      "en": "Fascinating.",
+      "zh": "真有趣。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Fascinating”表示非常有趣或引人入胜。"
+    },
+    {
+      "id": "c1787",
+      "startTime": 5917.53,
+      "endTime": 5919.15,
+      "en": ">> So, he is trying something new.",
+      "zh": ">> 所以，他在尝试新东西。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“trying something new”表示尝试新方法或新动作。"
+    },
+    {
+      "id": "c1788",
+      "startTime": 5919.05,
+      "endTime": 5919.65,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yes”简单肯定，注意语气。"
+    },
+    {
+      "id": "c1789",
+      "startTime": 5923.61,
+      "endTime": 5925.71,
+      "en": ">> I think he's going to Is he going to try again?",
+      "zh": ">> 我想他会……他会再试一次吗？",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“Is he going to”是将来时疑问，注意连读。"
+    },
+    {
+      "id": "c1790",
+      "startTime": 5925.61,
+      "endTime": 5926.64,
+      "en": "Cuz >> Yeah.",
+      "zh": "因为 >> 是的。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“Cuz”是“because”的口语缩写。"
+    },
+    {
+      "id": "c1791",
+      "startTime": 5928.17,
+      "endTime": 5928.83,
+      "en": ">> Why not?",
+      "zh": ">> 为什么不呢？",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Why not?”表示反问，常用于建议或鼓励。"
+    },
+    {
+      "id": "c1792",
+      "startTime": 5928.73,
+      "endTime": 5930.48,
+      "en": "He was far away from the other",
+      "zh": "他离另一个很远。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“far away from”表示距离远。"
+    },
+    {
+      "id": "c1793",
+      "startTime": 5932.33,
+      "endTime": 5933.31,
+      "en": ">> Come on, S.",
+      "zh": ">> 加油，S。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Come on”是鼓励用语，S是运动员名字缩写。"
+    },
+    {
+      "id": "c1794",
+      "startTime": 5933.21,
+      "endTime": 5934.32,
+      "en": "How cool would it be?",
+      "zh": "那该有多酷啊？",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“How cool would it be?”是感叹句，表示想象中很棒。"
+    },
+    {
+      "id": "c1795",
+      "startTime": 5934.41,
+      "endTime": 5935.52,
+      "en": "34 seconds.",
+      "zh": "34秒。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "数字表达，注意秒的发音。"
+    },
+    {
+      "id": "c1796",
+      "startTime": 5937.05,
+      "endTime": 5939.28,
+      "en": ">> He's a foot slips.",
+      "zh": ">> 他脚滑了。",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot slips”表示脚滑，slip是滑动的意思。"
+    },
+    {
+      "id": "c1797",
+      "startTime": 5939.93,
+      "endTime": 5940.99,
+      "en": "Bad foot, isn't it?",
+      "zh": "脚点不好，不是吗？",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“Bad foot”指脚点不好，反意疑问句“isn't it”注意语调。"
+    },
+    {
+      "id": "c1798",
+      "startTime": 5940.89,
+      "endTime": 5942.8,
+      "en": "And you got to put a lot of weight through it.",
+      "zh": "而且你得把很多重量压上去。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“put a lot of weight through”表示将重量施加于某处。"
+    },
+    {
+      "id": "c1799",
+      "startTime": 5943.13,
+      "endTime": 5945.44,
+      "en": ">> Yeah, you need so much pressure.",
+      "zh": ">> 是的，你需要很大的压力。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“so much pressure”强调压力大，so much表示如此多。"
+    },
+    {
+      "id": "c1800",
+      "startTime": 5945.37,
+      "endTime": 5946.96,
+      "en": "Okay, he's going back up.",
+      "zh": "好的，他正在返回。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“going back up”表示向上返回。"
+    },
+    {
+      "id": "c1801",
+      "startTime": 5949.05,
+      "endTime": 5950.72,
+      "en": ">> This is good for Lee Dian.",
+      "zh": ">> 这对Lee Dian有好处。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“good for”表示对……有利。"
+    },
+    {
+      "id": "c1802",
+      "startTime": 5951.61,
+      "endTime": 5953.12,
+      "en": "Not so good for S.",
+      "zh": "对S来说不太好。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“not so good for”表示对……不太好。"
+    },
+    {
+      "id": "c1803",
+      "startTime": 5955.53,
+      "endTime": 5956.96,
+      "en": ">> Oh, 10 seconds.",
+      "zh": ">> 哦，10秒。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“Oh”表示惊讶，注意数字表达。"
+    },
+    {
+      "id": "c1804",
+      "startTime": 5958.97,
+      "endTime": 5960.56,
+      "en": ">> I don't think it's enough time",
+      "zh": ">> 我觉得时间不够了。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意“I don't think”的否定前置，中文说“我觉得不”，英语说“I don't think it is”"
+    },
+    {
+      "id": "c1805",
+      "startTime": 5962.81,
+      "endTime": 5967.76,
+      "en": ">> Ah, you see if he just went back down right and just like crimped the top of the volume.",
+      "zh": ">> 啊，你看，如果他刚才直接回到右边，然后像这样捏住那个大体积的顶部。",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "volume"
+      ],
+      "note": "“crimp”是攀岩术语，指用指尖捏住小边缘，这里译为“捏住”"
+    },
+    {
+      "id": "c1806",
+      "startTime": 5969.37,
+      "endTime": 5971.92,
+      "en": ">> Oh, such a shame >> for Amagasa.",
+      "zh": ">> 哦，太可惜了 >> 对天笠来说。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“such a shame”是常用表达，表示“太遗憾了”"
+    },
+    {
+      "id": "c1807",
+      "startTime": 5972.73,
+      "endTime": 5974.91,
+      "en": ">> But a return to finals for him.",
+      "zh": ">> 但他重返决赛了。",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“return to finals”指“重返决赛”，注意“finals”用复数"
+    },
+    {
+      "id": "c1808",
+      "startTime": 5974.81,
+      "endTime": 5976.16,
+      "en": "Back where he belongs.",
+      "zh": "回到他该在的地方。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“back where he belongs”是习语，表示“回到属于他的位置”"
+    },
+    {
+      "id": "c1809",
+      "startTime": 5976.09,
+      "endTime": 5979.12,
+      "en": "And it's lovely to see him climbing on the Insrook stage again.",
+      "zh": "很高兴看到他再次在Insrook舞台上攀爬。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“lovely”在这里是“令人高兴的”，口语中常用"
+    },
+    {
+      "id": "c1810",
+      "startTime": 5979.05,
+      "endTime": 5982.08,
+      "en": "Yes, he could be proud just to make",
+      "zh": "是的，他可以为能进入决赛而自豪。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“be proud to do”表示“为做某事而自豪”，注意“just to make”后省略了“finals”"
+    },
+    {
+      "id": "c1811",
+      "startTime": 5988.73,
+      "endTime": 5989.63,
+      "en": "a replay of this.",
+      "zh": "回放一下这个。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“a replay of this”指“这个的回放”，注意“replay”的发音"
+    },
+    {
+      "id": "c1812",
+      "startTime": 5989.53,
+      "endTime": 5992.27,
+      "en": "This is a great shot to show the angle of that yellow volume.",
+      "zh": "这个镜头很好地展示了那个黄色大体积的角度。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“great shot”指“好镜头”，这里指摄像角度"
+    },
+    {
+      "id": "c1813",
+      "startTime": 5992.17,
+      "endTime": 5994.08,
+      "en": "The friction isn't the best on it either.",
+      "zh": "而且它的摩擦力也不是最好的。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“friction”是“摩擦力”，攀岩中常用"
+    },
+    {
+      "id": "c1814",
+      "startTime": 5995.93,
+      "endTime": 5997.12,
+      "en": "Knee, everything.",
+      "zh": "膝盖，所有的一切。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "这里“knee”指膝盖动作，注意“everything”的强调"
+    },
+    {
+      "id": "c1815",
+      "startTime": 5997.45,
+      "endTime": 6000.4,
+      "en": ">> I mean, yeah, if you slip there, you you scrape your whole leg.",
+      "zh": ">> 我的意思是，是的，如果你在那里滑倒，你会擦伤整条腿。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“scrape”是“擦伤”，注意“you you”是口语重复，实际是“you scrape”"
+    },
+    {
+      "id": "c1816",
+      "startTime": 6000.33,
+      "endTime": 6000.93,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意"
+    },
+    {
+      "id": "c1817",
+      "startTime": 6000.97,
+      "endTime": 6006.32,
+      "en": "And then the edge provided a little bit of grip, but after that was just a slide down.",
+      "zh": "然后那个边缘提供了一点抓握力，但之后就是滑下去了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“edge”指“边缘”，这里指岩点边缘；“slide down”是“滑落”"
+    },
+    {
+      "id": "c1818",
+      "startTime": 6008.33,
+      "endTime": 6009.68,
+      "en": "Oh no tags.",
+      "zh": "哦，没有标签。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“no tags”可能指没有标记，这里可能指没有得分点标记"
+    },
+    {
+      "id": "c1819",
+      "startTime": 6010.49,
+      "endTime": 6012.99,
+      "en": ">> It's a bizarre thing we've brought into the sport, isn't it?",
+      "zh": ">> 这是我们引入这项运动的一个奇怪的东西，不是吗？",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“bizarre”是“奇怪的”，注意反意疑问句“isn't it”"
+    },
+    {
+      "id": "c1820",
+      "startTime": 6012.89,
+      "endTime": 6021.55,
+      "en": ">> But I mean it it makes this boulder work quite well because >> the root setters definitely don't want them to be able to just push against the >> Yes,",
+      "zh": ">> 但我的意思是，它让这个抱石线路运作得很好，因为 >> 定线员肯定不想让他们能够直接推着 >> 是的，",
+      "score": 44,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“boulder”指“抱石线路”，“setters”是“定线员”，注意“push against”的用法"
+    },
+    {
+      "id": "c1821",
+      "startTime": 6021.45,
+      "endTime": 6023.95,
+      "en": "it forces interesting movement >> Definitely.",
+      "zh": "它迫使产生有趣的移动 >> 当然。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“forces”是“迫使”，“interesting movement”指“有趣的移动”"
+    },
+    {
+      "id": "c1822",
+      "startTime": 6023.85,
+      "endTime": 6025.52,
+      "en": "Definitely. And I think yeah",
+      "zh": "当然。而且我觉得，是的",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“to a certain extent”是“在一定程度上”，这里省略了"
+    },
+    {
+      "id": "c1823",
+      "startTime": 6026.57,
+      "endTime": 6029.84,
+      "en": "to a certain extent I don't want to see more no techs.",
+      "zh": "在一定程度上，我不想看到更多的无标签。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“to a certain extent”是“在一定程度上”，“no tags”指“无标签”"
+    },
+    {
+      "id": "c1824",
+      "startTime": 6030.01,
+      "endTime": 6032.72,
+      "en": ">> No, it's the low percentage no techs I don't like.",
+      "zh": ">> 不，我不喜欢的是低成功率的无标签。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "low percentage"
+      ],
+      "note": "“low percentage”是“低成功率”，攀岩中常用"
+    },
+    {
+      "id": "c1825",
+      "startTime": 6032.89,
+      "endTime": 6035.71,
+      "en": "So Max Mil bows to the crowd.",
+      "zh": "所以Max Mil向人群鞠躬。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“bows to the crowd”是“向人群鞠躬”，注意“bows”的发音"
+    },
+    {
+      "id": "c1826",
+      "startTime": 6035.61,
+      "endTime": 6036.72,
+      "en": "He comes on.",
+      "zh": "他上场了。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“comes on”指“上场”，口语中常用"
+    },
+    {
+      "id": "c1827",
+      "startTime": 6036.81,
+      "endTime": 6040.32,
+      "en": "Uh he's on 34.4. So if he flashes,",
+      "zh": "呃，他的成绩是34.4。所以如果他一把完攀，",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“on 34.4”指“成绩是34.4”，“flashes”是“一把完攀”"
+    },
+    {
+      "id": "c1828",
+      "startTime": 6041.85,
+      "endTime": 6044.67,
+      "en": ">> he will >> 50 60.",
+      "zh": ">> 他将会 >> 50 60。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意“>>”表示解说中的打断或接话，实际口语中常用“he will”表达预测。"
+    },
+    {
+      "id": "c1829",
+      "startTime": 6044.57,
+      "endTime": 6045.17,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”是口语中常见的肯定回应，相当于“是的”。"
+    },
+    {
+      "id": "c1830",
+      "startTime": 6044.77,
+      "endTime": 6046.16,
+      "en": "So he'd be up there.",
+      "zh": "所以他会到达那里。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“up there”指在排名或位置上靠前，这里指成绩领先。"
+    },
+    {
+      "id": "c1831",
+      "startTime": 6047.85,
+      "endTime": 6048.75,
+      "en": ">> Just above Lee.",
+      "zh": ">> 就在Lee上面。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“just above”表示“刚好在……之上”，常用于排名。"
+    },
+    {
+      "id": "c1832",
+      "startTime": 6048.65,
+      "endTime": 6049.68,
+      "en": ">> He'll have 59.4.",
+      "zh": ">> 他会有59.4分。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "分数表达直接说数字，注意小数点读法。"
+    },
+    {
+      "id": "c1833",
+      "startTime": 6050.73,
+      "endTime": 6054.32,
+      "en": ">> I mean actually he has two goes because he qualified before.",
+      "zh": ">> 我的意思是他有两次机会，因为他之前已经晋级了。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“two goes”指两次尝试机会，“qualified”表示晋级。"
+    },
+    {
+      "id": "c1834",
+      "startTime": 6054.25,
+      "endTime": 6054.85,
+      "en": ">> Mhm.",
+      "zh": ">> 嗯。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Mhm”是表示认同或倾听的语气词。"
+    },
+    {
+      "id": "c1835",
+      "startTime": 6054.65,
+      "endTime": 6055.6,
+      "en": "So count back.",
+      "zh": "所以倒推计算。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“count back”指从后往前推算，常用于比赛积分。"
+    },
+    {
+      "id": "c1836",
+      "startTime": 6055.93,
+      "endTime": 6056.53,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”再次出现，注意口语中的重复使用。"
+    },
+    {
+      "id": "c1837",
+      "startTime": 6056.81,
+      "endTime": 6059.07,
+      "en": ">> So two goes for Max to get onto the podium.",
+      "zh": ">> 所以Max有两次机会登上领奖台。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“get onto the podium”表示登上领奖台，是常用表达。"
+    },
+    {
+      "id": "c1838",
+      "startTime": 6058.97,
+      "endTime": 6062,
+      "en": "If not, >> but he needs to top like zone.",
+      "zh": "如果没有，>> 但他需要完攀到Zone。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top",
+        "zone"
+      ],
+      "note": "“top like zone”可能指完攀或达到Zone，注意“like”是口语中的填充词。"
+    },
+    {
+      "id": "c1839",
+      "startTime": 6061.93,
+      "endTime": 6062.53,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”再次出现，注意对话中的回应。"
+    },
+    {
+      "id": "c1840",
+      "startTime": 6062.65,
+      "endTime": 6063.55,
+      "en": ">> No, he needs to top.",
+      "zh": ">> 不，他需要完攀。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“top”在攀岩中表示完攀，即到达线路顶端。"
+    },
+    {
+      "id": "c1841",
+      "startTime": 6063.45,
+      "endTime": 6064.19,
+      "en": "Yeah, he needs to top.",
+      "zh": "是的，他需要完攀。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“needs to top”强调必须完攀，注意“top”的动词用法。"
+    },
+    {
+      "id": "c1842",
+      "startTime": 6064.09,
+      "endTime": 6064.69,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah”再次出现，注意对话中的回应。"
+    },
+    {
+      "id": "c1843",
+      "startTime": 6069.45,
+      "endTime": 6070.48,
+      "en": "boulder like this.",
+      "zh": "像这样的抱石线路。",
+      "score": 18,
+      "study": false,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“boulder”指抱石，一种攀岩形式，线路较短。"
+    },
+    {
+      "id": "c1844",
+      "startTime": 6070.73,
+      "endTime": 6074.24,
+      "en": "And he's lost that foot and then finds the foot towing.",
+      "zh": "他失去了那只脚，然后找到了脚点。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“lost that foot”指脚滑脱，“finds the foot”指重新找到脚点。"
+    },
+    {
+      "id": "c1845",
+      "startTime": 6074.17,
+      "endTime": 6075.31,
+      "en": ">> Oh, what is he doing?",
+      "zh": ">> 哦，他在做什么？",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“What is he doing?”表示惊讶或疑问，注意语调。"
+    },
+    {
+      "id": "c1846",
+      "startTime": 6075.21,
+      "endTime": 6076.03,
+      "en": "Okay, that's crazy.",
+      "zh": "好的，那太疯狂了。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "“crazy”在口语中表示“难以置信”，常用于惊叹。"
+    },
+    {
+      "id": "c1847",
+      "startTime": 6075.93,
+      "endTime": 6078.91,
+      "en": "He was just palm pressing in between the two volumes right there.",
+      "zh": "他刚才就在那两个岩点之间用手掌按压。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“palm pressing”指用手掌按压，“volumes”指大体积的岩点。"
+    },
+    {
+      "id": "c1848",
+      "startTime": 6078.81,
+      "endTime": 6080.03,
+      "en": ">> He had his chin on the wall.",
+      "zh": ">> 他的下巴贴在墙上。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“chin on the wall”描述身体姿势，注意“chin”指下巴。"
+    },
+    {
+      "id": "c1849",
+      "startTime": 6079.93,
+      "endTime": 6081.36,
+      "en": "He had everything going on there.",
+      "zh": "他什么都用上了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“had everything going on”表示用尽各种技巧或动作。"
+    },
+    {
+      "id": "c1850",
+      "startTime": 6083.29,
+      "endTime": 6086.67,
+      "en": ">> There is team GB, Zoe, and Jack watching on.",
+      "zh": ">> 英国队、Zoe和Jack在观看。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“team GB”指英国队，“watching on”表示旁观。"
+    },
+    {
+      "id": "c1851",
+      "startTime": 6086.57,
+      "endTime": 6088.24,
+      "en": "Lock in Max the Future.",
+      "zh": "锁定Max的未来。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Lock in”表示锁定或确定，这里可能指锁定胜局。"
+    },
+    {
+      "id": "c1852",
+      "startTime": 6088.33,
+      "endTime": 6091.36,
+      "en": "Yes, Max the Future is his Instagram tag.",
+      "zh": "是的，Max the Future 是他的 Instagram 标签。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'Instagram tag' 中的 'tag' 指标签，这里指用户名。"
+    },
+    {
+      "id": "c1853",
+      "startTime": 6092.49,
+      "endTime": 6094.88,
+      "en": ">> I always feel I have to explain that >> Yeah.",
+      "zh": ">> 我总是觉得我必须解释一下 >> 是的。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 '>>' 表示对话中的插话，口语中常用。"
+    },
+    {
+      "id": "c1854",
+      "startTime": 6095.21,
+      "endTime": 6098.19,
+      "en": "I mean, it's like it's those kinds of names that you remember.",
+      "zh": "我的意思是，就是那种你会记住的名字。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "句型 'It's like...' 常用于口语解释。"
+    },
+    {
+      "id": "c1855",
+      "startTime": 6098.09,
+      "endTime": 6101.2,
+      "en": "Max Futurials or Jim Pope on >> Aaron McBast.",
+      "zh": "Max Futurials 或 Jim Pope 对阵 Aaron McBast。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'or' 在这里表示列举，'对阵' 是比赛用语。"
+    },
+    {
+      "id": "c1856",
+      "startTime": 6101.61,
+      "endTime": 6102.48,
+      "en": ">> Aaron McBast.",
+      "zh": ">> Aaron McBast。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复名字表示强调或确认。"
+    },
+    {
+      "id": "c1857",
+      "startTime": 6108.73,
+      "endTime": 6109.52,
+      "en": "still possible.",
+      "zh": "仍然有可能。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'still possible' 常用于比赛评论，表示还有机会。"
+    },
+    {
+      "id": "c1858",
+      "startTime": 6110.65,
+      "endTime": 6116.56,
+      "en": ">> So, palm pressing against this and then he actually put his right foot on the lower yellow.",
+      "zh": ">> 所以，手掌压在这个上面，然后他实际上把右脚放在了较低的黄色点上。",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'palm pressing' 是手掌按压，'lower yellow' 指较低的黄色岩点。"
+    },
+    {
+      "id": "c1859",
+      "startTime": 6116.65,
+      "endTime": 6119.68,
+      "en": "Oh, I >> think with that it goes away from him.",
+      "zh": "哦，我 >> 觉得那样会离他而去。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'goes away from him' 表示动作方向，这里指身体会离开岩壁。"
+    },
+    {
+      "id": "c1860",
+      "startTime": 6120.57,
+      "endTime": 6122.48,
+      "en": ">> But he can upgrade that score from",
+      "zh": ">> 但他可以提高那个分数，从",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'upgrade that score' 表示提高分数。"
+    },
+    {
+      "id": "c1861",
+      "startTime": 6132.01,
+      "endTime": 6138.08,
+      "en": "not very great at the moment with no zones at the moment.",
+      "zh": "目前不太好，现在还没有 Zone。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'no zones' 指没有到达得分点，'at the moment' 是当前。"
+    },
+    {
+      "id": "c1862",
+      "startTime": 6138.25,
+      "endTime": 6139.87,
+      "en": ">> It's confusing, isn't it?",
+      "zh": ">> 这很令人困惑，不是吗？",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'confusing' 是令人困惑的，'isn't it' 是反意疑问句。"
+    },
+    {
+      "id": "c1863",
+      "startTime": 6139.77,
+      "endTime": 6144.08,
+      "en": "I I can't quite figure it out myself on this one, you know, like there isn't >> Yeah,",
+      "zh": "我自己也搞不太明白这个，你知道，就像没有 >> 是的，",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'can't quite figure out' 表示不太明白，'you know' 是口语填充词。"
+    },
+    {
+      "id": "c1864",
+      "startTime": 6144.01,
+      "endTime": 6149.44,
+      "en": "I don't I mean, cuz Hannis was he tried and gave a few goes to get to the zone.",
+      "zh": "我的意思是，因为 Hannis 他试了并给了几次尝试去到达 Zone。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "注意 'gave a few goes' 是给了几次尝试，'to get to the zone' 是到达得分点。"
+    },
+    {
+      "id": "c1865",
+      "startTime": 6149.93,
+      "endTime": 6151.28,
+      "en": "He's trying to go low.",
+      "zh": "他试图走低。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'trying to go low' 表示尝试低处路线。"
+    },
+    {
+      "id": "c1866",
+      "startTime": 6154.25,
+      "endTime": 6157.44,
+      "en": "the setter said this was 100% not the intended beta.",
+      "zh": "定线员说这 100% 不是预期的动作解法。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "beta"
+      ],
+      "note": "注意 'intended beta' 是预期的动作解法，'setter' 是定线员。"
+    },
+    {
+      "id": "c1867",
+      "startTime": 6157.37,
+      "endTime": 6160.32,
+      "en": "So this is thinking way outside the box for these guys.",
+      "zh": "所以这对他们来说是非常跳出常规的思考。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'thinking outside the box' 是跳出常规思考，'for these guys' 指这些选手。"
+    },
+    {
+      "id": "c1868",
+      "startTime": 6160.73,
+      "endTime": 6163.44,
+      "en": ">> So wow that's amazing. He's managed to",
+      "zh": ">> 哇，那太神奇了。他成功做到了",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'managed to' 表示设法做到，'amazing' 是令人惊叹的。"
+    },
+    {
+      "id": "c1869",
+      "startTime": 6165.45,
+      "endTime": 6166.05,
+      "en": "so",
+      "zh": "所以",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'so' 是口语中的过渡词，表示因此。"
+    },
+    {
+      "id": "c1870",
+      "startTime": 6166.97,
+      "endTime": 6171.28,
+      "en": "for this kind of move, Max being a smaller climber, he'll be able to fit in the box much better,",
+      "zh": "对于这种动作，Max 作为较小的攀岩者，他能更好地适应那个空间，",
+      "score": 63,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "move"
+      ],
+      "note": "注意 'fit in the box' 指适应空间，'smaller climber' 是较小的攀岩者。"
+    },
+    {
+      "id": "c1871",
+      "startTime": 6171.37,
+      "endTime": 6178.43,
+      "en": "shift over his hips and then turn the position of his hands to be able to push up and potentially stand up.",
+      "zh": "移动他的臀部，然后转动手的位置，以便能够推起并可能站起来。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'shift over his hips' 是移动臀部，'turn the position' 是转动手的位置。"
+    },
+    {
+      "id": "c1872",
+      "startTime": 6178.33,
+      "endTime": 6180.67,
+      "en": "But once again, this foot hold is just really bad.",
+      "zh": "但再次，这个脚点真的很差。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "hold",
+        "foot"
+      ],
+      "note": "注意 'foot hold' 是脚点，'really bad' 是非常差。"
+    },
+    {
+      "id": "c1873",
+      "startTime": 6180.57,
+      "endTime": 6189.31,
+      "en": "I mean, maybe the setters thought about it and they gave them a disgusting foot to prevent something like this >> because it's always the foot that's popped so far cuz the more you wait it,",
+      "zh": "我的意思是，也许定线员考虑过，他们给了一个糟糕的脚点来防止这种情况 >> 因为总是脚点滑脱，因为你越踩它，",
+      "score": 40,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "注意 'disgusting foot' 是糟糕的脚点，'prevent' 是防止，'popped' 是滑脱。"
+    },
+    {
+      "id": "c1874",
+      "startTime": 6189.21,
+      "endTime": 6191.07,
+      "en": "the more less rubber you get.",
+      "zh": "你得到的橡胶就越少。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'the more... the less...' 是越...越...，'rubber' 指鞋底橡胶。"
+    },
+    {
+      "id": "c1875",
+      "startTime": 6190.97,
+      "endTime": 6195.2,
+      "en": ">> Yeah, but I think here Max especially just like kind of slipped.",
+      "zh": ">> 是的，但我认为这里 Max 尤其是有点滑了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "slipped"
+      ],
+      "note": "注意 'slipped' 是滑了，'especially' 是尤其。"
+    },
+    {
+      "id": "c1876",
+      "startTime": 6196.09,
+      "endTime": 6198.03,
+      "en": ">> Do you think he's still got a chance in this this one?",
+      "zh": "你觉得他这次还有机会吗？",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意“still got a chance”表示“还有机会”，常用于比赛评论。"
+    },
+    {
+      "id": "c1877",
+      "startTime": 6197.93,
+      "endTime": 6205.52,
+      "en": ">> I I think if he can if his if his foot doesn't pop, I think he can for sure get this.",
+      "zh": "我觉得如果他的脚不滑脱，他肯定能完攀。",
+      "score": 60,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot pops”指脚滑脱，是攀岩常用语。"
+    },
+    {
+      "id": "c1878",
+      "startTime": 6206.33,
+      "endTime": 6209.39,
+      "en": ">> So pressing >> crimping full crimping the lock.",
+      "zh": "所以现在在按压，全扣式抓点，锁定。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“full crimping”指全扣式抓点，注意“lock”指锁定动作。"
+    },
+    {
+      "id": "c1879",
+      "startTime": 6209.29,
+      "endTime": 6211.84,
+      "en": "But yeah, you can just see how bad that foot hold is.",
+      "zh": "但你可以看到那个脚点有多差。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "hold",
+        "foot"
+      ],
+      "note": "“foot hold”指脚点，注意“how bad”强调程度。"
+    },
+    {
+      "id": "c1880",
+      "startTime": 6212.01,
+      "endTime": 6213.55,
+      "en": "And he's managed to turn his P.",
+      "zh": "他成功转体了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“turn his P”可能指转体动作，注意“managed to”表示成功做到。"
+    },
+    {
+      "id": "c1881",
+      "startTime": 6213.45,
+      "endTime": 6216.64,
+      "en": "Oh, but he readjusted the foot a bit and then slipped.",
+      "zh": "哦，但他调整了一下脚，然后滑脱了。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "foot",
+        "slipped"
+      ],
+      "note": "“readjusted”指重新调整，注意“slipped”是滑脱。"
+    },
+    {
+      "id": "c1882",
+      "startTime": 6218.09,
+      "endTime": 6220.4,
+      "en": ">> I get the feeling he's going to keep going surely.",
+      "zh": "我感觉他肯定会继续尝试。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“get the feeling”表示感觉，注意“surely”加强语气。"
+    },
+    {
+      "id": "c1883",
+      "startTime": 6220.41,
+      "endTime": 6222.43,
+      "en": ">> I mean, he was very, very close there.",
+      "zh": "我是说，他刚才非常接近了。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“very, very close”强调接近，注意“I mean”用于补充说明。"
+    },
+    {
+      "id": "c1884",
+      "startTime": 6222.33,
+      "endTime": 6224,
+      "en": ">> Yeah, he's almost committed too many.",
+      "zh": "是的，他几乎太投入了。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "committed"
+      ],
+      "note": "“committed”指投入，注意“almost”表示几乎。"
+    },
+    {
+      "id": "c1885",
+      "startTime": 6223.93,
+      "endTime": 6226.19,
+      "en": ">> He was able to turn his hand at this point.",
+      "zh": "他这时能够转手。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“turn his hand”指转手动作，注意“at this point”表示此时。"
+    },
+    {
+      "id": "c1886",
+      "startTime": 6226.09,
+      "endTime": 6232.48,
+      "en": "Although before his other method he did not, I think, >> but then he just readjusted his foot and that's when he slipped off.",
+      "zh": "虽然之前他用另一种方法时没有做到，但后来他调整了脚，然后就滑脱了。",
+      "score": 64,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "foot",
+        "slipped"
+      ],
+      "note": "“although”引导让步，注意“readjusted”和“slipped off”的连用。"
+    },
+    {
+      "id": "c1887",
+      "startTime": 6233.93,
+      "endTime": 6236.43,
+      "en": ">> Doesn't know what is he going to try.",
+      "zh": "不知道他要尝试什么。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“doesn't know”表示不知道，注意“what is he going to try”是疑问语序。"
+    },
+    {
+      "id": "c1888",
+      "startTime": 6236.33,
+      "endTime": 6237.95,
+      "en": "He's really caught in two minds right now.",
+      "zh": "他现在真的犹豫不决。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "“caught in two minds”表示犹豫不决，是常用习语。"
+    },
+    {
+      "id": "c1889",
+      "startTime": 6237.97,
+      "endTime": 6238.91,
+      "en": "He's starting on the mistake.",
+      "zh": "他一开始就犯了错误。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“starting on the mistake”可能指开始就出错，注意“starting on”的用法。"
+    },
+    {
+      "id": "c1890",
+      "startTime": 6238.81,
+      "endTime": 6240.19,
+      "en": ">> And so this is the problem.",
+      "zh": "所以这就是问题所在。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“this is the problem”直接表达问题，注意“so”连接上下文。"
+    },
+    {
+      "id": "c1891",
+      "startTime": 6240.09,
+      "endTime": 6242.19,
+      "en": "It's like, okay, what do I try now?",
+      "zh": "就像，好吧，我现在该尝试什么？",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“It's like”用于口语，注意“what do I try now”是疑问句。"
+    },
+    {
+      "id": "c1892",
+      "startTime": 6242.09,
+      "endTime": 6242.96,
+      "en": "Do I try?",
+      "zh": "我要尝试吗？",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Do I try?”是简短疑问，注意语调。"
+    },
+    {
+      "id": "c1893",
+      "startTime": 6244.17,
+      "endTime": 6246.24,
+      "en": ">> He's trying to go down again.",
+      "zh": "他又想下去了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“trying to go down”指想下去，注意“again”表示再次。"
+    },
+    {
+      "id": "c1894",
+      "startTime": 6250.81,
+      "endTime": 6251.63,
+      "en": "in eighth place?",
+      "zh": "第八名？",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“in eighth place”指第八名，注意“place”表示名次。"
+    },
+    {
+      "id": "c1895",
+      "startTime": 6251.53,
+      "endTime": 6253.04,
+      "en": "You might as well give it a go here.",
+      "zh": "你不如在这里试一下。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“might as well”表示“不如”，常用于建议。"
+    },
+    {
+      "id": "c1896",
+      "startTime": 6253.05,
+      "endTime": 6254,
+      "en": ">> Might as well.",
+      "zh": "不如试一下。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Might as well”是省略句，注意口语中的简洁。"
+    },
+    {
+      "id": "c1897",
+      "startTime": 6255.69,
+      "endTime": 6257.15,
+      "en": ">> God, the crowd want this to happen.",
+      "zh": "天哪，观众们希望这发生。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“the crowd”指观众，注意“want this to happen”表示期望。"
+    },
+    {
+      "id": "c1898",
+      "startTime": 6257.05,
+      "endTime": 6260.11,
+      "en": ">> Like he's going to He looks He looks better.",
+      "zh": "就像他要……他看起来好多了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“He looks better”表示看起来更好，注意“like”用于口语。"
+    },
+    {
+      "id": "c1899",
+      "startTime": 6260.01,
+      "endTime": 6261.84,
+      "en": "His foot looks much better this time.",
+      "zh": "这次他的脚看起来好多了。",
+      "score": 58,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot looks much better”强调脚的状态，注意“much”加强比较。"
+    },
+    {
+      "id": "c1900",
+      "startTime": 6264.25,
+      "endTime": 6265.95,
+      "en": "And now it's more of a question.",
+      "zh": "现在这更多是一个问题了。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'more of a question' 表示‘更多是一个问题’，常用于口语。"
+    },
+    {
+      "id": "c1901",
+      "startTime": 6265.85,
+      "endTime": 6268.35,
+      "en": "Is he going to be able to get the flexibility to put his foot up?",
+      "zh": "他能否有足够的柔韧性把脚抬上去？",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "foot",
+        "flexibility"
+      ],
+      "note": "注意 'get the flexibility' 表示‘获得柔韧性’，'put his foot up' 是‘抬脚’。"
+    },
+    {
+      "id": "c1902",
+      "startTime": 6268.25,
+      "endTime": 6269.07,
+      "en": "And he does.",
+      "zh": "他做到了。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'he does' 是简短回应，表示‘他做到了’。"
+    },
+    {
+      "id": "c1903",
+      "startTime": 6268.97,
+      "endTime": 6269.79,
+      "en": ">> He's made it work.",
+      "zh": "他成功了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'made it work' 表示‘使之成功’，常用于描述解决问题。"
+    },
+    {
+      "id": "c1904",
+      "startTime": 6269.73,
+      "endTime": 6271.12,
+      "en": "And he's in a better position.",
+      "zh": "他处于更好的位置。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'in a better position' 表示‘处于更好的位置’，常用于比赛或谈判。"
+    },
+    {
+      "id": "c1905",
+      "startTime": 6271.05,
+      "endTime": 6273.92,
+      "en": "So suddenly >> in a great position.",
+      "zh": "所以突然之间，他处于一个绝佳的位置。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'suddenly' 表示‘突然’，'in a great position' 是‘处于绝佳位置’。"
+    },
+    {
+      "id": "c1906",
+      "startTime": 6274.01,
+      "endTime": 6275.68,
+      "en": "Now, let's just see if he can.",
+      "zh": "现在，让我们看看他能否做到。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'let's just see if he can' 是常用表达，表示‘让我们看看他能否做到’。"
+    },
+    {
+      "id": "c1907",
+      "startTime": 6276.01,
+      "endTime": 6279.04,
+      "en": ">> So this is where >> this is where Hannis was",
+      "zh": "所以这就是汉尼斯当时的位置。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'this is where' 表示‘这就是...的地方’，常用于指代位置或情况。"
+    },
+    {
+      "id": "c1908",
+      "startTime": 6280.17,
+      "endTime": 6283.92,
+      "en": "and we also have no clue how to do that",
+      "zh": "而且我们也不知道该怎么做。",
+      "score": 35,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'have no clue' 是口语，表示‘毫无头绪’。"
+    },
+    {
+      "id": "c1909",
+      "startTime": 6284.89,
+      "endTime": 6286.56,
+      "en": ">> So he stays down on 34.4.",
+      "zh": "所以他停留在34.4分。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'stays down' 表示‘保持’，'34.4' 是分数。"
+    },
+    {
+      "id": "c1910",
+      "startTime": 6287.45,
+      "endTime": 6288.32,
+      "en": "Not quite.",
+      "zh": "还差一点。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'not quite' 表示‘不完全’，常用于否定。"
+    },
+    {
+      "id": "c1911",
+      "startTime": 6292.09,
+      "endTime": 6293.76,
+      "en": "Not quite for Max.",
+      "zh": "对马克斯来说还差一点。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'not quite for Max' 表示‘对马克斯来说还差一点’。"
+    },
+    {
+      "id": "c1912",
+      "startTime": 6294.25,
+      "endTime": 6297.6,
+      "en": "So Saut is in seventh, Max is in eighth,",
+      "zh": "所以索特第七，马克斯第八。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'is in seventh' 表示‘排名第七’，'eighth' 是第八。"
+    },
+    {
+      "id": "c1913",
+      "startTime": 6298.73,
+      "endTime": 6299.76,
+      "en": "Ray and Serata.",
+      "zh": "雷和塞拉塔。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'Ray' 和 'Serata' 是人名，注意发音。"
+    },
+    {
+      "id": "c1914",
+      "startTime": 6299.77,
+      "endTime": 6303.12,
+      "en": "Now really, it kind of is between Ray and Serato here.",
+      "zh": "现在实际上，这主要是在雷和塞拉塔之间。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'kind of' 是口语，表示‘有点’，'between A and B' 是‘在A和B之间’。"
+    },
+    {
+      "id": "c1915",
+      "startTime": 6303.53,
+      "endTime": 6305.36,
+      "en": ">> And if Ray does it super quick",
+      "zh": "如果雷做得非常快，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'super quick' 是口语，表示‘非常快’。"
+    },
+    {
+      "id": "c1916",
+      "startTime": 6306.49,
+      "endTime": 6310.19,
+      "en": ">> and Sarat doesn't, but >> but we know how hard this boulder is.",
+      "zh": "而塞拉塔没有，但我们知道这个抱石有多难。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "注意 'we know how hard' 表示‘我们知道有多难’，'boulder' 是‘抱石’。"
+    },
+    {
+      "id": "c1917",
+      "startTime": 6310.09,
+      "endTime": 6311.76,
+      "en": "So that is unlikely, right?",
+      "zh": "所以那不太可能，对吧？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'unlikely' 表示‘不太可能’，'right?' 是口语，表示‘对吧？’。"
+    },
+    {
+      "id": "c1918",
+      "startTime": 6312.49,
+      "endTime": 6313.92,
+      "en": ">> Bit of blood there from Max.",
+      "zh": "马克斯那里有点血。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'bit of blood' 表示‘一点血’，'there' 指‘那里’。"
+    },
+    {
+      "id": "c1919",
+      "startTime": 6314.01,
+      "endTime": 6315.31,
+      "en": "We do need that cleaned off.",
+      "zh": "我们需要清理干净。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'need that cleaned off' 表示‘需要清理掉’，'clean off' 是动词短语。"
+    },
+    {
+      "id": "c1920",
+      "startTime": 6315.25,
+      "endTime": 6315.85,
+      "en": "I don't Yeah.",
+      "zh": "我不，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'I don't' 和 'Yeah' 是口语中的犹豫和肯定。"
+    },
+    {
+      "id": "c1921",
+      "startTime": 6315.65,
+      "endTime": 6318.08,
+      "en": "And the setters are That's what the little pause is.",
+      "zh": "定线员们，那就是短暂停顿的原因。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'the setters' 是‘定线员’，'that's what' 表示‘那就是...的原因’。"
+    },
+    {
+      "id": "c1922",
+      "startTime": 6318.01,
+      "endTime": 6320.4,
+      "en": "So they're just showing us the blood so we understand.",
+      "zh": "所以他们只是向我们展示血迹，让我们理解。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'showing us' 表示‘向我们展示’，'so we understand' 是‘以便我们理解’。"
+    },
+    {
+      "id": "c1923",
+      "startTime": 6320.41,
+      "endTime": 6323.68,
+      "en": "And uh our team have cleaned that boulder up.",
+      "zh": "而且我们的团队已经清理了那个抱石。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "注意 'our team' 是‘我们的团队’，'cleaned up' 是‘清理干净’。"
+    },
+    {
+      "id": "c1924",
+      "startTime": 6330.01,
+      "endTime": 6336,
+      "en": "can do something truly special here it will be >> and but Sorat just he cannot get zone.",
+      "zh": "在这里可以做出真正特别的表现，这将是 >> 但是 Sorat 就是无法到达 Zone。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "注意 'can do something truly special' 表示‘能做出特别的事’，'get zone' 是攀岩术语，指到达 Zone 得分点。"
+    },
+    {
+      "id": "c1925",
+      "startTime": 6338.57,
+      "endTime": 6339.84,
+      "en": ">> but I mean who knows?",
+      "zh": ">> 但我是说，谁知道呢？",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "'who knows?' 是常用口语，表示‘谁知道呢’，表达不确定性。"
+    },
+    {
+      "id": "c1926",
+      "startTime": 6346.41,
+      "endTime": 6348.4,
+      "en": "and Ray steps out.",
+      "zh": "Ray 迈步出去了。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'steps out' 指迈步出去，注意 'step' 作为动词的用法。"
+    },
+    {
+      "id": "c1927",
+      "startTime": 6349.37,
+      "endTime": 6351.39,
+      "en": "Sarata you'd imagine will be back there.",
+      "zh": "你可以想象 Sarata 会回到那里。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "'you'd imagine' 是‘你可以想象’的意思，用于推测。"
+    },
+    {
+      "id": "c1928",
+      "startTime": 6351.29,
+      "endTime": 6354.24,
+      "en": "I would be anyway listening quite intently at this moment.",
+      "zh": "我无论如何都会非常专注地听。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'listening intently' 表示‘专注地听’，'intently' 是副词，表示专注地。"
+    },
+    {
+      "id": "c1929",
+      "startTime": 6358.49,
+      "endTime": 6359.28,
+      "en": "lot of information.",
+      "zh": "很多信息。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'a lot of information' 是‘大量信息’，注意 'information' 是不可数名词。"
+    },
+    {
+      "id": "c1930",
+      "startTime": 6359.53,
+      "endTime": 6360.13,
+      "en": ">> They do.",
+      "zh": ">> 他们确实如此。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "'They do.' 是简短回答，表示‘他们确实如此’，用于强调。"
+    },
+    {
+      "id": "c1931",
+      "startTime": 6360.01,
+      "endTime": 6361.2,
+      "en": "They have been told.",
+      "zh": "他们被告知了。",
+      "score": 25,
+      "study": false,
+      "keywords": [],
+      "note": "'have been told' 是现在完成时的被动语态，表示‘已经被告知’。"
+    },
+    {
+      "id": "c1932",
+      "startTime": 6361.61,
+      "endTime": 6362.64,
+      "en": ">> They have been told.",
+      "zh": ">> 他们被告知了。",
+      "score": 25,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，注意 'told' 的发音。"
+    },
+    {
+      "id": "c1933",
+      "startTime": 6364.33,
+      "endTime": 6367.28,
+      "en": "I mean, yeah, they were practically shouting methods.",
+      "zh": "我的意思是，是的，他们几乎是在喊出方法。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'practically' 表示‘几乎’，'shouting methods' 指大声喊出动作解法。"
+    },
+    {
+      "id": "c1934",
+      "startTime": 6372.33,
+      "endTime": 6373.39,
+      "en": ">> This is good from him.",
+      "zh": ">> 这对他来说很好。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'This is good from him.' 表示‘这是他做得好’，注意介词 'from' 的用法。"
+    },
+    {
+      "id": "c1935",
+      "startTime": 6373.29,
+      "endTime": 6373.89,
+      "en": ">> Wow.",
+      "zh": ">> 哇。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "感叹词 'Wow' 表示惊叹。"
+    },
+    {
+      "id": "c1936",
+      "startTime": 6373.69,
+      "endTime": 6375.15,
+      "en": "Quickly up into that standing position.",
+      "zh": "迅速进入那个站立姿势。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "'standing position' 指站立姿势，注意 'quickly up into' 表示快速进入。"
+    },
+    {
+      "id": "c1937",
+      "startTime": 6375.05,
+      "endTime": 6375.65,
+      "en": "Oh my god.",
+      "zh": "哦，我的天。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'Oh my god' 是常见感叹语，表示惊讶。"
+    },
+    {
+      "id": "c1938",
+      "startTime": 6375.49,
+      "endTime": 6377.23,
+      "en": "Look how slow his foot is.",
+      "zh": "看他的脚多慢。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'Look how slow his foot is.' 是感叹句，注意 'how' 引导的感叹句结构。"
+    },
+    {
+      "id": "c1939",
+      "startTime": 6377.13,
+      "endTime": 6378.72,
+      "en": "But that is just crazy trust.",
+      "zh": "但那真是疯狂的信任。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "'crazy trust' 指‘疯狂的信任’，形容对动作的极度自信。"
+    },
+    {
+      "id": "c1940",
+      "startTime": 6380.01,
+      "endTime": 6384.72,
+      "en": "Now, let's see if he's going to change feet. He is trying to",
+      "zh": "现在，让我们看看他是否会换脚。他正在尝试……",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "'change feet' 是攀岩术语，指换脚，注意 'trying to' 表示正在尝试。"
+    },
+    {
+      "id": "c1941",
+      "startTime": 6387.05,
+      "endTime": 6387.65,
+      "en": ">> bo.",
+      "zh": ">> 砰。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "拟声词 'bo' 可能表示撞击声，注意听发音。"
+    },
+    {
+      "id": "c1942",
+      "startTime": 6387.85,
+      "endTime": 6389.6,
+      "en": "He just went a bit too fast.",
+      "zh": "他只是太快了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'went a bit too fast' 表示‘太快了一点’，注意 'a bit' 表示‘一点’。"
+    },
+    {
+      "id": "c1943",
+      "startTime": 6390.89,
+      "endTime": 6393.07,
+      "en": ">> Yeah, Hannis, he found that really well.",
+      "zh": ">> 是的，Hannis，他做得非常好。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'found that really well' 表示‘做得很好’，注意 'found' 在这里是‘发现’的意思。"
+    },
+    {
+      "id": "c1944",
+      "startTime": 6393.01,
+      "endTime": 6400.16,
+      "en": "Just like leaning back over right and holding on to the top of the volume, but he got into that position really quickly. So,",
+      "zh": "就像向右后仰，抓住体积的顶部，但他很快就进入了那个位置。所以，",
+      "score": 51,
+      "study": true,
+      "keywords": [
+        "top",
+        "volume"
+      ],
+      "note": "'leaning back over right' 指向右后仰，'holding on to' 指抓住，注意 'volume' 是攀岩中的‘体积’（一种岩点）。"
+    },
+    {
+      "id": "c1945",
+      "startTime": 6401.93,
+      "endTime": 6402.53,
+      "en": ">> yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c1946",
+      "startTime": 6402.17,
+      "endTime": 6404.91,
+      "en": "And looks super confident walking across the yellow volume as well.",
+      "zh": "而且看起来非常自信地走过黄色体积。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'walking across' 指走过，'super confident' 表示‘超级自信’。"
+    },
+    {
+      "id": "c1947",
+      "startTime": 6404.85,
+      "endTime": 6406.96,
+      "en": "That was >> I mean, that looked so confident.",
+      "zh": "那看起来非常自信。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'That looked so confident.' 是过去时，表示‘那看起来非常自信’，注意 'so' 的强调用法。"
+    },
+    {
+      "id": "c1948",
+      "startTime": 6408.17,
+      "endTime": 6409.92,
+      "en": "was definitely trusting his feet.",
+      "zh": "他确实非常信任自己的脚点。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“trusting his feet”中的“trust”表示信任，在攀岩中常指相信脚点能踩稳。"
+    },
+    {
+      "id": "c1949",
+      "startTime": 6410.41,
+      "endTime": 6411.39,
+      "en": ">> That's the secret, guys.",
+      "zh": "这就是秘诀，伙计们。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“That's the secret”是常用表达，意思是“这就是秘诀”。"
+    },
+    {
+      "id": "c1950",
+      "startTime": 6411.29,
+      "endTime": 6413.28,
+      "en": "Just trust your >> Yeah. Don't think",
+      "zh": "只要相信你的……对，别想太多。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“Don't think”是祈使句，表示“别想”，常用于鼓励。"
+    },
+    {
+      "id": "c1951",
+      "startTime": 6415.45,
+      "endTime": 6416.11,
+      "en": "just do.",
+      "zh": "直接做。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“Just do”是简短有力的表达，意思是“直接做”。"
+    },
+    {
+      "id": "c1952",
+      "startTime": 6416.01,
+      "endTime": 6418.4,
+      "en": ">> What's that Top Gun quote? If you think you're dead,",
+      "zh": "《壮志凌云》里怎么说的？如果你觉得自己要死了，",
+      "score": 62,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "top"
+      ],
+      "note": "“What's that quote?”用于询问引语，注意“Top Gun”是电影名。"
+    },
+    {
+      "id": "c1953",
+      "startTime": 6420.81,
+      "endTime": 6421.41,
+      "en": ">> definitely.",
+      "zh": "确实。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Definitely”表示“确实”，常用于强调肯定。"
+    },
+    {
+      "id": "c1954",
+      "startTime": 6421.21,
+      "endTime": 6422.08,
+      "en": "You can relate.",
+      "zh": "你能感同身受。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“You can relate”意思是“你能理解”，relate表示产生共鸣。"
+    },
+    {
+      "id": "c1955",
+      "startTime": 6422.33,
+      "endTime": 6423.23,
+      "en": ">> Your knee on the slab.",
+      "zh": "你的膝盖在板壁上。",
+      "score": 33,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“knee on the slab”中“slab”是板壁，注意膝盖的使用。"
+    },
+    {
+      "id": "c1956",
+      "startTime": 6423.13,
+      "endTime": 6423.92,
+      "en": "Either way.",
+      "zh": "不管怎样。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Either way”是常用短语，表示“无论哪种方式”。"
+    },
+    {
+      "id": "c1957",
+      "startTime": 6424.81,
+      "endTime": 6426.43,
+      "en": ">> So, up he goes again.",
+      "zh": "所以，他又上去了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“up he goes”是倒装句，强调“他上去了”。"
+    },
+    {
+      "id": "c1958",
+      "startTime": 6426.33,
+      "endTime": 6428.16,
+      "en": "Will he trust it to the same extent?",
+      "zh": "他还会同样信任脚点吗？",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“to the same extent”表示“到同样的程度”，注意“extent”的用法。"
+    },
+    {
+      "id": "c1959",
+      "startTime": 6429.37,
+      "endTime": 6433.92,
+      "en": ">> He does, but still pops flips, but he stays on the wall.",
+      "zh": "他确实信任了，但还是弹跳了一下，不过他留在墙上了。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“pops flips”可能指脚点滑动，注意“stays on the wall”表示留在墙上。"
+    },
+    {
+      "id": "c1960",
+      "startTime": 6436.09,
+      "endTime": 6438.56,
+      "en": "Okay, now he's trying for the",
+      "zh": "好了，现在他试图进行",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“trying for”表示“尝试做某事”，注意“for”的用法。"
+    },
+    {
+      "id": "c1961",
+      "startTime": 6439.61,
+      "endTime": 6440.48,
+      "en": "foot swap.",
+      "zh": "换脚。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“foot swap”是攀岩术语，指换脚动作。"
+    },
+    {
+      "id": "c1962",
+      "startTime": 6441.13,
+      "endTime": 6446.4,
+      "en": "So this foot swap, he's really just holding on to the edge of the volume and he manages to do it.",
+      "zh": "所以这个换脚，他真的只是抓住体积的边缘，然后设法做到了。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "volume",
+        "foot"
+      ],
+      "note": "“holding on to”表示“抓住”，注意“volume”在攀岩中指大体积岩点。"
+    },
+    {
+      "id": "c1963",
+      "startTime": 6451.61,
+      "endTime": 6453.2,
+      "en": "he needs to put it onto the foothold.",
+      "zh": "他需要把脚放到脚点上。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foothold"
+      ],
+      "note": "“put it onto”表示“把……放到……上”，注意“foothold”是脚点。"
+    },
+    {
+      "id": "c1964",
+      "startTime": 6453.37,
+      "endTime": 6455.68,
+      "en": "A not quite.",
+      "zh": "还差一点。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Not quite”表示“不完全”，常用于否定。"
+    },
+    {
+      "id": "c1965",
+      "startTime": 6456.09,
+      "endTime": 6459.31,
+      "en": ">> Although you see if he stays right and holding on to the volume on the right,",
+      "zh": "虽然你看，如果他保持向右并抓住右边的体积，",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "“stays right”可能指保持向右，注意“holding on to”再次出现。"
+    },
+    {
+      "id": "c1966",
+      "startTime": 6459.25,
+      "endTime": 6462.24,
+      "en": "he'd be able to just like in a squat position kind of put his foot",
+      "zh": "他就能像蹲姿一样把脚放上去。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "“in a squat position”表示“蹲姿”，注意“kind of”表示“有点”。"
+    },
+    {
+      "id": "c1967",
+      "startTime": 6463.77,
+      "endTime": 6465.07,
+      "en": "So 2 minutes 14.",
+      "zh": "所以用时2分14秒。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“2 minutes 14”是时间表达，注意“minutes”的省略。"
+    },
+    {
+      "id": "c1968",
+      "startTime": 6464.97,
+      "endTime": 6466.43,
+      "en": "He's looking good at the beginning.",
+      "zh": "他一开始看起来不错。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“looking good”表示“看起来不错”，注意“at the beginning”表示“一开始”。"
+    },
+    {
+      "id": "c1969",
+      "startTime": 6466.33,
+      "endTime": 6470.4,
+      "en": "He has not quite figured the zone out yet as no one has done.",
+      "zh": "他还没有完全搞清楚Zone点，因为还没有人完成过。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "“figured out”表示“搞清楚”，注意“zone”在攀岩中特指Zone得分点。"
+    },
+    {
+      "id": "c1970",
+      "startTime": 6476.57,
+      "endTime": 6478.16,
+      "en": ">> that was the foot match?",
+      "zh": "那是双手并点吗？",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "match",
+        "foot"
+      ],
+      "note": "“foot match”可能指双脚并点，但这里可能是“foot match”误写，实际应为“foot match”或“hand match”，注意“match”表示并点。"
+    },
+    {
+      "id": "c1971",
+      "startTime": 6479.45,
+      "endTime": 6480.48,
+      "en": "Heels up.",
+      "zh": "脚跟抬起。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Heels up”表示“脚跟抬起”，注意“heels”是复数。"
+    },
+    {
+      "id": "c1972",
+      "startTime": 6488.57,
+      "endTime": 6489.6,
+      "en": ">> And then just",
+      "zh": "然后只是",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意口语中的省略，'just' 常用来表示'只是'。"
+    },
+    {
+      "id": "c1973",
+      "startTime": 6490.89,
+      "endTime": 6492.08,
+      "en": "hands away.",
+      "zh": "手放开。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'hands away' 是攀岩中常见指令，表示'手离开'。"
+    },
+    {
+      "id": "c1974",
+      "startTime": 6493.53,
+      "endTime": 6494.88,
+      "en": "Lovely face there.",
+      "zh": "那里有个漂亮的岩面。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'face' 在攀岩中常指岩壁的正面。"
+    },
+    {
+      "id": "c1975",
+      "startTime": 6495.61,
+      "endTime": 6496.64,
+      "en": ">> All the expressions.",
+      "zh": "所有的表情。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "这里指运动员的表情，注意'expressions'的发音。"
+    },
+    {
+      "id": "c1976",
+      "startTime": 6496.97,
+      "endTime": 6497.87,
+      "en": "He goes again.",
+      "zh": "他又试了一次。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'goes again' 表示'再次尝试'。"
+    },
+    {
+      "id": "c1977",
+      "startTime": 6497.77,
+      "endTime": 6499.71,
+      "en": "1 minute 40 on the clock.",
+      "zh": "时钟显示1分40秒。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "注意时间表达：'1 minute 40' 是 '1分40秒'。"
+    },
+    {
+      "id": "c1978",
+      "startTime": 6499.61,
+      "endTime": 6500.83,
+      "en": "He's sitting in silver.",
+      "zh": "他目前排名第二。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'sitting in silver' 表示'暂列银牌位置'。"
+    },
+    {
+      "id": "c1979",
+      "startTime": 6500.73,
+      "endTime": 6502.08,
+      "en": "He'll finish in silver.",
+      "zh": "他将以银牌结束。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'finish in silver' 表示'最终获得银牌'。"
+    },
+    {
+      "id": "c1980",
+      "startTime": 6502.09,
+      "endTime": 6505.47,
+      "en": "If he doesn't get any points, he tops it.",
+      "zh": "如果他没得到任何分数，他就完攀了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'tops it' 是攀岩术语，意为'完攀'。"
+    },
+    {
+      "id": "c1981",
+      "startTime": 6505.41,
+      "endTime": 6506.32,
+      "en": "It's game on.",
+      "zh": "比赛开始了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'game on' 是习语，表示'开始竞争'。"
+    },
+    {
+      "id": "c1982",
+      "startTime": 6513.29,
+      "endTime": 6515.6,
+      "en": "it this way than Henness's way.",
+      "zh": "这样比亨尼斯的路线更好。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意比较结构：'this way than...'。"
+    },
+    {
+      "id": "c1983",
+      "startTime": 6521.61,
+      "endTime": 6525.2,
+      "en": "maybe something different or just continue with his same beta.",
+      "zh": "也许做些不同的，或者继续他原来的动作。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "beta"
+      ],
+      "note": "'beta' 在攀岩中意为'动作解法'。"
+    },
+    {
+      "id": "c1984",
+      "startTime": 6532.89,
+      "endTime": 6534.32,
+      "en": ">> He goes there so quick.",
+      "zh": "他去那里太快了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "注意 'so quick' 的用法，表示'非常快'。"
+    },
+    {
+      "id": "c1985",
+      "startTime": 6534.73,
+      "endTime": 6536.72,
+      "en": "Oh, he's trying the same thing again.",
+      "zh": "哦，他又尝试同样的事情。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'trying the same thing' 表示'尝试同样的事情'。"
+    },
+    {
+      "id": "c1986",
+      "startTime": 6538.17,
+      "endTime": 6539.47,
+      "en": ">> I mean, when you're so close.",
+      "zh": "我的意思是，当你如此接近时。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'so close' 表示'如此接近'。"
+    },
+    {
+      "id": "c1987",
+      "startTime": 6539.37,
+      "endTime": 6542.8,
+      "en": "Okay, that footwork was very >> beautifully done.",
+      "zh": "好的，那个脚步非常漂亮。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "footwork"
+      ],
+      "note": "'footwork' 指'脚步动作'。"
+    },
+    {
+      "id": "c1988",
+      "startTime": 6543.85,
+      "endTime": 6546.11,
+      "en": ">> He hasn't slid the foot down onto the jib yet.",
+      "zh": "他还没有把脚滑到那个岩点上。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'jib' 可能指'岩点'，注意 'slid' 是 'slide' 的过去式。"
+    },
+    {
+      "id": "c1989",
+      "startTime": 6546.01,
+      "endTime": 6551.92,
+      "en": "Oh, cuz he's just >> it's quite low and then he's practically holding on to nothing with the volumes.",
+      "zh": "哦，因为他只是……它很低，然后他几乎没抓住什么，只靠那些大体积。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'volumes' 指'大体积岩点'，注意 'practically' 表示'几乎'。"
+    },
+    {
+      "id": "c1990",
+      "startTime": 6557.21,
+      "endTime": 6560.32,
+      "en": "Yeah, he's there's nothing that he's holding on to there.",
+      "zh": "是的，他那里什么都没抓住。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'nothing that he's holding on to' 表示'他什么都没抓住'。"
+    },
+    {
+      "id": "c1991",
+      "startTime": 6560.57,
+      "endTime": 6562.72,
+      "en": ">> It's just the nails behind the volume.",
+      "zh": "只是手指甲抠在体积后面。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'nails' 指'指甲'，注意 'behind the volume' 表示'在体积后面'。"
+    },
+    {
+      "id": "c1992",
+      "startTime": 6562.89,
+      "endTime": 6565.6,
+      "en": ">> I think they've scuffed the paint off the edge of that volume.",
+      "zh": "我想他们把那个体积边缘的漆都磨掉了。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'scuffed' 表示'磨损'，注意 'off the edge' 表示'从边缘'。"
+    },
+    {
+      "id": "c1993",
+      "startTime": 6566.33,
+      "endTime": 6568.16,
+      "en": ">> Okay, one last chance.",
+      "zh": "好的，最后一次机会。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "'one last chance' 是常见表达，表示'最后一次机会'。"
+    },
+    {
+      "id": "c1994",
+      "startTime": 6568.41,
+      "endTime": 6569.44,
+      "en": "You never know.",
+      "zh": "你永远不知道。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'You never know' 是习语，表示'很难说'。"
+    },
+    {
+      "id": "c1995",
+      "startTime": 6569.37,
+      "endTime": 6572.48,
+      "en": "Ray is smooth through here.",
+      "zh": "雷在这里很流畅。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'smooth' 表示'流畅'，注意 'through here' 表示'通过这里'。"
+    },
+    {
+      "id": "c1996",
+      "startTime": 6572.49,
+      "endTime": 6575.07,
+      "en": ">> See, he's thinking of holding the left part of the volume.",
+      "zh": "看，他在考虑抓那个大体积岩点的左边。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "注意“volume”在攀岩中指大块的人造岩点，不是“体积”。"
+    },
+    {
+      "id": "c1997",
+      "startTime": 6574.97,
+      "endTime": 6576,
+      "en": "Why not the right?",
+      "zh": "为什么不抓右边呢？",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "“Why not...”是提出建议或疑问的常用句型。"
+    },
+    {
+      "id": "c1998",
+      "startTime": 6575.93,
+      "endTime": 6577.44,
+      "en": "No. Go back down.",
+      "zh": "不，退回去。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Go back down”在攀岩中常指下撤或回到上一个位置。"
+    },
+    {
+      "id": "c1999",
+      "startTime": 6579.05,
+      "endTime": 6579.87,
+      "en": ">> Oh, okay.",
+      "zh": "哦，好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Oh, okay”表示理解或接受，口语中常用。"
+    },
+    {
+      "id": "c2000",
+      "startTime": 6579.77,
+      "endTime": 6581.52,
+      "en": ">> I think with that it's done, isn't it?",
+      "zh": "我觉得这样就能完攀了，不是吗？",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“done”在这里指完攀，注意“isn't it”是反意疑问句。"
+    },
+    {
+      "id": "c2001",
+      "startTime": 6581.77,
+      "endTime": 6586.96,
+      "en": ">> So, that means everyone that Saratan Raku will win a fifth gold medal. But Ray Kawamata,",
+      "zh": "所以，这意味着Saratan Raku将赢得第五枚金牌。但是Ray Kawamata，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意“everyone that”可能是口误，实际应为“everyone knows that”或类似。"
+    },
+    {
+      "id": "c2002",
+      "startTime": 6588.81,
+      "endTime": 6589.84,
+      "en": "that's so amazing.",
+      "zh": "那太令人惊叹了。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“that's so amazing”表达强烈赞叹，注意“so”的强调用法。"
+    },
+    {
+      "id": "c2003",
+      "startTime": 6589.77,
+      "endTime": 6593.07,
+      "en": "He did so well in semis, I mean qualies too.",
+      "zh": "他在半决赛中表现非常好，我是说资格赛也是。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“I mean”用于纠正或补充说明，口语中常见。"
+    },
+    {
+      "id": "c2004",
+      "startTime": 6592.97,
+      "endTime": 6595.6,
+      "en": "And now back onto the podium.",
+      "zh": "现在重新回到领奖台上。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“back onto the podium”指再次登上领奖台。"
+    },
+    {
+      "id": "c2005",
+      "startTime": 6595.85,
+      "endTime": 6599.15,
+      "en": ">> First medal since 2022 where he got bronze.",
+      "zh": "自2022年获得铜牌以来的第一枚奖牌。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“since”引导时间状语，注意时态使用。"
+    },
+    {
+      "id": "c2006",
+      "startTime": 6599.05,
+      "endTime": 6600.48,
+      "en": "He upgrades it to silver.",
+      "zh": "他将奖牌升级为银牌。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“upgrade”在这里指奖牌颜色的提升。"
+    },
+    {
+      "id": "c2007",
+      "startTime": 6600.57,
+      "endTime": 6601.92,
+      "en": "Brilliant stuff from him.",
+      "zh": "他表现得太出色了。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“brilliant stuff”是英式口语，表示“很棒”。"
+    },
+    {
+      "id": "c2008",
+      "startTime": 6608.17,
+      "endTime": 6609.04,
+      "en": "pressure whatsoever.",
+      "zh": "毫无压力。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“pressure whatsoever”中“whatsoever”加强否定语气。"
+    },
+    {
+      "id": "c2009",
+      "startTime": 6609.13,
+      "endTime": 6614.64,
+      "en": "He knows he's won >> You reckon he will >> or like reckon he knows?",
+      "zh": "他知道自己赢了 >> 你觉得他会 >> 还是觉得他知道？",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“reckon”是英式口语，意为“认为”。"
+    },
+    {
+      "id": "c2010",
+      "startTime": 6614.57,
+      "endTime": 6617.23,
+      "en": ">> Yeah, he probably would have asked for the score back there.",
+      "zh": "是的，他可能刚才已经问过分数了。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“would have”表示对过去的推测。"
+    },
+    {
+      "id": "c2011",
+      "startTime": 6617.13,
+      "endTime": 6618,
+      "en": "So likely.",
+      "zh": "很可能。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“so likely”是简短回应，表示同意。"
+    },
+    {
+      "id": "c2012",
+      "startTime": 6618.89,
+      "endTime": 6620.4,
+      "en": ">> No, he for sure knows.",
+      "zh": "不，他肯定知道。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“for sure”强调肯定。"
+    },
+    {
+      "id": "c2013",
+      "startTime": 6621.21,
+      "endTime": 6622.51,
+      "en": ">> But he is waiting right now.",
+      "zh": "但他现在正在等待。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“waiting right now”强调此刻正在等待。"
+    },
+    {
+      "id": "c2014",
+      "startTime": 6622.45,
+      "endTime": 6624.35,
+      "en": "The wind is blowing rather dramatically on him.",
+      "zh": "风正猛烈地吹向他。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“blowing dramatically”形容风很大，注意“dramatically”的用法。"
+    },
+    {
+      "id": "c2015",
+      "startTime": 6624.29,
+      "endTime": 6625.84,
+      "en": "We watch the celebrations from the",
+      "zh": "我们看着来自",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“celebrations”指庆祝活动，注意“from”的搭配。"
+    },
+    {
+      "id": "c2016",
+      "startTime": 6631.53,
+      "endTime": 6632.35,
+      "en": "background there.",
+      "zh": "背景的庆祝场面。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“background”指背景，注意“there”的指代。"
+    },
+    {
+      "id": "c2017",
+      "startTime": 6632.25,
+      "endTime": 6633.63,
+      "en": "wind billowing his hair.",
+      "zh": "风吹动他的头发。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“billowing”形容头发飘动，注意“his hair”的物主代词。"
+    },
+    {
+      "id": "c2018",
+      "startTime": 6633.53,
+      "endTime": 6634.8,
+      "en": "It's super dramatic.",
+      "zh": "非常戏剧化。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“super dramatic”中“super”是口语强调词。"
+    },
+    {
+      "id": "c2019",
+      "startTime": 6635.21,
+      "endTime": 6637.36,
+      "en": "He's a fivetime gold medalist.",
+      "zh": "他是五枚金牌得主。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“fivetime”是复合形容词，注意连字符。"
+    },
+    {
+      "id": "c2020",
+      "startTime": 6637.45,
+      "endTime": 6640,
+      "en": "Unprecedented in the men's side of Boulder.",
+      "zh": "在男子抱石赛中史无前例。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "注意 'unprecedented' 意为‘史无前例的’，常用于强调罕见事件。"
+    },
+    {
+      "id": "c2021",
+      "startTime": 6641.77,
+      "endTime": 6646.4,
+      "en": ">> I mean, this round, I would say, worked out much better than the women's round yesterday.",
+      "zh": "我的意思是，这一轮，我觉得比昨天女子组的表现好多了。",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "'worked out much better' 表示‘结果好得多’，注意比较级用法。"
+    },
+    {
+      "id": "c2022",
+      "startTime": 6646.33,
+      "endTime": 6648.24,
+      "en": "It's just a shame that this last border,",
+      "zh": "可惜的是最后这一条线路，",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "'It's a shame' 是常用表达，意为‘真遗憾’。"
+    },
+    {
+      "id": "c2023",
+      "startTime": 6649.45,
+      "endTime": 6650.72,
+      "en": "no one got zoned.",
+      "zh": "没有人拿到Zone。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'get zoned' 指到达Zone得分点，注意被动语态。"
+    },
+    {
+      "id": "c2024",
+      "startTime": 6651.21,
+      "endTime": 6657.36,
+      "en": "So, like I was saying, yesterday kind of just is a three round or three border round.",
+      "zh": "所以，就像我说的，昨天基本上就是三轮或三条线路的轮次。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'kind of' 是口语中常用的‘有点、基本上’。"
+    },
+    {
+      "id": "c2025",
+      "startTime": 6659.29,
+      "endTime": 6660.88,
+      "en": ">> But then again, we're going to see.",
+      "zh": "但话说回来，我们拭目以待。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'But then again' 表示‘但话说回来’，用于转折。"
+    },
+    {
+      "id": "c2026",
+      "startTime": 6661.93,
+      "endTime": 6666.27,
+      "en": "Serato just, you know, as if it was >> Let's find out.",
+      "zh": "Serato，就像，好像 >> 我们来看看。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'as if' 意为‘好像’，注意口语中的省略。"
+    },
+    {
+      "id": "c2027",
+      "startTime": 6666.17,
+      "endTime": 6669.2,
+      "en": "Can he be the only one to unlock the zone on this",
+      "zh": "他能成为唯一一个解锁这条线路Zone的人吗？",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "zone"
+      ],
+      "note": "'unlock the zone' 指到达Zone，注意‘the only one’的强调。"
+    },
+    {
+      "id": "c2028",
+      "startTime": 6670.17,
+      "endTime": 6671.92,
+      "en": ">> He's a bit stuck right now.",
+      "zh": "他现在有点卡住了。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "stuck"
+      ],
+      "note": "'stuck' 意为‘卡住’，常用口语。"
+    },
+    {
+      "id": "c2029",
+      "startTime": 6678.33,
+      "endTime": 6679.04,
+      "en": "the beginning.",
+      "zh": "一开始。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "注意‘the beginning’指‘开始’，此处可能指线路起点。"
+    },
+    {
+      "id": "c2030",
+      "startTime": 6680.81,
+      "endTime": 6682.8,
+      "en": ">> Just shows how small that footooth hold",
+      "zh": "这正好显示了那个脚点有多小",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "'Just shows' 意为‘正好显示’，注意‘how small’引导的感叹句。"
+    },
+    {
+      "id": "c2031",
+      "startTime": 6691.05,
+      "endTime": 6691.92,
+      "en": ">> on the blue.",
+      "zh": "在蓝色（岩点）上。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'on the blue' 指蓝色岩点，注意颜色指代。"
+    },
+    {
+      "id": "c2032",
+      "startTime": 6697.77,
+      "endTime": 6698.37,
+      "en": "volume.",
+      "zh": "大体积（岩点）。",
+      "score": 38,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'volume' 指大块岩点，攀岩术语。"
+    },
+    {
+      "id": "c2033",
+      "startTime": 6698.25,
+      "endTime": 6699.2,
+      "en": "Oh, little adjustments.",
+      "zh": "哦，微调。",
+      "score": 9,
+      "study": false,
+      "keywords": [],
+      "note": "'little adjustments' 意为‘微调’，注意复数。"
+    },
+    {
+      "id": "c2034",
+      "startTime": 6699.13,
+      "endTime": 6699.92,
+      "en": ">> Keeps readjusting.",
+      "zh": "不断调整。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'keeps readjusting' 表示‘不断重新调整’，注意进行时。"
+    },
+    {
+      "id": "c2035",
+      "startTime": 6699.85,
+      "endTime": 6705.36,
+      "en": "But yeah, you just see how that foot is just like >> twisting sideways.",
+      "zh": "但你看那只脚就是那样侧着扭。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "'twisting sideways' 意为‘侧向扭转’，注意动词搭配。"
+    },
+    {
+      "id": "c2036",
+      "startTime": 6705.77,
+      "endTime": 6708.16,
+      "en": ">> And so to be able to stand up off that,",
+      "zh": "所以要从那个姿势站起来，",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "'stand up off that' 指从那个位置站起来，注意介词。"
+    },
+    {
+      "id": "c2037",
+      "startTime": 6709.85,
+      "endTime": 6711.52,
+      "en": ">> it's just facing the wrong direction.",
+      "zh": "脚的方向不对。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'facing the wrong direction' 意为‘朝向错误方向’。"
+    },
+    {
+      "id": "c2038",
+      "startTime": 6711.45,
+      "endTime": 6713.84,
+      "en": "and then you're very most likely to just slip.",
+      "zh": "然后你很可能就会滑掉。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'most likely' 意为‘很可能’，注意副词位置。"
+    },
+    {
+      "id": "c2039",
+      "startTime": 6719.93,
+      "endTime": 6721.76,
+      "en": "boulder, tricky last boulder.",
+      "zh": "这条线路，最后一条线路很棘手。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'tricky' 意为‘棘手的’，常用形容词。"
+    },
+    {
+      "id": "c2040",
+      "startTime": 6734.41,
+      "endTime": 6735.01,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，表示同意。"
+    },
+    {
+      "id": "c2041",
+      "startTime": 6734.61,
+      "endTime": 6735.21,
+      "en": "Okay.",
+      "zh": "好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "过渡词，表示继续。"
+    },
+    {
+      "id": "c2042",
+      "startTime": 6734.81,
+      "endTime": 6737.15,
+      "en": "He finds the crimp on the edge of the blue volume.",
+      "zh": "他找到了蓝色大体积边缘的扣点。",
+      "score": 59,
+      "study": true,
+      "keywords": [
+        "crimp",
+        "volume"
+      ],
+      "note": "'crimp' 指小扣点，注意‘on the edge of’的介词短语。"
+    },
+    {
+      "id": "c2043",
+      "startTime": 6737.05,
+      "endTime": 6740.96,
+      "en": "Ah, but goes straight again down to the blue, which I",
+      "zh": "啊，但又直接回到蓝色（岩点）了，我觉得",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "'goes straight again down to' 意为‘又直接下到’，注意‘straight’的用法。"
+    },
+    {
+      "id": "c2044",
+      "startTime": 6747.05,
+      "endTime": 6750.19,
+      "en": ">> Oh my god, >> he's just completely sitting down.",
+      "zh": "哦，天哪，他完全坐下来了。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意口语表达 \"Oh my god\" 表示惊讶，常用在解说中。"
+    },
+    {
+      "id": "c2045",
+      "startTime": 6750.09,
+      "endTime": 6753.63,
+      "en": "But actually, now that he's in this position, he's crimping the right side of the volume.",
+      "zh": "但实际上，既然他现在处于这个姿势，他正在用指力捏住岩点的右侧。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "crimp 指用指力捏住小岩点，是攀岩常用词。"
+    },
+    {
+      "id": "c2046",
+      "startTime": 6753.53,
+      "endTime": 6760.59,
+      "en": "This foot swap, he will hopefully stay in this position to change feet, which will make >> Maybe it's that, you know,",
+      "zh": "这个换脚动作，他希望保持这个姿势来换脚，这可能会让……也许就是这样，你知道，",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "foot"
+      ],
+      "note": "foot swap 是换脚，注意 \"hopefully\" 表示希望。"
+    },
+    {
+      "id": "c2047",
+      "startTime": 6760.61,
+      "endTime": 6765.68,
+      "en": "cuz then you can spin all the way down onto the bottom one. He's spinning around,",
+      "zh": "因为那样你就可以旋转下来到下面的那个脚点上。他正在旋转，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "spin 旋转，注意 \"all the way down\" 表示一直向下。"
+    },
+    {
+      "id": "c2048",
+      "startTime": 6766.97,
+      "endTime": 6770.72,
+      "en": ">> but he's not even on >> No, he's not even on the foothold.",
+      "zh": ">> 但他甚至没有踩在…… >> 不，他甚至没有踩在脚点上。",
+      "score": 49,
+      "study": true,
+      "keywords": [
+        "foothold"
+      ],
+      "note": "foothold 是脚点，注意 \"not even\" 强调程度。"
+    },
+    {
+      "id": "c2049",
+      "startTime": 6771.85,
+      "endTime": 6773.52,
+      "en": ">> It's worth to try that.",
+      "zh": ">> 值得一试。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "worth to try 值得尝试，常用表达。"
+    },
+    {
+      "id": "c2050",
+      "startTime": 6774.89,
+      "endTime": 6777.07,
+      "en": ">> I mean, >> sense, wouldn't it?",
+      "zh": ">> 我的意思是，>> 从某种意义上说，不是吗？",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "makes sense 有道理，注意 \"wouldn't it\" 是反问。"
+    },
+    {
+      "id": "c2051",
+      "startTime": 6776.97,
+      "endTime": 6785.28,
+      "en": ">> That makes sense cuz then you're pressing right hand and then you come back around >> into the crimp left >> and it kind of makes the whole foot swap debacle,",
+      "zh": ">> 那有道理，因为那样你右手按压，然后你转回来 >> 到左手捏点 >> 这有点让整个换脚风波，",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "crimp",
+        "foot"
+      ],
+      "note": "crimp 指捏点，debacle 指混乱局面。"
+    },
+    {
+      "id": "c2052",
+      "startTime": 6785.37,
+      "endTime": 6786.56,
+      "en": "you know, less important.",
+      "zh": "你知道，变得不那么重要了。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "less important 不那么重要，注意 \"you know\" 是口语填充词。"
+    },
+    {
+      "id": "c2053",
+      "startTime": 6789.29,
+      "endTime": 6789.89,
+      "en": ">> Huh.",
+      "zh": ">> 嗯。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "Huh 表示思考或疑问，常用语气词。"
+    },
+    {
+      "id": "c2054",
+      "startTime": 6789.77,
+      "endTime": 6791.76,
+      "en": "Let's see if he manages to get this",
+      "zh": "让我们看看他能否完成这个",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "manage to do 设法完成，注意 \"let's see\" 表示观望。"
+    },
+    {
+      "id": "c2055",
+      "startTime": 6793.93,
+      "endTime": 6796.48,
+      "en": "on 135 for this victory lap for Sarat.",
+      "zh": "在135号线上，为Sarat的胜利巡游。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "victory lap 胜利巡游，这里指最后一条线路。"
+    },
+    {
+      "id": "c2056",
+      "startTime": 6797.77,
+      "endTime": 6801.92,
+      "en": ">> The thing is is that it's taking him It took him a bit of time to get into this position.",
+      "zh": "问题是，他花了一些时间才进入这个姿势。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "take time 花费时间，注意 \"it took him\" 的过去时。"
+    },
+    {
+      "id": "c2057",
+      "startTime": 6802.57,
+      "endTime": 6807.92,
+      "en": "So, we'll have to see if 1 minute 30 is enough for him to get it done.",
+      "zh": "所以，我们得看看1分30秒是否足够他完成。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "1 minute 30 是时间表达，注意 \"enough for him\" 结构。"
+    },
+    {
+      "id": "c2058",
+      "startTime": 6808.17,
+      "endTime": 6808.77,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "Yeah 表示同意，常用口语。"
+    },
+    {
+      "id": "c2059",
+      "startTime": 6808.41,
+      "endTime": 6809.63,
+      "en": "And he is resting as well.",
+      "zh": "而且他也在休息。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "rest 休息，注意 \"as well\" 表示也。"
+    },
+    {
+      "id": "c2060",
+      "startTime": 6809.57,
+      "endTime": 6811.71,
+      "en": "So, he's just running the clock down a little bit here.",
+      "zh": "所以，他在这里稍微拖延一下时间。",
+      "score": 53,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "run the clock down 拖延时间，常用体育用语。"
+    },
+    {
+      "id": "c2061",
+      "startTime": 6811.61,
+      "endTime": 6814.35,
+      "en": "He can see the scoreboard, I think, from his position as well.",
+      "zh": "我想，从他的位置也能看到记分牌。",
+      "score": 45,
+      "study": true,
+      "keywords": [
+        "scoreboard"
+      ],
+      "note": "scoreboard 记分牌，注意 \"I think\" 插入语。"
+    },
+    {
+      "id": "c2062",
+      "startTime": 6814.25,
+      "endTime": 6815.31,
+      "en": "So, he'll be aware of this.",
+      "zh": "所以，他会意识到这一点。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "be aware of 意识到，注意 \"he'll\" 是 he will 缩写。"
+    },
+    {
+      "id": "c2063",
+      "startTime": 6815.21,
+      "endTime": 6816.51,
+      "en": "I think he just wants to win.",
+      "zh": "我觉得他就是想赢。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "just wants to win 只想赢，注意 \"I think\" 表达观点。"
+    },
+    {
+      "id": "c2064",
+      "startTime": 6816.41,
+      "endTime": 6818.08,
+      "en": "He just wants to win on the high.",
+      "zh": "他就是想以高潮结束。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "on the high 在高潮中，这里指以胜利结束。"
+    },
+    {
+      "id": "c2065",
+      "startTime": 6818.09,
+      "endTime": 6820.11,
+      "en": ">> He just wants to get the borders done.",
+      "zh": ">> 他就是想完成这些难点。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "get the borders done 完成边界，这里指完成线路。"
+    },
+    {
+      "id": "c2066",
+      "startTime": 6820.01,
+      "endTime": 6822.8,
+      "en": "Yeah, he's got a lead as well tomorrow.",
+      "zh": "是的，他明天还有领先赛。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "lead 是攀岩中的领先赛，注意 \"as well\" 表示也。"
+    },
+    {
+      "id": "c2067",
+      "startTime": 6824.65,
+      "endTime": 6825.6,
+      "en": ">> Wow, true.",
+      "zh": ">> 哇，确实。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "Wow 表示惊叹，true 表示确实。"
+    },
+    {
+      "id": "c2068",
+      "startTime": 6826.57,
+      "endTime": 6828.88,
+      "en": "And then that makes three days in a row if he makes finals.",
+      "zh": "如果他进入决赛，那就是连续三天了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意 'three days in a row' 表示连续三天，'in a row' 是常用短语。"
+    },
+    {
+      "id": "c2069",
+      "startTime": 6829.53,
+      "endTime": 6830.13,
+      "en": ">> Exactly.",
+      "zh": "完全正确。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Exactly' 在口语中表示完全同意，相当于“正是如此”。"
+    },
+    {
+      "id": "c2070",
+      "startTime": 6830.81,
+      "endTime": 6832.96,
+      "en": "All right, one more time really for Serato.",
+      "zh": "好了，Serato 最后一次尝试。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "'one more time' 表示“再来一次”，常用于鼓励或请求重复。"
+    },
+    {
+      "id": "c2071",
+      "startTime": 6833.05,
+      "endTime": 6834.35,
+      "en": "55 seconds on the clock.",
+      "zh": "时钟上还剩55秒。",
+      "score": 36,
+      "study": true,
+      "keywords": [
+        "clock"
+      ],
+      "note": "'on the clock' 表示“在计时中”，注意时间表达。"
+    },
+    {
+      "id": "c2072",
+      "startTime": 6834.29,
+      "endTime": 6836.72,
+      "en": "Can we finish on a bang here in Boulder for",
+      "zh": "我们能在博尔德这里以精彩的表现结束吗？",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "'finish on a bang' 是习语，意为“以轰动的方式结束”。"
+    },
+    {
+      "id": "c2073",
+      "startTime": 6850.33,
+      "endTime": 6854.56,
+      "en": "But I mean, yeah, the only thing that's really keeping on the wall is just these tiny crib",
+      "zh": "但我的意思是，是的，唯一让他留在墙上的就是这些小点。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'keeping on the wall' 指“保持在墙上”，注意 'the only thing' 的强调。"
+    },
+    {
+      "id": "c2074",
+      "startTime": 6855.69,
+      "endTime": 6857.76,
+      "en": "tiny side of the volume crimps.",
+      "zh": "岩点上那些微小的侧向抓握点。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "volume"
+      ],
+      "note": "'volume crimps' 指“岩点上的小棱角”，'crimp' 是攀岩术语。"
+    },
+    {
+      "id": "c2075",
+      "startTime": 6858.09,
+      "endTime": 6859.31,
+      "en": ">> Yeah, it's all about the nails.",
+      "zh": "是的，全靠指甲。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "'all about' 表示“关键在于”，口语常用。"
+    },
+    {
+      "id": "c2076",
+      "startTime": 6859.21,
+      "endTime": 6861.36,
+      "en": "He's got stood up much faster than before.",
+      "zh": "他站起来的速度比之前快多了。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "'stood up' 是过去式，注意比较级 'much faster'。"
+    },
+    {
+      "id": "c2077",
+      "startTime": 6862.97,
+      "endTime": 6865.36,
+      "en": ">> Oh, but he's still just trying to slide.",
+      "zh": "哦，但他还在试图滑动。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'still trying to' 表示“仍在尝试”，注意进行时。"
+    },
+    {
+      "id": "c2078",
+      "startTime": 6867.45,
+      "endTime": 6868.83,
+      "en": ">> Switch his feet like that.",
+      "zh": "像那样换脚。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'switch feet' 是攀岩术语，指“换脚”，注意祈使句。"
+    },
+    {
+      "id": "c2079",
+      "startTime": 6868.73,
+      "endTime": 6870.16,
+      "en": "Look how sticky.",
+      "zh": "看他的脚多黏。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'sticky' 在这里指“黏附力强”，形容脚点抓得牢。"
+    },
+    {
+      "id": "c2080",
+      "startTime": 6870.17,
+      "endTime": 6872.48,
+      "en": "Look how sticky his hand is, though.",
+      "zh": "不过看他的手多黏。",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "'though' 放在句末表示转折，注意口语用法。"
+    },
+    {
+      "id": "c2081",
+      "startTime": 6873.61,
+      "endTime": 6875.76,
+      "en": ">> I think with that, Serato will say goodbye.",
+      "zh": "我想这样一来，Serato 就要告别了。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'say goodbye' 比喻“结束”，注意 'with that' 的用法。"
+    },
+    {
+      "id": "c2082",
+      "startTime": 6875.77,
+      "endTime": 6876.83,
+      "en": "He is your champion.",
+      "zh": "他是你们的冠军。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "'champion' 是“冠军”，注意所有格 'your'。"
+    },
+    {
+      "id": "c2083",
+      "startTime": 6876.73,
+      "endTime": 6882,
+      "en": "And he's the champion for the fifth time in a >> That's so amazing.",
+      "zh": "他是第五次成为冠军，这太不可思议了。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'for the fifth time' 表示“第五次”，注意序数词。"
+    },
+    {
+      "id": "c2084",
+      "startTime": 6883.05,
+      "endTime": 6884.4,
+      "en": ">> Unreal from Serato.",
+      "zh": "Serato 的表现不真实。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "'unreal' 口语中表示“难以置信”，相当于 'amazing'。"
+    },
+    {
+      "id": "c2085",
+      "startTime": 6884.41,
+      "endTime": 6885.87,
+      "en": "Fist rays at the audience.",
+      "zh": "向观众挥拳致意。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'fist rays' 可能指“挥拳”，注意 'at the audience' 的介词。"
+    },
+    {
+      "id": "c2086",
+      "startTime": 6885.77,
+      "endTime": 6887.12,
+      "en": "He just takes a moment.",
+      "zh": "他只是稍作停留。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'takes a moment' 表示“花点时间”，注意短语。"
+    },
+    {
+      "id": "c2087",
+      "startTime": 6888.09,
+      "endTime": 6890.16,
+      "en": "And this man cares about winning.",
+      "zh": "这个人很在乎胜利。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "'cares about' 表示“在乎”，注意动词搭配。"
+    },
+    {
+      "id": "c2088",
+      "startTime": 6890.41,
+      "endTime": 6891.31,
+      "en": "He really does.",
+      "zh": "他确实如此。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "'really does' 强调肯定，注意助动词 'does' 的强调用法。"
+    },
+    {
+      "id": "c2089",
+      "startTime": 6891.21,
+      "endTime": 6893.6,
+      "en": ">> He's done that what's not been done",
+      "zh": "他完成了前所未有的成就。",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "'what's not been done' 是名词性从句，表示“未做过的事”。"
+    },
+    {
+      "id": "c2090",
+      "startTime": 6894.65,
+      "endTime": 6895.25,
+      "en": ">> Five.",
+      "zh": "五次。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "数字 'five' 在此强调次数，注意上下文。"
+    },
+    {
+      "id": "c2091",
+      "startTime": 6895.05,
+      "endTime": 6896.4,
+      "en": "He raises the hand.",
+      "zh": "他举起手。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "'raises the hand' 是“举手”，注意动词 'raise'。"
+    },
+    {
+      "id": "c2092",
+      "startTime": 6896.41,
+      "endTime": 6897.01,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意语气词“Yeah”在口语中常表示肯定或承接。"
+    },
+    {
+      "id": "c2093",
+      "startTime": 6896.65,
+      "endTime": 6899.76,
+      "en": "For the men's side of the comp, it has never happened before.",
+      "zh": "在男子组的比赛中，这种情况从未发生过。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“never happened before”表示“从未发生过”，注意“never”的强调。"
+    },
+    {
+      "id": "c2094",
+      "startTime": 6900.33,
+      "endTime": 6905.95,
+      "en": "And he is now going for the clean sweep of the 2026 bowler season.",
+      "zh": "他现在正朝着2026年保龄球赛季的全胜纪录迈进。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“clean sweep”意为“全胜”，注意“going for”表示“正在争取”。"
+    },
+    {
+      "id": "c2095",
+      "startTime": 6905.85,
+      "endTime": 6907.68,
+      "en": "Oh, that was so amazing.",
+      "zh": "哦，那真是太精彩了。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“amazing”是常用感叹词，表示“令人惊叹的”。"
+    },
+    {
+      "id": "c2096",
+      "startTime": 6913.05,
+      "endTime": 6919.6,
+      "en": "We'll join his colleagues on the edge of the stage >> and we will wait for just the confirmation of these results.",
+      "zh": "我们将与他的同事们在舞台边缘汇合，等待这些结果的确认。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "“join”表示“加入”，“on the edge of”意为“在……边缘”。"
+    },
+    {
+      "id": "c2097",
+      "startTime": 6919.69,
+      "endTime": 6921.44,
+      "en": "But Sophia, what a comp.",
+      "zh": "但是索菲亚，多么精彩的比赛啊。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“what a comp”是感叹句，注意“comp”是“competition”的缩写。"
+    },
+    {
+      "id": "c2098",
+      "startTime": 6921.37,
+      "endTime": 6923.76,
+      "en": "I mean, it was very different from last night.",
+      "zh": "我的意思是，这和昨晚的比赛非常不同。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“I mean”是口语中常用的插入语，表示“我的意思是”。"
+    },
+    {
+      "id": "c2099",
+      "startTime": 6923.69,
+      "endTime": 6929.52,
+      "en": ">> I mean, yeah, this was I would say there's a good variation between all the athletes.",
+      "zh": "是的，我想说，所有运动员之间都有很好的差异。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“there's a good variation”表示“有很好的差异”，注意“variation”的用法。"
+    },
+    {
+      "id": "c2100",
+      "startTime": 6930.17,
+      "endTime": 6940,
+      "en": "Um, I guess yeah, the only shame is the last boulder cuz it's Yeah, like I said, a round on three boulders and that is",
+      "zh": "嗯，我想唯一的遗憾是最后一个抱石，因为，是的，就像我说的，一轮三个抱石，那",
+      "score": 42,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“the only shame”意为“唯一的遗憾”，注意“cuz”是“because”的口语缩写。"
+    },
+    {
+      "id": "c2101",
+      "startTime": 6942.01,
+      "endTime": 6942.75,
+      "en": "not the best.",
+      "zh": "不是最好的。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“not the best”是委婉说法，表示“不太好”。"
+    },
+    {
+      "id": "c2102",
+      "startTime": 6942.65,
+      "endTime": 6943.39,
+      "en": ">> Yeah, exactly.",
+      "zh": "是的，完全正确。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“exactly”表示“完全正确”，常用于赞同。"
+    },
+    {
+      "id": "c2103",
+      "startTime": 6943.29,
+      "endTime": 6946.59,
+      "en": "We would have liked a few more zones in that final or maybe the first one a bit harder,",
+      "zh": "我们希望在决赛中能有更多的得分点，或者第一个难度再高一点，",
+      "score": 65,
+      "study": true,
+      "highlight": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“zones”在攀岩中特指“Zone得分点”，注意“a bit harder”表示“再难一点”。"
+    },
+    {
+      "id": "c2104",
+      "startTime": 6946.49,
+      "endTime": 6950.24,
+      "en": "but we have a champion here in Insbrook and Sophia.",
+      "zh": "但我们在因斯布鲁克和索菲亚有了一位冠军。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“we have a champion”表示“我们有一位冠军”，注意“here”指代地点。"
+    },
+    {
+      "id": "c2105",
+      "startTime": 6950.25,
+      "endTime": 6951.55,
+      "en": "Um, thank you so much.",
+      "zh": "嗯，非常感谢。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“thank you so much”是常见的感谢表达。"
+    },
+    {
+      "id": "c2106",
+      "startTime": 6951.45,
+      "endTime": 6952.59,
+      "en": "That's two in a row.",
+      "zh": "这是连续第二次了。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“two in a row”意为“连续两次”，注意“in a row”的用法。"
+    },
+    {
+      "id": "c2107",
+      "startTime": 6952.49,
+      "endTime": 6953.6,
+      "en": "I appreciate it.",
+      "zh": "我很感激。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“I appreciate it”表示“我很感激”，注意“appreciate”的用法。"
+    },
+    {
+      "id": "c2108",
+      "startTime": 6953.53,
+      "endTime": 6957.23,
+      "en": "I really hope that injury goes away and never see you again.",
+      "zh": "我真的希望那个伤病能消失，再也不见。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“injury”意为“伤病”，注意“never see you again”是口语化的表达。"
+    },
+    {
+      "id": "c2109",
+      "startTime": 6957.13,
+      "endTime": 6959.23,
+      "en": "But >> the amount >> I mean it's been fun.",
+      "zh": "但是，我的意思是，这很有趣。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“the amount”在这里可能指“程度”，但口语中常省略，注意“I mean”的插入。"
+    },
+    {
+      "id": "c2110",
+      "startTime": 6959.13,
+      "endTime": 6959.95,
+      "en": "It's been fun.",
+      "zh": "很有趣。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“It's been fun”表示“一直很有趣”，注意“been”表示持续。"
+    },
+    {
+      "id": "c2111",
+      "startTime": 6959.85,
+      "endTime": 6960.67,
+      "en": "I'm enjoying it.",
+      "zh": "我很享受。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“I'm enjoying it”表示“我正在享受”，注意进行时态。"
+    },
+    {
+      "id": "c2112",
+      "startTime": 6960.57,
+      "endTime": 6961.63,
+      "en": "So, >> people love you.",
+      "zh": "所以，人们喜欢你。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“people love you”表示“人们喜欢你”，注意“love”的夸张用法。"
+    },
+    {
+      "id": "c2113",
+      "startTime": 6961.53,
+      "endTime": 6963.31,
+      "en": "So, return whenever you want.",
+      "zh": "所以，随时欢迎你回来。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "“return whenever you want”表示“随时回来”，注意“whenever”的用法。"
+    },
+    {
+      "id": "c2114",
+      "startTime": 6963.21,
+      "endTime": 6965.15,
+      "en": "And uh yeah, thank you so so much.",
+      "zh": "嗯，是的，非常感谢。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“thank you so so much”是加强语气的感谢，注意“so so”的重复。"
+    },
+    {
+      "id": "c2115",
+      "startTime": 6965.05,
+      "endTime": 6967.84,
+      "en": ">> It's been a pleasure to >> Salt Lake next maybe.",
+      "zh": "这是我的荣幸，也许下次盐湖城见。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“It's been a pleasure”表示“这是我的荣幸”，注意“Salt Lake”指盐湖城。"
+    },
+    {
+      "id": "c2116",
+      "startTime": 6968.49,
+      "endTime": 6972.08,
+      "en": ">> Probably considering that I haven't really had a season.",
+      "zh": ">> 可能考虑到我其实没有真正的一个赛季。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "注意“season”在攀岩语境中常指赛季，这里指比赛季。"
+    },
+    {
+      "id": "c2117",
+      "startTime": 6973.05,
+      "endTime": 6974.56,
+      "en": ">> But yeah, that's in October.",
+      "zh": ">> 但是，那是在十月。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“that's in October”中的“that”指代前文提到的事件。"
+    },
+    {
+      "id": "c2118",
+      "startTime": 6974.73,
+      "endTime": 6975.33,
+      "en": ">> Exactly.",
+      "zh": ">> 没错。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Exactly”表示完全同意，常用于口语。"
+    },
+    {
+      "id": "c2119",
+      "startTime": 6976.01,
+      "endTime": 6976.61,
+      "en": "I have time.",
+      "zh": "我有时间。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "简单句，注意“have time”的用法。"
+    },
+    {
+      "id": "c2120",
+      "startTime": 6976.49,
+      "endTime": 6977.09,
+      "en": ">> All right.",
+      "zh": ">> 好的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“All right”表示同意或接受，口语常用。"
+    },
+    {
+      "id": "c2121",
+      "startTime": 6976.77,
+      "endTime": 6978.11,
+      "en": "Well, you have an amazing training.",
+      "zh": "嗯，你训练得很棒。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“amazing training”指训练很棒，注意形容词位置。"
+    },
+    {
+      "id": "c2122",
+      "startTime": 6978.01,
+      "endTime": 6980.51,
+      "en": "I hope that finger rehabs itself and I'll see you very soon.",
+      "zh": "我希望你的手指能自我恢复，很快再见。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“rehab”在攀岩中指恢复，这里指手指伤愈。"
+    },
+    {
+      "id": "c2123",
+      "startTime": 6980.41,
+      "endTime": 6981.28,
+      "en": "Thank you, Sophia.",
+      "zh": "谢谢你，索菲亚。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "人名“Sophia”音译。"
+    },
+    {
+      "id": "c2124",
+      "startTime": 6981.29,
+      "endTime": 6981.89,
+      "en": "Byebye.",
+      "zh": "再见。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Byebye”是口语化的再见。"
+    },
+    {
+      "id": "c2125",
+      "startTime": 7032.33,
+      "endTime": 7032.93,
+      "en": "underway.",
+      "zh": "进行中。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“underway”表示正在进行，常用于比赛或活动。"
+    },
+    {
+      "id": "c2126",
+      "startTime": 7032.97,
+      "endTime": 7034.88,
+      "en": "The athletes presented to our audience.",
+      "zh": "运动员们向观众亮相。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“presented to”表示介绍给，注意被动语态。"
+    },
+    {
+      "id": "c2127",
+      "startTime": 7035.13,
+      "endTime": 7039.2,
+      "en": "Soon we will have interviews, podiums, and more, of course.",
+      "zh": "很快我们将有采访、领奖台，当然还有更多。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "“podiums”指领奖台，这里指颁奖仪式。"
+    },
+    {
+      "id": "c2128",
+      "startTime": 7087.53,
+      "endTime": 7089.2,
+      "en": "Incredible stuff for him.",
+      "zh": "对他来说真是难以置信。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Incredible stuff”表示令人难以置信的事情。"
+    },
+    {
+      "id": "c2129",
+      "startTime": 7090.97,
+      "endTime": 7095.04,
+      "en": "And with that, Zato also wins the Euro hold overall title for 2026.",
+      "zh": "就这样，扎托也赢得了2026年欧洲全能总冠军。",
+      "score": 54,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“Euro hold overall title”指欧洲全能总冠军，注意“overall”表示总成绩。"
+    },
+    {
+      "id": "c2130",
+      "startTime": 7095.37,
+      "endTime": 7097.92,
+      "en": "With one comp in hand, he is the champion again.",
+      "zh": "手握一场比赛，他再次成为冠军。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“with one comp in hand”指还有一场比赛未赛但已锁定冠军。"
+    },
+    {
+      "id": "c2131",
+      "startTime": 7122.73,
+      "endTime": 7124.08,
+      "en": "thrown into the audience.",
+      "zh": "扔向观众。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“thrown into”表示被扔进，这里指物品被抛向观众。"
+    },
+    {
+      "id": "c2132",
+      "startTime": 7124.01,
+      "endTime": 7126.08,
+      "en": "The hands are up, ready to catch them.",
+      "zh": "手举起来，准备接住它们。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“hands are up”指手举起，注意“ready to”的用法。"
+    },
+    {
+      "id": "c2133",
+      "startTime": 7127.05,
+      "endTime": 7128.03,
+      "en": "And out they go.",
+      "zh": "它们飞出去了。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“out they go”是倒装句，强调“出去”。"
+    },
+    {
+      "id": "c2134",
+      "startTime": 7127.93,
+      "endTime": 7129.28,
+      "en": "What a throw that was.",
+      "zh": "那一扔真厉害。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "“What a throw”是感叹句，表示惊叹。"
+    },
+    {
+      "id": "c2135",
+      "startTime": 7129.45,
+      "endTime": 7131.04,
+      "en": "All right, podiums, interviews.",
+      "zh": "好了，领奖台，采访。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“podiums”和“interviews”并列，指接下来的环节。"
+    },
+    {
+      "id": "c2136",
+      "startTime": 7131.05,
+      "endTime": 7131.79,
+      "en": "You know the drill.",
+      "zh": "你知道流程的。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“you know the drill”是习语，表示你知道该怎么做。"
+    },
+    {
+      "id": "c2137",
+      "startTime": 7131.69,
+      "endTime": 7134,
+      "en": "And we'll just check the results one more time.",
+      "zh": "我们再看一次结果。",
+      "score": 49,
+      "study": true,
+      "keywords": [],
+      "note": "“check”表示查看，注意“one more time”的用法。"
+    },
+    {
+      "id": "c2138",
+      "startTime": 7134.09,
+      "endTime": 7142,
+      "en": "winning over Ray over Do Lean and Sam Abazu Chon Jong Juan Hannis van Dyson Sat Amagasa and Max Mill in eighth",
+      "zh": "获胜者依次是雷、杜林、萨姆·阿巴祖、钟钟·胡安、汉尼斯·范·戴森、萨特·阿马加萨，以及第八名的马克斯·米尔。",
+      "score": 45,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名音译，以及“winning over”表示战胜。"
+    },
+    {
+      "id": "c2139",
+      "startTime": 7169.61,
+      "endTime": 7170.21,
+      "en": "award.",
+      "zh": "颁奖。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“award”指奖项，这里指颁奖环节。"
+    },
+    {
+      "id": "c2140",
+      "startTime": 7169.81,
+      "endTime": 7170.41,
+      "en": "ceremony.",
+      "zh": "颁奖仪式。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意“ceremony”的发音，重音在第一个音节。"
+    },
+    {
+      "id": "c2141",
+      "startTime": 7181.37,
+      "endTime": 7183.12,
+      "en": "overall just",
+      "zh": "总的来说就是",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "口语中“overall just”常用来总结，注意连读。"
+    },
+    {
+      "id": "c2142",
+      "startTime": 7209.05,
+      "endTime": 7210.51,
+      "en": "win, five in a row.",
+      "zh": "赢了，五连冠。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“five in a row”表示连续五次，注意“in a row”的用法。"
+    },
+    {
+      "id": "c2143",
+      "startTime": 7210.41,
+      "endTime": 7211.44,
+      "en": "How are you feeling?",
+      "zh": "你现在感觉怎么样？",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“How are you feeling?”是常见问候，注意现在进行时表状态。"
+    },
+    {
+      "id": "c2144",
+      "startTime": 7215.53,
+      "endTime": 7219.84,
+      "en": ">> it's honor to climb in his book and I won.",
+      "zh": "能在他（指某位传奇人物）的书上（留下记录）并获胜，是我的荣幸。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“it's honor to”是固定表达，注意“honor”的发音。"
+    },
+    {
+      "id": "c2145",
+      "startTime": 7219.93,
+      "endTime": 7220.96,
+      "en": "Yeah, amazing.",
+      "zh": "是的，太棒了。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "“Yeah, amazing.”是简短回应，注意语调上扬。"
+    },
+    {
+      "id": "c2146",
+      "startTime": 7221.77,
+      "endTime": 7222.37,
+      "en": "Unbelievable.",
+      "zh": "难以置信。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Unbelievable”常用于表达惊讶，注意重音在“lie”。"
+    },
+    {
+      "id": "c2147",
+      "startTime": 7223.37,
+      "endTime": 7224.96,
+      "en": ">> And tell me about the slab.",
+      "zh": "跟我说说那块板壁（slab）吧。",
+      "score": 47,
+      "study": true,
+      "keywords": [
+        "slab"
+      ],
+      "note": "“slab”是攀岩术语，指板壁，注意发音。"
+    },
+    {
+      "id": "c2148",
+      "startTime": 7225.13,
+      "endTime": 7226.96,
+      "en": "You you took a lot of attempts,",
+      "zh": "你尝试了很多次，",
+      "score": 37,
+      "study": false,
+      "keywords": [],
+      "note": "“took a lot of attempts”表示多次尝试，注意“attempts”的复数。"
+    },
+    {
+      "id": "c2149",
+      "startTime": 7226.89,
+      "endTime": 7233.6,
+      "en": "more than you usually >> Were you a little frustrated or were you confident you were going to do that bowler?",
+      "zh": "比平时多。你当时有点沮丧，还是自信能完成那个难点（bowler）？",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“bowler”这里指难点，注意“frustrated”和“confident”的对比。"
+    },
+    {
+      "id": "c2150",
+      "startTime": 7233.93,
+      "endTime": 7239.39,
+      "en": "Yeah, to be honest, I didn't stay calm in the border.",
+      "zh": "是的，说实话，我在边界（border）时没有保持冷静。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“to be honest”是常用插入语，注意“border”可能指比赛区域。"
+    },
+    {
+      "id": "c2151",
+      "startTime": 7239.29,
+      "endTime": 7240.56,
+      "en": "In the border, too.",
+      "zh": "在边界也是。",
+      "score": 20,
+      "study": false,
+      "keywords": [],
+      "note": "“too”表示“也”，注意口语中的省略。"
+    },
+    {
+      "id": "c2152",
+      "startTime": 7241.05,
+      "endTime": 7241.65,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回应，注意语调。"
+    },
+    {
+      "id": "c2153",
+      "startTime": 7241.45,
+      "endTime": 7244.64,
+      "en": "But and uh in after Prague.",
+      "zh": "但是在布拉格之后，",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“after Prague”指比赛地点，注意专有名词。"
+    },
+    {
+      "id": "c2154",
+      "startTime": 7244.89,
+      "endTime": 7245.49,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "同上。"
+    },
+    {
+      "id": "c2155",
+      "startTime": 7245.13,
+      "endTime": 7249.92,
+      "en": "I I I trained I wor I worked >> on the footwork.",
+      "zh": "我训练了，我练了脚步动作。",
+      "score": 48,
+      "study": true,
+      "keywords": [
+        "footwork"
+      ],
+      "note": "“footwork”是攀岩术语，指脚步技术，注意“worked”的发音。"
+    },
+    {
+      "id": "c2156",
+      "startTime": 7249.93,
+      "endTime": 7250.53,
+      "en": ">> Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "同上。"
+    },
+    {
+      "id": "c2157",
+      "startTime": 7250.17,
+      "endTime": 7250.77,
+      "en": "Jump.",
+      "zh": "跳。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“jump”是动词，注意发音。"
+    },
+    {
+      "id": "c2158",
+      "startTime": 7250.41,
+      "endTime": 7251.01,
+      "en": "Jump.",
+      "zh": "跳。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "重复强调，注意语调。"
+    },
+    {
+      "id": "c2159",
+      "startTime": 7250.81,
+      "endTime": 7251.41,
+      "en": "Yeah.",
+      "zh": "是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "同上。"
+    },
+    {
+      "id": "c2160",
+      "startTime": 7251.61,
+      "endTime": 7253.36,
+      "en": "So, yeah. I",
+      "zh": "所以，是的。我",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中“so, yeah”是过渡，注意停顿。"
+    },
+    {
+      "id": "c2161",
+      "startTime": 7256.09,
+      "endTime": 7257.84,
+      "en": "believe I believe I could.",
+      "zh": "我相信我能做到。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“believe I could”是常见表达，注意“could”的弱读。"
+    },
+    {
+      "id": "c2162",
+      "startTime": 7258.73,
+      "endTime": 7264.56,
+      "en": "And I'm not sure if you knew, but just by making the final, you won the series title.",
+      "zh": "我不确定你是否知道，但仅仅进入决赛，你就赢得了系列赛冠军。",
+      "score": 55,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "“by making the final”表示通过进入决赛，注意“series title”的用法。"
+    },
+    {
+      "id": "c2163",
+      "startTime": 7265.37,
+      "endTime": 7269.39,
+      "en": ">> So, how do you feel about winning that >> Yeah.",
+      "zh": "那么，赢得这个冠军，你感觉如何？",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“How do you feel about”是询问感受的句型，注意“about”的发音。"
+    },
+    {
+      "id": "c2164",
+      "startTime": 7269.29,
+      "endTime": 7269.89,
+      "en": "Why?",
+      "zh": "为什么？",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "注意疑问词'Why'的用法，常用于询问原因。"
+    },
+    {
+      "id": "c2165",
+      "startTime": 7269.85,
+      "endTime": 7274.32,
+      "en": ">> How do you feel about winning the series title again >> Oh, already?",
+      "zh": ">> 再次赢得系列赛冠军感觉如何？>> 哦，已经赢了吗？",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意'How do you feel about...'是询问感受的常用句型。"
+    },
+    {
+      "id": "c2166",
+      "startTime": 7274.41,
+      "endTime": 7275.01,
+      "en": ">> Yes.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "简单回答'Yes'，注意语调。"
+    },
+    {
+      "id": "c2167",
+      "startTime": 7274.89,
+      "endTime": 7275.79,
+      "en": "Already done.",
+      "zh": "已经完成了。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'Already done'表示已经完成，注意'already'的用法。"
+    },
+    {
+      "id": "c2168",
+      "startTime": 7275.69,
+      "endTime": 7276.29,
+      "en": "Congratulations.",
+      "zh": "恭喜。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Congratulations'是常用祝贺语。"
+    },
+    {
+      "id": "c2169",
+      "startTime": 7277.29,
+      "endTime": 7277.89,
+      "en": ">> Yeah.",
+      "zh": ">> 是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复'Yeah'表示肯定。"
+    },
+    {
+      "id": "c2170",
+      "startTime": 7277.53,
+      "endTime": 7280.48,
+      "en": "I'm yeah I I want to win",
+      "zh": "我，是的，我想赢世界杯，也想赢得总冠军。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意'want to'表示想要，'World Cup'和'title'是关键词。"
+    },
+    {
+      "id": "c2171",
+      "startTime": 7281.69,
+      "endTime": 7286.32,
+      "en": "in the World Cup and also war over",
+      "zh": "在世界杯和总冠军上。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "注意'also'表示也，'war over'可能是口误，实际是'win over'。"
+    },
+    {
+      "id": "c2172",
+      "startTime": 7288.41,
+      "endTime": 7289.6,
+      "en": "like title.",
+      "zh": "像冠军头衔。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "'like'在这里是举例，'title'指冠军。"
+    },
+    {
+      "id": "c2173",
+      "startTime": 7290.17,
+      "endTime": 7291.12,
+      "en": ">> Yeah. But",
+      "zh": ">> 是的。但是",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意'but'表示转折。"
+    },
+    {
+      "id": "c2174",
+      "startTime": 7292.73,
+      "endTime": 7297.6,
+      "en": "if if I if I focus on the every",
+      "zh": "如果我专注于每一场，",
+      "score": 51,
+      "study": true,
+      "keywords": [],
+      "note": "注意'if'引导条件句，'focus on'表示专注于。"
+    },
+    {
+      "id": "c2175",
+      "startTime": 7307.45,
+      "endTime": 7308.88,
+      "en": "if I Yeah.",
+      "zh": "如果我，是的。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中重复'if'，注意停顿。"
+    },
+    {
+      "id": "c2176",
+      "startTime": 7309.05,
+      "endTime": 7311.52,
+      "en": "Okay. >> If I focus",
+      "zh": "好的。 >> 如果我专注",
+      "score": 25,
+      "study": false,
+      "keywords": [],
+      "note": "'Okay'表示同意，'focus'是关键词。"
+    },
+    {
+      "id": "c2177",
+      "startTime": 7317.13,
+      "endTime": 7318.48,
+      "en": "comp Yeah.",
+      "zh": "比赛，是的。",
+      "score": 5,
+      "study": false,
+      "keywords": [],
+      "note": "'comp'是competition的缩写，注意口语化。"
+    },
+    {
+      "id": "c2178",
+      "startTime": 7318.57,
+      "endTime": 7323.68,
+      "en": "I I I think I win the YC",
+      "zh": "我，我，我想我赢了YC。",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意'YC'可能指青年杯，'think'表示认为。"
+    },
+    {
+      "id": "c2179",
+      "startTime": 7325.45,
+      "endTime": 7327.92,
+      "en": ">> Well, you've got one more to go.",
+      "zh": ">> 嗯，你还有一场要打。",
+      "score": 30,
+      "study": false,
+      "keywords": [],
+      "note": "注意'one more to go'表示还有一场。"
+    },
+    {
+      "id": "c2180",
+      "startTime": 7328.81,
+      "endTime": 7330.88,
+      "en": ">> I know you say you don't feel pressure,",
+      "zh": ">> 我知道你说你不感到压力，",
+      "score": 46,
+      "study": true,
+      "keywords": [],
+      "note": "注意'feel pressure'表示感到压力。"
+    },
+    {
+      "id": "c2181",
+      "startTime": 7332.01,
+      "endTime": 7337.28,
+      "en": ">> do you feel a little bit of pressure to get that six and to go all season with the gold?",
+      "zh": ">> 你感到一点压力去赢得第六场并整个赛季保持金牌吗？",
+      "score": 39,
+      "study": true,
+      "keywords": [],
+      "note": "注意'get that six'指第六场胜利，'go all season with the gold'表示整个赛季保持金牌。"
+    },
+    {
+      "id": "c2182",
+      "startTime": 7337.77,
+      "endTime": 7344.56,
+      "en": ">> Uh probably I I feel the pressure in South City, but",
+      "zh": ">> 可能，我在南城感到压力，但是",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意'probably'表示可能，'South City'是地名。"
+    },
+    {
+      "id": "c2183",
+      "startTime": 7346.25,
+      "endTime": 7347.2,
+      "en": "before Insburgh.",
+      "zh": "在因斯布鲁克之前。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意'before'表示在...之前，'Insburgh'可能是Innsbruck。"
+    },
+    {
+      "id": "c2184",
+      "startTime": 7347.53,
+      "endTime": 7348.56,
+      "en": "Yeah. I",
+      "zh": "是的。我",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "注意'Yeah'和'I'的停顿。"
+    },
+    {
+      "id": "c2185",
+      "startTime": 7350.01,
+      "endTime": 7353.52,
+      "en": "yeah I want to win five in a row.",
+      "zh": "是的，我想五连胜。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "注意'win five in a row'表示连续赢五场。"
+    },
+    {
+      "id": "c2186",
+      "startTime": 7353.61,
+      "endTime": 7360.64,
+      "en": "Oh yeah, I was so nervous but in in on the competition there is a comp during the final.",
+      "zh": "哦，是的，我很紧张，但在比赛中，决赛时有一场比赛。",
+      "score": 46,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "注意'nervous'表示紧张，'comp'是比赛，'final'是决赛。"
+    },
+    {
+      "id": "c2187",
+      "startTime": 7360.89,
+      "endTime": 7366.88,
+      "en": "Yeah, I never thought Yeah, I I I could focus on every bow.",
+      "zh": "是的，我从没想过，我，我，我能专注于每一个球。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "注意'never thought'表示从没想过，'focus on'表示专注于，'bow'可能是'ball'的口误。"
+    },
+    {
+      "id": "c2188",
+      "startTime": 7367.77,
+      "endTime": 7369.6,
+      "en": ">> Well, you did it again.",
+      "zh": ">> 嗯，你又做到了。",
+      "score": 14,
+      "study": false,
+      "keywords": [],
+      "note": "注意“did it again”表示再次成功，常用于祝贺。"
+    },
+    {
+      "id": "c2189",
+      "startTime": 7369.53,
+      "endTime": 7370.13,
+      "en": "Congratulations.",
+      "zh": "恭喜。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“Congratulations”是常用祝贺语，注意复数形式。"
+    },
+    {
+      "id": "c2190",
+      "startTime": 7370.41,
+      "endTime": 7371.2,
+      "en": "Well done.",
+      "zh": "干得好。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "“Well done”是常见表扬，注意连读。"
+    },
+    {
+      "id": "c2191",
+      "startTime": 7371.13,
+      "endTime": 7373.6,
+      "en": "And good luck for the lead competition now.",
+      "zh": "现在祝你在接下来的攀石比赛中好运。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“good luck”表示祝好运，注意“lead competition”指攀石赛。"
+    },
+    {
+      "id": "c2192",
+      "startTime": 7373.69,
+      "endTime": 7377.52,
+      "en": "tomorrow morning from 8:00 a.m.",
+      "zh": "明天早上8点开始。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意时间表达“from 8:00 a.m.”，a.m.表示上午。"
+    },
+    {
+      "id": "c2193",
+      "startTime": 7378.25,
+      "endTime": 7379.71,
+      "en": ">> Everyone will be cheering for you.",
+      "zh": ">> 每个人都会为你加油。",
+      "score": 38,
+      "study": true,
+      "keywords": [],
+      "note": "“cheer for”表示为某人加油，注意将来时。"
+    },
+    {
+      "id": "c2194",
+      "startTime": 7379.61,
+      "endTime": 7380.21,
+      "en": "Well done.",
+      "zh": "干得好。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "重复“Well done”，注意语气。"
+    },
+    {
+      "id": "c2195",
+      "startTime": 7380.01,
+      "endTime": 7381.07,
+      "en": "Congratulations again.",
+      "zh": "再次恭喜。",
+      "score": 17,
+      "study": false,
+      "keywords": [],
+      "note": "“again”表示再次，注意位置。"
+    },
+    {
+      "id": "c2196",
+      "startTime": 7380.97,
+      "endTime": 7381.63,
+      "en": ">> Thank you so much.",
+      "zh": ">> 非常感谢。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Thank you so much”是感谢的强调形式。"
+    },
+    {
+      "id": "c2197",
+      "startTime": 7381.57,
+      "endTime": 7382.4,
+      "en": "Thank you, Winbrook.",
+      "zh": "谢谢，温布鲁克。",
+      "score": 21,
+      "study": false,
+      "keywords": [],
+      "note": "“Winbrook”可能是人名或地名，注意专有名词。"
+    },
+    {
+      "id": "c2198",
+      "startTime": 7387.37,
+      "endTime": 7387.97,
+      "en": "him.",
+      "zh": "他。",
+      "score": 4,
+      "study": false,
+      "keywords": [],
+      "note": "“him”是宾格，注意上下文。"
+    },
+    {
+      "id": "c2199",
+      "startTime": 7387.69,
+      "endTime": 7390.4,
+      "en": "We'll let you enjoy these shots from the finals.",
+      "zh": "我们让你欣赏决赛的这些镜头。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“shots”指镜头，注意“let you enjoy”结构。"
+    },
+    {
+      "id": "c2200",
+      "startTime": 7390.65,
+      "endTime": 7395.92,
+      "en": "Podiums to come before we will say goodbye to the penultimate Boulder event of 2026.",
+      "zh": "在告别2026年倒数第二场攀石赛事之前，还有颁奖仪式。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "boulder"
+      ],
+      "note": "“penultimate”表示倒数第二，注意“Boulder event”指攀石赛。"
+    },
+    {
+      "id": "c2201",
+      "startTime": 7529.21,
+      "endTime": 7535.84,
+      "en": "as our audience gather to the right hand side of the stage waiting for our ceremony.",
+      "zh": "我们的观众聚集在舞台右侧等待仪式。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“gather”表示聚集，注意“right hand side”指右侧。"
+    },
+    {
+      "id": "c2202",
+      "startTime": 7535.85,
+      "endTime": 7539.76,
+      "en": "Stick with us if you haven't left and you can celebrate with our",
+      "zh": "如果你还没离开，请继续关注，你可以和我们一起庆祝",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“stick with us”表示继续关注，注意“if you haven't left”条件句。"
+    },
+    {
+      "id": "c2203",
+      "startTime": 7577.69,
+      "endTime": 7581.36,
+      "en": "ceremony for experience and",
+      "zh": "仪式为经验丰富者",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“ceremony”仪式，注意“for experience”可能指经验组。"
+    },
+    {
+      "id": "c2204",
+      "startTime": 7669.21,
+      "endTime": 7669.81,
+      "en": "minutes.",
+      "zh": "分钟。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“minutes”分钟，注意上下文。"
+    },
+    {
+      "id": "c2205",
+      "startTime": 7669.53,
+      "endTime": 7672.72,
+      "en": "We just rearrange everything and our athletes are gathered.",
+      "zh": "我们重新安排了一切，运动员们聚集在一起。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“rearrange”重新安排，注意过去时。"
+    },
+    {
+      "id": "c2206",
+      "startTime": 7695.93,
+      "endTime": 7700.19,
+      "en": "couple of seconds remaining before our three podium finishes come out.",
+      "zh": "还有几秒钟，我们的三位领奖台选手就要出场了。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“podium finishes”指前三名，注意“couple of”表示几个。"
+    },
+    {
+      "id": "c2207",
+      "startTime": 7700.09,
+      "endTime": 7705.92,
+      "en": "Sat and Raku the overall Euro hold title winner for 2026 and his fifth gold medal.",
+      "zh": "萨特和拉库，2026年欧洲总冠军，也是他的第五枚金牌。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "hold"
+      ],
+      "note": "“overall”表示总体的，注意“Euro hold title”可能指欧洲冠军。"
+    },
+    {
+      "id": "c2208",
+      "startTime": 7705.85,
+      "endTime": 7707.44,
+      "en": "Can't wait to see him celebrate.",
+      "zh": "迫不及待想看他庆祝。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“can't wait to”表示迫不及待，注意“see him celebrate”结构。"
+    },
+    {
+      "id": "c2209",
+      "startTime": 7734.41,
+      "endTime": 7739.68,
+      "en": "welcome to the victory ceremony for the world climbing series since Brooks 2026.",
+      "zh": "欢迎来到世界攀岩系列赛布鲁克斯2026的胜利仪式。",
+      "score": 52,
+      "study": true,
+      "keywords": [],
+      "note": "“victory ceremony”胜利仪式，注意“world climbing series”世界攀岩系列赛。"
+    },
+    {
+      "id": "c2210",
+      "startTime": 7754.89,
+      "endTime": 7763.28,
+      "en": "Pu the world's climbing vice president on stage and Michael Octa the president of Austrian climbing will hand out the trophies and medals",
+      "zh": "世界攀岩副主席普和奥地利攀岩主席迈克尔·奥克塔将颁发奖杯和奖牌",
+      "score": 42,
+      "study": true,
+      "keywords": [],
+      "note": "“vice president”副主席，注意“hand out”表示颁发。"
+    },
+    {
+      "id": "c2211",
+      "startTime": 7768.25,
+      "endTime": 7769.28,
+      "en": "climbing federation",
+      "zh": "攀岩联合会",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "“climbing federation”攀岩联合会，注意专有名词。"
+    },
+    {
+      "id": "c2212",
+      "startTime": 7780.49,
+      "endTime": 7781.47,
+      "en": "South Korea.",
+      "zh": "韩国。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "注意国家名发音：South Korea"
+    },
+    {
+      "id": "c2213",
+      "startTime": 7781.37,
+      "endTime": 7783.76,
+      "en": "Yeah. Those who",
+      "zh": "是的。那些……",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "口语中常用“Yeah”表示肯定，注意连读"
+    },
+    {
+      "id": "c2214",
+      "startTime": 7823.45,
+      "endTime": 7824.72,
+      "en": "Awesome from him.",
+      "zh": "他太棒了。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“Awesome”是口语中常用的赞美词"
+    },
+    {
+      "id": "c2215",
+      "startTime": 7824.73,
+      "endTime": 7826,
+      "en": "Back on a podium.",
+      "zh": "重回领奖台。",
+      "score": 27,
+      "study": false,
+      "keywords": [],
+      "note": "“Back on a podium”表示再次登上领奖台"
+    },
+    {
+      "id": "c2216",
+      "startTime": 7826.01,
+      "endTime": 7827.36,
+      "en": "First one since 2022.",
+      "zh": "自2022年以来第一次。",
+      "score": 34,
+      "study": false,
+      "keywords": [],
+      "note": "注意“since”的用法，表示“自从”"
+    },
+    {
+      "id": "c2217",
+      "startTime": 7827.53,
+      "endTime": 7829.36,
+      "en": "And it's a silver medal.",
+      "zh": "而且是一枚银牌。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“silver medal”是银牌，注意区分金牌和铜牌"
+    },
+    {
+      "id": "c2218",
+      "startTime": 7829.37,
+      "endTime": 7833.28,
+      "en": "All that hard work paying off for the man from Japan.",
+      "zh": "所有的努力都得到了回报，这位来自日本的选手。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“pay off”表示“得到回报”，常用短语"
+    },
+    {
+      "id": "c2219",
+      "startTime": 7854.25,
+      "endTime": 7857.44,
+      "en": ">> and then finally, your champion tonight, Saratu Anra Raku.",
+      "zh": "最后，今晚的冠军，Saratu Anra Raku。",
+      "score": 47,
+      "study": true,
+      "keywords": [],
+      "note": "注意人名发音，冠军是“champion”"
+    },
+    {
+      "id": "c2220",
+      "startTime": 7858.49,
+      "endTime": 7862.96,
+      "en": "He's been breaking record since the moment he walked onto the world climbing stage",
+      "zh": "从他踏上世界攀岩舞台的那一刻起，他就在不断打破纪录。",
+      "score": 58,
+      "study": true,
+      "keywords": [],
+      "note": "“since the moment”表示“从那一刻起”，注意时态"
+    },
+    {
+      "id": "c2221",
+      "startTime": 7864.33,
+      "endTime": 7866.56,
+      "en": ">> and he's broken another one here tonight.",
+      "zh": "今晚他又打破了一项纪录。",
+      "score": 48,
+      "study": true,
+      "keywords": [],
+      "note": "“break a record”是“打破纪录”的固定搭配"
+    },
+    {
+      "id": "c2222",
+      "startTime": 7866.73,
+      "endTime": 7868.16,
+      "en": "Five out of five.",
+      "zh": "五场全胜。",
+      "score": 33,
+      "study": false,
+      "keywords": [],
+      "note": "“five out of five”表示“五分之五”，即全胜"
+    },
+    {
+      "id": "c2223",
+      "startTime": 7868.17,
+      "endTime": 7872.08,
+      "en": "And we dare to dream about the clean sweep of the 2026 season.",
+      "zh": "我们敢梦想2026赛季的全胜。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“clean sweep”表示“全胜”，注意“dare to”的用法"
+    },
+    {
+      "id": "c2224",
+      "startTime": 7872.01,
+      "endTime": 7876.08,
+      "en": "But he has won the Euro holds overall title for 2026",
+      "zh": "但他已经赢得了2026年欧洲全能总冠军。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“overall title”是“总冠军”，注意“Euro”指欧洲"
+    },
+    {
+      "id": "c2225",
+      "startTime": 7877.21,
+      "endTime": 7880.4,
+      "en": "as he mantles his way up onto the podium.",
+      "zh": "当他以肩式上攀的方式登上领奖台时。",
+      "score": 44,
+      "study": true,
+      "keywords": [],
+      "note": "“mantle”是攀岩术语，指“肩式上攀”，注意动作描述"
+    },
+    {
+      "id": "c2226",
+      "startTime": 7917.77,
+      "endTime": 7920.4,
+      "en": "If you're able to, please rise.",
+      "zh": "如果可以，请起立。",
+      "score": 52,
+      "study": true,
+      "keywords": [],
+      "note": "“if you're able to”是礼貌的请求，注意“please rise”"
+    },
+    {
+      "id": "c2227",
+      "startTime": 7921.05,
+      "endTime": 7925.76,
+      "en": "Remove your cap for the national anthem of",
+      "zh": "请脱帽，奏国歌。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“remove your cap”是“脱帽”，注意“national anthem”是“国歌”"
+    },
+    {
+      "id": "c2228",
+      "startTime": 8030.65,
+      "endTime": 8033.44,
+      "en": "climbers as they celebrate in front of our photographers.",
+      "zh": "攀岩选手们在摄影师面前庆祝。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "“celebrate”是“庆祝”，注意“in front of”的用法"
+    },
+    {
+      "id": "c2229",
+      "startTime": 8033.53,
+      "endTime": 8036.08,
+      "en": "So, to remind everyone, lead begins tomorrow.",
+      "zh": "提醒大家，难度赛明天开始。",
+      "score": 57,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“lead”在攀岩中指“难度赛”，注意“remind”的用法"
+    },
+    {
+      "id": "c2230",
+      "startTime": 8036.25,
+      "endTime": 8042.75,
+      "en": "Semi-finals in the evening, qualies in the morning, not streamed, but you can check out all the social media for action along the way.",
+      "zh": "晚上半决赛，早上资格赛，不直播，但你可以通过社交媒体查看比赛动态。",
+      "score": 36,
+      "study": false,
+      "keywords": [],
+      "note": "“qualies”是“qualifications”的缩写，注意“not streamed”"
+    },
+    {
+      "id": "c2231",
+      "startTime": 8042.65,
+      "endTime": 8044.88,
+      "en": "And then Sunday, the lead finals.",
+      "zh": "然后周日是难度决赛。",
+      "score": 52,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "“finals”是“决赛”，注意“lead finals”指难度决赛"
+    },
+    {
+      "id": "c2232",
+      "startTime": 8045.45,
+      "endTime": 8049.31,
+      "en": "Thank you to Safia Yokyama for joining me in the commentary box here tonight.",
+      "zh": "感谢Safia Yokyama今晚加入我的解说席。",
+      "score": 43,
+      "study": true,
+      "keywords": [],
+      "note": "“commentary box”是“解说席”，注意感谢表达"
+    },
+    {
+      "id": "c2233",
+      "startTime": 8049.21,
+      "endTime": 8050.27,
+      "en": "It was a fun comp.",
+      "zh": "这是一场有趣的比赛。",
+      "score": 24,
+      "study": false,
+      "keywords": [],
+      "note": "“fun comp”是“有趣的比赛”，comp是competition的缩写"
+    },
+    {
+      "id": "c2234",
+      "startTime": 8050.17,
+      "endTime": 8051.28,
+      "en": "I enjoyed it.",
+      "zh": "我很享受。",
+      "score": 12,
+      "study": false,
+      "keywords": [],
+      "note": "“enjoy”是“享受”，注意过去式“enjoyed”"
+    },
+    {
+      "id": "c2235",
+      "startTime": 8051.61,
+      "endTime": 8054.4,
+      "en": "and the three do a rather odd handshake on the",
+      "zh": "然后三个人做了一个奇怪的握手。",
+      "score": 40,
+      "study": true,
+      "keywords": [],
+      "note": "“odd handshake”是“奇怪的握手”，注意“rather”的用法"
+    },
+    {
+      "id": "c2236",
+      "startTime": 8056.09,
+      "endTime": 8056.91,
+      "en": "All right, everyone.",
+      "zh": "好了，各位。",
+      "score": 0,
+      "study": false,
+      "keywords": [],
+      "note": "'All right' 是常见的开场白，表示'好了'或'行'。"
+    },
+    {
+      "id": "c2237",
+      "startTime": 8056.81,
+      "endTime": 8058.19,
+      "en": "We will say good night for now.",
+      "zh": "我们现在要说晚安了。",
+      "score": 41,
+      "study": true,
+      "keywords": [],
+      "note": "'say good night' 是固定搭配，表示'说晚安'。"
+    },
+    {
+      "id": "c2238",
+      "startTime": 8058.09,
+      "endTime": 8059.68,
+      "en": "Let you enjoy these final shots.",
+      "zh": "让大家欣赏最后的镜头。",
+      "score": 56,
+      "study": true,
+      "keywords": [
+        "final"
+      ],
+      "note": "'final shots' 指'最后的镜头'，在直播中常用。"
+    },
+    {
+      "id": "c2239",
+      "startTime": 8059.69,
+      "endTime": 8068.4,
+      "en": "Make sure you subscribe to the channel if you're watching and we will see you very soon for more world climbing action when the giant lead wall is in action.",
+      "zh": "如果你在看，请务必订阅频道，我们很快会再见，届时巨型先锋墙将上演更多世界攀岩赛事。",
+      "score": 50,
+      "study": true,
+      "keywords": [
+        "lead"
+      ],
+      "note": "'subscribe to the channel' 是'订阅频道'，'giant lead wall' 指'巨型先锋墙'。"
+    },
+    {
+      "id": "c2240",
+      "startTime": 8068.33,
+      "endTime": 8069.52,
+      "en": "I will see you soon.",
+      "zh": "我们很快再见。",
+      "score": 19,
+      "study": false,
+      "keywords": [],
+      "note": "'see you soon' 是常见告别语，'很快再见'。"
+    },
+    {
+      "id": "c2241",
+      "startTime": 8069.45,
+      "endTime": 8070.48,
+      "en": "Good night everyone.",
+      "zh": "大家晚安。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'Good night' 是'晚安'，注意发音连读。"
+    },
+    {
+      "id": "c2242",
+      "startTime": 8113.93,
+      "endTime": 8114.8,
+      "en": "step back.",
+      "zh": "后退一步。",
+      "score": 29,
+      "study": false,
+      "keywords": [],
+      "note": "'step back' 是'后退'，在攀岩中常用来提醒安全。"
+    }
+  ]
+};
