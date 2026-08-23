@@ -1,0 +1,16 @@
+# Prettier ignore — generated / vendored / binary artifacts must never be
+# reformatted. The lessons data files are kept here as defense-in-depth even
+# though the format scripts are scoped to scripts/ + tests/ only, so a future
+# `prettier --write .` won't rewrite the 4000-line data modules.
+node_modules/
+dist/
+public/
+src/data/videos/
+src/data/lessons.ts
+src/data/lessons.generated.ts
+src/data/lessons.manual.ts
+docs/
+.husky/
+*.png
+*.jpg
+*.mp4

@@ -31,7 +31,11 @@ import { fileURLToPath } from 'node:url';
 import { loadSubtitleWords } from './lib/timed-words.mjs';
 import { segmentWords } from './lib/segment.mjs';
 import { CLIMBING_TERMS, findClimbingTerms } from './lib/climbing-terms.mjs';
-import { backfillFromReference, loadLessonsAsReference, translateSentences } from './lib/translate.mjs';
+import {
+  backfillFromReference,
+  loadLessonsAsReference,
+  translateSentences,
+} from './lib/translate.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -77,7 +81,9 @@ async function main() {
   const slug = args.slug || slugify(`${title}-${youtubeId}`);
   const mediaStart = args.mediaStart ?? args.start ?? 0;
   console.log(`  title: ${title}`);
-  console.log(`  channel: ${metadata.channel ?? 'unknown'} | duration: ${metadata.duration ?? '?'}s`);
+  console.log(
+    `  channel: ${metadata.channel ?? 'unknown'} | duration: ${metadata.duration ?? '?'}s`
+  );
 
   // 1. Subtitles
   console.log('→ downloading English subtitles (manual first, auto fallback)');
@@ -89,8 +95,11 @@ async function main() {
   const start = args.start ?? 0;
   const end = args.end ?? metadata.duration ?? Number.POSITIVE_INFINITY;
   const scoped = words.filter((word) => word.time >= start && word.time <= end);
-  if (scoped.length < 20) throw new Error(`Only ${scoped.length} caption words in the selected window — aborting.`);
-  console.log(`  ${scoped.length} words in window [${fmt(start)} → ${fmt(end === Infinity ? scoped[scoped.length - 1].time : end)}]`);
+  if (scoped.length < 20)
+    throw new Error(`Only ${scoped.length} caption words in the selected window — aborting.`);
+  console.log(
+    `  ${scoped.length} words in window [${fmt(start)} → ${fmt(end === Infinity ? scoped[scoped.length - 1].time : end)}]`
+  );
 
   // 2. Sentence segmentation + scoring
   console.log('→ segmenting sentences & scoring learning value');
@@ -99,7 +108,7 @@ async function main() {
   const highlightCount = sentences.filter((sentence) => sentence.highlight).length;
   console.log(
     `  ${sentences.length} subtitle cues (${studyCount} study-worthy, ${highlightCount} highlights); ` +
-      `${dropped.length} fragments below threshold (kept in subtitle track, excluded from practice)`,
+      `${dropped.length} fragments below threshold (kept in subtitle track, excluded from practice)`
   );
 
   // 3. Translation
@@ -109,7 +118,9 @@ async function main() {
     const reference = loadLessonsAsReference(fs.readFileSync(args.backfillZh, 'utf8'));
     translated = backfillFromReference(sentences, reference);
     const missing = translated.filter((sentence) => sentence.needsTranslation).length;
-    console.log(`  ${translated.length - missing}/${translated.length} cues covered by reviewed translations`);
+    console.log(
+      `  ${translated.length - missing}/${translated.length} cues covered by reviewed translations`
+    );
   }
   if (args.translate !== false) {
     // Only machine-translate cues that still lack Chinese (e.g. not covered by
@@ -117,21 +128,27 @@ async function main() {
     const pendingIndexes = translated
       .map((sentence, index) => (sentence.needsTranslation === false ? -1 : index))
       .filter((index) => index >= 0);
-    console.log(`→ translating ${pendingIndexes.length}/${translated.length} cues via DeepSeek (set DEEPSEEK_API_KEY; use --no-translate to skip)`);
+    console.log(
+      `→ translating ${pendingIndexes.length}/${translated.length} cues via DeepSeek (set DEEPSEEK_API_KEY; use --no-translate to skip)`
+    );
     if (pendingIndexes.length > 0) {
       const machineTranslated = await translateSentences(
         pendingIndexes.map((index) => translated[index]),
-        {},
+        {}
       );
       pendingIndexes.forEach((sentenceIndex, offset) => {
         translated[sentenceIndex] = machineTranslated[offset];
       });
     }
     const missing = translated.filter((sentence) => sentence.needsTranslation).length;
-    console.log(`  translated: ${translated.length - missing}/${translated.length}${missing ? ` (${missing} placeholders left)` : ''}`);
+    console.log(
+      `  translated: ${translated.length - missing}/${translated.length}${missing ? ` (${missing} placeholders left)` : ''}`
+    );
   } else {
     translated = translated.map((sentence) =>
-      sentence.zh ? sentence : { ...sentence, zh: sentence.zh ?? '', needsTranslation: !sentence.zh },
+      sentence.zh
+        ? sentence
+        : { ...sentence, zh: sentence.zh ?? '', needsTranslation: !sentence.zh }
     );
   }
 
@@ -176,7 +193,7 @@ async function main() {
     level: args.level ?? 'intermediate',
     mediaUrl,
     mediaStartTime: mediaStart,
-    durationSeconds: Number((end === Infinity ? metadata.duration ?? 0 : end - start).toFixed(1)),
+    durationSeconds: Number((end === Infinity ? (metadata.duration ?? 0) : end - start).toFixed(1)),
     captionKind: kind,
     importedAt: new Date().toISOString().slice(0, 10),
     cueCount: cues.length,
@@ -197,7 +214,7 @@ async function main() {
   const dataFile = path.join(DATA_DIR, `${slug}.video.ts`);
   fs.writeFileSync(
     dataFile,
-    `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`,
+    `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`
   );
   writeRegistry();
   console.log(`\n✓ imported ${cues.length} cues → ${path.relative(ROOT, dataFile)}`);
@@ -235,13 +252,17 @@ function parseArgs(argv) {
 
 function extractVideoId(input) {
   const trimmed = input.trim();
-  const match = trimmed.match(/(?:youtube\.com\/watch\?.*v=|youtu\.be\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{11})/);
+  const match = trimmed.match(
+    /(?:youtube\.com\/watch\?.*v=|youtu\.be\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{11})/
+  );
   if (match) return match[1];
   return /^[A-Za-z0-9_-]{11}$/.test(trimmed) ? trimmed : null;
 }
 
 async function fetchMetadata(sourceUrl) {
-  const { stdout } = await run(YT_DLP, ['-J', '--no-playlist', sourceUrl], { maxBuffer: 64 * 1024 * 1024 });
+  const { stdout } = await run(YT_DLP, ['-J', '--no-playlist', sourceUrl], {
+    maxBuffer: 64 * 1024 * 1024,
+  });
   const data = JSON.parse(stdout);
   return {
     title: data.title,
@@ -278,9 +299,15 @@ async function fetchSubtitles(sourceUrl, youtubeId) {
     .map((file) => {
       const full = path.join(tmpDir, file);
       const text = fs.readFileSync(full, 'utf8');
-      return { file: full, kind: /<\d\d:\d\d:\d\d[.,]\d+>/.test(text) ? 'auto' : 'manual', size: text.length };
+      return {
+        file: full,
+        kind: /<\d\d:\d\d:\d\d[.,]\d+>/.test(text) ? 'auto' : 'manual',
+        size: text.length,
+      };
     })
-    .sort((first, second) => (first.kind === second.kind ? first.size - second.size : first.kind === 'manual' ? -1 : 1));
+    .sort((first, second) =>
+      first.kind === second.kind ? first.size - second.size : first.kind === 'manual' ? -1 : 1
+    );
 
   return candidates[0];
 }
@@ -339,7 +366,7 @@ export function writeRegistry() {
     const match = text.match(/=\s*(\{[\s\S]*\})\s*;?\s*$/);
     if (!match) throw new Error(`Could not parse ${file}`);
     const video = JSON.parse(match[1]);
-    const { cues, ...summary } = video;
+    const { cues: _cues, ...summary } = video;
     return { file: file.replace(/\.ts$/, ''), summary };
   });
 
@@ -371,13 +398,13 @@ export async function loadVideo(id: string): Promise<VideoEntry | undefined> {
   // Keep the frontend term dictionary in sync with the pipeline's term bank
   // so cue keywords can be stored as plain strings and expanded at render time.
   const dictionary = Object.fromEntries(
-    CLIMBING_TERMS.map(([term, zh, example]) => [term, { zh, example }]),
+    CLIMBING_TERMS.map(([term, zh, example]) => [term, { zh, example }])
   );
   fs.writeFileSync(
     path.join(DATA_DIR, 'climbing-terms.ts'),
     `// GENERATED by scripts/import-youtube.mjs — do not edit by hand.
 export const CLIMBING_TERM_DICT: Record<string, { zh: string; example: string }> = ${JSON.stringify(dictionary, null, 2)};
-`,
+`
   );
 }
 

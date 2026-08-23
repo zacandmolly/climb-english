@@ -69,7 +69,9 @@ async function main() {
     const sample = flagged.slice(0, 8);
     for (const { index, reason } of sample) {
       const cue = video.cues[index];
-      console.log(`  c${String(index + 1).padStart(3, '0')}  ${reason.padEnd(28)}  en="${truncate(cue.en)}"  zh="${truncate(cue.zh)}"`);
+      console.log(
+        `  c${String(index + 1).padStart(3, '0')}  ${reason.padEnd(28)}  en="${truncate(cue.en)}"  zh="${truncate(cue.zh)}"`
+      );
     }
     if (flagged.length > sample.length) {
       console.log(`  …and ${flagged.length - sample.length} more`);
@@ -81,7 +83,9 @@ async function main() {
       console.log(`  ✓ rewrote ${file} with ${flagged.length} cues marked needsTranslation`);
     }
   }
-  console.log(`\n${realign ? 'Cleared and re-flagged' : 'Suspected'}: ${totalFlags}/${totalCues} cues across ${files.length} video(s).`);
+  console.log(
+    `\n${realign ? 'Cleared and re-flagged' : 'Suspected'}: ${totalFlags}/${totalCues} cues across ${files.length} video(s).`
+  );
 }
 
 function inspect(video) {
@@ -126,7 +130,8 @@ function inspect(video) {
       const ownHit = keywords.find((kw) => ownZh.includes(kw.toLowerCase()));
       if (!ownHit) {
         const neighbourHit = cues.findIndex(
-          (other, j) => j !== i && (other.zh ?? '').toLowerCase().includes(keywords[0].toLowerCase()),
+          (other, j) =>
+            j !== i && (other.zh ?? '').toLowerCase().includes(keywords[0].toLowerCase())
         );
         if (neighbourHit >= 0 && Math.abs(neighbourHit - i) <= 3) {
           reasons.push(`keyword-missing("${keywords[0]}")`);
@@ -154,7 +159,7 @@ function realignFlagged(video, flagged) {
 }
 
 function tokenize(text) {
-  const words = (text.toLowerCase().match(/[a-z']+/g) ?? []);
+  const words = text.toLowerCase().match(/[a-z']+/g) ?? [];
   const chinese = (text.match(/[\u4e00-\u9fa5]/g) ?? []).length;
   return { words, text, length: text.length, chinese };
 }
@@ -175,6 +180,6 @@ function parseVideoFile(filePath) {
 function writeVideoFile(filePath, video) {
   fs.writeFileSync(
     filePath,
-    `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`,
+    `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`
   );
 }

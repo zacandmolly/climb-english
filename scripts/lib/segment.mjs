@@ -88,7 +88,11 @@ export function segmentWords(words, options = {}) {
         continue;
       }
       shouldClose = true;
-    } else if (wordCount >= opts.softSplitWords && /,$/.test(word.raw) && next.time - word.time > 0.25) {
+    } else if (
+      wordCount >= opts.softSplitWords &&
+      /,$/.test(word.raw) &&
+      next.time - word.time > 0.25
+    ) {
       shouldClose = true;
     }
 
@@ -133,8 +137,7 @@ function mergeFragments(sentences, opts) {
   // blocked." does → it is a complete short sentence and must stay separate.
   // Without this guard, raising minWords to 6 would swallow real short
   // sentences like "Yeah." / "It was blocked.".
-  const isFragment = (sentence) =>
-    !endsSentence(sentence.words[sentence.words.length - 1].raw);
+  const isFragment = (sentence) => !endsSentence(sentence.words[sentence.words.length - 1].raw);
 
   for (const sentence of sentences) {
     const wordCount = sentence.words.length;
@@ -174,7 +177,8 @@ function withTimes(sentence, index, all, opts) {
   const firstWord = sentence.words[0];
   const lastWord = sentence.words[sentence.words.length - 1];
   const previousEnd = index > 0 ? all[index - 1].words[all[index - 1].words.length - 1].time : 0;
-  const nextStart = index < all.length - 1 ? all[index + 1].words[0].time : Number.POSITIVE_INFINITY;
+  const nextStart =
+    index < all.length - 1 ? all[index + 1].words[0].time : Number.POSITIVE_INFINITY;
 
   // Snap to the real first word, then pad slightly so the initial consonant
   // is never clipped — this is the fix for "sentence starts get cut off".
@@ -207,7 +211,17 @@ export function scoreSentence(text) {
   const n = tokens.length;
 
   if (n === 0) {
-    return { score: 0, parts: { lengthScore: 0, contentScore: 0, termHits: 0, grammarHits: 0, fillerPenalty: 60, repetitionPenalty: 0 } };
+    return {
+      score: 0,
+      parts: {
+        lengthScore: 0,
+        contentScore: 0,
+        termHits: 0,
+        grammarHits: 0,
+        fillerPenalty: 60,
+        repetitionPenalty: 0,
+      },
+    };
   }
 
   const unique = new Set(tokens);
@@ -238,7 +252,12 @@ export function scoreSentence(text) {
 
   const score = Math.max(
     0,
-    Math.min(100, Math.round(lengthScore + contentScore + termScore + grammarScore - fillerPenalty - repetitionPenalty)),
+    Math.min(
+      100,
+      Math.round(
+        lengthScore + contentScore + termScore + grammarScore - fillerPenalty - repetitionPenalty
+      )
+    )
   );
 
   return {

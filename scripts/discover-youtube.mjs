@@ -34,12 +34,13 @@ async function main() {
   const maxFlag = process.argv.indexOf('--max');
   const maxImports = maxFlag >= 0 ? Number(process.argv[maxFlag + 1]) : 3;
   const onlyFlag = process.argv.indexOf('--only');
-  const onlyIndexes = onlyFlag >= 0
-    ? String(process.argv[onlyFlag + 1])
-        .split(',')
-        .map((value) => Number(value.trim()))
-        .filter((value) => Number.isInteger(value) && value > 0)
-    : null;
+  const onlyIndexes =
+    onlyFlag >= 0
+      ? String(process.argv[onlyFlag + 1])
+          .split(',')
+          .map((value) => Number(value.trim()))
+          .filter((value) => Number.isInteger(value) && value > 0)
+      : null;
 
   const state = loadState();
 
@@ -51,11 +52,11 @@ async function main() {
       console.error('No discover queue found. Run npm run discover:youtube first to scan.');
       process.exit(1);
     }
-    const picked = onlyIndexes
-      .map((index) => queue[index - 1])
-      .filter(Boolean);
+    const picked = onlyIndexes.map((index) => queue[index - 1]).filter(Boolean);
     if (picked.length === 0) {
-      console.error(`None of the indexes [${onlyIndexes.join(', ')}] exist in the queue (1-${queue.length}).`);
+      console.error(
+        `None of the indexes [${onlyIndexes.join(', ')}] exist in the queue (1-${queue.length}).`
+      );
       process.exit(1);
     }
     console.log(`→ importing ${picked.length} picked video(s) from the last scan queue`);
@@ -77,8 +78,10 @@ async function main() {
     const fresh = entries.filter((entry) => {
       if (!entry.id || state.knownIds.includes(entry.id)) return false;
       if (libraryIds.has(entry.id)) return false;
-      if (source.minDurationSeconds && (entry.duration ?? 0) < source.minDurationSeconds) return false;
-      if (source.maxDurationSeconds && (entry.duration ?? 0) > source.maxDurationSeconds) return false;
+      if (source.minDurationSeconds && (entry.duration ?? 0) < source.minDurationSeconds)
+        return false;
+      if (source.maxDurationSeconds && (entry.duration ?? 0) > source.maxDurationSeconds)
+        return false;
       return true;
     });
     console.log(`  ${entries.length} found, ${fresh.length} new`);
@@ -94,9 +97,13 @@ async function main() {
   }
 
   saveQueue(candidates);
-  console.log(`\n${candidates.length} candidates (queue saved → src/data/videos/discover-queue.json):`);
+  console.log(
+    `\n${candidates.length} candidates (queue saved → src/data/videos/discover-queue.json):`
+  );
   candidates.forEach((entry, index) => {
-    console.log(`  ${index + 1}. [${entry.category}] ${entry.title} (${fmtDuration(entry.duration)}) — ${entry.url}`);
+    console.log(
+      `  ${index + 1}. [${entry.category}] ${entry.title} (${fmtDuration(entry.duration)}) — ${entry.url}`
+    );
   });
 
   if (!apply) {
@@ -125,7 +132,7 @@ async function importEntry(entry, state) {
         '--level',
         entry.level ?? 'intermediate',
       ],
-      { maxBuffer: 64 * 1024 * 1024 },
+      { maxBuffer: 64 * 1024 * 1024 }
     );
     state.knownIds.push(entry.id);
     saveState(state);
@@ -141,16 +148,16 @@ async function scanSource(source) {
   if (source.type === 'search') {
     const count = source.scanCount ?? 10;
     const target = `ytsearch${count}:${source.query}`;
-    const { stdout } = await run(
-      YT_DLP,
-      ['--flat-playlist', '--dump-single-json', target],
-      { maxBuffer: 64 * 1024 * 1024 },
-    );
+    const { stdout } = await run(YT_DLP, ['--flat-playlist', '--dump-single-json', target], {
+      maxBuffer: 64 * 1024 * 1024,
+    });
     const data = JSON.parse(stdout);
     return (data.entries ?? []).filter(Boolean).map((entry) => ({
       id: entry.id,
       title: entry.title ?? entry.id,
-      url: entry.url?.startsWith('http') ? entry.url : `https://www.youtube.com/watch?v=${entry.id}`,
+      url: entry.url?.startsWith('http')
+        ? entry.url
+        : `https://www.youtube.com/watch?v=${entry.id}`,
       duration: entry.duration ?? null,
     }));
   }
@@ -159,8 +166,14 @@ async function scanSource(source) {
     const url = source.channelUrl.replace(/\/?$/, '/videos');
     const { stdout } = await run(
       YT_DLP,
-      ['--flat-playlist', '--playlist-end', String(source.scanCount ?? 10), '--dump-single-json', url],
-      { maxBuffer: 64 * 1024 * 1024 },
+      [
+        '--flat-playlist',
+        '--playlist-end',
+        String(source.scanCount ?? 10),
+        '--dump-single-json',
+        url,
+      ],
+      { maxBuffer: 64 * 1024 * 1024 }
     );
     const data = JSON.parse(stdout);
     return (data.entries ?? []).filter(Boolean).map((entry) => ({
@@ -218,7 +231,7 @@ function saveQueue(candidates) {
   fs.mkdirSync(path.dirname(QUEUE_FILE), { recursive: true });
   fs.writeFileSync(
     QUEUE_FILE,
-    JSON.stringify({ scannedAt: new Date().toISOString(), candidates }, null, 2),
+    JSON.stringify({ scannedAt: new Date().toISOString(), candidates }, null, 2)
   );
 }
 

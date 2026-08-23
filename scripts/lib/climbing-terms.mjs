@@ -102,7 +102,9 @@ export const CLIMBING_TERMS = [
   ['patient', '耐心', 'She stays patient on the balance moves.'],
 ];
 
-export const CLIMBING_TERM_MAP = new Map(CLIMBING_TERMS.map(([term, zh, example]) => [term, { term, zh, example }]));
+export const CLIMBING_TERM_MAP = new Map(
+  CLIMBING_TERMS.map(([term, zh, example]) => [term, { term, zh, example }])
+);
 
 export const STOPWORDS = new Set(
   `a an the and or but so if then than that this these those there here it its it's is are was were be been being
@@ -113,12 +115,14 @@ export const STOPWORDS = new Set(
    now get got go goes going come comes came take takes took make makes made see saw seen look looks looking
    yeah yes nope ok okay oh ah uh um hmm wow well right left`
     .split(/\s+/)
-    .filter(Boolean),
+    .filter(Boolean)
 );
 
 export const FILLER_WORDS = new Set(
   `yeah yes yep nope ok okay oh ah uh um uh-huh hmm wow whoa well right like literally actually basically
-   hey ho come c'mon go goes going woo yeees ha haha`.split(/\s+/).filter(Boolean),
+   hey ho come c'mon go goes going woo yeees ha haha`
+    .split(/\s+/)
+    .filter(Boolean)
 );
 
 export const GRAMMAR_SIGNALS =

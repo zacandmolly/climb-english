@@ -10,7 +10,7 @@ const sshHost = process.env.M1_SSH_HOST || 'm1-agent-ts';
 const apiBase = stripTrailingSlash(
   process.env.FEEDBACK_API_BASE ||
     process.env.VITE_FEEDBACK_API_BASE ||
-    'https://senators-underlying-bit-trademark.trycloudflare.com',
+    'https://senators-underlying-bit-trademark.trycloudflare.com'
 );
 const envPath = process.env.M1_FEEDBACK_ENV_PATH || '~/.climb-english-api.env';
 const serviceLabel = process.env.M1_FEEDBACK_SERVICE_LABEL || 'ai.climb-english-api';
@@ -107,7 +107,7 @@ async function testFeedback() {
   const form = new FormData();
   form.append(
     'audio',
-    new File([readFileSync(audioPath)], 'climb-english-test.wav', { type: 'audio/wav' }),
+    new File([readFileSync(audioPath)], 'climb-english-test.wav', { type: 'audio/wav' })
   );
   form.append('clipId', 'ops:test:sentence');
   form.append('targetSentence', 'The top of the slab. It was blocked.');
@@ -248,7 +248,19 @@ function ensureTestAudio() {
     return wavPath;
   }
 
-  run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', aiffPath, '-ar', '16000', '-ac', '1', wavPath]);
+  run('ffmpeg', [
+    '-y',
+    '-hide_banner',
+    '-loglevel',
+    'error',
+    '-i',
+    aiffPath,
+    '-ar',
+    '16000',
+    '-ac',
+    '1',
+    wavPath,
+  ]);
   return wavPath;
 }
 
@@ -258,13 +270,17 @@ function readClipboard() {
 
 function validateOpenAiKey(key) {
   if (!key.startsWith('sk-') || key.length < 40 || /\s/.test(key)) {
-    throw new Error('Clipboard does not look like an OpenAI API key. Copy the key first, then rerun.');
+    throw new Error(
+      'Clipboard does not look like an OpenAI API key. Copy the key first, then rerun.'
+    );
   }
 }
 
 function validateDeepSeekKey(key) {
   if (!key.startsWith('sk-') || key.length < 30 || /\s/.test(key)) {
-    throw new Error('Clipboard does not look like a DeepSeek API key. Copy the key first, then rerun.');
+    throw new Error(
+      'Clipboard does not look like a DeepSeek API key. Copy the key first, then rerun.'
+    );
   }
 }
 

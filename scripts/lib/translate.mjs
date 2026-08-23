@@ -10,7 +10,11 @@ const DEFAULT_BATCH_SIZE = 24;
 
 export async function translateSentences(sentences, options = {}) {
   const apiKey = options.apiKey ?? process.env.DEEPSEEK_API_KEY ?? process.env.OPENAI_API_KEY ?? '';
-  const baseUrl = (options.baseUrl ?? process.env.DEEPSEEK_BASE_URL ?? 'https://api.deepseek.com').replace(/\/+$/, '');
+  const baseUrl = (
+    options.baseUrl ??
+    process.env.DEEPSEEK_BASE_URL ??
+    'https://api.deepseek.com'
+  ).replace(/\/+$/, '');
   const model = options.model ?? process.env.DEEPSEEK_MODEL ?? 'deepseek-chat';
   const batchSize = options.batchSize ?? DEFAULT_BATCH_SIZE;
 
@@ -62,7 +66,9 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
       });
 
       if (!response.ok) {
-        throw new Error(`translate API error ${response.status}: ${(await response.text()).slice(0, 200)}`);
+        throw new Error(
+          `translate API error ${response.status}: ${(await response.text()).slice(0, 200)}`
+        );
       }
 
       const data = await response.json();
@@ -77,7 +83,9 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
     }
   }
 
-  console.warn(`  ! translation batch failed (${lastError?.message ?? 'unknown error'}); keeping placeholders`);
+  console.warn(
+    `  ! translation batch failed (${lastError?.message ?? 'unknown error'}); keeping placeholders`
+  );
   return batch.map((sentence) => ({
     ...sentence,
     zh: '',
@@ -90,9 +98,7 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
 // `i` for this index. Returns null instead of falling back to the array slot,
 // because array order is not contractually guaranteed by chat completions.
 export function pickTranslationForIndex(items, index) {
-  return (
-    items.find((entry) => entry && Number.isInteger(entry.i) && entry.i === index) ?? null
-  );
+  return items.find((entry) => entry && Number.isInteger(entry.i) && entry.i === index) ?? null;
 }
 
 // Align a batch of LLM responses to the input sentences. Any row the model
@@ -127,7 +133,7 @@ function reportBatchCoverage(items, batch) {
   if (matched < batch.length) {
     console.warn(
       `  ! translate batch coverage ${matched}/${batch.length} (${Math.round(coverage * 100)}%); ` +
-        `${batch.length - matched} cues will be re-flagged as needsTranslation.`,
+        `${batch.length - matched} cues will be re-flagged as needsTranslation.`
     );
   }
 }
@@ -144,7 +150,7 @@ export function backfillFromReference(sentences, referenceSentences, options = {
 
   return sentences.map((sentence) => {
     const nearby = referenceSentences.filter(
-      (reference) => Math.abs(reference.startTime - sentence.startTime) <= timeWindow,
+      (reference) => Math.abs(reference.startTime - sentence.startTime) <= timeWindow
     );
 
     const scored = nearby.map((reference) => {
@@ -154,7 +160,9 @@ export function backfillFromReference(sentences, referenceSentences, options = {
 
     // Case 1: near-exact match with a single reviewed block — reuse its zh.
     const best = scored
-      .filter((entry) => entry.refCoverage >= nearMatchCoverage && entry.cueCoverage >= nearMatchCoverage)
+      .filter(
+        (entry) => entry.refCoverage >= nearMatchCoverage && entry.cueCoverage >= nearMatchCoverage
+      )
       .sort((first, second) => second.cueCoverage - first.cueCoverage)[0];
 
     if (best) {
@@ -207,8 +215,8 @@ export function loadLessonsAsReference(lessonsFileText) {
 }
 
 function coverage(textA, textB) {
-  const wordsA = new Set((textA.toLowerCase().match(/[a-z']+/g) ?? []));
-  const wordsB = new Set((textB.toLowerCase().match(/[a-z']+/g) ?? []));
+  const wordsA = new Set(textA.toLowerCase().match(/[a-z']+/g) ?? []);
+  const wordsB = new Set(textB.toLowerCase().match(/[a-z']+/g) ?? []);
   if (wordsA.size === 0 || wordsB.size === 0) return { refCoverage: 0, cueCoverage: 0 };
 
   let shared = 0;
