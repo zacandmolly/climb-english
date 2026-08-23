@@ -11,7 +11,15 @@ export type CuePlaybackMode = 'idle' | 'cue' | 'continuous';
 //    first word's attack is never clipped), pauses at cue end or loops.
 //  - playContinuous(): plays the video freely; the active cue highlight
 //    follows playback like a karaoke subtitle track.
-export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number) {
+// resetKey: a stable id for the current clip (e.g. videoId). The playback
+// state is reset ONLY when this changes — never when the cues array
+// reference churns on a re-render. Depending the reset effect on `cues`
+// (a large array) fires on every render when the parent produces a new
+// reference, which stale-reset activeCueIndex to 0 and clears the active
+// range right after playCue() set them (the "点击播放本句没反应" bug).
+// Fix: key the reset off resetKey, which is identical across renders of
+// the same clip.
+export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number, resetKey: string) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [mode, setMode] = useState<CuePlaybackMode>('idle');
   const [isPlaying, setIsPlaying] = useState(false);
@@ -152,7 +160,7 @@ export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number) {
     activeRangeRef.current = null;
     setMode('idle');
     setActiveCueIndex(0);
-  }, [cues]);
+  }, [resetKey]);
 
   return player;
 }

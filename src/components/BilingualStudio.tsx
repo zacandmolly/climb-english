@@ -72,7 +72,7 @@ export function BilingualStudio({
   }, [videoId]);
 
   const cues = useMemo(() => video?.cues ?? [], [video]);
-  const player = useCuePlayer(cues, video?.mediaStartTime ?? 0);
+  const player = useCuePlayer(cues, video?.mediaStartTime ?? 0, video?.id ?? '');
   const activeCue = cues[player.activeCueIndex] ?? cues[0];
   const activeKeywords = useMemo(() => expandTerms(activeCue?.keywords ?? []), [activeCue]);
 
