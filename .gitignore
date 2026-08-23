@@ -6,3 +6,6 @@ qa-*.png
 tsconfig.tsbuildinfo
 .DS_Store
 .workbuddy/
+# 大媒体文件不入库（GitHub 100MB 单文件硬限制）。已追踪的历史媒体保留；
+# 新素材媒体仅存本地 public/media/，可经导入管线重新下载生成。
+public/media/*.mp4
