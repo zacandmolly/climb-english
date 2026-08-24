@@ -138,6 +138,11 @@ jobs:
   e2e:
     name: E2E (Playwright karaoke walkthrough)
     runs-on: ubuntu-latest
+    # upload-artifact needs actions:write; the workflow default is
+    # contents:read, so scope this job's token explicitly.
+    permissions:
+      contents: read
+      actions: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
