@@ -83,9 +83,10 @@ jobs:
   audit:
     name: Dependency audit (high+)
     runs-on: ubuntu-latest
-    # Non-blocking: `npm audit` hits the registry and its results are not under
-    # our control (network flake / advisory churn). Report, don't kill the PR.
-    continue-on-error: true
+    # Hard gate: `npm audit fix` cleared all 7 advisories (4 high + 3 low) in
+    # the phase-01 audit commit, so there is no longer a reason to tolerate
+    # high/critical findings. `npm audit --audit-level=high` exits non-zero on
+    # high/critical and now blocks the merge.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -101,9 +102,8 @@ jobs:
         if: always()
         run: |
           {
-            echo "> **audit** — ran \`npm audit --audit-level=high\` with \`continue-on-error: true\`"
-            echo "> so advisory findings are reported but do not block the PR."
-            echo "> Treat high/critical findings as a follow-up, not a merge blocker."
+            echo "> **audit** — \`npm audit --audit-level=high\` is a hard gate:"
+            echo "> any high or critical advisory fails the job and blocks the PR."
           } >> "$GITHUB_STEP_SUMMARY"
 
   align-check:
