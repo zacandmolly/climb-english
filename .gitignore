@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .env
+test-results/
+playwright-report/
 workers/wrangler.toml
 qa-*.png
 tsconfig.tsbuildinfo
