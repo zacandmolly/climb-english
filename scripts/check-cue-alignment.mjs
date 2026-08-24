@@ -27,6 +27,17 @@
 //   node scripts/check-cue-alignment.mjs                # report only
 //   node scripts/check-cue-alignment.mjs --realign     # also clear bad rows
 //   node scripts/check-cue-alignment.mjs --strict      # report + exit 1 if flagged
+//   node scripts/check-cue-alignment.mjs --strict --baseline scripts/alignment-baseline.json
+//                                                      # exempt known drift, fail only on new flags
+//   node scripts/check-cue-alignment.mjs --emit-baseline > scripts/alignment-baseline.json
+//                                                      # print current flags as a baseline (JSON)
+//
+// Baseline semantics (phase 02): the first import commits left 151 historical
+// drift rows in place. Those are recorded in scripts/alignment-baseline.json
+// as (videoId, cueIndex) pairs. With `--baseline <file>`, rows in the baseline
+// are exempt — not counted and not fatal — so `--strict` fails only on NEW
+// drift introduced by fresh material. `--emit-baseline` writes the current
+// full flag set so the baseline can be regenerated after a drift-cleanup PR.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -38,8 +49,11 @@ const DATA_DIR = path.join(ROOT, 'src/data/videos');
 const args = process.argv.slice(2);
 const realign = args.includes('--realign');
 const strict = args.includes('--strict');
+const emitBaseline = args.includes('--emit-baseline');
 const videoFlag = args.indexOf('--video');
 const onlyId = videoFlag >= 0 ? args[videoFlag + 1] : null;
+const baselineFlag = args.indexOf('--baseline');
+const baselinePath = baselineFlag >= 0 ? args[baselineFlag + 1] : null;
 
 main().catch((error) => {
   console.error(error.message);
@@ -47,6 +61,8 @@ main().catch((error) => {
 });
 
 async function main() {
+  const baseline = loadBaseline(baselinePath);
+
   const files = fs
     .readdirSync(DATA_DIR)
     .filter((f) => f.endsWith('.video.ts'))
@@ -54,52 +70,118 @@ async function main() {
     .sort();
 
   let totalFlags = 0;
+  let totalBaselined = 0;
   let totalCues = 0;
+  const emitEntries = [];
+
   for (const file of files) {
     const fullPath = path.join(DATA_DIR, file);
     const video = parseVideoFile(fullPath);
     const { flagged, total } = inspect(video);
     totalCues += total;
-    totalFlags += flagged.length;
+
+    const { fresh, exempt } = partitionByBaseline(video.id, flagged, baseline);
+    totalFlags += fresh.length;
+    totalBaselined += exempt.length;
+
+    if (emitBaseline) {
+      for (const { index } of flagged) {
+        emitEntries.push({ videoId: video.id, cueIndex: index });
+      }
+      continue;
+    }
 
     console.log(`\n→ ${video.id} (${video.title})`);
-    console.log(`  cues: ${total}, flagged: ${flagged.length}`);
-    if (flagged.length === 0) {
+    const exemptNote = exempt.length > 0 ? ` (${exempt.length} baselined)` : '';
+    console.log(`  cues: ${total}, flagged: ${fresh.length}${exemptNote}`);
+    if (fresh.length === 0) {
       console.log('  ✓ alignment looks clean');
       continue;
     }
-    const sample = flagged.slice(0, 8);
+    const sample = fresh.slice(0, 8);
     for (const { index, reason } of sample) {
       const cue = video.cues[index];
       console.log(
         `  c${String(index + 1).padStart(3, '0')}  ${reason.padEnd(28)}  en="${truncate(cue.en)}"  zh="${truncate(cue.zh)}"`
       );
     }
-    if (flagged.length > sample.length) {
-      console.log(`  …and ${flagged.length - sample.length} more`);
+    if (fresh.length > sample.length) {
+      console.log(`  …and ${fresh.length - sample.length} more`);
     }
 
     if (realign) {
-      realignFlagged(video, flagged);
+      realignFlagged(video, fresh);
       writeVideoFile(fullPath, video);
-      console.log(`  ✓ rewrote ${file} with ${flagged.length} cues marked needsTranslation`);
+      console.log(`  ✓ rewrote ${file} with ${fresh.length} cues marked needsTranslation`);
     }
   }
+
+  if (emitBaseline) {
+    emitEntries.sort((a, b) => a.videoId.localeCompare(b.videoId) || a.cueIndex - b.cueIndex);
+    console.log(JSON.stringify(emitEntries, null, 2));
+    return;
+  }
+
   console.log(
     `\n${realign ? 'Cleared and re-flagged' : 'Suspected'}: ${totalFlags}/${totalCues} cues across ${files.length} video(s).`
   );
+  if (baseline.size > 0) {
+    console.log(`Baseline exempted: ${totalBaselined} known historical drift row(s).`);
+  }
 
-  // Hard-gate mode: the CI alignment job runs with --strict. Any heuristic
-  // flag (however crude) means the alignment invariant may be broken, so the
-  // run must fail rather than silently pass. No --strict keeps the legacy
-  // "report only, exit 0" behaviour for local triage.
+  // Hard-gate mode: the CI alignment job runs with --strict --baseline. Any
+  // heuristic flag that is NOT recorded in the baseline means the alignment
+  // invariant is broken by fresh material, so the run must fail rather than
+  // silently pass. No --strict keeps the legacy "report only, exit 0" behaviour.
   if (strict && totalFlags > 0) {
     console.error(
-      `\n✗ alignment check failed: ${totalFlags} suspicious cue(s). ` +
+      `\n✗ alignment check failed: ${totalFlags} new suspicious cue(s). ` +
         'Fix the drift (--realign) or re-run translate:videos for the flagged rows, then re-check.'
     );
     process.exit(1);
   }
+}
+
+// Split a video's flagged rows into "new" (not in baseline) and "exempt"
+// (recorded in the baseline). Baseline rows are ignored by the report and by
+// the --strict exit code, so historical drift stays green while new drift
+// fails hard.
+function partitionByBaseline(videoId, flagged, baseline) {
+  const fresh = [];
+  const exempt = [];
+  for (const entry of flagged) {
+    if (baseline.has(baselineKey(videoId, entry.index))) {
+      exempt.push(entry);
+    } else {
+      fresh.push(entry);
+    }
+  }
+  return { fresh, exempt };
+}
+
+function baselineKey(videoId, cueIndex) {
+  return `${videoId}::${cueIndex}`;
+}
+
+function loadBaseline(filePath) {
+  if (!filePath) return new Set();
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const parsed = JSON.parse(raw);
+  if (!Array.isArray(parsed)) {
+    throw new Error(
+      `Baseline file ${filePath} must contain a JSON array of { videoId, cueIndex }.`
+    );
+  }
+  const keys = new Set();
+  for (const entry of parsed) {
+    if (typeof entry?.videoId !== 'string' || !Number.isInteger(entry?.cueIndex)) {
+      throw new Error(
+        `Baseline entry in ${filePath} must be { videoId: string, cueIndex: number }, got: ${JSON.stringify(entry)}`
+      );
+    }
+    keys.add(baselineKey(entry.videoId, entry.cueIndex));
+  }
+  return keys;
 }
 
 function inspect(video) {

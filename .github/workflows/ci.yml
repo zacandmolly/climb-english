@@ -1,9 +1,11 @@
-# CI gate for the AI harness (phase 01).
+# CI gate for the AI harness (phase 01 + phase 02).
 #
 # Every PR runs: lint / format / test / build / audit / align-check (phase 02)
-# and data-protect (phase 03). The gate is deliberately conservative so it is
-# green against the existing tree from the first commit — no rule that lights
-# up legacy code is enabled.
+# and data-protect (phase 03). audit and align-check are now hard gates
+# (audit fails on high/critical advisories; align-check fails on NEW drift
+# beyond the scripts/alignment-baseline.json exemption list). The lint scope is
+# deliberately conservative so it stays green against the existing tree — no
+# rule that lights up legacy code is enabled.
 #
 # Scope note (why no jscpd duplicate check): the duplicate-detection surface of
 # interest lives inside the 4000-line generated/translated data modules, and a
@@ -107,13 +109,13 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
   align-check:
-    name: Translation alignment (strict)
+    name: Translation alignment (strict + baseline)
     runs-on: ubuntu-latest
-    # Non-blocking by design: the check-cue-alignment heuristics currently
-    # flag 151/2987 cues as historical drift (see the import commits' alignment
-    # notes). Cleanup is a separate data PR; until it lands this job reports
-    # the `--strict` failure without killing unrelated PRs.
-    continue-on-error: true
+    # Hard gate via a baseline exemption list: the 151 historical drift rows
+    # are recorded in scripts/alignment-baseline.json and exempted, so --strict
+    # now fails only on NEW drift introduced by fresh material. Regenerate the
+    # baseline after a drift-cleanup PR with:
+    #   node scripts/check-cue-alignment.mjs --emit-baseline > scripts/alignment-baseline.json
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -122,15 +124,15 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Check cue alignment (strict)
-        run: node scripts/check-cue-alignment.mjs --strict
+      - name: Check cue alignment (strict + baseline)
+        run: node scripts/check-cue-alignment.mjs --strict --baseline scripts/alignment-baseline.json
       - name: Note in summary
         if: always()
         run: |
           {
-            echo "> **align-check** — ran \`node scripts/check-cue-alignment.mjs --strict\` with \`continue-on-error: true\`"
-            echo "> while the 151-cue historical drift is still present. Once the drift-cleanup"
-            echo "> data PR lands and the flag count is 0, remove \`continue-on-error\` to make this a hard gate."
+            echo "> **align-check** — \`node scripts/check-cue-alignment.mjs --strict --baseline scripts/alignment-baseline.json\`"
+            echo "> is a hard gate: 151 known historical drift rows are exempt via the baseline file,"
+            echo "> and any NEW drift fails the job and blocks the PR."
           } >> "$GITHUB_STEP_SUMMARY"
 
   data-protect:
