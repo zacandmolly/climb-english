@@ -160,6 +160,35 @@ jobs:
             playwright-report/
           retention-days: 7
 
+  boundary-check:
+    name: Module boundary audit (R6, report-only)
+    runs-on: ubuntu-latest
+    # Report-only by design: App.tsx (~3000 lines) and the generated data
+    # modules exceed every threshold, so the ESLint complexity rules and
+    # dependency-cruiser's no-circular rule are all `warn` (exit 0). After the
+    # App.tsx split, tighten to `eslint --max-warnings 0` + depcruise severity
+    # `error` to make this a hard gate.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: ESLint complexity rules (warn)
+        run: npm run lint:complexity
+      - name: dependency-cruiser circular check (warn)
+        run: npm run depcruise
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **boundary-check** — report-only module-boundary audit (R6)."
+            echo "> \`npm run lint:complexity\` (complexity/max-lines/max-depth/max-params, warn) and"
+            echo "> \`npm run depcruise\` (circular deps, warn). Both exit 0 today; tighten after the App.tsx split."
+          } >> "$GITHUB_STEP_SUMMARY"
+
   data-protect:
     name: Data protection (manual lessons)
     runs-on: ubuntu-latest
