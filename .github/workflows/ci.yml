@@ -189,6 +189,34 @@ jobs:
             echo "> \`npm run depcruise\` (circular deps, warn). Both exit 0 today; tighten after the App.tsx split."
           } >> "$GITHUB_STEP_SUMMARY"
 
+  dead-code:
+    name: Dead code & dead CSS (R7, report-only)
+    runs-on: ubuntu-latest
+    # Report-only by design: knip flags historical findings (unused lib exports
+    # and an unused type) and deadcss lists unused selectors. Advisory only
+    # until the cleanup PRs land — hence continue-on-error.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: knip (unused files/exports/deps/scripts)
+        run: npm run knip
+      - name: Dead CSS report (purgecss)
+        run: npm run deadcss
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **dead-code** — report-only dead-code audit (R7)."
+            echo "> \`npm run knip\` (unused files/exports/deps/scripts) and \`npm run deadcss\`"
+            echo "> (purgecss unused selectors). Advisory only; tighten after cleanup PRs."
+          } >> "$GITHUB_STEP_SUMMARY"
+
   data-protect:
     name: Data protection (manual lessons)
     runs-on: ubuntu-latest

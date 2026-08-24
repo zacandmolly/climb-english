@@ -14,6 +14,8 @@
     "lint": "eslint \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
     "lint:complexity": "eslint \"src/**/*.{ts,tsx}\"",
     "depcruise": "depcruise src --config .dependency-cruiser.js --output-type err",
+    "knip": "knip",
+    "deadcss": "node scripts/find-dead-css.mjs",
     "format": "prettier --write \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
     "format:check": "prettier --check \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
     "prepare": "husky",
@@ -51,8 +53,10 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.11.0",
     "husky": "^9.1.7",
+    "knip": "^6.32.2",
     "lint-staged": "^17.3.0",
     "prettier": "^3.9.6",
+    "purgecss": "^8.0.0",
     "typescript": "^5.9.3"
   },
   "lint-staged": {
