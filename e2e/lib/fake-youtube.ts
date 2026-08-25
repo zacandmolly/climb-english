@@ -51,6 +51,7 @@ export type SurfaceGeometry = {
   previewOpacity: string | null;
   centerTarget: string;
   activeCueIndex: number;
+  activeWordIndex: number;
   youtubePlaying: boolean;
   youtubeCurrentTime: number;
   previewCurrentTime: number;
@@ -230,6 +231,7 @@ export async function readSurfaceGeometry(page: Page): Promise<SurfaceGeometry> 
     const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
     const iframe = document.querySelector<HTMLElement>('iframe[data-fake-youtube]');
     const active = document.querySelector<HTMLElement>('.subtitle-card.active');
+    const activeWords = active?.querySelector<HTMLElement>('.karaoke-words');
     const fake = (window as unknown as { __fakeYoutubeState?: FakeYoutubeState })
       .__fakeYoutubeState;
 
@@ -258,6 +260,7 @@ export async function readSurfaceGeometry(page: Page): Promise<SurfaceGeometry> 
       previewOpacity: preview ? getComputedStyle(preview).opacity : null,
       centerTarget,
       activeCueIndex: active ? Number(active.getAttribute('data-cue-index')) : -1,
+      activeWordIndex: activeWords ? Number(activeWords.getAttribute('data-current-word')) : -1,
       youtubePlaying: fake?.playing ?? false,
       youtubeCurrentTime: fake?.currentTime ?? 0,
       previewCurrentTime: preview?.currentTime ?? -1,

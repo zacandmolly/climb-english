@@ -13,6 +13,8 @@
     "translate:videos": "node scripts/translate-videos.mjs",
     "check:alignment": "node scripts/check-cue-alignment.mjs",
     "check:videos": "node scripts/check-video-pipeline.mjs",
+    "check:words": "node scripts/check-word-times.mjs",
+    "backfill:words": "node scripts/backfill-word-times.mjs",
     "check:lesson-alignment": "node scripts/check-lesson-cue-alignment.mjs --strict --baseline scripts/lesson-cue-baseline.json",
     "oxidize": "node scripts/oxidize-report.mjs",
     "errors:report": "node scripts/error-report.mjs",

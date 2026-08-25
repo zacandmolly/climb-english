@@ -31,7 +31,8 @@ export const video: VideoEntry = {
       "keywords": [
         "top",
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,470,630,869,950,1109]
     },
     {
       "id": "c002",
@@ -42,7 +43,8 @@ export const video: VideoEntry = {
       "note": "'blocked' 表示被阻挡，这里指路线被设计成难以通过。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,390]
     },
     {
       "id": "c003",
@@ -55,7 +57,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "peeled off"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550,950,1110,1269,1750,1830,2070,2310,2469,2630,2950,3110,3350,3670]
     },
     {
       "id": "c004",
@@ -69,7 +72,8 @@ export const video: VideoEntry = {
       "keywords": [
         "topped",
         "heel"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,470,709,870,1110,1269,1750,2149,2310,2550,3110,3269,3350,3590]
     },
     {
       "id": "c005",
@@ -82,7 +86,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flexibility"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,630,869,1510,1910,2549]
     },
     {
       "id": "c006",
@@ -95,7 +100,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "match"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,629,870,1110,1270]
     },
     {
       "id": "c007",
@@ -106,7 +112,8 @@ export const video: VideoEntry = {
       "note": "'fight for it' 表示努力争取，这里指为了完成动作而挣扎。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,390,469,630,790,950,1029,1190]
     },
     {
       "id": "c008",
@@ -119,7 +126,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "wobble"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,390,550]
     },
     {
       "id": "c009",
@@ -132,7 +140,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "appeal"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,550,710,949,1110,1270,1430,1670,1830,1990]
     },
     {
       "id": "c010",
@@ -147,7 +156,8 @@ export const video: VideoEntry = {
       "keywords": [
         "appeal",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,630,790,1110,1589,1909,2149,2310,2550,2709,2870,2950,3070,3190,3350,3430,3589,3750,3909,4230]
     },
     {
       "id": "c011",
@@ -160,7 +170,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "confirmed"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,550,630,870,1269,1589]
     },
     {
       "id": "c012",
@@ -173,7 +184,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "chip"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,790,869,950,1350,1510,1590,1749,1910]
     },
     {
       "id": "c013",
@@ -184,7 +196,8 @@ export const video: VideoEntry = {
       "note": "'had a harder time' 表示遇到更大困难。",
       "score": 56,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,470,710,950,1110,1670,2069,2309,2629,2870,3030,3270,3430,3590,3749,3910,4230]
     },
     {
       "id": "c014",
@@ -195,7 +208,8 @@ export const video: VideoEntry = {
       "note": "'obviously' 表示明显地，'matches' 是并点。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1270,1750,2150,2469,2630,2789,2950,3110,3430,3909,4310]
     },
     {
       "id": "c015",
@@ -208,7 +222,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "chip"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,630,790,950,1110,1270,1589,1909,1990,2149,2310,2630,2870,3909,4070,4149,4390,4550,4630,4790,4870,5110,5349,5670,5909,6070,6230,6390]
     },
     {
       "id": "c016",
@@ -221,7 +236,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550,630,709,949,1190,1430,1590,1670]
     },
     {
       "id": "c017",
@@ -232,7 +248,8 @@ export const video: VideoEntry = {
       "note": "这里 'Niho' 可能是 'Miho' 的误听，注意人名。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,790]
     },
     {
       "id": "c018",
@@ -243,7 +260,8 @@ export const video: VideoEntry = {
       "note": "简单回应，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c019",
@@ -254,7 +272,8 @@ export const video: VideoEntry = {
       "note": "'so good on this' 表示在这条线路上表现很好。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,430,509,670,829,990]
     },
     {
       "id": "c020",
@@ -265,7 +284,8 @@ export const video: VideoEntry = {
       "note": "强调同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390]
     },
     {
       "id": "c021",
@@ -276,7 +296,8 @@ export const video: VideoEntry = {
       "note": "'totally her style' 表示完全符合她的风格。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,630,790,1110]
     },
     {
       "id": "c022",
@@ -289,7 +310,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1110,1349,1590,1750,2070,2310,2630,3030,3190,3349,3590]
     },
     {
       "id": "c023",
@@ -300,7 +322,8 @@ export const video: VideoEntry = {
       "note": "再次同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c024",
@@ -316,7 +339,8 @@ export const video: VideoEntry = {
         "heel",
         "campus",
         "toe"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,550,869,1030,1189,1429,1670,1830,1910,1990,2230,2390,2550,2950,3030,3110,3270,3749,3910,4070,4230]
     },
     {
       "id": "c025",
@@ -327,7 +351,8 @@ export const video: VideoEntry = {
       "note": "'did it pretty perfectly' 表示做得非常完美。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,630,789,950,1190]
     },
     {
       "id": "c026",
@@ -338,7 +363,8 @@ export const video: VideoEntry = {
       "note": "注意“tow hook”这里指脚跟钩（heel hook），但实际是“toe hook”的口误，学习时注意区分。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,1030,1350,1670,1830,2070,2309]
     },
     {
       "id": "c027",
@@ -349,7 +375,8 @@ export const video: VideoEntry = {
       "note": "“take a bit of weight off”意为减轻重量，常用表达。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,789,950,1110,1270,1349,1510,1590,1670,1830,1909,2070,2229,2390,2469,2630,2789]
     },
     {
       "id": "c028",
@@ -360,7 +387,8 @@ export const video: VideoEntry = {
       "note": "简单回应，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c029",
@@ -373,7 +401,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "powerful"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,350,510,590,829,1070,1230,1550,1790,1949,2110,2350,2750]
     },
     {
       "id": "c030",
@@ -386,7 +415,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550,790,1029,1190,1430,1589,1830,2070,2310,2469]
     },
     {
       "id": "c031",
@@ -397,7 +427,8 @@ export const video: VideoEntry = {
       "note": "“Good work”是表扬用语。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,629,1190]
     },
     {
       "id": "c032",
@@ -408,7 +439,8 @@ export const video: VideoEntry = {
       "note": "“that's what it meant to her”表达情感意义。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,550,629,790,950,1030]
     },
     {
       "id": "c033",
@@ -419,7 +451,8 @@ export const video: VideoEntry = {
       "note": "“moves into finals”表示晋级决赛。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710,1110,1350,1670]
     },
     {
       "id": "c034",
@@ -430,7 +463,8 @@ export const video: VideoEntry = {
       "note": "“climb last”指最后出场。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,1030,1430,1669,1909]
     },
     {
       "id": "c035",
@@ -441,7 +475,8 @@ export const video: VideoEntry = {
       "note": "“points change”指积分变化。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,550,710,950,1270,1510,1830,2469,2790,3029,3270]
     },
     {
       "id": "c036",
@@ -457,7 +492,8 @@ export const video: VideoEntry = {
         "top",
         "zone",
         "attempt"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,870,1030,1430,1829,1990,2230,2710,3829,4150,4470,5030,5350,5670,5910,6150,6550]
     },
     {
       "id": "c037",
@@ -468,7 +504,8 @@ export const video: VideoEntry = {
       "note": "“boulders”指抱石线路。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,870,1109]
     },
     {
       "id": "c038",
@@ -479,7 +516,8 @@ export const video: VideoEntry = {
       "note": "“women's number one”指女子第一条线路。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,710,950,1349,1670]
     },
     {
       "id": "c039",
@@ -490,7 +528,8 @@ export const video: VideoEntry = {
       "note": "“opportunity to talk about”表示讨论机会。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,389,630,709,790,1029,1430,1670,1829,1910,2149]
     },
     {
       "id": "c040",
@@ -501,7 +540,8 @@ export const video: VideoEntry = {
       "note": "“slaby start”指板壁起步，slab指板壁。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,870,1109,1669,2150,2390,2549]
     },
     {
       "id": "c041",
@@ -512,7 +552,8 @@ export const video: VideoEntry = {
       "note": "简单回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c042",
@@ -523,7 +564,8 @@ export const video: VideoEntry = {
       "note": "“after looking at”表示看过之后。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,710,1030,1190,1350,1510,1669,2310,2549,2710]
     },
     {
       "id": "c043",
@@ -538,7 +580,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,790,1110,1269,1509,1670,2069,2470,2630,2949,3350,3509,3670,4230,4389,4630,4870,5030,5350,5590]
     },
     {
       "id": "c044",
@@ -549,7 +592,8 @@ export const video: VideoEntry = {
       "note": "“electric folder”是线路名称，直译。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,629,949,1030,1189,1350,1509,1749,1910,2150,2310,2550,2790,3110]
     },
     {
       "id": "c045",
@@ -562,7 +606,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,629,790,949,1110,1350,1749,1830,1990,2069,2230,2470,2550,2870,3830,4069,4230,4470,4629,4790,4870,4949,5110,5430]
     },
     {
       "id": "c046",
@@ -575,7 +620,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,950,1750,1989,2229,2710,2790,2950,3190,3350,3669,4229,4470,4710,5429,6150]
     },
     {
       "id": "c047",
@@ -586,7 +632,8 @@ export const video: VideoEntry = {
       "note": "“last couple moves”指最后几个动作。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,869,1030,1270,1429,1670,1910,2150,2390]
     },
     {
       "id": "c048",
@@ -597,7 +644,8 @@ export const video: VideoEntry = {
       "note": "“make them worse”指让支点更滑。",
       "score": 53,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,870,1110,1350,1509,1670,1910,2069,2230,2629,2870,3030,3269,3350,3509]
     },
     {
       "id": "c049",
@@ -608,7 +656,8 @@ export const video: VideoEntry = {
       "note": "“dual text”支点可以改善抓握。",
       "score": 51,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470,550,709,870,1110,1269,1350,1589,1910,1990,2230,2470,2550,2709,2870,3110]
     },
     {
       "id": "c050",
@@ -621,7 +670,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,789,950,1029,1110,1190,1349,1669]
     },
     {
       "id": "c051",
@@ -637,7 +687,8 @@ export const video: VideoEntry = {
         "hold",
         "move",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,429,469,630,789,950,1190,1909,2469,2789,3029,3270,3590,4550,5110,5830,6150,6310,6550,6789,7029,7270]
     },
     {
       "id": "c052",
@@ -648,7 +699,8 @@ export const video: VideoEntry = {
       "note": "“Interesting”是常用感叹词，表示“有趣”。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c053",
@@ -661,7 +713,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,550,710,869,1030,1110,1189,1509,1749,1830]
     },
     {
       "id": "c054",
@@ -674,7 +727,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,470,790,1590,1910,2069,2310,2870,3190,3509]
     },
     {
       "id": "c055",
@@ -685,7 +739,8 @@ export const video: VideoEntry = {
       "note": "“keep that in mind”是常用短语，意为“记住”。",
       "score": 25,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,1110,1510,1670,1829,1990]
     },
     {
       "id": "c056",
@@ -696,7 +751,8 @@ export const video: VideoEntry = {
       "note": "注意人名“Matu Fuji”的翻译，以及“first one out”表示“第一个出场”。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,790,1030,1190,1270,1429,1510,1669]
     },
     {
       "id": "c057",
@@ -707,7 +763,8 @@ export const video: VideoEntry = {
       "note": "“bronze medal”是“铜牌”。",
       "score": 47,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,630,789,1030]
     },
     {
       "id": "c058",
@@ -718,7 +775,8 @@ export const video: VideoEntry = {
       "note": "“done very well”表示“表现出色”，注意“this season”指“本赛季”。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,550,1510,2070,2310,2469,2630,2870,3110]
     },
     {
       "id": "c059",
@@ -731,7 +789,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,550,709,870,950]
     },
     {
       "id": "c060",
@@ -742,7 +801,8 @@ export const video: VideoEntry = {
       "note": "“on the board”表示“记分牌上”，即“得分”。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,389,550,790,949,1030]
     },
     {
       "id": "c061",
@@ -753,7 +813,8 @@ export const video: VideoEntry = {
       "note": "“right away”是常用短语，意为“立刻”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630]
     },
     {
       "id": "c062",
@@ -764,7 +825,8 @@ export const video: VideoEntry = {
       "note": "“dual texts”可能指“双纹理”，注意“both the feet she's on”指“她踩的两个脚点”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,709,950,1190,1430,1589,1670,1990]
     },
     {
       "id": "c063",
@@ -775,7 +837,8 @@ export const video: VideoEntry = {
       "note": "“key”在这里表示“关键”。",
       "score": 32,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,710,1909]
     },
     {
       "id": "c064",
@@ -791,7 +854,8 @@ export const video: VideoEntry = {
         "foothold",
         "chip",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,710,1270,1589,1750,2070,2390,2710,2950,3270,3589]
     },
     {
       "id": "c065",
@@ -802,7 +866,8 @@ export const video: VideoEntry = {
       "note": "“made two finals”表示“进入两次决赛”，注意“already”表示“已经”。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,790,1270,1669,1830]
     },
     {
       "id": "c066",
@@ -813,7 +878,8 @@ export const video: VideoEntry = {
       "note": "注意地名“Kuricha”和“Prague”的翻译。",
       "score": 47,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,870,1030,1270,1749,1990]
     },
     {
       "id": "c067",
@@ -826,7 +892,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,630,870,1030,1510,1669,1910,2229,2630,2950,3190]
     },
     {
       "id": "c068",
@@ -839,7 +906,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,390,549,790,1030,1109,1350,1590]
     },
     {
       "id": "c069",
@@ -852,7 +920,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "jug"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,390,710,869]
     },
     {
       "id": "c070",
@@ -863,7 +932,8 @@ export const video: VideoEntry = {
       "note": "简单回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c071",
@@ -874,7 +944,8 @@ export const video: VideoEntry = {
       "note": "“it's cool”是口语，表示“很酷”。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,549,950,1030,1190]
     },
     {
       "id": "c072",
@@ -885,7 +956,8 @@ export const video: VideoEntry = {
       "note": "“stable position”指“稳定姿势”。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,550,1110,1430,1829,2230]
     },
     {
       "id": "c073",
@@ -898,7 +970,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,389,550,709,870,1350,1910,2310,2550,3269,3670,3910,4550,4790,5029,5350,5510,5670,5829]
     },
     {
       "id": "c074",
@@ -914,7 +987,8 @@ export const video: VideoEntry = {
         "flash",
         "hold",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,630,869,1030,1190,1429,1669,1989,2070,2229,2390,2549,2789,3190,3510,3750,4549,4710,4950,5109]
     },
     {
       "id": "c075",
@@ -925,7 +999,8 @@ export const video: VideoEntry = {
       "note": "“phenomenal”意为“非凡的”，用于形容攀岩者很厉害。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,629,790,950,1189,1429,1590,2150,2629,2869,3270,3510,3749,4069]
     },
     {
       "id": "c076",
@@ -938,7 +1013,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "sequence"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,550,709,1029,1190,1349,1589,1830,2070]
     },
     {
       "id": "c077",
@@ -954,7 +1030,8 @@ export const video: VideoEntry = {
         "zone",
         "foot",
         "reach"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,870,1110,1350,1590,1990,2230,2389,2470,2709,2870,3030,3110,3430,3509,3750,3829,3990,4150]
     },
     {
       "id": "c078",
@@ -965,7 +1042,8 @@ export const video: VideoEntry = {
       "note": "“watching her do it”是现在分词短语作状语，表示“看她做的时候”。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,629,870,1030,1110,1270,1350,1590,1749]
     },
     {
       "id": "c079",
@@ -976,7 +1054,8 @@ export const video: VideoEntry = {
       "note": "“shuffle”意为“拖着脚走”，这里指调整脚的位置。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,550,709,870,1190,1430,1589,1829,1909,2149]
     },
     {
       "id": "c080",
@@ -989,7 +1068,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,549,630,790,950,1030,1189,1270,1350,1510,1670,1910,2070,2150,2309]
     },
     {
       "id": "c081",
@@ -1000,7 +1080,8 @@ export const video: VideoEntry = {
       "note": "“I think so, too.”是常见口语表达，表示同意。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,389,629]
     },
     {
       "id": "c082",
@@ -1011,7 +1092,8 @@ export const video: VideoEntry = {
       "note": "“the last moment”指最后的关键时刻。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,630,870,1029]
     },
     {
       "id": "c083",
@@ -1025,7 +1107,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,469,630,870,1029,1190,1350,1430,1670,1829]
     },
     {
       "id": "c084",
@@ -1036,7 +1119,8 @@ export const video: VideoEntry = {
       "note": "“Yeah”是口语中表示肯定的常用词。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c085",
@@ -1047,7 +1131,8 @@ export const video: VideoEntry = {
       "note": "“Good”在这里表示认可。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c086",
@@ -1060,7 +1145,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [109,349,510,590,750,909,1070,1310,1469,1870,2029,2190,2349]
     },
     {
       "id": "c087",
@@ -1074,7 +1160,8 @@ export const video: VideoEntry = {
       "keywords": [
         "final",
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,630,870]
     },
     {
       "id": "c088",
@@ -1088,7 +1175,8 @@ export const video: VideoEntry = {
       "keywords": [
         "jug",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,270,429,590,749,990,1230,1470,1629,1869,2189,2509,2670,2830,2990]
     },
     {
       "id": "c089",
@@ -1099,7 +1187,8 @@ export const video: VideoEntry = {
       "note": "“Up she goes”是倒装句，表示“她上去了”，注意“left, right”指左右脚。",
       "score": 7,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,790,1030]
     },
     {
       "id": "c090",
@@ -1112,7 +1201,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,789,870,1030,1190,1270,1510,1669,1830,2070]
     },
     {
       "id": "c091",
@@ -1128,7 +1218,8 @@ export const video: VideoEntry = {
         "top",
         "final",
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,710,950,1110,1349,1830,2710,3349,3510,3830,3990,4150,4710,5029,5270,5430,5669,6229,6469,6789]
     },
     {
       "id": "c092",
@@ -1141,7 +1232,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,710,1030,1270,1429,1669,1910,2150,2549,2790]
     },
     {
       "id": "c093",
@@ -1152,7 +1244,8 @@ export const video: VideoEntry = {
       "note": "“low percentage”指成功率低，“blocker”指阻挡点。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,950,1190,1349,1510,1669,1909,2630,3669,3990,4229,4390,4550,4950,5270,5430,5669,5909,6390,6550]
     },
     {
       "id": "c094",
@@ -1165,7 +1258,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,549,710,950,1030,1270,1350,1750,1910,2070,2150,2309,2470,2630,2790,2869,3030,3190,3270,3429,3590]
     },
     {
       "id": "c095",
@@ -1176,7 +1270,8 @@ export const video: VideoEntry = {
       "note": "“mess with them”意为“为难他们”，注意“too much”表示“太过分”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,389,550,630,870,1029]
     },
     {
       "id": "c096",
@@ -1189,7 +1284,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1430,1750,2150,2389,2629,2790,2870,3030,3269]
     },
     {
       "id": "c097",
@@ -1202,7 +1298,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "clock"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,390,550,630,1029,1269,1589,1829,1909,2070]
     },
     {
       "id": "c098",
@@ -1213,7 +1310,8 @@ export const video: VideoEntry = {
       "note": "注意“pressure”在攀岩语境中常指心理压力，也可指身体压力。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,950,1190,1349,1510,1669,1830]
     },
     {
       "id": "c099",
@@ -1224,7 +1322,8 @@ export const video: VideoEntry = {
       "note": "“definitely”是常用强调词，表示“当然，肯定”。",
       "score": 5,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470]
     },
     {
       "id": "c100",
@@ -1235,7 +1334,8 @@ export const video: VideoEntry = {
       "note": "“first climber out”指第一个出场，注意“out”在这里表示出场。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,789,950,1029,1270,1430,1510,1830,2149,2310,2550]
     },
     {
       "id": "c101",
@@ -1246,7 +1346,8 @@ export const video: VideoEntry = {
       "note": "“never excited”可能指选手或观众不兴奋，注意语气。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,1029]
     },
     {
       "id": "c102",
@@ -1257,7 +1358,8 @@ export const video: VideoEntry = {
       "note": "“two schools of thought”是习语，意为“两种观点”。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,630,790,949,1269,1509,1829,2310,2550,2709,2949,3110]
     },
     {
       "id": "c103",
@@ -1272,7 +1374,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,389,710,870,1110,1350,1910,2150,2310,2470,2710,2870,3270,3509,3590,3910,4069,4230,4470,4710,4790,4949,5270,5430]
     },
     {
       "id": "c104",
@@ -1285,7 +1388,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,550,630,1350,1510,1750,1909,2070,2790,2950,3029,3269,3430,3510,3829,4070,4310,4630,4709,4870,5029,5269]
     },
     {
       "id": "c105",
@@ -1300,7 +1404,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550,790,870,1110,1269,1510,1670,1750,1829,2070,2230]
     },
     {
       "id": "c106",
@@ -1313,7 +1418,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,949,1189,1509,1749,1830,1990,2230,2309,2470,2550,2710,3270,3509,3670,3749,3830,4069,4230,4470,4710,5189,5430,6390,7110,7509,7749,8069,8309,8390,8629,8790,9110]
     },
     {
       "id": "c107",
@@ -1324,7 +1430,8 @@ export const video: VideoEntry = {
       "note": "“get it”在攀岩中常指完成线路。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,710,870,1030,1189,1269,1430,1590,1749,1990]
     },
     {
       "id": "c108",
@@ -1337,7 +1444,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "undercling"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,870,1029,1190,1750]
     },
     {
       "id": "c109",
@@ -1350,7 +1458,8 @@ export const video: VideoEntry = {
       "study": false,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470]
     },
     {
       "id": "c110",
@@ -1364,7 +1473,8 @@ export const video: VideoEntry = {
       "keywords": [
         "flash",
         "scoreboard"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,309,390,549,869,1030,1109,1270,1510,1749,2309,2629,2790,2950,3109]
     },
     {
       "id": "c111",
@@ -1375,7 +1485,8 @@ export const video: VideoEntry = {
       "note": "注意“up there”可能指到达某个点，分数可能不同。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,709,950,1110,1269,1430,1670]
     },
     {
       "id": "c112",
@@ -1386,7 +1497,8 @@ export const video: VideoEntry = {
       "note": "“down”表示下降或结束。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550]
     },
     {
       "id": "c113",
@@ -1399,7 +1511,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,390,549,629,790,950,1110,1350,1510,1749]
     },
     {
       "id": "c114",
@@ -1413,7 +1526,8 @@ export const video: VideoEntry = {
       "keywords": [
         "move",
         "tenuous"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,710,950,1110,1590]
     },
     {
       "id": "c115",
@@ -1424,7 +1538,8 @@ export const video: VideoEntry = {
       "note": "简单回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c116",
@@ -1435,7 +1550,8 @@ export const video: VideoEntry = {
       "note": "“dihedral”是攀岩术语，指内角。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,630,950,1190,1430,1750,1909,2070,2230]
     },
     {
       "id": "c117",
@@ -1448,7 +1564,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "comfortable"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,549,950,1350,1750,1989]
     },
     {
       "id": "c118",
@@ -1461,7 +1578,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,1110,1350,1830,2309,2470,2950,3110,3350,3510,4629,4869,5270,5429,5670,5910,6150]
     },
     {
       "id": "c119",
@@ -1472,7 +1590,8 @@ export const video: VideoEntry = {
       "note": "“looking good”表示看起来不错。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,870,1190,2070,2310]
     },
     {
       "id": "c120",
@@ -1483,7 +1602,8 @@ export const video: VideoEntry = {
       "note": "“hips under”指臀部在身体下方，保持平衡。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710]
     },
     {
       "id": "c121",
@@ -1494,7 +1614,8 @@ export const video: VideoEntry = {
       "note": "“pop”指弹跳或快速移动。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,630,950,1190]
     },
     {
       "id": "c122",
@@ -1507,7 +1628,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,469,630,870,1029,1190,1349,1589]
     },
     {
       "id": "c123",
@@ -1518,7 +1640,8 @@ export const video: VideoEntry = {
       "note": "'There you go'是鼓励语，表示'做得好'或'就这样'。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,230,390]
     },
     {
       "id": "c124",
@@ -1529,7 +1652,8 @@ export const video: VideoEntry = {
       "note": "'dust of chalk'指'拍镁粉'，'dust'作动词。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710,950,1109,1270,1590,1830,2070,2150]
     },
     {
       "id": "c125",
@@ -1540,7 +1664,8 @@ export const video: VideoEntry = {
       "note": "'gets it done'是口语，表示'完成了'。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [109,429,590,750]
     },
     {
       "id": "c126",
@@ -1551,7 +1676,8 @@ export const video: VideoEntry = {
       "note": "'go'在此指'尝试'，'second go'即'第二次尝试'。",
       "score": 5,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470]
     },
     {
       "id": "c127",
@@ -1562,7 +1688,8 @@ export const video: VideoEntry = {
       "note": "注意数字表达，'24.9'读作'twenty-four point nine'。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,230,550,789,1990,2230]
     },
     {
       "id": "c128",
@@ -1573,7 +1700,8 @@ export const video: VideoEntry = {
       "note": "'Good work'是表扬，'from O'指'O的'。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,630,870]
     },
     {
       "id": "c129",
@@ -1584,7 +1712,8 @@ export const video: VideoEntry = {
       "note": "'back in touch'指'重新接触岩点'。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,550]
     },
     {
       "id": "c130",
@@ -1595,7 +1724,8 @@ export const video: VideoEntry = {
       "note": "'stay up with'意为'跟上'，'leaders'指'领先者'。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,549,710,790,869,950,1030,1189,1270,1429,1830,1989,2309,2470,2549,2710,2790,2869,3030,3189,3270]
     },
     {
       "id": "c131",
@@ -1606,7 +1736,8 @@ export const video: VideoEntry = {
       "note": "'send'在攀岩中意为'完攀'。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,309,390,470,549,710,950]
     },
     {
       "id": "c132",
@@ -1617,7 +1748,8 @@ export const video: VideoEntry = {
       "note": "'for sure'表示'当然'，'need to'是'需要'。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,629,790,829,869,1030,1109,1270]
     },
     {
       "id": "c133",
@@ -1628,7 +1760,8 @@ export const video: VideoEntry = {
       "note": "'one try off'指'只试了一次'，'shake it off'意为'摆脱'。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,790,1110,1509,1670,1910,2470,2710,2949,3110,3269,3590]
     },
     {
       "id": "c134",
@@ -1639,7 +1772,8 @@ export const video: VideoEntry = {
       "note": "'slips'指'失误'，'creep in'意为'悄悄出现'。",
       "score": 42,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,710,870,1030,1269,1749,1990,2230,2710,2949,3110,3350,4150,4230,4389,4550,4710,5189,5430,5590,5829]
     },
     {
       "id": "c135",
@@ -1650,7 +1784,8 @@ export const video: VideoEntry = {
       "note": "'wouldn't be surprised'是'不会惊讶'，'couple of'是'几个'。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,789,1029,1190,1510,1750,1990,2310,2469,2630,2789,3349,3750,3909,4150,4310,4469]
     },
     {
       "id": "c136",
@@ -1661,7 +1796,8 @@ export const video: VideoEntry = {
       "note": "'honestly'是'老实说'，'we don't know'是'我们不知道'。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1350,1749,1990,2150,2470,3030,3430,3590,3749]
     },
     {
       "id": "c137",
@@ -1675,7 +1811,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,630,870,1510,1909,2070,2310,2549,3029,3430,3549,3669,3749,3909,4070]
     },
     {
       "id": "c138",
@@ -1686,7 +1823,8 @@ export const video: VideoEntry = {
       "note": "'in their wheelhouse'是习语，意为'在能力范围内'。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,469,550,630,790,949,1349,1510]
     },
     {
       "id": "c139",
@@ -1697,7 +1835,8 @@ export const video: VideoEntry = {
       "note": "'the moment'指'关键时刻'。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,310,469]
     },
     {
       "id": "c140",
@@ -1708,7 +1847,8 @@ export const video: VideoEntry = {
       "note": "'no hands'指'不用手'，常用于休息姿势。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390]
     },
     {
       "id": "c141",
@@ -1719,7 +1859,8 @@ export const video: VideoEntry = {
       "note": "'brief'是'短暂的'，'chalk up'是'拍镁粉'。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,629,1029]
     },
     {
       "id": "c142",
@@ -1732,7 +1873,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "drop knee"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,630,870,1269,1510]
     },
     {
       "id": "c143",
@@ -1743,7 +1885,8 @@ export const video: VideoEntry = {
       "note": "'creep your way down'意为'慢慢向下移动'。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,629,790,1030,1349,1589,1670]
     },
     {
       "id": "c144",
@@ -1754,7 +1897,8 @@ export const video: VideoEntry = {
       "note": "'spin off'意为'滑脱'，'jib'可能指'岩点'。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470,710,789,950,1190,1430,1509,1669]
     },
     {
       "id": "c145",
@@ -1767,7 +1911,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,870,1030,1189,1350,1669,1829,1990,2150,2870,3270,3429,3669,3829,4069,4230,4390,4549,4709,4949]
     },
     {
       "id": "c146",
@@ -1778,7 +1923,8 @@ export const video: VideoEntry = {
       "note": "注意'air conditioned'的发音，连读时像'air conditioned'。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,549,789,1029,1350,1509,1750,1909]
     },
     {
       "id": "c147",
@@ -1789,7 +1935,8 @@ export const video: VideoEntry = {
       "note": "'It's feels like'是口语中的常见错误，正确应为'It feels like'，但这里保留原样。",
       "score": 54,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,589,829,990,1230,1630,1790,2030,2510]
     },
     {
       "id": "c148",
@@ -1800,7 +1947,8 @@ export const video: VideoEntry = {
       "note": "简单回应，注意语调。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c149",
@@ -1811,7 +1959,8 @@ export const video: VideoEntry = {
       "note": "'Celsius'是摄氏度，注意发音重音在第一个音节。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c150",
@@ -1822,7 +1971,8 @@ export const video: VideoEntry = {
       "note": "'boiling'是口语中形容极热的词，相当于'very hot'。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,550]
     },
     {
       "id": "c151",
@@ -1833,7 +1983,8 @@ export const video: VideoEntry = {
       "note": "重复强调，注意'boiling'的发音。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,630]
     },
     {
       "id": "c152",
@@ -1844,7 +1995,8 @@ export const video: VideoEntry = {
       "note": "'Nice and cool'是固定搭配，表示'很凉爽'。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710]
     },
     {
       "id": "c153",
@@ -1855,7 +2007,8 @@ export const video: VideoEntry = {
       "note": "'next up'是常见表达，表示'接下来是'。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,1030,1189,1270,1670]
     },
     {
       "id": "c154",
@@ -1866,7 +2019,8 @@ export const video: VideoEntry = {
       "note": "'squeaked into'表示勉强进入，'knocking out'是淘汰。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,790,1030,1430,1590,1830,2230,2550,2790,2950,3109,3749,4230,4629,4790,4950]
     },
     {
       "id": "c155",
@@ -1877,7 +2031,8 @@ export const video: VideoEntry = {
       "note": "'gave her quite a heart attack'是夸张说法，表示'让她非常紧张'。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,949,1110,1270,1350,1589,1829,1990,2390,2709,3190,3510,3750,3910,4150,4310,4550,4870,5270,5430]
     },
     {
       "id": "c156",
@@ -1888,7 +2043,8 @@ export const video: VideoEntry = {
       "note": "'at just 17'表示年仅17岁，注意'just'的强调作用。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,710,1030,1510,1750,1910,2150,2390,2710]
     },
     {
       "id": "c157",
@@ -1902,7 +2058,8 @@ export const video: VideoEntry = {
       "highlight": true,
       "keywords": [
         "clock"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,470,709,870,1190,1350,1510,1750,1910,2150,2310,2470,2550,2630,2870,3030,3350]
     },
     {
       "id": "c158",
@@ -1915,7 +2072,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,550,1750,1909,2070,2390,2630,2710,2870,3029,3190,3430,3590,3830,4390,4470,4550,4789,4870,5110,5270,5430,5590,5750]
     },
     {
       "id": "c159",
@@ -1926,7 +2084,8 @@ export const video: VideoEntry = {
       "note": "'falls into the same trap'是固定表达，表示'犯同样的错误'。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,950,1030,1190,1430,1590]
     },
     {
       "id": "c160",
@@ -1939,7 +2098,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,630,1030,1189,1430,1590]
     },
     {
       "id": "c161",
@@ -1950,7 +2110,8 @@ export const video: VideoEntry = {
       "note": "'In what way?'是询问具体方式，注意语调。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549]
     },
     {
       "id": "c162",
@@ -1961,7 +2122,8 @@ export const video: VideoEntry = {
       "note": "'trapwise'是口语化表达，表示'就陷阱而言'。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,710,869,1030]
     },
     {
       "id": "c163",
@@ -1972,7 +2134,8 @@ export const video: VideoEntry = {
       "note": "'static'是攀岩术语，指静态动作，注意发音。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,790,870,1030,1349,1510]
     },
     {
       "id": "c164",
@@ -1985,7 +2148,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,710,869,1030]
     },
     {
       "id": "c165",
@@ -1996,7 +2160,8 @@ export const video: VideoEntry = {
       "note": "'that's different from'是常见比较结构。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,790,950,1430,1749]
     },
     {
       "id": "c166",
@@ -2007,7 +2172,8 @@ export const video: VideoEntry = {
       "note": "'electric folder'指电动折叠墙，'supposed to'表示应该。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,630,870,1030,1350,1670,1829,1910,1990,2150,2310,2469]
     },
     {
       "id": "c167",
@@ -2018,7 +2184,8 @@ export const video: VideoEntry = {
       "note": "'does not like to jump'表示不喜欢跳跃，注意否定形式。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,710,870,1030,1269,1509]
     },
     {
       "id": "c168",
@@ -2029,7 +2196,8 @@ export const video: VideoEntry = {
       "note": "'not one of those'指不是那种类型的人。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470,629,790]
     },
     {
       "id": "c169",
@@ -2040,7 +2208,8 @@ export const video: VideoEntry = {
       "note": "'if she can static it'中'static'作动词，表示静态完成。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,710,1030,1270,1430]
     },
     {
       "id": "c170",
@@ -2051,7 +2220,8 @@ export const video: VideoEntry = {
       "note": "注意“That's true”是口语中常见的肯定表达。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229]
     },
     {
       "id": "c171",
@@ -2064,7 +2234,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,1110,1270,1430,1669,1830,2070,2150,2310,2470]
     },
     {
       "id": "c172",
@@ -2075,7 +2246,8 @@ export const video: VideoEntry = {
       "note": "“commit to”意为“致力于”，这里指“发挥优势”。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,630,790,950,1270,1350,1590,1910,2150,2390,2550]
     },
     {
       "id": "c173",
@@ -2086,7 +2258,8 @@ export const video: VideoEntry = {
       "note": "注意“if she couldn't have done it like that”是虚拟语气，表示与过去事实相反的假设。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,630,870,1030,1270,1430,1510,1670,1829,1990,2069,2150,2310,2470,2709,2790,2870,3030,3189,3270,3430,3590,3750,3910]
     },
     {
       "id": "c174",
@@ -2097,7 +2270,8 @@ export const video: VideoEntry = {
       "note": "“jump”在这里指“动态跳跃”动作。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230,310,470,710,869,950,1109,1190]
     },
     {
       "id": "c175",
@@ -2108,7 +2282,8 @@ export const video: VideoEntry = {
       "note": "“works both ways”意为“双向有效”，常用于说明两种选择都可行。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,709,870,1110]
     },
     {
       "id": "c176",
@@ -2119,7 +2294,8 @@ export const video: VideoEntry = {
       "note": "“Exactly”是口语中表示完全同意的常用词。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c177",
@@ -2130,7 +2306,8 @@ export const video: VideoEntry = {
       "note": "“adaptability”意为“适应能力”，是关键词。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,1030,1110,1269]
     },
     {
       "id": "c178",
@@ -2143,7 +2320,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,1030,1430,1590,1750,1989,2310,2550]
     },
     {
       "id": "c179",
@@ -2157,7 +2335,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,630,870,1030,1350,1510,1670,1830,2069,2309,2549,2630,2790,3030,3270,3429,3510,3670,3830,3990,4069,4230,4390,4710]
     },
     {
       "id": "c180",
@@ -2168,7 +2347,8 @@ export const video: VideoEntry = {
       "note": "“Yeah”是口语中常见的肯定回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c181",
@@ -2182,7 +2362,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "reach"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,710,1030,1190,1350,1430,1590,1830,1990,2150,2310,2710,3030,3350,3590,3830,4070,4230,4389,4470,4790,4950,5190,5270,5430]
     },
     {
       "id": "c182",
@@ -2195,7 +2376,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,629,790,950,1110,1190,1350,1430,1590,1749,1990]
     },
     {
       "id": "c183",
@@ -2206,7 +2388,8 @@ export const video: VideoEntry = {
       "note": "“taking her time”意为“不着急，慢慢来”。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,789,950]
     },
     {
       "id": "c184",
@@ -2217,7 +2400,8 @@ export const video: VideoEntry = {
       "note": "“getting behind her”意为“支持她”，这里指观众为她鼓劲。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,790,1109]
     },
     {
       "id": "c185",
@@ -2230,7 +2414,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,350,829,1150,1550,1790,2110,2350,2589,2829,3070,3310,3390,3630,3790,3949]
     },
     {
       "id": "c186",
@@ -2241,7 +2426,8 @@ export const video: VideoEntry = {
       "note": "“tape”指攀岩用的胶带，用于保护手指皮肤。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,710,870,1030,1350,1509,1830,1990,2149,2629,3190]
     },
     {
       "id": "c187",
@@ -2252,7 +2438,8 @@ export const video: VideoEntry = {
       "note": "“lack of skin”指皮肤磨损；“semi-final round”指半决赛。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,1030,1270,1750,1990,2229,2630,2870,3030,3589]
     },
     {
       "id": "c188",
@@ -2263,7 +2450,8 @@ export const video: VideoEntry = {
       "note": "“total guess”意为“完全是猜测”，强调不确定性。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,550,710,870,1030,1350]
     },
     {
       "id": "c189",
@@ -2274,7 +2462,8 @@ export const video: VideoEntry = {
       "note": "“Big launch”指大幅度的动态跳跃动作。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470]
     },
     {
       "id": "c190",
@@ -2285,7 +2474,8 @@ export const video: VideoEntry = {
       "note": "“Should get it”表示预期能成功抓住点。",
       "score": 4,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469]
     },
     {
       "id": "c191",
@@ -2296,7 +2486,8 @@ export const video: VideoEntry = {
       "note": "“She does”是口语中简洁的肯定表达。",
       "score": 4,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270]
     },
     {
       "id": "c192",
@@ -2307,7 +2498,8 @@ export const video: VideoEntry = {
       "note": "“statically”指静态攀爬，与动态相对。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,1110,1270]
     },
     {
       "id": "c193",
@@ -2318,7 +2510,8 @@ export const video: VideoEntry = {
       "note": "“Yeah”再次出现，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c194",
@@ -2329,7 +2522,8 @@ export const video: VideoEntry = {
       "note": "注意“Yeah”在口语中常表示肯定或回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c195",
@@ -2340,7 +2534,8 @@ export const video: VideoEntry = {
       "note": "“securely”意为“稳固地”，常用于描述攀爬动作。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469]
     },
     {
       "id": "c196",
@@ -2351,7 +2546,8 @@ export const video: VideoEntry = {
       "note": "“risk anything”意为“冒任何风险”，注意“risk”作动词的用法。",
       "score": 47,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,870,1030,1190,1510]
     },
     {
       "id": "c197",
@@ -2362,7 +2558,8 @@ export const video: VideoEntry = {
       "note": "“easy stuff”指“简单的部分”，注意“stuff”的口语用法。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,1190]
     },
     {
       "id": "c198",
@@ -2373,7 +2570,8 @@ export const video: VideoEntry = {
       "note": "“stays up with the leaders”意为“保持在领先集团”，注意“leave on the left”表示“向左移动”。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,870,1110,1270,1429,2070,2309,2710,2870,3030,3190,3350,3590,3750,3910]
     },
     {
       "id": "c199",
@@ -2384,7 +2582,8 @@ export const video: VideoEntry = {
       "note": "“vaguely aware”意为“模糊地意识到”，注意“vaguely”的发音。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,710,870,950,1350,1590,1830,1990,2150,2310,2549,2710,2870,3110,3270,3430]
     },
     {
       "id": "c200",
@@ -2395,7 +2594,8 @@ export const video: VideoEntry = {
       "note": "“how much time it takes”是常用句型，注意“it takes”的用法。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,949,1189,1350,1590,2150,2390,2630,2790,2949,3030,3189]
     },
     {
       "id": "c201",
@@ -2408,7 +2608,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,790,1030,1270,1429,1590,1750,1910,2070,2230,2630,2790,2950,3189,3270,3350,3429,3590,3750]
     },
     {
       "id": "c202",
@@ -2419,7 +2620,8 @@ export const video: VideoEntry = {
       "note": "注意“you know”是口语填充词，表示“你知道”。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,710,1030,1269,1430,1670,1830,1990,2310,2550]
     },
     {
       "id": "c203",
@@ -2430,7 +2632,8 @@ export const video: VideoEntry = {
       "note": "“hear it”指听到倒计时或提示音。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710]
     },
     {
       "id": "c204",
@@ -2441,7 +2644,8 @@ export const video: VideoEntry = {
       "note": "“you could argue”意为“你可以争辩”，注意“clicking”指计时器的咔哒声。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,790,950,1110,1350,1749,1990,2070,2230,2790,3269,3590,3749,3910,4150,4310,4550]
     },
     {
       "id": "c205",
@@ -2452,7 +2656,8 @@ export const video: VideoEntry = {
       "note": "“matched”在攀岩中意为“双手并点”，注意“right away”意为“立刻”。",
       "score": 42,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,950,1190,1510,1669,1830,2070,2230,2470,2630,2789,2950,3110,3350,3669]
     },
     {
       "id": "c206",
@@ -2463,7 +2668,8 @@ export const video: VideoEntry = {
       "note": "“count”在此意为“算数、有效”，注意疑问句语调。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,630,789]
     },
     {
       "id": "c207",
@@ -2474,7 +2680,8 @@ export const video: VideoEntry = {
       "note": "“luckily”意为“幸运地”，注意“it did”强调“确实如此”。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,949,1350,1590]
     },
     {
       "id": "c208",
@@ -2485,7 +2692,8 @@ export const video: VideoEntry = {
       "note": "“Yes”表示肯定，注意语气。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c209",
@@ -2496,7 +2704,8 @@ export const video: VideoEntry = {
       "note": "“as we progress through”意为“随着我们进行”，注意“progress”的发音。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,550,710,869,1110,1430,1670,1910,2070,2310]
     },
     {
       "id": "c210",
@@ -2509,7 +2718,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,389,550,870,1029,1190,1430,1590,1909,2149,2389,2550,2710,2870,3110,3269,3430,3750,3909,4070,4310]
     },
     {
       "id": "c211",
@@ -2520,7 +2730,8 @@ export const video: VideoEntry = {
       "note": "“next up”是常用口语，表示“接下来”。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230,550,790]
     },
     {
       "id": "c212",
@@ -2531,7 +2742,8 @@ export const video: VideoEntry = {
       "note": "“runs on down”意为“跑过去”，注意“to the very end”表示“到最末端”。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,789,1669,2150,2630,2870,3110,3270,3510]
     },
     {
       "id": "c213",
@@ -2544,7 +2756,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "final"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,470,870,1190,1430,1590]
     },
     {
       "id": "c214",
@@ -2558,7 +2771,8 @@ export const video: VideoEntry = {
       "highlight": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,870,1110,1350,1669,1990,2230]
     },
     {
       "id": "c215",
@@ -2569,7 +2783,8 @@ export const video: VideoEntry = {
       "note": "“so dominant”意为“如此占优势”，注意“aren't they”是反意疑问句。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,549,950,1270,1750,1910,2150,2309,2630,2870,3030,3270,3669]
     },
     {
       "id": "c216",
@@ -2582,7 +2797,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "final"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,550,710,950,1030,1190,1509,1670,1990,2230,2550,2870,3030,3190,3350,3749,4310,4550,4790,5110,5430,5590,5830,6230]
     },
     {
       "id": "c217",
@@ -2593,7 +2809,8 @@ export const video: VideoEntry = {
       "note": "“go look that up”意为“去查一下”，注意“look up”的用法。",
       "score": 30,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630,870,1430,1589,1829,1990,2230,2469,2550,2709,3030,3670,3829,3910,4070,4150,4310]
     },
     {
       "id": "c218",
@@ -2604,7 +2821,8 @@ export const video: VideoEntry = {
       "note": "注意“send someone a message”这个短语，意思是给某人发消息。",
       "score": 49,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,1030,1190,1430,1590,1910]
     },
     {
       "id": "c219",
@@ -2615,7 +2833,8 @@ export const video: VideoEntry = {
       "note": "“There'll be someone out there”是一种常见表达，表示“肯定有人”。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,709,870,949,1190,1430]
     },
     {
       "id": "c220",
@@ -2626,7 +2845,8 @@ export const video: VideoEntry = {
       "note": "“Right?”用于寻求确认，相当于“对吧？”。",
       "score": 5,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,790]
     },
     {
       "id": "c221",
@@ -2637,7 +2857,8 @@ export const video: VideoEntry = {
       "note": "“Let's see what you can do”是鼓励对方展示能力的常用语。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,630,870,1030,1350]
     },
     {
       "id": "c222",
@@ -2648,7 +2869,8 @@ export const video: VideoEntry = {
       "note": "“PB”是“personal best”的缩写，意为个人最好成绩。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,710,949,1189,1350,1510,1670,2230,2390,2549,2629,2710,3030,3110]
     },
     {
       "id": "c223",
@@ -2659,7 +2881,8 @@ export const video: VideoEntry = {
       "note": "注意“few”表示“很少”，带有否定意味。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,1349,1749,2310,2710,2950,3109]
     },
     {
       "id": "c224",
@@ -2670,7 +2893,8 @@ export const video: VideoEntry = {
       "note": "“went electric”是口语，表示突然变得非常活跃或有力。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,549,710,1510,1750,2070]
     },
     {
       "id": "c225",
@@ -2681,7 +2905,8 @@ export const video: VideoEntry = {
       "note": "“pull it off”是常用短语，意为“成功完成”。",
       "score": 52,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,629,790,950,1190]
     },
     {
       "id": "c226",
@@ -2692,7 +2917,8 @@ export const video: VideoEntry = {
       "note": "“picking up”在这里意为“获得”，常用于非正式场合。",
       "score": 49,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630,1030,1510,1670,1990,2309,2470]
     },
     {
       "id": "c227",
@@ -2705,7 +2931,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "comfortable"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,1110,1670,1910,2150,2310,2550,2950,3590,3749,3990,4150,4310,4550,4869]
     },
     {
       "id": "c228",
@@ -2716,7 +2943,8 @@ export const video: VideoEntry = {
       "note": "“be okay”是口语中表示“没问题”的常见说法。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389]
     },
     {
       "id": "c229",
@@ -2729,7 +2957,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,630,870,950,1110,1190,1350,1590,1750,2310]
     },
     {
       "id": "c230",
@@ -2742,7 +2971,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,870,950,1110,1190,1350,1590,1750,1830,1990,2070,2390,2470,2710,2789,2950,3110,3270]
     },
     {
       "id": "c231",
@@ -2755,7 +2985,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,389,470,629,790,950,1110,1509,1749,1910]
     },
     {
       "id": "c232",
@@ -2766,7 +2997,8 @@ export const video: VideoEntry = {
       "note": "“step through”是攀岩术语，意为“迈步通过”，注意“awkward position”表示“别扭的姿势”。",
       "score": 31,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,550,870,1030,1110,1270,1430,1670,1910,2069,2150,2390,2550,2790,3110,3270,3430,3589,3750,3910,4069,4390,4630,4870]
     },
     {
       "id": "c233",
@@ -2777,7 +3009,8 @@ export const video: VideoEntry = {
       "note": "“try to go down”表示“试图向下移动”，注意“try to”的用法。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,350,430,590,669,909,1070,1149,1390,2830,3310]
     },
     {
       "id": "c234",
@@ -2788,7 +3021,8 @@ export const video: VideoEntry = {
       "note": "“makes this work”意为“使这成功”，注意“make”的用法。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,629,790,1030]
     },
     {
       "id": "c235",
@@ -2799,7 +3033,8 @@ export const video: VideoEntry = {
       "note": "“in a tough spot”是习语，意为“处于困境”。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,1749,2710,2950,3350,3590,3749,3910,4070,4310]
     },
     {
       "id": "c236",
@@ -2812,7 +3047,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,550,1109,1510,1749,1989]
     },
     {
       "id": "c237",
@@ -2823,7 +3059,8 @@ export const video: VideoEntry = {
       "note": "“That's what I think as well”是表达同意的常用语。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,629,710,869]
     },
     {
       "id": "c238",
@@ -2834,7 +3071,8 @@ export const video: VideoEntry = {
       "note": "“can't drop”表示“不能放下”，注意“drop”的用法。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [30,190,430,670,829,990,1150]
     },
     {
       "id": "c239",
@@ -2845,7 +3083,8 @@ export const video: VideoEntry = {
       "note": "“does try”是强调结构，表示“确实尝试”。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,550,630,870,1030]
     },
     {
       "id": "c240",
@@ -2856,7 +3095,8 @@ export const video: VideoEntry = {
       "note": "“learn pretty quick”是口语，意为“很快学会”，注意“pretty”表示“相当”。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470,790,1030,1270,1510,1670,1910]
     },
     {
       "id": "c241",
@@ -2870,7 +3110,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,550,710,949,1110,1270,1350,1510,1750,2150,2550,3030,3350,3590,3829,4069,4230,4470,4630,4949,5590,5910,6069,6150,6309,6550,6710,6790,6949,7110]
     },
     {
       "id": "c242",
@@ -2881,7 +3122,8 @@ export const video: VideoEntry = {
       "note": "注意省略句，口语中常用。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470]
     },
     {
       "id": "c243",
@@ -2892,7 +3134,8 @@ export const video: VideoEntry = {
       "note": "注意'flexible'和'do it'的用法。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,790,870,1109,1430,1589,1670,1750,1830,2150,2550,2870,3109,3349,3510,3670]
     },
     {
       "id": "c244",
@@ -2903,7 +3146,8 @@ export const video: VideoEntry = {
       "note": "'adjustment'意为调整，注意将来时。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,710,789,1110,1189,1350,1750,2070]
     },
     {
       "id": "c245",
@@ -2916,7 +3160,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,470,630,789,1990,2149,2230,2390,2789]
     },
     {
       "id": "c246",
@@ -2929,7 +3174,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,790,950,1030,1590,1830,1910,2150,2470,2869]
     },
     {
       "id": "c247",
@@ -2942,7 +3188,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,629,869,1030,1270]
     },
     {
       "id": "c248",
@@ -2955,7 +3202,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "swing"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,870,1110,1189,1350,1510,1750,1910,2150,2309,2470,2790,3350,3590,3829,4069,4230,4470,4710]
     },
     {
       "id": "c249",
@@ -2966,7 +3214,8 @@ export const video: VideoEntry = {
       "note": "'right away'意为立刻。",
       "score": 25,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,629,790,1030,1270,1430,1670]
     },
     {
       "id": "c250",
@@ -2979,7 +3228,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "swing"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,550,710,870,1029,1430,2310,2789,3029,3110,3350,3510,3750,3909,4149]
     },
     {
       "id": "c251",
@@ -2992,7 +3242,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,870,950,1110,1270,1429,1590]
     },
     {
       "id": "c252",
@@ -3003,7 +3254,8 @@ export const video: VideoEntry = {
       "note": "'graphic'意为图形，注意'bottom left'。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230,310,390,550,790,949,1030,1270]
     },
     {
       "id": "c253",
@@ -3016,7 +3268,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,710,870,1029,1269,1430,1670,1750,1830,1910]
     },
     {
       "id": "c254",
@@ -3029,7 +3282,8 @@ export const video: VideoEntry = {
       "study": false,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550]
     },
     {
       "id": "c255",
@@ -3040,7 +3294,8 @@ export const video: VideoEntry = {
       "note": "注意'climbing'在此指攀爬状态。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,549,710,950]
     },
     {
       "id": "c256",
@@ -3051,7 +3306,8 @@ export const video: VideoEntry = {
       "note": "注意'with a line through it'意为带横线。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,629,790,950,1269,1509,1670,1830,1990,2149,2310,2470,2629,2950,3110,3269,3430,3670]
     },
     {
       "id": "c257",
@@ -3064,7 +3320,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "scoreboard"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,630,950,1110,1350,1750,1990,2070,2390]
     },
     {
       "id": "c258",
@@ -3075,7 +3332,8 @@ export const video: VideoEntry = {
       "note": "简单回应，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c259",
@@ -3086,7 +3344,8 @@ export const video: VideoEntry = {
       "note": "'straight in'意为直接进入。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,710,950]
     },
     {
       "id": "c260",
@@ -3097,7 +3356,8 @@ export const video: VideoEntry = {
       "note": "'let's see'意为让我们看看。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,869]
     },
     {
       "id": "c261",
@@ -3108,7 +3368,8 @@ export const video: VideoEntry = {
       "note": "'the moment'意为关键时刻，注意反意疑问句。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,350,510,670,830]
     },
     {
       "id": "c262",
@@ -3121,7 +3382,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,350,510,590,750,990]
     },
     {
       "id": "c263",
@@ -3132,7 +3394,8 @@ export const video: VideoEntry = {
       "note": "简单回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c264",
@@ -3143,7 +3406,8 @@ export const video: VideoEntry = {
       "note": "注意'did already'的用法。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,710]
     },
     {
       "id": "c265",
@@ -3156,7 +3420,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,390,549,789,1510,1909,2390,2710,3350,3750]
     },
     {
       "id": "c266",
@@ -3167,7 +3432,8 @@ export const video: VideoEntry = {
       "note": "注意比较结构 'not as ... as' 表示‘不如……’。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470,550,790,949,1110,1270,1350,1430,1510,1670,1750,1910,2069,2310,2470,2630,2870,3030]
     },
     {
       "id": "c267",
@@ -3178,7 +3444,8 @@ export const video: VideoEntry = {
       "note": "口语中 'And and then' 是重复，实际意思是‘然后’。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,549,870,1030,1270,1590]
     },
     {
       "id": "c268",
@@ -3191,7 +3458,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "clock"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,709,790,949,1110,1349,1510,1670,1829,1910,2070,2230,2870]
     },
     {
       "id": "c269",
@@ -3202,7 +3470,8 @@ export const video: VideoEntry = {
       "note": "数字表达：120秒可以说 'one twenty' 或 'a hundred twenty'。",
       "score": 4,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,790,1109]
     },
     {
       "id": "c270",
@@ -3215,7 +3484,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,710,1110,1590,1909,2150,2470,2870,3110,3429,3830,4070,4310,4549,4710,4789,4870,4950,5110]
     },
     {
       "id": "c271",
@@ -3228,7 +3498,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,469,709,1030,1190,1349,1510,1830,3270,3510,3750,3910,4150]
     },
     {
       "id": "c272",
@@ -3239,7 +3510,8 @@ export const video: VideoEntry = {
       "note": "表达 'time is ticking away' 表示时间紧迫。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,629,790,1109]
     },
     {
       "id": "c273",
@@ -3252,7 +3524,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "clock"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,870,1030,1270,1669,1910,2070]
     },
     {
       "id": "c274",
@@ -3265,7 +3538,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "sequence"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,710,869,1109,1349,1670,1750,1989]
     },
     {
       "id": "c275",
@@ -3276,7 +3550,8 @@ export const video: VideoEntry = {
       "note": "比较级 'better' 用于比较。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,390,710]
     },
     {
       "id": "c276",
@@ -3287,7 +3562,8 @@ export const video: VideoEntry = {
       "note": "口语中 'way better' 表示‘好得多’。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,630,789]
     },
     {
       "id": "c277",
@@ -3298,7 +3574,8 @@ export const video: VideoEntry = {
       "note": "简单回应，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c278",
@@ -3311,7 +3588,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,790,1030,1110,1270,1510,1750,1910,2150,2310,2709,3110,3750,3910,4069,4150,4390]
     },
     {
       "id": "c279",
@@ -3322,7 +3600,8 @@ export const video: VideoEntry = {
       "note": "动词 'drops low' 意为‘降低重心’。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,789,1029,1269,1670]
     },
     {
       "id": "c280",
@@ -3335,7 +3614,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,550,630,789,950,1110,1350]
     },
     {
       "id": "c281",
@@ -3349,7 +3629,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,310,470,629,790,950,1030,1430,1749,1910,2070,2230,2310,2470]
     },
     {
       "id": "c282",
@@ -3362,7 +3643,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "commit"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,1910,2150,2470,2630,3030,3350]
     },
     {
       "id": "c283",
@@ -3375,7 +3657,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,549,630,710,870,1029,1190,1430]
     },
     {
       "id": "c284",
@@ -3386,7 +3669,8 @@ export const video: VideoEntry = {
       "note": "幽默说法，'channeling telekinesis' 意为‘用意念控制’。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,1589,2870,3589,3990]
     },
     {
       "id": "c285",
@@ -3399,7 +3683,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,710,870,1110,1510,1750,1990,2150,2310,2549,2870,3350,3750,3990,4070,4390,4470,4630,4710,4950,5110,5270]
     },
     {
       "id": "c286",
@@ -3412,7 +3697,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,710,1030,1109,1270,1430,1589]
     },
     {
       "id": "c287",
@@ -3423,7 +3709,8 @@ export const video: VideoEntry = {
       "note": "短语 'go for it' 意为‘大胆尝试’。",
       "score": 22,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,870,1190,1269,1350,1510,1669]
     },
     {
       "id": "c288",
@@ -3434,7 +3721,8 @@ export const video: VideoEntry = {
       "note": "注意 'probably won't have enough time' 表示‘可能没有足够时间’。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,710,1110,1350,1509,1830,1990,2230,2550,2790]
     },
     {
       "id": "c289",
@@ -3445,7 +3733,8 @@ export const video: VideoEntry = {
       "note": "短语 'this is it' 意为‘就是这次’。",
       "score": 14,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,630,790]
     },
     {
       "id": "c290",
@@ -3458,7 +3747,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,790,870,1030,1110,1350,1510,1750,1910,2150,2309,2470,2630,2790,2949,3110]
     },
     {
       "id": "c291",
@@ -3469,7 +3759,8 @@ export const video: VideoEntry = {
       "note": "“finger strength”是攀岩常用词，指手指力量。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,630,710,950,1109,1270,1670,1989]
     },
     {
       "id": "c292",
@@ -3483,7 +3774,8 @@ export const video: VideoEntry = {
       "keywords": [
         "hold",
         "swing"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,389,710,1029,1269,1510,1590,1670,1830,1909,2149,2389]
     },
     {
       "id": "c293",
@@ -3494,7 +3786,8 @@ export const video: VideoEntry = {
       "note": "“kick out”在这里指把脚向外踢开，常用于描述动态动作。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,630,789,1029,1110]
     },
     {
       "id": "c294",
@@ -3505,7 +3798,8 @@ export const video: VideoEntry = {
       "note": "“oppose”在攀岩中常指用相反方向的力来保持平衡。",
       "score": 47,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,949,1190]
     },
     {
       "id": "c295",
@@ -3518,7 +3812,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,629,790,869,1030,1190,1910,2149,2389,2550,2710,2869,3110,3269,3509,3670,3910,4149,4389]
     },
     {
       "id": "c296",
@@ -3529,7 +3824,8 @@ export const video: VideoEntry = {
       "note": "“in line”指身体部位在一条直线上，这里强调重心位置。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,790,1110,1510,1829,2150,2550,3030,3189,3430,4150,4390,4550,4709,5030,5189]
     },
     {
       "id": "c297",
@@ -3540,7 +3836,8 @@ export const video: VideoEntry = {
       "note": "“flip”在这里指翻转身体或脚的方向。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470,629,870,950,1350,1509,1750,1909,2149]
     },
     {
       "id": "c298",
@@ -3551,7 +3848,8 @@ export const video: VideoEntry = {
       "note": "“slip off”是攀岩中常见的表达，指手或脚从支点上滑落。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,790,870,1030,1190,1349,1670,1910,2390,2630,2790,3030,3270,3349,3510,3670,3829,4069,4310,4550,4870,5110,5270,5589]
     },
     {
       "id": "c299",
@@ -3565,7 +3863,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,1350,1590,1990,2549,3029,3830,4310,4789,5110,5270,5510,5909,6390,6870,7510,8390,9510,9990,10549,11029,11510,11669,11750,11909,12070,12149]
     },
     {
       "id": "c300",
@@ -3579,7 +3878,8 @@ export const video: VideoEntry = {
       "keywords": [
         "top",
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,870,1030,1110,1350,1590,1750,1909,2070]
     },
     {
       "id": "c301",
@@ -3590,7 +3890,8 @@ export const video: VideoEntry = {
       "note": "“fascinating”是“迷人的”，常用于表达兴趣。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,1190,1350]
     },
     {
       "id": "c302",
@@ -3601,7 +3902,8 @@ export const video: VideoEntry = {
       "note": "“make all the difference”是固定短语，意为“产生巨大影响”。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [109,270,349,430,589,750,910,1229,1390,1790,2109,2270,2430,2589,2750,2910,3150]
     },
     {
       "id": "c303",
@@ -3612,7 +3914,8 @@ export const video: VideoEntry = {
       "note": "“boulder”在这里指抱石线路，注意复数形式。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,709,949,1110,1270,1510,1750]
     },
     {
       "id": "c304",
@@ -3623,7 +3926,8 @@ export const video: VideoEntry = {
       "note": "“delta holds”指三角形状的支点，注意“delta”是希腊字母Δ。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,1270,1510,1670,2070,2469,2870,3349,3670,3829,4390,4709,5190]
     },
     {
       "id": "c305",
@@ -3634,7 +3938,8 @@ export const video: VideoEntry = {
       "note": "“far right”指最右边，注意“mats”是垫子。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470,710,870,1029,1190,1430,1590,1750,2630,3350,3669]
     },
     {
       "id": "c306",
@@ -3645,7 +3950,8 @@ export const video: VideoEntry = {
       "note": "“teammates”是队友，注意复数。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,1030,1430]
     },
     {
       "id": "c307",
@@ -3656,7 +3962,8 @@ export const video: VideoEntry = {
       "note": "“slam queen”是口语化表达，指非常擅长某事的女性。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,1109,1590,1989,2230,2389]
     },
     {
       "id": "c308",
@@ -3667,7 +3974,8 @@ export const video: VideoEntry = {
       "note": "“good with her feet”指脚上功夫好，注意“feet”是复数。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,710,949,1110]
     },
     {
       "id": "c309",
@@ -3678,7 +3986,8 @@ export const video: VideoEntry = {
       "note": "“cruise”在这里指轻松完成，是攀岩口语。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,350,669,830,990,1310]
     },
     {
       "id": "c310",
@@ -3689,7 +3998,8 @@ export const video: VideoEntry = {
       "note": "“I hope so”是常见表达，注意重复的“I”表示犹豫。",
       "score": 19,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,870,1030]
     },
     {
       "id": "c311",
@@ -3702,7 +4012,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,790,950,1190,1590,1989,2469,2710,3030,3270,3510]
     },
     {
       "id": "c312",
@@ -3715,7 +4026,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,470,550,629,790,870,1029,1190,1430,1509,1590,1750,2070,2310,2470,2550,2629]
     },
     {
       "id": "c313",
@@ -3728,7 +4040,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,629,869,1190,1270,1430,1590,1749]
     },
     {
       "id": "c314",
@@ -3739,7 +4052,8 @@ export const video: VideoEntry = {
       "note": "注意“split screen”指分屏，常用于体育转播。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,630,790,949,1189]
     },
     {
       "id": "c315",
@@ -3750,7 +4064,8 @@ export const video: VideoEntry = {
       "note": "“Look at”是常用口语，表示“看”。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,550,709,870]
     },
     {
       "id": "c316",
@@ -3761,7 +4076,8 @@ export const video: VideoEntry = {
       "note": "“holds”指攀岩中的把手点。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390]
     },
     {
       "id": "c317",
@@ -3772,7 +4088,8 @@ export const video: VideoEntry = {
       "note": "“bad to stand on”表示不适合站立，注意“bad”的用法。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,549,870,1110,1350,1590,1829,1990]
     },
     {
       "id": "c318",
@@ -3783,7 +4100,8 @@ export const video: VideoEntry = {
       "note": "“look at”再次出现，注意人名Mau的发音。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,549]
     },
     {
       "id": "c319",
@@ -3794,7 +4112,8 @@ export const video: VideoEntry = {
       "note": "“in the right position”表示位置正确。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,389,550,790]
     },
     {
       "id": "c320",
@@ -3807,7 +4126,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,630,870,1109,1270,1430,1670,1829,1990,2070,2229,2390,2550,2630,2790]
     },
     {
       "id": "c321",
@@ -3818,7 +4138,8 @@ export const video: VideoEntry = {
       "note": "“Now she does”是省略句，完整为“Now she brings it up”。",
       "score": 4,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550]
     },
     {
       "id": "c322",
@@ -3832,7 +4153,8 @@ export const video: VideoEntry = {
       "keywords": [
         "hold",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,470,710,870,1110,1350,1510,1669,1830,1990,2149,2310,2630,2710,2870,3110]
     },
     {
       "id": "c323",
@@ -3843,7 +4165,8 @@ export const video: VideoEntry = {
       "note": "“the mistake that we saw”是定语从句，注意“not be able to do”的用法。",
       "score": 35,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,549,710,950,1110,1189,1350,1750,1990,2069,2230,2390]
     },
     {
       "id": "c324",
@@ -3856,7 +4179,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "cruising"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,790,1030,1110,1510,2069,2309]
     },
     {
       "id": "c325",
@@ -3869,7 +4193,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,549,710,870,1030,1350,1510,1669,2390,2710]
     },
     {
       "id": "c326",
@@ -3880,7 +4205,8 @@ export const video: VideoEntry = {
       "note": "感叹词，表示惊讶或遗憾。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c327",
@@ -3893,7 +4219,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,790,1030,1189]
     },
     {
       "id": "c328",
@@ -3904,7 +4231,8 @@ export const video: VideoEntry = {
       "note": "“floats up”表示轻松完成，注意“such a good example”的用法。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,790,1030,1270,1430,1510,1910,2070,2390,2550,3030,3190,3349,3510,3589,3750,3910,4150,4390,4950,5190,5430]
     },
     {
       "id": "c329",
@@ -3915,7 +4243,8 @@ export const video: VideoEntry = {
       "note": "“genuine happiness”表示真诚的快乐，注意“across the face”的用法。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,709,870,1190,1829,2310,2469,2870,3110,3589,4069,4390,4550,5030]
     },
     {
       "id": "c330",
@@ -3926,7 +4255,8 @@ export const video: VideoEntry = {
       "note": "“makes me want to”表示让我想要，注意“make”的使役用法。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,549,789,950,1110,1190,1350,1429]
     },
     {
       "id": "c331",
@@ -3937,7 +4267,8 @@ export const video: VideoEntry = {
       "note": "“I'm like”是口语，表示“我想”，注意“right now”的强调。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470,550,710,870,950,1110,1269,1350,1430,1510,1669,1750,2070,2310]
     },
     {
       "id": "c332",
@@ -3948,7 +4279,8 @@ export const video: VideoEntry = {
       "note": "“Right”表示同意，口语常用。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c333",
@@ -3961,7 +4293,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "tension"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,550,790,1110,1270,1510,1670,2150,2390,2550,2790,3189,3350]
     },
     {
       "id": "c334",
@@ -3975,7 +4308,8 @@ export const video: VideoEntry = {
       "keywords": [
         "tension",
         "core"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,710,869,1110]
     },
     {
       "id": "c335",
@@ -3986,7 +4320,8 @@ export const video: VideoEntry = {
       "note": "“flipped around”表示翻转，注意“especially”的用法。",
       "score": 51,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,870,1030,1270,1589]
     },
     {
       "id": "c336",
@@ -3997,7 +4332,8 @@ export const video: VideoEntry = {
       "note": "“underclans”指反握点，注意“basically”的口语用法。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,950,1190]
     },
     {
       "id": "c337",
@@ -4008,7 +4344,8 @@ export const video: VideoEntry = {
       "note": "“dihedral”指内角，注意“kind of like”的口语用法。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,789,950,1270,1510,1590,1750,1909]
     },
     {
       "id": "c338",
@@ -4019,7 +4356,8 @@ export const video: VideoEntry = {
       "note": "注意 'get in between' 表示‘伸到…之间’，常用于描述身体部位在支点间的移动。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,550,630,790,949,1189,1350]
     },
     {
       "id": "c339",
@@ -4030,7 +4368,8 @@ export const video: VideoEntry = {
       "note": "'It's okay' 是常见安慰语，表示‘没关系’。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,1430]
     },
     {
       "id": "c340",
@@ -4041,7 +4380,8 @@ export const video: VideoEntry = {
       "note": "'get to the position' 表示‘到达某个姿势’，注意 'pretty well' 意为‘相当好’。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470,630,710,870,1189,1429]
     },
     {
       "id": "c341",
@@ -4054,7 +4394,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,549,630,789,950,1189,1510]
     },
     {
       "id": "c342",
@@ -4067,7 +4408,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,790,1110,1750,2310,2550,2790,3190,3509,3670,3750,3830,3990,4149,4230]
     },
     {
       "id": "c343",
@@ -4078,7 +4420,8 @@ export const video: VideoEntry = {
       "note": "'slippery' 意为‘滑的’，'compared to' 表示‘与…相比’。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,1910,2790,3109,3349]
     },
     {
       "id": "c344",
@@ -4089,7 +4432,8 @@ export const video: VideoEntry = {
       "note": "'Yeah' 是口语中常见的肯定回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c345",
@@ -4102,7 +4446,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,549,710,949,1189,1350,1590,1750,1910,2069,2230]
     },
     {
       "id": "c346",
@@ -4116,7 +4461,8 @@ export const video: VideoEntry = {
       "keywords": [
         "match",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,710,790,869,1030,1350,1590,1830,1989,2150]
     },
     {
       "id": "c347",
@@ -4130,7 +4476,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,389,470,550,629,790,950,1030,1190,1430]
     },
     {
       "id": "c348",
@@ -4141,7 +4488,8 @@ export const video: VideoEntry = {
       "note": "'Yeah' 再次出现，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c349",
@@ -4154,7 +4502,8 @@ export const video: VideoEntry = {
       "study": false,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,710]
     },
     {
       "id": "c350",
@@ -4167,7 +4516,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,950]
     },
     {
       "id": "c351",
@@ -4178,7 +4528,8 @@ export const video: VideoEntry = {
       "note": "'a little slip' 指‘一点滑动’，'slip' 是动词也是名词。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470,629,790,869,950,1109,1430]
     },
     {
       "id": "c352",
@@ -4191,7 +4542,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,710,1349,1590,1749,2070,2310,2550,2950,3190,3430,3590,3670,3830,3989,4150,4310,4550]
     },
     {
       "id": "c353",
@@ -4204,7 +4556,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flag"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,630,790,1030,1510]
     },
     {
       "id": "c354",
@@ -4215,7 +4568,8 @@ export const video: VideoEntry = {
       "note": "'stick it' 是口语，表示‘成功抓住’或‘完成动作’。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,630,710,950,1029,1270,1429,1590,1830,1990]
     },
     {
       "id": "c355",
@@ -4228,7 +4582,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,390,469,630,790,949,1430,1510,1750,1829,1990]
     },
     {
       "id": "c356",
@@ -4239,7 +4594,8 @@ export const video: VideoEntry = {
       "note": "'doing pretty well' 意为‘做得相当好’，'pretty' 在此是副词，表示‘相当’。",
       "score": 9,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,630]
     },
     {
       "id": "c357",
@@ -4250,7 +4606,8 @@ export const video: VideoEntry = {
       "note": "'All right' 是常见口语，表示‘好的’或‘没问题’。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230]
     },
     {
       "id": "c358",
@@ -4261,7 +4618,8 @@ export const video: VideoEntry = {
       "note": "'MC' 指‘主持人’，'brushes' 指‘刷子’，'volunteers' 是‘志愿者’。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,1190,1430,1830,2149,2310,2710,2869]
     },
     {
       "id": "c359",
@@ -4272,7 +4630,8 @@ export const video: VideoEntry = {
       "note": "'take a moment' 表示‘花点时间’，'as well' 意为‘也’。",
       "score": 35,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,630,710,870,1029,1190,1269,1350,1509]
     },
     {
       "id": "c360",
@@ -4283,7 +4642,8 @@ export const video: VideoEntry = {
       "note": "'thank you' 是感谢语，注意 'Brushes and Volunteers' 大写可能指特定群体。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,349,510,829,910]
     },
     {
       "id": "c361",
@@ -4294,7 +4654,8 @@ export const video: VideoEntry = {
       "note": "'fantastic job' 意为‘很棒的工作’，'fantastic' 是‘极好的’。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,390,550,709,1109]
     },
     {
       "id": "c362",
@@ -4305,7 +4666,8 @@ export const video: VideoEntry = {
       "note": "注意“stadium”的发音，重音在第一个音节。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,710,870]
     },
     {
       "id": "c363",
@@ -4316,7 +4678,8 @@ export const video: VideoEntry = {
       "note": "“surrounded by”表示“被……包围”，常用被动语态。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,549,789,950,1350,1590,1830]
     },
     {
       "id": "c364",
@@ -4327,7 +4690,8 @@ export const video: VideoEntry = {
       "note": "“amazing atmosphere”中“atmosphere”注意重音在第一个音节。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,549,1029]
     },
     {
       "id": "c365",
@@ -4338,7 +4702,8 @@ export const video: VideoEntry = {
       "note": "“It's funny”这里表示“有趣”，注意语调。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389]
     },
     {
       "id": "c366",
@@ -4349,7 +4714,8 @@ export const video: VideoEntry = {
       "note": "“similar vibes”中“vibes”是俚语，表示“氛围、感觉”。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,950,1189,1830,2230,2870,3270,3429,3590,3830,3909,4070]
     },
     {
       "id": "c367",
@@ -4360,7 +4726,8 @@ export const video: VideoEntry = {
       "note": "“obviously”表示“显然”，注意发音。",
       "score": 54,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,869,1270,1749,2150,2470]
     },
     {
       "id": "c368",
@@ -4371,7 +4738,8 @@ export const video: VideoEntry = {
       "note": "“bleachers”指露天看台，“packed”表示“挤满”。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,630,870,1190,1430,1589,1750,1829,2310,2469,2630,2790,3110,3270,3430,3910,4150,4230,4390,4550,4949,5430,6870,7349,7589,7750,7990]
     },
     {
       "id": "c369",
@@ -4382,7 +4750,8 @@ export const video: VideoEntry = {
       "note": "“packed all the way to the back”表示“一直挤到后面”。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,950,1110,1270,1350,1590,1750,3110,3429,3590,3750,3909,3990]
     },
     {
       "id": "c370",
@@ -4393,7 +4762,8 @@ export const video: VideoEntry = {
       "note": "“Yeah, they do”是简短回答，强调“确实”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,470]
     },
     {
       "id": "c371",
@@ -4404,7 +4774,8 @@ export const video: VideoEntry = {
       "note": "“educated crowd”指“有教养的观众”，这里指懂行。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,870,1030,1189]
     },
     {
       "id": "c372",
@@ -4415,7 +4786,8 @@ export const video: VideoEntry = {
       "note": "“know what they're watching”表示“懂行”。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,349,510,670,910]
     },
     {
       "id": "c373",
@@ -4426,7 +4798,8 @@ export const video: VideoEntry = {
       "note": "“Right”在这里表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c374",
@@ -4437,7 +4810,8 @@ export const video: VideoEntry = {
       "note": "“creep back”表示“悄悄回到”，注意“creep”的发音。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,790,1190,1670,1910,2070,2310,2470,2710]
     },
     {
       "id": "c375",
@@ -4450,7 +4824,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,710,950,1269,1510,1669,2070]
     },
     {
       "id": "c376",
@@ -4463,7 +4838,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,630,949,1110,1189,1350,1429,1670,1910,2069]
     },
     {
       "id": "c377",
@@ -4479,7 +4855,8 @@ export const video: VideoEntry = {
         "top",
         "zone",
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,629,870,1110,1430,1750,2070,2550,2870,3029]
     },
     {
       "id": "c378",
@@ -4490,7 +4867,8 @@ export const video: VideoEntry = {
       "note": "“lock it off”是攀岩术语，指“锁臂”。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,870,1110]
     },
     {
       "id": "c379",
@@ -4503,7 +4881,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,710,869,1030,1190,1349,1510,1670,1749,1910,2070,2310,2469,2550,2629,2869]
     },
     {
       "id": "c380",
@@ -4514,7 +4893,8 @@ export const video: VideoEntry = {
       "note": "“saved me”这里指“让我免于尴尬”。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,390,629,790,1030,1190]
     },
     {
       "id": "c381",
@@ -4525,7 +4905,8 @@ export const video: VideoEntry = {
       "note": "“look like a weirdo”表示“看起来像个怪人”。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,230,310,470,550,710,790,869,1030,1190,1430,1509,1670,1830,1989,2149,2869,3110,3269]
     },
     {
       "id": "c382",
@@ -4536,7 +4917,8 @@ export const video: VideoEntry = {
       "note": "“nails it”是俚语，表示“成功完成”。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,710,1110,1190,1350,1669]
     },
     {
       "id": "c383",
@@ -4549,7 +4931,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,470,630,870]
     },
     {
       "id": "c384",
@@ -4560,7 +4943,8 @@ export const video: VideoEntry = {
       "note": "“get three, four fingers on it”表示“放三四个手指上去”。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,550,630,870,1110,1350,1510]
     },
     {
       "id": "c385",
@@ -4574,7 +4958,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,1110,1429,1589,1990,2630,3030,3189,3429,3589,3670,3829,3990,4150,4309,4550,5110,5350,5510,5990,6230,6470,6630,6790]
     },
     {
       "id": "c386",
@@ -4587,7 +4972,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,469,630,790,870,1030,1110,1189,1350,1430,1589,1750,1910,2230,2390,2550]
     },
     {
       "id": "c387",
@@ -4600,7 +4986,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,790,1109,1270,2150,3109,3510,3830,3989,4150,4550,4950,5270,5510]
     },
     {
       "id": "c388",
@@ -4611,7 +4998,8 @@ export const video: VideoEntry = {
       "note": "“how close”引导感叹句，注意“close to”表示“靠近”。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,710,1029,1350,1590,1830,1990,2149,2310]
     },
     {
       "id": "c389",
@@ -4624,7 +5012,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,550,790,1110,1350,1590,1830,2230,2389,2790,2950,3110,3590]
     },
     {
       "id": "c390",
@@ -4635,7 +5024,8 @@ export const video: VideoEntry = {
       "note": "“palm down”是“手掌朝下”，注意“have to”表示“必须”。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,790,1270,1510,1750,1989,2070,2150,2229,2310,2469,2709]
     },
     {
       "id": "c391",
@@ -4646,7 +5036,8 @@ export const video: VideoEntry = {
       "note": "“super close”是口语中“非常近”的意思，注意“super”常用来加强形容词。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,790,950,1109,1190]
     },
     {
       "id": "c392",
@@ -4659,7 +5050,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,470,630,790,1030]
     },
     {
       "id": "c393",
@@ -4672,7 +5064,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,629,869,1509,1670,1910,2070,2229,2470,2710]
     },
     {
       "id": "c394",
@@ -4685,7 +5078,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [109,270,349,430,510,670,830,1070,1229,1310,1390,1550,1790,2030,2109,2270,2589,2749,2910,3070,3710,4190,4510,4670,4910]
     },
     {
       "id": "c395",
@@ -4696,7 +5090,8 @@ export const video: VideoEntry = {
       "note": "“look up”在这里可能指“向上看”或“向上移动视线”，注意“a little bit hard”表示“稍微用力”。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,630,1110,1350,2069,2390,2550,2630,2790]
     },
     {
       "id": "c396",
@@ -4709,7 +5104,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,390,550,709]
     },
     {
       "id": "c397",
@@ -4722,7 +5118,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,469,949,1270,1510,2069,2550,3110,3349,3589,3750,3910,4150,4310,4630]
     },
     {
       "id": "c398",
@@ -4733,7 +5130,8 @@ export const video: VideoEntry = {
       "note": "“it's cool”是口语中“很酷”的意思，注意“but uh”是口语中的停顿。",
       "score": 22,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,550,950,1030,1270]
     },
     {
       "id": "c399",
@@ -4746,7 +5144,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "balance"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,469,629,869,1030,1190]
     },
     {
       "id": "c400",
@@ -4757,7 +5156,8 @@ export const video: VideoEntry = {
       "note": "“composition”在这里可能指“线路”，注意“women's number one”指“女子一号线路”。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,350,550,1030,1590,1749,1910,2150,2710,2950,3430,3749]
     },
     {
       "id": "c401",
@@ -4768,7 +5168,8 @@ export const video: VideoEntry = {
       "note": "“coming off the back of”表示“刚从……中出来”，这里指“刚获得银牌”，注意“where was it”是口语中回忆时的表达。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,709,870,949,1110,1430,1750,2150,3270,3589,3829,3990]
     },
     {
       "id": "c402",
@@ -4779,7 +5180,8 @@ export const video: VideoEntry = {
       "note": "“Salt Lake City”是地名，注意发音。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,269,429]
     },
     {
       "id": "c403",
@@ -4790,7 +5192,8 @@ export const video: VideoEntry = {
       "note": "“my mind went blank”是“脑子一片空白”的常用表达，注意“went blank”是过去式。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,709]
     },
     {
       "id": "c404",
@@ -4801,7 +5204,8 @@ export const video: VideoEntry = {
       "note": "“so far”表示“到目前为止”，注意“she's had”是现在完成时。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,309,470,549,710,789,1029,1190]
     },
     {
       "id": "c405",
@@ -4812,7 +5216,8 @@ export const video: VideoEntry = {
       "note": "“15th”是“第15名”，注意“silver in soul”可能是“silver in Salt Lake”的误听，但这里理解为“银牌”。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,510,1150,1470,2110,2429,2750,2909,3150,3390,3710]
     },
     {
       "id": "c406",
@@ -4823,7 +5228,8 @@ export const video: VideoEntry = {
       "note": "“hasn't done that many”表示“没参加那么多”，注意“where she has”是省略形式，意为“在她参加的地方”。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,629,710,950,1109,1269,1430,1590,1749,1910,2150,2550,3030]
     },
     {
       "id": "c407",
@@ -4834,7 +5240,8 @@ export const video: VideoEntry = {
       "note": "“expecting”表示“预计”，注意“get this pretty quick”是口语化表达，意为“很快完成”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,550,709,1030,1189,1350,1430,1670,1990,2150,2390,2550,2949]
     },
     {
       "id": "c408",
@@ -4845,7 +5252,8 @@ export const video: VideoEntry = {
       "note": "“wrestle her way”表示“艰难地移动”，注意“around to the left”表示“绕到左边”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,709,1270,1589,2070,2310,2790,3109,3349,3510]
     },
     {
       "id": "c409",
@@ -4858,7 +5266,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,469,709]
     },
     {
       "id": "c410",
@@ -4869,7 +5278,8 @@ export const video: VideoEntry = {
       "note": "注意口语中的'So'用于开启话题，类似中文的'所以'或'那么'。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,550]
     },
     {
       "id": "c411",
@@ -4880,7 +5290,8 @@ export const video: VideoEntry = {
       "note": "'I'm just going to guess'表示'我只是猜测'，常用于表达不确定的推测。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1110,1990,2390,2630,2709,2870,3189,3429,3590,3910,4069,4230,4390,4709,4870,4949]
     },
     {
       "id": "c412",
@@ -4893,7 +5304,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "height"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,470,629,790,1350,2230,2550,2790,3590,3830,3990,4070,4230,4389,4710,4869,5190]
     },
     {
       "id": "c413",
@@ -4907,7 +5319,8 @@ export const video: VideoEntry = {
       "keywords": [
         "hold",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,710,1350,1590,1830,2070,2550,2790,3030,3509,3749,3989,4070,4150,4310,4470,4629,4710,4950]
     },
     {
       "id": "c414",
@@ -4918,7 +5331,8 @@ export const video: VideoEntry = {
       "note": "'comfortably'意为'舒服地'，这里指踩点很稳。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,230,389,550,869,950,1110,1749,1989,2230,2629,2950,3430,3590,3670,3830]
     },
     {
       "id": "c415",
@@ -4929,7 +5343,8 @@ export const video: VideoEntry = {
       "note": "'kind of like'是口语中'有点像'的意思，注意'bowlers'这里指'保龄球'，但可能比喻不擅长的事。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,389,550,629,950,1269,2070,2550,3430,3509,3749,3910,3989,4149,4230,4389,4550,4710,4869,4950]
     },
     {
       "id": "c416",
@@ -4940,7 +5355,8 @@ export const video: VideoEntry = {
       "note": "'deal with'意为'处理'，'a little bit shorter'是'矮一点'。",
       "score": 50,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,629,710,950,1110,1269,1430,1590,1670,1830,2230,2629,2789,2950,3029,3110,3269]
     },
     {
       "id": "c417",
@@ -4953,7 +5369,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,790,1109,1430,1750,1989,2229,2390,2550,2630,2790,2869,3030,3190]
     },
     {
       "id": "c418",
@@ -4966,7 +5383,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "height"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,710,869,1030,1430,1910,2310,2550,2629,2869,2950,3190,3349]
     },
     {
       "id": "c419",
@@ -4977,7 +5395,8 @@ export const video: VideoEntry = {
       "note": "'not the hugest'是口语化的'不是最高的'，huge这里指身高。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,630,870,1030]
     },
     {
       "id": "c420",
@@ -4988,7 +5407,8 @@ export const video: VideoEntry = {
       "note": "'doable'意为'可行的'，'interesting to see'是'看……很有趣'。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1510,1829,2309,2709,3110,3270,3429,3590,3750,3829]
     },
     {
       "id": "c421",
@@ -4999,7 +5419,8 @@ export const video: VideoEntry = {
       "note": "简单的肯定回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c422",
@@ -5010,7 +5431,8 @@ export const video: VideoEntry = {
       "note": "'a long way'指'很长的距离'，常用于描述跨度。",
       "score": 35,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,870,949,2310,2550,2709,2870,2949]
     },
     {
       "id": "c423",
@@ -5021,7 +5443,8 @@ export const video: VideoEntry = {
       "note": "'You're right'是'你说得对'，常用回应。",
       "score": 5,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309]
     },
     {
       "id": "c424",
@@ -5032,7 +5455,8 @@ export const video: VideoEntry = {
       "note": "'So okay'是口语中的'好吧'，'better'表示'更好'。",
       "score": 25,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230,790,1110]
     },
     {
       "id": "c425",
@@ -5043,7 +5467,8 @@ export const video: VideoEntry = {
       "note": "'goes straight to it'意为'直接去'，表示不绕弯。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,549,710,870,1029]
     },
     {
       "id": "c426",
@@ -5056,7 +5481,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "volume"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,309,390,549,710,789,870,1029,1270,1590,1830,2149,2390,2549,2789,2950,3029,3190,3270,3510,3830,4149,4390,4710,4950,5110]
     },
     {
       "id": "c427",
@@ -5067,7 +5493,8 @@ export const video: VideoEntry = {
       "note": "'adapt'意为'适应'，'on their second try'是'在第二次尝试时'。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,1510,1750,1909,2310,2710,3190,3909,4230,4470,4710,4870,5029]
     },
     {
       "id": "c428",
@@ -5078,7 +5505,8 @@ export const video: VideoEntry = {
       "note": "'gritting my teeth'是'咬紧牙关'，'no tech sections'可能指'无摩擦区域'，但需注意上下文。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,710,790,950,1109,1269,1350,1509,1670,1830,1989,2230,2550]
     },
     {
       "id": "c429",
@@ -5089,7 +5517,8 @@ export const video: VideoEntry = {
       "note": "'scary feeling'是'吓人的感觉'，'when you do'是'当你做的时候'。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,710,1190,1510,1669,1830]
     },
     {
       "id": "c430",
@@ -5100,7 +5529,8 @@ export const video: VideoEntry = {
       "note": "简单的同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c431",
@@ -5113,7 +5543,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,470,630,950,1110,1270,1429,1669,1830,1990]
     },
     {
       "id": "c432",
@@ -5127,7 +5558,8 @@ export const video: VideoEntry = {
       "keywords": [
         "final",
         "sequence"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,709,950,1109,1270,1510,1750,2310]
     },
     {
       "id": "c433",
@@ -5140,7 +5572,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "toe"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,709,1030,1270,1510,1670,1830,2070,2310,2550]
     },
     {
       "id": "c434",
@@ -5151,7 +5584,8 @@ export const video: VideoEntry = {
       "note": "注意“Yeah”在口语中常表示肯定或回应。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c435",
@@ -5162,7 +5596,8 @@ export const video: VideoEntry = {
       "note": "“a little bit”表示“一点点”，常用于程度修饰。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,549,710,949,1030]
     },
     {
       "id": "c436",
@@ -5173,7 +5608,8 @@ export const video: VideoEntry = {
       "note": "重复“Yeah”表示强调或确认。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c437",
@@ -5184,7 +5620,8 @@ export const video: VideoEntry = {
       "note": "“set up”在攀岩中常指调整姿势或准备动作。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,789,870,1430,2070,2230,2470,2710,3909,4149,4470,4630]
     },
     {
       "id": "c438",
@@ -5195,7 +5632,8 @@ export const video: VideoEntry = {
       "note": "“Come on”是常见的鼓励语，类似“加油”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310]
     },
     {
       "id": "c439",
@@ -5206,7 +5644,8 @@ export const video: VideoEntry = {
       "note": "重复“good”表示连续的肯定。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,629,790]
     },
     {
       "id": "c440",
@@ -5217,7 +5656,8 @@ export const video: VideoEntry = {
       "note": "“Good work”是表扬用语，意为“干得好”。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,550,710]
     },
     {
       "id": "c441",
@@ -5230,7 +5670,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,390,549,710,870,1030,1270,1510]
     },
     {
       "id": "c442",
@@ -5241,7 +5682,8 @@ export const video: VideoEntry = {
       "note": "“comp”是“competition”的缩写，意为“比赛”。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,630,790,949,1030,1189,1510,1669,1829,1990,2309]
     },
     {
       "id": "c443",
@@ -5252,7 +5694,8 @@ export const video: VideoEntry = {
       "note": "注意运动员名字的发音。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,789,1029,1350]
     },
     {
       "id": "c444",
@@ -5263,7 +5706,8 @@ export const video: VideoEntry = {
       "note": "“stadium”指体育场，这里可能指攀岩墙或场地。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,709,1270]
     },
     {
       "id": "c445",
@@ -5274,7 +5718,8 @@ export const video: VideoEntry = {
       "note": "“So excited”表示非常兴奋，“right”用于寻求认同。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,1030]
     },
     {
       "id": "c446",
@@ -5285,7 +5730,8 @@ export const video: VideoEntry = {
       "note": "“chalks up”是攀岩术语，意为“擦镁粉”以增加摩擦力。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,549,1270,1750]
     },
     {
       "id": "c447",
@@ -5296,7 +5742,8 @@ export const video: VideoEntry = {
       "note": "“I don't normally see her do it”表示“我通常不看到她这么做”。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,549,710,789,950,1030,1189,1350,1510,1830,1990,2230,2309]
     },
     {
       "id": "c448",
@@ -5307,7 +5754,8 @@ export const video: VideoEntry = {
       "note": "“bad skin”在攀岩中指皮肤出汗或磨损，影响抓握。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,429,510,670,829,990,1150,1470,1709,1949]
     },
     {
       "id": "c449",
@@ -5318,7 +5766,8 @@ export const video: VideoEntry = {
       "note": "“tough one”指难点或困难的部分。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1589,1910]
     },
     {
       "id": "c450",
@@ -5329,7 +5778,8 @@ export const video: VideoEntry = {
       "note": "“wear chalk back”指把镁粉擦在背后，以便随时取用。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,789,950,1110,1190,1430,1670,1909]
     },
     {
       "id": "c451",
@@ -5342,7 +5792,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,389,550,710,1110,1269,1350,1509,1670,1830,1990,2070,2230,2310,2470]
     },
     {
       "id": "c452",
@@ -5353,7 +5804,8 @@ export const video: VideoEntry = {
       "note": "“feel confident”意为“感到自信”。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,390,550,790]
     },
     {
       "id": "c453",
@@ -5366,7 +5818,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "hold"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,469,950,1109,1190,1270,1430,1989,2229,2469,2630,2709,2869,2950,3109]
     },
     {
       "id": "c454",
@@ -5377,7 +5830,8 @@ export const video: VideoEntry = {
       "note": "“talk up”可能是“chalk up”的误听，这里指擦粉。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,870,1030,1189,1350,1429,1589,1750,1910,1990,2230,2470,2709,2870,3189,3350,3589,3750,3910,3990,4150,4390]
     },
     {
       "id": "c455",
@@ -5388,7 +5842,8 @@ export const video: VideoEntry = {
       "note": "“went a little fast”表示动作有点快。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,870,1270,1670]
     },
     {
       "id": "c456",
@@ -5401,7 +5856,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "reach"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,390,470,549,789,870,1029,1190,1350,1510,1669]
     },
     {
       "id": "c457",
@@ -5416,7 +5872,8 @@ export const video: VideoEntry = {
       "keywords": [
         "hold",
         "reach"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,550,710,950,1109,1190,1269,1430,1749,1989,2149]
     },
     {
       "id": "c458",
@@ -5429,7 +5886,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,869,1109,1269,1590,1910,2150,2310,2550,2790,2950,3350,3830,4070,4310]
     },
     {
       "id": "c459",
@@ -5443,7 +5901,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,1350,2150,2390,2630,2790,3110,3750,4069,4230,4390,4550,4630,4790,4949,5270,5589,5910,6150,6390,6469,6630,6790,6949,7110,7189,7429,7670]
     },
     {
       "id": "c460",
@@ -5454,7 +5913,8 @@ export const video: VideoEntry = {
       "note": "'crosses the beat' 可能指交叉手动作，'beat' 在攀岩中常指节奏。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,1109,1269,1590]
     },
     {
       "id": "c461",
@@ -5465,7 +5925,8 @@ export const video: VideoEntry = {
       "note": "'just got a minute left' 是常用表达，表示‘只剩一分钟’。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,869,1030]
     },
     {
       "id": "c462",
@@ -5476,7 +5937,8 @@ export const video: VideoEntry = {
       "note": "'about to' 表示‘即将’，常用于描述即将发生的事。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,549,789]
     },
     {
       "id": "c463",
@@ -5487,7 +5949,8 @@ export const video: VideoEntry = {
       "note": "'focused on' 表示‘聚焦于’，注意 'as' 引导时间状语。",
       "score": 35,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,710,1110,1269,1429,1669,1909,2070,2230,2390,2549,2710,2950,3110,3350,3669,3909,4230,4309,4549,4710]
     },
     {
       "id": "c464",
@@ -5498,7 +5961,8 @@ export const video: VideoEntry = {
       "note": "'Interesting' 是常用感叹词，表示‘有趣’。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c465",
@@ -5511,7 +5975,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "sequence"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,549,710,870,1029,1110,1509,1750,1909,2230]
     },
     {
       "id": "c466",
@@ -5522,7 +5987,8 @@ export const video: VideoEntry = {
       "note": "'Yeah' 是口语中常见的‘是的’。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c467",
@@ -5535,7 +6001,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,470,1190,1509,1830,2230,2470,2710,2789,2950,3269,3430,3509,3590,3750,4070,4629,4870,5029,5350,5509,5669,5990,6310,6470]
     },
     {
       "id": "c468",
@@ -5546,7 +6013,8 @@ export const video: VideoEntry = {
       "note": "'set up' 在这里指‘踩稳’，'start moving' 表示‘开始移动’。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,630,709,869,1030,1270,1349,1589,1750,2150,2310,2550,2709,2790,2950,3109,3349]
     },
     {
       "id": "c469",
@@ -5557,7 +6025,8 @@ export const video: VideoEntry = {
       "note": "'a little bit too' 表示‘有点太’，常用于指出问题。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,629,790,950,1110,1269]
     },
     {
       "id": "c470",
@@ -5570,7 +6039,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,309,549,789,870,1029]
     },
     {
       "id": "c471",
@@ -5583,7 +6053,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [109,270,430,589,750,910,1069,1229,1390,1550,1790,1870,1949,2030,2190,2349,2510,2589,2670,2829]
     },
     {
       "id": "c472",
@@ -5596,7 +6067,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,469,630]
     },
     {
       "id": "c473",
@@ -5609,7 +6081,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,709]
     },
     {
       "id": "c474",
@@ -5622,7 +6095,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "match"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,709,1270,1430,1670,2150]
     },
     {
       "id": "c475",
@@ -5635,7 +6109,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,790,1030,1190,1269,1430,1590,1749,1910]
     },
     {
       "id": "c476",
@@ -5646,7 +6121,8 @@ export const video: VideoEntry = {
       "note": "'a little slower' 表示‘稍微慢一点’，'too' 表示‘也’。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1109,1430,1670,1750,1910,1989,2150,2550]
     },
     {
       "id": "c477",
@@ -5659,7 +6135,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,390,550,709,790,1030]
     },
     {
       "id": "c478",
@@ -5670,7 +6147,8 @@ export const video: VideoEntry = {
       "note": "'about to' 表示‘即将’，'stand on' 表示‘站上’。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,710,949,1189]
     },
     {
       "id": "c479",
@@ -5683,7 +6161,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1189,1429,1670,1910,2150,2390,2469,2630,2790]
     },
     {
       "id": "c480",
@@ -5694,7 +6173,8 @@ export const video: VideoEntry = {
       "note": "口语中 'Yeah. No.' 表示犹豫或转折，'and uh' 是填充词。",
       "score": 2,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,1110]
     },
     {
       "id": "c481",
@@ -5705,7 +6185,8 @@ export const video: VideoEntry = {
       "note": "'tallest' 是最高级，表示‘最高的’，'finalist' 表示‘决赛选手’。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,870,1350]
     },
     {
       "id": "c482",
@@ -5716,7 +6197,8 @@ export const video: VideoEntry = {
       "note": "注意“curious”的发音，意思是“好奇的”。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550]
     },
     {
       "id": "c483",
@@ -5729,7 +6211,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "attempt"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,469,709,870,1110,1589,1829,1910,2069,2390,2709,3030,3750,3990,4150,4390,4870,5110,5189,5589,5750]
     },
     {
       "id": "c484",
@@ -5742,7 +6225,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "final"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,550,710,790,1030,1349,1430,1509,1670,1830,1989,2150,2310,2470,2710,2869,3270,3670,3830,3910,3989,4150,4310]
     },
     {
       "id": "c485",
@@ -5753,7 +6237,8 @@ export const video: VideoEntry = {
       "note": "“have to”表示“必须”，注意连读。",
       "score": 42,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,709,790,949,1030,1189]
     },
     {
       "id": "c486",
@@ -5766,7 +6251,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,469,550,629,710,869,1110,2230,2550,3029,3590,3670,3909,4070,4230,4470,4950]
     },
     {
       "id": "c487",
@@ -5777,7 +6263,8 @@ export const video: VideoEntry = {
       "note": "“tough one”是口语，表示“难搞的”。",
       "score": 9,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,549]
     },
     {
       "id": "c488",
@@ -5791,7 +6278,8 @@ export const video: VideoEntry = {
       "keywords": [
         "top",
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,389,710,1029,1190,1749,1830,1990,2149,2389,2550,2629,2789,3110,3350,3590,3749,3909]
     },
     {
       "id": "c489",
@@ -5804,7 +6292,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,950,1990,2389,3830,4230,4870,5110,5350,5509,5670,5909,6149,6389,7110,7269,7430,7509,7590,7749]
     },
     {
       "id": "c490",
@@ -5815,7 +6304,8 @@ export const video: VideoEntry = {
       "note": "“Right”在这里表示同意，相当于“对”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c491",
@@ -5826,7 +6316,8 @@ export const video: VideoEntry = {
       "note": "“Here we go”是常用口语，表示“开始吧”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469]
     },
     {
       "id": "c492",
@@ -5839,7 +6330,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,510,750,990,2189,2829,3150,3310,3469,3630,4030,4829,5390,6030,6270,6510,6910,7150]
     },
     {
       "id": "c493",
@@ -5850,7 +6342,8 @@ export const video: VideoEntry = {
       "note": "“She's back”表示“她回来了”，注意缩写。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630]
     },
     {
       "id": "c494",
@@ -5861,7 +6354,8 @@ export const video: VideoEntry = {
       "note": "“training break”是“训练休息”，注意地名发音。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,470,630,950,1110,1350,2070,2149,2310]
     },
     {
       "id": "c495",
@@ -5874,7 +6368,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,550,710,790,1029,1350,1670,1830,1990,2070,2149,2389]
     },
     {
       "id": "c496",
@@ -5885,7 +6380,8 @@ export const video: VideoEntry = {
       "note": "“miss”在这里是“想念”，注意过去式“missed”。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,709]
     },
     {
       "id": "c497",
@@ -5896,7 +6392,8 @@ export const video: VideoEntry = {
       "note": "“I'll be honest”是“说实话”，注意“honest”的发音。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,470]
     },
     {
       "id": "c498",
@@ -5907,7 +6404,8 @@ export const video: VideoEntry = {
       "note": "“regular”在这里是“常客”，注意“at the moment”意为“现在”。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,790,1030,1589,1750,1829]
     },
     {
       "id": "c499",
@@ -5918,7 +6416,8 @@ export const video: VideoEntry = {
       "note": "“it's funny”表示“有趣”，注意口语中的重复。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,709,1030,1510,1990,2550,2790]
     },
     {
       "id": "c500",
@@ -5929,7 +6428,8 @@ export const video: VideoEntry = {
       "note": "“such good smiles”是“这么好的笑容”，注意“such”的用法。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [109,269,430,910,1150,1229,1470,1629]
     },
     {
       "id": "c501",
@@ -5940,7 +6440,8 @@ export const video: VideoEntry = {
       "note": "“genuinely”意为“真正地”，注意“World Cup”指“世界杯”。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,950,1190,1269,1350,1429,1669,1830,2549,2870,3029,3350,3590,3830,4149,4549,4710,4950,5190,5350,5750,5990]
     },
     {
       "id": "c502",
@@ -5951,7 +6452,8 @@ export const video: VideoEntry = {
       "note": "“It is really nice to see”是“看到这些真的很好”，注意“nice”的用法。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,789,1029,1189,1350,1510,1750]
     },
     {
       "id": "c503",
@@ -5962,7 +6464,8 @@ export const video: VideoEntry = {
       "note": "“beast”在这里是“猛兽”，形容很强。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,549,710,870,1110,1189,1350]
     },
     {
       "id": "c504",
@@ -5973,7 +6476,8 @@ export const video: VideoEntry = {
       "note": "“hence”意为“因此”，注意“Instagram tag”是“Instagram标签”。",
       "score": 51,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,1110,1510,1910]
     },
     {
       "id": "c505",
@@ -5984,7 +6488,8 @@ export const video: VideoEntry = {
       "note": "“check that out”是“去看看”，注意“please do”是“请去做”。",
       "score": 48,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,549,789,950,1189,1429]
     },
     {
       "id": "c506",
@@ -5995,7 +6500,8 @@ export const video: VideoEntry = {
       "note": "注意 'look at that' 是常用口语，表示‘看那个’。",
       "score": 14,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,309,470,549]
     },
     {
       "id": "c507",
@@ -6008,7 +6514,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,470,710,950,1110,1350,1909,1990,2149,2310,2550,3269,3669,4629,5029,5830]
     },
     {
       "id": "c508",
@@ -6021,7 +6528,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,470,629,710,869,1030]
     },
     {
       "id": "c509",
@@ -6032,7 +6540,8 @@ export const video: VideoEntry = {
       "note": "'I don't even know if' 表示‘我甚至不知道是否’，用于表达不确定。",
       "score": 50,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,949,1510,1830,1909,2070,2149,2389,2550]
     },
     {
       "id": "c510",
@@ -6043,7 +6552,8 @@ export const video: VideoEntry = {
       "note": "'less scary' 是‘不那么吓人’，比较级用法。",
       "score": 57,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,710,1029,1349,1589,1750,1910,2150,2390]
     },
     {
       "id": "c511",
@@ -6054,7 +6564,8 @@ export const video: VideoEntry = {
       "note": "'punish' 在这里是‘惩罚’，指定线员设计难点让某种做法更难。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,1110,1429,1830,2390,2630,2870,3110,3270,3429,3669,4469,4870,5350,5510,5749,5909,6070]
     },
     {
       "id": "c512",
@@ -6065,7 +6576,8 @@ export const video: VideoEntry = {
       "note": "'I really wish they would have done that' 是虚拟语气，表示‘真希望他们那样做了’。",
       "score": 49,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,550,710,950,1109,1589,1829,1990,2470,2629,2790,2950,3109,3270,3429,3510]
     },
     {
       "id": "c513",
@@ -6076,7 +6588,8 @@ export const video: VideoEntry = {
       "note": "'such amazing climbers' 中 such 修饰名词，表示‘如此…的’。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,950,1190,1350,1430,1670,1829,1989,2309,2710]
     },
     {
       "id": "c514",
@@ -6087,7 +6600,8 @@ export const video: VideoEntry = {
       "note": "'it's hard to punish them for' 表示‘很难因为…而惩罚他们’。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,1029,1350,1590,2150,2469,2789,3189,3350]
     },
     {
       "id": "c515",
@@ -6098,7 +6612,8 @@ export const video: VideoEntry = {
       "note": "'in a similar way' 表示‘以类似的方式’。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,549,710,789,950,1190,1349,1430,1589,1749]
     },
     {
       "id": "c516",
@@ -6109,7 +6624,8 @@ export const video: VideoEntry = {
       "note": "'physical' 在这里指‘费体力的’。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,629,710,869,1270,1349,1429,1589,1750,2310]
     },
     {
       "id": "c517",
@@ -6120,7 +6636,8 @@ export const video: VideoEntry = {
       "note": "'right?' 是口语中寻求认同的常用词。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c518",
@@ -6131,7 +6648,8 @@ export const video: VideoEntry = {
       "note": "'creeps out' 表示‘缓慢移动’，creep 有‘爬行’的意思。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,550,710,1030,1109]
     },
     {
       "id": "c519",
@@ -6142,7 +6660,8 @@ export const video: VideoEntry = {
       "note": "'one hole to go' 中 hole 指岩点，to go 表示‘剩余’。",
       "score": 27,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,469,629]
     },
     {
       "id": "c520",
@@ -6153,7 +6672,8 @@ export const video: VideoEntry = {
       "note": "'looking good' 表示‘看起来不错’。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,509,749,830,989]
     },
     {
       "id": "c521",
@@ -6164,7 +6684,8 @@ export const video: VideoEntry = {
       "note": "'got really good' 表示‘变得很好’，这里指状态。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,669,830]
     },
     {
       "id": "c522",
@@ -6175,7 +6696,8 @@ export const video: VideoEntry = {
       "note": "'super slow' 中 super 是口语化的‘非常’。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,1190,1430,1670,1749]
     },
     {
       "id": "c523",
@@ -6186,7 +6708,8 @@ export const video: VideoEntry = {
       "note": "'no hands' 指‘不用手’，常见于攀岩。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,790,950]
     },
     {
       "id": "c524",
@@ -6197,7 +6720,8 @@ export const video: VideoEntry = {
       "note": "'There you go' 是口语，表示‘看吧’或‘就这样’。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,549,629,1109,1190,1270]
     },
     {
       "id": "c525",
@@ -6208,7 +6732,8 @@ export const video: VideoEntry = {
       "note": "同上，'There you go' 的重复。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [29,110,190]
     },
     {
       "id": "c526",
@@ -6219,7 +6744,8 @@ export const video: VideoEntry = {
       "note": "'Yeah' 是‘是的’，口语常用。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110]
     },
     {
       "id": "c527",
@@ -6232,7 +6758,8 @@ export const video: VideoEntry = {
       "study": false,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,390]
     },
     {
       "id": "c528",
@@ -6243,7 +6770,8 @@ export const video: VideoEntry = {
       "note": "'so' 在这里是‘所以’，用于连接。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309]
     },
     {
       "id": "c529",
@@ -6256,7 +6784,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [109,270,429,510,590,669,750,830,990,1149]
     },
     {
       "id": "c530",
@@ -6269,7 +6798,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,550,790,949,1109,1270,1590]
     },
     {
       "id": "c531",
@@ -6280,7 +6810,8 @@ export const video: VideoEntry = {
       "note": "pop 在这里指“动态跳跃”，注意听这个口语化表达。",
       "score": 49,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,1189,1429,1590,1669,1830,1909,2230]
     },
     {
       "id": "c532",
@@ -6291,7 +6822,8 @@ export const video: VideoEntry = {
       "note": "statically 是“静态地”，与动态相对。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,549,789]
     },
     {
       "id": "c533",
@@ -6304,7 +6836,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,630,1030,1669,1830,2070,2310,2470,2630,2790,2949,3189,3350]
     },
     {
       "id": "c534",
@@ -6317,7 +6850,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "final"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,630,790,950,1110,1269,1350,1749,1910,2070,2150,2230,2310,2470]
     },
     {
       "id": "c535",
@@ -6328,7 +6862,8 @@ export const video: VideoEntry = {
       "note": "poised 意为“准备就绪”，in 在这里指“完成攀登”。",
       "score": 24,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,1029,1990,2230,2390]
     },
     {
       "id": "c536",
@@ -6339,7 +6874,8 @@ export const video: VideoEntry = {
       "note": "简单表达，表示评论员的观察。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c537",
@@ -6353,7 +6889,8 @@ export const video: VideoEntry = {
       "keywords": [
         "hold",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1109,1430,1589,1990,2310,2470,2710,2870,3109,3270,3510,3670,3750]
     },
     {
       "id": "c538",
@@ -6364,7 +6901,8 @@ export const video: VideoEntry = {
       "note": "语气词，表示同意或继续。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c539",
@@ -6375,7 +6913,8 @@ export const video: VideoEntry = {
       "note": "I'll talk about in a sec 是“我马上会说”的口语表达。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,870,1030,1510,1670,1910,2390]
     },
     {
       "id": "c540",
@@ -6386,7 +6925,8 @@ export const video: VideoEntry = {
       "note": "overthought 是“想太多”，down 在这里是语气词。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,550,1189,1350]
     },
     {
       "id": "c541",
@@ -6397,7 +6937,8 @@ export const video: VideoEntry = {
       "note": "a little bit of 是“一点”的常用表达。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,630,710,870,1430]
     },
     {
       "id": "c542",
@@ -6408,7 +6949,8 @@ export const video: VideoEntry = {
       "note": "over complicating 是“过度复杂化”，注意这个词。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,950,1190,1350,1510,1670,1830]
     },
     {
       "id": "c543",
@@ -6419,7 +6961,8 @@ export const video: VideoEntry = {
       "note": "jumped with her right hand 指“用右手做动态动作”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,950,1110,1350,1590]
     },
     {
       "id": "c544",
@@ -6430,7 +6973,8 @@ export const video: VideoEntry = {
       "note": "go with your left 指“用左手”，注意省略了 hand。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630,870,1110,1350,1509,1590,1830,2070,2150,2310,2390,2550,2710]
     },
     {
       "id": "c545",
@@ -6443,7 +6987,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,389,710,950,1109,1349,1510,1670,1910,2150,2230,2470,2629,2710,2869,3030,3190,3349]
     },
     {
       "id": "c546",
@@ -6456,7 +7001,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,550,710,869,1109,1270,1430,1510,1670]
     },
     {
       "id": "c547",
@@ -6467,7 +7013,8 @@ export const video: VideoEntry = {
       "note": "口语填充词，表示转折。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550]
     },
     {
       "id": "c548",
@@ -6481,7 +7028,8 @@ export const video: VideoEntry = {
       "keywords": [
         "move",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [109,270,670,1069,1310,1870,2109,2430,2670,2910,4349,5790,6270,7310,7470,7550,7790,7950,8109,8270,8430,8589,8750,8990,9150]
     },
     {
       "id": "c549",
@@ -6494,7 +7042,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,790,1030,1670]
     },
     {
       "id": "c550",
@@ -6509,7 +7058,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,469,790,1350,1670,1830,2150,2390,2469,2630,2790,2949,3270,3590,3830,3910,3990,4150,4310,4550,4630,4790,4870,5189,5350]
     },
     {
       "id": "c551",
@@ -6522,7 +7072,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,630,789,1269,1750,2070,2230,2390]
     },
     {
       "id": "c552",
@@ -6538,7 +7089,8 @@ export const video: VideoEntry = {
         "top",
         "hold",
         "stuck"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,710,1030,1350,1830,2070,2230,2470,2710,2870,3030,3190,3990,4230,4310,4470,4710]
     },
     {
       "id": "c553",
@@ -6549,7 +7101,8 @@ export const video: VideoEntry = {
       "note": "super relieved 是“非常放松”，注意 relieved 的发音。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,389,550,869,1190,1510,1670,1750,1990,2150,2470]
     },
     {
       "id": "c554",
@@ -6560,7 +7113,8 @@ export const video: VideoEntry = {
       "note": "注意“kills it”是口语中表示“成功完成”的常用表达。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,710,1109,1430,1670,1990,2150,2390]
     },
     {
       "id": "c555",
@@ -6573,7 +7127,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,630,789,870,1110,1590]
     },
     {
       "id": "c556",
@@ -6586,7 +7141,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "flash"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,270,430,590,669,830]
     },
     {
       "id": "c557",
@@ -6597,7 +7153,8 @@ export const video: VideoEntry = {
       "note": "“Yeah”是口语中常见的肯定回应，相当于“对”。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149]
     },
     {
       "id": "c558",
@@ -6608,7 +7165,8 @@ export const video: VideoEntry = {
       "note": "“be aware of”意为“意识到”，注意“how her body works”的用法。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,350,510,830,990,1230,1469,1709,1870,2110,2429]
     },
     {
       "id": "c559",
@@ -6619,7 +7177,8 @@ export const video: VideoEntry = {
       "note": "“big ass”是俚语，加强语气，表示“非常、极其”，这里指“了不起”。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,1029,1190,1430,1670,1990,2150]
     },
     {
       "id": "c560",
@@ -6630,7 +7189,8 @@ export const video: VideoEntry = {
       "note": "重复“Yeah”表示同意，注意语气。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c561",
@@ -6645,7 +7205,8 @@ export const video: VideoEntry = {
       "keywords": [
         "flash",
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,790,1110,1590,1750,2310,2790,3030,3270,3510,3670,3750,3910,4070]
     },
     {
       "id": "c562",
@@ -6656,7 +7217,8 @@ export const video: VideoEntry = {
       "note": "“slip”意为“滑倒”，在攀岩中常指脚滑。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470]
     },
     {
       "id": "c563",
@@ -6669,7 +7231,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "move"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,309,470,710,790,1110,1670,1829,1990,3190,3829,4150,4390,4550,4790,5510,5670,5829,6150,6390,6550,6870,7349,8390,8790,9030]
     },
     {
       "id": "c564",
@@ -6682,7 +7245,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "fall"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,269,670,830,1070,1390,2670,2910,3150,3390,3550]
     },
     {
       "id": "c565",
@@ -6693,7 +7257,8 @@ export const video: VideoEntry = {
       "note": "“hasn't been in the position”指“没有处于这个位置”，注意现在完成时。",
       "score": 47,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,710,950,1109,1270,1430,1510,1670,1910,1990]
     },
     {
       "id": "c566",
@@ -6704,7 +7269,8 @@ export const video: VideoEntry = {
       "note": "“favorite”在这里指“热门选手”，注意“one of”的用法。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,630,789,1269,1510,1910]
     },
     {
       "id": "c567",
@@ -6715,7 +7281,8 @@ export const video: VideoEntry = {
       "note": "“qualifying”指资格赛，“looked very good”表示“看起来很好”。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,550,710,1110,1270,1430,1750,2070,2310]
     },
     {
       "id": "c568",
@@ -6726,7 +7293,8 @@ export const video: VideoEntry = {
       "note": "“depends on”意为“取决于”，“set”指线路设置。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,710,870,1030,1350,1590,2149,2310]
     },
     {
       "id": "c569",
@@ -6737,7 +7305,8 @@ export const video: VideoEntry = {
       "note": "“Totally”是口语中表示完全同意的说法。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c570",
@@ -6748,7 +7317,8 @@ export const video: VideoEntry = {
       "note": "“quick adjustment”指快速调整，“gets his second try”这里指第二次尝试。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,629,1270,1510,1910,2389,2710,3109,3350,3910,3990,4149,4389,4629,4869]
     },
     {
       "id": "c571",
@@ -6759,7 +7329,8 @@ export const video: VideoEntry = {
       "note": "“a little bit of what happened”意为“发生的一点情况”，注意口语化表达。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,1030,1270,1510,1670,1830,2070,2310]
     },
     {
       "id": "c572",
@@ -6770,7 +7341,8 @@ export const video: VideoEntry = {
       "note": "“say whatever you want”意为“随便说”，表示自由表达。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,1030,1510,1750,2070,2310,2389,2550,2870,3030]
     },
     {
       "id": "c573",
@@ -6781,7 +7353,8 @@ export const video: VideoEntry = {
       "note": "“messed it up”是口语，意为“搞砸了”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,630,789,950,1029,1110,1269]
     },
     {
       "id": "c574",
@@ -6795,7 +7368,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,270,430,590,750,989]
     },
     {
       "id": "c575",
@@ -6806,7 +7380,8 @@ export const video: VideoEntry = {
       "note": "“a little bit nervous”意为“有点紧张”，注意“maybe”的用法。",
       "score": 51,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,710,789,950]
     },
     {
       "id": "c576",
@@ -6817,7 +7392,8 @@ export const video: VideoEntry = {
       "note": "“doesn't really matter”意为“真的没关系”，注意“really”加强语气。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,709]
     },
     {
       "id": "c577",
@@ -6828,7 +7404,8 @@ export const video: VideoEntry = {
       "note": "“one try”指一次尝试，“she'll probably get it”意为“她可能会完成”。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,949,1350,1429,1590,1669,1909,2150,2470,2630,2870,3110,3270]
     },
     {
       "id": "c578",
@@ -6839,7 +7416,8 @@ export const video: VideoEntry = {
       "note": "hero 在这里指完攀，注意口语中常用 hero 表示成功完成。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,710,870,1030,1190,1350,1509]
     },
     {
       "id": "c579",
@@ -6852,7 +7430,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "comfortable"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,630,790,870,1030,1350,2230,2470,2710,2950,3110,3189,3350,3669,3830,3990,4070,4390,4790,4950,5110,5270,5669,5909,6230]
     },
     {
       "id": "c580",
@@ -6865,7 +7444,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,710,869,1030,1109,1270,1349,1510,1670,1830,1910,2070]
     },
     {
       "id": "c581",
@@ -6876,7 +7456,8 @@ export const video: VideoEntry = {
       "note": "reading 在攀岩中指“读线”，即观察并理解路线。",
       "score": 25,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,709,1030,1510,1750,1989]
     },
     {
       "id": "c582",
@@ -6889,7 +7470,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,790,870,1030,1110,1189,1350,1510,1590,1669,1830,1990,2070,2230]
     },
     {
       "id": "c583",
@@ -6902,7 +7484,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,550,790,1109,1270,1510,1670,1830,2389,2710,2950,3109,3349,3590]
     },
     {
       "id": "c584",
@@ -6916,7 +7499,8 @@ export const video: VideoEntry = {
       "keywords": [
         "match",
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,709]
     },
     {
       "id": "c585",
@@ -6927,7 +7511,8 @@ export const video: VideoEntry = {
       "note": "be in from here 表示“从这里开始有把握”，注意 in 的用法。",
       "score": 30,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,790,1030,1270,1430]
     },
     {
       "id": "c586",
@@ -6938,7 +7523,8 @@ export const video: VideoEntry = {
       "note": "confidence boost 是“信心提升”，注意 boost 的用法。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,469,550,710,1110,1350,1509,1670,1910,2070,2150,2310,2469]
     },
     {
       "id": "c587",
@@ -6949,7 +7535,8 @@ export const video: VideoEntry = {
       "note": "set oneself 表示“调整姿势”，注意反身动词的用法。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470]
     },
     {
       "id": "c588",
@@ -6960,7 +7547,8 @@ export const video: VideoEntry = {
       "note": "get it slightly wrong 表示“有点失误”，注意 slightly 表示程度。",
       "score": 36,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,390,790,1030,1189,1350,1750,1909]
     },
     {
       "id": "c589",
@@ -6974,7 +7562,8 @@ export const video: VideoEntry = {
       "keywords": [
         "move",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,630,710,870,1109,1270,1430,1589,1750,2069,2470,2710,2950,3109,3270,3430]
     },
     {
       "id": "c590",
@@ -6985,7 +7574,8 @@ export const video: VideoEntry = {
       "note": "right away 表示“立刻”，注意口语中的重复和停顿。",
       "score": 9,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,1030,1430,1750,1910]
     },
     {
       "id": "c591",
@@ -6999,7 +7589,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,230,470,630,790,870,1110,1350,1590,1750,1990,2310,2550,3110,3429,3830,3990,4230,4390,4550,4790]
     },
     {
       "id": "c592",
@@ -7010,7 +7601,8 @@ export const video: VideoEntry = {
       "note": "either one 表示“两者之一”，注意 either 的用法。",
       "score": 9,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790]
     },
     {
       "id": "c593",
@@ -7023,7 +7615,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,710,870,950,1190,1270,1510]
     },
     {
       "id": "c594",
@@ -7034,7 +7627,8 @@ export const video: VideoEntry = {
       "note": "replay 是“回放”，注意听 replay 的发音。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630,790,870,1029,1110,1269,1509,1670]
     },
     {
       "id": "c595",
@@ -7047,7 +7641,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [110,190,269,430,510,750,990]
     },
     {
       "id": "c596",
@@ -7058,7 +7653,8 @@ export const video: VideoEntry = {
       "note": "went for it 表示“努力尝试”，注意 go for it 的用法。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,549,710,1829,2069,2150]
     },
     {
       "id": "c597",
@@ -7069,7 +7665,8 @@ export const video: VideoEntry = {
       "note": "get a little bit higher 表示“再高一点”，注意比较级用法。",
       "score": 37,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,390,630,870,1030,1110,1350,1589,1750,1990,2230,2390,2549,2710,2950,3110,3350]
     },
     {
       "id": "c598",
@@ -7084,7 +7681,8 @@ export const video: VideoEntry = {
       "keywords": [
         "zone",
         "slab"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,950,1430,1670,1830,1989,2229,2469,2709,2870,3030,3270,3430,3670,3830,3989,4150,4469,4790,5030]
     },
     {
       "id": "c599",
@@ -7098,7 +7696,8 @@ export const video: VideoEntry = {
       "keywords": [
         "foot",
         "slipped"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,550,630,790,870,1030,1190,1510,1670,1750,1910,1989,2150,2310,2469]
     },
     {
       "id": "c600",
@@ -7109,7 +7708,8 @@ export const video: VideoEntry = {
       "note": "leverage 是“杠杆作用”，ping 是“弹开”，注意听 ping 的发音。",
       "score": 42,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,630,870,1110,1190,1430,1589,1750,1910,2069,2390,2630,3030,3270,3430,3589,3829]
     },
     {
       "id": "c601",
@@ -7120,7 +7720,8 @@ export const video: VideoEntry = {
       "note": "in between 表示“在...之间”，注意 between 的用法。",
       "score": 45,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470,550,710,790,870,1030,1350,1590,1830,2150,2390]
     },
     {
       "id": "c602",
@@ -7131,7 +7732,8 @@ export const video: VideoEntry = {
       "note": "注意“focus on”表示“专注于”，常用于解说中引导观众注意力。",
       "score": 40,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,630,710,950,1110,1190,1350,1510,1670,1830,1990]
     },
     {
       "id": "c603",
@@ -7142,7 +7744,8 @@ export const video: VideoEntry = {
       "note": "“shake”在这里意为“动摇、打击”，常用于口语。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,869,1030,1270,1510,1750,1909,2070]
     },
     {
       "id": "c604",
@@ -7153,7 +7756,8 @@ export const video: VideoEntry = {
       "note": "“she was in”在攀岩语境中表示“她本来能完成（那条线路）”。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,790,1030,1270,1430]
     },
     {
       "id": "c605",
@@ -7164,7 +7768,8 @@ export const video: VideoEntry = {
       "note": "“one of those things”表示“难免的事”，常用于安慰。",
       "score": 42,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,390,550,709,870,1030,2070,2310,2630,2709,2949,3189,3430,3590]
     },
     {
       "id": "c606",
@@ -7177,7 +7782,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "speed"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,230,310,470,630,789]
     },
     {
       "id": "c607",
@@ -7188,7 +7794,8 @@ export const video: VideoEntry = {
       "note": "“get this done out the way”意为“把这件事解决掉”。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,229,390,469,550,710,870,1110,1270,1430]
     },
     {
       "id": "c608",
@@ -7199,7 +7806,8 @@ export const video: VideoEntry = {
       "note": "“Yeah”是常见回应，表示同意。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150]
     },
     {
       "id": "c609",
@@ -7210,7 +7818,8 @@ export const video: VideoEntry = {
       "note": "“I'll talk about it after”表示“稍后讨论”，常用于解说。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,630,1430,1750,1910,2069,2230,2550,3030,4150,4550,5109]
     },
     {
       "id": "c610",
@@ -7221,7 +7830,8 @@ export const video: VideoEntry = {
       "note": "“stand”在攀岩中常指“站起来”的动作。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,630,790,870,1030,1110,1270,1589,1829,1990,2230,3430]
     },
     {
       "id": "c611",
@@ -7232,7 +7842,8 @@ export const video: VideoEntry = {
       "note": "“That's the problem”是常用表达，指出关键问题。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,470]
     },
     {
       "id": "c612",
@@ -7243,7 +7854,8 @@ export const video: VideoEntry = {
       "note": "“nothing for the part”意为“对这个部分来说不算什么”。",
       "score": 46,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,550,790,949,1030,1189,1350]
     },
     {
       "id": "c613",
@@ -7256,7 +7868,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "commit"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,470,710,1030,2149,2390,3429,3590,3750,3909,4310,4470,4630,4790,5350,5669,5830,6070,6230]
     },
     {
       "id": "c614",
@@ -7267,7 +7880,8 @@ export const video: VideoEntry = {
       "note": "“in it”表示“投入、专注”。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,430,830,1389]
     },
     {
       "id": "c615",
@@ -7278,7 +7892,8 @@ export const video: VideoEntry = {
       "note": "“would start to get”是虚拟语气，表示假设情况。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,310,1189,2149,2550,2790,2870,3030,3189,3429,3750,3990,4070,4230,4310,4390,4550,4710,4950,5189,5270,5429,5669,5909]
     },
     {
       "id": "c616",
@@ -7291,7 +7906,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,469,709,1590,1830,1990,2230,2469,2709,3030,3270,3750,3990,4150,4390,4870]
     },
     {
       "id": "c617",
@@ -7302,7 +7918,8 @@ export const video: VideoEntry = {
       "note": "“the major thing”意为“主要问题”，用于强调重点。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,550,790,1110,1190,1350,1590,1989,2230,2390,2470,2710,2790,2870,3110,3269]
     },
     {
       "id": "c618",
@@ -7313,7 +7930,8 @@ export const video: VideoEntry = {
       "note": "“in good shape”意为“状态好”。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,549,710,870]
     },
     {
       "id": "c619",
@@ -7326,7 +7944,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,549,710,870,1110,1910,2150,2309,2470,2549,2710,2870,2950,3190,3430,3670]
     },
     {
       "id": "c620",
@@ -7339,7 +7958,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,550,630,870,949,1110,1270,1590,1990,2230,2469,2709,2949,3030,3110,3270,3350]
     },
     {
       "id": "c621",
@@ -7350,7 +7970,8 @@ export const video: VideoEntry = {
       "note": "“behind by”表示“落后多少”。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,710,1029]
     },
     {
       "id": "c622",
@@ -7363,7 +7984,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "boulder"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,710,870,1030,1189]
     },
     {
       "id": "c623",
@@ -7374,7 +7996,8 @@ export const video: VideoEntry = {
       "note": "“catch up”意为“追赶”，注意引号内的直接引语。",
       "score": 35,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,230,309,470,590,710,789,950,1030,1270,1510,1670,1829,2150,2470,3270,3430,3590,3670,3829,3990,4470,4549,4789]
     },
     {
       "id": "c624",
@@ -7385,7 +8008,8 @@ export const video: VideoEntry = {
       "note": "“in a bit of trouble”意为“有点麻烦”。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,949,1429,1670,1830,1990,2070,2230,2469,2709]
     },
     {
       "id": "c625",
@@ -7396,7 +8020,8 @@ export const video: VideoEntry = {
       "note": "“doable”意为“可行的”，这里指“容易完成的”。",
       "score": 41,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110,270,429,590,830,990,1230,1470,1709,1870,2110,2429,2910,3150,3310,3390,3790,4030,4350,4590,4830]
     },
     {
       "id": "c626",
@@ -7407,7 +8032,8 @@ export const video: VideoEntry = {
       "note": "注意 'getting close' 表示接近完成，'on this' 指这条线路。",
       "score": 43,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,630,789,1029,1190,1430,2230,2470,2710,3190]
     },
     {
       "id": "c627",
@@ -7418,7 +8044,8 @@ export const video: VideoEntry = {
       "note": "'tough one' 是口语，指困难的事情。",
       "score": 9,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,710]
     },
     {
       "id": "c628",
@@ -7429,7 +8056,8 @@ export const video: VideoEntry = {
       "note": "'tops' 在这里指完攀次数，注意复数。",
       "score": 38,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,709,949,1110,1270,1590,1830,2070,2150,2310,2469,2630,2709,2949,3110]
     },
     {
       "id": "c629",
@@ -7442,7 +8070,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "foot"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1269,2470,2630,2870,3190,3989,4230,4390,4550,4710,4870,5110,5509,6390,6710]
     },
     {
       "id": "c630",
@@ -7453,7 +8082,8 @@ export const video: VideoEntry = {
       "note": "'super tough' 是加强语气的说法。",
       "score": 21,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,470,790]
     },
     {
       "id": "c631",
@@ -7464,7 +8094,8 @@ export const video: VideoEntry = {
       "note": "'has got time' 表示还有时间。",
       "score": 12,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [149,389,550]
     },
     {
       "id": "c632",
@@ -7475,7 +8106,8 @@ export const video: VideoEntry = {
       "note": "'get behind' 在这里指支持，'overbalancing' 指失去平衡。",
       "score": 44,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550,710,1030,1269,1989,2150,2310,2470,2790]
     },
     {
       "id": "c633",
@@ -7488,7 +8120,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,310,470,710,870,1030,1350,1430,1670]
     },
     {
       "id": "c634",
@@ -7501,7 +8134,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,1350,1830,1990,2230,2470,2630,3110,3510,4150,4550,4710,4949,5189]
     },
     {
       "id": "c635",
@@ -7512,7 +8146,8 @@ export const video: VideoEntry = {
       "note": "'goes again' 指再次尝试，'needs to' 省略了 'do it'。",
       "score": 34,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,390,630,870,1110,1349]
     },
     {
       "id": "c636",
@@ -7523,7 +8158,8 @@ export const video: VideoEntry = {
       "note": "注意时间表达。",
       "score": 17,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,469,709]
     },
     {
       "id": "c637",
@@ -7536,7 +8172,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,390,470,550,710,790,870,949,1189,1429,1669,2790,3030,3189,3350,3429,3669,3830,3990,4150,4710,4870,5030,5189]
     },
     {
       "id": "c638",
@@ -7547,7 +8184,8 @@ export const video: VideoEntry = {
       "note": "重复 'should be' 表示强调。",
       "score": 33,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,789,950,1270,1430,1510,1750,1910,1990]
     },
     {
       "id": "c639",
@@ -7558,7 +8196,8 @@ export const video: VideoEntry = {
       "note": "简单肯定。",
       "score": 0,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [110]
     },
     {
       "id": "c640",
@@ -7569,7 +8208,8 @@ export const video: VideoEntry = {
       "note": "'gets it' 指成功。",
       "score": 20,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,309,470,549]
     },
     {
       "id": "c641",
@@ -7580,7 +8220,8 @@ export const video: VideoEntry = {
       "note": "'hop off' 指跳下岩壁。",
       "score": 29,
       "study": false,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,310,550]
     },
     {
       "id": "c642",
@@ -7593,7 +8234,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "top"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,470,1670,2069,2230,2390,2549,2630,2870,3110,3830,5110,5350,5590]
     },
     {
       "id": "c643",
@@ -7606,7 +8248,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [149,310,389,470,629,790,950,1190,1270]
     },
     {
       "id": "c644",
@@ -7620,7 +8263,8 @@ export const video: VideoEntry = {
       "keywords": [
         "boulder",
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,710,950,1110,1270,1510,1670,1830,1910,2069,2230,2390,2470,2630]
     },
     {
       "id": "c645",
@@ -7633,7 +8277,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": [
         "zone"
-      ]
+      ],
+      "wordStartOffsetsMs": [150,550,630,710,870,950,1190,1349,1510,1750,2069,2390,2870,3109,3270,3510,3750,3910]
     },
     {
       "id": "c646",
@@ -7644,7 +8289,8 @@ export const video: VideoEntry = {
       "note": "句子未完成，注意 'getting it' 指拿到Zone。",
       "score": 39,
       "study": true,
-      "keywords": []
+      "keywords": [],
+      "wordStartOffsetsMs": [150,470,630,790,950,1109,1430,1670]
     }
   ],
   "previewMediaUrl": "/media/previews/bern-2025-wb-rescut-20s.mp4",

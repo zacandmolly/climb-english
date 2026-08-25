@@ -42,6 +42,11 @@ export type SubtitleCue = Cue & {
   highlight?: boolean;
   needsTranslation?: boolean;
   keywords: string[];
+  /**
+   * Word-level karaoke timeline. Absence is an explicit sentence-level
+   * degradation (UI must not fake word-level timing).
+   */
+  wordStartOffsetsMs?: number[];
 };
 
 // 课程线练习句：学习者标注版。复用 Cue 的时间轴字段（id/startTime/endTime），

@@ -35,11 +35,11 @@ function cleanText(value) {
     .trim();
 }
 
-function normalizeWord(value) {
+export function normalizeWord(value) {
   return value
     .toLowerCase()
     .replace(/[’]/g, "'")
-    .replace(/^['"“”‘’.,!?;:()[\]-]+|['"“”‘’.,!?;:()[\]-]+$/g, '');
+    .replace(/^['"“”‘’.,!?;:()[\]–—-]+|['"“”‘’.,!?;:()[\]–—-]+$/g, '');
 }
 
 function recentPrefixOverlap(recentWords, prefixWords) {

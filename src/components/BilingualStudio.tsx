@@ -1,5 +1,4 @@
 import {
-  BookOpen,
   Captions,
   ChevronLeft,
   ChevronRight,
@@ -11,22 +10,21 @@ import {
   Play,
   Repeat,
   Search,
-  Star,
   Pause,
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { CSSProperties } from 'react';
 import { useCuePlayer } from '../hooks/useCuePlayer';
 import { patternsForEnglish } from '../lib/cue';
 import { reportError } from '../lib/errorReporter';
 import { describeVideoLoadFailure, type VideoLoadFailure } from '../lib/videoLoad';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
 import { loadVideo } from '../data/videos';
-import type { Keyword, SubtitleCue, VideoCategory, VideoEntry, VideoSummary } from '../types';
-import { formatDuration, formatTime, HighlightedText } from '../lib/ui';
+import type { Keyword, VideoCategory, VideoEntry, VideoSummary } from '../types';
+import { formatDuration } from '../lib/ui';
 import { CueMediaPlayer } from '../players/CueMediaPlayer';
 import { resolveVideoResumePosition, type VideoResumePosition } from '../progress/videoSession';
 import { SpeakingCoach, type CoachTarget } from './SpeakingCoach';
+import { SubtitlePanel } from './SubtitlePanel';
 
 const CATEGORY_ORDER: VideoCategory[] = [
   'world-cup',
@@ -450,97 +448,6 @@ function LibraryStrip({
       <p className="library-strip-hint">
         导入新视频：npm run import:youtube &lt;YouTube链接&gt;；每日自动发现已在后台运行。
       </p>
-    </section>
-  );
-}
-
-function SubtitlePanel({
-  cues,
-  activeCueIndex,
-  currentTime,
-  mediaStartTime,
-  showZh,
-  studyOnly,
-  onSelectCue,
-}: {
-  cues: SubtitleCue[];
-  activeCueIndex: number;
-  currentTime: number;
-  mediaStartTime: number;
-  showZh: boolean;
-  studyOnly: boolean;
-  onSelectCue: (index: number) => void;
-}) {
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const visible = studyOnly ? cues.filter((cue) => cue.study) : cues;
-  const terms = useMemo(() => Array.from(new Set(cues.flatMap((cue) => cue.keywords))), [cues]);
-
-  // Pin the active cue to the TOP of the list: as playback advances the
-  // subtitle cards scroll upward underneath it (like the reference UI).
-  useEffect(() => {
-    const list = listRef.current;
-    const row = list?.querySelector<HTMLElement>(`[data-cue-index="${activeCueIndex}"]`);
-    if (!list || !row) return;
-    const rowTop =
-      row.getBoundingClientRect().top - list.getBoundingClientRect().top + list.scrollTop;
-    list.scrollTo({ top: Math.max(0, rowTop - 8), behavior: 'smooth' });
-  }, [activeCueIndex]);
-
-  return (
-    <section className="subtitle-panel" aria-label="Bilingual subtitles">
-      <div className="panel-heading spread">
-        <span>
-          <BookOpen size={18} aria-hidden="true" />
-          中英字幕 · {visible.length}/{cues.length} 句
-        </span>
-        <span className="subtitle-legend">
-          <Star size={13} aria-hidden="true" /> 高分佳句
-        </span>
-      </div>
-      <div className="subtitle-list" ref={listRef}>
-        {visible.map((cue) => {
-          const index = cues.indexOf(cue);
-          const isActive = index === activeCueIndex;
-          const cueProgress = isActive
-            ? Math.min(
-                100,
-                Math.max(
-                  0,
-                  ((currentTime + mediaStartTime - cue.startTime) /
-                    Math.max(0.1, cue.endTime - cue.startTime)) *
-                    100
-                )
-              )
-            : 0;
-          return (
-            <button
-              className={`subtitle-card ${isActive ? 'active' : ''} ${cue.study ? '' : 'filler'}`}
-              data-cue-index={index}
-              style={{ '--cue-progress': `${cueProgress}%` } as CSSProperties}
-              key={cue.id}
-              type="button"
-              onClick={() => onSelectCue(index)}
-            >
-              <span className="subtitle-topline">
-                <span className="subtitle-ts">{formatTime(cue.startTime)}</span>
-                {cue.highlight ? (
-                  <span className="subtitle-star">
-                    <Star size={13} aria-hidden="true" /> 佳句
-                  </span>
-                ) : null}
-                {cue.score >= 0 ? <em className="score-chip">{cue.score}</em> : null}
-              </span>
-              <span className="subtitle-en">
-                <HighlightedText text={cue.en} terms={terms} />
-              </span>
-              {showZh && cue.zh ? <span className="subtitle-zh">{cue.zh}</span> : null}
-              {showZh && cue.needsTranslation ? (
-                <span className="subtitle-zh pending">翻译待补</span>
-              ) : null}
-            </button>
-          );
-        })}
-      </div>
     </section>
   );
 }

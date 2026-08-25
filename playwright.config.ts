@@ -36,12 +36,12 @@ export default defineConfig({
       // Issue #22/#24: the mobile player flows must run on a real mobile
       // Chromium profile (Pixel 7) and on mobile WebKit, not only desktop.
       name: 'pixel-7-chromium',
-      testMatch: /youtube-(?:handoff|failure)\.spec\.ts/,
+      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke)\.spec\.ts/,
       use: { ...devices['Pixel 7'] },
     },
     {
       name: 'mobile-webkit',
-      testMatch: /youtube-(?:handoff|failure)\.spec\.ts/,
+      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke)\.spec\.ts/,
       use: { ...devices['iPhone 13'] },
     },
   ],

@@ -150,13 +150,16 @@ jobs:
         run: npm run check:videos
       - name: Check lesson-to-cue alignment
         run: npm run check:lesson-alignment
+      - name: Check source-derived word timings
+        run: npm run check:words
       - name: Note in summary
         if: always()
         run: |
           {
             echo "> **video-pipeline** — hard gate for every generated video module."
             echo "> Verifies cue counts, translations, monotonic timelines, registry parity, faststart MP4s,"
-            echo "> either a Git-tracked deployable media file or a YouTube timeline fallback, and R12 lesson/cue alignment."
+            echo "> either a Git-tracked deployable media file or a YouTube timeline fallback, R12 lesson/cue alignment,"
+            echo "> and source-derived one-to-one word timings for karaoke."
           } >> "$GITHUB_STEP_SUMMARY"
 
   e2e:
