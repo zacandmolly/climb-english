@@ -5,16 +5,16 @@
 // ESLint `max-lines` rule, not here — dependency-cruiser tracks edges, not
 // line counts.
 //
-// Severity is `warn` on purpose: report, don't block. After App.tsx is split,
-// bump the `no-circular` rule to `error` to make this a hard gate.
+// Severity is `error` now: the App.tsx split landed (no cycles remain), so the
+// `no-circular` rule is a hard gate — any new circular dependency fails CI.
 
 export default {
   forbidden: [
     {
       name: 'no-circular',
-      severity: 'warn',
+      severity: 'error',
       comment:
-        'Circular dependency detected. Warn-only for now; tighten to error after the App.tsx split.',
+        'Circular dependency detected. Hard gate after the App.tsx split.',
       from: {},
       to: { circular: true },
     },
