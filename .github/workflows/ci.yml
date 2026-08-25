@@ -224,7 +224,6 @@ jobs:
     # Report-only by design: knip flags historical findings (unused lib exports
     # and an unused type) and deadcss lists unused selectors. Advisory only
     # until the cleanup PRs land — hence continue-on-error.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -234,8 +233,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: knip (unused files/exports/deps/scripts)
+        continue-on-error: true
         run: npm run knip
       - name: Dead CSS report (purgecss)
+        if: always()
+        continue-on-error: true
         run: npm run deadcss
       - name: Note in summary
         if: always()
