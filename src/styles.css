@@ -2003,6 +2003,41 @@ button {
   gap: 16px;
 }
 
+.video-studio-preserver:not([hidden]) {
+  display: contents;
+}
+
+.video-load-error {
+  display: grid;
+  gap: 18px;
+}
+
+.video-load-error h2 {
+  margin: 0 0 8px;
+}
+
+.video-load-error p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.video-load-error code {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: #8f2d25;
+}
+
+.video-load-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-learning-mode .stage-card.video-load-error {
+  padding: 24px 20px;
+}
+
 .stage-card,
 .listen-pane.stage-card {
   background: var(--card);

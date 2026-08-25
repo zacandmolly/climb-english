@@ -18,11 +18,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { useCuePlayer } from '../hooks/useCuePlayer';
 import { patternsForEnglish } from '../lib/cue';
+import { reportError } from '../lib/errorReporter';
+import { describeVideoLoadFailure, type VideoLoadFailure } from '../lib/videoLoad';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
 import { loadVideo } from '../data/videos';
 import type { Keyword, SubtitleCue, VideoCategory, VideoEntry, VideoSummary } from '../types';
 import { formatDuration, formatTime, HighlightedText } from '../lib/ui';
 import { CueMediaPlayer } from '../players/CueMediaPlayer';
+import { resolveVideoResumePosition, type VideoResumePosition } from '../progress/videoSession';
 import { SpeakingCoach, type CoachTarget } from './SpeakingCoach';
 
 const CATEGORY_ORDER: VideoCategory[] = [
@@ -53,9 +56,17 @@ const LEVEL_NAMES: Record<VideoEntry['level'], string> = {
 export function BilingualStudio({
   summaries,
   hideLibraryStrip = false,
+  isActive = true,
+  resumePosition,
+  onPositionChange,
+  onReturnToLibrary,
 }: {
   summaries: VideoSummary[];
   hideLibraryStrip?: boolean;
+  isActive?: boolean;
+  resumePosition?: VideoResumePosition;
+  onPositionChange?: (videoId: string, position: VideoResumePosition) => void;
+  onReturnToLibrary?: () => void;
 }) {
   const [videoId, setVideoId] = useState(() => {
     // Default to the first video in display order (world-cup first).
@@ -66,25 +77,92 @@ export function BilingualStudio({
     return summaries[0]?.id ?? '';
   });
   const [video, setVideo] = useState<VideoEntry | null>(null);
+  const [loadFailure, setLoadFailure] = useState<VideoLoadFailure | null>(null);
   const [query, setQuery] = useState('');
   const [showZh, setShowZh] = useState(true);
   const [studyOnly, setStudyOnly] = useState(false);
+  const lastPositionSaveRef = useRef({ at: 0, cueId: '' });
+  const latestPositionRef = useRef<{ videoId: string; position: VideoResumePosition } | null>(null);
 
   useEffect(() => {
     let alive = true;
     setVideo(null);
-    void loadVideo(videoId).then((loaded) => {
-      if (alive) setVideo(loaded ?? null);
-    });
+    setLoadFailure(null);
+    void loadVideo(videoId)
+      .then((loaded) => {
+        if (!loaded) throw new Error(`Unknown video material: ${videoId}`);
+        if (alive) setVideo(loaded);
+      })
+      .catch((cause: unknown) => {
+        const failure = describeVideoLoadFailure(videoId, cause);
+        if (alive) {
+          reportError(failure.error);
+          setLoadFailure(failure);
+        }
+      });
     return () => {
       alive = false;
     };
   }, [videoId]);
 
   const cues = useMemo(() => video?.cues ?? [], [video]);
-  const player = useCuePlayer(cues, video?.mediaStartTime ?? 0, video?.id ?? '');
+  const resolvedResumePosition = useMemo(
+    () =>
+      video && resumePosition
+        ? resolveVideoResumePosition(
+            resumePosition,
+            cues,
+            video.mediaStartTime,
+            video.durationSeconds
+          )
+        : undefined,
+    [cues, resumePosition, video]
+  );
+  const player = useCuePlayer(
+    cues,
+    video?.mediaStartTime ?? 0,
+    video?.id ?? '',
+    resolvedResumePosition
+  );
   const activeCue = cues[player.activeCueIndex] ?? cues[0];
   const activeKeywords = useMemo(() => expandTerms(activeCue?.keywords ?? []), [activeCue]);
+
+  useEffect(() => {
+    if (isActive) return;
+    player.pause();
+    const latest = latestPositionRef.current;
+    if (latest && onPositionChange) onPositionChange(latest.videoId, latest.position);
+  }, [isActive, onPositionChange, player.pause]);
+
+  useEffect(() => {
+    if (!video || !activeCue || !onPositionChange) return;
+    const now = Date.now();
+    const last = lastPositionSaveRef.current;
+    const cueChanged = last.cueId !== activeCue.id;
+    const enoughTimePassed = now - last.at >= 500;
+    const position: VideoResumePosition = {
+      cueId: activeCue.id,
+      cueIndex: player.activeCueIndex,
+      currentTime: player.currentTime,
+      updatedAt: new Date(now).toISOString(),
+    };
+    latestPositionRef.current = { videoId: video.id, position };
+    if (!cueChanged && !enoughTimePassed) return;
+
+    lastPositionSaveRef.current = {
+      at: now,
+      cueId: activeCue.id,
+    };
+    onPositionChange(video.id, position);
+  }, [activeCue, onPositionChange, player.activeCueIndex, player.currentTime, video]);
+
+  useEffect(
+    () => () => {
+      const latest = latestPositionRef.current;
+      if (latest && onPositionChange) onPositionChange(latest.videoId, latest.position);
+    },
+    [onPositionChange]
+  );
 
   const coachTarget: CoachTarget | null =
     video && activeCue
@@ -123,7 +201,29 @@ export function BilingualStudio({
         />
       )}
 
-      {!video ? (
+      {!video && loadFailure ? (
+        <section className="stage-card video-load-error" aria-label="Video load error">
+          <div role="alert">
+            <h2>字幕数据加载失败</h2>
+            <p>网络或素材分包暂时不可用。你的学习位置已经保留。</p>
+            <code data-testid="video-load-error-meta">
+              {loadFailure.materialId} · {loadFailure.chunkUrl}
+            </code>
+          </div>
+          <div className="video-load-actions">
+            <button
+              className="control-button primary"
+              type="button"
+              onClick={() => window.location.reload()}
+            >
+              重试
+            </button>
+            <button className="control-button" type="button" onClick={onReturnToLibrary}>
+              返回素材列表
+            </button>
+          </div>
+        </section>
+      ) : !video ? (
         <section className="stage-card" aria-label="Loading video">
           <p className="empty-library">正在加载字幕数据…</p>
         </section>

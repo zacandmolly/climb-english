@@ -30,12 +30,23 @@ import {
   normalizeProgress,
   saveLearningProgress,
 } from './progress/storage';
+import {
+  loadVideoSession,
+  saveVideoSession,
+  withActiveVideo,
+  withVideoPosition,
+  type VideoResumePosition,
+  type VideoSessionLoadResult,
+  type VideoSessionState,
+} from './progress/videoSession';
 import { CoachPanel } from './views/CoachPanel';
 import { LibraryView } from './views/LibraryView';
 import { MeView } from './views/MeView';
 import { Sidebar } from './views/Sidebar';
 import { ListeningWorkspace, SentenceStrip, TodayFocusCard } from './views/TodayView';
 import { VocabView } from './views/VocabView';
+
+const VALID_VIDEO_IDS = videoSummaries.map((video) => video.id);
 
 export function App() {
   const courses = useMemo(() => buildCourses(lessons), []);
@@ -55,6 +66,13 @@ export function App() {
     };
   }
 
+  const initialVideoSessionRef = useRef<VideoSessionLoadResult | null>(null);
+  if (!initialVideoSessionRef.current) {
+    initialVideoSessionRef.current = loadVideoSession(VALID_VIDEO_IDS);
+  }
+  const initialVideoSession = initialVideoSessionRef.current;
+  const videoSessionStateRef = useRef<VideoSessionState>(initialVideoSession.state);
+
   const [progress, setProgress] = useState<LearningProgress>(
     initialLearningStateRef.current.progress
   );
@@ -70,8 +88,12 @@ export function App() {
   const [activeView, setActiveView] = useState<MainView>('today');
   // 视频素材（卡拉OK工作台）：null = 课程素材模式。持久化的课程若已被
   // 卡拉OK重切版取代，启动时直接进入取代它的视频素材。
-  const initialVideoId =
+  const fallbackVideoId =
     COURSE_SUPERSEDED_BY_VIDEO[initialLearningStateRef.current.courseId] ?? null;
+  const initialVideoId =
+    initialVideoSession.status === 'missing'
+      ? fallbackVideoId
+      : initialVideoSession.state.activeVideoId;
   const [activeVideoId, setActiveVideoId] = useState<string | null>(initialVideoId);
   const activeVideo = useMemo(
     () =>
@@ -106,6 +128,12 @@ export function App() {
   }, [progress]);
 
   useEffect(() => {
+    const nextState = withActiveVideo(videoSessionStateRef.current, activeVideoId);
+    videoSessionStateRef.current = nextState;
+    saveVideoSession(nextState);
+  }, [activeVideoId]);
+
+  useEffect(() => {
     if (lesson && activeSentenceIndex >= lesson.sentences.length) {
       setActiveSentenceIndex(0);
     }
@@ -113,7 +141,7 @@ export function App() {
 
   const switchCourse = (courseId: string) => {
     const course = courses.find((item) => item.id === courseId);
-    if (!course || course.id === activeCourse?.id) return;
+    if (!course || (course.id === activeCourse?.id && !activeVideoId)) return;
 
     setActiveVideoId(null);
     const restoredIndex = getUnlockedSessionIndex(course.sessions, completedSessionIds);
@@ -149,6 +177,12 @@ export function App() {
     setActiveView('today');
     window.scrollTo({ top: 0 });
   };
+
+  const rememberVideoPosition = useCallback((videoId: string, position: VideoResumePosition) => {
+    const nextState = withVideoPosition(videoSessionStateRef.current, videoId, position);
+    videoSessionStateRef.current = nextState;
+    saveVideoSession(nextState);
+  }, []);
 
   const selectSentence = (index: number) => {
     setActiveSentenceIndex(index);
@@ -422,8 +456,26 @@ export function App() {
           }}
         />
 
-        {activeView === 'today' && activeVideo ? (
-          <BilingualStudio key={activeVideo.id} summaries={[activeVideo]} hideLibraryStrip />
+        {activeVideo ? (
+          <div
+            className="video-studio-preserver"
+            hidden={activeView !== 'today'}
+            aria-hidden={activeView !== 'today'}
+          >
+            <BilingualStudio
+              key={activeVideo.id}
+              summaries={[activeVideo]}
+              hideLibraryStrip
+              isActive={activeView === 'today'}
+              resumePosition={videoSessionStateRef.current.positions[activeVideo.id]}
+              onPositionChange={rememberVideoPosition}
+              onReturnToLibrary={() => {
+                setActiveVideoId(null);
+                setActiveView('library');
+                window.scrollTo({ top: 0 });
+              }}
+            />
+          </div>
         ) : null}
 
         {activeView === 'today' && !activeVideo && lesson && activeSentence ? (
