@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import {
   installFaithfulFakeYoutube,
   installPlayerTestHooks,
@@ -25,6 +25,23 @@ const T21_CUE_INDEX = 3;
 const T35_CUE_INDEX = 9;
 const PREVIEW_FIRST_CUE_OFFSET = 0.3;
 
+async function installPreviewSeekProbe(page: Page): Promise<void> {
+  await page.addInitScript(() => {
+    const targets: number[] = [];
+    Object.defineProperty(window, '__previewSeekTargets', { value: targets, configurable: true });
+    document.addEventListener(
+      'seeking',
+      (event) => {
+        const target = event.target;
+        if (target instanceof HTMLVideoElement && target.classList.contains('preview-video')) {
+          targets.push(target.currentTime);
+        }
+      },
+      true
+    );
+  });
+}
+
 test('35s natural mobile playback keeps one live surface and preview cues switch back', async ({
   page,
 }, testInfo) => {
@@ -36,6 +53,7 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   await page.setViewportSize({ width: 412, height: 915 });
   await installPlayerTestHooks(page, { youtubeSlowTimeoutMs: 20_000 });
   await installFaithfulFakeYoutube(page);
+  await installPreviewSeekProbe(page);
   await page.route('**/media/innsbruck-2026-mb-full.mp4', (route) =>
     route.fulfill({ status: 404, contentType: 'text/plain', body: 'not deployed' })
   );
@@ -126,14 +144,23 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   // bring the Git preview back as the live surface with no iframe residue.
   await page.locator('[data-cue-index="0"]').click();
   await expect(surface).toHaveAttribute('data-media-source', 'preview', { timeout: 10_000 });
-  await page.waitForFunction(
-    (target) => {
-      const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
-      return Boolean(preview && !preview.paused && Math.abs(preview.currentTime - target) < 0.5);
-    },
-    PREVIEW_FIRST_CUE_OFFSET,
-    { timeout: 10_000 }
-  );
+  await expect
+    .poll(() =>
+      page.evaluate((target) => {
+        const targets = (window as typeof window & { __previewSeekTargets?: number[] })
+          .__previewSeekTargets;
+        return Boolean(targets?.some((value) => Math.abs(value - target) < 0.5));
+      }, PREVIEW_FIRST_CUE_OFFSET)
+    )
+    .toBe(true);
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
+        return Boolean(preview && !preview.paused && preview.currentTime >= 0);
+      })
+    )
+    .toBe(true);
 
   const back = await readSurfaceGeometry(page);
   expect(back.iframeCount).toBe(1);

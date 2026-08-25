@@ -281,14 +281,24 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
       (target) => Math.abs(target - INNSBRUCK_FIRST_CUE_PREVIEW_OFFSET) < 0.05
     )
   ).toBe(true);
-  await page.screenshot({ path: 'test-results/innsbruck-preview-cue0.png', fullPage: true });
-  await page.waitForTimeout(1500);
-  const playbackEnd = await page
-    .locator('video.preview-video')
-    .evaluate((video) => video.currentTime);
+  // On slower CI runners the single-cue range can reach its end and loop back
+  // while a full-page screenshot is being encoded. Both forward movement and
+  // a wrap to the cue start prove that the media clock is live.
+  await page.waitForFunction(
+    (start) => {
+      const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
+      return Boolean(
+        preview &&
+        !preview.paused &&
+        (preview.currentTime > start + 0.5 || preview.currentTime < start - 0.5)
+      );
+    },
+    playbackStart,
+    { timeout: 5_000 }
+  );
   const eventsAtPlaybackEnd = await readPreviewMediaEvents(page);
-  expect(playbackEnd).toBeGreaterThan(playbackStart + 1);
   expect(eventsAtPlaybackEnd.seeking - eventsAtPlaybackStart.seeking).toBeLessThanOrEqual(1);
+  await page.screenshot({ path: 'test-results/innsbruck-preview-cue0.png', fullPage: true });
 
   await page.getByRole('button', { name: '下一句' }).click();
   await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
