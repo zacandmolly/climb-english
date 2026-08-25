@@ -7,6 +7,11 @@ const END_PAD_SECONDS = 0.25;
 
 export type CuePlaybackMode = 'idle' | 'cue' | 'continuous';
 
+export type CueResumePosition = {
+  cueIndex: number;
+  currentTime: number;
+};
+
 // Drives one local-or-YouTube media surface against a cue list:
 //  - playCue(index): starts exactly at the cue boundary, pauses at cue end or
 //    loops. Preview assets may retain capture padding, but the runtime clock
@@ -20,8 +25,32 @@ export type CuePlaybackMode = 'idle' | 'cue' | 'continuous';
 // knowing which model it is driving.
 // resetKey is the stable clip identity. Resetting on the cues array reference
 // reintroduced the "播放本句没反应" race when parent renders recreated that array.
-export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: string) {
+export function useCuePlayer(
+  cues: Cue[],
+  mediaStartTime: number,
+  resetKey: string,
+  resumePosition?: CueResumePosition
+) {
   const mediaRef = useRef<CueMediaHandle | null>(null);
+  const resumeTargetRef = useRef<{
+    resetKey: string;
+    cueCount: number;
+    position?: CueResumePosition;
+  }>({
+    resetKey: '',
+    cueCount: -1,
+    position: undefined,
+  });
+  if (
+    resumeTargetRef.current.resetKey !== resetKey ||
+    resumeTargetRef.current.cueCount !== cues.length
+  ) {
+    resumeTargetRef.current = {
+      resetKey,
+      cueCount: cues.length,
+      position: resumePosition,
+    };
+  }
   const [mode, setMode] = useState<CuePlaybackMode>('idle');
   const [isPlaying, setIsPlaying] = useState(false);
   const [loopOne, setLoopOne] = useState(false);
@@ -154,9 +183,23 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
   useEffect(() => {
     activeRangeRef.current = null;
     setMode('idle');
-    setActiveCueIndex(0);
-    setCurrentTime(0);
-  }, [resetKey]);
+    const resumeTarget = resumeTargetRef.current.position;
+    const cueIndex = Math.min(
+      Math.max(0, Math.floor(resumeTarget?.cueIndex ?? 0)),
+      Math.max(0, cues.length - 1)
+    );
+    const resumeTime = Math.max(0, resumeTarget?.currentTime ?? 0);
+    setActiveCueIndex(cueIndex);
+    setCurrentTime(resumeTime);
+
+    if (!resumeTarget) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      mediaRef.current?.pause();
+      mediaRef.current?.seekTo(resumeTime);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [cues.length, resetKey]);
 
   return player;
 }
