@@ -10,7 +10,7 @@ const port = process.env.PLAYWRIGHT_PORT ?? '5173';
 // test-results/ via `video: 'on'`, and the spec takes fixed-time screenshots.
 export default defineConfig({
   testDir: './e2e',
-  // Video loading + a ≥10s playback window needs headroom over the default 30s.
+  // Video loading + the 35s mobile playback gate needs headroom over the default 30s.
   timeout: 120_000,
   expect: { timeout: 15_000 },
   fullyParallel: false,
@@ -36,12 +36,12 @@ export default defineConfig({
       // Issue #22/#24: the mobile player flows must run on a real mobile
       // Chromium profile (Pixel 7) and on mobile WebKit, not only desktop.
       name: 'pixel-7-chromium',
-      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke)\.spec\.ts/,
+      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke|mobile-studio)\.spec\.ts/,
       use: { ...devices['Pixel 7'] },
     },
     {
       name: 'mobile-webkit',
-      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke)\.spec\.ts/,
+      testMatch: /(?:youtube-(?:handoff|failure)|word-karaoke|mobile-studio)\.spec\.ts/,
       use: { ...devices['iPhone 13'] },
     },
   ],

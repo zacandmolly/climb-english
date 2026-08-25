@@ -220,7 +220,15 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 | **告警不阻断** | `lint:complexity`(warn) / `knip` / `deadcss` | `ci.yml` 的 `boundary-check`、`dead-code` job | `continue-on-error`，只报告不阻断 |
 | **AI review（建议性）** | `ai-review`（DeepSeek 结构化 review） | `ai-review.yml`（PR opened/synchronize） | 无 key / 失败 / 有发现**都不阻断**，仅 post 评论 |
 
-### 7.2 人机协作边界原则
+### 7.2 移动端播放器三层证据（不可互相替代）
+
+1. **确定性 CI（合并硬门禁）**：`pixel-7-chromium` 与 `mobile-webkit` 使用离线且会真实替换 host 的 YouTube fake；核心顾客接续路径跑满 35 秒，在 t=0/10/21/35 记录 source、时钟、active cue/word、geometry、错误、水平溢出和按浏览器隔离的截图。另测 slow/abort/player error、2,242 句虚拟列表、6× CPU long task 与 React commit。失败即红灯，artifact 保留 trace/录像、两种移动引擎各自的截图和性能 JSON。
+2. **Pages 线上 smoke（外部依赖告警）**：Android Chrome 对真实部署和真实 YouTube/GoogleVideo 跑至少 35 秒。网络/区域限制本身不单独阻断合并，但必须记录；应用自身 frame=0、状态丢失、JS 错误或不可回退必须修复/回滚。
+3. **Android AVD/真机发布检查（顾客交互证据）**：播放器、字幕或移动控制区 PR 必须在 Pixel 7 Android 15 AVD 或真机走加载、连播、暂停恢复、上下句、单句循环、预览接续、点字幕回退和纵横屏切换；记录设备、OS、Chrome、网络、SHA、持续时间与截图，主要命中区必须 ≥44×44 CSS px。
+
+报告必须写清属于哪一层。“CI fake 绿”不等于真实 YouTube 可达，“线上打开了”也不等于 35 秒顾客流程通过。具体命令见 README 的“移动端播放器的三层 QA 证据”。
+
+### 7.3 人机协作边界原则
 
 **凡「影响主干、影响数据正确性、影响用户体验」的，必须有 gate；凡「沙盒内可逆、可回放、有证据」的，放权给 AI 全自动。**
 
@@ -231,7 +239,7 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 - UI 改动必须实证——播放器/跟随无法靠静态检查，必须浏览器走查 + 截图留证。
 - 生成文件零手改——要改就改管线，让管线重新生成。
 
-### 7.3 R4 AI review 触发方式
+### 7.4 R4 AI review 触发方式
 
 - `.github/workflows/ai-review.yml` 在 PR `opened` / `synchronize` 时触发。
 - `scripts/ai-review.mjs` 拉取 PR diff + commit + 特征文件列表，调 DeepSeek（classify-only issue 表），post 评论并带 `Reviewed: <sha>` footer 去重。

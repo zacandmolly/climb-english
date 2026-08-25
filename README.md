@@ -146,6 +146,33 @@ server/index.mjs → dist/（prod）或 vite（dev）→ 依赖 src/ 的 vite �
 - GitHub Pages：push 后 Actions 构建静态站，`VITE_BASE_PATH` 控制子路径；静态部署下录音反馈走 `VITE_FEEDBACK_API_BASE` 指向的 Worker。
 - Worker：`npm run worker:deploy`（wrangler 配置含 KV 限流：日 300 / 时 90 / 单 IP 时 35 / 音频 10MB）。
 
+### 移动端播放器的三层 QA 证据
+
+三层证据用途不同，不能互相替代，也不能把“页面能打开”写成“移动端流程通过”。
+
+| 层级 | 触发与环境 | 必查内容 | 判定方式 |
+|---|---|---|---|
+| 确定性合并门禁 | 每个 PR 的 Playwright `pixel-7-chromium` + `mobile-webkit`；YouTube 使用会真实替换 host 的离线 fake | 连续 35 秒的 t=0/10/21/35 source、媒体时钟、active cue/word、16:9 geometry、错误与水平溢出；ready/slow/abort/player error；暂停恢复、上下句、预览↔YouTube；2,242 句虚拟列表和 6× CPU | 任何断言失败即 CI 红；trace、录像、截图和性能 JSON 作为 artifact，不允许 `continue-on-error` |
+| 线上 smoke | Pages 部署后，Android Chrome 打开真实 URL 至少 35 秒，不拦截 YouTube/GoogleVideo | 实际网络错误、iframe 可见性、source、时钟、active cue/word、横向溢出和截图 | 外部网络或区域限制会告警并留证，但单独不阻断合并；应用自身 frame=0、状态丢失或 JS 错误必须回滚/修复 |
+| Android 发布检查 | 涉及播放器、字幕、控制区的 PR；Pixel 7 Android 15 AVD 或真机 | 顾客操作：加载、连播、暂停恢复、上下句、单句循环、预览接续、点字幕回退、纵横屏切换；每个主要命中区 ≥44×44 CSS px | 记录设备/OS/Chrome、网络、提交 SHA、操作序列、持续时间与截图；未走满 35 秒不得写“通过” |
+
+本地确定性门禁：
+
+```bash
+npx playwright test --project=pixel-7-chromium --project=mobile-webkit
+```
+
+Android AVD 发布检查的最小启动方式（SDK 路径按本机调整）：
+
+```bash
+emulator -avd climb_english_pixel_7_api_35 -no-snapshot-load
+adb wait-for-device
+adb reverse tcp:5173 tcp:5173
+adb shell am start -a android.intent.action.VIEW -d http://127.0.0.1:5173 com.android.chrome
+```
+
+CI fake 证明应用状态机可重复正确；线上 smoke 证明真实外部依赖现状；AVD/真机证明触控、方向切换和 Android Chrome 的顾客体验。报告必须明确自己属于哪一层。
+
 ## 数据文件约定
 
 - `src/data/lessons.ts`：**re-export 合并**（`[...bernLessons, ...innsbruckLessons]`）。生成部分在 `lessons.generated.ts`（Bern 6 天，可被 `build:lessons` 覆盖），手写部分在 `lessons.manual.ts`（Innsbruck 7 天，**只读受保护**）。`build-official-lessons.mjs` 只写 generated，CI 的 data-protect 门禁防止覆盖 manual。

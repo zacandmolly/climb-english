@@ -10,6 +10,12 @@ async function selectVideo(page: Page, title: string): Promise<void> {
   await page.locator('.video-option').filter({ hasText: title }).click();
 }
 
+async function expectVirtualizedCueDeck(page: Page, total: number): Promise<void> {
+  await expect(page.locator('.subtitle-panel .panel-heading')).toContainText(`${total}/${total} 句`);
+  await expect.poll(() => page.locator('.subtitle-card').count()).toBeGreaterThan(0);
+  expect(await page.locator('.subtitle-card').count()).toBeLessThanOrEqual(40);
+}
+
 test('video material and cue survive navigation and reload without changing course progress', async ({
   page,
 }) => {
@@ -98,10 +104,10 @@ test('video material and cue survive navigation and reload without changing cour
 test('removed cue positions clamp safely and incompatible storage does not jump materials', async ({
   page,
 }) => {
-  await page.goto('/');
-  await page.evaluate(
+  await page.addInitScript(
     ({ key, videoId }) => {
-      localStorage.setItem(
+      if (sessionStorage.getItem('seeded-removed-cue-position')) return;
+      window.localStorage.setItem(
         key,
         JSON.stringify({
           version: 1,
@@ -116,10 +122,11 @@ test('removed cue positions clamp safely and incompatible storage does not jump 
           },
         })
       );
+      sessionStorage.setItem('seeded-removed-cue-position', '1');
     },
     { key: VIDEO_SESSION_KEY, videoId: TECHNIQUE_ID }
   );
-  await page.reload();
+  await page.goto('/');
   await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '98');
 
   await page.evaluate((key) => {
@@ -157,7 +164,7 @@ test('failed subtitle chunk shows details and succeeds after retry without a pag
 
   await page.getByRole('button', { name: '重试' }).click();
   await expect(page.locator('section[aria-label="Bilingual subtitle studio"]')).toBeVisible();
-  await expect(page.locator('.subtitle-card')).toHaveCount(2242);
+  await expectVirtualizedCueDeck(page, 2242);
   expect(chunkRequests).toBeGreaterThanOrEqual(2);
   expect(pageErrors).toEqual([]);
 });
@@ -175,5 +182,5 @@ test('switching material clears a previous subtitle chunk error', async ({ page 
   await selectVideo(page, TECHNIQUE_TITLE);
   await expect(page.getByRole('alert')).toHaveCount(0);
   await expect(page.locator('section[aria-label="Bilingual subtitle studio"]')).toBeVisible();
-  await expect(page.locator('.subtitle-card')).toHaveCount(99);
+  await expectVirtualizedCueDeck(page, 99);
 });

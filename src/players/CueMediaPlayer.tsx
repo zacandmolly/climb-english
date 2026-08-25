@@ -237,6 +237,8 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
             modestbranding: 1,
             playsinline: 1,
             enablejsapi: 1,
+            controls: 0,
+            disablekb: 1,
             origin: typeof window !== 'undefined' ? window.location.origin : undefined,
           },
           events: {
@@ -437,7 +439,6 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
           ref={localVideoRef}
           className="local-video"
           src={resolveStaticAssetUrl(mediaUrl)}
-          controls
           preload="metadata"
           playsInline
           onTimeUpdate={(event) => {
@@ -464,7 +465,6 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
           ref={previewVideoRef}
           className="local-video preview-video"
           src={resolveStaticAssetUrl(previewMediaUrl)}
-          controls
           preload="auto"
           playsInline
           onLoadedMetadata={(event) => initializePreviewFromDesired(event.currentTarget)}

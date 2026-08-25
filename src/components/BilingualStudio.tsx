@@ -12,7 +12,7 @@ import {
   Search,
   Pause,
 } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Profiler, useEffect, useMemo, useRef, useState } from 'react';
 import { useCuePlayer } from '../hooks/useCuePlayer';
 import { patternsForEnglish } from '../lib/cue';
 import { reportError } from '../lib/errorReporter';
@@ -45,6 +45,14 @@ const LEVEL_NAMES: Record<VideoEntry['level'], string> = {
   intermediate: '进阶',
   advanced: '高阶',
 };
+
+declare global {
+  interface Window {
+    __CLIMB_ENGLISH_MOBILE_QA__?: {
+      subtitleCommits: Array<{ at: number; actualDuration: number; activeCueIndex: number }>;
+    };
+  }
+}
 
 // Bilingual subtitle studio: watch a climbing video with synced en/zh cues,
 // click any cue to loop it, shadow it with the AI coach. Full cue data is
@@ -81,6 +89,36 @@ export function BilingualStudio({
   const [studyOnly, setStudyOnly] = useState(false);
   const lastPositionSaveRef = useRef({ at: 0, cueId: '' });
   const latestPositionRef = useRef<{ videoId: string; position: VideoResumePosition } | null>(null);
+
+  useEffect(() => {
+    if (!isActive) return;
+
+    const compactLandscape = window.matchMedia(
+      '(max-width: 920px) and (orientation: landscape) and (max-height: 520px)'
+    );
+    let firstFrame = 0;
+    let secondFrame = 0;
+    const resetOuterScroll = () => {
+      // Android Chrome preserves the document scroll anchor across rotation.
+      // The landscape studio reflows into a compact grid, so that old anchor
+      // can otherwise land in the coach section with the video off-screen.
+      // Wait for the new layout, then reset only the OUTER page scroll; the
+      // virtual subtitle list keeps its own active-cue position and state.
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+      firstFrame = window.requestAnimationFrame(() => {
+        secondFrame = window.requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        });
+      });
+    };
+    compactLandscape.addEventListener('change', resetOuterScroll);
+    return () => {
+      compactLandscape.removeEventListener('change', resetOuterScroll);
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+    };
+  }, [isActive]);
 
   useEffect(() => {
     let alive = true;
@@ -173,6 +211,34 @@ export function BilingualStudio({
           label: 'Shadowing sentence',
         }
       : null;
+  const subtitlePanel = video ? (
+    <SubtitlePanel
+      cues={cues}
+      activeCueIndex={player.activeCueIndex}
+      currentTime={player.currentTime}
+      mediaStartTime={video.mediaStartTime}
+      showZh={showZh}
+      studyOnly={studyOnly}
+      isActive={isActive}
+      onSelectCue={player.playCue}
+    />
+  ) : null;
+  const measuredSubtitlePanel = window.__CLIMB_ENGLISH_MOBILE_QA__ ? (
+    <Profiler
+      id="SubtitlePanel"
+      onRender={(_id, _phase, actualDuration) => {
+        window.__CLIMB_ENGLISH_MOBILE_QA__?.subtitleCommits.push({
+          at: performance.now(),
+          actualDuration,
+          activeCueIndex: player.activeCueIndex,
+        });
+      }}
+    >
+      {subtitlePanel}
+    </Profiler>
+  ) : (
+    subtitlePanel
+  );
 
   if (summaries.length === 0) {
     return (
@@ -348,15 +414,7 @@ export function BilingualStudio({
             </div>
           </div>
 
-          <SubtitlePanel
-            cues={cues}
-            activeCueIndex={player.activeCueIndex}
-            currentTime={player.currentTime}
-            mediaStartTime={video.mediaStartTime}
-            showZh={showZh}
-            studyOnly={studyOnly}
-            onSelectCue={(index) => player.playCue(index)}
-          />
+          {measuredSubtitlePanel}
         </section>
       )}
 

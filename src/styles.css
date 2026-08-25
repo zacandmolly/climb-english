@@ -2363,6 +2363,14 @@ button {
   padding-right: 2px;
 }
 
+.subtitle-virtual-canvas {
+  flex: 0 0 auto;
+}
+
+.subtitle-virtual-row {
+  padding-bottom: 10px;
+}
+
 .subtitle-card {
   display: flex;
   flex-direction: column;
@@ -2666,7 +2674,7 @@ button {
   .app-shell.video-learning-mode {
     min-height: 100dvh;
     gap: 0;
-    padding: 0 0 calc(216px + env(safe-area-inset-bottom));
+    padding: 0 0 calc(76px + env(safe-area-inset-bottom));
     background: #f7f8fc;
   }
 
@@ -2705,7 +2713,7 @@ button {
     flex: 0 0 auto;
     min-width: 126px;
     max-width: 190px;
-    min-height: 34px;
+    min-height: 44px;
     justify-content: center;
     padding: 7px 12px;
     border: 1px solid #e2e5ee;
@@ -2784,8 +2792,8 @@ button {
 
   .video-learning-mode .source-link {
     flex: 0 0 auto;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     justify-content: center;
     padding: 0;
     border-color: #e2e5ee;
@@ -2824,25 +2832,22 @@ button {
   }
 
   .video-learning-mode .bilingual-controls {
-    position: fixed;
-    right: 0;
-    bottom: calc(64px + env(safe-area-inset-bottom));
-    left: 0;
-    z-index: 58;
+    position: static;
+    z-index: auto;
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin: 0;
     padding: 7px 10px 9px;
-    border-top: 1px solid #e8eaf1;
+    border-top: 0;
+    border-bottom: 1px solid #e8eaf1;
     border-radius: 0;
-    background: rgba(255, 255, 255, 0.97);
-    box-shadow: 0 -8px 24px rgba(35, 39, 54, 0.09);
-    backdrop-filter: blur(18px);
+    background: #fff;
+    box-shadow: none;
   }
 
   .video-learning-mode .transport-controls {
-    order: 2;
+    order: 1;
     display: grid;
     grid-template-columns: 1fr 1.35fr 1fr;
     align-items: center;
@@ -2852,7 +2857,7 @@ button {
   }
 
   .video-learning-mode .learning-controls {
-    order: 1;
+    order: 2;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     width: 100%;
@@ -2879,7 +2884,7 @@ button {
   }
 
   .video-learning-mode .transport-button {
-    min-height: 40px;
+    min-height: 44px;
     justify-content: center;
     padding: 6px 12px;
     border: 0;
@@ -2892,7 +2897,7 @@ button {
   }
 
   .video-learning-mode .play-toggle {
-    min-height: 42px;
+    min-height: 48px;
     justify-content: center;
     padding: 8px 17px;
     border: 0;
@@ -2924,10 +2929,10 @@ button {
   }
 
   .video-learning-mode .subtitle-list {
-    max-height: calc(100dvh - 365px);
-    min-height: 300px;
+    max-height: min(56dvh, 520px);
+    min-height: 260px;
     gap: 0;
-    padding: 0 0 150px;
+    padding: 0 0 24px;
     scroll-padding-top: 8px;
   }
 
@@ -2939,6 +2944,10 @@ button {
     border-radius: 0;
     background: #fff;
     box-shadow: none;
+  }
+
+  .video-learning-mode .subtitle-virtual-row {
+    padding-bottom: 0;
   }
 
   .video-learning-mode .subtitle-card:hover {
@@ -2995,10 +3004,141 @@ button {
 
 @media (max-width: 420px) {
   .video-learning-mode .subtitle-list {
-    max-height: calc(100dvh - 350px);
+    max-height: 54dvh;
+    min-height: 240px;
   }
 
   .video-learning-mode .transport-button span {
     display: none;
+  }
+}
+
+@media (max-width: 920px) and (orientation: landscape) and (max-height: 520px) {
+  .app-shell.video-learning-mode {
+    min-height: 100dvh;
+    padding: 0 calc(58px + env(safe-area-inset-right)) 0 env(safe-area-inset-left);
+  }
+
+  .video-learning-mode > .view-nav {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: calc(58px + env(safe-area-inset-right));
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2px;
+    padding: 4px env(safe-area-inset-right) 4px 4px;
+    border-top: 0;
+    border-left: 1px solid var(--line-strong);
+    box-shadow: -6px 0 20px rgba(45, 39, 28, 0.08);
+  }
+
+  .video-learning-mode .view-tab {
+    flex: 0 0 auto;
+    width: 52px;
+    min-height: 44px;
+    padding: 3px;
+    font-size: 10px;
+  }
+
+  .video-learning-mode > .course-bar {
+    min-height: 44px;
+    padding: 4px 8px;
+  }
+
+  .video-learning-mode .course-option {
+    min-height: 44px;
+    padding-block: 4px;
+  }
+
+  .video-learning-mode .stage-flow {
+    gap: 0;
+  }
+
+  .video-learning-mode .stage-card[aria-label='Bilingual subtitle studio'] {
+    display: grid;
+    grid-template-columns: minmax(300px, 46vw) minmax(0, 1fr);
+    grid-template-areas:
+      'video subtitles'
+      'controls subtitles';
+    align-items: start;
+    overflow: hidden;
+  }
+
+  .video-learning-mode .stage-card[aria-label='Bilingual subtitle studio'] > .clip-head {
+    display: none;
+  }
+
+  .video-learning-mode .bilingual-frame {
+    grid-area: video;
+    align-self: start;
+    margin: 6px 6px 0 8px;
+    border-radius: 10px;
+  }
+
+  .video-learning-mode .bilingual-controls {
+    grid-area: controls;
+    gap: 2px;
+    padding: 3px 8px 5px;
+    border: 0;
+  }
+
+  .video-learning-mode .transport-controls {
+    gap: 4px;
+    width: 100%;
+  }
+
+  .video-learning-mode .learning-controls {
+    gap: 1px;
+  }
+
+  .video-learning-mode .learning-controls .control-button,
+  .video-learning-mode .transport-button,
+  .video-learning-mode .play-toggle {
+    min-height: 44px;
+  }
+
+  .video-learning-mode .subtitle-panel {
+    grid-area: subtitles;
+    align-self: stretch;
+    height: calc(100dvh - 44px);
+    min-height: 0;
+    margin: 0;
+    padding: 0 8px;
+    border-left: 1px solid #eef0f4;
+    overflow: hidden;
+  }
+
+  .video-learning-mode .subtitle-panel .panel-heading {
+    min-height: 34px;
+    padding-block: 4px;
+  }
+
+  .video-learning-mode .subtitle-list {
+    width: 100%;
+    max-height: calc(100dvh - 78px);
+    min-height: 0;
+    padding-bottom: 8px;
+  }
+
+  .video-learning-mode .subtitle-card {
+    padding: 8px;
+  }
+
+  .video-learning-mode .subtitle-card.active {
+    margin: 2px 0;
+    padding: 9px;
+  }
+
+  .video-learning-mode .subtitle-en {
+    font-size: 15px;
+    line-height: 1.32;
+  }
+
+  .video-learning-mode .subtitle-zh {
+    font-size: 12px;
+    line-height: 1.3;
   }
 }
