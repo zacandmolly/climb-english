@@ -2,7 +2,7 @@
 
 > 面向 Codex 等 AI 协作者的一站式上手文档。读完即可定位功能、理解数据流向、知道改某个模块的边界与门禁，**无需再通读整个代码库或依赖人肉问答**。
 >
-> 状态基线：`main` @ f2c7e7f，AI harness 已完整落地（Phase 0-3 + R4 全部完成，R0-R12 全落地）。
+> 状态基线：2026-08-25，Innsbruck 媒体容错实现基线 `c562295`；AI harness 已完整落地（Phase 0-3 + R4 全部完成，R0-R12 全落地）。
 
 ---
 
@@ -43,6 +43,7 @@
 | R10 报错闭环 | `src/lib/errorReporter.ts` + `server/index.mjs`(`POST /api/errors`) + `scripts/error-report.mjs` | 收集 + AI 报告；MVP 不做自动改码 |
 | R11 oxidize | `scripts/oxidize-report.mjs` + `scripts/lib/friction-log.mjs` + `docs/oxidize/` | 摩擦 → 优化计划；只出计划人挑执行 |
 | R12 双模型收敛 | `src/types.ts`(`Cue` 基类型) + `src/lib/cue.ts` + `scripts/check-lesson-cue-alignment.mjs` | 课程线并入视频线，统一时间轴；id 硬门禁 |
+| 视频素材可播放门 | `src/players/CueMediaPlayer.tsx` + `scripts/check-video-pipeline.mjs` + Playwright | 已部署 MP4 优先；本地文件缺失/失败自动切 YouTube，并保持同一 cue 时间轴；CI 校验所有当前/未来素材 |
 
 ---
 
@@ -76,7 +77,8 @@
 | 应用入口 | `src/main.tsx` | React root；安装 R10 报错收集后才渲染 | ✅ |
 | 应用外壳 | `src/App.tsx`（~544 行） | 4 tab（今天/听力/生词本/我的）切换、全局状态、拼装素材栏/播放器/工作台（纯编排） | ✅ 已拆分 |
 | 素材栏（唯一素材入口） | `src/components/MaterialBar.tsx` | 课程+视频统一选择；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射 | ✅ |
-| 卡拉OK工作台 | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | cue 级卡拉OK跟随、单句循环、学习句过滤 | ✅ |
+| 卡拉OK工作台 | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | cue 级卡拉OK跟随、单句循环、学习句过滤；reset 只依赖稳定素材 id | ✅ |
+| 卡拉OK媒体面 | `src/players/CueMediaPlayer.tsx` | 本地 MP4 优先；404/解码失败切 YouTube，统一暴露片段相对时钟 | ✅ 本地/备用源统一 |
 | 跟读教练（视频素材） | `src/components/SpeakingCoach.tsx` | 录音→Whisper→AI 反馈；只接收 `CoachTarget` | ✅ |
 | 口语教练（课程流程） | `src/views/CoachPanel.tsx` | 课程流程录音跟读；与 SpeakingCoach 功能重叠 | ⚠️ 待合并 |
 | 课程播放器（本地） | `src/players/LocalVideoPlayer.tsx` | 本地视频，`onTimeReport(currentTime + mediaStartTime)` | ✅ |
@@ -100,12 +102,13 @@
 | 断句库 | `scripts/lib/segment.mjs` | 词级时间戳 → 句子边界 | ✅ 有测试 |
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐 + 人工回填 | ✅ 有测试 |
 | 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移巡检（严格 + 豁免） | ✅ |
+| 视频素材门禁 | `scripts/check-video-pipeline.mjs` | cue/翻译/时间窗/注册表 + faststart H.264/AAC + Git 跟踪或 YouTube fallback | ✅ CI 硬门禁 |
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern generated | ✅ |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端密钥安装/状态/用量 | ✅ |
 | 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
-| 回归测试 | `tests/` | translate/segment/backfill（node --test） | ✅ |
-| E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 卡拉OK走查 | ✅ |
+| 回归测试 | `tests/` | translate/segment/backfill/video pipeline（node --test） | ✅ |
+| E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 走查本地 MP4 与 404→YouTube fallback 的卡拉OK时间轴 | ✅ |
 
 ---
 
@@ -137,6 +140,7 @@ export type Cue = {
 
 - **单一语义**：播放层绝对时间 = `cue.startTime`（已含 `mediaStartTime` 偏移）。
 - `mediaStartTime` **仅保留在 player 层**做 `toVideoTime` 换算（`cueTime - mediaStartTime`），不进入时间轴判定。
+- 视频素材的媒体面统一向 `useCuePlayer` 上报片段相对时间：本地为 `video.currentTime`，YouTube fallback 为 `youtube.currentTime - mediaStartTime`；因此 seek 时反向使用 `relativeTime + mediaStartTime`，不得为 Innsbruck/Bern 写素材特例。
 - 句间自然停顿**保持上一句高亮**，不提前跳下一句；t 早于首句钳制到 0、越过末句钳制到末下标。
 
 ### 5.4 `src/lib/cue.ts` 核心函数
@@ -164,7 +168,7 @@ discover-youtube.mjs → import-youtube.mjs
   → segment.mjs（词级时间戳 → 句子边界，gap/minWords/maxWords 参数化）
   → 学习价值评分
   → translate.mjs（DeepSeek 批翻，24/批，严格按返回行 i 对齐；缺失标 needsTranslation 而非兜底）
-  → 生成 src/data/videos/<slug>.video.ts + videos/index.ts（注册表，GENERATED 标记）
+  → 生成 src/data/videos/<slug>.video.ts + videos/index.ts（注册表带 GENERATED 标记）
 ```
 课程线走 `build-official-lessons.mjs`，只写 `lessons.generated.ts`（Bern）。
 
@@ -176,7 +180,8 @@ discover-youtube.mjs → import-youtube.mjs
     或 YouTubePlayer（句子时间即视频时间；加载期点击排队）
   → 播放中上报播放头 → sentenceIndexAtMediaTime（委托 cueAtTime，停顿保持上一句）
   → 驱动练习稿高亮 + 列表钉顶滚动 → CoachPanel 按当前句给跟读目标
-素材栏选视频 → BilingualStudio（cue 级卡拉OK，同样走 cueAtTime）
+素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4；失败则 YouTube + mediaStartTime 补偿）
+  → useCuePlayer（播放本句/下一句/连播）→ cueAtTime 驱动卡拉OK高亮
 ```
 
 ### 6.3 口语反馈流
@@ -210,7 +215,7 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 
 | 档 | 门禁 | 触发 | 行为 |
 |---|---|---|---|
-| **硬门禁**（阻断合入） | `lint` / `format:check` / `test` / `build` / `audit`(high+) / `align-check`(豁免清单) / `data-protect` / `depcruise`(no-circular) / `check:lesson-alignment`(R12 id 强校验) | `ci.yml`（PR + push main） | 任一失败 → CI 红 → 阻断 PR |
+| **硬门禁**（阻断合入） | `lint` / `format:check` / `test` / `build` / `e2e` / `audit`(high+) / `align-check`(豁免清单) / `check:videos`(素材+媒体) / `check:lesson-alignment` / `data-protect` / `depcruise`(no-circular) | `ci.yml`（PR + push main） | 任一失败 → CI 红 → 阻断 PR |
 | **告警不阻断** | `lint:complexity`(warn) / `knip` / `deadcss` | `ci.yml` 的 `boundary-check`、`dead-code` job | `continue-on-error`，只报告不阻断 |
 | **AI review（建议性）** | `ai-review`（DeepSeek 结构化 review） | `ai-review.yml`（PR opened/synchronize） | 无 key / 失败 / 有发现**都不阻断**，仅 post 评论 |
 
@@ -237,14 +242,15 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 
 1. **改 `scripts/lib/*` 必须反例测试先行**（红→绿）；**改 `src/` UI 必须浏览器实证 + qa 截图**（文本描述与截图一致）。
 2. **数据隔离**：`src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual（CI `data-protect` 会拦）。
-3. **提交过硬门禁**（`ci.yml`）：`lint / format / test / build / e2e / audit / align-check(豁免清单) / data-protect / no-circular`；`dead-code`（knip/deadcss）为告警；另跑 `ai-review`（建议性）。
+3. **提交过硬门禁**（`ci.yml`）：`lint / format / test / build / e2e / audit / align-check / check:videos / check:lesson-alignment / data-protect / no-circular`；`dead-code`（knip/deadcss）为告警；另跑 `ai-review`（建议性）。
 4. **单模块单 PR，不混装**；commit 三段式（症状 → 根因 → 验证）。改共享函数前 grep 全部调用方。
 5. **R12 对齐红线**：`npm run check:lesson-alignment`（即 `check-lesson-cue-alignment.mjs --strict --baseline`）必须 **0 新增漂移**。禁止把课程句 `Lesson.sentences` 改写成从 `VideoEntry.cues` 「派生」的假对应——策展教学不可干净派生（当前 136 句 id 碰撞 0、时间戳精确匹配 0，基线记录的是诚实的**连续切片**关系）。同时 `check:alignment` 用豁免清单拦新 en/zh 漂移。
 6. **R12 语义收敛提醒**：
    - 视频线句间停顿「**保持上一句**」而非「提前跳下一句」。
    - 时间轴一律走 `cue.startTime` 绝对时间；`mediaStartTime` 仅存 player 层做 `toVideoTime` 换算。
-7. **生成文件零手改**：`src/data/videos/*.video.ts`、`videos/index.ts`、`lessons.generated.ts` 有 `GENERATED` 标记或由管线产出，禁止手改，一律改管线重新生成。
-8. **密钥边界**：任何 `VITE_` 变量对浏览器可见，禁止放密钥。密钥只存 M1 的 `~/.climb-english-api.env`、Worker secrets、本地 `.env`（gitignore）。
+7. **视频素材可播放红线**：每个素材跑 `npm run check:videos`；本地 MP4 只有被 Git 跟踪才算可部署，否则必须有合法 YouTube id。播放器 reset key 只能用稳定素材 id，fallback 必须以 `youtubeTime - mediaStartTime` 上报相对时钟。
+8. **生成文件零手改**：`src/data/videos/*.video.ts`、`videos/index.ts`、`lessons.generated.ts` 由管线产出（注册表带 `GENERATED` 标记），禁止手改，一律改管线重新生成。
+9. **密钥边界**：任何 `VITE_` 变量对浏览器可见，禁止放密钥。密钥只存 M1 的 `~/.climb-english-api.env`、Worker secrets、本地 `.env`（gitignore）。
 
 ---
 
@@ -276,6 +282,7 @@ npm run knip                  # 死代码/无用导出（告警）
 npm run deadcss               # purgecss 未用选择器（告警）
 npm run format:check          # prettier --check scripts+tests（硬门禁）
 npm run check:alignment       # check-cue-alignment --strict --baseline（en/zh 漂移，硬门禁）
+npm run check:videos          # 所有视频 cue/注册表/媒体来源（本地部署或 YouTube fallback）硬门禁
 npm run check:lesson-alignment# check-lesson-cue-alignment --strict --baseline（R12 id 强校验）
 npm run oxidize               # 摩擦日志 → docs/oxidize/plan.md（只出计划）
 npm run errors:report         # 前端报错 inbox → docs/error-report-DATE.md（AI 分析）
@@ -285,7 +292,7 @@ npm run translate:videos -- --video <slug>   # 补齐翻译
 npm run discover:youtube      # 扫描候选 → 队列
 ```
 
-**素材上线流程（新素材必经）**：`import:youtube` → 翻译完整门 → `check:alignment` → `build` → 卡拉OK浏览器实证 + qa 截图 → 素材栏接线（必要时在 `MaterialBar.tsx` 加 `COURSE_SUPERSEDED_BY_VIDEO` 映射）。**禁止手工编辑 `.video.ts` 绕过管线。**
+**素材上线流程（新素材必经）**：`import:youtube` → 翻译完整门 → `check:alignment` → `check:videos`（本地媒体可部署或有 YouTube fallback）→ `build` → 本地/备用源卡拉OK浏览器实证 + qa 截图 → 素材栏接线（必要时在 `MaterialBar.tsx` 加 `COURSE_SUPERSEDED_BY_VIDEO` 映射）。**禁止手工编辑 `.video.ts` 绕过管线。**
 
 ---
 
