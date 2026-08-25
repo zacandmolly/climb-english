@@ -35,6 +35,7 @@ export type FakeYoutubeState = {
   constructCount: number;
   destroyCount: number;
   iframeCount: number;
+  playerVars: Record<string, unknown> | null;
 };
 
 export type SurfaceGeometry = {
@@ -75,6 +76,7 @@ export async function installFaithfulFakeYoutube(
         constructCount: 0,
         destroyCount: 0,
         iframeCount: 0,
+        playerVars: null,
       };
       Object.defineProperty(window, '__fakeYoutubeState', { value: state, configurable: true });
 
@@ -112,6 +114,7 @@ export async function installFaithfulFakeYoutube(
           element.remove();
 
           this.iframe = iframe;
+          state.playerVars = (playerConfig.playerVars ?? null) as Record<string, unknown> | null;
           this.events = (playerConfig.events ?? {}) as Record<
             string,
             (event?: { data: number }) => void

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page, type TestInfo } from '@playwright/test';
 import {
   installFaithfulFakeYoutube,
   installPlayerTestHooks,
@@ -24,6 +24,39 @@ const INNSBRUCK_TITLE = "Men's Boulder Final | Innsbruck 2026 智能重切";
 const T21_CUE_INDEX = 3;
 const T35_CUE_INDEX = 9;
 const PREVIEW_FIRST_CUE_OFFSET = 0.3;
+
+async function readMobileHealth(page: Page) {
+  return page.evaluate(() => {
+    const root = document.documentElement;
+    const active = document.querySelector<HTMLElement>('.subtitle-card.active');
+    const list = document.querySelector<HTMLElement>('.subtitle-list');
+    const activeRect = active?.getBoundingClientRect();
+    const listRect = list?.getBoundingClientRect();
+    return {
+      horizontalOverflow: Math.max(0, root.scrollWidth - root.clientWidth),
+      activeCueVisible: Boolean(
+        activeRect &&
+          listRect &&
+          activeRect.bottom > listRect.top &&
+          activeRect.top < listRect.bottom
+      ),
+      subtitleCardCount: document.querySelectorAll('.subtitle-card').length,
+    };
+  });
+}
+
+async function captureEvidence(
+  page: Page,
+  testInfo: TestInfo,
+  name: string
+): Promise<void> {
+  const path = testInfo.outputPath(`${name}.png`);
+  await page.screenshot({ path, fullPage: true });
+  await testInfo.attach(`${testInfo.project.name}-${name}`, {
+    path,
+    contentType: 'image/png',
+  });
+}
 
 async function installPreviewSeekProbe(page: Page): Promise<void> {
   await page.addInitScript(() => {
@@ -51,6 +84,11 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
     '35s acceptance gate runs on both mobile engines'
   );
   await page.setViewportSize({ width: 412, height: 915 });
+  const runtimeErrors: string[] = [];
+  page.on('pageerror', (error) => runtimeErrors.push(`page: ${error.message}`));
+  page.on('console', (message) => {
+    if (message.type() === 'error') runtimeErrors.push(`console: ${message.text()}`);
+  });
   await installPlayerTestHooks(page, { youtubeSlowTimeoutMs: 20_000 });
   await installFaithfulFakeYoutube(page);
   await installPreviewSeekProbe(page);
@@ -74,6 +112,9 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
     const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
     return Boolean(preview && !preview.paused && preview.currentTime > 0.05);
   });
+  await expect
+    .poll(async () => (await readSurfaceGeometry(page)).activeWordIndex)
+    .toBeGreaterThanOrEqual(0);
 
   // T=0: the preview is the live surface. The prewarming iframe exists but is
   // hidden inside the React-owned host wrapper and never blocks the preview.
@@ -87,8 +128,38 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(t0.previewOpacity).toBe('1');
   expect(t0.centerTarget).toContain('preview-video');
   expect(t0.activeCueIndex).toBe(0);
+  expect(t0.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(t0.previewPaused).toBe(false);
-  await page.screenshot({ path: 'test-results/youtube-handoff-t0.png', fullPage: true });
+  expect((await readMobileHealth(page)).horizontalOverflow).toBe(0);
+  expect((await readFakeYoutubeState(page)).playerVars).toMatchObject({
+    controls: 0,
+    disablekb: 1,
+  });
+  await expect(page.locator('video[controls]')).toHaveCount(0);
+  expect(runtimeErrors).toEqual([]);
+  await captureEvidence(page, testInfo, 'youtube-handoff-t0');
+
+  // T=10: still on the preview, with the media clock, cue and source-driven
+  // word head advancing. Pause must freeze the clock; 连播 resumes it.
+  await page.waitForTimeout(Math.max(0, 10_000 - (Date.now() - playbackStartedAt)));
+  const t10 = await readSurfaceGeometry(page);
+  expect(t10.source).toBe('preview');
+  expect(t10.previewCurrentTime).toBeGreaterThan(8);
+  expect(t10.activeCueIndex).toBeGreaterThanOrEqual(0);
+  expect(t10.activeWordIndex).toBeGreaterThanOrEqual(0);
+  expect(t10.surfaceHeight).toBeGreaterThan(150);
+  expect(Math.abs(t10.wrapperHeight / t10.wrapperWidth - 9 / 16)).toBeLessThan(0.06);
+  const t10Health = await readMobileHealth(page);
+  expect(t10Health.horizontalOverflow).toBe(0);
+  expect(t10Health.activeCueVisible).toBe(true);
+  expect(runtimeErrors).toEqual([]);
+  await captureEvidence(page, testInfo, 'youtube-handoff-t10');
+
+  await page.getByRole('button', { name: '暂停' }).click();
+  const pausedAt = (await readSurfaceGeometry(page)).previewCurrentTime;
+  await page.waitForTimeout(500);
+  expect((await readSurfaceGeometry(page)).previewCurrentTime).toBeCloseTo(pausedAt, 1);
+  await page.getByRole('button', { name: '连播' }).click();
 
   // Do not seek: natural `ended` triggers the handoff to the prewarmed player.
   await page.waitForTimeout(Math.max(0, 21_000 - (Date.now() - playbackStartedAt)));
@@ -117,7 +188,11 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(t21.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(t21.youtubePlaying).toBe(true);
   expect(t21.centerTarget).toContain('iframe');
-  await page.screenshot({ path: 'test-results/youtube-handoff-t21.png', fullPage: true });
+  const t21Health = await readMobileHealth(page);
+  expect(t21Health.horizontalOverflow).toBe(0);
+  expect(t21Health.activeCueVisible).toBe(true);
+  expect(runtimeErrors).toEqual([]);
+  await captureEvidence(page, testInfo, 'youtube-handoff-t21');
 
   // T=35 (absolute 102.3): still one live surface, YouTube visible, the cue
   // highlight follows the fake clock.
@@ -140,11 +215,36 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(t35.activeCueIndex).toBe(T35_CUE_INDEX);
   expect(t35.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(t35.youtubePlaying).toBe(true);
-  await page.screenshot({ path: 'test-results/youtube-handoff-t35.png', fullPage: true });
+  expect(t35.surfaceHeight).toBeGreaterThan(150);
+  expect(Math.abs(t35.wrapperHeight / t35.wrapperWidth - 9 / 16)).toBeLessThan(0.06);
+  const t35Health = await readMobileHealth(page);
+  expect(t35Health.horizontalOverflow).toBe(0);
+  expect(t35Health.activeCueVisible).toBe(true);
+  expect(runtimeErrors).toEqual([]);
+  await captureEvidence(page, testInfo, 'youtube-handoff-t35');
+
+  const cueAt35 = t35.activeCueIndex;
+  await page.getByRole('button', { name: '下一句' }).click();
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute(
+    'data-cue-index',
+    String(cueAt35 + 1)
+  );
+  await page.getByRole('button', { name: '上一句' }).click();
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute(
+    'data-cue-index',
+    String(cueAt35)
+  );
+  await page.getByRole('button', { name: '暂停' }).click();
+  await page.getByRole('button', { name: '连播' }).click();
 
   // Bidirectional switch: clicking a preview-window cue must leave YouTube and
   // bring the Git preview back as the live surface with no iframe residue.
-  await page.locator('[data-cue-index="0"]').click();
+  // The 2,242-row list is virtualized, so exercise the real customer gesture:
+  // scroll to the start, wait for cue 0 to mount, then select it.
+  await page.locator('.subtitle-list').evaluate((list) => list.scrollTo({ top: 0 }));
+  const firstCue = page.locator('.subtitle-card[data-cue-index="0"]');
+  await expect(firstCue).toBeVisible();
+  await firstCue.click();
   await expect(surface).toHaveAttribute('data-media-source', 'preview', { timeout: 10_000 });
   await expect
     .poll(() =>
@@ -173,12 +273,9 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(back.wrapperOpacity).toBe('0');
   expect(back.centerTarget).toContain('preview-video');
   expect(back.activeCueIndex).toBe(0);
-  expect(back.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(back.previewPaused).toBe(false);
   const youtubeState = await readFakeYoutubeState(page);
   expect(youtubeState.playing).toBe(false);
-  await page.screenshot({
-    path: 'test-results/youtube-handoff-back-to-preview.png',
-    fullPage: true,
-  });
+  expect(runtimeErrors).toEqual([]);
+  await captureEvidence(page, testInfo, 'youtube-handoff-back-to-preview');
 });

@@ -37,6 +37,7 @@
     "worker:dev": "npx wrangler dev --config workers/wrangler.toml"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "3.14.10",
     "@vitejs/plugin-react": "^5.1.1",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
