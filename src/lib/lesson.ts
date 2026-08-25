@@ -1,8 +1,8 @@
 import type { Keyword, Lesson, PracticeSentence } from '../types';
-import { cueAtTime } from './cue';
+import { cueAtTime, toCue, transcriptOfCues, translationOfCues } from './cue';
 
 export function fullTranscript(lesson: Lesson) {
-  return lesson.sentences.map((sentence) => sentence.transcript).join(' ');
+  return transcriptOfCues(lesson.sentences.map((sentence) => toCue(sentence)));
 }
 
 // Map a playback timestamp (already on the sentence/caption timeline — the
@@ -16,7 +16,7 @@ export function sentenceIndexAtMediaTime(lesson: Lesson, mediaTime: number) {
 }
 
 export function fullTranslation(lesson: Lesson) {
-  return lesson.sentences.map((sentence) => sentence.zhTranslation).join('');
+  return translationOfCues(lesson.sentences.map((sentence) => toCue(sentence)));
 }
 
 export function uniqueKeywords(sentences: PracticeSentence[]) {
