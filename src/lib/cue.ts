@@ -58,6 +58,42 @@ function isSubtitleCue(item: SubtitleCue | PracticeSentence): item is SubtitleCu
 }
 
 /**
+ * 把一段 Cue 列表的英文原文按顺序拼接为完整文本（Step 5 工具归并）。
+ * 对课程线（PracticeSentence.transcript）与视频线（SubtitleCue.en）都经由
+ * toCue() 归一后读取统一 Cue 的 en 字段，从而把"整段文本聚合"收敛为一个实现。
+ * 分隔符为单个空格，与原 fullTranscript 的 .join(' ') 行为完全一致。
+ */
+export function transcriptOfCues(cues: readonly Cue[]): string {
+  return cues.map((cue) => cue.en).join(' ');
+}
+
+/**
+ * 把一段 Cue 列表的中文翻译按顺序拼接（Step 5 工具归并，统一读统一 Cue 的 zh）。
+ */
+export function translationOfCues(cues: readonly Cue[]): string {
+  return cues.map((cue) => cue.zh).join('');
+}
+
+/**
+ * 从英文文本里抽出常见的"可套用句型"（Step 5 工具归并）。
+ * 原视频线 BilingualStudio.patternsForCue 与 course 生成脚本各自内联了一份同样
+ * 的规则，这里收敛为单一实现，供两条线共用。返回最多 3 条，行为与原实现一致。
+ */
+export function patternsForEnglish(text: string): string[] {
+  const lower = text.toLowerCase();
+  const patterns: string[] = [];
+  if (lower.includes('you can see')) patterns.push('You can see...');
+  if (lower.includes('she has to') || lower.includes("she's got to") || lower.includes('he has to')) {
+    patterns.push('She/He has to...');
+  }
+  if (lower.includes('if ')) patterns.push('If..., ...');
+  if (lower.includes('because')) patterns.push('..., because...');
+  if (lower.includes('when ')) patterns.push('When..., ...');
+  if (lower.includes('trying to')) patterns.push('...trying to...');
+  return patterns.slice(0, 3);
+}
+
+/**
  * 返回媒体绝对时间 t 处「正在播报」的 cue 下标（统一实现）。
  *
  * 语义（与课程线 sentenceIndexAtMediaTime 原注释一致）：

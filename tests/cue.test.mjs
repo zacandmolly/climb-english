@@ -17,7 +17,14 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cueAtTime, toCue, wordsInRange } from '../src/lib/cue.ts';
+import {
+  cueAtTime,
+  patternsForEnglish,
+  toCue,
+  transcriptOfCues,
+  translationOfCues,
+  wordsInRange,
+} from '../src/lib/cue.ts';
 
 const cues = [
   { startTime: 10, endTime: 12 },
@@ -148,4 +155,63 @@ test('toCue preserves id/startTime/endTime exactly for both sources', () => {
   assert.equal(c.id, 'd1-b06');
   assert.equal(c.startTime, 682);
   assert.equal(c.endTime, 707);
+});
+
+// ---------------------------------------------------------------------------
+// transcriptOfCues / translationOfCues (R12 step5 tool consolidation).
+//
+// The course line (PracticeSentence.transcript/zhTranslation) and the video line
+// (SubtitleCue.en/zh) both aggregate text over a list of sentence/cue. These use
+// the unified Cue view via toCue() so there is ONE "join the全段 text" primitive.
+// ---------------------------------------------------------------------------
+
+test('transcriptOfCues joins the en text of a Cue list with single spaces', () => {
+  const cues = [
+    { id: 'c1', startTime: 0, endTime: 1, en: 'hello', zh: '你好' },
+    { id: 'c2', startTime: 1, endTime: 2, en: 'world', zh: '世界' },
+  ];
+  assert.equal(transcriptOfCues(cues), 'hello world');
+});
+
+test('translationOfCues joins the zh of a Cue list without separators', () => {
+  const cues = [
+    { id: 'c1', startTime: 0, endTime: 1, en: 'hello', zh: '你好' },
+    { id: 'c2', startTime: 1, endTime: 2, en: 'world', zh: '世界' },
+  ];
+  assert.equal(translationOfCues(cues), '你好世界');
+});
+
+test('transcriptOfCues agrees with the lesson line fullTranscript semantics', () => {
+  // A PracticeSentence with transcript → toCue().en → joined.
+  const sentence = {
+    id: 's01',
+    label: 'label',
+    startTime: 0,
+    endTime: 1,
+    transcript: 'The top of the slab.',
+    zhTranslation: '这是板壁线路的顶部。',
+    zhExplanation: 'e',
+    keywords: [],
+    sentencePatterns: [],
+    speakingPrompt: 'p',
+  };
+  assert.equal(transcriptOfCues([toCue(sentence)]), 'The top of the slab.');
+});
+
+// ---------------------------------------------------------------------------
+// patternsForEnglish (R12 step5 tool consolidation).
+//
+// The video line used a private patternsForCue() in BilingualStudio and the
+// course generation script inlined the same rules. Now it is one primitive.
+// ---------------------------------------------------------------------------
+
+test('patternsForEnglish returns up to 3 matched patterns', () => {
+  const patterns = patternsForEnglish(
+    'You can see she has to trust the heel because the hold is small.'
+  );
+  assert.deepEqual(patterns, ['You can see...', 'She/He has to...', '..., because...']);
+});
+
+test('patternsForEnglish returns empty when nothing matches', () => {
+  assert.deepEqual(patternsForEnglish('hold the crimp tightly'), []);
 });
