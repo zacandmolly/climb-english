@@ -1765,37 +1765,6 @@ button {
   }
 }
 
-/* ---------- Topbar view switch ---------- */
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.view-switch {
-  display: inline-flex;
-  border: 1px solid var(--line-strong);
-  background: var(--paper-strong);
-}
-
-.view-switch button {
-  border: 0;
-  background: transparent;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 14px;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.view-switch button.active {
-  background: var(--charcoal);
-  color: var(--chalk);
-}
-
 /* ---------- Bilingual subtitle studio ---------- */
 .bilingual-shell {
   display: grid;
@@ -1805,33 +1774,9 @@ button {
   align-items: start;
 }
 
-.bilingual-main {
-  border: 1px solid var(--line);
-  background: var(--paper-strong);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
 .empty-library {
   padding: 24px;
   color: var(--muted);
-}
-
-/* Video library rail */
-.video-library {
-  border: 1px solid var(--line);
-  background: var(--paper-strong);
-  box-shadow: var(--shadow);
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-height: calc(100vh - 140px);
-  overflow-y: auto;
-  position: sticky;
-  top: 16px;
 }
 
 .library-search {
@@ -1850,15 +1795,6 @@ button {
   outline: none;
   width: 100%;
   color: var(--ink);
-}
-
-.library-group-title {
-  margin: 4px 0 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0;
 }
 
 .library-card {
@@ -1923,45 +1859,6 @@ button {
   position: relative;
 }
 
-.bilingual-frame .overlay-captions {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 6%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 0 8%;
-  pointer-events: none;
-  text-align: center;
-}
-
-.overlay-captions .overlay-en {
-  margin: 0;
-  display: inline;
-  background: rgba(0, 0, 0, 0.72);
-  color: #fff;
-  font-size: clamp(15px, 1.9vw, 21px);
-  font-weight: 700;
-  line-height: 1.35;
-  padding: 3px 10px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.overlay-captions .overlay-zh {
-  margin: 0;
-  display: inline;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--lime);
-  font-size: clamp(12px, 1.4vw, 15px);
-  line-height: 1.35;
-  padding: 2px 8px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
 .no-media {
   aspect-ratio: 16 / 9;
   display: flex;
@@ -2015,47 +1912,6 @@ button {
   flex-direction: column;
 }
 
-.subtitle-row {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto;
-  gap: 10px;
-  align-items: start;
-  text-align: left;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-  padding: 9px 12px;
-  cursor: pointer;
-}
-
-.subtitle-row:hover {
-  background: var(--paper);
-}
-
-.subtitle-row.active {
-  background: var(--chalk);
-  box-shadow: inset 3px 0 0 var(--vermilion);
-}
-
-.subtitle-row.filler .subtitle-en {
-  color: var(--muted);
-}
-
-.subtitle-index {
-  color: var(--ochre);
-  font-size: 12px;
-  padding-top: 2px;
-  display: flex;
-  justify-content: center;
-}
-
-.subtitle-body {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
-}
-
 .subtitle-en {
   line-height: 1.4;
 }
@@ -2075,15 +1931,6 @@ button {
 .subtitle-zh.pending {
   font-style: italic;
   opacity: 0.7;
-}
-
-.subtitle-time {
-  color: var(--muted);
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
 }
 
 .score-chip {
@@ -2110,34 +1957,6 @@ button {
   .bilingual-shell {
     grid-template-columns: 1fr;
   }
-
-  .video-library {
-    position: static;
-    max-height: 320px;
-  }
-}
-
-/* Cue side column (keywords + coach) */
-.cue-side {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-width: 0;
-}
-
-.cue-keywords {
-  grid-template-columns: 1fr;
-  border: 1px solid var(--line);
-  background: var(--paper-strong);
-  box-shadow: var(--shadow);
-  padding: 12px;
-  max-height: 320px;
-  overflow-y: auto;
-}
-
-.cue-side .coach-pane {
-  position: static;
-  max-height: none;
 }
 
 /* ============================================================
@@ -2196,208 +2015,12 @@ button {
   border-radius: 10px;
 }
 
-.view-switch {
-  border: 1px solid var(--card-line);
-  border-radius: var(--radius-pill);
-  background: var(--paper);
-  padding: 3px;
-  gap: 2px;
-}
-
-.view-switch button {
-  border-radius: var(--radius-pill);
-  padding: 7px 14px;
-  font-size: 13px;
-}
-
-.view-switch button.active {
-  background: var(--charcoal);
-  color: var(--chalk);
-}
-
-.session-chip {
-  border-radius: var(--radius-pill);
-  font-size: 12px;
-  padding: 7px 12px;
-}
-
-/* ---------- 每日任务横条(上) ---------- */
-.daily-strip {
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: var(--radius-card);
-  box-shadow: var(--soft-shadow);
-  padding: 14px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.daily-strip-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .daily-strip-title {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-weight: 800;
   font-size: 14px;
-}
-
-.daily-strip-progress-label {
-  color: var(--muted);
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.daily-strip-head .progress-track {
-  flex: 1;
-}
-
-.daily-strip-row {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-
-.day-card {
-  flex: 0 0 132px;
-  border: 1px solid var(--card-line);
-  border-radius: 12px;
-  background: var(--paper);
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.day-card:hover {
-  border-color: var(--charcoal);
-}
-
-.day-card.active {
-  background: var(--chalk);
-  border-color: var(--charcoal);
-  box-shadow: inset 3px 0 0 var(--teal);
-}
-
-.day-card.completed .day-card-badge {
-  color: var(--teal);
-}
-
-.day-card.locked {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.day-card-badge {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--charcoal);
-}
-
-.day-card-title {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.day-card-meta {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.daily-strip-today {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.daily-strip-goal {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.daily-strip-goal strong {
-  color: var(--ink);
-  font-size: 14px;
-}
-
-.daily-strip-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.daily-strip-method {
-  margin: 0;
-  font-size: 12px;
-  color: var(--muted);
-  border-top: 1px dashed var(--card-line);
-  padding-top: 10px;
-}
-
-.complete-session-button,
-.reset-progress-button {
-  border-radius: var(--radius-pill);
-  padding: 8px 14px;
-  font-size: 13px;
-}
-
-/* ---------- 句子 chips ---------- */
-.sentence-chips {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 2px 0 10px;
-  margin-bottom: 10px;
-}
-
-.sentence-chip {
-  flex: 0 0 auto;
-  min-width: 40px;
-  border: 1px solid var(--card-line);
-  border-radius: var(--radius-pill);
-  background: var(--paper);
-  padding: 7px 10px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.sentence-chip:hover {
-  border-color: var(--charcoal);
-  color: var(--ink);
-}
-
-.sentence-chip.active {
-  background: var(--charcoal);
-  border-color: var(--charcoal);
-  color: var(--chalk);
-}
-
-.sentence-chip.all {
-  color: var(--teal);
-  border-color: var(--teal);
-}
-
-.sentence-chip.all.active {
-  background: var(--teal);
-  color: var(--chalk);
 }
 
 /* ---------- 主页面 ---------- */
@@ -2459,22 +2082,8 @@ button {
   border-radius: var(--radius-pill);
 }
 
-/* ---------- 字幕 hero(重点突出) ---------- */
 .transcript-panel {
   margin-top: 14px;
-}
-
-.transcript-text.hero {
-  font-size: 21px;
-  line-height: 1.55;
-  font-weight: 700;
-  letter-spacing: 0;
-  margin: 12px 0;
-}
-
-.transcript-text.hero.compact {
-  font-size: 17px;
-  font-weight: 600;
 }
 
 .transcript-text mark,
@@ -2484,38 +2093,6 @@ button {
   color: var(--charcoal);
   border-radius: 4px;
   padding: 0 3px;
-}
-
-.segment-transcript.hero {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-height: 420px;
-  overflow-y: auto;
-}
-
-.segment-transcript.hero button {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  border: 1px solid var(--card-line);
-  border-radius: 12px;
-  background: var(--paper);
-  padding: 10px 14px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.segment-transcript.hero button.active {
-  background: var(--chalk);
-  border-color: var(--charcoal);
-  box-shadow: inset 3px 0 0 var(--vermilion);
-}
-
-.segment-transcript.hero .segment-line {
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 600;
 }
 
 .translation-stack {
@@ -2797,15 +2374,6 @@ button {
   color: var(--muted);
 }
 
-/* ---------- 叠字字幕微调 ---------- */
-.overlay-captions .overlay-en {
-  border-radius: 6px;
-}
-
-.overlay-captions .overlay-zh {
-  border-radius: 6px;
-}
-
 /* ---------- AI 教练(下) ---------- */
 .coach-pane.coach-bottom {
   background: var(--card);
@@ -2879,14 +2447,6 @@ button {
 
   .subtitle-en {
     font-size: 16px;
-  }
-
-  .transcript-text.hero {
-    font-size: 18px;
-  }
-
-  .day-card {
-    flex-basis: 118px;
   }
 }
 
