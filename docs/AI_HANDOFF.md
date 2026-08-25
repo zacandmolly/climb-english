@@ -141,6 +141,7 @@ export type Cue = {
 - **单一语义**：播放层绝对时间 = `cue.startTime`（已含 `mediaStartTime` 偏移）。
 - `mediaStartTime` **仅保留在 player 层**做 `toVideoTime` 换算（`cueTime - mediaStartTime`），不进入时间轴判定。
 - 视频素材的媒体面统一向 `useCuePlayer` 上报片段相对时间：本地为 `video.currentTime`，YouTube fallback 为 `youtube.currentTime - mediaStartTime`；因此 seek 时反向使用 `relativeTime + mediaStartTime`，不得为 Innsbruck/Bern 写素材特例。
+- 视频线单句播放直接 seek 到 cue 边界；预览文件可以保留第一 cue 前 0.3 秒的采集缓冲，但 `useCuePlayer` 不得再减运行时 pre-roll。
 - 句间自然停顿**保持上一句高亮**，不提前跳下一句；t 早于首句钳制到 0、越过末句钳制到末下标。
 
 ### 5.4 `src/lib/cue.ts` 核心函数
@@ -261,7 +262,6 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 | R12 step4 真实删重复副本 | `Lesson.sentences` 与 cue deck 有 3 处**连续切片**关系（`lesson-cue-baseline.json` 记录）；是否真删重复副本需人确认映射关系，**不可干净派生** | 人确认后再动，动前先跑 `check:lesson-alignment` |
 | R8 最优参数带自证偏置 | 当前最优 `maxGap=0.7/minWords=4/mergeGap=1.2/maxWords=22` 是评分函数偏向（minWords 越小碎片定义越松）的结果；`segment.mjs` 默认参数（maxGap=1.5/minWords=6/mergeGap=2.0/maxWords=26）**刻意保持未改** | 是否回归旧默认需人结合真实填充率决定 |
 | knip 11 项死代码待清理 | `npm run knip` 报历史死代码（未用 lib 导出/类型等），当前 `dead-code` job 为告警 | 清理后收紧为硬门禁 |
-| 视频线高亮去掉 -0.3s pre-roll 提前量 | `useCuePlayer` 的 `PRE_ROLL_SECONDS = 0.3` 仍作为高亮提前量；R12 对齐改进主张「保持上一句」，pre-roll 是否该去掉待验证 | 需浏览器实证后再决定 |
 | `CoachPanel` vs `SpeakingCoach` 合并 | 课程流程与视频素材两套跟读教练功能重叠 | 另开 PR 合并 |
 | `src/styles.css` v2 遗留死规则 | 全局样式含 v2 死规则 | `deadcss` 结果参考清理 |
 

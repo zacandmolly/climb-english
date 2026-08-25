@@ -9,29 +9,40 @@ import { expect, test, type CDPSession, type Page } from '@playwright/test';
 
 const TECHNIQUE_TITLE = 'A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE';
 const INNSBRUCK_TITLE = "Men's Boulder Final | Innsbruck 2026 智能重切";
+const INNSBRUCK_FIRST_CUE_PREVIEW_OFFSET = 0.3;
+const INNSBRUCK_HANDOFF_CUE_INDEX = 4;
+const INNSBRUCK_HANDOFF_CUE_START = 88.97;
 
 type PreviewMediaEvents = {
   canplay: number;
   seeking: number;
   seeked: number;
   waiting: number;
+  seekTargets: number[];
+};
+
+type FakeYoutubeState = {
+  currentTime: number;
+  playing: boolean;
+  seekTargets: number[];
 };
 
 async function installPreviewMediaEventProbe(page: Page): Promise<void> {
   await page.addInitScript(() => {
-    const events = { canplay: 0, seeking: 0, seeked: 0, waiting: 0 };
+    const events = { canplay: 0, seeking: 0, seeked: 0, waiting: 0, seekTargets: [] as number[] };
     Object.defineProperty(window, '__previewMediaEvents', {
       value: events,
       configurable: true,
     });
 
-    (Object.keys(events) as Array<keyof typeof events>).forEach((eventName) => {
+    (['canplay', 'seeking', 'seeked', 'waiting'] as const).forEach((eventName) => {
       document.addEventListener(
         eventName,
         (event) => {
           const target = event.target;
           if (target instanceof HTMLVideoElement && target.classList.contains('preview-video')) {
             events[eventName] += 1;
+            if (eventName === 'seeking') events.seekTargets.push(target.currentTime);
           }
         },
         true
@@ -50,12 +61,25 @@ async function readPreviewMediaEvents(page: Page): Promise<PreviewMediaEvents> {
   });
 }
 
+async function readFakeYoutubeState(page: Page): Promise<FakeYoutubeState> {
+  return page.evaluate(() => {
+    return (
+      (
+        window as typeof window & {
+          __fakeYoutubeState?: FakeYoutubeState;
+        }
+      ).__fakeYoutubeState ?? { currentTime: 0, playing: false, seekTargets: [] }
+    );
+  });
+}
+
 async function installFakeYoutubeApi(page: Page): Promise<void> {
   await page.addInitScript(() => {
     const state = {
       currentTime: 0,
       playbackRate: 1,
       playing: false,
+      seekTargets: [] as number[],
     };
     Object.defineProperty(window, '__fakeYoutubeState', { value: state, configurable: true });
 
@@ -70,6 +94,7 @@ async function installFakeYoutubeApi(page: Page): Promise<void> {
 
       seekTo(seconds: number) {
         state.currentTime = seconds;
+        state.seekTargets.push(seconds);
       }
 
       playVideo() {
@@ -242,14 +267,21 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
   expect(idleEvents.canplay).toBeLessThanOrEqual(4);
 
   await page.getByRole('button', { name: '播放本句' }).click();
-  await page.waitForFunction(() => {
+  await page.waitForFunction((target) => {
     const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
-    return Boolean(preview && !preview.paused && preview.currentTime > 0.1);
-  });
+    return Boolean(preview && !preview.paused && preview.currentTime >= target);
+  }, INNSBRUCK_FIRST_CUE_PREVIEW_OFFSET);
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '0');
   const playbackStart = await page
     .locator('video.preview-video')
     .evaluate((video) => video.currentTime);
   const eventsAtPlaybackStart = await readPreviewMediaEvents(page);
+  expect(
+    eventsAtPlaybackStart.seekTargets.some(
+      (target) => Math.abs(target - INNSBRUCK_FIRST_CUE_PREVIEW_OFFSET) < 0.05
+    )
+  ).toBe(true);
+  await page.screenshot({ path: 'test-results/innsbruck-preview-cue0.png', fullPage: true });
   await page.waitForTimeout(1500);
   const playbackEnd = await page
     .locator('video.preview-video')
@@ -266,16 +298,23 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
   });
 
   // Cue 5 begins beyond the 20-second preview window. The already-ready fake
-  // YouTube player must take over on the exact same absolute cue clock.
-  await page.locator('.subtitle-card[data-cue-index="4"]').click();
+  // YouTube player must take over at the exact cue start, without reviving the
+  // removed runtime pre-roll or moving the active highlight off cue 5.
+  const youtubeSeeksBeforeHandoff = (await readFakeYoutubeState(page)).seekTargets.length;
+  await page.locator(`[data-cue-index="${INNSBRUCK_HANDOFF_CUE_INDEX}"]`).click();
   await expect(media).toHaveAttribute('data-media-source', 'youtube');
-  await page.waitForFunction(() => {
-    const state = (
-      window as typeof window & {
-        __fakeYoutubeState?: { currentTime: number; playing: boolean };
-      }
-    ).__fakeYoutubeState;
-    return Boolean(state?.playing && state.currentTime >= 88.6);
+  await expect.poll(async () => (await readFakeYoutubeState(page)).playing).toBe(true);
+  const youtubeState = await readFakeYoutubeState(page);
+  const handoffSeeks = youtubeState.seekTargets.slice(youtubeSeeksBeforeHandoff);
+  expect(handoffSeeks.length).toBeGreaterThan(0);
+  expect(handoffSeeks.at(-1)).toBeCloseTo(INNSBRUCK_HANDOFF_CUE_START, 2);
+  await page.waitForTimeout(500);
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute(
+    'data-cue-index',
+    String(INNSBRUCK_HANDOFF_CUE_INDEX)
+  );
+  await page.screenshot({
+    path: 'test-results/innsbruck-youtube-handoff-cue4.png',
+    fullPage: true,
   });
-  await page.screenshot({ path: 'test-results/innsbruck-youtube-fallback.png', fullPage: true });
 });
