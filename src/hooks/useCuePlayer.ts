@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { cueAtTime } from '../lib/cue';
 import type { SubtitleCue } from '../types';
 
 const PRE_ROLL_SECONDS = 0.3;
@@ -28,17 +29,7 @@ export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number) {
   );
 
   const cueAtVideoTime = useCallback(
-    (videoTime: number) => {
-      const cueTime = videoTime + mediaStartTime;
-      for (let index = 0; index < cues.length; index += 1) {
-        const cue = cues[index];
-        if (cueTime >= cue.startTime - PRE_ROLL_SECONDS && cueTime <= cue.endTime + END_PAD_SECONDS) {
-          return index;
-        }
-        if (cue.startTime - PRE_ROLL_SECONDS > cueTime) return index;
-      }
-      return Math.max(0, cues.length - 1);
-    },
+    (videoTime: number) => cueAtTime(cues, videoTime + mediaStartTime),
     [cues, mediaStartTime],
   );
 
