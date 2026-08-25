@@ -1,28 +1,18 @@
 import type { Keyword, Lesson, PracticeSentence } from '../types';
+import { cueAtTime } from './cue';
 
 export function fullTranscript(lesson: Lesson) {
   return lesson.sentences.map((sentence) => sentence.transcript).join(' ');
 }
 
-// Map a playback timestamp (already on the sentence/caption timeline) onto
-// the sentence currently being spoken. Keeps the previous sentence
-// highlighted in the gap between two sentences, and clamps to the segment
-// bounds so the pre-roll never highlights a sentence before the segment.
+// Map a playback timestamp (already on the sentence/caption timeline — the
+// unified `cue.startTime` absolute-time semantics) onto the sentence being
+// spoken. Keeps the previous sentence highlighted in the gap between two
+// sentences, and clamps to the segment bounds so the pre-roll never highlights
+// a sentence before the segment. Delegates to the shared `cueAtTime` so the
+// course line and the video line share one timeline judgement (R12 Step 2).
 export function sentenceIndexAtMediaTime(lesson: Lesson, mediaTime: number) {
-  const sentences = lesson.sentences;
-  if (sentences.length === 0) return 0;
-
-  if (mediaTime < sentences[0].startTime) return 0;
-
-  let index = 0;
-  for (let i = 0; i < sentences.length; i += 1) {
-    if (mediaTime >= sentences[i].startTime) {
-      index = i;
-    } else {
-      break;
-    }
-  }
-  return index;
+  return cueAtTime(lesson.sentences, mediaTime);
 }
 
 export function fullTranslation(lesson: Lesson) {
