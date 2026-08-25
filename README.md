@@ -5,6 +5,7 @@
 > 本 README 面向两类读者：项目所有者，以及后续参与协作的 AI。目标是看完本文件即可定位任何功能的代码位置、理解数据从哪来到哪去、知道改哪个模块该遵守什么约定。
 >
 > 工程复盘与踩坑录见 [RETROSPECTIVE.md](./RETROSPECTIVE.md)。
+> **AI 协作者进场请先读 [docs/AI_HANDOFF.md](./docs/AI_HANDOFF.md)**——一站式上手：状态快照 / 架构 / 数据模型 / 门禁 / 防踩坑约定。
 
 ## 核心能力：卡拉OK字幕跟随（karaoke follow）
 
