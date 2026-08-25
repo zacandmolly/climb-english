@@ -4,7 +4,7 @@ import { formatTime } from '../lib/ui';
 import type { PracticeMode } from '../types';
 import { END_PAD_SECONDS, PRE_ROLL_SECONDS } from './playback';
 
-type YouTubePlayerRef = {
+export type YouTubePlayerRef = {
   seekTo: (seconds: number, allowSeekAhead: boolean) => void;
   playVideo: () => void;
   pauseVideo: () => void;

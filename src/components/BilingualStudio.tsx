@@ -20,7 +20,8 @@ import { patternsForEnglish } from '../lib/cue';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
 import { loadVideo } from '../data/videos';
 import type { Keyword, SubtitleCue, VideoCategory, VideoEntry, VideoSummary } from '../types';
-import { formatDuration, formatTime, HighlightedText, resolveStaticAssetUrl } from '../lib/ui';
+import { formatDuration, formatTime, HighlightedText } from '../lib/ui';
+import { CueMediaPlayer } from '../players/CueMediaPlayer';
 import { SpeakingCoach, type CoachTarget } from './SpeakingCoach';
 
 const CATEGORY_ORDER: VideoCategory[] = ['world-cup', 'technique', 'interview', 'training', 'other'];
@@ -74,7 +75,7 @@ export function BilingualStudio({
   }, [videoId]);
 
   const cues = useMemo(() => video?.cues ?? [], [video]);
-  const player = useCuePlayer(cues, video?.mediaStartTime ?? 0);
+  const player = useCuePlayer(cues, video?.mediaStartTime ?? 0, video?.id ?? '');
   const activeCue = cues[player.activeCueIndex] ?? cues[0];
   const activeKeywords = useMemo(() => expandTerms(activeCue?.keywords ?? []), [activeCue]);
 
@@ -132,26 +133,16 @@ export function BilingualStudio({
         </div>
 
         <div className="video-frame bilingual-frame">
-          {video.mediaUrl ? (
-            <video
-              ref={player.videoRef}
-              className="local-video"
-              src={resolveStaticAssetUrl(video.mediaUrl)}
-              controls
-              preload="metadata"
-              playsInline
-              onTimeUpdate={player.handleTimeUpdate}
-              onPause={() => player.setIsPlaying(false)}
-              onPlay={() => player.setIsPlaying(true)}
-            />
-          ) : (
-            <div className="no-media">
-              <p>本视频只有字幕数据，尚未下载媒体文件。</p>
-              <a href={video.sourceUrl} target="_blank" rel="noreferrer">
-                在 YouTube 打开原视频 <ExternalLink size={14} aria-hidden="true" />
-              </a>
-            </div>
-          )}
+          <CueMediaPlayer
+            key={video.id}
+            ref={player.mediaRef}
+            mediaUrl={video.mediaUrl}
+            youtubeId={video.youtubeId}
+            mediaStartTime={video.mediaStartTime}
+            sourceUrl={video.sourceUrl}
+            onTimeUpdate={player.handleTimeUpdate}
+            onPlayingChange={player.setIsPlaying}
+          />
         </div>
 
         <div className="video-controls bilingual-controls">
@@ -159,7 +150,7 @@ export function BilingualStudio({
             className="control-button primary"
             type="button"
             onClick={() => player.playCue(player.activeCueIndex)}
-            disabled={!video.mediaUrl}
+            disabled={!video.mediaUrl && !video.youtubeId}
           >
             <Play size={17} aria-hidden="true" />
             播放本句
@@ -168,7 +159,7 @@ export function BilingualStudio({
             className="control-button"
             type="button"
             onClick={player.playContinuous}
-            disabled={!video.mediaUrl}
+            disabled={!video.mediaUrl && !video.youtubeId}
           >
             <ListMusic size={17} aria-hidden="true" />
             连播

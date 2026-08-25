@@ -135,6 +135,30 @@ jobs:
             echo "> and any NEW drift fails the job and blocks the PR."
           } >> "$GITHUB_STEP_SUMMARY"
 
+  video-pipeline:
+    name: Video material (cues + media fallback)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check every generated video material
+        run: npm run check:videos
+      - name: Check lesson-to-cue alignment
+        run: npm run check:lesson-alignment
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **video-pipeline** — hard gate for every generated video module."
+            echo "> Verifies cue counts, translations, monotonic timelines, registry parity, faststart MP4s,"
+            echo "> either a Git-tracked deployable media file or a YouTube timeline fallback, and R12 lesson/cue alignment."
+          } >> "$GITHUB_STEP_SUMMARY"
+
   e2e:
     name: E2E (Playwright karaoke walkthrough)
     runs-on: ubuntu-latest
@@ -259,5 +283,3 @@ jobs:
             echo "> which is not available in CI, so this job uses a static write-target guard instead:"
             echo "> the build script must emit only lessons.generated.ts and never lessons.manual.ts."
           } >> "$GITHUB_STEP_SUMMARY"
-
-

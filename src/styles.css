@@ -400,7 +400,9 @@ button {
   border: 1px solid var(--line);
   background: transparent;
   text-align: left;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .course-node:hover:not(:disabled) {
@@ -1859,6 +1861,26 @@ button {
   position: relative;
 }
 
+.cue-media-surface {
+  position: relative;
+  width: 100%;
+}
+
+.media-source-note {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  max-width: calc(100% - 20px);
+  margin: 0;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(16, 18, 16, 0.78);
+  color: #d8e0c8;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
 .no-media {
   aspect-ratio: 16 / 9;
   display: flex;
@@ -2317,7 +2339,9 @@ button {
 .subtitle-card.active {
   background: var(--chalk);
   border-color: var(--charcoal);
-  box-shadow: inset 3px 0 0 var(--vermilion), var(--soft-shadow);
+  box-shadow:
+    inset 3px 0 0 var(--vermilion),
+    var(--soft-shadow);
 }
 
 .subtitle-card.filler .subtitle-en {
