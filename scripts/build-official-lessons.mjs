@@ -14,7 +14,10 @@ const BLOCK_SECONDS = 25;
 const PREROLL_SECONDS = 1;
 
 const vttPath = process.argv[2] ?? '/tmp/climb-captions/CPhZ18zmrBs.en.vtt';
-const outputPath = path.join(process.cwd(), 'src/data/lessons.ts');
+// Generated Bern lessons only. Hand-written Innsbruck lives in
+// src/data/lessons.manual.ts and must never be touched by this script — the
+// data-protect CI job guards that file against accidental rewrites.
+const outputPath = path.join(process.cwd(), 'src/data/lessons.generated.ts');
 
 const manualSeed = [
   {
@@ -26,8 +29,7 @@ const manualSeed = [
       'The top of the slab. It was blocked. Most athletes did what Zelia did there, peeled off.',
     zhTranslation:
       '这是板壁线路的顶部。那里被挡住了。大多数运动员都像 Zelia 那样，在那里掉了下来。',
-    zhExplanation:
-      '这句是在回看 slab 顶部。blocked 表示被挡住/卡住，peeled off 是从墙上掉下来。',
+    zhExplanation: '这句是在回看 slab 顶部。blocked 表示被挡住/卡住，peeled off 是从墙上掉下来。',
     keywords: [
       {
         term: 'slab',
@@ -81,8 +83,7 @@ const manualSeed = [
     endTime: 646,
     transcript: 'That flexibility required there. Yeah.',
     zhTranslation: '那里需要的柔韧性很强。是的。',
-    zhExplanation:
-      '这句很短，适合练听懂口语省略。完整意思是：那个位置需要很强的柔韧性。',
+    zhExplanation: '这句很短，适合练听懂口语省略。完整意思是：那个位置需要很强的柔韧性。',
     keywords: [
       {
         term: 'flexibility',
@@ -106,8 +107,7 @@ const manualSeed = [
     transcript:
       'Scotty down making that match. She had to fight a little bit for it. Bit of a wobble.',
     zhTranslation: 'Scotty 在那里完成了并点。她得稍微拼一下才做成，身体有一点晃。',
-    zhExplanation:
-      'match 是双手并点，fight for it 是很吃力地完成，wobble 是晃了一下。',
+    zhExplanation: 'match 是双手并点，fight for it 是很吃力地完成，wobble 是晃了一下。',
     keywords: [
       {
         term: 'match',
@@ -242,7 +242,9 @@ function readTimedWords(vtt) {
     const timeLineIndex = lines.findIndex((line) => line.includes('-->'));
     if (timeLineIndex < 0) continue;
 
-    const [startValue] = lines[timeLineIndex].split('-->').map((part) => part.trim().split(/\s+/)[0]);
+    const [startValue] = lines[timeLineIndex]
+      .split('-->')
+      .map((part) => part.trim().split(/\s+/)[0]);
     const cueStart = parseTime(startValue);
 
     for (const rawLine of lines.slice(timeLineIndex + 1)) {
@@ -333,7 +335,8 @@ function patternsFor(text) {
   const lower = text.toLowerCase();
   const patterns = [];
   if (lower.includes('you can see')) patterns.push('You can see...');
-  if (lower.includes('she has to') || lower.includes("she's got to")) patterns.push('She has to...');
+  if (lower.includes('she has to') || lower.includes("she's got to"))
+    patterns.push('She has to...');
   if (lower.includes('this is all about')) patterns.push('This is all about...');
   if (lower.includes('if she')) patterns.push('If she..., she...');
   if (lower.includes('because')) patterns.push('..., because...');
@@ -453,7 +456,11 @@ function makeLesson(sessionIndex, timedWords) {
 
   for (let blockStart = startTime; blockStart < endTime; blockStart += BLOCK_SECONDS) {
     if (sessionIndex === 0 && blockStart < 659) continue;
-    const block = blockTranscript(timedWords, blockStart, Math.min(blockStart + BLOCK_SECONDS, endTime));
+    const block = blockTranscript(
+      timedWords,
+      blockStart,
+      Math.min(blockStart + BLOCK_SECONDS, endTime)
+    );
     if (block) blocks.push(makeGeneratedSentence(sessionIndex, blocks.length, block));
   }
 
@@ -498,10 +505,8 @@ if (!fs.existsSync(vttPath)) {
 const timedWords = readTimedWords(fs.readFileSync(vttPath, 'utf8'));
 const lessons = Array.from({ length: SESSION_COUNT }, (_, index) => makeLesson(index, timedWords));
 
-const file = `import type { Lesson } from '../types';\n\nexport const lessons: Lesson[] = ${JSON.stringify(lessons, null, 2)};\n`;
+const file = `import type { Lesson } from '../types';\n\nexport const bernLessons: Lesson[] = ${JSON.stringify(lessons, null, 2)};\n`;
 
 fs.writeFileSync(outputPath, file);
 console.log(`Wrote ${lessons.length} lessons to ${outputPath}`);
-console.log(
-  lessons.map((lesson) => `${lesson.id}: ${lesson.sentences.length} blocks`).join('\n'),
-);
+console.log(lessons.map((lesson) => `${lesson.id}: ${lesson.sentences.length} blocks`).join('\n'));

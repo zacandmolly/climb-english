@@ -6,11 +6,18 @@
 //    existing lessons dataset by fuzzy text overlap (used to rebuild the
 //    Bern 2025 course with the new segmenter without re-translating).
 
+import fs from 'node:fs';
+import path from 'node:path';
+
 const DEFAULT_BATCH_SIZE = 24;
 
 export async function translateSentences(sentences, options = {}) {
   const apiKey = options.apiKey ?? process.env.DEEPSEEK_API_KEY ?? process.env.OPENAI_API_KEY ?? '';
-  const baseUrl = (options.baseUrl ?? process.env.DEEPSEEK_BASE_URL ?? 'https://api.deepseek.com').replace(/\/+$/, '');
+  const baseUrl = (
+    options.baseUrl ??
+    process.env.DEEPSEEK_BASE_URL ??
+    'https://api.deepseek.com'
+  ).replace(/\/+$/, '');
   const model = options.model ?? process.env.DEEPSEEK_MODEL ?? 'deepseek-chat';
   const batchSize = options.batchSize ?? DEFAULT_BATCH_SIZE;
 
@@ -62,7 +69,9 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
       });
 
       if (!response.ok) {
-        throw new Error(`translate API error ${response.status}: ${(await response.text()).slice(0, 200)}`);
+        throw new Error(
+          `translate API error ${response.status}: ${(await response.text()).slice(0, 200)}`
+        );
       }
 
       const data = await response.json();
@@ -77,7 +86,9 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
     }
   }
 
-  console.warn(`  ! translation batch failed (${lastError?.message ?? 'unknown error'}); keeping placeholders`);
+  console.warn(
+    `  ! translation batch failed (${lastError?.message ?? 'unknown error'}); keeping placeholders`
+  );
   return batch.map((sentence) => ({
     ...sentence,
     zh: '',
@@ -90,9 +101,7 @@ async function translateBatch(batch, { apiKey, baseUrl, model }) {
 // `i` for this index. Returns null instead of falling back to the array slot,
 // because array order is not contractually guaranteed by chat completions.
 export function pickTranslationForIndex(items, index) {
-  return (
-    items.find((entry) => entry && Number.isInteger(entry.i) && entry.i === index) ?? null
-  );
+  return items.find((entry) => entry && Number.isInteger(entry.i) && entry.i === index) ?? null;
 }
 
 // Align a batch of LLM responses to the input sentences. Any row the model
@@ -127,7 +136,7 @@ function reportBatchCoverage(items, batch) {
   if (matched < batch.length) {
     console.warn(
       `  ! translate batch coverage ${matched}/${batch.length} (${Math.round(coverage * 100)}%); ` +
-        `${batch.length - matched} cues will be re-flagged as needsTranslation.`,
+        `${batch.length - matched} cues will be re-flagged as needsTranslation.`
     );
   }
 }
@@ -144,7 +153,7 @@ export function backfillFromReference(sentences, referenceSentences, options = {
 
   return sentences.map((sentence) => {
     const nearby = referenceSentences.filter(
-      (reference) => Math.abs(reference.startTime - sentence.startTime) <= timeWindow,
+      (reference) => Math.abs(reference.startTime - sentence.startTime) <= timeWindow
     );
 
     const scored = nearby.map((reference) => {
@@ -154,7 +163,9 @@ export function backfillFromReference(sentences, referenceSentences, options = {
 
     // Case 1: near-exact match with a single reviewed block — reuse its zh.
     const best = scored
-      .filter((entry) => entry.refCoverage >= nearMatchCoverage && entry.cueCoverage >= nearMatchCoverage)
+      .filter(
+        (entry) => entry.refCoverage >= nearMatchCoverage && entry.cueCoverage >= nearMatchCoverage
+      )
       .sort((first, second) => second.cueCoverage - first.cueCoverage)[0];
 
     if (best) {
@@ -184,12 +195,8 @@ export function backfillFromReference(sentences, referenceSentences, options = {
   });
 }
 
-export function loadLessonsAsReference(lessonsFileText) {
-  // src/data/lessons.ts is a generated file containing pure JSON after the
-  // import line; parse it without needing a TS loader.
-  const match = lessonsFileText.match(/=\s*(\[[\s\S]*\])\s*;?\s*$/);
-  if (!match) throw new Error('Could not parse lessons.ts as JSON');
-  const lessons = JSON.parse(match[1]);
+export function loadLessonsAsReference(lessonsFilePath) {
+  const lessons = readLessonsModule(lessonsFilePath);
 
   const reference = [];
   for (const lesson of lessons) {
@@ -206,9 +213,45 @@ export function loadLessonsAsReference(lessonsFileText) {
   return reference;
 }
 
+// Resolve a lessons data module into its top-level Lesson[] regardless of
+// shape:
+//   - a direct array literal (`export const x: Lesson[] = [ ... ]`) — the
+//     legacy combined lessons.ts and the split generated/manual files;
+//   - a re-export (`export const lessons = [...a, ...b]`) — src/data/lessons.ts
+//     after the R3 split. Each imported module is parsed recursively so the
+//     `--backfill-zh src/data/lessons.ts` call keeps working unchanged.
+function readLessonsModule(filePath) {
+  const text = fs.readFileSync(filePath, 'utf8');
+
+  const direct = text.match(/=\s*(\[[\s\S]*\])\s*;?\s*$/);
+  if (direct) {
+    try {
+      return JSON.parse(direct[1]);
+    } catch {
+      // Not a plain JSON array literal — it is a spread re-export
+      // (`[...a, ...b]`). Fall through to import resolution below.
+    }
+  }
+
+  const dir = path.dirname(filePath);
+  const valueImports = [...text.matchAll(/import\s*\{([^}]+)\}\s*from\s*['"]([^'"]+)['"]/g)];
+  const lessons = [];
+  for (const [, , specifier] of valueImports) {
+    if (!specifier.startsWith('.')) continue;
+    const modulePath = path.resolve(dir, specifier.endsWith('.ts') ? specifier : `${specifier}.ts`);
+    lessons.push(...readLessonsModule(modulePath));
+  }
+  if (lessons.length === 0) {
+    throw new Error(
+      `Could not parse lessons module (not an array literal or re-export): ${filePath}`
+    );
+  }
+  return lessons;
+}
+
 function coverage(textA, textB) {
-  const wordsA = new Set((textA.toLowerCase().match(/[a-z']+/g) ?? []));
-  const wordsB = new Set((textB.toLowerCase().match(/[a-z']+/g) ?? []));
+  const wordsA = new Set(textA.toLowerCase().match(/[a-z']+/g) ?? []);
+  const wordsB = new Set(textB.toLowerCase().match(/[a-z']+/g) ?? []);
   if (wordsA.size === 0 || wordsB.size === 0) return { refCoverage: 0, cueCoverage: 0 };
 
   let shared = 0;

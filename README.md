@@ -66,7 +66,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | **应用主体（单体）** | `src/App.tsx`（~3000 行） | 4 个视图（今天/听力/生词本/我的）、素材栏（课程+视频统一入口）、2 个课程播放器、口语教练、课程构建、进度存储与迁移 | ⚠️ 过大，待拆分 |
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
 | 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频）两套并行模型 | ⚠️ 双轨 |
-| 课程数据 | `src/data/lessons.ts` | Bern 2025（6 天）+ Innsbruck 2026（7 天）全部句子/翻译/关键词 | ⚠️ 手写与生成混用，见下 |
+| 课程数据 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts` + `lessons.manual.ts` | Bern 2025（6 天，生成）+ Innsbruck 2026（7 天，手写）全部句子/翻译/关键词 | ✅ 已隔离 |
 | **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ |
 | **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；经素材栏"视频素材"入口进入（今天视图内渲染） | ✅ |
 | 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧视频 99 句 + Bern 智能重切 652 句）+ 懒加载注册表 + 发现队列 | ✅ |
@@ -76,7 +76,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐（严格索引匹配）+ 人工翻译回填（backfillFromReference） | ✅ 有测试 |
 | 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移启发式巡检（是绊网不是真相） | ✅ |
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选导入 | ✅ |
-| 课程生成器 | `scripts/build-official-lessons.mjs` | **一次性脚本**：只重建 Bern 课程，写入 lessons.ts | ⚠️ 危险，见下 |
+| 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern 课程，写入 `lessons.generated.ts` | ✅ 不再触碰手写 |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端 API 的密钥安装/状态/用量（SSH 到 M1） | ✅ |
 | 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
 | 回归测试 | `tests/` | translate 对齐 6 例 + segment 断句 5 例（main）；backfill 5 例在 PR #4 分支 | ✅ |
@@ -108,7 +108,7 @@ server/index.mjs → dist/（prod）或 vite（dev）；不依赖 src/ 源码
 
 ## 数据文件约定
 
-- `src/data/lessons.ts`：**手写与生成混用**。生成器 `build-official-lessons.mjs` 只会重建 Bern 2025 部分——**重跑 `npm run build:lessons` 会整体覆盖文件，抹掉手写的 Innsbruck 2026 课程（~1800 行）**。在拆分手写/生成数据之前，禁止运行该命令。
+- `src/data/lessons.ts`：**re-export 合并**（`[...bernLessons, ...innsbruckLessons]`）。生成部分在 `lessons.generated.ts`（Bern 6 天，可被 `build:lessons` 覆盖），手写部分在 `lessons.manual.ts`（Innsbruck 7 天，**只读受保护**）。`build-official-lessons.mjs` 只写 generated，CI 的 data-protect 门禁防止覆盖 manual。
 - `src/data/videos/*.video.ts`、`videos/index.ts`：头部有 `GENERATED` 标记，禁止手改，一律通过管线重新生成。
 - `src/data/videos/discover-queue.json`：发现队列，人工挑选后消费。
 - `public/media/*.mp4`：大媒体文件**不再入库**（GitHub 100MB 单文件硬限制；历史已追踪的两个小文件保留）。新素材媒体仅存本地——新机器上跑 `npm run import:youtube -- --reuse-media` 前需先经管线重新下载（Innsbruck 完整版 758MB 需用 HLS 格式下载再 ffmpeg 转 H.264，见素材上线流程）。
@@ -151,6 +151,32 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 6. **死代码不过夜**：新增组件必须在同一迭代接线或删除；删功能必须同步删 README 对应段落——README 描述的 UI 必须与实际 UI 一一对应。
 7. **commit message 三段式**（现有风格保持）：症状 → 根因 → 验证方式。修复类提交必须能回答"为什么之前没发现"。
 8. **改共享函数前 grep 全部调用方**：优先在所有调用方共同经过的位置修一次，而不是每个调用方各打补丁。
+
+## AI 自动开发工作流（harness）
+
+> 面向 AI 协作者的工作流约定。完整方案见 [docs/ai-workflow-proposal.md](./docs/ai-workflow-proposal.md)。
+
+本项目用「harness」方法论（脚手架 + 缰绳）落地 AI 自动开发迭代：把本文件的迭代规范与 [RETROSPECTIVE.md](./RETROSPECTIVE.md) 的踩坑经验，从「人肉 checklist」落成「代码门禁 + 自动化」。核心原则：**gate 是代码不是 prompt**。
+
+### 进度与路线图
+
+| Phase | 内容 | 状态 |
+|---|---|---|
+| Phase 0 | R1 提交门禁（`.github/workflows/ci.yml` + ESLint + Prettier + husky） | ✅ 已落地 |
+| Phase 1 | R2 对齐硬校验 + R3 生成/手写数据隔离 + R4 AI code review | 🚧 R2/R3 已落地，R4 待做 |
+| Phase 2 | R5 Playwright 走查 + R6 模块边界 lint + R7 死代码检测 | ⬜ 待做 |
+| Phase 3 | R8 参数实验 + R9 端口守卫 + R10 auto fix + R11 oxidize + R12 双模型收敛 | ⬜ 待做 |
+
+### 人机协作边界（一句话原则）
+
+**凡「影响主干、影响数据正确性、影响用户体验」的，必须有 gate；凡「沙盒内可逆、可回放、有证据」的，放权给 AI 全自动。**
+
+### 对 AI 接手者的关键约定
+
+1. 改 `scripts/lib/*` 必须反例测试先行（红→绿）；改 `src/` UI 必须浏览器实证 + qa 截图。
+2. `src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual。
+3. 提交过 CI 门禁：`lint / format / test / build / align-check / data-protect`（`.github/workflows/ci.yml`）。
+4. 单模块单 PR，不混装；commit 三段式（症状 → 根因 → 验证）。
 
 ## 运维速查（M1 反馈 API）
 

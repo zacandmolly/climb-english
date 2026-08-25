@@ -3,7 +3,18 @@
 //  - YouTube auto captions: word-level inline timestamps (<00:00:01.200>) with rolling duplication
 //  - Manual / plain cues: one text block per cue, word times are interpolated
 
-const ABBREVIATIONS = new Set(['mr.', 'mrs.', 'dr.', 'vs.', 'u.s.', 'st.', 'no.', 'etc.', 'e.g.', 'i.e.']);
+const ABBREVIATIONS = new Set([
+  'mr.',
+  'mrs.',
+  'dr.',
+  'vs.',
+  'u.s.',
+  'st.',
+  'no.',
+  'etc.',
+  'e.g.',
+  'i.e.',
+]);
 
 export function parseTime(value) {
   const clean = value.trim().replace(',', '.');
@@ -69,8 +80,12 @@ function cueTimesFromLines(lines) {
 
 export function parseVtt(vtt) {
   const blocks = splitVttBlocks(vtt);
-  const hasWordTimestamps = blocks.some((lines) => lines.some((line) => /<\d\d:\d\d:\d\d[.,]\d+>/.test(line)));
-  return hasWordTimestamps ? { kind: 'word', words: readWordTimedVtt(blocks) } : { kind: 'cue', cues: readCueVtt(blocks) };
+  const hasWordTimestamps = blocks.some((lines) =>
+    lines.some((line) => /<\d\d:\d\d:\d\d[.,]\d+>/.test(line))
+  );
+  return hasWordTimestamps
+    ? { kind: 'word', words: readWordTimedVtt(blocks) }
+    : { kind: 'cue', cues: readCueVtt(blocks) };
 }
 
 function readWordTimedVtt(blocks) {

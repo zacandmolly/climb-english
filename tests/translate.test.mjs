@@ -15,10 +15,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {
-  alignTranslationResponse,
-  pickTranslationForIndex,
-} from '../scripts/lib/translate.mjs';
+import { alignTranslationResponse, pickTranslationForIndex } from '../scripts/lib/translate.mjs';
 
 test('all 24 items present with matching i → returns full translations in order', () => {
   const batch = range(24).map((i) => ({ text: `en-${i}` }));

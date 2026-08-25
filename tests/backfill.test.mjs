@@ -53,9 +53,7 @@ test('fragment cue does NOT borrow the whole reference zh', () => {
   // The fragment is a small slice of the block: cueCoverage ~1.0 but
   // refCoverage ~0.3. Old Case 2 would reuse the whole zh; the fix must leave
   // it for machine translation.
-  const sentences = [
-    { startTime: 630, endTime: 634, text: 'this was the top of the slab' },
-  ];
+  const sentences = [{ startTime: 630, endTime: 634, text: 'this was the top of the slab' }];
   const result = backfillFromReference(sentences, longRef);
   assert.equal(result[0].zh, '');
   assert.equal(result[0].needsTranslation, true);
@@ -72,9 +70,7 @@ test('a very short fragment (one word) also stays needsTranslation', () => {
       note: '',
     },
   ];
-  const sentences = [
-    { startTime: 630, endTime: 631, text: 'this' },
-  ];
+  const sentences = [{ startTime: 630, endTime: 631, text: 'this' }];
   const result = backfillFromReference(sentences, longRef);
   assert.equal(result[0].needsTranslation, true);
   assert.equal(result[0].zh, '');
@@ -82,7 +78,13 @@ test('a very short fragment (one word) also stays needsTranslation', () => {
 
 test('Case 1 still joins zh when the cue spans several reviewed blocks', () => {
   const refs = [
-    { startTime: 630, endTime: 635, en: 'this was the top of the slab', zh: '这是板壁线路的顶部。', note: '' },
+    {
+      startTime: 630,
+      endTime: 635,
+      en: 'this was the top of the slab',
+      zh: '这是板壁线路的顶部。',
+      note: '',
+    },
     { startTime: 636, endTime: 640, en: 'it was blocked', zh: '那里被挡住了。', note: '' },
   ];
   const sentences = [

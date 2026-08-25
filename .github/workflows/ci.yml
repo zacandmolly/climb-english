@@ -1,0 +1,176 @@
+# CI gate for the AI harness (phase 01 + phase 02).
+#
+# Every PR runs: lint / format / test / build / audit / align-check (phase 02)
+# and data-protect (phase 03). audit and align-check are now hard gates
+# (audit fails on high/critical advisories; align-check fails on NEW drift
+# beyond the scripts/alignment-baseline.json exemption list). The lint scope is
+# deliberately conservative so it stays green against the existing tree — no
+# rule that lights up legacy code is enabled.
+#
+# Scope note (why no jscpd duplicate check): the duplicate-detection surface of
+# interest lives inside the 4000-line generated/translated data modules, and a
+# jscpd scan over them is heavy (long run, noisy report on intentionally
+# repeated JSON shapes) for near-zero signal on the .mjs pipeline this harness
+# actually gates. Skipped intentionally; re-evaluate if the pipeline grows real
+# hand-written modules that tend to duplicate each other.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint (scripts + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
+
+  format:
+    name: Format check (scripts + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Prettier check
+        run: npm run format:check
+
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
+  build:
+    name: Type-check + build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+
+  audit:
+    name: Dependency audit (high+)
+    runs-on: ubuntu-latest
+    # Hard gate: `npm audit fix` cleared all 7 advisories (4 high + 3 low) in
+    # the phase-01 audit commit, so there is no longer a reason to tolerate
+    # high/critical findings. `npm audit --audit-level=high` exits non-zero on
+    # high/critical and now blocks the merge.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit dependencies
+        id: audit
+        run: npm audit --audit-level=high
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **audit** — \`npm audit --audit-level=high\` is a hard gate:"
+            echo "> any high or critical advisory fails the job and blocks the PR."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  align-check:
+    name: Translation alignment (strict + baseline)
+    runs-on: ubuntu-latest
+    # Hard gate via a baseline exemption list: the 151 historical drift rows
+    # are recorded in scripts/alignment-baseline.json and exempted, so --strict
+    # now fails only on NEW drift introduced by fresh material. Regenerate the
+    # baseline after a drift-cleanup PR with:
+    #   node scripts/check-cue-alignment.mjs --emit-baseline > scripts/alignment-baseline.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check cue alignment (strict + baseline)
+        run: node scripts/check-cue-alignment.mjs --strict --baseline scripts/alignment-baseline.json
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **align-check** — \`node scripts/check-cue-alignment.mjs --strict --baseline scripts/alignment-baseline.json\`"
+            echo "> is a hard gate: 151 known historical drift rows are exempt via the baseline file,"
+            echo "> and any NEW drift fails the job and blocks the PR."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  data-protect:
+    name: Data protection (manual lessons)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert build script writes only the generated lessons file
+        run: |
+          set -euo pipefail
+          # RETROSPECTIVE's worst data-loss lesson: build:lessons used to rewrite
+          # the whole lessons.ts, silently wiping ~1800 lines of hand-written
+          # Innsbruck. After the R3 split it must write ONLY lessons.generated.ts.
+          # Inspect the `outputPath` assignment specifically, so the explanatory
+          # comment (which mentions the manual file) cannot trip the guard.
+          target_line=$(grep -E "outputPath[[:space:]]*=[[:space:]]*path\.join" scripts/build-official-lessons.mjs || true)
+          if [ -z "$target_line" ]; then
+            echo "::error::Could not locate the outputPath assignment in build-official-lessons.mjs."
+            exit 1
+          fi
+          if ! printf '%s\n' "$target_line" | grep -q "lessons\.generated\.ts"; then
+            echo "::error::build-official-lessons.mjs write target must be lessons.generated.ts, found:"
+            printf '%s\n' "$target_line"
+            exit 1
+          fi
+      - name: Assert manual lessons file is the hand-written source
+        run: |
+          grep -q 'export const innsbruckLessons' src/data/lessons.manual.ts
+          grep -q 'export const lessons: Lesson\[\] = \[\.\.\.bernLessons, \.\.\.innsbruckLessons\]' src/data/lessons.ts
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **data-protect** — guards the hand-written Innsbruck data (src/data/lessons.manual.ts)."
+            echo "> The full runtime guard (run \`node scripts/build-official-lessons.mjs\` then"
+            echo "> \`git diff --exit-code src/data/lessons.manual.ts\`) needs the source VTT fixture,"
+            echo "> which is not available in CI, so this job uses a static write-target guard instead:"
+            echo "> the build script must emit only lessons.generated.ts and never lessons.manual.ts."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+

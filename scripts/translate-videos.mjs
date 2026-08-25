@@ -57,7 +57,7 @@ async function main() {
 
     const translated = await translateSentences(
       pending.map(({ cue }) => ({ text: cue.en })),
-      {},
+      {}
     );
 
     let filled = 0;
@@ -74,9 +74,11 @@ async function main() {
 
     fs.writeFileSync(
       fullPath,
-      `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`,
+      `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`
     );
-    console.log(`  ✓ filled ${filled}/${pending.length} (remaining placeholders: ${video.needsTranslationCount})`);
+    console.log(
+      `  ✓ filled ${filled}/${pending.length} (remaining placeholders: ${video.needsTranslationCount})`
+    );
   }
 
   if (!dryRun) {
