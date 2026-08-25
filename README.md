@@ -210,9 +210,22 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 | Phase | 内容 | 状态 |
 |---|---|---|
 | Phase 0 | R1 提交门禁（`.github/workflows/ci.yml` + ESLint + Prettier + husky） | ✅ 已落地 |
-| Phase 1 | R2 对齐硬校验 + R3 生成/手写数据隔离 + R4 AI code review | 🚧 R2（含豁免清单机制）/R3 已落地，R4 待做 |
-| Phase 2 | R5 Playwright 走查 + R6 模块边界 lint + R7 死代码检测 | ✅ 本轮已落地（R6/R7 起步告警不阻断） |
-| Phase 3 | R8 参数实验 + R9 端口守卫 + R10 auto fix + R11 oxidize + R12 双模型收敛 | ⬜ 待做 |
+| Phase 1 | R2 对齐硬校验 + R3 生成/手写数据隔离 + R4 AI code review | ✅ 全部落地（R4 为 DeepSeek 建议性非阻断，见 `.github/workflows/ai-review.yml`） |
+| Phase 2 | R5 Playwright 走查 + R6 模块边界 lint + R7 死代码检测 | ✅ 已落地（R6 no-circular 已升硬门禁 / R7 告警不阻断） |
+| Phase 3 | R8 断句参数实验 + R9 端口守卫 + R10 报错闭环(MVP) + R11 oxidize + R12 双模型收敛 | ✅ 全部落地 |
+
+> **Phase 3 / R4 已 100% 完成**。R0-R12 全部落地，harness 完整：硬门禁覆盖 lint/format/test/build/e2e/audit/align-check(豁免清单)/data-protect/no-circular，加 R4 AI review（建议性）。遗留非阻断项见下。
+
+**各需求落地点**：
+
+| 需求 | 落地点 | 说明 |
+|---|---|---|
+| R4 AI code review | `.github/workflows/ai-review.yml` + `scripts/ai-review.mjs` | DeepSeek 结构化 review（功能缺失/逻辑bug/边界遗漏/数据风险），建议性非阻断；key 走 `DEEPSEEK_API_KEY` secret |
+| R8 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs`（只读） | 192 格矩阵搜索，最优 `maxGap=0.7/minWords=4/mergeGap=1.2/maxWords=22`（带自证偏置，仅供评估，segment.mjs 默认未改） |
+| R9 端口守卫 | `scripts/port-guard.mjs` | `npm run dev` 前探测 5173；外部进程占用则阻断、本仓库残留则提示可 kill |
+| R10 报错闭环 MVP | `src/lib/errorReporter.ts` + `server/index.mjs`(`POST /api/errors`) + `scripts/error-report.mjs` | 前端报错收集 → AI 分析报告；**MVP 明确不做自动改码**（需人验收后另做） |
+| R11 oxidize | `scripts/oxidize-report.mjs` + `docs/oxidize/log.json` | 摩擦日志 → 优化计划（before/after 目标），**只出计划、人挑执行** |
+| R12 双模型收敛 | `src/types.ts`(`Cue` 基类型) + `src/lib/cue.ts` + `scripts/check-lesson-cue-alignment.mjs` | 课程线并入视频线，统一 `Cue` 时间轴语义；句间停顿高亮「提前跳下一句」→「保持上一句」（对齐改进）；step4 保零丢失（策展句不可干净派生，未删重复数据） |
 
 ### 人机协作边界（一句话原则）
 
@@ -222,7 +235,7 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 
 1. 改 `scripts/lib/*` 必须反例测试先行（红→绿）；改 `src/` UI 必须浏览器实证 + qa 截图。
 2. `src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual。
-3. 提交过 CI 门禁（`.github/workflows/ci.yml`）：硬门禁 `lint / format / test / build / e2e / audit / align-check(豁免清单) / data-protect`；告警不阻断 `boundary-check / dead-code`。
+3. 提交过 CI 门禁（`.github/workflows/ci.yml`）：硬门禁 `lint / format / test / build / e2e / audit / align-check(豁免清单) / data-protect / no-circular`；告警不阻断 `dead-code`；另有 `.github/workflows/ai-review.yml` 的 **AI code review（DeepSeek，建议性非阻断）**。
 4. 单模块单 PR，不混装；commit 三段式（症状 → 根因 → 验证）。
 
 ## 运维速查（M1 反馈 API）
