@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node server/index.mjs",
+    "dev": "node scripts/port-guard.mjs && node server/index.mjs",
     "build": "tsc -b && vite build",
     "build:lessons": "node scripts/build-official-lessons.mjs",
     "import:youtube": "node scripts/import-youtube.mjs",
