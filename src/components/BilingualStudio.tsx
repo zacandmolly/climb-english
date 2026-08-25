@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useCuePlayer } from '../hooks/useCuePlayer';
+import { patternsForEnglish } from '../lib/cue';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
 import { loadVideo } from '../data/videos';
 import type { Keyword, SubtitleCue, VideoCategory, VideoEntry, VideoSummary } from '../types';
@@ -82,7 +83,7 @@ export function BilingualStudio({
         clipId: `${video.id}:cue:${activeCue.id}`,
         sentence: activeCue.en,
         keywords: activeKeywords,
-        patterns: patternsForCue(activeCue.en),
+        patterns: patternsForEnglish(activeCue.en),
         prompt: '先模仿解说复述这句，再用自己的话描述这个动作。',
         label: 'Shadowing sentence',
       }
@@ -415,18 +416,4 @@ function expandTerms(terms: string[]): Keyword[] {
       example: entry?.example ?? '',
     };
   });
-}
-
-function patternsForCue(text: string): string[] {
-  const lower = text.toLowerCase();
-  const patterns: string[] = [];
-  if (lower.includes('you can see')) patterns.push('You can see...');
-  if (lower.includes('she has to') || lower.includes("she's got to") || lower.includes('he has to')) {
-    patterns.push('She/He has to...');
-  }
-  if (lower.includes('if ')) patterns.push('If..., ...');
-  if (lower.includes('because')) patterns.push('..., because...');
-  if (lower.includes('when ')) patterns.push('When..., ...');
-  if (lower.includes('trying to')) patterns.push('...trying to...');
-  return patterns.slice(0, 3);
 }

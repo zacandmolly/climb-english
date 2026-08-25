@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { SubtitleCue } from '../types';
+import { cueAtTime } from '../lib/cue';
+import type { Cue } from '../types';
 
 const PRE_ROLL_SECONDS = 0.3;
 const END_PAD_SECONDS = 0.25;
@@ -11,7 +12,12 @@ export type CuePlaybackMode = 'idle' | 'cue' | 'continuous';
 //    first word's attack is never clipped), pauses at cue end or loops.
 //  - playContinuous(): plays the video freely; the active cue highlight
 //    follows playback like a karaoke subtitle track.
-export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number) {
+//
+// Consumes the unified `Cue` base type (R12 Step 3 decoupling): the player only
+// ever reads `startTime`/`endTime`, so it works on any Cue-derived timeline
+// (SubtitleCue from VideoEntry, or PracticeSentence from Lesson) without
+// knowing which model it is driving.
+export function useCuePlayer(cues: Cue[], mediaStartTime: number) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [mode, setMode] = useState<CuePlaybackMode>('idle');
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,17 +34,7 @@ export function useCuePlayer(cues: SubtitleCue[], mediaStartTime: number) {
   );
 
   const cueAtVideoTime = useCallback(
-    (videoTime: number) => {
-      const cueTime = videoTime + mediaStartTime;
-      for (let index = 0; index < cues.length; index += 1) {
-        const cue = cues[index];
-        if (cueTime >= cue.startTime - PRE_ROLL_SECONDS && cueTime <= cue.endTime + END_PAD_SECONDS) {
-          return index;
-        }
-        if (cue.startTime - PRE_ROLL_SECONDS > cueTime) return index;
-      }
-      return Math.max(0, cues.length - 1);
-    },
+    (videoTime: number) => cueAtTime(cues, videoTime + mediaStartTime),
     [cues, mediaStartTime],
   );
 

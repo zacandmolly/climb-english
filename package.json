@@ -11,6 +11,7 @@
     "discover:youtube": "node scripts/discover-youtube.mjs",
     "translate:videos": "node scripts/translate-videos.mjs",
     "check:alignment": "node scripts/check-cue-alignment.mjs",
+    "check:lesson-alignment": "node scripts/check-lesson-cue-alignment.mjs --strict --baseline scripts/lesson-cue-baseline.json",
     "oxidize": "node scripts/oxidize-report.mjs",
     "errors:report": "node scripts/error-report.mjs",
     "lint": "eslint \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
