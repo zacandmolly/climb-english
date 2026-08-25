@@ -17,7 +17,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cueAtTime, wordsInRange } from '../src/lib/cue.ts';
+import { cueAtTime, toCue, wordsInRange } from '../src/lib/cue.ts';
 
 const cues = [
   { startTime: 10, endTime: 12 },
@@ -71,4 +71,81 @@ test('wordsInRange excludes cues entirely outside the window', () => {
     onlyLast.map((cue) => cue.startTime),
     [20]
   );
+});
+
+// ---------------------------------------------------------------------------
+// toCue (R12 step4 data single-source bridge).
+//
+// Both the course line (PracticeSentence) and the video line (SubtitleCue) must
+// produce the SAME canonical Cue view (id/startTime/endTime/en/zh) so that the
+// timeline primitives cueAtTime/wordsInRange read through one source. This does
+// NOT rewrite or delete any original field — it is a normalization view.
+// ---------------------------------------------------------------------------
+
+test('toCue maps a SubtitleCue onto the unified Cue view (identity on Cue fields)', () => {
+  const cue = {
+    id: 'c001',
+    startTime: 10,
+    endTime: 12,
+    en: 'hello world',
+    zh: '你好世界',
+    note: 'note',
+    score: 55,
+    study: true,
+    keywords: ['hello'],
+  };
+  const result = toCue(cue);
+  assert.deepEqual(result, {
+    id: 'c001',
+    startTime: 10,
+    endTime: 12,
+    en: 'hello world',
+    zh: '你好世界',
+    note: 'note',
+  });
+});
+
+test('toCue maps a PracticeSentence onto the unified Cue view (transcript→en, zhTranslation→zh)', () => {
+  const sentence = {
+    id: 's01',
+    label: 'Top of the slab',
+    startTime: 632.44,
+    endTime: 636,
+    transcript: 'The top of the slab.',
+    zhTranslation: '这是板壁线路的顶部。',
+    zhExplanation: 'explanation',
+    keywords: [],
+    sentencePatterns: [],
+    speakingPrompt: 'ping',
+  };
+  const result = toCue(sentence);
+  assert.deepEqual(result, {
+    id: 's01',
+    startTime: 632.44,
+    endTime: 636,
+    en: 'The top of the slab.',
+    zh: '这是板壁线路的顶部。',
+  });
+  // The original curated fields are NOT present on the Cue view (they stay on
+  // the PracticeSentence), so the source data is never lost.
+  assert.equal('zhExplanation' in result, false);
+});
+
+test('toCue preserves id/startTime/endTime exactly for both sources', () => {
+  const sentence = {
+    id: 'd1-b06',
+    label: 'block',
+    startTime: 682,
+    endTime: 707,
+    transcript: 'text',
+    zhTranslation: 'zh',
+    zhExplanation: 'e',
+    keywords: [],
+    sentencePatterns: [],
+    speakingPrompt: 'p',
+  };
+  const c = toCue(sentence);
+  assert.equal(c.id, 'd1-b06');
+  assert.equal(c.startTime, 682);
+  assert.equal(c.endTime, 707);
 });

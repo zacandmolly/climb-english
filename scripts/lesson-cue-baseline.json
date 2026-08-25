@@ -1,0 +1,43 @@
+[
+  {
+    "key": "bern-2025-wb-day-1::s04",
+    "lessonId": "bern-2025-wb-day-1",
+    "sentenceId": "s04",
+    "slice": {
+      "start": 5,
+      "end": 7,
+      "cueIds": [
+        "c006",
+        "c007",
+        "c008"
+      ]
+    }
+  },
+  {
+    "key": "innsbruck-2026-mb-day-2::s02",
+    "lessonId": "innsbruck-2026-mb-day-2",
+    "sentenceId": "s02",
+    "slice": {
+      "start": 550,
+      "end": 553,
+      "cueIds": [
+        "c551",
+        "c552",
+        "c553",
+        "c554"
+      ]
+    }
+  },
+  {
+    "key": "innsbruck-2026-mb-day-5::s04",
+    "lessonId": "innsbruck-2026-mb-day-5",
+    "sentenceId": "s04",
+    "slice": {
+      "start": 1441,
+      "end": 1441,
+      "cueIds": [
+        "c1442"
+      ]
+    }
+  }
+]
