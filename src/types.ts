@@ -51,7 +51,7 @@ export type SubtitleCue = {
 
 export type VideoCategory = 'world-cup' | 'technique' | 'interview' | 'training' | 'other';
 
-export type VideoLevel = 'beginner' | 'intermediate' | 'advanced';
+type VideoLevel = 'beginner' | 'intermediate' | 'advanced';
 
 export type VideoEntry = {
   id: string;

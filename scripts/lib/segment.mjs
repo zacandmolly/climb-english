@@ -206,7 +206,7 @@ function withScore(sentence, opts) {
   };
 }
 
-export function scoreSentence(text) {
+function scoreSentence(text) {
   const tokens = text.toLowerCase().match(/[a-z']+/g) ?? [];
   const n = tokens.length;
 
@@ -278,26 +278,4 @@ function dropReasonFor(sentence, parts) {
   if (parts.fillerPenalty >= 25) return 'mostly-filler';
   if (parts.termHits === 0 && parts.contentScore < 10) return 'low-information';
   return 'below-min-score';
-}
-
-// Split a long time range into daily-practice-friendly chunks at sentence
-// boundaries (replaces the old fixed 25s grid when building sessions).
-export function chunkSentences(sentences, targetChunkSeconds = 300) {
-  const chunks = [];
-  let current = [];
-  let currentSeconds = 0;
-
-  for (const sentence of sentences) {
-    const duration = sentence.endTime - sentence.startTime;
-    if (current.length > 0 && currentSeconds + duration > targetChunkSeconds) {
-      chunks.push(current);
-      current = [];
-      currentSeconds = 0;
-    }
-    current.push(sentence);
-    currentSeconds += duration;
-  }
-
-  if (current.length > 0) chunks.push(current);
-  return chunks;
 }

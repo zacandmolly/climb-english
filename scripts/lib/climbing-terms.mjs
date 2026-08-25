@@ -102,10 +102,6 @@ export const CLIMBING_TERMS = [
   ['patient', '耐心', 'She stays patient on the balance moves.'],
 ];
 
-export const CLIMBING_TERM_MAP = new Map(
-  CLIMBING_TERMS.map(([term, zh, example]) => [term, { term, zh, example }])
-);
-
 export const STOPWORDS = new Set(
   `a an the and or but so if then than that this these those there here it its it's is are was were be been being
    do does did done have has had having i you he she we they them his her their our your my me him us
@@ -136,26 +132,4 @@ export function findClimbingTerms(text) {
     if (pattern.test(lower)) hits.push(term);
   }
   return hits;
-}
-
-export function keywordsForText(text, limit = 4) {
-  const hits = findClimbingTerms(text)
-    .map((term) => CLIMBING_TERM_MAP.get(term))
-    .filter(Boolean)
-    .slice(0, limit);
-
-  if (hits.length > 0) return hits;
-
-  return [
-    {
-      term: 'commentary',
-      zh: '比赛解说',
-      example: 'Listen for the main action in the commentary.',
-    },
-    {
-      term: 'attempt',
-      zh: '尝试',
-      example: 'Describe what happened in this attempt.',
-    },
-  ];
 }
