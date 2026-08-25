@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist 2/
 .env
 test-results/
 playwright-report/
