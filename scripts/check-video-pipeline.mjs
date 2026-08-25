@@ -18,6 +18,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'src/data/videos');
 const INDEX_PATH = path.join(DATA_DIR, 'index.ts');
 const MAX_GITHUB_BLOB_BYTES = 100 * 1024 * 1024;
+const MAX_PREVIEW_BYTES = 8 * 1024 * 1024;
+const EXPECTED_PREVIEW_SECONDS = 20;
 const TIMELINE_TOLERANCE_SECONDS = 1;
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
@@ -46,9 +48,11 @@ export function checkVideoPipeline() {
   for (const { file, video } of videos) {
     errors.push(...validateVideoRecord(video, file));
     const media = classifyMedia(video);
+    const preview = classifyPreview(video);
     errors.push(...media.errors.map((error) => `${file}: ${error}`));
+    errors.push(...preview.errors.map((error) => `${file}: ${error}`));
     lines.push(
-      `  ${video.id}: ${video.cueCount} cues, ${video.studyCueCount} study, media=${media.mode}`
+      `  ${video.id}: ${video.cueCount} cues, ${video.studyCueCount} study, media=${media.mode}, preview=${preview.mode}`
     );
   }
 
@@ -121,6 +125,50 @@ export function validateVideoRecord(video, label = video?.id ?? 'video') {
     }
   }
   return errors;
+}
+
+export function classifyPreview(video) {
+  const errors = [];
+  const previewMediaUrl = String(video.previewMediaUrl ?? '').trim();
+  const previewStartTime = Number(video.previewStartTime);
+  const previewDurationSeconds = Number(video.previewDurationSeconds);
+  const firstCue = video.cues?.[0];
+
+  if (!previewMediaUrl) {
+    return { mode: 'missing', errors: ['20-second Git preview is required'] };
+  }
+  if (!/^\/media\/previews\/[A-Za-z0-9._-]+-20s\.mp4$/.test(previewMediaUrl)) {
+    errors.push(`unsafe or unsupported preview path: ${previewMediaUrl}`);
+    return { mode: 'invalid', errors };
+  }
+  if (!Number.isFinite(previewStartTime) || previewStartTime < Number(video.mediaStartTime ?? 0)) {
+    errors.push('previewStartTime must be on or after mediaStartTime');
+  }
+  if (previewDurationSeconds !== EXPECTED_PREVIEW_SECONDS) {
+    errors.push(`previewDurationSeconds must equal ${EXPECTED_PREVIEW_SECONDS}`);
+  }
+  if (
+    firstCue &&
+    Number.isFinite(previewStartTime) &&
+    (previewStartTime > firstCue.startTime + TIMELINE_TOLERANCE_SECONDS ||
+      previewStartTime + previewDurationSeconds < firstCue.endTime - TIMELINE_TOLERANCE_SECONDS)
+  ) {
+    errors.push('preview window must cover the first cue');
+  }
+
+  const relativePath = path.posix.join('public', previewMediaUrl.replace(/^\//, ''));
+  const absolutePath = path.join(ROOT, relativePath);
+  if (!fs.existsSync(absolutePath)) {
+    errors.push(`preview file is missing: ${relativePath}`);
+    return { mode: 'missing', errors };
+  }
+  if (!isGitTracked(relativePath)) errors.push(`preview must be Git-tracked: ${relativePath}`);
+  const size = fs.statSync(absolutePath).size;
+  if (size > MAX_PREVIEW_BYTES) {
+    errors.push(`preview exceeds ${MAX_PREVIEW_BYTES / 1024 / 1024} MiB: ${relativePath}`);
+  }
+  errors.push(...validateMp4(absolutePath));
+  return { mode: errors.length > 0 ? 'invalid' : 'git-20s', errors };
 }
 
 export function classifyMedia(video) {

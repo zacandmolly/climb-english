@@ -7646,5 +7646,8 @@ export const video: VideoEntry = {
       "study": true,
       "keywords": []
     }
-  ]
+  ],
+  "previewMediaUrl": "/media/previews/bern-2025-wb-rescut-20s.mp4",
+  "previewStartTime": 631,
+  "previewDurationSeconds": 20
 };

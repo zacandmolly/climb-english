@@ -1337,5 +1337,8 @@ export const video: VideoEntry = {
         "crimp"
       ]
     }
-  ]
+  ],
+  "previewMediaUrl": "/media/previews/a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny-20s.mp4",
+  "previewStartTime": 23.79,
+  "previewDurationSeconds": 20
 };

@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "build:lessons": "node scripts/build-official-lessons.mjs",
     "import:youtube": "node scripts/import-youtube.mjs",
+    "generate:previews": "node scripts/generate-video-previews.mjs",
     "discover:youtube": "node scripts/discover-youtube.mjs",
     "translate:videos": "node scripts/translate-videos.mjs",
     "check:alignment": "node scripts/check-cue-alignment.mjs",

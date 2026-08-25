@@ -173,7 +173,7 @@ test('karaoke playback advances the head and the highlight follows it', async ({
   await page.screenshot({ path: 'test-results/karaoke-advanced.png', fullPage: true });
 });
 
-test('Innsbruck falls back to its YouTube timeline when the deploy omits the large mp4', async ({
+test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue timeline', async ({
   page,
 }) => {
   await installFakeYoutubeApi(page);
@@ -185,38 +185,33 @@ test('Innsbruck falls back to its YouTube timeline when the deploy omits the lar
   await page.locator('.video-option').filter({ hasText: INNSBRUCK_TITLE }).click();
 
   const media = page.locator('.cue-media-surface');
-  await expect(media).toHaveAttribute('data-media-source', 'youtube');
-  await expect(page.getByRole('status')).toContainText('句子剪切与卡拉OK仍按导入 cue 时间轴运行');
+  await expect(media).toHaveAttribute('data-media-source', 'preview');
+  await expect(page.getByRole('status')).toContainText('20 秒快速预览');
 
   await page.getByRole('button', { name: '播放本句' }).click();
   await page.waitForFunction(() => {
-    const state = (
-      window as typeof window & {
-        __fakeYoutubeState?: { currentTime: number; playing: boolean };
-      }
-    ).__fakeYoutubeState;
-    return Boolean(state?.playing && state.currentTime >= 67.2);
+    const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
+    return Boolean(preview && !preview.paused && preview.currentTime > 0.1);
   });
 
   await page.getByRole('button', { name: '下一句' }).click();
   await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
   await page.waitForFunction(() => {
-    const state = (
-      window as typeof window & {
-        __fakeYoutubeState?: { currentTime: number };
-      }
-    ).__fakeYoutubeState;
-    return Boolean(state && state.currentTime >= 71.3);
+    const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
+    return Boolean(preview && preview.currentTime >= 4.1);
   });
 
-  await page.getByRole('button', { name: '连播' }).click();
+  // Cue 5 begins beyond the 20-second preview window. The already-ready fake
+  // YouTube player must take over on the exact same absolute cue clock.
+  await page.locator('.subtitle-card[data-cue-index="4"]').click();
+  await expect(media).toHaveAttribute('data-media-source', 'youtube');
   await page.waitForFunction(() => {
     const state = (
       window as typeof window & {
         __fakeYoutubeState?: { currentTime: number; playing: boolean };
       }
     ).__fakeYoutubeState;
-    return Boolean(state?.playing && state.currentTime >= 72);
+    return Boolean(state?.playing && state.currentTime >= 88.6);
   });
   await page.screenshot({ path: 'test-results/innsbruck-youtube-fallback.png', fullPage: true });
 });

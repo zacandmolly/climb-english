@@ -94,6 +94,10 @@ export type VideoEntry = {
   level: VideoLevel;
   mediaUrl: string;
   mediaStartTime: number;
+  previewMediaUrl?: string;
+  previewStartTime?: number;
+  previewDurationSeconds?: number;
+  preferPreview?: boolean;
   durationSeconds: number;
   captionKind: 'auto' | 'manual';
   importedAt: string;

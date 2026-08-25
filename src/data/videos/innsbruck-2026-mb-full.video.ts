@@ -25800,5 +25800,9 @@ export const video: VideoEntry = {
       "keywords": [],
       "note": "'step back' 是'后退'，在攀岩中常用来提醒安全。"
     }
-  ]
+  ],
+  "previewMediaUrl": "/media/previews/innsbruck-2026-mb-full-20s.mp4",
+  "previewStartTime": 67.23,
+  "previewDurationSeconds": 20,
+  "preferPreview": true
 };
