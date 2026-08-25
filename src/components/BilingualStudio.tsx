@@ -19,6 +19,7 @@ import { useCuePlayer } from '../hooks/useCuePlayer';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
 import { loadVideo } from '../data/videos';
 import type { Keyword, SubtitleCue, VideoCategory, VideoEntry, VideoSummary } from '../types';
+import { formatDuration, formatTime, HighlightedText, resolveStaticAssetUrl } from '../lib/ui';
 import { SpeakingCoach, type CoachTarget } from './SpeakingCoach';
 
 const CATEGORY_ORDER: VideoCategory[] = ['world-cup', 'technique', 'interview', 'training', 'other'];
@@ -405,30 +406,6 @@ function SubtitlePanel({
   );
 }
 
-function HighlightedText({ text, terms }: { text: string; terms: string[] }) {
-  const regex = useMemo(() => {
-    const escaped = terms
-      .filter((term) => term.length > 2)
-      .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-    return escaped.length > 0 ? new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi') : null;
-  }, [terms]);
-
-  if (!regex) return <span>{text}</span>;
-  const parts = text.split(regex);
-
-  return (
-    <>
-      {parts.map((part, index) =>
-        index % 2 === 1 ? (
-          <mark key={`${part}-${index}`}>{part}</mark>
-        ) : (
-          <span key={`${part}-${index}`}>{part}</span>
-        ),
-      )}
-    </>
-  );
-}
-
 function expandTerms(terms: string[]): Keyword[] {
   return terms.map((term) => {
     const entry = CLIMBING_TERM_DICT[term];
@@ -452,23 +429,4 @@ function patternsForCue(text: string): string[] {
   if (lower.includes('when ')) patterns.push('When..., ...');
   if (lower.includes('trying to')) patterns.push('...trying to...');
   return patterns.slice(0, 3);
-}
-
-function resolveStaticAssetUrl(assetUrl: string) {
-  if (/^(https?:|data:|blob:)/.test(assetUrl)) return assetUrl;
-  const base = import.meta.env.BASE_URL || '/';
-  return `${base.replace(/\/?$/, '/')}${assetUrl.replace(/^\//, '')}`;
-}
-
-function formatTime(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = Math.floor(totalSeconds % 60);
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
-}
-
-function formatDuration(totalSeconds: number) {
-  const safeSeconds = Math.max(0, Math.round(totalSeconds));
-  const minutes = Math.floor(safeSeconds / 60);
-  const seconds = safeSeconds % 60;
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
 }

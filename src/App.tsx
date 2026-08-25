@@ -1,44 +1,18 @@
 import {
   BookOpen,
   CalendarCheck,
-  Captions,
-  CheckCircle2,
-  ChevronRight,
-  CircleStop,
-  Clock3,
   Download,
   Flame,
-  Gauge,
   Headphones,
-  ListMusic,
-  LockKeyhole,
-  Mic,
-  Play,
-  RotateCcw,
-  Send,
-  Sparkles,
-  Star,
   Target,
-  Trash2,
-  Trophy,
-  Upload,
   User,
-  Volume2,
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BilingualStudio } from './components/BilingualStudio';
 import { COURSE_SUPERSEDED_BY_VIDEO, MaterialBar } from './components/MaterialBar';
 import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
-import type { Feedback, Keyword, Lesson, PracticeSentence, VideoSummary } from './types';
-import { DAILY_SESSION_MINUTES, HEATMAP_DAYS, LISTENING_GOAL_MINUTES, LOW_INPUT_LEVEL } from './constants';
-import { encodeWav, formatBytes, getRecordingErrorMessage, mergeFloat32Arrays } from './lib/audio';
-import { FEEDBACK_API_BASE, isStaticFeedbackHost, makeClientDemoFeedback } from './lib/feedback';
-import { fullTranscript, fullTranslation, parseMediaSource, segmentPatterns, sentenceIndexAtMediaTime, uniqueKeywords } from './lib/lesson';
-import { formatDuration, formatTime, HighlightedText, resolveStaticAssetUrl } from './lib/ui';
-import { END_PAD_SECONDS, PRE_ROLL_SECONDS } from './players/playback';
-import { LocalVideoPlayer } from './players/LocalVideoPlayer';
-import { YouTubePlayer } from './players/YouTubePlayer';
+import type { DailySession, Keyword, LearningProgress, MainView, PracticeMode, VocabMastery } from './types';
 import { buildCourses } from './courses';
 import { collectSessionVocab, completedPrefixCount, getInitialSessionIndex, getUnlockedSessionIndex, mergeVocabEntries, toggleVocabTermById } from './progress/session';
 import { computeStreak, emptyLearningProgress, loadLearningProgress, localDateKey, migrateLegacyProgress, normalizeProgress, saveLearningProgress } from './progress/storage';
@@ -48,50 +22,6 @@ import { MeView } from './views/MeView';
 import { Sidebar } from './views/Sidebar';
 import { ListeningWorkspace, SentenceStrip, TodayFocusCard } from './views/TodayView';
 import { VocabView } from './views/VocabView';
-
-type PracticeMode = 'sentence' | 'segment';
-type MainView = 'today' | 'library' | 'vocab' | 'me';
-type VocabMastery = 0 | 1 | 2;
-
-type DailySession = {
-  id: string;
-  day: number;
-  title: string;
-  lessonIndex: number;
-  mode: PracticeMode;
-  sentenceIndexes: number[];
-  goal: string;
-  steps: string[];
-};
-
-type VocabEntry = {
-  term: string;
-  zh: string;
-  example: string;
-  lessonId: string;
-  day: number;
-  courseId?: string;
-  addedAt: string;
-  mastery: VocabMastery;
-};
-
-type LearningProgress = {
-  completedSessionIds: string[];
-  activeSessionId: string | null;
-  activeCourseId?: string | null;
-  updatedAt: string | null;
-  vocab: VocabEntry[];
-  practiceDates: string[];
-};
-
-export type Course = {
-  id: string;
-  name: string;
-  competition: string;
-  discipline: string;
-  lessons: Lesson[];
-  sessions: DailySession[];
-};
 
 export function App() {
   const courses = useMemo(() => buildCourses(lessons), []);
