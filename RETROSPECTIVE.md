@@ -74,12 +74,14 @@
 
 ## 质量退化点（当前快照）
 
+> 此表最初记录 2026-08-22 的事故快照；已完成项在 2026-08-25 按当前仓库复核更新。持续有效的架构与门禁状态以 `docs/AI_HANDOFF.md` 为准。
+
 | # | 问题 | 位置 | 严重度 |
 |---|---|---|---|
-| 1 | ~~死代码三件套~~ ✅ 已接回（2026-08-22 视频库 tab）| `src/components/ hooks/ data/videos/` | 已解决：双模型仍在（P1-6 观察） |
-| 2 | App.tsx 单体 3036 行 | `src/App.tsx` | 高：所有后续改动的冲突面 |
-| 3 | lessons.ts 手写/生成混用，生成器重跑即毁数据 | `src/data/lessons.ts` + `scripts/build-official-lessons.mjs` | 高：数据丢失风险 |
-| 4 | styles.css 2884 行含 v2 死规则（.subtitle-panel 现已被视频库 tab 复用，.hero 系仍死） | `src/styles.css` | 低 |
+| 1 | ~~死代码三件套~~ ✅ 已接回（2026-08-22 视频库 tab）| `src/components/ hooks/ data/videos/` | 已解决：R12 已统一 Cue 基类型；课程策展句仍独立保留 |
+| 2 | ~~App.tsx 单体 3036 行~~ ✅ 已拆为 544 行编排层 | `src/App.tsx` + `src/views/` + `src/players/` | 已解决：`depcruise` no-circular 为硬门禁 |
+| 3 | ~~lessons.ts 手写/生成混用~~ ✅ 已拆 `generated` / `manual` | `src/data/lessons*.ts` + `scripts/build-official-lessons.mjs` | 已解决：CI `data-protect` 防覆盖 |
+| 4 | styles.css 2494 行，仍含少量 v2 死规则 | `src/styles.css` | 低：`deadcss` 告警不阻断 |
 | 5 | ~~`.workbuddy/` 未进 .gitignore~~ ✅ 已修 | 根目录 | 已解决 |
 | 6 | segment maxWords=26 硬切句中残留（~8 句长碎片结尾是虚词） | `scripts/lib/segment.mjs` | 低：已记录，方案=超长时向后找标点切 |
 
