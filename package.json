@@ -11,6 +11,7 @@
     "discover:youtube": "node scripts/discover-youtube.mjs",
     "translate:videos": "node scripts/translate-videos.mjs",
     "check:alignment": "node scripts/check-cue-alignment.mjs",
+    "oxidize": "node scripts/oxidize-report.mjs",
     "lint": "eslint \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
     "lint:complexity": "eslint \"src/**/*.{ts,tsx}\"",
     "depcruise": "depcruise src --config .dependency-cruiser.js --output-type err",
