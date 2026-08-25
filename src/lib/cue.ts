@@ -1,4 +1,4 @@
-// R12 统一时间轴语义（Step 2 工具层）。
+// R12 统一时间轴语义（Step 2 工具层 + Step 4 数据单源桥）。
 //
 // 历史问题：课程线（Lesson/PracticeSentence）与视频线（VideoEntry/SubtitleCue）
 // 维护两套时间轴语义——前者「sentence.startTime + mediaStartTime 偏移」双值，后者
@@ -9,16 +9,53 @@
 // mediaStartTime 偏移）的**单一语义**；mediaStartTime 仅保留在 player 层做
 // toVideoTime 换算。本模块所有函数都只操作「媒体绝对时间轴」，不关心偏移换算。
 //
-// 本步骤（Step 2）为纯工具层：新增统一原语 cueAtTime / wordsInRange，并把
-// src/lib/lesson.ts 的 sentenceIndexAtMediaTime 与 src/hooks/useCuePlayer.ts
-// 的 cue 查找迁到共用语义。行为等价（仅收敛 gap 处的高亮语义为"保持上一句"，
-// 与课程线原注释一致）。
+// Step 2（工具层）：新增统一原语 cueAtTime / wordsInRange，并把 src/lib/lesson.ts
+// 的 sentenceIndexAtMediaTime 与 src/hooks/useCuePlayer.ts 的 cue 查找迁到共用语义。
+//
+// Step 4（数据单源桥）：新增 toCue() —— 把 PracticeSentence 与 SubtitleCue 归一为
+// 同一份 Cue 视图。这样两条时间轴在读"时间轴/文本"时都经由同一个 Cue 源，
+// 而**不删除或改写任何原始课程数据**。注意：Lesson.sentences 是教学策展句，
+// 不是 VideoEntry.cues 的 id/时间戳/deep-equal 派生（见 scripts/check-lesson-cue-
+// alignment.mjs），因此这里只做"归一视图"而非"数据替换"，以守住数据零丢失底线。
+
+import type { Cue, PracticeSentence, SubtitleCue } from '../types';
 
 /** 计时切片的通用结构（Cue / PracticeSentence / SubtitleCue 都是它的子集）。 */
 export type TimeSlice = {
   startTime: number;
   endTime: number;
 };
+
+/**
+ * 把任一模型的时间轴句归一为统一 Cue 视图（Step 4 数据单源桥）。
+ * - 视频线 SubtitleCue：本就是 Cue 子集，直接当作 Cue 返回。
+ * - 课程线 PracticeSentence：transcript→en、zhTranslation→zh、label→id 不变，
+ *   其余由调用方作为附加字段保留。id/startTime/endTime 原值透传。
+ * 两种来源产出同构的 Cue，使 cueAtTime/wordsInRange 对两条时间轴只认一个源。
+ */
+export function toCue(item: SubtitleCue | PracticeSentence): Cue {
+  if (isSubtitleCue(item)) {
+    return {
+      id: item.id,
+      startTime: item.startTime,
+      endTime: item.endTime,
+      en: item.en,
+      zh: item.zh,
+      note: item.note,
+    };
+  }
+  return {
+    id: item.id,
+    startTime: item.startTime,
+    endTime: item.endTime,
+    en: item.transcript,
+    zh: item.zhTranslation,
+  };
+}
+
+function isSubtitleCue(item: SubtitleCue | PracticeSentence): item is SubtitleCue {
+  return 'en' in item;
+}
 
 /**
  * 返回媒体绝对时间 t 处「正在播报」的 cue 下标（统一实现）。
