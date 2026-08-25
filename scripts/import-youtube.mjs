@@ -30,6 +30,8 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { loadSubtitleWords } from './lib/timed-words.mjs';
 import { segmentWords } from './lib/segment.mjs';
+import { writeGeneratedVideo } from './lib/generated-video.mjs';
+import { wordStartOffsetsFromTimedWords } from './lib/word-times.mjs';
 import { CLIMBING_TERMS, findClimbingTerms } from './lib/climbing-terms.mjs';
 import {
   backfillFromReference,
@@ -154,19 +156,31 @@ async function main() {
     );
   }
 
-  const cues = translated.map((sentence, index) => ({
-    id: `c${String(index + 1).padStart(3, '0')}`,
-    startTime: sentence.startTime,
-    endTime: sentence.endTime,
-    en: sentence.text,
-    zh: sentence.zh ?? '',
-    ...(sentence.note ? { note: sentence.note } : {}),
-    score: sentence.score,
-    study: sentence.keep,
-    ...(sentence.highlight ? { highlight: true } : {}),
-    ...(sentence.needsTranslation ? { needsTranslation: true } : {}),
-    keywords: findClimbingTerms(sentence.text).slice(0, 5),
-  }));
+  const cues = translated.map((sentence, index) => {
+    const cue = {
+      id: `c${String(index + 1).padStart(3, '0')}`,
+      startTime: sentence.startTime,
+      endTime: sentence.endTime,
+      en: sentence.text,
+      zh: sentence.zh ?? '',
+      ...(sentence.note ? { note: sentence.note } : {}),
+      score: sentence.score,
+      study: sentence.keep,
+      ...(sentence.highlight ? { highlight: true } : {}),
+      ...(sentence.needsTranslation ? { needsTranslation: true } : {}),
+      keywords: findClimbingTerms(sentence.text).slice(0, 5),
+    };
+    // Source-driven word timing only for auto captions: manual captions have
+    // no real word timestamps and must never be interpolated into offsets.
+    if (kind === 'auto' && Array.isArray(sentence.words) && sentence.words.length > 0) {
+      const wordStartOffsetsMs = wordStartOffsetsFromTimedWords(sentence.words, cue);
+      if (!wordStartOffsetsMs) {
+        throw new Error(`Cannot derive reliable word times for imported cue ${cue.id}`);
+      }
+      cue.wordStartOffsetsMs = wordStartOffsetsMs;
+    }
+    return cue;
+  });
 
   // 4. Media
   let mediaUrl = '';
@@ -252,10 +266,7 @@ async function main() {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.mkdirSync(MEDIA_DIR, { recursive: true });
   const dataFile = path.join(DATA_DIR, `${slug}.video.ts`);
-  fs.writeFileSync(
-    dataFile,
-    `import type { VideoEntry } from '../../types';\n\nexport const video: VideoEntry = ${JSON.stringify(video, null, 2)};\n`
-  );
+  writeGeneratedVideo(dataFile, video);
   writeRegistry();
   console.log(`\n✓ imported ${cues.length} cues → ${path.relative(ROOT, dataFile)}`);
   console.log(`✓ registry updated → src/data/videos/index.ts`);

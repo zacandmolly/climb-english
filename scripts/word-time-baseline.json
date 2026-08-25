@@ -1,0 +1,22 @@
+{
+  "generated": "2026-08-26",
+  "videos": {
+    "a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny": {
+      "protectedSha256": "844550705008173c1d52df883a3719603762aa8b33bece6adfe651ae0cd81c9e",
+      "vttSha256": "019e53088141966dca87d71c5dc3226ed12798a059b3310525a62d73120c30ea"
+    },
+    "bern-2025-wb-rescut": {
+      "protectedSha256": "db30828d620cd8c283c7215f49d3c6d40f72961aa0ff4c02e3ed51adf97a7755",
+      "vttSha256": "ecef58179e8c899094c53726da05f59c50ad766e7343d38df7c9c6ff023d4d80"
+    },
+    "innsbruck-2026-mb-full": {
+      "protectedSha256": "4bc5886f94b17b49c7a42314fd6b76270c1b7f0ce5b173315c8f0cdaf50cecf8",
+      "vttSha256": "4b980ccc27ddf76fc6e4a6500a2b8d5382a992f85436744200f2460c963117fe"
+    }
+  },
+  "courseMapping": {
+    "src/data/lessons.ts": "46d7e0a47d61becd23e4bc071d204b60b1928437eeca1b53ac2ca8ab960c6d4d",
+    "src/data/lessons.generated.ts": "80b5e6256da9601ed3c1480b0e837259f76fc79d09d37eec4a152e4759b938fe",
+    "src/data/lessons.manual.ts": "cbaa931b91d4b9658f2ae960273079bb0510792e6be7c79149485c53e80ffd4b"
+  }
+}

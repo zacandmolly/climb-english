@@ -1,0 +1,18 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:10.000 --> 00:00:11.500 align:start position:0%
+<00:00:10.100><c> hello</c><00:00:10.500><c> world</c><00:00:10.900><c> good.</c><00:00:11.200><c> [music]</c>
+
+00:00:12.500 --> 00:00:13.600 align:start position:0%
+<00:00:12.600><c> >></c><00:00:12.700><c> another</c><00:00:12.900><c> speaker</c><00:00:13.100><c> line.</c>
+
+00:00:13.800 --> 00:00:14.300 align:start position:0%
+<00:00:13.900><c> Yeah.</c>
+
+00:00:14.200 --> 00:00:14.800 align:start position:0%
+<00:00:14.350><c> Yeah.</c>
+
+00:00:15.000 --> 00:00:16.000 align:start position:0%
+<00:00:15.100><c> unrelated</c><00:00:15.300><c> filler</c><00:00:15.500><c> text.</c>

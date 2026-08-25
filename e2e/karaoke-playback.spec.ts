@@ -298,6 +298,11 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
   );
   const eventsAtPlaybackEnd = await readPreviewMediaEvents(page);
   expect(eventsAtPlaybackEnd.seeking - eventsAtPlaybackStart.seeking).toBeLessThanOrEqual(1);
+  // Word karaoke is lit during preview playback and never exposes ">>".
+  await expect
+    .poll(async () => page.locator('.subtitle-card.active [data-word-state="current"]').count())
+    .toBeGreaterThan(0);
+  await expect(page.locator('.subtitle-panel')).not.toContainText('>>');
   await page.screenshot({ path: 'test-results/innsbruck-preview-cue0.png', fullPage: true });
 
   await page.getByRole('button', { name: '下一句' }).click();
@@ -323,6 +328,11 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
     'data-cue-index',
     String(INNSBRUCK_HANDOFF_CUE_INDEX)
   );
+  // The preview → YouTube handoff must not flash the word head back to the
+  // sentence start: the active cue still has a lit word.
+  await expect
+    .poll(async () => page.locator('.subtitle-card.active [data-word-state="current"]').count())
+    .toBeGreaterThan(0);
   await page.screenshot({
     path: 'test-results/innsbruck-youtube-handoff-cue4.png',
     fullPage: true,

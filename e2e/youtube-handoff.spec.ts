@@ -114,6 +114,7 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(t21.surfaceHeight).toBeGreaterThan(150);
   expect(Math.abs(t21.wrapperHeight / t21.wrapperWidth - 9 / 16)).toBeLessThan(0.06);
   expect(t21.activeCueIndex).toBe(T21_CUE_INDEX);
+  expect(t21.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(t21.youtubePlaying).toBe(true);
   expect(t21.centerTarget).toContain('iframe');
   await page.screenshot({ path: 'test-results/youtube-handoff-t21.png', fullPage: true });
@@ -137,6 +138,7 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(t35.wrapperOpacity).toBe('1');
   expect(t35.wrapperPointerEvents).toBe('auto');
   expect(t35.activeCueIndex).toBe(T35_CUE_INDEX);
+  expect(t35.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(t35.youtubePlaying).toBe(true);
   await page.screenshot({ path: 'test-results/youtube-handoff-t35.png', fullPage: true });
 
@@ -161,6 +163,9 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
       })
     )
     .toBe(true);
+  await expect
+    .poll(async () => (await readSurfaceGeometry(page)).activeWordIndex)
+    .toBeGreaterThanOrEqual(0);
 
   const back = await readSurfaceGeometry(page);
   expect(back.iframeCount).toBe(1);
@@ -168,6 +173,7 @@ test('35s natural mobile playback keeps one live surface and preview cues switch
   expect(back.wrapperOpacity).toBe('0');
   expect(back.centerTarget).toContain('preview-video');
   expect(back.activeCueIndex).toBe(0);
+  expect(back.activeWordIndex).toBeGreaterThanOrEqual(0);
   expect(back.previewPaused).toBe(false);
   const youtubeState = await readFakeYoutubeState(page);
   expect(youtubeState.playing).toBe(false);
