@@ -13,6 +13,8 @@ export type CueMediaHandle = {
 
 type DesiredPlayback = { time: number; rate: number; playing: boolean };
 
+const PREVIEW_SEEK_EPSILON_SECONDS = 0.1;
+
 type CueMediaProps = {
   mediaUrl: string;
   youtubeId: string;
@@ -163,7 +165,7 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
           if (source === 'youtube' && youtubePlayerRef.current)
             youtubePlayerRef.current.setPlaybackRate(rate);
         } catch {
-          // onReady/onCanPlay reads the desired rate.
+          // onReady/onLoadedMetadata reads the desired rate.
         }
       },
     }),
@@ -315,12 +317,21 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
     setSource(previewMediaUrl ? 'preview' : youtubeId ? 'youtube' : 'unavailable');
   };
 
-  const syncPreviewToDesired = (video: HTMLVideoElement) => {
+  // Readiness events report media state; they must not become a second clock.
+  // In particular, never run this from `canplay`: assigning currentTime emits
+  // seeking/seeked/canplay again in Chromium/WebKit and creates a feedback loop.
+  const initializePreviewFromDesired = (video: HTMLVideoElement) => {
     const desired = desiredRef.current;
     video.playbackRate = desired.rate;
     if (inPreviewWindow(desired.time)) {
-      video.currentTime = Math.max(0, desired.time - previewRelativeStart);
-      if (desired.playing) void video.play().catch(() => undefined);
+      const targetTime = Math.max(0, desired.time - previewRelativeStart);
+      if (
+        !video.seeking &&
+        Math.abs(video.currentTime - targetTime) > PREVIEW_SEEK_EPSILON_SECONDS
+      ) {
+        video.currentTime = targetTime;
+      }
+      if (desired.playing && video.paused) void video.play().catch(() => undefined);
     } else if (youtubeReady) {
       setSource('youtube');
     }
@@ -370,8 +381,7 @@ export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function
           controls
           preload="auto"
           playsInline
-          onLoadedMetadata={(event) => syncPreviewToDesired(event.currentTarget)}
-          onCanPlay={(event) => syncPreviewToDesired(event.currentTarget)}
+          onLoadedMetadata={(event) => initializePreviewFromDesired(event.currentTarget)}
           onTimeUpdate={(event) => {
             const time = previewRelativeStart + event.currentTarget.currentTime;
             desiredRef.current.time = time;

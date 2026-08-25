@@ -10,6 +10,46 @@ import { expect, test, type CDPSession, type Page } from '@playwright/test';
 const TECHNIQUE_TITLE = 'A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE';
 const INNSBRUCK_TITLE = "Men's Boulder Final | Innsbruck 2026 智能重切";
 
+type PreviewMediaEvents = {
+  canplay: number;
+  seeking: number;
+  seeked: number;
+  waiting: number;
+};
+
+async function installPreviewMediaEventProbe(page: Page): Promise<void> {
+  await page.addInitScript(() => {
+    const events = { canplay: 0, seeking: 0, seeked: 0, waiting: 0 };
+    Object.defineProperty(window, '__previewMediaEvents', {
+      value: events,
+      configurable: true,
+    });
+
+    (Object.keys(events) as Array<keyof typeof events>).forEach((eventName) => {
+      document.addEventListener(
+        eventName,
+        (event) => {
+          const target = event.target;
+          if (target instanceof HTMLVideoElement && target.classList.contains('preview-video')) {
+            events[eventName] += 1;
+          }
+        },
+        true
+      );
+    });
+  });
+}
+
+async function readPreviewMediaEvents(page: Page): Promise<PreviewMediaEvents> {
+  return page.evaluate(() => {
+    return (
+      window as typeof window & {
+        __previewMediaEvents: PreviewMediaEvents;
+      }
+    ).__previewMediaEvents;
+  });
+}
+
 async function installFakeYoutubeApi(page: Page): Promise<void> {
   await page.addInitScript(() => {
     const state = {
@@ -176,7 +216,9 @@ test('karaoke playback advances the head and the highlight follows it', async ({
 test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue timeline', async ({
   page,
 }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await installFakeYoutubeApi(page);
+  await installPreviewMediaEventProbe(page);
   await page.route('**/media/innsbruck-2026-mb-full.mp4', async (route) => {
     await route.fulfill({ status: 404, contentType: 'text/plain', body: 'not deployed' });
   });
@@ -187,12 +229,34 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
   const media = page.locator('.cue-media-surface');
   await expect(media).toHaveAttribute('data-media-source', 'preview');
   await expect(page.getByRole('status')).toContainText('20 秒快速预览');
+  await page.waitForFunction(() => {
+    const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
+    return Boolean(preview && Number.isFinite(preview.duration) && preview.readyState >= 2);
+  });
+
+  // Loading metadata may require one initial seek, but readiness must never
+  // feed back into thousands of currentTime writes while the player is idle.
+  await page.waitForTimeout(500);
+  const idleEvents = await readPreviewMediaEvents(page);
+  expect(idleEvents.seeking).toBeLessThanOrEqual(2);
+  expect(idleEvents.canplay).toBeLessThanOrEqual(4);
 
   await page.getByRole('button', { name: '播放本句' }).click();
   await page.waitForFunction(() => {
     const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
     return Boolean(preview && !preview.paused && preview.currentTime > 0.1);
   });
+  const playbackStart = await page
+    .locator('video.preview-video')
+    .evaluate((video) => video.currentTime);
+  const eventsAtPlaybackStart = await readPreviewMediaEvents(page);
+  await page.waitForTimeout(1500);
+  const playbackEnd = await page
+    .locator('video.preview-video')
+    .evaluate((video) => video.currentTime);
+  const eventsAtPlaybackEnd = await readPreviewMediaEvents(page);
+  expect(playbackEnd).toBeGreaterThan(playbackStart + 1);
+  expect(eventsAtPlaybackEnd.seeking - eventsAtPlaybackStart.seeking).toBeLessThanOrEqual(1);
 
   await page.getByRole('button', { name: '下一句' }).click();
   await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
