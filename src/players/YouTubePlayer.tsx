@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { formatTime } from '../lib/ui';
 import type { PracticeMode } from '../types';
 import { END_PAD_SECONDS, PRE_ROLL_SECONDS } from './playback';
+import { clearYoutubeMount, ensureYoutubeMount, loadYoutubeIframeApi } from './youtubeIframe';
 
 export type YouTubePlayerRef = {
   seekTo: (seconds: number, allowSeekAhead: boolean) => void;
@@ -14,10 +15,7 @@ export type YouTubePlayerRef = {
 };
 
 type YouTubeGlobal = {
-  Player: new (
-    el: HTMLElement,
-    config: Record<string, unknown>,
-  ) => YouTubePlayerRef;
+  Player: new (el: HTMLElement, config: Record<string, unknown>) => YouTubePlayerRef;
   PlayerState: { PLAYING: number; PAUSED: number; ENDED: number };
 };
 
@@ -49,7 +47,7 @@ export function YouTubePlayer({
   onNextSentence: () => void;
   onTimeReport: (mediaTime: number) => void;
 }) {
-  const hostRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<YouTubePlayerRef | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -72,8 +70,10 @@ export function YouTubePlayer({
     let cancelled = false;
 
     const setup = () => {
-      if (cancelled || !hostRef.current || !window.YT) return;
-      const player = new window.YT.Player(hostRef.current, {
+      if (cancelled || !window.YT) return;
+      const mount = ensureYoutubeMount(wrapperRef.current);
+      if (!mount) return;
+      const player = new window.YT.Player(mount, {
         videoId,
         playerVars: {
           rel: 0,
@@ -103,21 +103,9 @@ export function YouTubePlayer({
       playerRef.current = player;
     };
 
-    if (window.YT?.Player) {
-      setup();
-    } else {
-      const previousReady = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = () => {
-        previousReady?.();
-        setup();
-      };
-      if (!document.querySelector('script[data-youtube-iframe-api]')) {
-        const script = document.createElement('script');
-        script.src = 'https://www.youtube.com/iframe_api';
-        script.dataset.youtubeIframeApi = 'true';
-        document.head.appendChild(script);
-      }
-    }
+    void loadYoutubeIframeApi().then(setup, () => {
+      if (!cancelled) setIsSlowLoad(true);
+    });
 
     return () => {
       cancelled = true;
@@ -127,6 +115,7 @@ export function YouTubePlayer({
         // YouTube player can throw if the host element was already detached.
       }
       playerRef.current = null;
+      clearYoutubeMount(wrapperRef.current);
     };
   }, [videoId]);
 
@@ -213,7 +202,7 @@ export function YouTubePlayer({
   return (
     <section className="video-panel" aria-label="比赛视频">
       <div className="video-frame">
-        <div className="youtube-player-host" ref={hostRef} />
+        <div className="youtube-player-host" ref={wrapperRef} />
         {!isReady ? (
           <div className="yt-loading" aria-live="polite">
             <p>

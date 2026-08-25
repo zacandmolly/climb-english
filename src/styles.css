@@ -703,12 +703,19 @@ button {
   background: #101210;
 }
 
-.youtube-player-host iframe {
+.youtube-player-mount {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+}
+
+.youtube-player-host iframe {
+  /* The IFrame API can set inline sizing on the replacement iframe; force the
+     geometry so the wrapper keeps the 16:9 frame instead of collapsing. */
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
 }
 
 .video-controls {
@@ -1864,6 +1871,9 @@ button {
 .cue-media-surface {
   position: relative;
   width: 100%;
+  /* The real IFrame API replaces the mount element; keep the parent box from
+     collapsing during loading/prewarming and while no <video> is mounted. */
+  aspect-ratio: 16 / 9;
 }
 
 .media-source-note {
@@ -2542,6 +2552,7 @@ button {
   inset: 0;
   z-index: 0;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -2560,6 +2571,42 @@ button {
 
 .yt-loading.compact p {
   margin: 0;
+}
+
+.yt-loading.compact.warn {
+  border: 1px solid rgba(230, 160, 90, 0.55);
+  color: #ffe4c2;
+}
+
+.yt-recovery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.recovery-button {
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--chalk);
+  color: var(--charcoal);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recovery-button.primary {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #101210;
+}
+
+.recovery-link {
+  color: var(--lime);
+  font-size: 12px;
 }
 
 .subtitle-card {
