@@ -134,7 +134,7 @@ server/index.mjs → dist/（prod）或 vite（dev）→ 依赖 src/ 的 vite �
 
 **内容管线（写 `.video.ts`）**：`import:youtube` → yt-dlp 词级字幕 → segment.mjs 断句（gap>1.5s 或 >26 词强制切，短片段向后合并）→ 学习价值评分 → translate.mjs 批翻（24/批，严格按返回行 `i` 对齐，缺失行标记 needsTranslation 而非兜底）→ 从第一句前 0.3 秒生成 20 秒、360p 的 Git 预览 → 生成 TS 模块 + 注册表 `videos/index.ts`。
 
-**运行时学习流**：素材栏选课程 → `lessons.ts` → 课程/天/句子 → LocalVideoPlayer（`onTimeReport(currentTime + mediaStartTime)`，即把播放头换算回**统一 cue.startTime 绝对时间轴**）或 YouTubePlayer（句子时间即视频时间，加载期点击排队）→ 播放中上报播放头 → `sentenceIndexAtMediaTime`（内部委托 `cueAtTime`，句间停顿保持上一句）驱动练习稿高亮与钉顶滚动 → CoachPanel 按当前句给跟读目标。素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4 优先；缺失时自动切 YouTube 且补偿 `mediaStartTime`）→ useCuePlayer / `cueAtTime` 驱动相同的剪切与卡拉OK效果。
+**运行时学习流**：素材栏选课程 → `lessons.ts` → 课程/天/句子 → LocalVideoPlayer（`onTimeReport(currentTime + mediaStartTime)`，即把播放头换算回**统一 cue.startTime 绝对时间轴**）或 YouTubePlayer（句子时间即视频时间，加载期点击排队）→ 播放中上报播放头 → `sentenceIndexAtMediaTime`（内部委托 `cueAtTime`，句间停顿保持上一句）驱动练习稿高亮与钉顶滚动 → CoachPanel 按当前句给跟读目标。素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4 优先；缺失时自动切 YouTube 且补偿 `mediaStartTime`）→ useCuePlayer / `cueAtTime` 驱动相同的剪切与卡拉OK效果；单句播放从 `cue.startTime` 精确起播，切换媒体源时不加入运行时 pre-roll。
 
 **口语反馈流**：浏览器录音（WAV）→ `POST /api/speaking-feedback`（本地 Express 或 CF Worker）→ Whisper 转写 → DeepSeek/OpenAI 生成反馈 → 无 key 时降级为 demo 反馈（不失败）。
 
@@ -152,7 +152,7 @@ server/index.mjs → dist/（prod）或 vite（dev）→ 依赖 src/ 的 vite �
 - `src/data/videos/*.video.ts`、`videos/index.ts`：均由导入管线产出（注册表带 `GENERATED` 标记），禁止手改，一律通过管线重新生成。
 - `src/data/videos/discover-queue.json`：发现队列，人工挑选后消费。
 - `public/media/*.mp4`：Git 已追踪且小于 100 MiB 的 H.264/AAC faststart 完整文件会随 Pages 部署（现有技巧教学、Bern）；大文件不入库、仅留本地（Innsbruck 758MB）。
-- `public/media/previews/*-20s.mp4`：每条素材必须有一个 Git 跟踪的 20 秒学习窗口（从第一 cue 前 0.3 秒开始，不是机械截源视频 0–20 秒）。大文件与 404 场景先播该预览，YouTube 同时在后台缓冲接续点；三层媒体共享同一 cue 时间轴。
+- `public/media/previews/*-20s.mp4`：每条素材必须有一个 Git 跟踪的 20 秒学习窗口（从第一 cue 前 0.3 秒开始，不是机械截源视频 0–20 秒）。这 0.3 秒只用于预览资产的采集缓冲；运行时单句播放仍从 cue 边界开始。大文件与 404 场景先播该预览，YouTube 同时在后台缓冲接续点；三层媒体共享同一 cue 时间轴。
 - 密钥：只允许存在于 M1 的 `~/.climb-english-api.env`、Worker secrets、本地 `.env`（已 gitignore）。**任何 `VITE_` 变量和前端代码对浏览器可见，禁止放密钥。**
 
 ## 素材上线流程（所有素材必经，以 Bern 2025 重切为模板）

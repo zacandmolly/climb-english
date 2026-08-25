@@ -3,14 +3,14 @@ import { cueAtTime } from '../lib/cue';
 import type { CueMediaHandle } from '../players/CueMediaPlayer';
 import type { Cue } from '../types';
 
-const PRE_ROLL_SECONDS = 0.3;
 const END_PAD_SECONDS = 0.25;
 
 export type CuePlaybackMode = 'idle' | 'cue' | 'continuous';
 
 // Drives one local-or-YouTube media surface against a cue list:
-//  - playCue(index): plays exactly that cue (with a small pre-roll so the
-//    first word's attack is never clipped), pauses at cue end or loops.
+//  - playCue(index): starts exactly at the cue boundary, pauses at cue end or
+//    loops. Preview assets may retain capture padding, but the runtime clock
+//    must stay aligned with the active cue across media-source handoffs.
 //  - playContinuous(): plays the video freely; the active cue highlight
 //    follows playback like a karaoke subtitle track.
 //
@@ -48,7 +48,7 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       const cue = cues[index];
       if (!media || !cue) return;
 
-      const start = Math.max(0, toVideoTime(cue.startTime) - PRE_ROLL_SECONDS);
+      const start = toVideoTime(cue.startTime);
       const end = Math.max(start + 0.1, toVideoTime(cue.endTime) + END_PAD_SECONDS);
       activeRangeRef.current = { index, start, end };
       setActiveCueIndex(index);
@@ -80,7 +80,7 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       const media = mediaRef.current;
       const cue = cues[index];
       if (!media || !cue) return;
-      media.seekTo(Math.max(0, toVideoTime(cue.startTime) - PRE_ROLL_SECONDS));
+      media.seekTo(toVideoTime(cue.startTime));
       setActiveCueIndex(index);
     },
     [cues, toVideoTime]
