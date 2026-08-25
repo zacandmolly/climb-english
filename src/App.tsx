@@ -31,20 +31,19 @@ import { COURSE_SUPERSEDED_BY_VIDEO, MaterialBar } from './components/MaterialBa
 import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
 import type { Feedback, Keyword, Lesson, PracticeSentence, VideoSummary } from './types';
+import { DAILY_SESSION_MINUTES, HEATMAP_DAYS, LISTENING_GOAL_MINUTES, LOW_INPUT_LEVEL } from './constants';
+import { encodeWav, formatBytes, getRecordingErrorMessage, mergeFloat32Arrays } from './lib/audio';
+import { FEEDBACK_API_BASE, isStaticFeedbackHost, makeClientDemoFeedback } from './lib/feedback';
+import { fullTranscript, fullTranslation, parseMediaSource, segmentPatterns, sentenceIndexAtMediaTime, uniqueKeywords } from './lib/lesson';
+import { formatDuration, formatTime, HighlightedText, resolveStaticAssetUrl } from './lib/ui';
+import { END_PAD_SECONDS, PRE_ROLL_SECONDS } from './players/playback';
 
 type PracticeMode = 'sentence' | 'segment';
 type MainView = 'today' | 'library' | 'vocab' | 'me';
 type VocabMastery = 0 | 1 | 2;
 
-const PRE_ROLL_SECONDS = 1;
-const END_PAD_SECONDS = 0.2;
-const DAILY_SESSION_MINUTES = 5;
-const LISTENING_GOAL_MINUTES = 30;
 const PROGRESS_STORAGE_KEY = 'climb-english-learning-progress-v2';
 const LEGACY_STORAGE_KEY = 'climb-english-learning-progress-v1';
-const LOW_INPUT_LEVEL = 0.01;
-const HEATMAP_DAYS = 14;
-const FEEDBACK_API_BASE = normalizeApiBaseUrl(import.meta.env.VITE_FEEDBACK_API_BASE);
 
 type DailySession = {
   id: string;
@@ -2531,35 +2530,6 @@ function MeView({
   );
 }
 
-function HighlightedText({ text, terms }: { text: string; terms: string[] }) {
-  const regex = useMemo(() => {
-    const stopwords = new Set(['the', 'and', 'with', 'then', 'that', 'this', 'into']);
-    const escaped = terms
-      .flatMap((term) => term.split(/\s+/))
-      .filter((term) => term.length > 2 && !stopwords.has(term.toLowerCase()))
-      .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-
-    return escaped.length > 0 ? new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi') : null;
-  }, [terms]);
-
-  if (!regex) return <span>{text}</span>;
-
-  const parts = text.split(regex);
-
-  return (
-    <>
-      {parts.map((part, index) =>
-        terms.some((term) => term.toLowerCase().includes(part.toLowerCase())) &&
-        part.length > 2 ? (
-          <mark key={`${part}-${index}`}>{part}</mark>
-        ) : (
-          <span key={`${part}-${index}`}>{part}</span>
-        ),
-      )}
-    </>
-  );
-}
-
 function toggleVocabTermById(
   term: string,
   setProgress: React.Dispatch<React.SetStateAction<LearningProgress>>,
@@ -2893,172 +2863,3 @@ function buildCourses(allLessons: Lesson[]): Course[] {
   });
 }
 
-function fullTranscript(lesson: Lesson) {
-  return lesson.sentences.map((sentence) => sentence.transcript).join(' ');
-}
-
-// Map a playback timestamp (already on the sentence/caption timeline) onto
-// the sentence currently being spoken. Keeps the previous sentence
-// highlighted in the gap between two sentences, and clamps to the segment
-// bounds so the pre-roll never highlights a sentence before the segment.
-function sentenceIndexAtMediaTime(lesson: Lesson, mediaTime: number) {
-  const sentences = lesson.sentences;
-  if (sentences.length === 0) return 0;
-
-  if (mediaTime < sentences[0].startTime) return 0;
-
-  let index = 0;
-  for (let i = 0; i < sentences.length; i += 1) {
-    if (mediaTime >= sentences[i].startTime) {
-      index = i;
-    } else {
-      break;
-    }
-  }
-  return index;
-}
-
-function fullTranslation(lesson: Lesson) {
-  return lesson.sentences.map((sentence) => sentence.zhTranslation).join('');
-}
-
-function uniqueKeywords(sentences: PracticeSentence[]) {
-  const map = new Map<string, Keyword>();
-  for (const sentence of sentences) {
-    for (const keyword of sentence.keywords) {
-      if (!map.has(keyword.term)) map.set(keyword.term, keyword);
-    }
-  }
-  return Array.from(map.values());
-}
-
-function segmentPatterns(lesson: Lesson) {
-  return Array.from(new Set(lesson.sentences.flatMap((sentence) => sentence.sentencePatterns))).slice(0, 6);
-}
-
-function resolveStaticAssetUrl(assetUrl: string) {
-  if (/^(https?:|data:|blob:)/.test(assetUrl)) return assetUrl;
-
-  const base = import.meta.env.BASE_URL || '/';
-  return `${base.replace(/\/?$/, '/')}${assetUrl.replace(/^\//, '')}`;
-}
-
-function parseMediaSource(mediaUrl: string): { kind: 'youtube' | 'local'; videoId?: string } {
-  if (mediaUrl.startsWith('youtube:')) {
-    return { kind: 'youtube', videoId: mediaUrl.slice('youtube:'.length) };
-  }
-  return { kind: 'local' };
-}
-
-function getRecordingErrorMessage(error: unknown) {
-  if (error instanceof DOMException) {
-    if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
-      return '浏览器没有麦克风权限。请点地址栏旁边的权限图标，允许 microphone，然后刷新页面再录。';
-    }
-
-    if (error.name === 'NotFoundError') {
-      return '没有找到可用麦克风。请检查系统输入设备后再试。';
-    }
-  }
-
-  return '麦克风不可用。请确认浏览器允许 microphone 权限，并使用最新版 Chrome 或 Edge。';
-}
-
-function mergeFloat32Arrays(chunks: Float32Array[], sampleCount: number) {
-  const samples = new Float32Array(sampleCount);
-  let offset = 0;
-
-  for (const chunk of chunks) {
-    samples.set(chunk, offset);
-    offset += chunk.length;
-  }
-
-  return samples;
-}
-
-function encodeWav(samples: Float32Array, sampleRate: number) {
-  const bytesPerSample = 2;
-  const channelCount = 1;
-  const dataSize = samples.length * bytesPerSample;
-  const buffer = new ArrayBuffer(44 + dataSize);
-  const view = new DataView(buffer);
-
-  writeAscii(view, 0, 'RIFF');
-  view.setUint32(4, 36 + dataSize, true);
-  writeAscii(view, 8, 'WAVE');
-  writeAscii(view, 12, 'fmt ');
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, channelCount, true);
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * channelCount * bytesPerSample, true);
-  view.setUint16(32, channelCount * bytesPerSample, true);
-  view.setUint16(34, 16, true);
-  writeAscii(view, 36, 'data');
-  view.setUint32(40, dataSize, true);
-
-  let offset = 44;
-  for (const sample of samples) {
-    const clamped = Math.max(-1, Math.min(1, sample));
-    view.setInt16(offset, clamped < 0 ? clamped * 0x8000 : clamped * 0x7fff, true);
-    offset += bytesPerSample;
-  }
-
-  return new Blob([view], { type: 'audio/wav' });
-}
-
-function writeAscii(view: DataView, offset: number, value: string) {
-  for (let index = 0; index < value.length; index += 1) {
-    view.setUint8(offset + index, value.charCodeAt(index));
-  }
-}
-
-function isStaticFeedbackHost() {
-  if (typeof window === 'undefined') return false;
-  return window.location.hostname.endsWith('github.io');
-}
-
-function normalizeApiBaseUrl(value: unknown) {
-  if (typeof value !== 'string') return '';
-  const trimmed = value.trim();
-  if (!trimmed) return '';
-  return trimmed.replace(/\/+$/, '');
-}
-
-function makeClientDemoFeedback({
-  targetSentence,
-  keywords,
-}: {
-  targetSentence: string;
-  keywords: Keyword[];
-}): Feedback {
-  return {
-    mode: 'demo',
-    provider: 'client-demo',
-    transcript: '公开版已收到录音。当前 GitHub Pages 版本只提供录音回放和离线练习建议，AI 转写服务后续接入。',
-    keywordHits: keywords.map((keyword) => keyword.term).slice(0, 4),
-    closeness: '先听自己的回放：如果关键词清楚，就马上再录一遍；如果卡住，回到原句慢速跟读。',
-    audioNotes: ['当前是离线建议，不能判断语音、语调、语速或重音。'],
-    suggestions: ['把句子拆成两段说，再连起来。', '优先说清楚高亮的攀岩关键词。'],
-    naturalVersion: targetSentence,
-  };
-}
-
-function formatBytes(bytes: number) {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
-
-function formatTime(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = Math.floor(totalSeconds % 60);
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
-}
-
-function formatDuration(totalSeconds: number) {
-  const safeSeconds = Math.max(0, Math.round(totalSeconds));
-  const minutes = Math.floor(safeSeconds / 60);
-  const seconds = safeSeconds % 60;
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
-}
