@@ -12,8 +12,10 @@
 
 | 路径 | 场景 | 时间轴驱动 |
 |---|---|---|
-| **BilingualStudio**（卡拉OK工作台） | 素材栏选"视频素材"（导入管线产物，如技巧教学 99 句、Bern 智能重切 652 句） | `useCuePlayer`：video timeupdate → `currentTime + mediaStartTime` → 活动句推进 → SubtitlePanel 钉顶滚动 |
-| **ListeningWorkspace**（课程流程） | 素材栏选"课程素材"（Bern/Innsbruck 每日课程），整段精听模式 | 本地视频 `onTimeReport(currentTime + mediaStartTime)`；YouTube 走 250ms 轮询 `getCurrentTime()`（句子时间即视频时间，无偏移）→ `sentenceIndexAtMediaTime` → 练习稿跟随 |
+| **BilingualStudio**（卡拉OK工作台） | 素材栏选"视频素材"（导入管线产物，如技巧教学 99 句、Bern 智能重切 646 句） | `useCuePlayer`：video timeupdate → `videoTime + mediaStartTime` → 统一 `cueAtTime` → 活动句推进 → SubtitlePanel 钉顶滚动 |
+| **ListeningWorkspace**（课程流程） | 素材栏选"课程素材"（Bern/Innsbruck 每日课程），整段精听模式 | 本地视频 `onTimeReport(currentTime + mediaStartTime)`；YouTube 走 250ms 轮询 `getCurrentTime()`（句子时间即视频时间，无偏移）→ `sentenceIndexAtMediaTime`（内部走 `cueAtTime`）→ 练习稿跟随 |
+
+> **R12 时间轴语义（已收敛）**：两条路径的卡拉OK跟随都经 `src/lib/cue.ts` 的 `cueAtTime` 判定——**播放层绝对时间 = cue.startTime（已含 mediaStartTime 偏移）的单一语义**；`mediaStartTime` 仅保留在 player 层做 `toVideoTime` 换算。句间自然停顿保持上一句高亮，不提前跳下一句。
 
 维护要点：跟随只推进高亮、绝不改播放模式或触发重播；effect 依赖 key 不得包含会被跟随间接改变的状态（见复盘 #10 rangeKey 反馈循环）；YouTube 嵌入经代理加载慢，就绪前的播放点击必须排队而非静默丢弃。
 
@@ -21,13 +23,13 @@
 
 ```bash
 npm install
-npm run dev          # http://127.0.0.1:5173 （dev 模式，vite 热更新）
+npm run dev          # http://127.0.0.1:5173 （先跑 scripts/port-guard.mjs 探测 5173，再起 vite+Express）
 npm run build        # tsc -b && vite build → dist/
 npm run preview      # 生产模式静态托管 dist/ + 反馈 API
 npm test             # node --test tests/*.test.mjs（管线回归测试）
 ```
 
-⚠️ 端口 5173 若已被占用，先 `lsof -nP -iTCP:5173 -sTCP:LISTEN` 确认占用进程的服务目录是不是本仓库——历史上有旧副本进程驻留导致"改了代码没生效"的事故（见复盘 #8）。
+⚠️ `npm run dev` 前置了 **端口守卫（R9）**：进 `node server/index.mjs` 前先探测 5173。若被**本仓库残留进程**占用（历史上有旧副本驻留导致"改了代码没生效"的事故，见复盘 #8），守卫会打印 `kill <pid>` 供手动清理；若被**外部进程**占用（非本仓库 cwd），守卫直接阻断并提示换端口，避免静默绑定失败。
 
 ## 架构总览
 
@@ -51,15 +53,17 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
                               ▼
 ┌──────────────────── 页面端（在线 · src/ + server/，只读消费数据）────────────────┐
 │ 浏览器 SPA（src/）                                                               │
-│   main.tsx → App.tsx（4 tab：今天/听力/生词本/我的，视频素材内嵌今天视图）       │
+│   main.tsx（安装 R10 报错收集）→ App.tsx（4 tab：今天/听力/生词本/我的，          │
+│     视频素材内嵌今天视图；已拆分 views/players/progress/lib/courses/constants）   │
 │     ├─ 素材栏（唯一素材入口）：课程素材（lessons.ts）｜视频素材（videos/*）         │
 │     ├─ 课程流程（今天/听力视图）：视频播放器（本地 MP4 / YouTube IFrame）          │
-│     │   + 整段精听卡拉OK跟随 + CoachPanel 录音跟读                               │
+│     │   + 整段精听卡拉OK跟随（统一 cueAtTime 时间轴） + CoachPanel 录音跟读        │
 │     ├─ 视频素材（今天视图）：BilingualStudio 卡拉OK工作台（cue 级跟随）           │
 │     └─ 进度/vocab：localStorage（schema v2，含 v1 迁移）                         │
 │ 本地服务器（server/index.mjs）                                                   │
 │   dev = vite 中间件；prod = dist/ 静态托管 + POST /api/speaking-feedback         │
 │   （限流 + OpenAI Whisper 转写 + DeepSeek/OpenAI 教练回复）                      │
+│   + POST /api/errors（R10 前端报错收集，仅 dev；prod 拒绝）                      │
 └────────────────────────────────────────────────────────────────────────────────┘
                               │
                               ▼ （静态部署时，浏览器直连）
@@ -83,13 +87,20 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 课程流程/听力工作台 | `src/views/TodayView.tsx`（TodayFocusCard/SentenceStrip/ListeningWorkspace）+ `src/views/Sidebar.tsx`（Sidebar/Heatmap） | 今日练习台、整段精听卡拉OK跟随 + 侧栏学习进度/热力图 | ✅ 已独立 |
 | 课程构建逻辑 | `src/courses.ts` | 把 lessons 切成「天/句子」的课程计划、解锁顺序（buildCourses/buildSessionsForCourse/COURSE_PLANS） | ✅ 已独立 |
 | 进度存储与迁移 | `src/progress/storage.ts` + `src/progress/session.ts` | localStorage（schema v2 + v1 迁移）、生词本、打卡日期、解锁顺序 | ✅ 已独立 |
-| 纯函数工具层 | `src/lib/ui.tsx` + `src/lib/{lesson,audio,feedback}.ts` + `src/constants.ts` + `src/players/playback.ts` | 高亮/时间格式/静态资源 + 课程句子时间轴 + 录音 WAV 编码 + 反馈降级 + 应用常量 | ✅ 已独立 |
+| 纯函数工具层 | `src/lib/ui.tsx` + `src/lib/{lesson,audio,feedback,cue}.ts` + `src/constants.ts` + `src/players/playback.ts` | 高亮/时间格式/静态资源 + 课程句子时间轴 + 录音 WAV 编码 + 反馈降级 + **R12 统一时间轴原语（cueAtTime/wordsInRange/toCue）** + 应用常量 | ✅ 已独立 |
 | 生词本/我的/听力库视图 | `src/views/{VocabView,MeView,LibraryView}.tsx` | 生词复习、进度备份导出导入、听力库列表 | ✅ 已独立 |
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
-| 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频）两套并行模型 | ⚠️ 双轨 |
+| 类型 | `src/types.ts` | 统一 `Cue` 基类型（id/startTime/endTime/en/zh/note）；`SubtitleCue` 字面继承、`PracticeSentence` 复用 Cue 时间轴字段；`VideoEntry/Lesson` 引用二者 | ✅ 已收敛（统一 Cue 基类型，R12） |
+| **时间轴语义工具** | `src/lib/cue.ts`（R12） | 时间轴统一核心：`cueAtTime(cues,t)`（绝对时间 → 正在播报句，停顿保持上一句）+ `wordsInRange` + `toCue`（PracticeSentence/SubtitleCue 归一视图）+ `transcriptOfCues/patternsForEnglish` | ✅ 有测试 |
 | 课程数据 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts` + `lessons.manual.ts` | Bern 2025（6 天，生成）+ Innsbruck 2026（7 天，手写）全部句子/翻译/关键词 | ✅ 已隔离 |
-| 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧教学 / Bern 智能重切 / Innsbruck 完整重切）+ 懒加载注册表 + 发现队列 | ✅ |
-| 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 | ✅ |
+| 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧教学 99 / Bern 智能重切 646 / Innsbruck 完整重切 2242）+ 懒加载注册表 + 发现队列 | ✅ |
+| 课程↔cue 对齐硬门禁 | `scripts/check-lesson-cue-alignment.mjs` + `scripts/lesson-cue-baseline.json`（R12 step4） | 课程句 vs cue deck 的 id 强校验：id 碰撞/时间戳精确匹配即阻断（当前 136 句 0 碰撞）；baseline 记录诚实的连续切片关系 | ✅ 有测试 |
+| 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 + `POST /api/errors`（R10，仅 dev） | ✅ |
+| 前端报错收集 | `src/lib/errorReporter.ts`（R10）+ `scripts/error-report.mjs` | window.onerror/unhandledrejection → 本地 ring 缓冲 → `POST /api/errors`；`errors:report` 聚类 + DeepSeek 根因分析报告；**MVP 不做自动改码** | ✅ |
+| 端口守卫 | `scripts/port-guard.mjs`（R9） | `npm run dev` 前探测 5173；本仓库残留提示可 kill、外部进程占用则阻断 | ✅ |
+| AI code review | `scripts/ai-review.mjs` + `scripts/lib/ai-review-prompt.mjs` + `.github/workflows/ai-review.yml`（R4） | DeepSeek 结构化 review（建议性非阻断）；空 key/失败不阻断 PR | ✅ |
+| 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs` + `experiments/lib/metrics.mjs`（R8） | 参数矩阵搜索（192 格，只读不改 segment.mjs）；最优 `maxGap=0.7/minWords=4/mergeGap=1.2/maxWords=22`（带自证偏置，仅供评估） | ✅ |
+| 摩擦日志 → 优化计划 | `scripts/oxidize-report.mjs` + `scripts/lib/friction-log.mjs` + `docs/oxidize/`（R11） | 摩擦日志聚合 → `plan.md`（before/after 目标）；**只出计划、人挑执行** | ✅ |
 | 导入管线 | `scripts/import-youtube.mjs` | yt-dlp 拉字幕+视频 → 断句评分翻译 → 生成 `.video.ts` + 注册表 | ✅ 产物经素材栏消费 |
 | 断句库 | `scripts/lib/segment.mjs` | 词级时间戳 → 句子边界（gap/minWords/maxWords 参数化） | ✅ 有测试 |
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐（严格索引匹配）+ 人工翻译回填（backfillFromReference） | ✅ 有测试 |
@@ -104,19 +115,23 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 ## 依赖关系（谁 import 谁）
 
 ```
-main.tsx → App.tsx → components/{MaterialBar, BilingualStudio, SpeakingCoach} + data/lessons.ts → types.ts
+main.tsx（安装 R10 报错收集）→ App.tsx → components/{MaterialBar, BilingualStudio, SpeakingCoach} + data/lessons.ts → types.ts
 App.tsx → MaterialBar（唯一素材入口，选课程/选视频）
 App.tsx → BilingualStudio（素材栏选视频素材时，今天视图内渲染）→ hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
 App.tsx → SpeakingCoach（课程流程的 CoachPanel 也复用同一组件）
+时间轴统一：hooks/useCuePlayer.ts → src/lib/cue.ts（cueAtTime）；src/lib/lesson.ts → src/lib/cue.ts（sentenceIndexAtMediaTime 委托 cueAtTime）
+src/lib/cue.ts → types.ts（统一 Cue 基类型；PracticeSentence/SubtitleCue 归一为 Cue）
 scripts/* 之间：import-youtube → lib/{timed-words, segment, translate, climbing-terms}
-server/index.mjs → dist/（prod）或 vite（dev）；不依赖 src/ 源码
+  experiments/segment-parameter-search.mjs → lib/{segment, timed-words} + experiments/lib/metrics.mjs（只读）
+  ai-review.mjs → lib/ai-review-prompt.mjs + lib/translate.mjs；oxidize-report.mjs → lib/friction-log.mjs
+server/index.mjs → dist/（prod）或 vite（dev）→ 依赖 src/ 的 vite 编译产物；不依赖 src/ 源码（除规范对齐）
 ```
 
 ## 数据流
 
 **内容管线（写 `.video.ts`）**：`import:youtube` → yt-dlp 词级字幕 → segment.mjs 断句（gap>1.5s 或 >26 词强制切，短片段向后合并）→ 学习价值评分 → translate.mjs 批翻（24/批，严格按返回行 `i` 对齐，缺失行标记 needsTranslation 而非兜底）→ 生成 TS 模块 + 注册表 `videos/index.ts`。
 
-**运行时学习流**：素材栏选课程 → `lessons.ts` → 课程/天/句子 → LocalVideoPlayer（`currentTime + mediaStartTime` 换算回字幕时间轴）或 YouTubePlayer（句子时间即视频时间，加载期点击排队）→ 播放中上报播放头 → `sentenceIndexAtMediaTime` 驱动练习稿高亮与钉顶滚动 → CoachPanel 按当前句给跟读目标。素材栏选视频 → BilingualStudio（cue 级卡拉OK，见"核心能力"一节）。
+**运行时学习流**：素材栏选课程 → `lessons.ts` → 课程/天/句子 → LocalVideoPlayer（`onTimeReport(currentTime + mediaStartTime)`，即把播放头换算回**统一 cue.startTime 绝对时间轴**）或 YouTubePlayer（句子时间即视频时间，加载期点击排队）→ 播放中上报播放头 → `sentenceIndexAtMediaTime`（内部委托 `cueAtTime`，句间停顿保持上一句）驱动练习稿高亮与钉顶滚动 → CoachPanel 按当前句给跟读目标。素材栏选视频 → BilingualStudio（cue 级卡拉OK，同样走 `cueAtTime`，见"核心能力"一节）。
 
 **口语反馈流**：浏览器录音（WAV）→ `POST /api/speaking-feedback`（本地 Express 或 CF Worker）→ Whisper 转写 → DeepSeek/OpenAI 生成反馈 → 无 key 时降级为 demo 反馈（不失败）。
 
@@ -203,7 +218,7 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 **门禁收紧的「渐进」策略（先把现有代码养绿，再逐步收紧）**：
 
 - **align-check 用豁免清单**：历史上首批导入留下的 151 行 en/zh 漂移记录进 `scripts/alignment-baseline.json`，`--strict --baseline` 下**历史漂移不阻断、新漂移硬拦截**——既不让历史债卡死合入，又保证新素材不再引入对齐错位。
-- **boundary-check / dead-code 起步告警不阻断**：`App.tsx`（~3000 行）和生成数据模块现在必然超阈值、knip 也必报历史死代码，所以这两个 job 用 `warn` / `continue-on-error`——先让它们**跑起来、看得见**，等 App.tsx 拆分和死代码清理 PR 落地后再收紧为硬门禁。
+- **boundary-check / dead-code 起步告警不阻断**：`App.tsx` 拆分已落地（现约 544 行），`no-circular` 因此已升为硬门禁；但 src/ 的复杂度和生成数据模块仍可能超阈值、knip 也必报历史死代码，所以 `lint:complexity` 与 `dead-code` 仍用 `warn` / `continue-on-error`——先让它们**跑起来、看得见**，等死代码清理 PR 落地后再收紧为硬门禁。
 
 ### 进度与路线图
 
@@ -225,11 +240,36 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 | R9 端口守卫 | `scripts/port-guard.mjs` | `npm run dev` 前探测 5173；外部进程占用则阻断、本仓库残留则提示可 kill |
 | R10 报错闭环 MVP | `src/lib/errorReporter.ts` + `server/index.mjs`(`POST /api/errors`) + `scripts/error-report.mjs` | 前端报错收集 → AI 分析报告；**MVP 明确不做自动改码**（需人验收后另做） |
 | R11 oxidize | `scripts/oxidize-report.mjs` + `docs/oxidize/log.json` | 摩擦日志 → 优化计划（before/after 目标），**只出计划、人挑执行** |
-| R12 双模型收敛 | `src/types.ts`(`Cue` 基类型) + `src/lib/cue.ts` + `scripts/check-lesson-cue-alignment.mjs` | 课程线并入视频线，统一 `Cue` 时间轴语义；句间停顿高亮「提前跳下一句」→「保持上一句」（对齐改进）；step4 保零丢失（策展句不可干净派生，未删重复数据） |
+| R12 双模型收敛 | `src/types.ts`(`Cue` 基类型) + `src/lib/cue.ts` + `scripts/check-lesson-cue-alignment.mjs` + `scripts/lesson-cue-baseline.json` | 课程线并入视频线，统一 `Cue` 时间轴语义；句间停顿高亮「提前跳下一句」→「保持上一句」（对齐改进）；step4 保零丢失（策展句不可干净派生，未删重复数据）——`check:lesson-alignment`（id 强校验）已挂 CI 硬门禁 |
 
 ### 人机协作边界（一句话原则）
 
 **凡「影响主干、影响数据正确性、影响用户体验」的，必须有 gate；凡「沙盒内可逆、可回放、有证据」的，放权给 AI 全自动。**
+
+### Harness 门禁清单（三档）
+
+| 档 | 门禁 | 触发 | 行为 |
+|---|---|---|---|
+| **硬门禁**（阻断合入） | `lint` / `format:check` / `test` / `build` / `audit`(high+) / `align-check`(豁免清单) / `data-protect` / `depcruise`(no-circular) / `check:lesson-alignment`(R12 id 强校验) | `.github/workflows/ci.yml` | 任一失败 → CI 红 → 阻断 PR |
+| **告警不阻断** | `lint:complexity`(warn) / `knip` / `deadcss` | `ci.yml` 的 `boundary-check` 与 `dead-code` job | `continue-on-error`，只报告不阻断，README 描述与 UI 需一一对应 |
+| **AI review（建议性）** | `ai-review`（DeepSeek 结构化 review） | `.github/workflows/ai-review.yml`（PR opened/synchronize） | 无 key / 失败 / 有发现**都不阻断**，仅 post 评论（`Reviewed: <sha>` 去重） |
+
+**npm scripts 速查**：
+```bash
+npm run dev                    # port-guard.mjs → server/index.mjs（vite 热更新）
+npm run build                  # tsc -b && vite build → dist/
+npm test                       # node --test tests/*.test.mjs
+npm run lint                   # eslint scripts+tests
+npm run lint:complexity        # eslint src/**（复杂度，warn）
+npm run depcruise              # src 循环依赖检测（硬门禁）
+npm run knip                   # 死代码/无用导出检测（告警）
+npm run deadcss                # purgecss 未用选择器（告警）
+npm run format:check           # prettier --check scripts+tests
+npm run check:alignment        # check-cue-alignment（en/zh 漂移，豁免清单硬门禁）
+npm run check:lesson-alignment # check-lesson-cue-alignment --strict --baseline（R12 id 强校验）
+npm run oxidize                # 摩擦日志 → docs/oxidize/plan.md（只出计划）
+npm run errors:report          # 前端报错 inbox → docs/error-report-DATE.md（AI 分析）
+```
 
 ### 对 AI 接手者的关键约定
 
@@ -237,6 +277,8 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 2. `src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual。
 3. 提交过 CI 门禁（`.github/workflows/ci.yml`）：硬门禁 `lint / format / test / build / e2e / audit / align-check(豁免清单) / data-protect / no-circular`；告警不阻断 `dead-code`；另有 `.github/workflows/ai-review.yml` 的 **AI code review（DeepSeek，建议性非阻断）**。
 4. 单模块单 PR，不混装；commit 三段式（症状 → 根因 → 验证）。
+5. **R12 对齐红线**：`scripts/check-lesson-cue-alignment.mjs --strict --baseline`（即 `npm run check:lesson-alignment`）必须 0 新增漂移——禁止把课程句 `Lesson.sentences` 改写成从 `VideoEntry.cues` "派生"的假对应（策展教学不可干净派生）。同时 `check:alignment`（cue deck en/zh）用豁免清单拦新漂移。
+6. **R12 语义收敛提醒**：视频线句间停顿「保持上一句」而非「提前跳下一句」；时间轴一律走 `cue.startTime` 绝对时间（`mediaStartTime` 仅存 player 层做 `toVideoTime` 换算）。
 
 ## 运维速查（M1 反馈 API）
 
