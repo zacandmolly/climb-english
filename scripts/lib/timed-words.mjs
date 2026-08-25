@@ -16,13 +16,13 @@ const ABBREVIATIONS = new Set([
   'i.e.',
 ]);
 
-export function parseTime(value) {
+function parseTime(value) {
   const clean = value.trim().replace(',', '.');
   const [hours, minutes, seconds] = clean.split(':');
   return Number(hours) * 3600 + Number(minutes) * 60 + Number(seconds);
 }
 
-export function cleanText(value) {
+function cleanText(value) {
   return value
     .replace(/<\/?c>/g, '')
     .replace(/<[^>]+>/g, ' ')
@@ -35,7 +35,7 @@ export function cleanText(value) {
     .trim();
 }
 
-export function normalizeWord(value) {
+function normalizeWord(value) {
   return value
     .toLowerCase()
     .replace(/[’]/g, "'")
@@ -78,7 +78,7 @@ function cueTimesFromLines(lines) {
   };
 }
 
-export function parseVtt(vtt) {
+function parseVtt(vtt) {
   const blocks = splitVttBlocks(vtt);
   const hasWordTimestamps = blocks.some((lines) =>
     lines.some((line) => /<\d\d:\d\d:\d\d[.,]\d+>/.test(line))
@@ -149,7 +149,7 @@ function readCueVtt(blocks) {
 
 // Manual cues have no word timestamps; distribute words evenly inside the cue
 // so downstream sentence segmentation can still reason about gaps.
-export function wordsFromCues(cues) {
+function wordsFromCues(cues) {
   const words = [];
   for (const cue of cues) {
     const tokens = cue.text.split(/\s+/).filter(Boolean);

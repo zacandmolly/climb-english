@@ -1,6 +1,5 @@
 import { ListMusic } from 'lucide-react';
-import type { Course } from '../App';
-import type { VideoSummary } from '../types';
+import type { Course, VideoSummary } from '../types';
 
 // 素材被卡拉OK重切版取代：课程素材的解说内容已由视频管线完整重切并配
 // 上 cue 级卡拉OK字幕时，课程入口从素材栏隐藏，只保留卡拉OK版本。

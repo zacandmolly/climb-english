@@ -51,7 +51,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
                               ▼
 ┌──────────────────── 页面端（在线 · src/ + server/，只读消费数据）────────────────┐
 │ 浏览器 SPA（src/）                                                               │
-│   main.tsx → App.tsx（4 视图：今天/听力/生词本/我的）                             │
+│   main.tsx → App.tsx（4 tab：今天/听力/生词本/我的，视频素材内嵌今天视图）       │
 │     ├─ 素材栏（唯一素材入口）：课程素材（lessons.ts）｜视频素材（videos/*）         │
 │     ├─ 课程流程（今天/听力视图）：视频播放器（本地 MP4 / YouTube IFrame）          │
 │     │   + 整段精听卡拉OK跟随 + CoachPanel 录音跟读                               │
@@ -73,16 +73,18 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root，仅此一处 render | ✅ |
-| **应用外壳（视图路由/骨架）** | `src/App.tsx`（~3000 行） | 4 视图（今天/听力/生词本/我的）切换、Sidebar、全局状态（activeView/activeCourse/activeVideo）、把素材栏/播放器/工作台拼装起来 | ⚠️ 单体核心，待拆 |
+| **应用外壳（视图路由/骨架）** | `src/App.tsx`（~540 行） | 4 tab（今天/听力/生词本/我的，视频素材内嵌今天视图）切换、全局状态（activeView/activeCourse/activeVideo）、把素材栏/播放器/工作台拼装起来（纯编排） | ✅ 已拆分 |
 | **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ 已独立 |
 | **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；经素材栏"视频素材"入口进入（今天视图内渲染） | ✅ 已独立 |
-| **跟读/口语教练** | `src/components/SpeakingCoach.tsx` | 录音 → Whisper 转写 → AI 教练反馈；只接收 `CoachTarget`，被卡拉OK工作台与课程流程两处复用 | ✅ 已独立（使用频率低、已相对独立；依赖远端口语反馈 API） |
-| 课程流程播放器（本地 MP4） | `src/App.tsx` LocalVideoPlayer | 本地视频播放，`onTimeReport(currentTime + mediaStartTime)` 换算回字幕时间轴 | ⚠️ 在 App.tsx 内，待拆 |
-| 课程流程播放器（YouTube） | `src/App.tsx` YouTubePlayer | IFrame 嵌入 + 250ms 轮询 `getCurrentTime()`；就绪前的播放点击排队而非静默丢弃 | ⚠️ 在 App.tsx 内，待拆 |
-| 课程流程/听力工作台 | `src/App.tsx` ListeningWorkspace + CoachPanel | 整段精听卡拉OK跟随 + CoachPanel 录音跟读 | ⚠️ 在 App.tsx 内，待拆 |
-| 课程构建逻辑 | `src/App.tsx` buildCourses/buildSessionsForCourse/COURSE_PLANS | 把 lessons 切成「天/句子」的课程计划、解锁顺序 | ⚠️ 在 App.tsx 内，待拆 |
-| 进度存储与迁移 | `src/App.tsx` load/save/normalize/migrate | localStorage（schema v2 + v1 迁移）、生词本、打卡日期、导出导入备份 | ⚠️ 在 App.tsx 内，待拆 |
-| 生词本/我的/听力库视图 | `src/App.tsx` VocabView/MeView/LibraryView | 生词复习、进度备份导出导入、听力库列表 | ⚠️ 在 App.tsx 内，待拆 |
+| **跟读/口语教练（视频素材）** | `src/components/SpeakingCoach.tsx` | 录音 → Whisper 转写 → AI 教练反馈；只接收 `CoachTarget`，被卡拉OK工作台复用 | ✅ 已独立 |
+| **口语教练（课程流程）** | `src/views/CoachPanel.tsx` | 课程流程的录音跟读教练；与 SpeakingCoach 功能重叠，合并另开 PR，本轮原样独立 | ⚠️ 待与 SpeakingCoach 合并 |
+| 课程流程播放器（本地 MP4） | `src/players/LocalVideoPlayer.tsx` | 本地视频播放，`onTimeReport(currentTime + mediaStartTime)` 换算回字幕时间轴 | ✅ 已独立 |
+| 课程流程播放器（YouTube） | `src/players/YouTubePlayer.tsx` | IFrame 嵌入 + 250ms 轮询 `getCurrentTime()`；就绪前的播放点击排队而非静默丢弃 | ✅ 已独立 |
+| 课程流程/听力工作台 | `src/views/TodayView.tsx`（TodayFocusCard/SentenceStrip/ListeningWorkspace）+ `src/views/Sidebar.tsx`（Sidebar/Heatmap） | 今日练习台、整段精听卡拉OK跟随 + 侧栏学习进度/热力图 | ✅ 已独立 |
+| 课程构建逻辑 | `src/courses.ts` | 把 lessons 切成「天/句子」的课程计划、解锁顺序（buildCourses/buildSessionsForCourse/COURSE_PLANS） | ✅ 已独立 |
+| 进度存储与迁移 | `src/progress/storage.ts` + `src/progress/session.ts` | localStorage（schema v2 + v1 迁移）、生词本、打卡日期、解锁顺序 | ✅ 已独立 |
+| 纯函数工具层 | `src/lib/ui.tsx` + `src/lib/{lesson,audio,feedback}.ts` + `src/constants.ts` + `src/players/playback.ts` | 高亮/时间格式/静态资源 + 课程句子时间轴 + 录音 WAV 编码 + 反馈降级 + 应用常量 | ✅ 已独立 |
+| 生词本/我的/听力库视图 | `src/views/{VocabView,MeView,LibraryView}.tsx` | 生词复习、进度备份导出导入、听力库列表 | ✅ 已独立 |
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
 | 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频）两套并行模型 | ⚠️ 双轨 |
 | 课程数据 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts` + `lessons.manual.ts` | Bern 2025（6 天，生成）+ Innsbruck 2026（7 天，手写）全部句子/翻译/关键词 | ✅ 已隔离 |
