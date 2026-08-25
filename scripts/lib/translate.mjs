@@ -275,7 +275,7 @@ function dedupeJoin(parts) {
   return output.join(' ');
 }
 
-function parseJsonLoose(raw) {
+export function parseJsonLoose(raw) {
   try {
     return JSON.parse(raw);
   } catch {
