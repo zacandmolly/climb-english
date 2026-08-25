@@ -86,3 +86,47 @@ export type Feedback = {
   suggestions: string[];
   naturalVersion: string;
 };
+
+export type PracticeMode = 'sentence' | 'segment';
+export type MainView = 'today' | 'library' | 'vocab' | 'me';
+export type VocabMastery = 0 | 1 | 2;
+
+export type DailySession = {
+  id: string;
+  day: number;
+  title: string;
+  lessonIndex: number;
+  mode: PracticeMode;
+  sentenceIndexes: number[];
+  goal: string;
+  steps: string[];
+};
+
+export type VocabEntry = {
+  term: string;
+  zh: string;
+  example: string;
+  lessonId: string;
+  day: number;
+  courseId?: string;
+  addedAt: string;
+  mastery: VocabMastery;
+};
+
+export type LearningProgress = {
+  completedSessionIds: string[];
+  activeSessionId: string | null;
+  activeCourseId?: string | null;
+  updatedAt: string | null;
+  vocab: VocabEntry[];
+  practiceDates: string[];
+};
+
+export type Course = {
+  id: string;
+  name: string;
+  competition: string;
+  discipline: string;
+  lessons: Lesson[];
+  sessions: DailySession[];
+};
