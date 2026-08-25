@@ -27,18 +27,19 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
   const [loopOne, setLoopOne] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [activeCueIndex, setActiveCueIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
   const activeRangeRef = useRef<{ index: number; start: number; end: number } | null>(null);
   const loopOneRef = useRef(loopOne);
   loopOneRef.current = loopOne;
 
   const toVideoTime = useCallback(
     (cueTime: number) => Math.max(0, cueTime - mediaStartTime),
-    [mediaStartTime],
+    [mediaStartTime]
   );
 
   const cueAtVideoTime = useCallback(
     (videoTime: number) => cueAtTime(cues, videoTime + mediaStartTime),
-    [cues, mediaStartTime],
+    [cues, mediaStartTime]
   );
 
   const playCue = useCallback(
@@ -56,7 +57,7 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       media.setPlaybackRate(playbackRate);
       media.play();
     },
-    [cues, playbackRate, toVideoTime],
+    [cues, playbackRate, toVideoTime]
   );
 
   const playContinuous = useCallback(() => {
@@ -82,27 +83,31 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       media.seekTo(Math.max(0, toVideoTime(cue.startTime) - PRE_ROLL_SECONDS));
       setActiveCueIndex(index);
     },
-    [cues, toVideoTime],
+    [cues, toVideoTime]
   );
 
-  const handleTimeUpdate = useCallback((videoTime: number) => {
-    const range = activeRangeRef.current;
-    if (range && videoTime >= range.end) {
-      if (loopOneRef.current) {
+  const handleTimeUpdate = useCallback(
+    (videoTime: number) => {
+      setCurrentTime(videoTime);
+      const range = activeRangeRef.current;
+      if (range && videoTime >= range.end) {
+        if (loopOneRef.current) {
+          mediaRef.current?.seekTo(range.start);
+          return;
+        }
+        mediaRef.current?.pause();
         mediaRef.current?.seekTo(range.start);
+        activeRangeRef.current = null;
+        setMode('idle');
         return;
       }
-      mediaRef.current?.pause();
-      mediaRef.current?.seekTo(range.start);
-      activeRangeRef.current = null;
-      setMode('idle');
-      return;
-    }
 
-    if (!range) {
-      setActiveCueIndex(cueAtVideoTime(videoTime));
-    }
-  }, [cueAtVideoTime]);
+      if (!range) {
+        setActiveCueIndex(cueAtVideoTime(videoTime));
+      }
+    },
+    [cueAtVideoTime]
+  );
 
   const toggleRate = useCallback(() => {
     setPlaybackRate((rate) => {
@@ -120,6 +125,7 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       loopOne,
       playbackRate,
       activeCueIndex,
+      currentTime,
       playCue,
       playContinuous,
       pause,
@@ -135,19 +141,21 @@ export function useCuePlayer(cues: Cue[], mediaStartTime: number, resetKey: stri
       loopOne,
       playbackRate,
       activeCueIndex,
+      currentTime,
       playCue,
       playContinuous,
       pause,
       seekToCue,
       toggleRate,
       handleTimeUpdate,
-    ],
+    ]
   );
 
   useEffect(() => {
     activeRangeRef.current = null;
     setMode('idle');
     setActiveCueIndex(0);
+    setCurrentTime(0);
   }, [resetKey]);
 
   return player;

@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 're
 import { resolveStaticAssetUrl } from '../lib/ui';
 import type { YouTubePlayerRef } from './YouTubePlayer';
 
-type CueMediaSource = 'local' | 'youtube' | 'unavailable';
+type CueMediaSource = 'local' | 'preview' | 'youtube' | 'unavailable';
 
 export type CueMediaHandle = {
   seekTo: (seconds: number) => void;
@@ -11,50 +11,91 @@ export type CueMediaHandle = {
   setPlaybackRate: (rate: number) => void;
 };
 
-type DesiredPlayback = {
-  time: number;
-  rate: number;
-  playing: boolean;
+type DesiredPlayback = { time: number; rate: number; playing: boolean };
+
+type CueMediaProps = {
+  mediaUrl: string;
+  youtubeId: string;
+  mediaStartTime: number;
+  previewMediaUrl?: string;
+  previewStartTime?: number;
+  previewDurationSeconds?: number;
+  preferPreview?: boolean;
+  sourceUrl: string;
+  onTimeUpdate: (videoTime: number) => void;
+  onPlayingChange: (playing: boolean) => void;
 };
 
-// One imperative media surface for the karaoke cue player. A generated video
-// normally points at a local, web-optimised mp4. Large imports are intentionally
-// not committed, though, so a GitHub Pages build may not contain that file. If
-// the local asset fails, switch to the original YouTube video while preserving
-// the same clip-relative clock for useCuePlayer:
+function initialMediaSource({
+  mediaUrl,
+  youtubeId,
+  previewMediaUrl,
+  preferPreview,
+}: Pick<CueMediaProps, 'mediaUrl' | 'youtubeId' | 'previewMediaUrl' | 'preferPreview'>) {
+  if (preferPreview && previewMediaUrl) return 'preview';
+  if (mediaUrl) return 'local';
+  if (previewMediaUrl) return 'preview';
+  if (youtubeId) return 'youtube';
+  return 'unavailable';
+}
+
+// One clock for three delivery layers:
+//   local currentTime === previewStartOffset + preview currentTime
+//                     === YouTube currentTime - mediaStartTime
 //
-//   local currentTime === youtube currentTime - mediaStartTime
-//
-// That invariant keeps cue seeking, sentence boundaries, and karaoke follow
-// identical for Bern-style clipped media and for current/future YouTube fallbacks.
-export const CueMediaPlayer = forwardRef<
-  CueMediaHandle,
+// Large files start on a tiny Git-tracked preview while the YouTube iframe is
+// cued in the background. Smaller deployed clips keep using their full local
+// mp4; if it is absent they fall back to the same preview-first path.
+export const CueMediaPlayer = forwardRef<CueMediaHandle, CueMediaProps>(function CueMediaPlayer(
   {
-    mediaUrl: string;
-    youtubeId: string;
-    mediaStartTime: number;
-    sourceUrl: string;
-    onTimeUpdate: (videoTime: number) => void;
-    onPlayingChange: (playing: boolean) => void;
-  }
->(function CueMediaPlayer(
-  { mediaUrl, youtubeId, mediaStartTime, sourceUrl, onTimeUpdate, onPlayingChange },
+    mediaUrl,
+    youtubeId,
+    mediaStartTime,
+    previewMediaUrl = '',
+    previewStartTime = mediaStartTime,
+    previewDurationSeconds = 20,
+    preferPreview = false,
+    sourceUrl,
+    onTimeUpdate,
+    onPlayingChange,
+  },
   forwardedRef
 ) {
   const [source, setSource] = useState<CueMediaSource>(() =>
-    mediaUrl ? 'local' : youtubeId ? 'youtube' : 'unavailable'
+    initialMediaSource({ mediaUrl, youtubeId, previewMediaUrl, preferPreview })
   );
   const [youtubeReady, setYoutubeReady] = useState(false);
   const [youtubeSlow, setYoutubeSlow] = useState(false);
+  const [youtubeFailed, setYoutubeFailed] = useState(false);
   const localVideoRef = useRef<HTMLVideoElement | null>(null);
+  const previewVideoRef = useRef<HTMLVideoElement | null>(null);
   const youtubeHostRef = useRef<HTMLDivElement | null>(null);
   const youtubePlayerRef = useRef<YouTubePlayerRef | null>(null);
   const fallbackInProgressRef = useRef(false);
-  const desiredRef = useRef<DesiredPlayback>({ time: 0, rate: 1, playing: false });
+  const desiredRef = useRef<DesiredPlayback>({
+    time: preferPreview && previewMediaUrl ? Math.max(0, previewStartTime - mediaStartTime) : 0,
+    rate: 1,
+    playing: false,
+  });
+  const sourceRef = useRef(source);
   const onTimeUpdateRef = useRef(onTimeUpdate);
   const onPlayingChangeRef = useRef(onPlayingChange);
+  sourceRef.current = source;
   onTimeUpdateRef.current = onTimeUpdate;
   onPlayingChangeRef.current = onPlayingChange;
+
+  const previewRelativeStart = Math.max(0, previewStartTime - mediaStartTime);
+  const previewRelativeEnd = previewRelativeStart + previewDurationSeconds;
+  const youtubeEnabled = Boolean(youtubeId && (source === 'preview' || source === 'youtube'));
+  const inPreviewWindow = (time: number) =>
+    time >= previewRelativeStart - 0.05 && time < previewRelativeEnd - 0.05;
+
+  const switchToYoutube = () => {
+    if (!youtubeReady || !youtubePlayerRef.current) return false;
+    previewVideoRef.current?.pause();
+    setSource('youtube');
+    return true;
+  };
 
   useImperativeHandle(
     forwardedRef,
@@ -65,27 +106,39 @@ export const CueMediaPlayer = forwardRef<
         try {
           if (source === 'local' && localVideoRef.current) {
             localVideoRef.current.currentTime = time;
+          } else if (source === 'preview' && previewVideoRef.current && inPreviewWindow(time)) {
+            previewVideoRef.current.currentTime = Math.max(0, time - previewRelativeStart);
+          } else if (source === 'preview' && switchToYoutube()) {
+            youtubePlayerRef.current?.seekTo(time + mediaStartTime, true);
           } else if (source === 'youtube' && youtubePlayerRef.current) {
             youtubePlayerRef.current.seekTo(time + mediaStartTime, true);
           }
         } catch {
-          // Preserve desiredRef so a still-initialising or fallback player can
-          // apply the seek once its metadata/API is ready.
+          // desiredRef is applied once metadata/the iframe is ready.
         }
       },
       play() {
         desiredRef.current.playing = true;
         if (source === 'local' && localVideoRef.current) {
-          void localVideoRef.current.play().catch(() => {
-            // The media element's error event owns the YouTube fallback. Keep
-            // the desired playing state so onReady can resume automatically.
-          });
+          void localVideoRef.current.play().catch(() => undefined);
+        } else if (
+          source === 'preview' &&
+          previewVideoRef.current &&
+          inPreviewWindow(desiredRef.current.time)
+        ) {
+          previewVideoRef.current.playbackRate = desiredRef.current.rate;
+          void previewVideoRef.current.play().catch(() => undefined);
+        } else if (source === 'preview' && switchToYoutube()) {
+          const player = youtubePlayerRef.current;
+          player?.seekTo(desiredRef.current.time + mediaStartTime, true);
+          player?.setPlaybackRate(desiredRef.current.rate);
+          player?.playVideo();
         } else if (source === 'youtube' && youtubePlayerRef.current) {
           try {
             youtubePlayerRef.current.setPlaybackRate(desiredRef.current.rate);
             youtubePlayerRef.current.playVideo();
           } catch {
-            // onReady reads desiredRef and completes the queued play.
+            // onReady completes the queued play.
           }
         }
       },
@@ -93,30 +146,32 @@ export const CueMediaPlayer = forwardRef<
         desiredRef.current.playing = false;
         try {
           if (source === 'local') localVideoRef.current?.pause();
+          if (source === 'preview') previewVideoRef.current?.pause();
           if (source === 'youtube') youtubePlayerRef.current?.pauseVideo();
         } catch {
-          // Desired state is already authoritative for the next ready event.
+          // Desired state remains authoritative.
         }
         onPlayingChangeRef.current(false);
       },
       setPlaybackRate(rate) {
         desiredRef.current.rate = rate;
         try {
-          if (source === 'local' && localVideoRef.current) {
+          if (source === 'local' && localVideoRef.current)
             localVideoRef.current.playbackRate = rate;
-          } else if (source === 'youtube' && youtubePlayerRef.current) {
+          if (source === 'preview' && previewVideoRef.current)
+            previewVideoRef.current.playbackRate = rate;
+          if (source === 'youtube' && youtubePlayerRef.current)
             youtubePlayerRef.current.setPlaybackRate(rate);
-          }
         } catch {
-          // onReady reads the desired rate.
+          // onReady/onCanPlay reads the desired rate.
         }
       },
     }),
-    [mediaStartTime, source]
+    [mediaStartTime, previewRelativeStart, previewRelativeEnd, source, youtubeReady]
   );
 
   useEffect(() => {
-    if (source !== 'youtube' || !youtubeId) return;
+    if (!youtubeEnabled) return;
     let cancelled = false;
 
     const setup = () => {
@@ -134,13 +189,21 @@ export const CueMediaPlayer = forwardRef<
           onReady: () => {
             if (cancelled) return;
             const desired = desiredRef.current;
-            player.seekTo(desired.time + mediaStartTime, true);
             player.setPlaybackRate(desired.rate);
+            setYoutubeReady(true);
+            setYoutubeFailed(false);
+            if (sourceRef.current === 'preview' && inPreviewWindow(desired.time)) {
+              player.seekTo(previewRelativeEnd + mediaStartTime, true);
+              player.pauseVideo();
+              return;
+            }
+            player.seekTo(desired.time + mediaStartTime, true);
+            if (sourceRef.current === 'preview') setSource('youtube');
             if (desired.playing) player.playVideo();
             else player.pauseVideo();
-            setYoutubeReady(true);
           },
           onStateChange: (event: { data: number }) => {
+            if (sourceRef.current !== 'youtube') return;
             const playing = event.data === window.YT?.PlayerState.PLAYING;
             if (playing) desiredRef.current.playing = true;
             if (
@@ -153,9 +216,13 @@ export const CueMediaPlayer = forwardRef<
           },
           onError: () => {
             if (cancelled) return;
-            desiredRef.current.playing = false;
-            onPlayingChangeRef.current(false);
-            setSource('unavailable');
+            setYoutubeFailed(true);
+            setYoutubeReady(false);
+            if (sourceRef.current === 'youtube') {
+              desiredRef.current.playing = false;
+              onPlayingChangeRef.current(false);
+              setSource('unavailable');
+            }
           },
         },
       });
@@ -188,7 +255,21 @@ export const CueMediaPlayer = forwardRef<
       youtubePlayerRef.current = null;
       setYoutubeReady(false);
     };
-  }, [mediaStartTime, source, youtubeId]);
+  }, [mediaStartTime, previewRelativeEnd, youtubeEnabled, youtubeId]);
+
+  useEffect(() => {
+    if (source !== 'youtube' || !youtubeReady || !youtubePlayerRef.current) return;
+    const player = youtubePlayerRef.current;
+    const desired = desiredRef.current;
+    try {
+      player.seekTo(desired.time + mediaStartTime, true);
+      player.setPlaybackRate(desired.rate);
+      if (desired.playing) player.playVideo();
+      else player.pauseVideo();
+    } catch {
+      // The next control action or polling tick will retry.
+    }
+  }, [mediaStartTime, source, youtubeReady]);
 
   useEffect(() => {
     if (source !== 'youtube' || !youtubeReady) return;
@@ -196,7 +277,9 @@ export const CueMediaPlayer = forwardRef<
       const player = youtubePlayerRef.current;
       if (!player || !desiredRef.current.playing) return;
       try {
-        onTimeUpdateRef.current(Math.max(0, player.getCurrentTime() - mediaStartTime));
+        const time = Math.max(0, player.getCurrentTime() - mediaStartTime);
+        desiredRef.current.time = time;
+        onTimeUpdateRef.current(time);
       } catch {
         // The iframe may be navigating or tearing down between polls.
       }
@@ -205,24 +288,49 @@ export const CueMediaPlayer = forwardRef<
   }, [mediaStartTime, source, youtubeReady]);
 
   useEffect(() => {
-    if (source !== 'youtube' || youtubeReady) return;
+    if (!youtubeEnabled || youtubeReady || youtubeFailed) return;
     setYoutubeSlow(false);
     const id = window.setTimeout(() => setYoutubeSlow(true), 20_000);
     return () => window.clearTimeout(id);
-  }, [source, youtubeId, youtubeReady]);
+  }, [youtubeEnabled, youtubeFailed, youtubeId, youtubeReady]);
 
-  const fallbackToYoutube = () => {
+  const fallbackFromLocal = () => {
     fallbackInProgressRef.current = true;
     const video = localVideoRef.current;
-    if (video && Number.isFinite(video.currentTime)) {
+    if (
+      video &&
+      Number.isFinite(video.currentTime) &&
+      (video.currentTime > 0 || desiredRef.current.time === 0)
+    ) {
       desiredRef.current.time = Math.max(0, video.currentTime);
       desiredRef.current.rate = video.playbackRate;
     }
     const shouldResume = desiredRef.current.playing;
     localVideoRef.current?.pause();
+    if (previewMediaUrl && desiredRef.current.time === 0 && previewRelativeStart > 0) {
+      desiredRef.current.time = previewRelativeStart;
+    }
     desiredRef.current.playing = shouldResume;
     onPlayingChangeRef.current(false);
-    setSource(youtubeId ? 'youtube' : 'unavailable');
+    setSource(previewMediaUrl ? 'preview' : youtubeId ? 'youtube' : 'unavailable');
+  };
+
+  const syncPreviewToDesired = (video: HTMLVideoElement) => {
+    const desired = desiredRef.current;
+    video.playbackRate = desired.rate;
+    if (inPreviewWindow(desired.time)) {
+      video.currentTime = Math.max(0, desired.time - previewRelativeStart);
+      if (desired.playing) void video.play().catch(() => undefined);
+    } else if (youtubeReady) {
+      setSource('youtube');
+    }
+  };
+
+  const finishPreview = () => {
+    desiredRef.current.time = previewRelativeEnd;
+    onTimeUpdateRef.current(previewRelativeEnd);
+    onPlayingChangeRef.current(false);
+    if (youtubeReady) setSource('youtube');
   };
 
   return (
@@ -250,24 +358,75 @@ export const CueMediaPlayer = forwardRef<
             desiredRef.current.playing = true;
             onPlayingChangeRef.current(true);
           }}
-          onError={fallbackToYoutube}
+          onError={fallbackFromLocal}
         />
+      ) : null}
+
+      {source === 'preview' ? (
+        <video
+          ref={previewVideoRef}
+          className="local-video preview-video"
+          src={resolveStaticAssetUrl(previewMediaUrl)}
+          controls
+          preload="auto"
+          playsInline
+          onLoadedMetadata={(event) => syncPreviewToDesired(event.currentTarget)}
+          onCanPlay={(event) => syncPreviewToDesired(event.currentTarget)}
+          onTimeUpdate={(event) => {
+            const time = previewRelativeStart + event.currentTarget.currentTime;
+            desiredRef.current.time = time;
+            onTimeUpdateRef.current(time);
+          }}
+          onRateChange={(event) => {
+            desiredRef.current.rate = event.currentTarget.playbackRate;
+          }}
+          onPause={() => onPlayingChangeRef.current(false)}
+          onPlay={() => {
+            desiredRef.current.playing = true;
+            onPlayingChangeRef.current(true);
+          }}
+          onEnded={finishPreview}
+          onError={() => setSource(youtubeId ? 'youtube' : 'unavailable')}
+        />
+      ) : null}
+
+      {youtubeEnabled ? (
+        <div
+          className={`youtube-player-host ${source === 'preview' ? 'prewarming' : ''}`}
+          ref={youtubeHostRef}
+        />
+      ) : null}
+
+      {source === 'preview' ? (
+        <>
+          <p className="media-source-note preview-note" role="status">
+            20 秒快速预览 · 完整视频正在后台载入
+          </p>
+          {youtubeSlow || youtubeFailed ? (
+            <div className="yt-loading compact" aria-live="polite">
+              <p>
+                {youtubeFailed
+                  ? '快速预览可继续播放，但 YouTube 完整视频暂不可用。'
+                  : 'YouTube 仍在缓冲；快速预览会继续显示，避免黑屏。'}
+              </p>
+            </div>
+          ) : null}
+        </>
       ) : null}
 
       {source === 'youtube' ? (
         <>
-          <div className="youtube-player-host" ref={youtubeHostRef} />
           {!youtubeReady ? (
             <div className="yt-loading" aria-live="polite">
               <p>
                 {youtubeSlow
                   ? 'YouTube 视频加载缓慢或失败，请检查网络（VPN/代理）后刷新重试…'
-                  : '本地剪切媒体未随当前部署发布，正在切换到 YouTube 原视频；就绪后会按同一时间轴继续播放。'}
+                  : '正在载入 YouTube 完整视频；就绪后会按同一时间轴继续播放。'}
               </p>
             </div>
           ) : null}
           <p className="media-source-note" role="status">
-            当前使用 YouTube 原视频；句子剪切与卡拉OK仍按导入 cue 时间轴运行。
+            当前使用 YouTube 原视频；句子剪切与卡拉 OK 仍按导入 cue 时间轴运行。
           </p>
         </>
       ) : null}

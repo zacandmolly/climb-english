@@ -36,11 +36,13 @@ import {
   loadLessonsAsReference,
   translateSentences,
 } from './lib/translate.mjs';
+import { generateVideoPreview, getPreviewWindow } from './lib/video-preview.mjs';
 
 const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'src/data/videos');
 const MEDIA_DIR = path.join(ROOT, 'public/media');
+const PREVIEW_DIR = path.join(MEDIA_DIR, 'previews');
 const YT_DLP =
   process.env.YT_DLP ||
   (fs.existsSync('/Users/zaczhu/.workbuddy/binaries/python/envs/default/bin/yt-dlp')
@@ -181,6 +183,36 @@ async function main() {
     console.log(`  media: ${mediaUrl}`);
   }
 
+  let previewMediaUrl = '';
+  let previewStartTime;
+  let previewDurationSeconds;
+  let preferPreview = false;
+  if (!args.dryRun) {
+    if (!mediaUrl.startsWith('/media/')) {
+      throw new Error('A local /media/*.mp4 source is required to generate the 20-second preview.');
+    }
+    const mediaFile = path.join(ROOT, 'public', mediaUrl.replace(/^\//, ''));
+    if (!fs.existsSync(mediaFile)) {
+      throw new Error(`Cannot generate preview; local media is missing: ${mediaFile}`);
+    }
+    const previewWindow = getPreviewWindow({ mediaStartTime: mediaStart, cues });
+    const previewFileName = `${slug}-20s.mp4`;
+    const previewFile = path.join(PREVIEW_DIR, previewFileName);
+    console.log(
+      `→ generating Git-tracked warm-up preview (${previewWindow.previewStartTime}s + ${previewWindow.previewDurationSeconds}s)`
+    );
+    await generateVideoPreview({
+      inputFile: mediaFile,
+      outputFile: previewFile,
+      sourceOffset: previewWindow.previewSourceOffset,
+    });
+    previewMediaUrl = `/media/previews/${previewFileName}`;
+    previewStartTime = previewWindow.previewStartTime;
+    previewDurationSeconds = previewWindow.previewDurationSeconds;
+    preferPreview = fs.statSync(mediaFile).size >= 100 * 1024 * 1024;
+    console.log(`  preview: ${previewMediaUrl}`);
+  }
+
   const video = {
     id: slug,
     title,
@@ -193,6 +225,14 @@ async function main() {
     level: args.level ?? 'intermediate',
     mediaUrl,
     mediaStartTime: mediaStart,
+    ...(previewMediaUrl
+      ? {
+          previewMediaUrl,
+          previewStartTime,
+          previewDurationSeconds,
+          ...(preferPreview ? { preferPreview: true } : {}),
+        }
+      : {}),
     durationSeconds: Number((end === Infinity ? (metadata.duration ?? 0) : end - start).toFixed(1)),
     captionKind: kind,
     importedAt: new Date().toISOString().slice(0, 10),

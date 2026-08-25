@@ -1,21 +1,35 @@
-import {
-  BookOpen,
-  CalendarCheck,
-  Download,
-  Flame,
-  Headphones,
-  Target,
-  User,
-} from 'lucide-react';
+import { BookOpen, CalendarCheck, Download, Flame, Headphones, Target, User } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BilingualStudio } from './components/BilingualStudio';
 import { COURSE_SUPERSEDED_BY_VIDEO, MaterialBar } from './components/MaterialBar';
 import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
-import type { DailySession, Keyword, LearningProgress, MainView, PracticeMode, VocabMastery } from './types';
+import type {
+  DailySession,
+  Keyword,
+  LearningProgress,
+  MainView,
+  PracticeMode,
+  VocabMastery,
+} from './types';
 import { buildCourses } from './courses';
-import { collectSessionVocab, completedPrefixCount, getInitialSessionIndex, getUnlockedSessionIndex, mergeVocabEntries, toggleVocabTermById } from './progress/session';
-import { computeStreak, emptyLearningProgress, loadLearningProgress, localDateKey, migrateLegacyProgress, normalizeProgress, saveLearningProgress } from './progress/storage';
+import {
+  collectSessionVocab,
+  completedPrefixCount,
+  getInitialSessionIndex,
+  getUnlockedSessionIndex,
+  mergeVocabEntries,
+  toggleVocabTermById,
+} from './progress/session';
+import {
+  computeStreak,
+  emptyLearningProgress,
+  loadLearningProgress,
+  localDateKey,
+  migrateLegacyProgress,
+  normalizeProgress,
+  saveLearningProgress,
+} from './progress/storage';
 import { CoachPanel } from './views/CoachPanel';
 import { LibraryView } from './views/LibraryView';
 import { MeView } from './views/MeView';
@@ -33,8 +47,7 @@ export function App() {
 
   if (!initialLearningStateRef.current) {
     const migrated = migrateLegacyProgress(loadLearningProgress(), courses);
-    const course =
-      courses.find((item) => item.id === migrated.activeCourseId) ?? courses[0];
+    const course = courses.find((item) => item.id === migrated.activeCourseId) ?? courses[0];
     initialLearningStateRef.current = {
       progress: { ...migrated, activeCourseId: course?.id ?? null },
       courseId: course?.id ?? '',
@@ -43,17 +56,14 @@ export function App() {
   }
 
   const [progress, setProgress] = useState<LearningProgress>(
-    initialLearningStateRef.current.progress,
+    initialLearningStateRef.current.progress
   );
-  const [activeCourseId, setActiveCourseId] = useState(
-    initialLearningStateRef.current.courseId,
-  );
-  const activeCourse =
-    courses.find((item) => item.id === activeCourseId) ?? courses[0];
+  const [activeCourseId, setActiveCourseId] = useState(initialLearningStateRef.current.courseId);
+  const activeCourse = courses.find((item) => item.id === activeCourseId) ?? courses[0];
   const dailySessions = activeCourse?.sessions ?? [];
   const [activeSentenceIndex, setActiveSentenceIndex] = useState(0);
   const [activeSessionIndex, setActiveSessionIndex] = useState(
-    initialLearningStateRef.current.sessionIndex,
+    initialLearningStateRef.current.sessionIndex
   );
   const [mode, setMode] = useState<PracticeMode>('sentence');
   const [playRequestId, setPlayRequestId] = useState(0);
@@ -64,34 +74,31 @@ export function App() {
     COURSE_SUPERSEDED_BY_VIDEO[initialLearningStateRef.current.courseId] ?? null;
   const [activeVideoId, setActiveVideoId] = useState<string | null>(initialVideoId);
   const activeVideo = useMemo(
-    () => (activeVideoId ? videoSummaries.find((video) => video.id === activeVideoId) ?? null : null),
-    [activeVideoId],
+    () =>
+      activeVideoId ? (videoSummaries.find((video) => video.id === activeVideoId) ?? null) : null,
+    [activeVideoId]
   );
   const activeSession = dailySessions[activeSessionIndex] ?? dailySessions[0];
-  const lesson =
-    activeCourse?.lessons[activeSession?.lessonIndex ?? 0] ?? activeCourse?.lessons[0];
+  const lesson = activeCourse?.lessons[activeSession?.lessonIndex ?? 0] ?? activeCourse?.lessons[0];
   const activeSentence = lesson?.sentences[activeSentenceIndex] ?? lesson?.sentences[0];
   const completedSessionIds = useMemo(
     () => new Set(progress.completedSessionIds),
-    [progress.completedSessionIds],
+    [progress.completedSessionIds]
   );
   const completedSessionCount = completedPrefixCount(dailySessions, completedSessionIds);
   const unlockedSessionIndex = getUnlockedSessionIndex(dailySessions, completedSessionIds);
-  const streakDays = useMemo(
-    () => computeStreak(progress.practiceDates),
-    [progress.practiceDates],
-  );
+  const streakDays = useMemo(() => computeStreak(progress.practiceDates), [progress.practiceDates]);
   const allValidSessionIds = useMemo(
     () => new Set(courses.flatMap((course) => course.sessions.map((session) => session.id))),
-    [courses],
+    [courses]
   );
   const totalSessionCount = courses.reduce((total, course) => total + course.sessions.length, 0);
   const totalCompletedCount = progress.completedSessionIds.filter((id) =>
-    allValidSessionIds.has(id),
+    allValidSessionIds.has(id)
   ).length;
   const courseNameById = useMemo(
     () => Object.fromEntries(courses.map((course) => [course.id, course.name])),
-    [courses],
+    [courses]
   );
 
   useEffect(() => {
@@ -201,7 +208,7 @@ export function App() {
     const currentSession = dailySessions[activeSessionIndex] ?? dailySessions[0];
     if (!currentSession || !activeCourse) return;
     const nextCompletedIds = Array.from(
-      new Set([...progress.completedSessionIds, currentSession.id]),
+      new Set([...progress.completedSessionIds, currentSession.id])
     );
     const nextCompletedSet = new Set(nextCompletedIds);
     const nextSessionIndex = getUnlockedSessionIndex(dailySessions, nextCompletedSet);
@@ -210,7 +217,7 @@ export function App() {
       activeCourse.lessons[currentSession.lessonIndex],
       currentSession,
       progress.vocab,
-      activeCourse.id,
+      activeCourse.id
     );
 
     setProgress({
@@ -250,7 +257,7 @@ export function App() {
           [keyword],
           lesson?.id ?? '',
           activeSessionIndex + 1,
-          activeCourse?.id,
+          activeCourse?.id
         ),
       };
     });
@@ -260,7 +267,7 @@ export function App() {
     setProgress((currentProgress) => ({
       ...currentProgress,
       vocab: currentProgress.vocab.map((entry) =>
-        entry.term === term ? { ...entry, mastery } : entry,
+        entry.term === term ? { ...entry, mastery } : entry
       ),
       updatedAt: new Date().toISOString(),
     }));
@@ -288,7 +295,8 @@ export function App() {
       try {
         const parsed = JSON.parse(String(reader.result)) as Partial<{
           progress: LearningProgress;
-        }> & Partial<LearningProgress>;
+        }> &
+          Partial<LearningProgress>;
         const candidate = parsed.progress ?? parsed;
         if (
           !Array.isArray(candidate.completedSessionIds) ||
@@ -296,7 +304,7 @@ export function App() {
             (id) =>
               !allValidSessionIds.has(id) &&
               !id.match(/^daily-session-\d+$/) &&
-              !courses.some((course) => id.startsWith(`${course.id}-day-`)),
+              !courses.some((course) => id.startsWith(`${course.id}-day-`))
           )
         ) {
           window.alert('备份文件格式不对：缺少有效的练习进度。');
@@ -310,7 +318,7 @@ export function App() {
         const restoredCourse =
           courses.find((item) => item.id === restored.activeCourseId) ??
           courses.find((item) =>
-            item.sessions.some((session) => session.id === restored.activeSessionId),
+            item.sessions.some((session) => session.id === restored.activeSessionId)
           ) ??
           courses[0];
         const restoredSessions = restoredCourse?.sessions ?? [];
@@ -330,11 +338,13 @@ export function App() {
 
   const vocabTerms = useMemo(
     () => new Set(progress.vocab.map((entry) => entry.term)),
-    [progress.vocab],
+    [progress.vocab]
   );
 
   return (
-    <div className="app-shell">
+    <div
+      className={`app-shell ${activeView === 'today' && activeVideo ? 'video-learning-mode' : ''}`}
+    >
       <header className="topbar">
         <div className="brand-lockup">
           <span className="brand-mark">CE</span>
@@ -413,11 +423,7 @@ export function App() {
         />
 
         {activeView === 'today' && activeVideo ? (
-          <BilingualStudio
-            key={activeVideo.id}
-            summaries={[activeVideo]}
-            hideLibraryStrip
-          />
+          <BilingualStudio key={activeVideo.id} summaries={[activeVideo]} hideLibraryStrip />
         ) : null}
 
         {activeView === 'today' && !activeVideo && lesson && activeSentence ? (

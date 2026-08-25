@@ -2,7 +2,7 @@
 
 > 面向 Codex 等 AI 协作者的一站式上手文档。读完即可定位功能、理解数据流向、知道改某个模块的边界与门禁，**无需再通读整个代码库或依赖人肉问答**。
 >
-> 状态基线：2026-08-25，Innsbruck 媒体容错实现基线 `c562295`；AI harness 已完整落地（Phase 0-3 + R4 全部完成，R0-R12 全落地）。
+> 状态基线：2026-08-25，移动端字幕工作台与 20 秒 Git 预览 / YouTube 预热接续已落地；AI harness 已完整落地（Phase 0-3 + R4 全部完成，R0-R12 全落地）。
 
 ---
 
@@ -43,7 +43,7 @@
 | R10 报错闭环 | `src/lib/errorReporter.ts` + `server/index.mjs`(`POST /api/errors`) + `scripts/error-report.mjs` | 收集 + AI 报告；MVP 不做自动改码 |
 | R11 oxidize | `scripts/oxidize-report.mjs` + `scripts/lib/friction-log.mjs` + `docs/oxidize/` | 摩擦 → 优化计划；只出计划人挑执行 |
 | R12 双模型收敛 | `src/types.ts`(`Cue` 基类型) + `src/lib/cue.ts` + `scripts/check-lesson-cue-alignment.mjs` | 课程线并入视频线，统一时间轴；id 硬门禁 |
-| 视频素材可播放门 | `src/players/CueMediaPlayer.tsx` + `scripts/check-video-pipeline.mjs` + Playwright | 已部署 MP4 优先；本地文件缺失/失败自动切 YouTube，并保持同一 cue 时间轴；CI 校验所有当前/未来素材 |
+| 视频素材可播放门 | `src/players/CueMediaPlayer.tsx` + `scripts/check-video-pipeline.mjs` + Playwright | 已部署 MP4 直播；大文件/缺失文件先播 Git 20 秒学习窗口、后台预热 YouTube 接续点，并保持同一 cue 时间轴；CI 校验所有当前/未来素材 |
 
 ---
 
@@ -78,7 +78,7 @@
 | 应用外壳 | `src/App.tsx`（~544 行） | 4 tab（今天/听力/生词本/我的）切换、全局状态、拼装素材栏/播放器/工作台（纯编排） | ✅ 已拆分 |
 | 素材栏（唯一素材入口） | `src/components/MaterialBar.tsx` | 课程+视频统一选择；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射 | ✅ |
 | 卡拉OK工作台 | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | cue 级卡拉OK跟随、单句循环、学习句过滤；reset 只依赖稳定素材 id | ✅ |
-| 卡拉OK媒体面 | `src/players/CueMediaPlayer.tsx` | 本地 MP4 优先；404/解码失败切 YouTube，统一暴露片段相对时钟 | ✅ 本地/备用源统一 |
+| 卡拉OK媒体面 | `src/players/CueMediaPlayer.tsx` | 本地 MP4 / Git 20 秒预览 / YouTube 三层媒体统一暴露片段相对时钟；预览播放时 iframe 隐藏预热接续点 | ✅ 三层统一 |
 | 跟读教练（视频素材） | `src/components/SpeakingCoach.tsx` | 录音→Whisper→AI 反馈；只接收 `CoachTarget` | ✅ |
 | 口语教练（课程流程） | `src/views/CoachPanel.tsx` | 课程流程录音跟读；与 SpeakingCoach 功能重叠 | ⚠️ 待合并 |
 | 课程播放器（本地） | `src/players/LocalVideoPlayer.tsx` | 本地视频，`onTimeReport(currentTime + mediaStartTime)` | ✅ |
@@ -102,13 +102,13 @@
 | 断句库 | `scripts/lib/segment.mjs` | 词级时间戳 → 句子边界 | ✅ 有测试 |
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐 + 人工回填 | ✅ 有测试 |
 | 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移巡检（严格 + 豁免） | ✅ |
-| 视频素材门禁 | `scripts/check-video-pipeline.mjs` | cue/翻译/时间窗/注册表 + faststart H.264/AAC + Git 跟踪或 YouTube fallback | ✅ CI 硬门禁 |
+| 视频素材门禁 | `scripts/check-video-pipeline.mjs` | cue/翻译/时间窗/注册表 + 每条素材 Git 20 秒 faststart H.264/AAC 预览 + 完整媒体 Git 跟踪或 YouTube fallback | ✅ CI 硬门禁 |
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern generated | ✅ |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端密钥安装/状态/用量 | ✅ |
 | 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
 | 回归测试 | `tests/` | translate/segment/backfill/video pipeline（node --test） | ✅ |
-| E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 走查本地 MP4 与 404→YouTube fallback 的卡拉OK时间轴 | ✅ |
+| E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 走查本地 MP4 与 Git 预览→YouTube 预热接续的卡拉OK时间轴 | ✅ |
 
 ---
 
@@ -180,7 +180,7 @@ discover-youtube.mjs → import-youtube.mjs
     或 YouTubePlayer（句子时间即视频时间；加载期点击排队）
   → 播放中上报播放头 → sentenceIndexAtMediaTime（委托 cueAtTime，停顿保持上一句）
   → 驱动练习稿高亮 + 列表钉顶滚动 → CoachPanel 按当前句给跟读目标
-素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4；失败则 YouTube + mediaStartTime 补偿）
+素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4；大文件/失败则 Git 20 秒预览 + 后台预热 YouTube + mediaStartTime 补偿）
   → useCuePlayer（播放本句/下一句/连播）→ cueAtTime 驱动卡拉OK高亮
 ```
 
@@ -248,7 +248,7 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 6. **R12 语义收敛提醒**：
    - 视频线句间停顿「**保持上一句**」而非「提前跳下一句」。
    - 时间轴一律走 `cue.startTime` 绝对时间；`mediaStartTime` 仅存 player 层做 `toVideoTime` 换算。
-7. **视频素材可播放红线**：每个素材跑 `npm run check:videos`；本地 MP4 只有被 Git 跟踪才算可部署，否则必须有合法 YouTube id。播放器 reset key 只能用稳定素材 id，fallback 必须以 `youtubeTime - mediaStartTime` 上报相对时钟。
+7. **视频素材可播放红线**：每个素材跑 `npm run check:videos`；每条素材必须有从第一 cue 前 0.3 秒开始的 Git 20 秒预览；本地完整 MP4 只有被 Git 跟踪才算可部署，否则必须有合法 YouTube id。播放器 reset key 只能用稳定素材 id，三层播放器必须维持 `previewStartOffset + previewTime = youtubeTime - mediaStartTime` 的相对时钟。
 8. **生成文件零手改**：`src/data/videos/*.video.ts`、`videos/index.ts`、`lessons.generated.ts` 由管线产出（注册表带 `GENERATED` 标记），禁止手改，一律改管线重新生成。
 9. **密钥边界**：任何 `VITE_` 变量对浏览器可见，禁止放密钥。密钥只存 M1 的 `~/.climb-english-api.env`、Worker secrets、本地 `.env`（gitignore）。
 
@@ -288,11 +288,12 @@ npm run oxidize               # 摩擦日志 → docs/oxidize/plan.md（只出�
 npm run errors:report         # 前端报错 inbox → docs/error-report-DATE.md（AI 分析）
 npm run build:lessons         # 只重建 Bern 课程 → lessons.generated.ts
 npm run import:youtube -- "<url>" --title "<标题>" --category <cat> --level <level> --slug <id>  # 导入素材
+npm run generate:previews [video-id ...]  # 为历史素材重建 20 秒 Git 预览；新导入已自动生成
 npm run translate:videos -- --video <slug>   # 补齐翻译
 npm run discover:youtube      # 扫描候选 → 队列
 ```
 
-**素材上线流程（新素材必经）**：`import:youtube` → 翻译完整门 → `check:alignment` → `check:videos`（本地媒体可部署或有 YouTube fallback）→ `build` → 本地/备用源卡拉OK浏览器实证 + qa 截图 → 素材栏接线（必要时在 `MaterialBar.tsx` 加 `COURSE_SUPERSEDED_BY_VIDEO` 映射）。**禁止手工编辑 `.video.ts` 绕过管线。**
+**素材上线流程（新素材必经）**：`import:youtube`（自动生成 20 秒学习窗口）→ 翻译完整门 → `check:alignment` → `check:videos`（Git 预览 + 本地媒体可部署或有 YouTube fallback）→ `build` → 本地/预览→备用源卡拉OK浏览器实证 + qa 截图 → 素材栏接线（必要时在 `MaterialBar.tsx` 加 `COURSE_SUPERSEDED_BY_VIDEO` 映射）。**禁止手工编辑 `.video.ts` 绕过管线。**
 
 ---
 
