@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    participant GH as GitHub PR
+    participant AI as ai-review.mjs
+    participant DS as DeepSeek API
+    participant GHAPI as GitHub API/gh CLI
+
+    GH->>AI: pull_request (opened/synchronize)
+    AI->>GHAPI: GET /pulls/{n}/comments (找 ai-review-bot 评论)
+    alt 已有同 SHA 的 AI 评论
+        AI-->>GH: 跳过（防重复）
+    else 需审
+        AI->>GHAPI: GET /pulls/{n}/files (diff)
+        AI->>GHAPI: GET /pulls/{n}/commits (拼功能清单)
+        AI->>DS: POST /chat/completions (精简上下文)
+        DS-->>AI: {issues:[{category,severity,file,line,suggestion}]}
+        AI->>GHAPI: POST /pulls/{n}/comments (分类评论文本 + Reviewed:<sha>)
+        AI-->>GH: 建议性评论（非阻断，CI neutral/success）
+    end

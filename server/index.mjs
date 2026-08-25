@@ -224,6 +224,85 @@ app.post('/api/speaking-feedback', enforceUsageLimits, upload.single('audio'), a
   }
 });
 
+// --- R10: frontend error inbox -------------------------------------------
+// Collect errors reported by src/lib/errorReporter.ts and append them to
+// docs/error-inbox.jsonl so `npm run errors:report` can cluster + analyse them.
+// This endpoint is DEV/local only: in production we refuse to accept (the app
+// is served statically there and errors should be reported through a real
+// telemetry service instead).
+const ERROR_INBOX_PATH = path.join(root, 'docs', 'error-inbox.jsonl');
+const errorRateBucket = new Map();
+
+app.post('/api/errors', async (req, res) => {
+  try {
+    if (isProduction) {
+      res.status(403).json({ error: 'Error reporting is disabled in production.' });
+      return;
+    }
+
+    // Shape validation.
+    const body = req.body ?? {};
+    const errors = Array.isArray(body.errors) ? body.errors : [];
+    if (errors.length === 0) {
+      res.status(400).json({ error: 'No errors provided.' });
+      return;
+    }
+    if (errors.length > 50) {
+      res.status(400).json({ error: 'Too many errors in one batch; send at most 50.' });
+      return;
+    }
+
+    // Per-IP rate limit so a runaway page cannot spam the inbox.
+    const key = `errors:${hourlyKey(new Date())}:ip:${clientIp(req)}`;
+    const count = incrementCounter(key);
+    if (count > 60) {
+      res.status(429).json({ error: 'Error reporting rate limit reached.' });
+      return;
+    }
+
+    // Validate + normalise each record, then append as one JSONL line each.
+    const lines = [];
+    for (const entry of errors) {
+      const record = normalizeErrorRecord(entry);
+      if (!record) continue;
+      lines.push(JSON.stringify(record));
+    }
+    if (lines.length === 0) {
+      res.status(400).json({ error: 'No valid error records.' });
+      return;
+    }
+
+    // The inbox file lives under docs/ which is gitignored for runtime data but
+    // must be created on demand. Append-only so the report can read it back.
+    await fs.mkdir(path.dirname(ERROR_INBOX_PATH), { recursive: true });
+    await fs.appendFile(ERROR_INBOX_PATH, `${lines.join('\n')}\n`, 'utf8');
+
+    console.log(`[errors] recorded ${lines.length} error(s) to error-inbox.jsonl`);
+    res.json({ ok: true, recorded: lines.length });
+  } catch (error) {
+    console.error('[errors] failed to record errors:', error);
+    res.status(500).json({ error: 'Failed to record errors.' });
+  }
+});
+
+function normalizeErrorRecord(entry) {
+  if (!entry || typeof entry !== 'object') return null;
+  const message = String(entry.message ?? '').trim();
+  const stack = String(entry.stack ?? '').slice(0, 4000);
+  if (!message && !stack) return null;
+  return {
+    id: String(entry.id ?? ''),
+    kind: entry.kind === 'unhandledrejection' ? 'unhandledrejection' : 'error',
+    message,
+    stack,
+    componentStack: String(entry.componentStack ?? '').slice(0, 2000) || undefined,
+    url: String(entry.url ?? ''),
+    route: String(entry.route ?? ''),
+    ts: typeof entry.ts === 'string' ? entry.ts : new Date().toISOString(),
+    receivedAt: new Date().toISOString(),
+  };
+}
+
 if (isProduction) {
   const dist = path.join(root, 'dist');
   app.use(express.static(dist));

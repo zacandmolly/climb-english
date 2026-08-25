@@ -149,7 +149,7 @@ function readCueVtt(blocks) {
 
 // Manual cues have no word timestamps; distribute words evenly inside the cue
 // so downstream sentence segmentation can still reason about gaps.
-function wordsFromCues(cues) {
+export function wordsFromCues(cues) {
   const words = [];
   for (const cue of cues) {
     const tokens = cue.text.split(/\s+/).filter(Boolean);

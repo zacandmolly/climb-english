@@ -1,0 +1,32 @@
+[
+  {
+    "ts": "2026-08-25T08:00:00.000Z",
+    "agent": "ai",
+    "phase": "phase-3",
+    "cmd": "npm run lint",
+    "blockedBy": "other",
+    "expected": "一次通过",
+    "actual": "新脚本 eslint 报 unused var",
+    "suggestion": "用 prettier --write 并删掉未用变量"
+  },
+  {
+    "ts": "2026-08-25T08:05:00.000Z",
+    "agent": "ai",
+    "phase": "phase-3",
+    "cmd": "node scripts/port-guard.mjs",
+    "blockedBy": "bug",
+    "expected": "cwd 探测到仓库 root",
+    "actual": "macOS 上 lsof -Fn 用 fcwd+n<path> 而非 c<path>",
+    "suggestion": "解析 fcwd 后的 n/c 行，兼容下一天"
+  },
+  {
+    "ts": "2026-08-25T08:10:00.000Z",
+    "agent": "ai",
+    "phase": "phase-3",
+    "cmd": "gh api repos/{o}/{r}/pulls/{n}/files",
+    "blockedBy": "permission",
+    "expected": "拿到 PR 文件列表",
+    "actual": "CI 内 gh 缺少 contents write 权限",
+    "suggestion": "workflow 补权限并走 CI secrets.DEEPSEEK_API_KEY"
+  }
+]

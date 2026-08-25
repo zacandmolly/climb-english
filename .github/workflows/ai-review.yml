@@ -1,0 +1,71 @@
+# R4 AI code-review gate (advisory, non-blocking).
+#
+# On every PR push (opened + synchronize) this posts a DeepSeek review comment
+# to the PR. It is deliberately NON-BLOCKING:
+#   - It never sets a required status check, so no review outcome can block a
+#     merge.
+#   - It writes a NEUTRAL conclusion to the step summary (never failure).
+#   - If DEEPSEEK_API_KEY is absent or invalid, the run prints a note and
+#     exits 0 — enabling the workflow before the secret is configured cannot
+#     break CI.
+#
+# Dedupe: scripts/ai-review.mjs scans the PR's existing issue-comments for a
+# `Reviewed: <sha>` footer on an `ai-review-bot` comment. `opened` only reviews
+# when there is no bot comment yet; `synchronize` re-reviews each new head SHA
+# (new SHA = unreviewed). `concurrency` prevents two runs for the same SHA from
+# racing.
+
+name: AI Code Review (advisory)
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  # `gh api .../comments` on a pull request needs pull-requests: write and/or
+  # issues: write to post comments. We scope the token explicitly.
+  pull-requests: write
+
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  ai-review:
+    name: DeepSeek code review
+    runs-on: ubuntu-latest
+    # A failed review (e.g. a transient DeepSeek error) must NOT block the PR,
+    # so we do not set `if: failure()` here and let the script exit 0 on any
+    # failure it cannot handle.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run AI code review
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ secrets.DEEPSEEK_BASE_URL }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: node scripts/ai-review.mjs
+
+      - name: Note in summary
+        if: always()
+        run: |
+          {
+            echo "> **AI code review** — advisory, non-blocking (R4)."
+            echo "> Posts a DeepSeek review comment tagged \`Reviewed: <sha>\`; deduped per head SHA."
+            echo "> This job writes a neutral conclusion and never a required check:"
+            echo "> an absent/invalid \`DEEPSEEK_API_KEY\` or a transient API error cannot block the PR."
+          } >> "$GITHUB_STEP_SUMMARY"

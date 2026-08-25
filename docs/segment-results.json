@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-08-25T07:32:48.771Z",
+  "seed": null,
+  "stepsDescription": "Deterministic word-sample slice (no RNG used).",
+  "samples": [
+    {
+      "videoId": "a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny",
+      "title": "A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE",
+      "wordCount": 450
+    },
+    {
+      "videoId": "bern-2025-wb-rescut",
+      "title": "Women's Boulder final | Bern 2025",
+      "wordCount": 450
+    },
+    {
+      "videoId": "innsbruck-2026-mb-full",
+      "title": "Men's Boulder Final | Innsbruck 2026 智能重切",
+      "wordCount": 450
+    }
+  ],
+  "grid": {
+    "maxGapSeconds": [
+      0.7,
+      1,
+      1.5,
+      1.8
+    ],
+    "minWords": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "mergeGapSeconds": [
+      1.2,
+      1.5,
+      2,
+      2.5
+    ],
+    "maxWords": [
+      22,
+      26,
+      30
+    ]
+  },
+  "cellCount": 192,
+  "best": {
+    "cell": {
+      "maxGapSeconds": 0.7,
+      "minWords": 4,
+      "mergeGapSeconds": 1.2,
+      "maxWords": 22
+    },
+    "avgScore": 0.9428927767554254
+  },
+  "top5": [
+    {
+      "cell": {
+        "maxGapSeconds": 0.7,
+        "minWords": 4,
+        "mergeGapSeconds": 1.2,
+        "maxWords": 22
+      },
+      "avgScore": 0.9428927767554254,
+      "avgFragmentRate": 0.11083743842364531,
+      "avgOverlongRate": 0.012549847525216984,
+      "avgWordCoverage": 0.9967320261437909
+    },
+    {
+      "cell": {
+        "maxGapSeconds": 0.7,
+        "minWords": 4,
+        "mergeGapSeconds": 1.5,
+        "maxWords": 22
+      },
+      "avgScore": 0.9428927767554254,
+      "avgFragmentRate": 0.11083743842364531,
+      "avgOverlongRate": 0.012549847525216984,
+      "avgWordCoverage": 0.9967320261437909
+    },
+    {
+      "cell": {
+        "maxGapSeconds": 0.7,
+        "minWords": 4,
+        "mergeGapSeconds": 2,
+        "maxWords": 22
+      },
+      "avgScore": 0.9428927767554254,
+      "avgFragmentRate": 0.11083743842364531,
+      "avgOverlongRate": 0.012549847525216984,
+      "avgWordCoverage": 0.9967320261437909
+    },
+    {
+      "cell": {
+        "maxGapSeconds": 0.7,
+        "minWords": 4,
+        "mergeGapSeconds": 2.5,
+        "maxWords": 22
+      },
+      "avgScore": 0.9428927767554254,
+      "avgFragmentRate": 0.11083743842364531,
+      "avgOverlongRate": 0.012549847525216984,
+      "avgWordCoverage": 0.9967320261437909
+    },
+    {
+      "cell": {
+        "maxGapSeconds": 1,
+        "minWords": 4,
+        "mergeGapSeconds": 1.2,
+        "maxWords": 22
+      },
+      "avgScore": 0.9424959513586,
+      "avgFragmentRate": 0.11083743842364531,
+      "avgOverlongRate": 0.012549847525216984,
+      "avgWordCoverage": 0.9967320261437909
+    }
+  ]
+}

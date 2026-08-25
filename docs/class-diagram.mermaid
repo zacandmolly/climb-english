@@ -1,0 +1,60 @@
+classDiagram
+    class Cue {
+        +string id
+        +number startTime
+        +number endTime
+        +string en
+        +string zh
+        +string? note
+    }
+    class SubtitleCue {
+        +number score
+        +boolean study
+        +boolean? highlight
+        +boolean? needsTranslation
+        +string[] keywords
+    }
+    class PracticeSentence {
+        +string label
+        +string transcript
+        +string zhTranslation
+        +string zhExplanation
+        +Keyword[] keywords
+        +string[] sentencePatterns
+        +string speakingPrompt
+    }
+    class VideoEntry {
+        +string id
+        +string title
+        +string mediaUrl
+        +number mediaStartTime
+        +number durationSeconds
+        +SubtitleCue[] cues
+    }
+    class Lesson {
+        +string id
+        +string title
+        +string mediaUrl
+        +number mediaStartTime
+        +PracticeSentence[] sentences
+    }
+    class cueLib {
+        <<service>>
+        +cueAtVideoTime(cues, videoTime, mediaStartTime) int
+        +wordsInRange(cues, start, end) Cue[]
+    }
+    class useCuePlayer {
+        <<hook>>
+        +playCue(index)
+        +playContinuous()
+        +seekToCue(index)
+    }
+
+    Cue <|-- SubtitleCue : extends
+    Cue <|-- PracticeSentence : extends/复用 time+text 字段
+    VideoEntry o-- SubtitleCue : array
+    Lesson o-- PracticeSentence : array
+    VideoEntry ..> cueLib : uses
+    Lesson ..> cueLib : uses
+    useCuePlayer ..> cueLib : uses
+    useCuePlayer ..> SubtitleCue : consumes
