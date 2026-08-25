@@ -31,30 +31,40 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 
 ## 架构总览
 
+整个系统切成两个**互不干扰的边界**，中间只靠「数据文件」单向连接：
+
+- **内容管线（离线，一次性生成）**：`scripts/` 负责所有新素材的「发现 → 下载/转码 → 断句 → 翻译 → 生成数据」，把结果**持久化**成 `.video.ts` / `lessons.generated.ts` 数据文件后就不再重跑。
+- **页面端（在线，只读消费）**：`src/` + `server/` 只**读**管线产出的数据文件，负责播放 / 跟读 / 课程流 / 口语反馈，从不反向触碰内容。
+
+> **原则：数据生成（管线）与数据消费（页面）分离。** 改页面端不会碰内容管线、不会返工，更不会因为改页面而重新跑翻译、重复消耗 DeepSeek Token；内容只生成一次，页面永远消费同一份数据。
+
 ```
-┌─────────────────────────── 内容管线（离线，scripts/）───────────────────────────┐
-│ YouTube ──yt-dlp──> 词级字幕 ──segment.mjs──> 智能断句/评分 ──translate.mjs──>   │
-│                       (timed-words.mjs)      (DeepSeek 批翻)                    │
-│ 中英 cue 数据 ──生成──> src/data/videos/<slug>.video.ts + index.ts（注册表）     │
+┌──────────────────── 内容管线（离线 · scripts/，一次性生成）─────────────────────┐
+│ 发现 discover-youtube ──> 导入 import-youtube（yt-dlp 词级字幕 + 下载/转码媒体） │
+│   ──> 断句 segment（词级时间戳→句子边界）──> 翻译 translate（DeepSeek 批翻）     │
+│ 产出（持久化数据文件，此后不再重跑）：                                            │
+│   src/data/videos/<slug>.video.ts + videos/index.ts（注册表）                    │
+│   src/data/lessons.generated.ts（课程生成器产物）                                │
 └────────────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼
-┌─────────────────────────── 运行时（在线）──────────────────────────────────────┐
-│ 浏览器 SPA（src/）                                                              │
-│   main.tsx → App.tsx                                                            │
-│     ├─ 素材栏（唯一素材入口）：课程素材（lessons.ts）｜视频素材（videos/*）        │
-│     ├─ 课程流程（今天/听力视图）：视频播放器（本地 MP4 / YouTube IFrame）         │
-│     │   + 整段精听卡拉OK跟随 + CoachPanel 录音跟读                              │
-│     ├─ 视频素材（今天视图）：BilingualStudio 卡拉OK工作台（cue 级跟随）          │
-│     └─ 进度/vocab：localStorage（schema v2，含 v1 迁移）                        │
-│ 本地服务器（server/index.mjs）                                                  │
-│   dev = vite 中间件；prod = dist/ 静态托管 + POST /api/speaking-feedback        │
-│   （限流 + OpenAI Whisper 转写 + DeepSeek/OpenAI 教练回复）                     │
+                              │
+                              │  只读消费（数据文件）
+                              ▼
+┌──────────────────── 页面端（在线 · src/ + server/，只读消费数据）────────────────┐
+│ 浏览器 SPA（src/）                                                               │
+│   main.tsx → App.tsx（4 视图：今天/听力/生词本/我的）                             │
+│     ├─ 素材栏（唯一素材入口）：课程素材（lessons.ts）｜视频素材（videos/*）         │
+│     ├─ 课程流程（今天/听力视图）：视频播放器（本地 MP4 / YouTube IFrame）          │
+│     │   + 整段精听卡拉OK跟随 + CoachPanel 录音跟读                               │
+│     ├─ 视频素材（今天视图）：BilingualStudio 卡拉OK工作台（cue 级跟随）           │
+│     └─ 进度/vocab：localStorage（schema v2，含 v1 迁移）                         │
+│ 本地服务器（server/index.mjs）                                                   │
+│   dev = vite 中间件；prod = dist/ 静态托管 + POST /api/speaking-feedback         │
+│   （限流 + OpenAI Whisper 转写 + DeepSeek/OpenAI 教练回复）                      │
 └────────────────────────────────────────────────────────────────────────────────┘
-                                        │
-                                        ▼ （静态部署时，浏览器直连）
-┌─────────────────────────── 远端反馈（可选）────────────────────────────────────┐
-│ Cloudflare Worker（workers/，KV 限流）──> 常驻 M1 上的 API（持有密钥）           │
+                              │
+                              ▼ （静态部署时，浏览器直连）
+┌──────────────────── 远端反馈（可选）─────────────────────────────────────────────┐
+│ Cloudflare Worker（workers/，KV 限流）──> 常驻 M1 上的 API（持有密钥）            │
 └────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -63,29 +73,39 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root，仅此一处 render | ✅ |
-| **应用主体（单体）** | `src/App.tsx`（~3000 行） | 4 个视图（今天/听力/生词本/我的）、素材栏（课程+视频统一入口）、2 个课程播放器、口语教练、课程构建、进度存储与迁移 | ⚠️ 过大，待拆分 |
+| **应用外壳（视图路由/骨架）** | `src/App.tsx`（~3000 行） | 4 视图（今天/听力/生词本/我的）切换、Sidebar、全局状态（activeView/activeCourse/activeVideo）、把素材栏/播放器/工作台拼装起来 | ⚠️ 单体核心，待拆 |
+| **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ 已独立 |
+| **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；经素材栏"视频素材"入口进入（今天视图内渲染） | ✅ 已独立 |
+| **跟读/口语教练** | `src/components/SpeakingCoach.tsx` | 录音 → Whisper 转写 → AI 教练反馈；只接收 `CoachTarget`，被卡拉OK工作台与课程流程两处复用 | ✅ 已独立（使用频率低、已相对独立；依赖远端口语反馈 API） |
+| 课程流程播放器（本地 MP4） | `src/App.tsx` LocalVideoPlayer | 本地视频播放，`onTimeReport(currentTime + mediaStartTime)` 换算回字幕时间轴 | ⚠️ 在 App.tsx 内，待拆 |
+| 课程流程播放器（YouTube） | `src/App.tsx` YouTubePlayer | IFrame 嵌入 + 250ms 轮询 `getCurrentTime()`；就绪前的播放点击排队而非静默丢弃 | ⚠️ 在 App.tsx 内，待拆 |
+| 课程流程/听力工作台 | `src/App.tsx` ListeningWorkspace + CoachPanel | 整段精听卡拉OK跟随 + CoachPanel 录音跟读 | ⚠️ 在 App.tsx 内，待拆 |
+| 课程构建逻辑 | `src/App.tsx` buildCourses/buildSessionsForCourse/COURSE_PLANS | 把 lessons 切成「天/句子」的课程计划、解锁顺序 | ⚠️ 在 App.tsx 内，待拆 |
+| 进度存储与迁移 | `src/App.tsx` load/save/normalize/migrate | localStorage（schema v2 + v1 迁移）、生词本、打卡日期、导出导入备份 | ⚠️ 在 App.tsx 内，待拆 |
+| 生词本/我的/听力库视图 | `src/App.tsx` VocabView/MeView/LibraryView | 生词复习、进度备份导出导入、听力库列表 | ⚠️ 在 App.tsx 内，待拆 |
 | 样式 | `src/styles.css` | 全局样式，含 v2 遗留死规则 | ⚠️ 待清理 |
 | 类型 | `src/types.ts` | `Lesson/PracticeSentence`（课程）与 `SubtitleCue/VideoEntry`（视频）两套并行模型 | ⚠️ 双轨 |
 | 课程数据 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts` + `lessons.manual.ts` | Bern 2025（6 天，生成）+ Innsbruck 2026（7 天，手写）全部句子/翻译/关键词 | ✅ 已隔离 |
-| **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ |
-| **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；经素材栏"视频素材"入口进入（今天视图内渲染） | ✅ |
-| 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧视频 99 句 + Bern 智能重切 652 句）+ 懒加载注册表 + 发现队列 | ✅ |
+| 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧教学 / Bern 智能重切 / Innsbruck 完整重切）+ 懒加载注册表 + 发现队列 | ✅ |
 | 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 | ✅ |
 | 导入管线 | `scripts/import-youtube.mjs` | yt-dlp 拉字幕+视频 → 断句评分翻译 → 生成 `.video.ts` + 注册表 | ✅ 产物经素材栏消费 |
 | 断句库 | `scripts/lib/segment.mjs` | 词级时间戳 → 句子边界（gap/minWords/maxWords 参数化） | ✅ 有测试 |
 | 翻译库 | `scripts/lib/translate.mjs` | DeepSeek 批翻对齐（严格索引匹配）+ 人工翻译回填（backfillFromReference） | ✅ 有测试 |
-| 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移启发式巡检（是绊网不是真相） | ✅ |
+| 对齐诊断 | `scripts/check-cue-alignment.mjs` | en/zh 漂移启发式巡检（`--strict` + 豁免清单是硬门禁；非严格是绊网） | ✅ |
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选导入 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern 课程，写入 `lessons.generated.ts` | ✅ 不再触碰手写 |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端 API 的密钥安装/状态/用量（SSH 到 M1） | ✅ |
 | 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
-| 回归测试 | `tests/` | translate 对齐 6 例 + segment 断句 5 例（main）；backfill 5 例在 PR #4 分支 | ✅ |
+| 回归测试 | `tests/` | translate 对齐 + segment 断句 + backfill 回填（node --test） | ✅ |
+| E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 卡拉OK播放走查（R5），CI 归档截图/录屏 | ✅ |
 
 ## 依赖关系（谁 import 谁）
 
 ```
-main.tsx → App.tsx → data/lessons.ts → types.ts
-App.tsx → components/BilingualStudio.tsx（素材栏选视频素材时，今天视图内渲染）→ hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
+main.tsx → App.tsx → components/{MaterialBar, BilingualStudio, SpeakingCoach} + data/lessons.ts → types.ts
+App.tsx → MaterialBar（唯一素材入口，选课程/选视频）
+App.tsx → BilingualStudio（素材栏选视频素材时，今天视图内渲染）→ hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
+App.tsx → SpeakingCoach（课程流程的 CoachPanel 也复用同一组件）
 scripts/* 之间：import-youtube → lib/{timed-words, segment, translate, climbing-terms}
 server/index.mjs → dist/（prod）或 vite（dev）；不依赖 src/ 源码
 ```
@@ -158,13 +178,38 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 
 本项目用「harness」方法论（脚手架 + 缰绳）落地 AI 自动开发迭代：把本文件的迭代规范与 [RETROSPECTIVE.md](./RETROSPECTIVE.md) 的踩坑经验，从「人肉 checklist」落成「代码门禁 + 自动化」。核心原则：**gate 是代码不是 prompt**。
 
+### 架构设计思路
+
+**核心哲学**：徐文浩的「harness = 脚手架 + 缰绳」。脚手架让 AI 跑得快（沙盒并行、自动生成、自动验证），缰绳让 AI 跑不偏（门禁、gate、人审）。纯 vibe coding 做大项目一定会塌——不是 AI 不行，而是没有「机制层」兜底：错误靠 prompt 提醒、验证靠人肉，规模一上来必然崩。唯一解是搭门禁 + 持续迭代，把纪律从「写在 README 里的话」变成「跑在 CI 里的代码」。
+
+**六条设计原则（每条一句话讲清「为什么」）**：
+
+1. **gate 是代码不是 prompt**——prompt 会被忽略、被遗忘、被「这轮先跳过」；代码门禁每次合入前强制执行，不可协商。
+2. **数据生成与消费分离**——内容只生成一次、页面永远消费同一份数据；改页面不返工，也不重复烧 DeepSeek Token。
+3. **单模块单 PR**——PR 越小越能被 review 和回滚；混装提交让「哪个改动引入了问题」无从定位。
+4. **反例测试先行**——先用真实坏数据把测试写红，再修到绿；否则测试只验证了「能跑」，没验证「跑对」。
+5. **UI 改动必须实证**——播放器/跟随这类行为无法靠静态检查，必须浏览器走查 + 截图留证；文本描述与截图一致。
+6. **生成文件零手改**——手改生成文件会在下次重跑时被覆盖丢失；要改就改管线，让管线重新生成。
+
+**四层闭环（需求 → 生成 → 验证 → 迭代）的设计取舍**：
+
+- **需求分析层**：AI 拆解任务，但拆解结果必须过 **G1 人审 gate**——拆错了后面全白跑，这一步必须人确认才进生成。
+- **代码生成层**：为什么在**沙盒**（worktree + dev container）——不进主干、可销毁、可回放；「整仓重写丢功能」的前车之鉴证明，无沙盒的 AI 全自动 = 灾难。
+- **测试验证层**：为什么合入要**人工 gate（G2）**——门禁只能证明「没坏」，不能证明「没丢功能」；AI review 只作建议，最终 approve 由人拍板。
+- **迭代优化层**：为什么门禁要**「现在就能全绿」起步**——门禁的价值在「拦新错」不在「清旧账」；先让现有代码全绿，AI 才有可依赖的基线，再逐步收紧。
+
+**门禁收紧的「渐进」策略（先把现有代码养绿，再逐步收紧）**：
+
+- **align-check 用豁免清单**：历史上首批导入留下的 151 行 en/zh 漂移记录进 `scripts/alignment-baseline.json`，`--strict --baseline` 下**历史漂移不阻断、新漂移硬拦截**——既不让历史债卡死合入，又保证新素材不再引入对齐错位。
+- **boundary-check / dead-code 起步告警不阻断**：`App.tsx`（~3000 行）和生成数据模块现在必然超阈值、knip 也必报历史死代码，所以这两个 job 用 `warn` / `continue-on-error`——先让它们**跑起来、看得见**，等 App.tsx 拆分和死代码清理 PR 落地后再收紧为硬门禁。
+
 ### 进度与路线图
 
 | Phase | 内容 | 状态 |
 |---|---|---|
 | Phase 0 | R1 提交门禁（`.github/workflows/ci.yml` + ESLint + Prettier + husky） | ✅ 已落地 |
-| Phase 1 | R2 对齐硬校验 + R3 生成/手写数据隔离 + R4 AI code review | 🚧 R2/R3 已落地，R4 待做 |
-| Phase 2 | R5 Playwright 走查 + R6 模块边界 lint + R7 死代码检测 | ⬜ 待做 |
+| Phase 1 | R2 对齐硬校验 + R3 生成/手写数据隔离 + R4 AI code review | 🚧 R2（含豁免清单机制）/R3 已落地，R4 待做 |
+| Phase 2 | R5 Playwright 走查 + R6 模块边界 lint + R7 死代码检测 | ✅ 本轮已落地（R6/R7 起步告警不阻断） |
 | Phase 3 | R8 参数实验 + R9 端口守卫 + R10 auto fix + R11 oxidize + R12 双模型收敛 | ⬜ 待做 |
 
 ### 人机协作边界（一句话原则）
@@ -175,7 +220,7 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 
 1. 改 `scripts/lib/*` 必须反例测试先行（红→绿）；改 `src/` UI 必须浏览器实证 + qa 截图。
 2. `src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual。
-3. 提交过 CI 门禁：`lint / format / test / build / align-check / data-protect`（`.github/workflows/ci.yml`）。
+3. 提交过 CI 门禁（`.github/workflows/ci.yml`）：硬门禁 `lint / format / test / build / e2e / audit / align-check(豁免清单) / data-protect`；告警不阻断 `boundary-check / dead-code`。
 4. 单模块单 PR，不混装；commit 三段式（症状 → 根因 → 验证）。
 
 ## 运维速查（M1 反馈 API）

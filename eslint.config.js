@@ -1,33 +1,40 @@
 // Flat ESLint config for the AI harness.
 //
 // Scope policy (deliberately narrow):
-//   - Lint ONLY the .mjs pipeline/tooling under scripts/ and tests/.
-//     This is the defect-dense surface (TDZ swallowed by catch, silent
-//     fallback, empty catch blocks) where the RETROSPECTIVE lessons live.
-//   - Do NOT lint src/ TypeScript here. src/App.tsx is a 3000+ line module
-//     and enabling JS rules on it would light the gate up red on day one;
-//     TypeScript correctness is already enforced by `tsc -b` in CI.
+//   - Hard-gate the .mjs pipeline/tooling under scripts/ and tests/ with the
+//     recommended ruleset. This is the defect-dense surface (TDZ swallowed by
+//     catch, silent fallback, empty catch blocks) where the RETROSPECTIVE
+//     lessons live.
+//   - Report-only complexity rules over src/ (phase 02 / R6). src/App.tsx is
+//     a 3000+ line module, so the rules are `warn` (not `error`) and run as a
+//     separate `lint:complexity` script; they must not block the merge today.
+//     TypeScript correctness is still enforced by `tsc -b` in CI.
 //
-// The rules below are conservative on purpose: they must pass against the
-// existing scripts/tests *today* so the gate is green from the first commit.
+// The scripts/tests rules below are conservative on purpose: they must pass
+// against the existing tree *today* so the gate is green from the first commit.
 
 import js from '@eslint/js';
 import globals from 'globals';
+import tsParser from '@typescript-eslint/parser';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   {
-    // Global ignores: everything that is not an mjs file we own. Applying
+    // Global ignores: everything that is not a source file we own. Applying
     // `ignores` at the top level (config object with only `ignores`) makes it
     // global regardless of the file patterns in other config objects.
+    // NOTE: src/ is intentionally NOT ignored — the complexity config below
+    // scopes itself to src/**/*.{ts,tsx} at warn level only.
     ignores: [
       'node_modules/**',
       'dist/**',
       'public/**',
-      'src/**',
       'server/**',
       'workers/**',
       '.husky/**',
       'docs/**',
+      'e2e/**',
+      'playwright.config.ts',
     ],
   },
   {
@@ -60,6 +67,40 @@ export default [
       ],
       'no-constant-condition': 'error',
       'no-fallthrough': 'error',
+    },
+  },
+  {
+    // R6 module-boundary lint (phase 02): shape/complexity rules over src/,
+    // all at WARN so they report the 3000-line App.tsx monolith without failing
+    // the gate today. `tsc -b` still owns type-correctness; these rules only
+    // measure shape (cyclomatic complexity, nesting, arity, file length).
+    // After App.tsx is split, tighten these to error (or --max-warnings 0).
+    files: ['src/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
+      },
+    },
+    // react-hooks is registered so the pre-existing
+    // `// eslint-disable-next-line react-hooks/exhaustive-deps` directive in
+    // SpeakingCoach.tsx resolves to a known rule; the rule itself stays off to
+    // keep this audit scoped to module shape/complexity.
+    plugins: { 'react-hooks': reactHooks },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'off',
+    },
+    rules: {
+      'react-hooks/exhaustive-deps': 'off',
+      complexity: ['warn', { max: 20 }],
+      'max-depth': ['warn', { max: 4 }],
+      'max-params': ['warn', { max: 4 }],
+      'max-lines': [
+        'warn',
+        { max: 500, skipBlankLines: true, skipComments: true },
+      ],
     },
   },
 ];
