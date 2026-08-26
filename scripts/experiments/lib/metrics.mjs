@@ -20,7 +20,7 @@
 // Fragmentation rate: fraction of sentences whose word count is below the
 // `minWords` that the caller is testing. A high value means the parameters are
 // producing too many tiny fragments.
-export function fragmentRate(sentences, minWords) {
+function fragmentRate(sentences, minWords) {
   if (sentences.length === 0) return 1;
   const fragments = sentences.filter((sentence) => sentence.wordCount < minWords).length;
   return fragments / sentences.length;
@@ -28,7 +28,7 @@ export function fragmentRate(sentences, minWords) {
 
 // Over-long sentence rate: fraction of sentences exceeding maxWords OR the
 // maxSentenceSeconds the caller tests. These are hard to practice in one clip.
-export function overlongRate(sentences, { maxWords, maxSentenceSeconds }) {
+function overlongRate(sentences, { maxWords, maxSentenceSeconds }) {
   if (sentences.length === 0) return 1;
   const overlong = sentences.filter(
     (sentence) =>
@@ -39,7 +39,7 @@ export function overlongRate(sentences, { maxWords, maxSentenceSeconds }) {
 
 // Average number of words spent inside fragments (sentences under minWords).
 // A low number here is good — it means fragments, when they occur, are small.
-export function fragmentWordAverage(sentences, minWords) {
+function fragmentWordAverage(sentences, minWords) {
   const fragments = sentences.filter((sentence) => sentence.wordCount < minWords);
   if (fragments.length === 0) return 0;
   const total = fragments.reduce((sum, sentence) => sum + sentence.wordCount, 0);
@@ -49,7 +49,7 @@ export function fragmentWordAverage(sentences, minWords) {
 // Standard deviation of sentence word counts, normalized to the mean. A very
 // high coefficient of variation means the segmentation is lopsided (some huge,
 // some tiny). We prefer moderate spread.
-export function lengthCv(sentences) {
+function lengthCv(sentences) {
   if (sentences.length === 0) return 0;
   const counts = sentences.map((sentence) => sentence.wordCount);
   const mean = counts.reduce((sum, count) => sum + count, 0) / counts.length;
@@ -63,7 +63,7 @@ export function lengthCv(sentences) {
 // hard split) are lost to the learner, so coverage should be ~1. Note the
 // segmenter strips the per-sentence `words` array from its public output, so we
 // tokenize each sentence's `text` instead of reading `sentence.words`.
-export function wordCoverage(inputWords, sentences) {
+function wordCoverage(inputWords, sentences) {
   if (inputWords.length === 0) return 1;
   const merged = new Set(
     sentences.flatMap((sentence) => (sentence.text ?? '').toLowerCase().match(/[a-z']+/g) ?? [])
@@ -76,7 +76,7 @@ export function wordCoverage(inputWords, sentences) {
 // The distribution "reachability" score: roughly how close the median sentence
 // length is to a comfortable 6-20 word learning band. Perfect is 1, degrading
 // as the median drifts outside [6, 20].
-export function lengthDistributionScore(sentences) {
+function lengthDistributionScore(sentences) {
   if (sentences.length === 0) return 0;
   const counts = sentences.map((sentence) => sentence.wordCount).sort((a, b) => a - b);
   const median = counts[Math.floor(counts.length / 2)];
@@ -88,7 +88,7 @@ export function lengthDistributionScore(sentences) {
 // Aggregate a grid cell into a single comparable score (0..1, higher better).
 // Weights bias heavily against fragmentation and over-long sentences, which
 // are the defects that have burned this project before, and reward coverage.
-export function scoreCell(metrics) {
+function scoreCell(metrics) {
   const fragmentScore = 1 - metrics.fragmentRate;
   const overlongScore = 1 - metrics.overlongRate;
   const coverageScore = metrics.wordCoverage;

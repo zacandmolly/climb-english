@@ -13,8 +13,6 @@
 //       severity is one of: high | med | low
 // This is *advisory and non-blocking*: the review never gates the merge.
 
-import { FILLER_WORDS } from './climbing-terms.mjs';
-
 // Hard token budget for the whole prompt. The orchestrator truncates the
 // context before calling this so the final prompt stays under the model's
 // window; this constant documents the budget the orchestrator respects.
@@ -59,9 +57,9 @@ export function buildUserPrompt({ diff, featureList, commits }) {
 
 // Estimate how many tokens a string will cost. Not a real tokenizer — a cheap
 // heuristic (roughly 4 chars/token for code, and CJK ~1 token per 1.5 chars).
-// It is only used to decide how much context to keep, so precision is not
-// critical. Exporting it lets the orchestrator compute a truncation ratio.
-export function estimateTokens(text) {
+// It is only used locally to decide how much context to keep, so precision is
+// not critical.
+function estimateTokens(text) {
   if (!text) return 0;
   const ascii = (text.match(/[\x00-\x7f]/g) ?? []).length;
   const cjk = (text.match(/[^\x00-\x7f]/g) ?? []).length;
@@ -78,13 +76,6 @@ export function truncateToTokens(text, budget) {
   const headSlice = [...text].slice(0, head * 4); // ~4 chars per ascii token
   const tailSlice = [...text].slice(-tail * 4);
   return `${headSlice.join('')}\n\n…[truncated to fit token budget]…\n\n${tailSlice.join('')}`;
-}
-
-export function isFillerText(text) {
-  const tokens = (text ?? '').toLowerCase().match(/[a-z']+/g) ?? [];
-  if (tokens.length === 0) return true;
-  const filler = tokens.filter((token) => FILLER_WORDS.has(token)).length;
-  return filler / tokens.length > 0.5;
 }
 
 // Normalize a raw LLM response into a safe issue list. `parseJsonLoose` already

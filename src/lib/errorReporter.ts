@@ -112,26 +112,6 @@ export function reportError(error: Error | string, kind: ErrorRecord['kind'] = '
   void flushBuffer();
 }
 
-// React error boundaries hand us a componentStack; this lets the reporter
-// attach it to the latest window error so the stack context is not lost.
-export function reportErrorBoundary(error: Error, componentStack: string): void {
-  const record: ErrorRecord = {
-    id: hashRecord(error.message, error.stack ?? ''),
-    kind: 'error',
-    message: error.message || String(error),
-    stack: error.stack || '',
-    componentStack,
-    url: window.location.href,
-    ts: new Date().toISOString(),
-    route: window.location.pathname,
-  };
-  if (isDuplicate(record)) return;
-  const buffer = readBuffer();
-  buffer.push(record);
-  writeBuffer(buffer);
-  void flushBuffer();
-}
-
 // --- reporter helpers -----------------------------------------------------
 
 // Deterministic, browser-safe fingerprint hash. `node:crypto` is not available

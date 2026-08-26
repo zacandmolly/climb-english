@@ -1,0 +1,8 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": ["workers/**/*.mjs", "scripts/experiments/segment-parameter-search.mjs"],
+  // The word-time fixture is loaded as source text with fs.readFileSync by the
+  // regression suite, so it intentionally has no TypeScript import edge.
+  "ignoreFiles": ["tests/fixtures/word-times/fixture.video.ts"],
+  "ignoreBinaries": ["afconvert"]
+}

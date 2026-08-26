@@ -1,30 +1,19 @@
+import { Captions, Search } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import {
-  Captions,
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-  Gauge,
-  Languages,
-  ListFilter,
-  ListMusic,
-  Play,
-  Repeat,
-  Search,
-  Pause,
-} from 'lucide-react';
-import { Profiler, useEffect, useMemo, useRef, useState } from 'react';
+  useBilingualVideo,
+  useCompactLandscapeScrollReset,
+  useResolvedVideoResumePosition,
+  useVideoPositionPersistence,
+} from '../hooks/useBilingualStudioSession';
 import { useCuePlayer } from '../hooks/useCuePlayer';
 import { patternsForEnglish } from '../lib/cue';
-import { reportError } from '../lib/errorReporter';
-import { describeVideoLoadFailure, type VideoLoadFailure } from '../lib/videoLoad';
 import { CLIMBING_TERM_DICT } from '../data/videos/climbing-terms';
-import { loadVideo } from '../data/videos';
 import type { Keyword, VideoCategory, VideoEntry, VideoSummary } from '../types';
 import { formatDuration } from '../lib/ui';
-import { CueMediaPlayer } from '../players/CueMediaPlayer';
-import { resolveVideoResumePosition, type VideoResumePosition } from '../progress/videoSession';
+import type { VideoResumePosition } from '../progress/videoSession';
+import { BilingualVideoStage } from './BilingualVideoStage';
 import { SpeakingCoach, type CoachTarget } from './SpeakingCoach';
-import { SubtitlePanel } from './SubtitlePanel';
 
 const CATEGORY_ORDER: VideoCategory[] = [
   'world-cup',
@@ -74,86 +63,16 @@ export function BilingualStudio({
   onPositionChange?: (videoId: string, position: VideoResumePosition) => void;
   onReturnToLibrary?: () => void;
 }) {
-  const [videoId, setVideoId] = useState(() => {
-    // Default to the first video in display order (world-cup first).
-    for (const category of CATEGORY_ORDER) {
-      const hit = summaries.find((entry) => entry.category === category);
-      if (hit) return hit.id;
-    }
-    return summaries[0]?.id ?? '';
-  });
-  const [video, setVideo] = useState<VideoEntry | null>(null);
-  const [loadFailure, setLoadFailure] = useState<VideoLoadFailure | null>(null);
+  const [videoId, setVideoId] = useState(() => initialVideoId(summaries));
   const [query, setQuery] = useState('');
   const [showZh, setShowZh] = useState(true);
   const [studyOnly, setStudyOnly] = useState(false);
-  const lastPositionSaveRef = useRef({ at: 0, cueId: '' });
-  const latestPositionRef = useRef<{ videoId: string; position: VideoResumePosition } | null>(null);
+  const { video, loadFailure } = useBilingualVideo(videoId);
 
-  useEffect(() => {
-    if (!isActive) return;
-
-    const compactLandscape = window.matchMedia(
-      '(max-width: 920px) and (orientation: landscape) and (max-height: 520px)'
-    );
-    let firstFrame = 0;
-    let secondFrame = 0;
-    const resetOuterScroll = () => {
-      // Android Chrome preserves the document scroll anchor across rotation.
-      // The landscape studio reflows into a compact grid, so that old anchor
-      // can otherwise land in the coach section with the video off-screen.
-      // Wait for the new layout, then reset only the OUTER page scroll; the
-      // virtual subtitle list keeps its own active-cue position and state.
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
-      firstFrame = window.requestAnimationFrame(() => {
-        secondFrame = window.requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-        });
-      });
-    };
-    compactLandscape.addEventListener('change', resetOuterScroll);
-    return () => {
-      compactLandscape.removeEventListener('change', resetOuterScroll);
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
-    };
-  }, [isActive]);
-
-  useEffect(() => {
-    let alive = true;
-    setVideo(null);
-    setLoadFailure(null);
-    void loadVideo(videoId)
-      .then((loaded) => {
-        if (!loaded) throw new Error(`Unknown video material: ${videoId}`);
-        if (alive) setVideo(loaded);
-      })
-      .catch((cause: unknown) => {
-        const failure = describeVideoLoadFailure(videoId, cause);
-        if (alive) {
-          reportError(failure.error);
-          setLoadFailure(failure);
-        }
-      });
-    return () => {
-      alive = false;
-    };
-  }, [videoId]);
+  useCompactLandscapeScrollReset(isActive);
 
   const cues = useMemo(() => video?.cues ?? [], [video]);
-  const resolvedResumePosition = useMemo(
-    () =>
-      video && resumePosition
-        ? resolveVideoResumePosition(
-            resumePosition,
-            cues,
-            video.mediaStartTime,
-            video.durationSeconds
-          )
-        : undefined,
-    [cues, resumePosition, video]
-  );
+  const resolvedResumePosition = useResolvedVideoResumePosition(video, resumePosition);
   const player = useCuePlayer(
     cues,
     video?.mediaStartTime ?? 0,
@@ -163,42 +82,15 @@ export function BilingualStudio({
   const activeCue = cues[player.activeCueIndex] ?? cues[0];
   const activeKeywords = useMemo(() => expandTerms(activeCue?.keywords ?? []), [activeCue]);
 
-  useEffect(() => {
-    if (isActive) return;
-    player.pause();
-    const latest = latestPositionRef.current;
-    if (latest && onPositionChange) onPositionChange(latest.videoId, latest.position);
-  }, [isActive, onPositionChange, player.pause]);
-
-  useEffect(() => {
-    if (!video || !activeCue || !onPositionChange) return;
-    const now = Date.now();
-    const last = lastPositionSaveRef.current;
-    const cueChanged = last.cueId !== activeCue.id;
-    const enoughTimePassed = now - last.at >= 500;
-    const position: VideoResumePosition = {
-      cueId: activeCue.id,
-      cueIndex: player.activeCueIndex,
-      currentTime: player.currentTime,
-      updatedAt: new Date(now).toISOString(),
-    };
-    latestPositionRef.current = { videoId: video.id, position };
-    if (!cueChanged && !enoughTimePassed) return;
-
-    lastPositionSaveRef.current = {
-      at: now,
-      cueId: activeCue.id,
-    };
-    onPositionChange(video.id, position);
-  }, [activeCue, onPositionChange, player.activeCueIndex, player.currentTime, video]);
-
-  useEffect(
-    () => () => {
-      const latest = latestPositionRef.current;
-      if (latest && onPositionChange) onPositionChange(latest.videoId, latest.position);
-    },
-    [onPositionChange]
-  );
+  useVideoPositionPersistence({
+    isActive,
+    video,
+    activeCue,
+    activeCueIndex: player.activeCueIndex,
+    currentTime: player.currentTime,
+    pause: player.pause,
+    onPositionChange,
+  });
 
   const coachTarget: CoachTarget | null =
     video && activeCue
@@ -211,35 +103,6 @@ export function BilingualStudio({
           label: 'Shadowing sentence',
         }
       : null;
-  const subtitlePanel = video ? (
-    <SubtitlePanel
-      cues={cues}
-      activeCueIndex={player.activeCueIndex}
-      currentTime={player.currentTime}
-      mediaStartTime={video.mediaStartTime}
-      showZh={showZh}
-      studyOnly={studyOnly}
-      isActive={isActive}
-      onSelectCue={player.playCue}
-    />
-  ) : null;
-  const measuredSubtitlePanel = window.__CLIMB_ENGLISH_MOBILE_QA__ ? (
-    <Profiler
-      id="SubtitlePanel"
-      onRender={(_id, _phase, actualDuration) => {
-        window.__CLIMB_ENGLISH_MOBILE_QA__?.subtitleCommits.push({
-          at: performance.now(),
-          actualDuration,
-          activeCueIndex: player.activeCueIndex,
-        });
-      }}
-    >
-      {subtitlePanel}
-    </Profiler>
-  ) : (
-    subtitlePanel
-  );
-
   if (summaries.length === 0) {
     return (
       <main className="bilingual-shell">
@@ -265,175 +128,48 @@ export function BilingualStudio({
         />
       )}
 
-      {!video && loadFailure ? (
-        <section className="stage-card video-load-error" aria-label="Video load error">
-          <div role="alert">
-            <h2>字幕数据加载失败</h2>
-            <p>网络或素材分包暂时不可用。你的学习位置已经保留。</p>
-            <code data-testid="video-load-error-meta">
-              {loadFailure.materialId} · {loadFailure.chunkUrl}
-            </code>
-          </div>
-          <div className="video-load-actions">
-            <button
-              className="control-button primary"
-              type="button"
-              onClick={() => window.location.reload()}
-            >
-              重试
-            </button>
-            <button className="control-button" type="button" onClick={onReturnToLibrary}>
-              返回素材列表
-            </button>
-          </div>
-        </section>
-      ) : !video ? (
-        <section className="stage-card" aria-label="Loading video">
-          <p className="empty-library">正在加载字幕数据…</p>
-        </section>
-      ) : (
-        <section className="stage-card" aria-label="Bilingual subtitle studio">
-          <div className="clip-head">
-            <div>
-              <p className="eyebrow">{CATEGORY_NAMES[video.category]}</p>
-              <h2>{video.title}</h2>
-              <p className="clip-subtitle">
-                {video.channel} · {LEVEL_NAMES[video.level]} · {video.studyCueCount}/
-                {video.cueCount} 学习句
-              </p>
-            </div>
-            <a
-              className="review-badge source-link"
-              href={video.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ExternalLink size={13} aria-hidden="true" /> 原视频
-            </a>
-          </div>
+      <BilingualVideoStage
+        video={video}
+        loadFailure={loadFailure}
+        player={player}
+        showZh={showZh}
+        studyOnly={studyOnly}
+        isActive={isActive}
+        onToggleZh={() => setShowZh((value) => !value)}
+        onToggleStudyOnly={() => setStudyOnly((value) => !value)}
+        onReturnToLibrary={onReturnToLibrary}
+      />
 
-          <div className="video-frame bilingual-frame">
-            <CueMediaPlayer
-              key={video.id}
-              ref={player.mediaRef}
-              mediaUrl={video.mediaUrl}
-              youtubeId={video.youtubeId}
-              mediaStartTime={video.mediaStartTime}
-              previewMediaUrl={video.previewMediaUrl}
-              previewStartTime={video.previewStartTime}
-              previewDurationSeconds={video.previewDurationSeconds}
-              preferPreview={video.preferPreview}
-              sourceUrl={video.sourceUrl}
-              onTimeUpdate={player.handleTimeUpdate}
-              onPlayingChange={player.setIsPlaying}
-            />
-          </div>
-
-          <div className="video-controls bilingual-controls">
-            <div className="transport-controls">
-              <button
-                className="control-button transport-button"
-                type="button"
-                aria-label="上一句"
-                disabled={player.activeCueIndex <= 0}
-                onClick={() => player.playCue(player.activeCueIndex - 1)}
-              >
-                <ChevronLeft size={19} aria-hidden="true" />
-                <span>上一句</span>
-              </button>
-              <button
-                className="control-button primary play-toggle"
-                type="button"
-                onClick={() =>
-                  player.isPlaying ? player.pause() : player.playCue(player.activeCueIndex)
-                }
-                disabled={!video.mediaUrl && !video.youtubeId && !video.previewMediaUrl}
-              >
-                {player.isPlaying ? (
-                  <Pause size={18} aria-hidden="true" />
-                ) : (
-                  <Play size={18} aria-hidden="true" />
-                )}
-                {player.isPlaying ? '暂停' : '播放本句'}
-              </button>
-              <button
-                className="control-button transport-button"
-                type="button"
-                aria-label="下一句"
-                disabled={player.activeCueIndex >= cues.length - 1}
-                onClick={() => player.playCue(player.activeCueIndex + 1)}
-              >
-                <ChevronRight size={19} aria-hidden="true" />
-                <span>下一句</span>
-              </button>
-            </div>
-            <div className="learning-controls">
-              <button
-                className="control-button"
-                type="button"
-                onClick={player.playContinuous}
-                disabled={!video.mediaUrl && !video.youtubeId && !video.previewMediaUrl}
-              >
-                <ListMusic size={17} aria-hidden="true" />
-                连播
-              </button>
-              <button
-                className={`control-button ${player.loopOne ? 'active' : ''}`}
-                type="button"
-                onClick={() => player.setLoopOne(!player.loopOne)}
-                title="单句循环"
-              >
-                <Repeat size={16} aria-hidden="true" />
-                单句循环
-              </button>
-              <button
-                className={`control-button ${player.playbackRate !== 1 ? 'active' : ''}`}
-                type="button"
-                onClick={player.toggleRate}
-              >
-                <Gauge size={17} aria-hidden="true" />
-                {player.playbackRate === 1 ? '慢速' : `${player.playbackRate}x`}
-              </button>
-              <button
-                className={`control-button ${showZh ? 'active' : ''}`}
-                type="button"
-                onClick={() => setShowZh((value) => !value)}
-              >
-                <Languages size={16} aria-hidden="true" />
-                {showZh ? '隐藏中文' : '显示中文'}
-              </button>
-              <button
-                className={`control-button ${studyOnly ? 'active' : ''}`}
-                type="button"
-                onClick={() => setStudyOnly((value) => !value)}
-                title="只显示有学习价值的句子"
-              >
-                <ListFilter size={16} aria-hidden="true" />
-                只看学习句
-              </button>
-            </div>
-          </div>
-
-          {measuredSubtitlePanel}
-        </section>
-      )}
-
-      {coachTarget ? (
-        <>
-          {activeKeywords.length > 0 ? (
-            <div className="keyword-row stage-card compact" aria-label="Cue keywords">
-              {activeKeywords.map((keyword) => (
-                <span className="keyword-chip" key={keyword.term} title={keyword.example}>
-                  <strong>{keyword.term}</strong>
-                  {keyword.zh}
-                </span>
-              ))}
-            </div>
-          ) : null}
-          <SpeakingCoach target={coachTarget} />
-        </>
-      ) : null}
+      <CoachPractice target={coachTarget} keywords={activeKeywords} />
     </main>
+  );
+}
+
+function initialVideoId(summaries: VideoSummary[]): string {
+  for (const category of CATEGORY_ORDER) {
+    const hit = summaries.find((entry) => entry.category === category);
+    if (hit) return hit.id;
+  }
+  return summaries[0]?.id ?? '';
+}
+
+function CoachPractice({ target, keywords }: { target: CoachTarget | null; keywords: Keyword[] }) {
+  if (!target) return null;
+
+  return (
+    <>
+      {keywords.length > 0 ? (
+        <div className="keyword-row stage-card compact" aria-label="Cue keywords">
+          {keywords.map((keyword) => (
+            <span className="keyword-chip" key={keyword.term} title={keyword.example}>
+              <strong>{keyword.term}</strong>
+              {keyword.zh}
+            </span>
+          ))}
+        </div>
+      ) : null}
+      <SpeakingCoach target={target} />
+    </>
   );
 }
 

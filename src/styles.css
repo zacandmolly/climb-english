@@ -1469,17 +1469,17 @@ button {
   white-space: nowrap;
 }
 
-.mastery-badge.m0 {
+.mastery-badge.mastery-new {
   background: var(--vermilion-soft);
   color: #712b13;
 }
 
-.mastery-badge.m1 {
+.mastery-badge.mastery-learning {
   background: #faeeda;
   color: #854f0b;
 }
 
-.mastery-badge.m2 {
+.mastery-badge.mastery-known {
   background: var(--teal-soft);
   color: var(--teal);
 }
@@ -3080,7 +3080,7 @@ button {
     gap: 0;
   }
 
-  .video-learning-mode .stage-card[aria-label='Bilingual subtitle studio'] {
+  .video-learning-mode .stage-card.bilingual-studio {
     display: grid;
     grid-template-columns: minmax(300px, 46vw) minmax(0, 1fr);
     grid-template-areas:
@@ -3090,7 +3090,7 @@ button {
     overflow: hidden;
   }
 
-  .video-learning-mode .stage-card[aria-label='Bilingual subtitle studio'] > .clip-head {
+  .video-learning-mode .stage-card.bilingual-studio > .clip-head {
     display: none;
   }
 
