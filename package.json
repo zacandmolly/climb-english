@@ -21,7 +21,7 @@
     "oxidize": "node scripts/oxidize-report.mjs",
     "errors:report": "node scripts/error-report.mjs",
     "lint": "eslint \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",
-    "lint:complexity": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:complexity": "eslint \"src/**/*.{ts,tsx}\" --max-warnings 0",
     "depcruise": "depcruise src --config .dependency-cruiser.js --output-type err",
     "knip": "knip",
     "deadcss": "node scripts/find-dead-css.mjs",

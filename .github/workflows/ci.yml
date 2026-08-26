@@ -193,12 +193,10 @@ jobs:
           retention-days: 7
 
   boundary-check:
-    name: Module boundary audit (R6, no-circular gate)
+    name: Source shape & module boundaries (R6, hard gate)
     runs-on: ubuntu-latest
-    # no-circular is now a hard gate (depcruise severity `error` + exit non-zero):
-    # the App.tsx split removed the one remaining cycle, so any new circular
-    # dependency fails CI. The ESLint complexity rules below stay warn-only
-    # (App.tsx and the generated data modules still exceed size thresholds).
+    # Both source shape and no-circular are hard gates. Large content payloads
+    # receive only a targeted max-lines exemption in eslint.config.js.
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -207,7 +205,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: ESLint complexity rules (warn)
+      - name: Enforce source complexity and size budgets
         run: npm run lint:complexity
       - name: dependency-cruiser circular check (error)
         run: npx depcruise src --config .dependency-cruiser.js --output-type err
@@ -215,18 +213,16 @@ jobs:
         if: always()
         run: |
           {
-            echo "> **boundary-check** — module-boundary audit (R6)."
-            echo "> \`npm run lint:complexity\` (complexity/max-lines/max-depth/max-params) is warn-only."
-            echo "> \`npx depcruise --output-type err\` (circular deps) is a hard gate after the App.tsx split:"
-            echo "> any new circular dependency fails the job and blocks the PR."
+            echo "> **boundary-check** — hard source-shape and module-boundary gate (R6)."
+            echo "> Complexity, handwritten file length, depth, arity, and circular dependencies"
+            echo "> all fail the job and block the PR."
           } >> "$GITHUB_STEP_SUMMARY"
 
   dead-code:
-    name: Dead code & dead CSS (R7, report-only)
+    name: Dead code & dead CSS (R7, hard gate)
     runs-on: ubuntu-latest
-    # Report-only by design: knip flags historical findings (unused lib exports
-    # and an unused type) and deadcss lists unused selectors. Advisory only
-    # until the cleanup PRs land — hence continue-on-error.
+    # Historical findings are classified or removed. Any new unexplained file,
+    # export, dependency, script, or CSS selector blocks the PR.
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -236,19 +232,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: knip (unused files/exports/deps/scripts)
-        continue-on-error: true
         run: npm run knip
-      - name: Dead CSS report (purgecss)
+      - name: Dead CSS gate (purgecss)
         if: always()
-        continue-on-error: true
         run: npm run deadcss
       - name: Note in summary
         if: always()
         run: |
           {
-            echo "> **dead-code** — report-only dead-code audit (R7)."
+            echo "> **dead-code** — hard dead-code and dead-CSS gate (R7)."
             echo "> \`npm run knip\` (unused files/exports/deps/scripts) and \`npm run deadcss\`"
-            echo "> (purgecss unused selectors). Advisory only; tighten after cleanup PRs."
+            echo "> (purgecss unused selectors) must both finish with zero findings."
           } >> "$GITHUB_STEP_SUMMARY"
 
   data-protect:
