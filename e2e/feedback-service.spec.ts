@@ -85,6 +85,7 @@ async function installDelayedAudioResumeProbe(page: Page): Promise<void> {
   await page.addInitScript(() => {
     const target = window as typeof window & {
       __releaseFirstAudioResume?: () => void;
+      __firstAudioResumeWaiting?: boolean;
     };
     const AudioContextConstructor = window.AudioContext;
     const originalResume = AudioContextConstructor.prototype.resume;
@@ -93,11 +94,14 @@ async function installDelayedAudioResumeProbe(page: Page): Promise<void> {
       releaseFirstResume = resolve;
     });
     let shouldDelay = true;
+    target.__firstAudioResumeWaiting = false;
 
     AudioContextConstructor.prototype.resume = async function resume() {
       if (shouldDelay) {
         shouldDelay = false;
+        target.__firstAudioResumeWaiting = true;
         await firstResumeGate;
+        target.__firstAudioResumeWaiting = false;
       }
       return originalResume.call(this);
     };
@@ -435,6 +439,15 @@ test('a delayed old recorder startup cannot stop or overwrite the next recording
   const cueButtons = page.locator('button.subtitle-card');
   await coach.getByRole('button', { name: '开始录音' }).click();
   await expect(coach.getByRole('button', { name: '连接麦克风' })).toBeDisabled();
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          (window as typeof window & { __firstAudioResumeWaiting?: boolean })
+            .__firstAudioResumeWaiting ?? false
+      )
+    )
+    .toBe(true);
 
   await cueButtons.nth(1).click();
   await expect(coach.getByRole('button', { name: '开始录音' })).toBeVisible();
