@@ -2,11 +2,11 @@ import { BookOpen, CalendarCheck, Download, Flame, Headphones, Target, User } fr
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BilingualStudio } from './components/BilingualStudio';
 import { COURSE_SUPERSEDED_BY_VIDEO, MaterialBar } from './components/MaterialBar';
-import { lessons } from './data/lessons';
 import { videoSummaries } from './data/videos';
 import type {
   DailySession,
   Keyword,
+  Lesson,
   LearningProgress,
   MainView,
   PracticeMode,
@@ -47,53 +47,79 @@ import { ListeningWorkspace, SentenceStrip, TodayFocusCard } from './views/Today
 import { VocabView } from './views/VocabView';
 
 const VALID_VIDEO_IDS = videoSummaries.map((video) => video.id);
+const DEFAULT_COURSE_ID = Object.keys(COURSE_SUPERSEDED_BY_VIDEO)[0] ?? '';
+const LESSON_RETRY_VIEW_KEY = 'climb-english-lesson-retry-view';
+
+type LessonLoadState =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'loaded'; lessons: Lesson[] }
+  | { status: 'failed' };
+
+type LessonRetryIntent = { requested: boolean; view: MainView };
 
 export function App() {
-  const courses = useMemo(() => buildCourses(lessons), []);
-  const initialLearningStateRef = useRef<{
-    progress: LearningProgress;
-    courseId: string;
-    sessionIndex: number;
-  } | null>(null);
-
-  if (!initialLearningStateRef.current) {
-    const migrated = migrateLegacyProgress(loadLearningProgress(), courses);
-    const course = courses.find((item) => item.id === migrated.activeCourseId) ?? courses[0];
-    initialLearningStateRef.current = {
-      progress: { ...migrated, activeCourseId: course?.id ?? null },
-      courseId: course?.id ?? '',
-      sessionIndex: getInitialSessionIndex(course?.sessions ?? [], migrated),
-    };
+  const initialLearningProgressRef = useRef<LearningProgress | null>(null);
+  if (!initialLearningProgressRef.current) {
+    initialLearningProgressRef.current = loadLearningProgress();
   }
+  const initialLearningProgress = initialLearningProgressRef.current;
+  const initialCourseId = inferInitialCourseId(initialLearningProgress);
 
   const initialVideoSessionRef = useRef<VideoSessionLoadResult | null>(null);
   if (!initialVideoSessionRef.current) {
     initialVideoSessionRef.current = loadVideoSession(VALID_VIDEO_IDS);
   }
   const initialVideoSession = initialVideoSessionRef.current;
-  const videoSessionStateRef = useRef<VideoSessionState>(initialVideoSession.state);
-
-  const [progress, setProgress] = useState<LearningProgress>(
-    initialLearningStateRef.current.progress
-  );
-  const [activeCourseId, setActiveCourseId] = useState(initialLearningStateRef.current.courseId);
-  const activeCourse = courses.find((item) => item.id === activeCourseId) ?? courses[0];
-  const dailySessions = activeCourse?.sessions ?? [];
-  const [activeSentenceIndex, setActiveSentenceIndex] = useState(0);
-  const [activeSessionIndex, setActiveSessionIndex] = useState(
-    initialLearningStateRef.current.sessionIndex
-  );
-  const [mode, setMode] = useState<PracticeMode>('sentence');
-  const [playRequestId, setPlayRequestId] = useState(0);
-  const [activeView, setActiveView] = useState<MainView>('today');
-  // 视频素材（卡拉OK工作台）：null = 课程素材模式。持久化的课程若已被
-  // 卡拉OK重切版取代，启动时直接进入取代它的视频素材。
-  const fallbackVideoId =
-    COURSE_SUPERSEDED_BY_VIDEO[initialLearningStateRef.current.courseId] ?? null;
+  const fallbackVideoId = COURSE_SUPERSEDED_BY_VIDEO[initialCourseId] ?? null;
   const initialVideoId =
     initialVideoSession.status === 'missing'
       ? fallbackVideoId
       : initialVideoSession.state.activeVideoId;
+  const videoSessionStateRef = useRef<VideoSessionState>(initialVideoSession.state);
+
+  const [lessonLoadState, setLessonLoadState] = useState<LessonLoadState>({ status: 'idle' });
+  const lessonLoadStartedRef = useRef(false);
+  const requestLessons = useCallback(() => {
+    if (lessonLoadStartedRef.current) return;
+    lessonLoadStartedRef.current = true;
+    setLessonLoadState({ status: 'loading' });
+    void import('./data/lessons').then(
+      ({ lessons }) => setLessonLoadState({ status: 'loaded', lessons }),
+      () => setLessonLoadState({ status: 'failed' })
+    );
+  }, []);
+
+  const lessons = lessonLoadState.status === 'loaded' ? lessonLoadState.lessons : null;
+  const courses = useMemo(() => (lessons ? buildCourses(lessons) : []), [lessons]);
+  const sourceSeconds = useMemo(
+    () =>
+      (lessons ?? []).reduce(
+        (total, lesson) => total + Math.max(0, lesson.endTime - lesson.startTime),
+        0
+      ),
+    [lessons]
+  );
+  const [learningReady, setLearningReady] = useState(false);
+  const learningInitializedRef = useRef(false);
+  const [progress, setProgress] = useState<LearningProgress>(initialLearningProgress);
+  const [activeCourseId, setActiveCourseId] = useState(initialCourseId);
+  const activeCourse = courses.find((item) => item.id === activeCourseId) ?? courses[0];
+  const dailySessions = activeCourse?.sessions ?? [];
+  const [activeSentenceIndex, setActiveSentenceIndex] = useState(0);
+  const [activeSessionIndex, setActiveSessionIndex] = useState(0);
+  const [mode, setMode] = useState<PracticeMode>('sentence');
+  const [playRequestId, setPlayRequestId] = useState(0);
+  const initialRetryIntentRef = useRef<LessonRetryIntent | null>(null);
+  if (!initialRetryIntentRef.current) {
+    initialRetryIntentRef.current = loadLessonRetryIntent();
+  }
+  const initialRetryIntent = initialRetryIntentRef.current;
+  const initialView = initialRetryIntent.view;
+  const [activeView, setActiveView] = useState<MainView>(initialView);
+  // 视频素材（卡拉OK工作台）：null = 课程素材模式。持久化的课程若已被
+  // 卡拉OK重切版取代，启动时直接进入取代它的视频素材。这个判断只读轻量
+  // 本地进度，不等待课程数据，因此视频首屏不会请求 lessons 分包。
   const [activeVideoId, setActiveVideoId] = useState<string | null>(initialVideoId);
   const activeVideo = useMemo(
     () =>
@@ -122,10 +148,33 @@ export function App() {
     () => Object.fromEntries(courses.map((course) => [course.id, course.name])),
     [courses]
   );
+  const courseRuntimeReady = lessonLoadState.status === 'loaded' && learningReady;
+  const retryLessons = useCallback(() => {
+    saveLessonRetryView(activeView);
+    window.location.reload();
+  }, [activeView]);
 
   useEffect(() => {
-    saveLearningProgress(progress);
-  }, [progress]);
+    if (learningInitializedRef.current || courses.length === 0) return;
+
+    const migrated = migrateLegacyProgress(initialLearningProgress, courses);
+    const course = courses.find((item) => item.id === migrated.activeCourseId) ?? courses[0];
+    const normalizedProgress = { ...migrated, activeCourseId: course?.id ?? null };
+    learningInitializedRef.current = true;
+    setProgress(normalizedProgress);
+    setActiveCourseId(course?.id ?? '');
+    setActiveSessionIndex(getInitialSessionIndex(course?.sessions ?? [], normalizedProgress));
+    setLearningReady(true);
+  }, [courses, initialLearningProgress]);
+
+  useEffect(() => {
+    if (initialRetryIntent.requested) clearLessonRetryView();
+    if (initialRetryIntent.requested || !activeVideoId) requestLessons();
+  }, [activeVideoId, initialRetryIntent, requestLessons]);
+
+  useEffect(() => {
+    if (learningReady) saveLearningProgress(progress);
+  }, [learningReady, progress]);
 
   useEffect(() => {
     const nextState = withActiveVideo(videoSessionStateRef.current, activeVideoId);
@@ -162,6 +211,7 @@ export function App() {
   };
 
   const switchView = (view: MainView) => {
+    if (view !== 'today' || !activeVideoId) requestLessons();
     setActiveView(view);
     window.scrollTo({ top: 0 });
   };
@@ -390,7 +440,9 @@ export function App() {
         <div className="topbar-stats">
           <span className="stat-chip">
             <Target size={15} aria-hidden="true" />
-            {completedSessionCount}/{dailySessions.length} 天
+            {courseRuntimeReady
+              ? `${completedSessionCount}/${dailySessions.length} 天`
+              : '视频模式'}
           </span>
           <span className="stat-chip streak">
             <Flame size={15} aria-hidden="true" />
@@ -404,7 +456,7 @@ export function App() {
       </header>
 
       <MaterialBar
-        courses={courses}
+        courses={courseRuntimeReady ? courses : []}
         activeCourseId={activeCourse?.id ?? ''}
         completedSessionIds={completedSessionIds}
         onSelectCourse={switchCourse}
@@ -442,19 +494,27 @@ export function App() {
       </nav>
 
       <main className="app-body">
-        <Sidebar
-          sessions={dailySessions}
-          activeSessionIndex={activeSessionIndex}
-          completedSessionIds={completedSessionIds}
-          completedSessionCount={completedSessionCount}
-          unlockedSessionIndex={unlockedSessionIndex}
-          streakDays={streakDays}
-          practiceDates={progress.practiceDates}
-          onStartDailySession={(session, index) => {
-            startDailySession(session, index);
-            setActiveView('today');
-          }}
-        />
+        {courseRuntimeReady ? (
+          <Sidebar
+            sessions={dailySessions}
+            activeSessionIndex={activeSessionIndex}
+            completedSessionIds={completedSessionIds}
+            completedSessionCount={completedSessionCount}
+            unlockedSessionIndex={unlockedSessionIndex}
+            streakDays={streakDays}
+            practiceDates={progress.practiceDates}
+            onStartDailySession={(session, index) => {
+              startDailySession(session, index);
+              setActiveView('today');
+            }}
+          />
+        ) : (
+          <CourseSidebarPlaceholder
+            status={lessonLoadState.status}
+            onRequest={requestLessons}
+            onRetry={retryLessons}
+          />
+        )}
 
         {activeVideo ? (
           <div
@@ -470,6 +530,7 @@ export function App() {
               resumePosition={videoSessionStateRef.current.positions[activeVideo.id]}
               onPositionChange={rememberVideoPosition}
               onReturnToLibrary={() => {
+                requestLessons();
                 setActiveVideoId(null);
                 setActiveView('library');
                 window.scrollTo({ top: 0 });
@@ -478,7 +539,15 @@ export function App() {
           </div>
         ) : null}
 
-        {activeView === 'today' && !activeVideo && lesson && activeSentence ? (
+        {!courseRuntimeReady && (activeView !== 'today' || !activeVideo) ? (
+          <LessonLoadStatus
+            status={lessonLoadState.status}
+            onRequest={requestLessons}
+            onRetry={retryLessons}
+          />
+        ) : null}
+
+        {courseRuntimeReady && activeView === 'today' && !activeVideo && lesson && activeSentence ? (
           <section className="main-pane" aria-label="今日练习">
             <TodayFocusCard
               session={dailySessions[activeSessionIndex] ?? dailySessions[0]}
@@ -519,7 +588,7 @@ export function App() {
           </section>
         ) : null}
 
-        {activeView === 'library' && activeCourse ? (
+        {courseRuntimeReady && activeView === 'library' && activeCourse ? (
           <LibraryView
             lessons={activeCourse.lessons}
             sessions={dailySessions}
@@ -549,7 +618,7 @@ export function App() {
           />
         ) : null}
 
-        {activeView === 'vocab' ? (
+        {courseRuntimeReady && activeView === 'vocab' ? (
           <VocabView
             vocab={progress.vocab}
             courseNameById={courseNameById}
@@ -558,9 +627,10 @@ export function App() {
           />
         ) : null}
 
-        {activeView === 'me' ? (
+        {courseRuntimeReady && activeView === 'me' ? (
           <MeView
             sessions={dailySessions}
+            sourceSeconds={sourceSeconds}
             courseCount={courses.length}
             totalSessionCount={totalSessionCount}
             totalCompletedCount={totalCompletedCount}
@@ -577,6 +647,123 @@ export function App() {
       </main>
     </div>
   );
+}
+
+function CourseSidebarPlaceholder({
+  status,
+  onRequest,
+  onRetry,
+}: {
+  status: LessonLoadState['status'];
+  onRequest: () => void;
+  onRetry: () => void;
+}) {
+  return (
+    <aside className="sidebar" aria-label="课程进度">
+      <section className="sidebar-card">
+        <div className="panel-heading">
+          <Target size={16} aria-hidden="true" />
+          <span>课程练习</span>
+        </div>
+        <p className="library-note">
+          {status === 'loading'
+            ? '正在按需加载课程数据…'
+            : status === 'failed'
+              ? '课程数据暂时不可用，视频练习不受影响。'
+              : '视频模式不会预载课程数据，需要时再加载。'}
+        </p>
+        {status === 'failed' ? (
+          <button className="control-button" type="button" onClick={onRetry}>
+            重试加载
+          </button>
+        ) : (
+          <button
+            className="control-button"
+            type="button"
+            disabled={status === 'loading'}
+            onClick={onRequest}
+          >
+            {status === 'loading' ? '加载中…' : '加载课程练习'}
+          </button>
+        )}
+      </section>
+    </aside>
+  );
+}
+
+function LessonLoadStatus({
+  status,
+  onRequest,
+  onRetry,
+}: {
+  status: LessonLoadState['status'];
+  onRequest: () => void;
+  onRetry: () => void;
+}) {
+  return (
+    <section className="main-pane empty-state" aria-label="课程数据状态">
+      {status === 'failed' ? (
+        <div role="alert">
+          <h2>课程数据加载失败</h2>
+          <p>网络或课程分包暂时不可用。已保存的学习和视频位置不会丢失。</p>
+          <button
+            className="control-button primary"
+            type="button"
+            onClick={onRetry}
+          >
+            重试加载
+          </button>
+        </div>
+      ) : status === 'loading' ? (
+        <p role="status">正在加载课程数据…</p>
+      ) : (
+        <div>
+          <p>课程数据尚未加载。</p>
+          <button className="control-button primary" type="button" onClick={onRequest}>
+            加载课程练习
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function inferInitialCourseId(progress: LearningProgress): string {
+  if (progress.activeCourseId) return progress.activeCourseId;
+  const matchingCourseId = Object.keys(COURSE_SUPERSEDED_BY_VIDEO).find((courseId) =>
+    progress.activeSessionId?.startsWith(`${courseId}-day-`)
+  );
+  return matchingCourseId ?? DEFAULT_COURSE_ID;
+}
+
+function loadLessonRetryIntent(): LessonRetryIntent {
+  if (typeof window === 'undefined') return { requested: false, view: 'today' };
+  try {
+    const value = window.sessionStorage.getItem(LESSON_RETRY_VIEW_KEY);
+    const view =
+      value === 'today' || value === 'library' || value === 'vocab' || value === 'me'
+        ? value
+        : 'today';
+    return { requested: value !== null, view };
+  } catch {
+    return { requested: false, view: 'today' };
+  }
+}
+
+function saveLessonRetryView(view: MainView): void {
+  try {
+    window.sessionStorage.setItem(LESSON_RETRY_VIEW_KEY, view);
+  } catch {
+    // A reload still returns to the video if session storage is unavailable.
+  }
+}
+
+function clearLessonRetryView(): void {
+  try {
+    window.sessionStorage.removeItem(LESSON_RETRY_VIEW_KEY);
+  } catch {
+    // Storage restrictions do not block course loading.
+  }
 }
 
 function ViewTabButton({

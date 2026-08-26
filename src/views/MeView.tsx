@@ -1,13 +1,13 @@
 import { BookOpen, Download, Flame, Trash2, Trophy, Upload } from 'lucide-react';
 import { useRef } from 'react';
 import { HEATMAP_DAYS, LISTENING_GOAL_MINUTES } from '../constants';
-import { lessons } from '../data/lessons';
 import { formatDuration } from '../lib/ui';
 import type { DailySession } from '../types';
 import { Heatmap } from './Sidebar';
 
 export function MeView({
   sessions,
+  sourceSeconds,
   courseCount,
   totalSessionCount,
   totalCompletedCount,
@@ -21,6 +21,7 @@ export function MeView({
   onReset,
 }: {
   sessions: DailySession[];
+  sourceSeconds: number;
   courseCount: number;
   totalSessionCount: number;
   totalCompletedCount: number;
@@ -35,10 +36,6 @@ export function MeView({
 }) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const plannedSeconds = LISTENING_GOAL_MINUTES * 60;
-  const sourceSeconds = lessons.reduce(
-    (total, lesson) => total + Math.max(0, lesson.endTime - lesson.startTime),
-    0,
-  );
 
   return (
     <section className="main-pane me-pane" aria-label="我的">
