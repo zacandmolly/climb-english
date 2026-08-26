@@ -36,7 +36,7 @@
 | R3 数据隔离 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts`（Bern）+ `lessons.manual.ts`（Innsbruck） | 生成与手写彻底隔离，CI `data-protect` 防覆盖 |
 | R4 AI review | `scripts/ai-review.mjs` + `scripts/lib/ai-review-prompt.mjs` + `.github/workflows/ai-review.yml` | DeepSeek 结构化 review，建议性非阻断 |
 | R5 E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 卡拉OK播放走查，CI 归档截图/录屏 |
-| R6 模块边界 | `src/App.tsx` 薄入口 + `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `.dependency-cruiser.js` + `lint:complexity` | 展示/状态/布局分离；no-circular 与手写 source-shape 均为硬门禁 |
+| R6 模块边界 | `src/App.tsx` 薄入口 + `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `.dependency-cruiser.js` + `lint:complexity` | 展示/状态/布局分离；no-circular、runtime 不反向依赖 UI、手写 source-shape 均为硬门禁 |
 | R7 死代码 | `knip` + `find-dead-css.mjs` | 零未解释 finding，硬门禁 |
 | R8 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs` + `scripts/experiments/lib/metrics.mjs` | 只读，不改 segment.mjs |
 | R9 端口守卫 | `scripts/port-guard.mjs` | dev 前探测 5173 |

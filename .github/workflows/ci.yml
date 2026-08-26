@@ -195,8 +195,8 @@ jobs:
   boundary-check:
     name: Source shape & module boundaries (R6, hard gate)
     runs-on: ubuntu-latest
-    # Both source shape and no-circular are hard gates. Large content payloads
-    # receive only a targeted max-lines exemption in eslint.config.js.
+    # Source shape, no-circular, and app-runtime layering are hard gates. Large
+    # content payloads receive only a targeted max-lines exemption.
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -207,15 +207,15 @@ jobs:
         run: npm ci
       - name: Enforce source complexity and size budgets
         run: npm run lint:complexity
-      - name: dependency-cruiser circular check (error)
+      - name: dependency-cruiser module-boundary checks
         run: npx depcruise src --config .dependency-cruiser.js --output-type err
       - name: Note in summary
         if: always()
         run: |
           {
             echo "> **boundary-check** — hard source-shape and module-boundary gate (R6)."
-            echo "> Complexity, handwritten file length, depth, arity, and circular dependencies"
-            echo "> all fail the job and block the PR."
+            echo "> Complexity, handwritten file length, depth, arity, circular dependencies,"
+            echo "> and app-runtime imports from presentation modules all fail the job."
           } >> "$GITHUB_STEP_SUMMARY"
 
   dead-code:

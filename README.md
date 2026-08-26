@@ -254,7 +254,7 @@ DEEPSEEK_API_KEY=sk-… npm run import:youtube -- "<YouTube 链接>" \
 **门禁策略**：
 
 - **align-check 用豁免清单**：历史上首批导入留下的 151 行 en/zh 漂移记录进 `scripts/alignment-baseline.json`，`--strict --baseline` 下**历史漂移不阻断、新漂移硬拦截**——既不让历史债卡死合入，又保证新素材不再引入对齐错位。
-- **source-shape / dead-code 已收紧**：手写 `src/` 的 complexity、max-lines、max-depth、max-params，dependency-cruiser、knip 和 deadcss 都是硬门禁。生成/手写内容数据只豁免 max-lines，并继续受素材 hash、对齐和 data-protect 门禁保护。
+- **source-shape / module boundary / dead-code 已收紧**：手写 `src/` 的 complexity、max-lines、max-depth、max-params，循环依赖、runtime 反向导入 UI、knip 和 deadcss 都是硬门禁。生成/手写内容数据只豁免 max-lines，并继续受素材 hash、对齐和 data-protect 门禁保护。
 - **bundle budget 防绕过**：从 Vite manifest 递归统计 initial 静态图，动态 lesson 与 Innsbruck 必须可达但不能混进入口；缺 entry、别名到入口文件或超预算都会让构建失败。
 
 ### 进度与路线图
