@@ -328,6 +328,9 @@ function requireApiBase() {
   if (endpoint.protocol !== 'https:') {
     throw new Error('FEEDBACK_API_BASE must use HTTPS.');
   }
+  if (endpoint.username || endpoint.password) {
+    throw new Error('FEEDBACK_API_BASE must not contain credentials.');
+  }
   const hostname = endpoint.hostname.replace(/\.+$/, '').toLowerCase();
   if (hostname === 'trycloudflare.com' || hostname.endsWith('.trycloudflare.com')) {
     throw new Error('FEEDBACK_API_BASE must not use an ephemeral trycloudflare hostname.');

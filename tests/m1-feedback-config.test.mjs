@@ -52,3 +52,20 @@ test('M1 feedback operations reject a trailing-dot trycloudflare hostname', () =
   assert.match(result.stderr, /must not use an ephemeral trycloudflare hostname/);
   assert.doesNotMatch(result.stdout, /M1 SSH:/);
 });
+
+test('M1 feedback operations reject credentials embedded in the endpoint URL', () => {
+  const result = spawnSync(process.execPath, ['scripts/m1-feedback-api.mjs', 'status'], {
+    cwd: new URL('..', import.meta.url),
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      FEEDBACK_API_BASE: 'https://operator:secret@feedback.example.com',
+      VITE_FEEDBACK_API_BASE: '',
+      M1_SSH_HOST: 'must-not-be-contacted',
+    },
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /must not contain credentials/);
+  assert.doesNotMatch(result.stdout, /M1 SSH:/);
+});
