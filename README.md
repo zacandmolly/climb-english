@@ -69,7 +69,8 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
                               │
                               ▼ （静态部署时，浏览器直连）
 ┌──────────────────── 远端反馈（可选）─────────────────────────────────────────────┐
-│ Cloudflare Worker（workers/，KV 限流）──> 常驻 M1 上的 API（持有密钥）            │
+│ 二选一稳定端点：Cloudflare Worker（直接调用 OpenAI + KV 限流）或 M1 Express API  │
+│ GitHub Pages 未配置稳定 VITE_FEEDBACK_API_BASE 时明确保持离线，不使用临时 tunnel │
 └────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -98,7 +99,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 视频数据 | `src/data/videos/` | 导入视频的 cue 数据（技巧教学 99 / Bern 智能重切 646 / Innsbruck 完整重切 2242）+ 懒加载注册表 + 发现队列 | ✅ |
 | 课程↔cue 对齐硬门禁 | `scripts/check-lesson-cue-alignment.mjs` + `scripts/lesson-cue-baseline.json`（R12 step4） | 课程句 vs cue deck 的 id 强校验：id 碰撞/时间戳精确匹配即阻断（当前 136 句 0 碰撞）；baseline 记录诚实的连续切片关系 | ✅ 有测试 |
 | 本地服务器 | `server/index.mjs` | dev/prod 双模式托管 + 口语反馈 API + 限流 + `POST /api/errors`（R10，仅 dev） | ✅ |
-| 前端报错收集 | `src/lib/errorReporter.ts`（R10）+ `scripts/error-report.mjs` | window.onerror/unhandledrejection → 本地 ring 缓冲 → `POST /api/errors`；`errors:report` 聚类 + DeepSeek 根因分析报告；**MVP 不做自动改码** | ✅ |
+| 前端报错收集 | `src/lib/errorReporter.ts`（R10）+ `scripts/error-report.mjs` | window.onerror/unhandledrejection → 本地 ring 缓冲；dev 默认 `POST /api/errors`，production 仅在显式配置 `VITE_ERROR_REPORT_ENDPOINT` 时发送；`errors:report` 聚类 + DeepSeek 根因分析报告；**MVP 不做自动改码** | ✅ |
 | 端口守卫 | `scripts/port-guard.mjs`（R9） | `npm run dev` 前探测 5173；本仓库残留提示可 kill、外部进程占用则阻断 | ✅ |
 | AI code review | `scripts/ai-review.mjs` + `scripts/lib/ai-review-prompt.mjs` + `.github/workflows/ai-review.yml`（R4） | DeepSeek 结构化 review（建议性非阻断）；空 key/失败不阻断 PR | ✅ |
 | 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs` + `experiments/lib/metrics.mjs`（R8） | 参数矩阵搜索（192 格，只读不改 segment.mjs）；最优 `maxGap=0.7/minWords=4/mergeGap=1.2/maxWords=22`（带自证偏置，仅供评估） | ✅ |
@@ -110,8 +111,8 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 视频素材门禁 | `scripts/check-video-pipeline.mjs` | 校验 cue/翻译/时间窗/注册表；每条素材强制有 Git 跟踪的 20 秒 H.264/AAC faststart 预览，本地完整 MP4 未部署时强制有 YouTube 备用源 | ✅ CI 硬门禁 |
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选导入 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern 课程，写入 `lessons.generated.ts` | ✅ 不再触碰手写 |
-| M1 运维 | `scripts/m1-feedback-api.mjs` | 远端 API 的密钥安装/状态/用量（SSH 到 M1） | ✅ |
-| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
+| M1 运维 | `scripts/m1-feedback-api.mjs` | 远端 API 的密钥安装/状态/用量（SSH 到 M1）；公共探测必须显式提供稳定 `FEEDBACK_API_BASE` | ✅ |
+| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 上直接调用 OpenAI + KV 限流；不是 M1 代理 | ✅ |
 | 回归测试 | `tests/` | translate 对齐 + segment 断句 + backfill 回填 + video pipeline（node --test） | ✅ |
 | E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 同时走查已部署本地 MP4 与 Git 预览→YouTube 预热接续的卡拉OK时间轴，CI 归档截图/录屏 | ✅ |
 
@@ -136,14 +137,15 @@ server/index.mjs → dist/（prod）或 vite（dev）→ 依赖 src/ 的 vite �
 
 **运行时学习流**：素材栏选课程 → `lessons.ts` → 课程/天/句子 → LocalVideoPlayer（`onTimeReport(currentTime + mediaStartTime)`，即把播放头换算回**统一 cue.startTime 绝对时间轴**）或 YouTubePlayer（句子时间即视频时间，加载期点击排队）→ 播放中上报播放头 → `sentenceIndexAtMediaTime`（内部委托 `cueAtTime`，句间停顿保持上一句）驱动练习稿高亮与钉顶滚动 → CoachPanel 按当前句给跟读目标。素材栏选视频 → BilingualStudio → CueMediaPlayer（本地 MP4 优先；缺失时自动切 YouTube 且补偿 `mediaStartTime`）→ useCuePlayer / `cueAtTime` 驱动相同的剪切与卡拉OK效果；单句播放从 `cue.startTime` 精确起播，切换媒体源时不加入运行时 pre-roll。
 
-**口语反馈流**：浏览器录音（WAV）→ `POST /api/speaking-feedback`（本地 Express 或 CF Worker）→ Whisper 转写 → DeepSeek/OpenAI 生成反馈 → 无 key 时降级为 demo 反馈（不失败）。
+**口语反馈流**：先探测 `/api/health`；仅当服务明确返回 `ok: true, ai: true` 时，才启动浏览器语音识别并把录音（WAV）`POST /api/speaking-feedback`（本地 Express 或 CF Worker）→ 转写/指标 → AI 反馈。公开 Pages 未配置稳定端点或探测失败时，会在录音前明确显示离线状态，不启动语音识别、不上传录音，只给录音回放与离线建议。
 
 **进度流**：练习状态 → localStorage（`climb-english-progress-v2`：completedSessionIds / vocab / practiceDates / activeCourseId）→ 「我的」页 JSON 导出/导入备份。
 
 ## 构建与部署
 
 - 本地：`npm run dev`（vite）/ `npm run preview`（prod）。
-- GitHub Pages：push 后 Actions 构建静态站，`VITE_BASE_PATH` 控制子路径；静态部署下录音反馈走 `VITE_FEEDBACK_API_BASE` 指向的 Worker。
+- GitHub Pages：成功的 main CI 后 Actions 构建静态站，`VITE_BASE_PATH` 控制子路径；当前公开版不配置反馈端点，明确离线。恢复在线反馈前必须把 `VITE_FEEDBACK_API_BASE` 指向经过健康检查的稳定 Worker 或 Express HTTPS 端点。
+- `npm run build` 会先执行 `check:runtime-config`：拒绝 HTTP、URL 内嵌凭据和临时 `trycloudflare.com` 端点，避免旧变量重新混入公开 bundle。
 - Worker：`npm run worker:deploy`（wrangler 配置含 KV 限流：日 300 / 时 90 / 单 IP 时 35 / 音频 10MB）。
 
 ### 移动端播放器的三层 QA 证据

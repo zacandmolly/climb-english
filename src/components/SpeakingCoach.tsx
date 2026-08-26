@@ -1,15 +1,12 @@
-import {
-  CircleStop,
-  Mic,
-  Send,
-  Sparkles,
-  Volume2,
-} from 'lucide-react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CircleStop, Mic, Send, Sparkles, Volume2 } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { LOW_INPUT_LEVEL } from '../constants';
+import { useFeedbackService } from '../hooks/useFeedbackService';
+import { encodeWav, formatBytes, getRecordingErrorMessage, mergeFloat32Arrays } from '../lib/audio';
+import { FEEDBACK_API_BASE, makeClientDemoFeedback } from '../lib/feedback';
+import { feedbackRequestUrl } from '../lib/runtimeServices';
 import type { Feedback, Keyword } from '../types';
-
-const LOW_INPUT_LEVEL = 0.01;
-const FEEDBACK_API_BASE = normalizeApiBaseUrl(import.meta.env.VITE_FEEDBACK_API_BASE);
+import { FeedbackServiceNotice } from './FeedbackServiceNotice';
 
 export type CoachTarget = {
   clipId: string;
@@ -63,6 +60,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
   const [isSending, setIsSending] = useState(false);
   const [speechTranscript, setSpeechTranscript] = useState('');
   const speechRecognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const uploadAttemptedBlobRef = useRef<Blob | null>(null);
   const finalSpeechTranscriptRef = useRef('');
   const interimSpeechTranscriptRef = useRef('');
   const mediaStreamRef = useRef<MediaStream | null>(null);
@@ -82,10 +80,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
   const selectedAudioInput = audioInputs.find((device) => device.deviceId === selectedAudioInputId);
   const displayedMicLevel = isRecording ? micLevel : recordedPeakLevel;
   const displayedMicPercent = Math.round(displayedMicLevel * 100);
-  const isStaticFeedbackMode = useMemo(
-    () => isStaticFeedbackHost() && !FEEDBACK_API_BASE,
-    [],
-  );
+  const { service: feedbackService, canUseAiFeedback, markUnavailable } = useFeedbackService();
 
   const refreshAudioInputs = useCallback(async () => {
     if (!navigator.mediaDevices?.enumerateDevices) return;
@@ -97,7 +92,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
       setSelectedAudioInputId((currentDeviceId) =>
         currentDeviceId && !inputs.some((device) => device.deviceId === currentDeviceId)
           ? ''
-          : currentDeviceId,
+          : currentDeviceId
       );
     } catch {
       setAudioInputs([]);
@@ -188,13 +183,19 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
 
   const startSpeechRecognition = () => {
     const SpeechRecognition =
-      (window as Window & typeof globalThis & {
-        SpeechRecognition?: SpeechRecognitionConstructor;
-        webkitSpeechRecognition?: SpeechRecognitionConstructor;
-      }).SpeechRecognition ??
-      (window as Window & typeof globalThis & {
-        webkitSpeechRecognition?: SpeechRecognitionConstructor;
-      }).webkitSpeechRecognition;
+      (
+        window as Window &
+          typeof globalThis & {
+            SpeechRecognition?: SpeechRecognitionConstructor;
+            webkitSpeechRecognition?: SpeechRecognitionConstructor;
+          }
+      ).SpeechRecognition ??
+      (
+        window as Window &
+          typeof globalThis & {
+            webkitSpeechRecognition?: SpeechRecognitionConstructor;
+          }
+      ).webkitSpeechRecognition;
 
     if (!SpeechRecognition) return;
 
@@ -216,7 +217,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
         }
         interimSpeechTranscriptRef.current = interim.trim();
         setSpeechTranscript(
-          `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+          `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim()
         );
       };
       recognition.onerror = () => {
@@ -267,6 +268,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
       setError(null);
       setFeedback(null);
       setRecordedBlob(null);
+      uploadAttemptedBlobRef.current = null;
       setRecordedBytes(0);
       setRecordingSeconds(0);
       setMicLevel(0);
@@ -309,7 +311,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
       setActiveInputLabel(audioTrack.label || selectedAudioInput?.label || '系统默认麦克风');
       void refreshAudioInputs();
       await startPcmRecorder(stream);
-      startSpeechRecognition();
+      if (canUseAiFeedback) startSpeechRecognition();
       recordingTimerRef.current = window.setInterval(() => {
         setRecordingSeconds((seconds) => seconds + 1);
       }, 1000);
@@ -330,14 +332,14 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
 
     const blob = encodeWav(
       mergeFloat32Arrays(pcmChunksRef.current, pcmSampleCountRef.current),
-      recordingSampleRateRef.current,
+      recordingSampleRateRef.current
     );
     const peakLevel = peakMicLevelRef.current;
     cleanupRecordingResources();
     setIsRecording(false);
     setRecordedPeakLevel(peakLevel);
     setSpeechTranscript(
-      `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+      `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim()
     );
 
     if (blob.size <= 44 || pcmSampleCountRef.current === 0) {
@@ -357,7 +359,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
     setError(
       peakLevel < LOW_INPUT_LEVEL
         ? `录音文件已生成，但当前输入「${activeInputLabel}」几乎没有检测到声音。请在上方换一个麦克风，或检查系统输入设备。`
-        : null,
+        : null
     );
   };
 
@@ -368,10 +370,19 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
     }
 
     setError(null);
-    setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
+    if (!canUseAiFeedback) {
+      setFeedback(
+        makeClientDemoFeedback({
+          targetSentence,
+          keywords: activeKeywords,
+          delivery:
+            uploadAttemptedBlobRef.current === recordedBlob ? 'remote-failed' : 'local-only',
+        })
+      );
+      return;
+    }
 
-    if (isStaticFeedbackMode) return;
-
+    setFeedback(null);
     setIsSending(true);
 
     try {
@@ -385,7 +396,8 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
       formData.append('recordedBytes', String(recordedBytes));
       formData.append('spokenText', speechTranscript);
 
-      const response = await fetch(`${FEEDBACK_API_BASE}/api/speaking-feedback`, {
+      uploadAttemptedBlobRef.current = recordedBlob;
+      const response = await fetch(feedbackRequestUrl(FEEDBACK_API_BASE), {
         method: 'POST',
         body: formData,
       });
@@ -399,9 +411,19 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
       if (!response.ok) {
         throw new Error(payload.error || 'Feedback request failed.');
       }
+      if (payload.mode !== 'ai') {
+        throw new Error('Feedback service did not return AI feedback.');
+      }
       setFeedback(payload);
     } catch {
-      setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
+      markUnavailable();
+      setFeedback(
+        makeClientDemoFeedback({
+          targetSentence,
+          keywords: activeKeywords,
+          delivery: 'remote-failed',
+        })
+      );
     } finally {
       setIsSending(false);
     }
@@ -414,6 +436,8 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
         <span>AI 教练</span>
         <span className="coach-hint">录一遍跟读，右侧实时给反馈</span>
       </div>
+
+      <FeedbackServiceNotice service={feedbackService} />
 
       <div className="coach-grid">
         <div className="coach-col">
@@ -445,7 +469,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
               onChange={(event) => {
                 setSelectedAudioInputId(event.target.value);
                 const nextDevice = audioInputs.find(
-                  (device) => device.deviceId === event.target.value,
+                  (device) => device.deviceId === event.target.value
                 );
                 setActiveInputLabel(nextDevice?.label || '系统默认麦克风');
               }}
@@ -483,7 +507,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
               title="Send recording for feedback"
             >
               <Send size={16} aria-hidden="true" />
-              {isSending ? '分析中' : isStaticFeedbackMode ? '离线反馈' : '反馈'}
+              {isSending ? '分析中' : canUseAiFeedback ? 'AI 反馈' : '离线反馈'}
             </button>
           </div>
 
@@ -492,8 +516,7 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
               <div>
                 <strong>{isRecording ? '正在录音' : '已录音'}</strong>
                 <span>
-                  {recordingSeconds}s
-                  {recordedBytes > 0 ? ` / ${formatBytes(recordedBytes)}` : ''}
+                  {recordingSeconds}s{recordedBytes > 0 ? ` / ${formatBytes(recordedBytes)}` : ''}
                 </span>
               </div>
               <div className="mic-meter" aria-hidden="true">
@@ -528,7 +551,9 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
         <div className="coach-col">
           {feedback ? (
             <section className="feedback-panel">
-              <div className="feedback-mode">{feedback.mode === 'demo' ? '离线反馈' : 'AI 反馈'}</div>
+              <div className="feedback-mode">
+                {feedback.mode === 'demo' ? '离线反馈' : 'AI 反馈'}
+              </div>
               <p className="feedback-transcript">{feedback.transcript}</p>
               <p>{feedback.closeness}</p>
               <div className="hit-list">
@@ -552,111 +577,15 @@ export function SpeakingCoach({ target }: { target: CoachTarget }) {
             </section>
           ) : (
             <section className="feedback-panel feedback-placeholder">
-              <p>还没有反馈。录一遍这句跟读，点「反馈」，这里会显示关键词命中、语速节奏和下一遍建议。</p>
+              <p>
+                {isSending
+                  ? '录音正在发送并等待 AI 反馈，请稍候。'
+                  : '还没有反馈。录一遍这句跟读，点「反馈」，这里会显示关键词命中、语速节奏和下一遍建议。'}
+              </p>
             </section>
           )}
         </div>
       </div>
     </aside>
   );
-}
-
-function isStaticFeedbackHost() {
-  if (typeof window === 'undefined') return false;
-  return window.location.hostname.endsWith('github.io');
-}
-
-function normalizeApiBaseUrl(value: unknown) {
-  if (typeof value !== 'string') return '';
-  const trimmed = value.trim();
-  if (!trimmed) return '';
-  return trimmed.replace(/\/+$/, '');
-}
-
-function makeClientDemoFeedback({
-  targetSentence,
-  keywords,
-}: {
-  targetSentence: string;
-  keywords: Keyword[];
-}): Feedback {
-  return {
-    mode: 'demo',
-    provider: 'client-demo',
-    transcript: '公开版已收到录音。当前 GitHub Pages 版本只提供录音回放和离线练习建议，AI 转写服务后续接入。',
-    keywordHits: keywords.map((keyword) => keyword.term).slice(0, 4),
-    closeness: '先听自己的回放：如果关键词清楚，就马上再录一遍；如果卡住，回到原句慢速跟读。',
-    audioNotes: ['当前是离线建议，不能判断语音、语调、语速或重音。'],
-    suggestions: ['把句子拆成两段说，再连起来。', '优先说清楚高亮的攀岩关键词。'],
-    naturalVersion: targetSentence,
-  };
-}
-
-function getRecordingErrorMessage(error: unknown) {
-  if (error instanceof DOMException) {
-    if (error.name === 'NotAllowedError' || error.name === 'SecurityError') {
-      return '浏览器没有麦克风权限。请点地址栏旁边的权限图标，允许 microphone，然后刷新页面再录。';
-    }
-
-    if (error.name === 'NotFoundError') {
-      return '没有找到可用麦克风。请检查系统输入设备后再试。';
-    }
-  }
-
-  return '麦克风不可用。请确认浏览器允许 microphone 权限，并使用最新版 Chrome 或 Edge。';
-}
-
-function mergeFloat32Arrays(chunks: Float32Array[], sampleCount: number) {
-  const samples = new Float32Array(sampleCount);
-  let offset = 0;
-
-  for (const chunk of chunks) {
-    samples.set(chunk, offset);
-    offset += chunk.length;
-  }
-
-  return samples;
-}
-
-function encodeWav(samples: Float32Array, sampleRate: number) {
-  const bytesPerSample = 2;
-  const channelCount = 1;
-  const dataSize = samples.length * bytesPerSample;
-  const buffer = new ArrayBuffer(44 + dataSize);
-  const view = new DataView(buffer);
-
-  writeAscii(view, 0, 'RIFF');
-  view.setUint32(4, 36 + dataSize, true);
-  writeAscii(view, 8, 'WAVE');
-  writeAscii(view, 12, 'fmt ');
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, channelCount, true);
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * channelCount * bytesPerSample, true);
-  view.setUint16(32, channelCount * bytesPerSample, true);
-  view.setUint16(34, 16, true);
-  writeAscii(view, 36, 'data');
-  view.setUint32(40, dataSize, true);
-
-  let offset = 44;
-  for (const sample of samples) {
-    const clamped = Math.max(-1, Math.min(1, sample));
-    view.setInt16(offset, clamped < 0 ? clamped * 0x8000 : clamped * 0x7fff, true);
-    offset += bytesPerSample;
-  }
-
-  return new Blob([view], { type: 'audio/wav' });
-}
-
-function writeAscii(view: DataView, offset: number, value: string) {
-  for (let index = 0; index < value.length; index += 1) {
-    view.setUint8(offset + index, value.charCodeAt(index));
-  }
-}
-
-function formatBytes(bytes: number) {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }

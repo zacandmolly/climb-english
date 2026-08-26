@@ -106,7 +106,7 @@
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern generated | ✅ |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端密钥安装/状态/用量 | ✅ |
-| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
+| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 上直接调用 OpenAI + KV 限流；不是 M1 代理 | ✅ |
 | 回归测试 | `tests/` | translate/segment/backfill/video pipeline（node --test） | ✅ |
 | E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 走查本地 MP4 与 Git 预览→YouTube 预热接续的卡拉OK时间轴 | ✅ |
 
@@ -191,7 +191,8 @@ discover-youtube.mjs → import-youtube.mjs
 浏览器录音（WAV）→ POST /api/speaking-feedback（本地 Express 或 CF Worker）
   → Whisper 转写（OpenAI）或 DeepSeek 直接教练（仅音频指标）
   → AI 生成反馈（keywordHits / closeness / audioNotes / suggestions / naturalVersion）
-  → 无 key 时降级为 demo 反馈（不失败）
+  → 前端仅在 /api/health 明确返回 ok:true + ai:true 后发送录音
+  → 未配置稳定端点、无 key 或探测失败时明确显示离线，只给本地建议
 ```
 
 ### 6.4 进度流
@@ -204,7 +205,8 @@ discover-youtube.mjs → import-youtube.mjs
 ### 6.5 报错流（R10，仅 dev）
 
 ```
-window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去重）→ POST /api/errors
+window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去重）
+  → dev 默认 POST /api/errors；production 仅显式配置 VITE_ERROR_REPORT_ENDPOINT 后发送
   → 追加到 docs/error-inbox.jsonl → npm run errors:report → 聚类 + DeepSeek 根因 → docs/error-report-DATE.md
 ```
 

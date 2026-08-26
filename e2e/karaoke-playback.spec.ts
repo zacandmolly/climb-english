@@ -253,7 +253,7 @@ test('Innsbruck plays the Git preview while YouTube prewarms, then keeps the cue
 
   const media = page.locator('.cue-media-surface');
   await expect(media).toHaveAttribute('data-media-source', 'preview');
-  await expect(page.getByRole('status')).toContainText('20 秒快速预览');
+  await expect(page.locator('.media-source-note[role="status"]')).toContainText('20 秒快速预览');
   await page.waitForFunction(() => {
     const preview = document.querySelector<HTMLVideoElement>('video.preview-video');
     return Boolean(preview && Number.isFinite(preview.duration) && preview.readyState >= 2);

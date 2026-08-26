@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/port-guard.mjs && node server/index.mjs",
-    "build": "tsc -b && vite build",
+    "build": "npm run check:runtime-config && tsc -b && vite build",
     "build:lessons": "node scripts/build-official-lessons.mjs",
     "import:youtube": "node scripts/import-youtube.mjs",
     "generate:previews": "node scripts/generate-video-previews.mjs",
@@ -16,6 +16,7 @@
     "check:words": "node scripts/check-word-times.mjs",
     "backfill:words": "node scripts/backfill-word-times.mjs",
     "check:lesson-alignment": "node scripts/check-lesson-cue-alignment.mjs --strict --baseline scripts/lesson-cue-baseline.json",
+    "check:runtime-config": "node scripts/check-public-runtime-config.mjs",
     "oxidize": "node scripts/oxidize-report.mjs",
     "errors:report": "node scripts/error-report.mjs",
     "lint": "eslint \"scripts/**/*.mjs\" \"tests/**/*.mjs\"",

@@ -1,9 +1,12 @@
 import { CircleStop, Mic, Send, Sparkles, Star, Volume2 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { FeedbackServiceNotice } from '../components/FeedbackServiceNotice';
 import { LOW_INPUT_LEVEL } from '../constants';
+import { useFeedbackService } from '../hooks/useFeedbackService';
 import { encodeWav, formatBytes, getRecordingErrorMessage, mergeFloat32Arrays } from '../lib/audio';
-import { FEEDBACK_API_BASE, isStaticFeedbackHost, makeClientDemoFeedback } from '../lib/feedback';
+import { FEEDBACK_API_BASE, makeClientDemoFeedback } from '../lib/feedback';
 import { fullTranscript, segmentPatterns, uniqueKeywords } from '../lib/lesson';
+import { feedbackRequestUrl } from '../lib/runtimeServices';
 import type { Feedback, Keyword, Lesson, PracticeMode, PracticeSentence } from '../types';
 
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
@@ -61,6 +64,7 @@ export function CoachPanel({
   const [isSending, setIsSending] = useState(false);
   const [speechTranscript, setSpeechTranscript] = useState('');
   const speechRecognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const uploadAttemptedBlobRef = useRef<Blob | null>(null);
   const finalSpeechTranscriptRef = useRef('');
   const interimSpeechTranscriptRef = useRef('');
   const mediaStreamRef = useRef<MediaStream | null>(null);
@@ -75,15 +79,15 @@ export function CoachPanel({
   const peakMicLevelRef = useRef(0);
   const activeKeywords = mode === 'segment' ? uniqueKeywords(lesson.sentences) : sentence.keywords;
   const targetSentence = mode === 'segment' ? fullTranscript(lesson) : sentence.transcript;
-  const prompt = mode === 'segment' ? 'Listen to the whole passage, then retell the action in your own words.' : sentence.speakingPrompt;
+  const prompt =
+    mode === 'segment'
+      ? 'Listen to the whole passage, then retell the action in your own words.'
+      : sentence.speakingPrompt;
   const patterns = mode === 'segment' ? segmentPatterns(lesson) : sentence.sentencePatterns;
   const selectedAudioInput = audioInputs.find((device) => device.deviceId === selectedAudioInputId);
   const displayedMicLevel = isRecording ? micLevel : recordedPeakLevel;
   const displayedMicPercent = Math.round(displayedMicLevel * 100);
-  const isStaticFeedbackMode = useMemo(
-    () => isStaticFeedbackHost() && !FEEDBACK_API_BASE,
-    [],
-  );
+  const { service: feedbackService, canUseAiFeedback, markUnavailable } = useFeedbackService();
 
   const refreshAudioInputs = useCallback(async () => {
     if (!navigator.mediaDevices?.enumerateDevices) return;
@@ -95,7 +99,7 @@ export function CoachPanel({
       setSelectedAudioInputId((currentDeviceId) =>
         currentDeviceId && !inputs.some((device) => device.deviceId === currentDeviceId)
           ? ''
-          : currentDeviceId,
+          : currentDeviceId
       );
     } catch {
       setAudioInputs([]);
@@ -186,13 +190,19 @@ export function CoachPanel({
 
   const startSpeechRecognition = () => {
     const SpeechRecognition =
-      (window as Window & typeof globalThis & {
-        SpeechRecognition?: SpeechRecognitionConstructor;
-        webkitSpeechRecognition?: SpeechRecognitionConstructor;
-      }).SpeechRecognition ??
-      (window as Window & typeof globalThis & {
-        webkitSpeechRecognition?: SpeechRecognitionConstructor;
-      }).webkitSpeechRecognition;
+      (
+        window as Window &
+          typeof globalThis & {
+            SpeechRecognition?: SpeechRecognitionConstructor;
+            webkitSpeechRecognition?: SpeechRecognitionConstructor;
+          }
+      ).SpeechRecognition ??
+      (
+        window as Window &
+          typeof globalThis & {
+            webkitSpeechRecognition?: SpeechRecognitionConstructor;
+          }
+      ).webkitSpeechRecognition;
 
     if (!SpeechRecognition) return;
 
@@ -214,7 +224,7 @@ export function CoachPanel({
         }
         interimSpeechTranscriptRef.current = interim.trim();
         setSpeechTranscript(
-          `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+          `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim()
         );
       };
       recognition.onerror = () => {
@@ -264,6 +274,7 @@ export function CoachPanel({
       setError(null);
       setFeedback(null);
       setRecordedBlob(null);
+      uploadAttemptedBlobRef.current = null;
       setRecordedBytes(0);
       setRecordingSeconds(0);
       setMicLevel(0);
@@ -306,7 +317,7 @@ export function CoachPanel({
       setActiveInputLabel(audioTrack.label || selectedAudioInput?.label || '系统默认麦克风');
       void refreshAudioInputs();
       await startPcmRecorder(stream);
-      startSpeechRecognition();
+      if (canUseAiFeedback) startSpeechRecognition();
       recordingTimerRef.current = window.setInterval(() => {
         setRecordingSeconds((seconds) => seconds + 1);
       }, 1000);
@@ -327,14 +338,14 @@ export function CoachPanel({
 
     const blob = encodeWav(
       mergeFloat32Arrays(pcmChunksRef.current, pcmSampleCountRef.current),
-      recordingSampleRateRef.current,
+      recordingSampleRateRef.current
     );
     const peakLevel = peakMicLevelRef.current;
     cleanupRecordingResources();
     setIsRecording(false);
     setRecordedPeakLevel(peakLevel);
     setSpeechTranscript(
-      `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim(),
+      `${finalSpeechTranscriptRef.current} ${interimSpeechTranscriptRef.current}`.trim()
     );
 
     if (blob.size <= 44 || pcmSampleCountRef.current === 0) {
@@ -354,7 +365,7 @@ export function CoachPanel({
     setError(
       peakLevel < LOW_INPUT_LEVEL
         ? `录音文件已生成，但当前输入「${activeInputLabel}」几乎没有检测到声音。请在上方换一个麦克风，或检查系统输入设备。`
-        : null,
+        : null
     );
   };
 
@@ -365,10 +376,19 @@ export function CoachPanel({
     }
 
     setError(null);
-    setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
+    if (!canUseAiFeedback) {
+      setFeedback(
+        makeClientDemoFeedback({
+          targetSentence,
+          keywords: activeKeywords,
+          delivery:
+            uploadAttemptedBlobRef.current === recordedBlob ? 'remote-failed' : 'local-only',
+        })
+      );
+      return;
+    }
 
-    if (isStaticFeedbackMode) return;
-
+    setFeedback(null);
     setIsSending(true);
 
     try {
@@ -382,7 +402,8 @@ export function CoachPanel({
       formData.append('recordedBytes', String(recordedBytes));
       formData.append('spokenText', speechTranscript);
 
-      const response = await fetch(`${FEEDBACK_API_BASE}/api/speaking-feedback`, {
+      uploadAttemptedBlobRef.current = recordedBlob;
+      const response = await fetch(feedbackRequestUrl(FEEDBACK_API_BASE), {
         method: 'POST',
         body: formData,
       });
@@ -396,9 +417,19 @@ export function CoachPanel({
       if (!response.ok) {
         throw new Error(payload.error || 'Feedback request failed.');
       }
+      if (payload.mode !== 'ai') {
+        throw new Error('Feedback service did not return AI feedback.');
+      }
       setFeedback(payload);
     } catch {
-      setFeedback(makeClientDemoFeedback({ targetSentence, keywords: activeKeywords }));
+      markUnavailable();
+      setFeedback(
+        makeClientDemoFeedback({
+          targetSentence,
+          keywords: activeKeywords,
+          delivery: 'remote-failed',
+        })
+      );
     } finally {
       setIsSending(false);
     }
@@ -411,10 +442,10 @@ export function CoachPanel({
         <span>跟读这一句</span>
       </div>
 
+      <FeedbackServiceNotice service={feedbackService} />
+
       <section className="target-panel">
-        <p className="target-label">
-          {mode === 'segment' ? '复述整段' : 'Shadowing 目标句'}
-        </p>
+        <p className="target-label">{mode === 'segment' ? '复述整段' : 'Shadowing 目标句'}</p>
         <p className={mode === 'segment' ? 'target-sentence compact' : 'target-sentence'}>
           {targetSentence}
         </p>
@@ -436,11 +467,7 @@ export function CoachPanel({
               >
                 <span className="keyword-chip-term">{keyword.term}</span>
                 <span className="keyword-chip-zh">{keyword.zh}</span>
-                <Star
-                  size={13}
-                  aria-hidden="true"
-                  className={collected ? 'star filled' : 'star'}
-                />
+                <Star size={13} aria-hidden="true" className={collected ? 'star filled' : 'star'} />
               </button>
             );
           })}
@@ -464,9 +491,7 @@ export function CoachPanel({
           disabled={isRecording}
           onChange={(event) => {
             setSelectedAudioInputId(event.target.value);
-            const nextDevice = audioInputs.find(
-              (device) => device.deviceId === event.target.value,
-            );
+            const nextDevice = audioInputs.find((device) => device.deviceId === event.target.value);
             setActiveInputLabel(nextDevice?.label || '系统默认麦克风');
           }}
         >
@@ -503,7 +528,7 @@ export function CoachPanel({
           title="发送录音获取反馈"
         >
           <Send size={15} aria-hidden="true" />
-          {isSending ? '分析中' : isStaticFeedbackMode ? '离线反馈' : '反馈'}
+          {isSending ? '分析中' : canUseAiFeedback ? 'AI 反馈' : '离线反馈'}
         </button>
       </div>
 
@@ -512,8 +537,7 @@ export function CoachPanel({
           <div>
             <strong>{isRecording ? '正在录音' : '已录音'}</strong>
             <span>
-              {recordingSeconds}s
-              {recordedBytes > 0 ? ` / ${formatBytes(recordedBytes)}` : ''}
+              {recordingSeconds}s{recordedBytes > 0 ? ` / ${formatBytes(recordedBytes)}` : ''}
             </span>
           </div>
           <div className="mic-meter" aria-hidden="true">
@@ -529,9 +553,7 @@ export function CoachPanel({
         </div>
       ) : null}
 
-      {speechTranscript ? (
-        <p className="speech-transcript">识别到：{speechTranscript}</p>
-      ) : null}
+      {speechTranscript ? <p className="speech-transcript">识别到：{speechTranscript}</p> : null}
 
       {audioUrl ? (
         <div className="playback-panel">
@@ -570,7 +592,9 @@ export function CoachPanel({
         </section>
       ) : null}
 
-      <p className="coach-day-note">当前练习：Day {currentDay} · {lesson.sourceLabel}</p>
+      <p className="coach-day-note">
+        当前练习：Day {currentDay} · {lesson.sourceLabel}
+      </p>
     </section>
   );
 }
