@@ -375,3 +375,33 @@ test('portrait and landscape preserve playback state with unobstructed 44px cont
   );
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
 });
+
+test('mobile tab round trip keeps the active virtual cue mounted', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === 'chromium', 'mobile browser projects only');
+  await page.setViewportSize(
+    testInfo.project.name === 'mobile-webkit'
+      ? { width: 390, height: 844 }
+      : { width: 412, height: 915 }
+  );
+  await installFaithfulFakeYoutube(page);
+  await openInnsbruck(page);
+
+  const firstCue = page.locator('.subtitle-card[data-cue-index="0"]');
+  await firstCue.click();
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '0');
+
+  const preserver = page.locator('.video-studio-preserver');
+  await preserver.evaluate((element) => element.setAttribute('data-mobile-instance', 'same'));
+  await page.getByRole('button', { name: '听力', exact: true }).click();
+  await expect(preserver).toBeHidden();
+  await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
+
+  await page.getByRole('button', { name: '今天', exact: true }).click();
+  await expect(preserver).toBeVisible();
+  await expect(preserver).toHaveAttribute('data-mobile-instance', 'same');
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '0');
+  await expect(page.locator('.subtitle-card.active')).toBeVisible();
+  await expect
+    .poll(async () => (await layoutHealth(page)).activeOffsetFromListTop)
+    .toBeLessThan(24);
+});

@@ -12,7 +12,9 @@ async function selectVideo(page: Page, title: string): Promise<void> {
 }
 
 async function expectVirtualizedCueDeck(page: Page, total: number): Promise<void> {
-  await expect(page.locator('.subtitle-panel .panel-heading')).toContainText(`${total}/${total} 句`);
+  await expect(page.locator('.subtitle-panel .panel-heading')).toContainText(
+    `${total}/${total} 句`
+  );
   await expect.poll(() => page.locator('.subtitle-card').count()).toBeGreaterThan(0);
   expect(await page.locator('.subtitle-card').count()).toBeLessThanOrEqual(40);
 }
@@ -81,12 +83,12 @@ test('video-first startup defers lessons until a course action and preserves the
   await page.getByRole('button', { name: '今天' }).click();
   await expect(studio).toBeVisible();
   await expect(studio).toHaveAttribute('data-instance-probe', 'preserved');
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
+  await expect(page.locator('.subtitle-card.active')).toBeVisible();
   expect(pageErrors).toEqual([]);
 });
 
-test('failed on-demand lesson load reloads into the requested course view', async ({
-  page,
-}) => {
+test('failed on-demand lesson load reloads into the requested course view', async ({ page }) => {
   let lessonChunkRequests = 0;
   const pageErrors: string[] = [];
   page.on('pageerror', (error) => pageErrors.push(error.message));
