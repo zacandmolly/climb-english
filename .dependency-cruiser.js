@@ -13,10 +13,20 @@ export default {
     {
       name: 'no-circular',
       severity: 'error',
-      comment:
-        'Circular dependency detected. Hard gate after the App.tsx split.',
+      comment: 'Circular dependency detected. Hard gate after the App.tsx split.',
       from: {},
       to: { circular: true },
+    },
+    {
+      name: 'app-runtime-does-not-import-ui',
+      severity: 'error',
+      comment: 'State, loading, and backup modules must remain independent from UI modules.',
+      from: {
+        path: '^src/app/(?:useAppRuntime|lessonLoading|progressBackup)\\.ts$',
+      },
+      to: {
+        path: '^src/(?:components|views|players)/',
+      },
     },
   ],
   options: {

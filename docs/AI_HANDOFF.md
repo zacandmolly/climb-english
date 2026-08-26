@@ -36,7 +36,7 @@
 | R3 数据隔离 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts`（Bern）+ `lessons.manual.ts`（Innsbruck） | 生成与手写彻底隔离，CI `data-protect` 防覆盖 |
 | R4 AI review | `scripts/ai-review.mjs` + `scripts/lib/ai-review-prompt.mjs` + `.github/workflows/ai-review.yml` | DeepSeek 结构化 review，建议性非阻断 |
 | R5 E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 卡拉OK播放走查，CI 归档截图/录屏 |
-| R6 模块边界 | `src/App.tsx` 拆分 + `.dependency-cruiser.js` + `lint:complexity` | no-circular 与手写 source-shape 均为硬门禁 |
+| R6 模块边界 | `src/App.tsx` 薄入口 + `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `.dependency-cruiser.js` + `lint:complexity` | 展示/状态/布局分离；no-circular 与手写 source-shape 均为硬门禁 |
 | R7 死代码 | `knip` + `find-dead-css.mjs` | 零未解释 finding，硬门禁 |
 | R8 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs` + `scripts/experiments/lib/metrics.mjs` | 只读，不改 segment.mjs |
 | R9 端口守卫 | `scripts/port-guard.mjs` | dev 前探测 5173 |
@@ -75,7 +75,7 @@
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root；安装 R10 报错收集后才渲染 | ✅ |
-| 应用外壳 | `src/App.tsx`（~544 行） | 4 tab（今天/听力/生词本/我的）切换、全局状态、拼装素材栏/播放器/工作台（纯编排） | ✅ 已拆分 |
+| 应用外壳 | `src/App.tsx`（6 行入口）+ `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `src/app/AppChrome.tsx` | 壳层渲染、runtime 状态/动作、Chrome/slot 布局分离；课程按需加载且视频实例跨 tab 保留 | ✅ 职责拆分并硬门禁 |
 | 素材栏（唯一素材入口） | `src/components/MaterialBar.tsx` | 课程+视频统一选择；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射 | ✅ |
 | 卡拉OK工作台 | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | cue 级卡拉OK跟随、单句循环、学习句过滤；reset 只依赖稳定素材 id | ✅ |
 | 卡拉OK媒体面 | `src/players/CueMediaPlayer.tsx` | 本地 MP4 / Git 20 秒预览 / YouTube 三层媒体统一暴露片段相对时钟；预览播放时 iframe 隐藏预热接续点 | ✅ 三层统一 |

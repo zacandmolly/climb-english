@@ -54,8 +54,8 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
                               ▼
 ┌──────────────────── 页面端（在线 · src/ + server/，只读消费数据）────────────────┐
 │ 浏览器 SPA（src/）                                                               │
-│   main.tsx（安装 R10 报错收集）→ App.tsx（4 tab：今天/听力/生词本/我的，          │
-│     视频素材内嵌今天视图；已拆分 views/players/progress/lib/courses/constants）   │
+│   main.tsx（安装 R10 报错收集）→ App.tsx（薄入口）→ app/AppShell +              │
+│     app/useAppRuntime（4 tab；视频首屏不预载课程，播放器实例跨 tab 保留）        │
 │     ├─ 素材栏（唯一素材入口）：课程素材（lessons.ts）｜视频素材（videos/*）         │
 │     ├─ 课程流程（今天/听力视图）：视频播放器（本地 MP4 / YouTube IFrame）          │
 │     │   + 整段精听卡拉OK跟随（统一 cueAtTime 时间轴） + CoachPanel 录音跟读        │
@@ -79,7 +79,7 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root，仅此一处 render | ✅ |
-| **应用外壳（视图路由/骨架）** | `src/App.tsx`（~540 行） | 4 tab（今天/听力/生词本/我的，视频素材内嵌今天视图）切换、全局状态（activeView/activeCourse/activeVideo）、把素材栏/播放器/工作台拼装起来（纯编排） | ✅ 已拆分 |
+| **应用外壳（视图路由/骨架）** | `src/App.tsx`（6 行入口）+ `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `src/app/AppChrome.tsx` | 壳层只渲染；runtime 管状态/动作；Chrome 与各视图 slot 管布局。课程数据按用户动作加载，视频工作台跨 tab 保持同一实例 | ✅ 职责拆分并受 source-shape 硬门禁 |
 | **素材栏（唯一素材入口）** | `src/components/MaterialBar.tsx` | 课程+卡拉OK视频统一选择入口；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射（课程被同源重切版取代时隐藏入口）；导入管线更新素材后自动呈现 | ✅ 已独立 |
 | **卡拉OK工作台** | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | 视频素材的 cue 级卡拉OK跟随、单句循环、学习句过滤、SpeakingCoach 跟读；reset key 使用稳定素材 id | ✅ 已独立 |
 | **卡拉OK媒体面** | `src/players/CueMediaPlayer.tsx` | 已部署 MP4 直播；大文件/404 先播 Git 20 秒预览并后台 cue YouTube 接续点，以 `previewStartOffset + previewTime = youtubeTime - mediaStartTime` 保持统一 cue 时钟 | ✅ 本地/预览/备用源统一 |
@@ -119,10 +119,11 @@ npm test             # node --test tests/*.test.mjs（管线回归测试）
 ## 依赖关系（谁 import 谁）
 
 ```
-main.tsx（安装 R10 报错收集）→ App.tsx → components/{MaterialBar, BilingualStudio, SpeakingCoach} + data/lessons.ts → types.ts
-App.tsx → MaterialBar（唯一素材入口，选课程/选视频）
-App.tsx → BilingualStudio（素材栏选视频素材时，今天视图内渲染）→ players/CueMediaPlayer.tsx + hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
-App.tsx → SpeakingCoach（课程流程的 CoachPanel 也复用同一组件）
+main.tsx（安装 R10 报错收集）→ App.tsx（薄入口）→ app/{useAppRuntime,AppShell}
+useAppRuntime → data/videos/*（轻量注册表）；用户请求课程后才 dynamic import data/lessons.ts
+AppShell → MaterialBar（唯一素材入口）+ BilingualStudio（跨 tab 保持实例）+ views/*
+BilingualStudio → players/CueMediaPlayer.tsx + hooks/useCuePlayer.ts + data/videos/* + SpeakingCoach.tsx
+views/CoachPanel.tsx → SpeakingCoach（课程/视频展示复用同一录音 runtime）
 时间轴统一：hooks/useCuePlayer.ts → src/lib/cue.ts（cueAtTime）；src/lib/lesson.ts → src/lib/cue.ts（sentenceIndexAtMediaTime 委托 cueAtTime）
 src/lib/cue.ts → types.ts（统一 Cue 基类型；PracticeSentence/SubtitleCue 归一为 Cue）
 scripts/* 之间：import-youtube → lib/{timed-words, segment, translate, climbing-terms}

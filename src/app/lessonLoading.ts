@@ -1,4 +1,4 @@
-import { COURSE_SUPERSEDED_BY_VIDEO } from '../components/MaterialBar';
+import { COURSE_SUPERSEDED_BY_VIDEO } from '../constants';
 import type { LearningProgress, Lesson, MainView } from '../types';
 
 const DEFAULT_COURSE_ID = Object.keys(COURSE_SUPERSEDED_BY_VIDEO)[0] ?? '';

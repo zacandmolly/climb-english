@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { COURSE_SUPERSEDED_BY_VIDEO } from '../components/MaterialBar';
+import { COURSE_SUPERSEDED_BY_VIDEO } from '../constants';
 import { buildCourses } from '../courses';
 import { videoSummaries } from '../data/videos';
 import {
@@ -35,7 +35,6 @@ import type {
   PracticeMode,
   VocabMastery,
 } from '../types';
-import type { AppShellProps } from './AppShell';
 import { createProgressBackupActions } from './progressBackup';
 import {
   clearLessonRetryView,
@@ -47,7 +46,7 @@ import {
 
 const VALID_VIDEO_IDS = videoSummaries.map((video) => video.id);
 
-export function useAppRuntime(): AppShellProps {
+export function useAppRuntime() {
   const initialLearningProgress = useInitialValue(loadLearningProgress);
   const initialCourseId = inferInitialCourseId(initialLearningProgress);
   const initialVideoSession = useInitialValue(() => loadVideoSession(VALID_VIDEO_IDS));
@@ -396,13 +395,15 @@ export function useAppRuntime(): AppShellProps {
       onSelectLibrarySentence: selectLibrarySentence,
       onToggleVocabTerm: toggleVocabTerm,
       onSetVocabMastery: setVocabMastery,
-      onRemoveVocabTerm: (term) => toggleVocabTermById(term, setProgress),
+      onRemoveVocabTerm: (term: string) => toggleVocabTermById(term, setProgress),
       onExport: exportBackup,
       onImport: importBackup,
       onReset: resetProgress,
     },
   };
 }
+
+export type AppRuntime = ReturnType<typeof useAppRuntime>;
 
 function useInitialValue<T>(load: () => T): T {
   const valueRef = useRef<{ value: T } | null>(null);

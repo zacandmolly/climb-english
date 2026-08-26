@@ -2,19 +2,6 @@ import { Target } from 'lucide-react';
 import { BilingualStudio } from '../components/BilingualStudio';
 import { MaterialBar } from '../components/MaterialBar';
 import type { LessonLoadState } from './lessonLoading';
-import type {
-  Course,
-  DailySession,
-  Keyword,
-  LearningProgress,
-  Lesson,
-  MainView,
-  PracticeMode,
-  PracticeSentence,
-  VideoSummary,
-  VocabMastery,
-} from '../types';
-import type { VideoResumePosition } from '../progress/videoSession';
 import { CoachPanel } from '../views/CoachPanel';
 import { LibraryView } from '../views/LibraryView';
 import { MeView } from '../views/MeView';
@@ -22,84 +9,9 @@ import { Sidebar } from '../views/Sidebar';
 import { ListeningWorkspace, SentenceStrip, TodayFocusCard } from '../views/TodayView';
 import { VocabView } from '../views/VocabView';
 import { AppHeader, ViewNavigation } from './AppChrome';
+import type { AppRuntime } from './useAppRuntime';
 
-type NavigationModel = {
-  activeView: MainView;
-  onSwitchView: (view: MainView) => void;
-};
-
-type CourseRuntimeModel = {
-  status: LessonLoadState['status'];
-  ready: boolean;
-  courses: Course[];
-  activeCourse?: Course;
-  activeCourseId: string;
-  sessions: DailySession[];
-  activeSessionIndex: number;
-  completedSessionIds: Set<string>;
-  completedSessionCount: number;
-  unlockedSessionIndex: number;
-};
-
-type VideoWorkspaceModel = {
-  summaries: VideoSummary[];
-  activeVideo: VideoSummary | null;
-  activeVideoId: string | null;
-  resumePosition?: VideoResumePosition;
-};
-
-type PracticeModel = {
-  lesson?: Lesson;
-  sentence?: PracticeSentence;
-  sentenceIndex: number;
-  mode: PracticeMode;
-  playRequestId: number;
-  vocabTerms: Set<string>;
-};
-
-type MetricsModel = {
-  streakDays: number;
-  sourceSeconds: number;
-  totalSessionCount: number;
-  totalCompletedCount: number;
-  courseNameById: Record<string, string>;
-};
-
-type AppActions = {
-  onRequestLessons: () => void;
-  onRetryLessons: () => void;
-  onSwitchCourse: (courseId: string) => void;
-  onSwitchVideo: (videoId: string) => void;
-  onRememberVideoPosition: (videoId: string, position: VideoResumePosition) => void;
-  onReturnVideoToLibrary: () => void;
-  onStartDailySession: (session: DailySession, index: number) => void;
-  onStartTodaysSession: () => void;
-  onCompleteActiveSession: () => void;
-  onSelectSentence: (index: number) => void;
-  onSelectSegment: () => void;
-  onNextSentence: () => void;
-  onFollowSentence: (index: number) => void;
-  onModeChange: (mode: PracticeMode) => void;
-  onSelectLibrarySentence: (sessionIndex: number, sentenceIndex: number) => void;
-  onToggleVocabTerm: (keyword: Keyword) => void;
-  onSetVocabMastery: (term: string, mastery: VocabMastery) => void;
-  onRemoveVocabTerm: (term: string) => void;
-  onExport: () => void;
-  onImport: (file: File) => void;
-  onReset: () => void;
-};
-
-export type AppShellProps = {
-  navigation: NavigationModel;
-  course: CourseRuntimeModel;
-  video: VideoWorkspaceModel;
-  practice: PracticeModel;
-  progress: LearningProgress;
-  metrics: MetricsModel;
-  actions: AppActions;
-};
-
-export function AppShell(props: AppShellProps) {
+export function AppShell(props: AppRuntime) {
   const { navigation, course, video, progress, metrics, actions } = props;
   const videoModeClass = navigation.activeView === 'today' && video.activeVideo;
 
@@ -131,7 +43,7 @@ export function AppShell(props: AppShellProps) {
   );
 }
 
-function AppBody(props: AppShellProps) {
+function AppBody(props: AppRuntime) {
   return (
     <main className="app-body">
       <CourseSidebarSlot {...props} />
@@ -145,7 +57,7 @@ function AppBody(props: AppShellProps) {
   );
 }
 
-function CourseSidebarSlot({ course, progress, metrics, actions }: AppShellProps) {
+function CourseSidebarSlot({ course, progress, metrics, actions }: AppRuntime) {
   if (!course.ready) {
     return (
       <CourseSidebarPlaceholder
@@ -170,7 +82,7 @@ function CourseSidebarSlot({ course, progress, metrics, actions }: AppShellProps
   );
 }
 
-function VideoStudioSlot({ navigation, video, actions }: AppShellProps) {
+function VideoStudioSlot({ navigation, video, actions }: AppRuntime) {
   if (!video.activeVideo) return null;
   const isActive = navigation.activeView === 'today';
 
@@ -189,7 +101,7 @@ function VideoStudioSlot({ navigation, video, actions }: AppShellProps) {
   );
 }
 
-function LessonLoadSlot({ navigation, course, video, actions }: AppShellProps) {
+function LessonLoadSlot({ navigation, course, video, actions }: AppRuntime) {
   if (course.ready) return null;
   if (navigation.activeView === 'today' && video.activeVideo) return null;
 
@@ -202,7 +114,7 @@ function LessonLoadSlot({ navigation, course, video, actions }: AppShellProps) {
   );
 }
 
-function CoursePracticeSlot({ navigation, course, video, practice, actions }: AppShellProps) {
+function CoursePracticeSlot({ navigation, course, video, practice, actions }: AppRuntime) {
   if (
     !course.ready ||
     navigation.activeView !== 'today' ||
@@ -256,7 +168,7 @@ function CoursePracticeSlot({ navigation, course, video, practice, actions }: Ap
   );
 }
 
-function LibrarySlot({ navigation, course, actions }: AppShellProps) {
+function LibrarySlot({ navigation, course, actions }: AppRuntime) {
   if (!course.ready || navigation.activeView !== 'library' || !course.activeCourse) return null;
 
   return (
@@ -273,7 +185,7 @@ function LibrarySlot({ navigation, course, actions }: AppShellProps) {
   );
 }
 
-function VocabSlot({ navigation, course, progress, metrics, actions }: AppShellProps) {
+function VocabSlot({ navigation, course, progress, metrics, actions }: AppRuntime) {
   if (!course.ready || navigation.activeView !== 'vocab') return null;
 
   return (
@@ -286,7 +198,7 @@ function VocabSlot({ navigation, course, progress, metrics, actions }: AppShellP
   );
 }
 
-function MeSlot({ navigation, course, progress, metrics, actions }: AppShellProps) {
+function MeSlot({ navigation, course, progress, metrics, actions }: AppRuntime) {
   if (!course.ready || navigation.activeView !== 'me') return null;
   const masteredCount = progress.vocab.filter((entry) => entry.mastery === 2).length;
 

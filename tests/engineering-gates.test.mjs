@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import dependencyConfig from '../.dependency-cruiser.js';
 import eslintConfig from '../eslint.config.js';
 
 const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
@@ -40,4 +41,13 @@ test('bundle, dead-code, and dead-CSS checks are blocking CI gates', () => {
   assert.match(deadCodeJob, /run: npm run deadcss/);
   assert.doesNotMatch(deadCodeJob, /continue-on-error/);
   assert.match(deadCssScript, /process\.exitCode = 1/);
+});
+
+test('application runtime cannot depend on presentation modules', () => {
+  const rule = dependencyConfig.forbidden.find(
+    (entry) => entry.name === 'app-runtime-does-not-import-ui'
+  );
+  assert.equal(rule?.severity, 'error');
+  assert.match('src/app/useAppRuntime.ts', new RegExp(rule?.from.path ?? 'never'));
+  assert.match('src/components/MaterialBar.tsx', new RegExp(rule?.to.path ?? 'never'));
 });

@@ -3,9 +3,9 @@
 # Every PR runs: lint / format / test / build / audit / align-check (phase 02)
 # and data-protect (phase 03). audit and align-check are now hard gates
 # (audit fails on high/critical advisories; align-check fails on NEW drift
-# beyond the scripts/alignment-baseline.json exemption list). The lint scope is
-# deliberately conservative so it stays green against the existing tree — no
-# rule that lights up legacy code is enabled.
+# beyond the scripts/alignment-baseline.json exemption list). Handwritten src/
+# complexity, nesting, arity, and file-size budgets are hard errors. Only the
+# protected lesson/video content modules are exempt from file length.
 #
 # Scope note (why no jscpd duplicate check): the duplicate-detection surface of
 # interest lives inside the 4000-line generated/translated data modules, and a
