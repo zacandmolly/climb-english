@@ -376,7 +376,9 @@ test('portrait and landscape preserve playback state with unobstructed 44px cont
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
 });
 
-test('mobile tab round trip keeps the active virtual cue mounted', async ({ page }, testInfo) => {
+test('mobile tab round trip keeps top and distant active cues mounted', async ({
+  page,
+}, testInfo) => {
   test.skip(testInfo.project.name === 'chromium', 'mobile browser projects only');
   await page.setViewportSize(
     testInfo.project.name === 'mobile-webkit'
@@ -386,12 +388,43 @@ test('mobile tab round trip keeps the active virtual cue mounted', async ({ page
   await installFaithfulFakeYoutube(page);
   await openInnsbruck(page);
 
+  const list = page.locator('.subtitle-list');
+  await list.evaluate((element) => {
+    element.scrollTop = element.scrollHeight * 0.55;
+  });
+  await expect.poll(async () => Math.min(...(await mountedCueIndices(page)))).toBeGreaterThan(600);
+  const distantCue = page.locator('.subtitle-card.filler').first();
+  const distantCueIndex = await distantCue.getAttribute('data-cue-index');
+  expect(distantCueIndex).not.toBeNull();
+  await distantCue.click();
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute(
+    'data-cue-index',
+    distantCueIndex!
+  );
+
+  const preserver = page.locator('.video-studio-preserver');
+  await preserver.evaluate((element) => element.setAttribute('data-mobile-instance', 'same'));
+  await page.getByRole('button', { name: '听力', exact: true }).click();
+  await expect(preserver).toBeHidden();
+  await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
+
+  await page.getByRole('button', { name: '今天', exact: true }).click();
+  await expect(preserver).toBeVisible();
+  await expect(preserver).toHaveAttribute('data-mobile-instance', 'same');
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute(
+    'data-cue-index',
+    distantCueIndex!
+  );
+  await expect(page.locator('.subtitle-card.active')).toBeVisible();
+
+  await list.evaluate((element) => {
+    element.scrollTop = 0;
+  });
+  await expect(page.locator('.subtitle-card[data-cue-index="0"]')).toBeVisible();
   const firstCue = page.locator('.subtitle-card[data-cue-index="0"]');
   await firstCue.click();
   await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '0');
 
-  const preserver = page.locator('.video-studio-preserver');
-  await preserver.evaluate((element) => element.setAttribute('data-mobile-instance', 'same'));
   await page.getByRole('button', { name: '听力', exact: true }).click();
   await expect(preserver).toBeHidden();
   await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
