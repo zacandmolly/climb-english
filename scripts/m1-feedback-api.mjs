@@ -8,14 +8,16 @@ import { File } from 'node:buffer';
 const command = process.argv[2] || 'status';
 const sshHost = process.env.M1_SSH_HOST || 'm1-agent-ts';
 const apiBase = stripTrailingSlash(
-  process.env.FEEDBACK_API_BASE ||
-    process.env.VITE_FEEDBACK_API_BASE ||
-    'https://senators-underlying-bit-trademark.trycloudflare.com'
+  process.env.FEEDBACK_API_BASE || process.env.VITE_FEEDBACK_API_BASE || ''
 );
 const envPath = process.env.M1_FEEDBACK_ENV_PATH || '~/.climb-english-api.env';
 const serviceLabel = process.env.M1_FEEDBACK_SERVICE_LABEL || 'ai.climb-english-api';
 
 try {
+  if (['status', 'install-key', 'install-deepseek-key', 'test', 'usage'].includes(command)) {
+    requireApiBase();
+  }
+
   if (command === 'status') {
     await status();
   } else if (command === 'install-key') {
@@ -312,6 +314,29 @@ function stripTrailingSlash(value) {
   return String(value).replace(/\/+$/, '');
 }
 
+function requireApiBase() {
+  if (!apiBase) {
+    throw new Error('FEEDBACK_API_BASE is required. Use a stable HTTPS endpoint.');
+  }
+
+  let endpoint;
+  try {
+    endpoint = new URL(apiBase);
+  } catch {
+    throw new Error('FEEDBACK_API_BASE must be a valid stable HTTPS URL.');
+  }
+  if (endpoint.protocol !== 'https:') {
+    throw new Error('FEEDBACK_API_BASE must use HTTPS.');
+  }
+  if (endpoint.username || endpoint.password) {
+    throw new Error('FEEDBACK_API_BASE must not contain credentials.');
+  }
+  const hostname = endpoint.hostname.replace(/\.+$/, '').toLowerCase();
+  if (hostname === 'trycloudflare.com' || hostname.endsWith('.trycloudflare.com')) {
+    throw new Error('FEEDBACK_API_BASE must not use an ephemeral trycloudflare hostname.');
+  }
+}
+
 function usageText() {
   console.log(`Usage:
   npm run m1:status
@@ -322,7 +347,7 @@ function usageText() {
 
 Environment overrides:
   M1_SSH_HOST=${sshHost}
-  FEEDBACK_API_BASE=${apiBase}
+  FEEDBACK_API_BASE=${apiBase || '<required stable HTTPS endpoint>'}
   M1_FEEDBACK_ENV_PATH=${envPath}
   M1_FEEDBACK_SERVICE_LABEL=${serviceLabel}`);
 }

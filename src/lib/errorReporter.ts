@@ -16,16 +16,23 @@
 // Behaviour:
 //   - Hooks `window.onerror` and `unhandledrejection`.
 //   - Dedupes: the same message+stack is only reported once per 30s window.
-//   - Buffers locally in a ~200-entry localStorage ring; flushes to the
-//     server when online and reachable.
-//   - If the POST fails or the browser is offline, the error stays in the ring
-//     and is retried on the next flush.
+//   - Buffers locally in a ~200-entry localStorage ring.
+//   - Dev flushes to /api/errors. Production only sends when
+//     VITE_ERROR_REPORT_ENDPOINT is explicitly configured.
+//   - If the POST fails or the browser is offline, the error stays in the ring.
+//     Auth/unsupported/rate-limit responses are not retried again this session.
+
+import { isUnsupportedErrorReportStatus, resolveErrorReportEndpoint } from './runtimeServices';
 
 const STORAGE_KEY = 'climb-english:error-inbox';
 const MAX_BUFFER = 200;
 const DEDUPE_WINDOW_MS = 30_000;
 const FLUSH_INTERVAL_MS = 20_000;
-const ENDPOINT = '/api/errors';
+const ENDPOINT = resolveErrorReportEndpoint(
+  import.meta.env.VITE_ERROR_REPORT_ENDPOINT,
+  import.meta.env.DEV
+);
+let endpointDisabled = false;
 
 type ErrorRecord = {
   id: string;
@@ -64,9 +71,9 @@ function writeBuffer(records: ErrorRecord[]): void {
 function isRecord(value: unknown): value is ErrorRecord {
   return Boolean(
     value &&
-      typeof value === 'object' &&
-      typeof (value as ErrorRecord).id === 'string' &&
-      typeof (value as ErrorRecord).ts === 'string'
+    typeof value === 'object' &&
+    typeof (value as ErrorRecord).id === 'string' &&
+    typeof (value as ErrorRecord).ts === 'string'
   );
 }
 
@@ -105,26 +112,6 @@ export function reportError(error: Error | string, kind: ErrorRecord['kind'] = '
   void flushBuffer();
 }
 
-// React error boundaries hand us a componentStack; this lets the reporter
-// attach it to the latest window error so the stack context is not lost.
-export function reportErrorBoundary(error: Error, componentStack: string): void {
-  const record: ErrorRecord = {
-    id: hashRecord(error.message, error.stack ?? ''),
-    kind: 'error',
-    message: error.message || String(error),
-    stack: error.stack || '',
-    componentStack,
-    url: window.location.href,
-    ts: new Date().toISOString(),
-    route: window.location.pathname,
-  };
-  if (isDuplicate(record)) return;
-  const buffer = readBuffer();
-  buffer.push(record);
-  writeBuffer(buffer);
-  void flushBuffer();
-}
-
 // --- reporter helpers -----------------------------------------------------
 
 // Deterministic, browser-safe fingerprint hash. `node:crypto` is not available
@@ -146,6 +133,7 @@ function hashRecord(message: string, stack: string): string {
 async function flushBuffer(): Promise<void> {
   const buffer = readBuffer();
   if (buffer.length === 0) return;
+  if (!ENDPOINT || endpointDisabled) return;
   if (typeof navigator !== 'undefined' && !navigator.onLine) return;
 
   try {
@@ -159,6 +147,10 @@ async function flushBuffer(): Promise<void> {
       const sentIds = new Set(buffer.map((record) => record.id));
       const remaining = readBuffer().filter((record) => !sentIds.has(record.id));
       writeBuffer(remaining);
+    } else if (isUnsupportedErrorReportStatus(response.status)) {
+      // This target does not currently accept telemetry. Keep the local ring,
+      // but stop creating permanent auth/unsupported/rate-limit network noise.
+      endpointDisabled = true;
     }
   } catch {
     // Offline or server down; keep the buffer for a later flush.
@@ -185,8 +177,10 @@ export function installErrorReporter(): void {
     else reportError(`Unhandled rejection: ${String(reason)}`, 'unhandledrejection');
   });
 
-  // Periodic retry so offline errors eventually reach the server.
-  window.setInterval(() => {
-    void flushBuffer();
-  }, FLUSH_INTERVAL_MS);
+  if (ENDPOINT) {
+    // Periodic retry so offline errors eventually reach an explicitly enabled endpoint.
+    window.setInterval(() => {
+      void flushBuffer();
+    }, FLUSH_INTERVAL_MS);
+  }
 }

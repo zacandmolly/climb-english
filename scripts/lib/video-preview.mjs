@@ -6,7 +6,7 @@ import { promisify } from 'node:util';
 const run = promisify(execFile);
 
 export const PREVIEW_DURATION_SECONDS = 20;
-export const PREVIEW_PRE_ROLL_SECONDS = 0.3;
+const PREVIEW_PRE_ROLL_SECONDS = 0.3;
 
 export function getPreviewWindow(video) {
   const mediaStartTime = Number(video.mediaStartTime ?? 0);

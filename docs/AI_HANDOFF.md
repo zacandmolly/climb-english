@@ -36,8 +36,8 @@
 | R3 数据隔离 | `src/data/lessons.ts`（re-export）+ `lessons.generated.ts`（Bern）+ `lessons.manual.ts`（Innsbruck） | 生成与手写彻底隔离，CI `data-protect` 防覆盖 |
 | R4 AI review | `scripts/ai-review.mjs` + `scripts/lib/ai-review-prompt.mjs` + `.github/workflows/ai-review.yml` | DeepSeek 结构化 review，建议性非阻断 |
 | R5 E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 卡拉OK播放走查，CI 归档截图/录屏 |
-| R6 模块边界 | `src/App.tsx` 拆分 + `.dependency-cruiser.js` + `lint:complexity` | `no-circular` 已升硬门禁；复杂度 warn |
-| R7 死代码 | `knip` + `find-dead-css.mjs` | 告警不阻断 |
+| R6 模块边界 | `src/App.tsx` 薄入口 + `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `.dependency-cruiser.js` + `lint:complexity` | 展示/状态/布局分离；no-circular、runtime 不反向依赖 UI、手写 source-shape 均为硬门禁 |
+| R7 死代码 | `knip` + `find-dead-css.mjs` | 零未解释 finding，硬门禁 |
 | R8 断句参数实验 | `scripts/experiments/segment-parameter-search.mjs` + `scripts/experiments/lib/metrics.mjs` | 只读，不改 segment.mjs |
 | R9 端口守卫 | `scripts/port-guard.mjs` | dev 前探测 5173 |
 | R10 报错闭环 | `src/lib/errorReporter.ts` + `server/index.mjs`(`POST /api/errors`) + `scripts/error-report.mjs` | 收集 + AI 报告；MVP 不做自动改码 |
@@ -75,12 +75,12 @@
 | 模块 | 路径 | 职责 | 状态 |
 |---|---|---|---|
 | 应用入口 | `src/main.tsx` | React root；安装 R10 报错收集后才渲染 | ✅ |
-| 应用外壳 | `src/App.tsx`（~544 行） | 4 tab（今天/听力/生词本/我的）切换、全局状态、拼装素材栏/播放器/工作台（纯编排） | ✅ 已拆分 |
+| 应用外壳 | `src/App.tsx`（6 行入口）+ `src/app/AppShell.tsx` + `src/app/useAppRuntime.ts` + `src/app/AppChrome.tsx` | 壳层渲染、runtime 状态/动作、Chrome/slot 布局分离；课程按需加载且视频实例跨 tab 保留 | ✅ 职责拆分并硬门禁 |
 | 素材栏（唯一素材入口） | `src/components/MaterialBar.tsx` | 课程+视频统一选择；`COURSE_SUPERSEDED_BY_VIDEO` 取代映射 | ✅ |
 | 卡拉OK工作台 | `src/components/BilingualStudio.tsx` + `src/hooks/useCuePlayer.ts` | cue 级卡拉OK跟随、单句循环、学习句过滤；reset 只依赖稳定素材 id | ✅ |
 | 卡拉OK媒体面 | `src/players/CueMediaPlayer.tsx` | 本地 MP4 / Git 20 秒预览 / YouTube 三层媒体统一暴露片段相对时钟；预览播放时 iframe 隐藏预热接续点 | ✅ 三层统一 |
-| 跟读教练（视频素材） | `src/components/SpeakingCoach.tsx` | 录音→Whisper→AI 反馈；只接收 `CoachTarget` | ✅ |
-| 口语教练（课程流程） | `src/views/CoachPanel.tsx` | 课程流程录音跟读；与 SpeakingCoach 功能重叠 | ⚠️ 待合并 |
+| 统一跟读 runtime + 视频展示 | `src/hooks/useCoachRecorder.ts` + `src/components/SpeakingCoach.tsx` | 唯一拥有录音、PCM/WAV、浏览器识别、反馈上传与资源清理；视频组件只负责展示 | ✅ 单一 runtime |
+| 口语教练（课程展示） | `src/views/CoachPanel.tsx` | 课程目标、关键词与反馈展示；录音/上传复用 `useCoachRecorder` | ✅ 已去重 |
 | 课程播放器（本地） | `src/players/LocalVideoPlayer.tsx` | 本地视频，`onTimeReport(currentTime + mediaStartTime)` | ✅ |
 | 课程播放器（YouTube） | `src/players/YouTubePlayer.tsx` | IFrame 嵌入 + 250ms 轮询；就绪前点击排队 | ✅ |
 | 听力工作台 | `src/views/TodayView.tsx` + `src/views/Sidebar.tsx` | 今日台、整段精听卡拉OK + 侧栏进度/热力图 | ✅ |
@@ -106,7 +106,7 @@
 | 视频发现 | `scripts/discover-youtube.mjs` | 扫描候选 → 队列 → 人工挑选 | ✅ |
 | 课程生成器 | `scripts/build-official-lessons.mjs` | 只重建 Bern generated | ✅ |
 | M1 运维 | `scripts/m1-feedback-api.mjs` | 远端密钥安装/状态/用量 | ✅ |
-| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 代理 + KV 限流 | ✅ |
+| 反馈 Worker | `workers/speaking-feedback-worker.mjs` | Cloudflare 上直接调用 OpenAI + KV 限流；不是 M1 代理 | ✅ |
 | 回归测试 | `tests/` | translate/segment/backfill/video pipeline（node --test） | ✅ |
 | E2E 走查 | `e2e/karaoke-playback.spec.ts` | Playwright 走查本地 MP4 与 Git 预览→YouTube 预热接续的卡拉OK时间轴 | ✅ |
 
@@ -191,7 +191,8 @@ discover-youtube.mjs → import-youtube.mjs
 浏览器录音（WAV）→ POST /api/speaking-feedback（本地 Express 或 CF Worker）
   → Whisper 转写（OpenAI）或 DeepSeek 直接教练（仅音频指标）
   → AI 生成反馈（keywordHits / closeness / audioNotes / suggestions / naturalVersion）
-  → 无 key 时降级为 demo 反馈（不失败）
+  → 前端仅在 /api/health 明确返回 ok:true + ai:true 后发送录音
+  → 未配置稳定端点、无 key 或探测失败时明确显示离线，只给本地建议
 ```
 
 ### 6.4 进度流
@@ -204,7 +205,8 @@ discover-youtube.mjs → import-youtube.mjs
 ### 6.5 报错流（R10，仅 dev）
 
 ```
-window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去重）→ POST /api/errors
+window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去重）
+  → dev 默认 POST /api/errors；production 仅显式配置 VITE_ERROR_REPORT_ENDPOINT 后发送
   → 追加到 docs/error-inbox.jsonl → npm run errors:report → 聚类 + DeepSeek 根因 → docs/error-report-DATE.md
 ```
 
@@ -216,8 +218,7 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 
 | 档 | 门禁 | 触发 | 行为 |
 |---|---|---|---|
-| **硬门禁**（阻断合入） | `lint` / `format:check` / `test` / `build` / `e2e` / `audit`(high+) / `align-check`(豁免清单) / `check:videos`(素材+媒体) / `check:lesson-alignment` / `data-protect` / `depcruise`(no-circular) | `ci.yml`（PR + push main） | 任一失败 → CI 红 → 阻断 PR |
-| **告警不阻断** | `lint:complexity`(warn) / `knip` / `deadcss` | `ci.yml` 的 `boundary-check`、`dead-code` job | `continue-on-error`，只报告不阻断 |
+| **硬门禁**（阻断合入） | `lint` / `format:check` / `test` / `build`(含 runtime config + bundle budget) / `e2e` / `audit`(high+) / `align-check`(豁免清单) / `check:videos` / `check:lesson-alignment` / `data-protect` / `lint:complexity` / `depcruise` / `knip` / `deadcss` | `ci.yml`（PR + push main） | 任一失败 → CI 红 → 阻断 PR |
 | **AI review（建议性）** | `ai-review`（DeepSeek 结构化 review） | `ai-review.yml`（PR opened/synchronize） | 无 key / 失败 / 有发现**都不阻断**，仅 post 评论 |
 
 ### 7.2 移动端播放器三层证据（不可互相替代）
@@ -251,7 +252,7 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 
 1. **改 `scripts/lib/*` 必须反例测试先行**（红→绿）；**改 `src/` UI 必须浏览器实证 + qa 截图**（文本描述与截图一致）。
 2. **数据隔离**：`src/data/lessons.generated.ts`（Bern，可生成）与 `src/data/lessons.manual.ts`（Innsbruck，手写只读）已隔离——**禁止**让 `build:lessons` 触碰 manual（CI `data-protect` 会拦）。
-3. **提交过硬门禁**（`ci.yml`）：`lint / format / test / build / e2e / audit / align-check / check:videos / check:lesson-alignment / data-protect / no-circular`；`dead-code`（knip/deadcss）为告警；另跑 `ai-review`（建议性）。
+3. **提交过硬门禁**（`ci.yml`）：`lint / format / test / build+bundle / e2e / audit / align-check / check:videos / check:lesson-alignment / data-protect / source-shape / no-circular / knip / deadcss`；另跑 `ai-review`（建议性）。
 4. **单模块单 PR，不混装**；commit 三段式（症状 → 根因 → 验证）。改共享函数前 grep 全部调用方。
 5. **R12 对齐红线**：`npm run check:lesson-alignment`（即 `check-lesson-cue-alignment.mjs --strict --baseline`）必须 **0 新增漂移**。禁止把课程句 `Lesson.sentences` 改写成从 `VideoEntry.cues` 「派生」的假对应——策展教学不可干净派生（当前 136 句 id 碰撞 0、时间戳精确匹配 0，基线记录的是诚实的**连续切片**关系）。同时 `check:alignment` 用豁免清单拦新 en/zh 漂移。
 6. **R12 语义收敛提醒**：
@@ -269,9 +270,8 @@ window.onerror / unhandledrejection → errorReporter 本地 ring 缓冲（去�
 |---|---|---|
 | R12 step4 真实删重复副本 | `Lesson.sentences` 与 cue deck 有 3 处**连续切片**关系（`lesson-cue-baseline.json` 记录）；是否真删重复副本需人确认映射关系，**不可干净派生** | 人确认后再动，动前先跑 `check:lesson-alignment` |
 | R8 最优参数带自证偏置 | 当前最优 `maxGap=0.7/minWords=4/mergeGap=1.2/maxWords=22` 是评分函数偏向（minWords 越小碎片定义越松）的结果；`segment.mjs` 默认参数（maxGap=1.5/minWords=6/mergeGap=2.0/maxWords=26）**刻意保持未改** | 是否回归旧默认需人结合真实填充率决定 |
-| knip 11 项死代码待清理 | `npm run knip` 报历史死代码（未用 lib 导出/类型等），当前 `dead-code` job 为告警 | 清理后收紧为硬门禁 |
-| `CoachPanel` vs `SpeakingCoach` 合并 | 课程流程与视频素材两套跟读教练功能重叠 | 另开 PR 合并 |
-| `src/styles.css` v2 遗留死规则 | 全局样式含 v2 死规则 | `deadcss` 结果参考清理 |
+| 稳定在线反馈端点 | 公开 Pages 默认明确离线；临时 tunnel 已被构建门禁拒绝 | 配置稳定 HTTPS endpoint、health、隐私与成本策略后再开启 |
+| `src/styles.css` 仍较大 | deadcss 已为 0，但样式仍集中在单文件 | 仅在真实修改冲突或 CSS 传输指标出现问题时按功能域拆分 |
 
 ---
 
@@ -284,10 +284,10 @@ npm run build                 # tsc -b && vite build → dist/
 npm run preview               # NODE_ENV=production node server/index.mjs（静态托管 dist/）
 npm test                      # node --test tests/*.test.mjs（管线回归）
 npm run lint                  # eslint scripts+tests（硬门禁）
-npm run lint:complexity       # eslint src/**（复杂度，warn）
+npm run lint:complexity       # eslint src/**（手写 source-shape 硬门禁）
 npm run depcruise             # src 循环依赖（硬门禁）
-npm run knip                  # 死代码/无用导出（告警）
-npm run deadcss               # purgecss 未用选择器（告警）
+npm run knip                  # 死代码/无用导出（硬门禁）
+npm run deadcss               # purgecss 未用选择器（硬门禁）
 npm run format:check          # prettier --check scripts+tests（硬门禁）
 npm run check:alignment       # check-cue-alignment --strict --baseline（en/zh 漂移，硬门禁）
 npm run check:videos          # 所有视频 cue/注册表/媒体来源（本地部署或 YouTube fallback）硬门禁

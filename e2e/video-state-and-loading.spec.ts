@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const TECHNIQUE_TITLE = 'A COMPLETE Guide to CLIMBING MOVEMENT AND TECHNIQUE';
 const TECHNIQUE_ID = 'a-complete-guide-to-climbing-movement-and-technique-gtiggs-y2ny';
+const BERN_TITLE = "Women's Boulder final | Bern 2025";
 const INNSBRUCK_TITLE = "Men's Boulder Final | Innsbruck 2026 智能重切";
 const VIDEO_SESSION_KEY = 'climb-english-video-session-v1';
 const LEARNING_PROGRESS_KEY = 'climb-english-learning-progress-v2';
@@ -11,15 +12,132 @@ async function selectVideo(page: Page, title: string): Promise<void> {
 }
 
 async function expectVirtualizedCueDeck(page: Page, total: number): Promise<void> {
-  await expect(page.locator('.subtitle-panel .panel-heading')).toContainText(`${total}/${total} 句`);
+  await expect(page.locator('.subtitle-panel .panel-heading')).toContainText(
+    `${total}/${total} 句`
+  );
   await expect.poll(() => page.locator('.subtitle-card').count()).toBeGreaterThan(0);
   expect(await page.locator('.subtitle-card').count()).toBeLessThanOrEqual(40);
 }
+
+test('new visitors enter the default video without requesting lesson data', async ({ page }) => {
+  let lessonChunkRequests = 0;
+  await page.route(/\/src\/data\/lessons\.ts(?:\?.*)?$/, async (route) => {
+    lessonChunkRequests += 1;
+    await route.continue();
+  });
+
+  await page.goto('/');
+  await expect(page.locator('.video-option.active')).toContainText(BERN_TITLE);
+  await expect(page.locator('section[aria-label="Bilingual subtitle studio"]')).toBeVisible();
+  await page.waitForTimeout(500);
+  expect(lessonChunkRequests).toBe(0);
+});
+
+test('video-first startup defers lessons until a course action and preserves the studio', async ({
+  page,
+}) => {
+  let releaseLessonRequest: (() => void) | undefined;
+  let lessonChunkRequests = 0;
+  const pageErrors: string[] = [];
+  page.on('pageerror', (error) => pageErrors.push(error.message));
+  await page.addInitScript(
+    ({ key, videoId }) => {
+      if (localStorage.getItem(key)) return;
+      localStorage.setItem(
+        key,
+        JSON.stringify({ version: 1, activeVideoId: videoId, positions: {} })
+      );
+    },
+    { key: VIDEO_SESSION_KEY, videoId: TECHNIQUE_ID }
+  );
+  await page.route(/\/src\/data\/lessons\.ts(?:\?.*)?$/, async (route) => {
+    lessonChunkRequests += 1;
+    await new Promise<void>((resolve) => {
+      releaseLessonRequest = resolve;
+    });
+    await route.continue();
+  });
+
+  await page.goto('/');
+  const studio = page.locator('section[aria-label="Bilingual subtitle studio"]');
+  await expect(studio).toBeVisible();
+  await expect(page.locator('.video-option.active')).toContainText(TECHNIQUE_TITLE);
+  await page.locator('[data-cue-index="1"]').click();
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
+  await page.waitForTimeout(500);
+  expect(lessonChunkRequests).toBe(0);
+
+  const preserver = page.locator('.video-studio-preserver');
+  await studio.evaluate((element) => {
+    element.setAttribute('data-instance-probe', 'preserved');
+  });
+  await page.getByRole('button', { name: '听力' }).click();
+  await expect.poll(() => lessonChunkRequests).toBe(1);
+  await expect(page.getByRole('status')).toHaveText('正在加载课程数据…');
+  await expect(preserver).toBeHidden();
+  await expect(studio).toHaveAttribute('data-instance-probe', 'preserved');
+  releaseLessonRequest?.();
+
+  await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
+  expect(lessonChunkRequests).toBe(1);
+  await page.getByRole('button', { name: '今天' }).click();
+  await expect(studio).toBeVisible();
+  await expect(studio).toHaveAttribute('data-instance-probe', 'preserved');
+  await expect(page.locator('.subtitle-card.active')).toHaveAttribute('data-cue-index', '1');
+  await expect(page.locator('.subtitle-card.active')).toBeVisible();
+  expect(pageErrors).toEqual([]);
+});
+
+test('failed on-demand lesson load reloads into the requested course view', async ({ page }) => {
+  let lessonChunkRequests = 0;
+  const pageErrors: string[] = [];
+  page.on('pageerror', (error) => pageErrors.push(error.message));
+  await page.addInitScript(
+    ({ key, videoId }) => {
+      localStorage.setItem(
+        key,
+        JSON.stringify({ version: 1, activeVideoId: videoId, positions: {} })
+      );
+    },
+    { key: VIDEO_SESSION_KEY, videoId: TECHNIQUE_ID }
+  );
+  await page.route(/\/src\/data\/lessons\.ts(?:\?.*)?$/, async (route) => {
+    lessonChunkRequests += 1;
+    if (lessonChunkRequests === 1) {
+      await route.abort('failed');
+      return;
+    }
+    await route.continue();
+  });
+
+  await page.goto('/');
+  const preserver = page.locator('.video-studio-preserver');
+  await expect(preserver).toBeVisible();
+  await preserver.evaluate((element) => {
+    element.setAttribute('data-retry-probe', 'preserved');
+  });
+  await page.getByRole('button', { name: '听力' }).click();
+  await expect(page.getByRole('alert')).toContainText('课程数据加载失败');
+  await expect(preserver).toHaveAttribute('data-retry-probe', 'preserved');
+
+  await page.getByRole('button', { name: '重试加载' }).last().click();
+  await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
+  expect(lessonChunkRequests).toBe(2);
+  await expect(page.locator('.video-option.active')).toContainText(TECHNIQUE_TITLE);
+  expect(pageErrors).toEqual([]);
+});
 
 test('video material and cue survive navigation and reload without changing course progress', async ({
   page,
 }) => {
   await page.goto('/');
+  await expect(page.getByRole('button', { name: '今天' })).toBeVisible();
+  await page.getByRole('button', { name: '听力' }).click();
+  await expect(page.locator('section[aria-label="听力库"]')).toBeVisible();
+  await expect
+    .poll(() => page.evaluate((key) => localStorage.getItem(key), LEARNING_PROGRESS_KEY))
+    .not.toBeNull();
+  await page.getByRole('button', { name: '今天' }).click();
   const progressBefore = await page.evaluate((key) => {
     const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : null;

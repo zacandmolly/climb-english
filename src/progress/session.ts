@@ -3,7 +3,7 @@ import type { DailySession, Keyword, LearningProgress, Lesson, VocabEntry } from
 
 export function toggleVocabTermById(
   term: string,
-  setProgress: React.Dispatch<React.SetStateAction<LearningProgress>>,
+  setProgress: React.Dispatch<React.SetStateAction<LearningProgress>>
 ) {
   setProgress((currentProgress) => ({
     ...currentProgress,
@@ -16,19 +16,33 @@ export function collectSessionVocab(
   lesson: Lesson,
   session: DailySession,
   currentVocab: VocabEntry[],
-  courseId?: string,
+  courseId?: string
 ): VocabEntry[] {
   const keywords = uniqueKeywords(lesson.sentences);
-  return mergeVocabEntries(currentVocab, keywords, lesson.id, session.day, courseId);
+  return mergeVocabEntries({
+    currentVocab,
+    keywords,
+    lessonId: lesson.id,
+    day: session.day,
+    courseId,
+  });
 }
 
-export function mergeVocabEntries(
-  currentVocab: VocabEntry[],
-  keywords: Keyword[],
-  lessonId: string,
-  day: number,
-  courseId?: string,
-): VocabEntry[] {
+type MergeVocabEntriesOptions = {
+  currentVocab: VocabEntry[];
+  keywords: Keyword[];
+  lessonId: string;
+  day: number;
+  courseId?: string;
+};
+
+export function mergeVocabEntries({
+  currentVocab,
+  keywords,
+  lessonId,
+  day,
+  courseId,
+}: MergeVocabEntriesOptions): VocabEntry[] {
   const existing = new Map(currentVocab.map((entry) => [entry.term, entry]));
   const addedAt = new Date().toISOString();
 
@@ -60,7 +74,10 @@ export function completedPrefixCount(sessions: DailySession[], completedSessionI
   return completedCount;
 }
 
-export function getUnlockedSessionIndex(sessions: DailySession[], completedSessionIds: Set<string>) {
+export function getUnlockedSessionIndex(
+  sessions: DailySession[],
+  completedSessionIds: Set<string>
+) {
   if (sessions.length === 0) return 0;
   return Math.min(completedPrefixCount(sessions, completedSessionIds), sessions.length - 1);
 }
@@ -70,7 +87,9 @@ export function getInitialSessionIndex(sessions: DailySession[], progress: Learn
 
   const completedSessionIds = new Set(progress.completedSessionIds);
   const unlockedSessionIndex = getUnlockedSessionIndex(sessions, completedSessionIds);
-  const storedSessionIndex = sessions.findIndex((session) => session.id === progress.activeSessionId);
+  const storedSessionIndex = sessions.findIndex(
+    (session) => session.id === progress.activeSessionId
+  );
 
   if (
     storedSessionIndex >= 0 &&

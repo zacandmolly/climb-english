@@ -2,21 +2,17 @@
 //
 // Why this exists: the RETROSPECTIVE's recurring theme was AI friction — a
 // command blocked by permissions, a missing library, a missing CLI tool, or a
-// bug that ate a turn. R11 turns that friction into data: every time the
-// self-driving harness hits a wall, it appends one structured row to
-// scripts' docs/oxidize/log.json. `npm run oxidize` then aggregates the rows
-// into an optimization plan that a human can pick from.
+// bug that ate a turn. R11 turns that friction into data: callers outside the
+// npm dependency graph can append a structured row, and `npm run oxidize`
+// aggregates those rows into an optimization plan.
 //
 // The log format is intentionally simple and append-only. Each row:
 //   { ts, agent, phase, cmd, blockedBy, expected, actual, suggestion }
 // where `blockedBy` is one of the closed set used by the report:
 //   'permission' | 'missing-lib' | 'missing-tool' | 'bug' | 'other'.
 //
-// This module exposes:
-//   logPath()            — resolved path to docs/oxidize/log.json
-//   loadFrictionLog()    — read + parse the log (returns [] if absent/invalid)
-//   appendFriction(row)  — append a row, creating the file/dir if needed
-//   logFriction(row)     — convenience wrapper: append + print to stderr
+// appendFriction/logFriction are a deliberate public harness boundary. They
+// carry @public tags because external agent runners are invisible to Knip.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,11 +20,11 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-export function logPath() {
+function logPath() {
   return path.join(ROOT, 'docs', 'oxidize', 'log.json');
 }
 
-export const BLOCKED_BY = ['permission', 'missing-lib', 'missing-tool', 'bug', 'other'];
+const BLOCKED_BY = ['permission', 'missing-lib', 'missing-tool', 'bug', 'other'];
 
 // Read every recorded friction row. A missing or malformed log is not an error
 // for the reporter: it simply means "no friction yet", so we return [] rather
@@ -50,6 +46,7 @@ export function loadFrictionLog() {
 // Append one row. `row.blockedBy` is validated against the closed set; an
 // unknown value is coerced to 'other' so downstream grouping stays stable.
 // Returns the canonical stored row.
+/** @public */
 export function appendFriction(row) {
   const entry = {
     ts: row.ts ?? new Date().toISOString(),
@@ -71,6 +68,7 @@ export function appendFriction(row) {
 }
 
 // Append + echo to stderr. Useful from CLI callers that want visibility.
+/** @public */
 export function logFriction(row) {
   const entry = appendFriction(row);
   console.error(

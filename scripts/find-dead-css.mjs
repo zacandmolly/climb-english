@@ -3,11 +3,11 @@
 //
 // Purges src/styles.css against every class/tag actually present in the app's
 // content (src/**/*.tsx + index.html) and lists the selectors that survive in
-// the stylesheet but are never matched. Report-only: it never rewrites the
-// stylesheet — deleting the dead rules is a separate cleanup PR.
+// the stylesheet but are never matched. This is a read-only gate: it never
+// rewrites the stylesheet, but exits non-zero until every finding is resolved.
 //
 // Run:
-//   node scripts/find-dead-css.mjs            # report only
+//   node scripts/find-dead-css.mjs            # scan every selector
 //   node scripts/find-dead-css.mjs --limit 20 # cap the printed list
 
 import { PurgeCSS } from 'purgecss';
@@ -41,5 +41,8 @@ async function main() {
   }
   if (limit != null && unique.length > limit) {
     console.log(`  …and ${unique.length - limit} more`);
+  }
+  if (unique.length > 0) {
+    process.exitCode = 1;
   }
 }

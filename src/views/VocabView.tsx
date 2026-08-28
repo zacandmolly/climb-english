@@ -8,6 +8,12 @@ const MASTERY_LABEL: Record<VocabMastery, string> = {
   2: '已掌握',
 };
 
+const MASTERY_CLASS: Record<VocabMastery, string> = {
+  0: 'mastery-new',
+  1: 'mastery-learning',
+  2: 'mastery-known',
+};
+
 export function VocabView({
   vocab,
   courseNameById,
@@ -173,7 +179,7 @@ export function VocabView({
                 <h3>{entry.term}</h3>
                 <p className="keyword-zh">{entry.zh}</p>
               </div>
-              <span className={`mastery-badge m${entry.mastery}`}>
+              <span className={`mastery-badge ${MASTERY_CLASS[entry.mastery]}`}>
                 {MASTERY_LABEL[entry.mastery]}
               </span>
             </div>

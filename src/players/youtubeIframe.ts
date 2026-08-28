@@ -19,7 +19,7 @@ function clearLoader(removeScript: boolean) {
   loaderReject = null;
 }
 
-export function resetYoutubeIframeApiLoader() {
+function resetYoutubeIframeApiLoader() {
   if (window.YT?.Player) return;
   const reject = loaderReject;
   clearLoader(true);

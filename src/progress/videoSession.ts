@@ -1,6 +1,6 @@
 import type { Cue } from '../types';
 
-export const VIDEO_SESSION_STORAGE_KEY = 'climb-english-video-session-v1';
+const VIDEO_SESSION_STORAGE_KEY = 'climb-english-video-session-v1';
 const VIDEO_SESSION_VERSION = 1;
 
 export type VideoResumePosition = {
@@ -26,7 +26,7 @@ export type ResolvedVideoResumePosition = {
   currentTime: number;
 };
 
-export function emptyVideoSessionState(): VideoSessionState {
+function emptyVideoSessionState(): VideoSessionState {
   return {
     version: VIDEO_SESSION_VERSION,
     activeVideoId: null,

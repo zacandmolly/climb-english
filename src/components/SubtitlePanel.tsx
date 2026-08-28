@@ -54,6 +54,10 @@ export function SubtitlePanel({
   );
 
   const virtualizer = useVirtualizer({
+    // A hidden mobile tab reports zero geometry. Disable the observer and any
+    // pending scroll reconciliation so stale offsets cannot unmount the active
+    // cue when the preserved studio becomes visible again.
+    enabled: isActive,
     count: rows.length,
     getScrollElement: () => listRef.current,
     estimateSize: () => 96,
@@ -88,7 +92,7 @@ export function SubtitlePanel({
   }, [isActive]);
 
   useEffect(() => {
-    if (activeVirtualRowIndex < 0) return;
+    if (!isActive || activeVirtualRowIndex < 0) return;
     // Dynamic measurement and smooth scrolling are not compatible in TanStack
     // Virtual. Pin synchronously so a changing row height cannot leave a blank
     // window or land on the wrong cue.
@@ -115,7 +119,15 @@ export function SubtitlePanel({
       window.cancelAnimationFrame(firstFrame);
       window.cancelAnimationFrame(secondFrame);
     };
-  }, [activeCueIndex, activeVirtualRowIndex, orientationRevision, showZh, studyOnly, virtualizer]);
+  }, [
+    activeCueIndex,
+    activeVirtualRowIndex,
+    isActive,
+    orientationRevision,
+    showZh,
+    studyOnly,
+    virtualizer,
+  ]);
 
   return (
     <section className="subtitle-panel" aria-label="Bilingual subtitles">
